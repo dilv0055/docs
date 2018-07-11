@@ -1,5 +1,6 @@
 ### ObsoleteAttribute exports as both ObsoleteAttribute and DeprecatedAttribute in WinMD scenarios
 
+
 |   |   |
 |---|---|
 |Details|When you create a Windows Metadata library (.winmd file), the <xref:System.ObsoleteAttribute?displayProperty=name> attribute is exported as both <xref:System.ObsoleteAttribute?displayProperty=name> and [Windows.Foundation.DeprecatedAttribute](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.deprecatedattribute).|

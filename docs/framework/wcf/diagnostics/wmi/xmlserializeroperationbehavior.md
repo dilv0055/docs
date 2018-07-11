@@ -5,9 +5,9 @@ ms.assetid: 8911aa1b-e34b-4161-a3ae-7468d89a6861
 ---
 # XmlSerializerOperationBehavior
 XmlSerializerOperationBehavior  
-  
+
 ## Syntax  
-  
+
 ```  
 class XmlSerializerOperationBehavior : Behavior  
 {  
@@ -15,32 +15,33 @@ class XmlSerializerOperationBehavior : Behavior
   string Use;  
 };  
 ```  
-  
+
 ## Methods  
  The XmlSerializerOperationBehavior class does not define any methods.  
-  
+
 ## Properties  
  The XmlSerializerOperationBehavior class has the following properties:  
-  
+
 ### Style  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  Defines the style of the SOAP message.  
-  
+
 ### Use  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  Specifies the SOAP encoding style.  
-  
+
 ## Requirements  
-  
+
+
 |MOF|Declared in Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Namespace|Defined in root\ServiceModel|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Description.XmlSerializerOperationBehavior>

@@ -20,9 +20,9 @@ ms.author: "mairaw"
 ---
 # IMetaDataImport::EnumTypeRefs Method
 Enumerates TypeRef tokens defined in the current metadata scope.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT EnumTypeRefs (  
    [in, out] HCORENUM    *phEnum,   
@@ -31,39 +31,40 @@ HRESULT EnumTypeRefs (
    [out] ULONG           *pcTypeRefs  
 );  
 ```  
-  
+
 #### Parameters  
  `phEnum`  
  [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
-  
+
  `rTypeRefs`  
  [out] The array used to store the TypeRef tokens.  
-  
+
  `cMax`  
  [in] The maximum size of the `rTypeRefs` array.  
-  
+
  `pcTypeRefs`  
  [out] A pointer to the number of TypeRef tokens returned in `rTypeRefs`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumTypeRefs` returned successfully.|  
 |`S_FALSE`|There are no tokens to enumerate. In that case, `pcTypeRefs` is zero.|  
-  
+
 ## Remarks  
  A TypeRef token represents a reference to a type.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

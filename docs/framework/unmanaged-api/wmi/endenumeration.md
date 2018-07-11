@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Terminates an enumeration sequence started with a call to the [BeginEnumeration function](beginenumeration.md).  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```  
 HRESULT EndEnumeration (
    [in] int               vFunc, 
@@ -44,11 +44,12 @@ HRESULT EndEnumeration (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | There has been a general failure. |
 |`WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::EndEnumeration](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) method.
@@ -57,10 +58,10 @@ A call to the `EndEnumeration` function is not required, but it is recommended b
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

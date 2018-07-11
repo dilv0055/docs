@@ -21,16 +21,16 @@ Finally, if you are using a REST architecture, [Hypermedia](https://www.infoq.co
 
 ## Additional resources
 
--   **Scott Hanselman. ASP.NET Core RESTful Web API versioning made easy**
-    <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
+- **Scott Hanselman. ASP.NET Core RESTful Web API versioning made easy**
+  <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
--   **Versioning a RESTful web API**
-    [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
+- **Versioning a RESTful web API**
+  [*https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api*](https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api)
 
--   **Roy Fielding. Versioning, Hypermedia, and REST**
-    <https://www.infoq.com/articles/roy-fielding-on-versioning>
+- **Roy Fielding. Versioning, Hypermedia, and REST**
+  <https://www.infoq.com/articles/roy-fielding-on-versioning>
 
 
->[!div class="step-by-step"]
-[Previous](asynchronous-message-based-communication.md)
-[Next](microservices-addressability-service-registry.md)
+> [!div  class="step-by-step"]
+> [Previous](asynchronous-message-based-communication.md)
+> [Next](microservices-addressability-service-registry.md)

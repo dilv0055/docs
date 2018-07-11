@@ -19,9 +19,9 @@ This tutorial assumes that you've installed .NET Core. For installation instruct
 To create and run the examples in this tutorial, you use the [dotnet](../../core/tools/dotnet.md) utility from the command line. Follow these steps for each example:
 
 1. Create a directory to store the example.
-1. Enter the [dotnet new console](../../core/tools/dotnet-new.md) command at a command prompt to create a new .NET Core project.
-1. Copy and paste the code from the example into your code editor.
-1. Enter the [dotnet restore](../../core/tools/dotnet-restore.md) command from the command line to load or restore the project's dependencies.
+2. Enter the [dotnet new console](../../core/tools/dotnet-new.md) command at a command prompt to create a new .NET Core project.
+3. Copy and paste the code from the example into your code editor.
+4. Enter the [dotnet restore](../../core/tools/dotnet-restore.md) command from the command line to load or restore the project's dependencies.
 
   [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -133,6 +133,7 @@ Because of implicit inheritance, you can call any inherited member from a `Simpl
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/simpleclass2.cs#1)]
 
 The following table lists the categories of types that you can create in C# and the types from which they implicitly inherit. Each base type makes a different set of members available through inheritance to implicitly derived types.
+
 
 | Type category | Implicitly inherits from                                                      |
 | ------------- | ----------------------------------------------------------------------------- |

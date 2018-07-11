@@ -15,13 +15,13 @@ Figure 4-14: Inner-loop development context
 
 The container or instance of a Docker image will contain these components:
 
--   An operating system selection (for example, a Linux distribution or Windows)
+- An operating system selection (for example, a Linux distribution or Windows)
 
--   Files added by the developer (for example, app binaries)
+- Files added by the developer (for example, app binaries)
 
--   Configuration (for example, environment settings and dependencies)
+- Configuration (for example, environment settings and dependencies)
 
--   Instructions for what processes to run by Docker
+- Instructions for what processes to run by Docker
 
 You can set up the inner-loop development workflow that utilizes Docker as the process (described in the next section). Take into account that the initial steps to set up the environment is not included, because you need to do that just once.
 
@@ -177,13 +177,13 @@ services:
 
 In this particular case, this file defines two services: the web service (your custom service) and the redis service (a popular cache service). Each service will be deployed as a container, so we need to use a concrete Docker image for each. For this particular web service, the image will need to do the following:
 
--   Build from the DockerFile in the current directory
+- Build from the DockerFile in the current directory
 
--   Forward the exposed port 80 on the container to port 81 on the host machine
+- Forward the exposed port 80 on the container to port 81 on the host machine
 
--   Mount the project directory on the host to /code within the container, making it possible for you to modify the code without having to rebuild the image
+- Mount the project directory on the host to /code within the container, making it possible for you to modify the code without having to rebuild the image
 
--   Link the web service to the redis service
+- Link the web service to the redis service
 
 The redis service uses the [latest public redis image](https://hub.docker.com/_/redis/) pulled from the Docker Hub registry. [redis](https://redis.io/) is a very popular cache system for server-side applications.
 
@@ -254,6 +254,6 @@ You also can debug .NET Core containers in Docker when using Visual Studio, as d
 user\_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/](https://blogs.msdn.microsoft.com/user_ed/2016/02/27/visual-studio-code-new-features-13-big-debugging-updates-rich-object-hover-conditional-breakpoints-node-js-mono-more/).
 
 
->[!div class="step-by-step"]
-[Previous](docker-apps-development-environment.md)
-[Next](visual-studio-tools-for-docker.md)
+> [!div  class="step-by-step"]
+> [Previous](docker-apps-development-environment.md)
+> [Next](visual-studio-tools-for-docker.md)

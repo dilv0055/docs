@@ -5,7 +5,6 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
 ---
-
 # Architect Modern Web Applications with ASP.NET Core and Azure
 
 ![cover image](./media/cover.png)
@@ -28,7 +27,7 @@ This book is provided “as-is” and expresses the author’s views and opinion
 
 Some examples depicted herein are provided for illustration only and are fictitious. No real association or connection is intended or should be inferred.
 
-Microsoft and the trademarks listed at https://www.microsoft.com on the “Trademarks” webpage are trademarks of the Microsoft group of companies.
+Microsoft and the trademarks listed at <https://www.microsoft.com> on the “Trademarks” webpage are trademarks of the Microsoft group of companies.
 
 Mac and macOS are trademarks of Apple Inc.
 
@@ -38,7 +37,7 @@ All other marks and logos are property of their respective owners.
 
 Author:
 
-> **Steve Smith (@ardalis)**, Software Architecture Advisor, [Ardalis.com](https://ardalis.com)
+> **Steve Smith (@"ardalis)"**, Software Architecture Advisor, [Ardalis.com](https://ardalis.com)
 
 Editors:
 
@@ -78,7 +77,7 @@ Building web applications with ASP.NET Core, hosted in Azure, offers many compet
 
 This guide provides end-to-end guidance on building monolithic web applications using ASP.NET Core and Azure.
 
-This guide is complementary to the ["_.NET Microservices. Architecture for Containerized .NET Applications_"](../microservices-architecture/index.md) which focuses more on Docker, Microservices, and Deployment of Containers to host enterprise applications.
+This guide is complementary to the ["*.NET Microservices. Architecture for Containerized .NET Applications*"](../microservices-architecture/index.md) which focuses more on Docker, Microservices, and Deployment of Containers to host enterprise applications.
 
 ### .NET Microservices. Architecture for Containerized .NET Applications
 
@@ -104,5 +103,5 @@ Feel free to forward this guide to your team to help ensure a common understandi
 - **Choosing between .NET Core and .NET Framework for server apps**  
   <https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server>
 
->[!div class="step-by-step"]
-[Next](modern-web-applications-characteristics.md)
+> [!div  class="step-by-step"]
+> [Next](modern-web-applications-characteristics.md)

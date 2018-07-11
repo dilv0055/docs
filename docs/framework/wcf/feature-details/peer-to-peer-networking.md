@@ -21,4 +21,4 @@ Peer Channel is a multiparty, peer-to-peer (P2P) communication technology in Win
  [Peer Channel Custom Peer Resolver](http://msdn.microsoft.com/library/5b75a2bb-7ff1-4a14-abe7-3debf0537d23)  
   
 ## Peer Channel Team blog  
- [Peer Channel Team Blog](http://go.microsoft.com/fwlink/?LinkID=114530) (http://go.microsoft.com/fwlink/?LinkID=114530)
+ [Peer Channel Team Blog](http://go.microsoft.com/fwlink/?LinkID=114530) (<http://go.microsoft.com/fwlink/?LinkID=114530>)

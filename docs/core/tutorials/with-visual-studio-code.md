@@ -21,32 +21,32 @@ Let's get started with a simple "Hello World" program on .NET Core:
 
 1. Open a project:
 
-    * Open Visual Studio Code.
-    * Click on the Explorer icon on the left menu and then click **Open Folder**.
-    * Select **File** > **Open Folder** from the main menu to open the folder you want your C# project to be in and click **Select Folder**. For our example, we're creating a folder for our project named *HelloWorld*.
+   * Open Visual Studio Code.
+   * Click on the Explorer icon on the left menu and then click **Open Folder**.
+   * Select **File** > **Open Folder** from the main menu to open the folder you want your C# project to be in and click **Select Folder**. For our example, we're creating a folder for our project named *HelloWorld*.
 
-      ![VSCodeOpenFolder](media/with-visual-studio-code/vscodeopenfolder.png)
+     ![VSCodeOpenFolder](media/with-visual-studio-code/vscodeopenfolder.png)
 
 2. Initialize a C# project:
-    * Open the Integrated Terminal from Visual Studio Code by selecting **View** > **Integrated Terminal** from the main menu.
-    * In the terminal window, type `dotnet new console`.
-    * This command creates a `Program.cs` file in your folder with a simple "Hello World" program already written, along with a C# project file named `HelloWorld.csproj`.
+   * Open the Integrated Terminal from Visual Studio Code by selecting **View** > **Integrated Terminal** from the main menu.
+   * In the terminal window, type `dotnet new console`.
+   * This command creates a `Program.cs` file in your folder with a simple "Hello World" program already written, along with a C# project file named `HelloWorld.csproj`.
 
-      ![The dotnet new command](media/with-visual-studio-code/dotnetnew.png)
+     ![The dotnet new command](media/with-visual-studio-code/dotnetnew.png)
 
 3. Resolve the build assets:
 
-    * For **.NET Core 1.x**, type `dotnet restore`. Running `dotnet restore` gives you access to the  required .NET Core packages that are needed to build your project.
+   * For **.NET Core 1.x**, type `dotnet restore`. Running `dotnet restore` gives you access to the  required .NET Core packages that are needed to build your project.
 
-      ![The dotnet restore command](media/with-visual-studio-code/dotnetrestore.png)
+     ![The dotnet restore command](media/with-visual-studio-code/dotnetrestore.png)
 
-      [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
+     [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 4. Run the "Hello World" program:
 
-    * Type `dotnet run`. 
+   * Type `dotnet run`. 
 
-      ![The dotnet run command](media/with-visual-studio-code/dotnetrun.png)
+     ![The dotnet run command](media/with-visual-studio-code/dotnetrun.png)
 
 You can also watch a short video tutorial for further setup help on [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS), or [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
@@ -73,13 +73,13 @@ You can also watch a short video tutorial for further setup help on [Windows](ht
     ![Setting a Breakpoint](media/with-visual-studio-code/setbreakpoint.png)
 
 6. To start debugging, select <kbd>F5</kbd> or the green arrow. The debugger stops execution of your program when it reaches the breakpoint you set in the previous step.
-    * While debugging, you can view your local variables in the top left pane or use the debug console.
+   * While debugging, you can view your local variables in the top left pane or use the debug console.
 
     ![Run and Debug](media/with-visual-studio-code/rundebug.png)
 
 7. Select the green arrow at the top to continue debugging, or select the red square at the top to stop.
 
-> [!TIP] 
+> [!TIP]
 > For more information and troubleshooting tips on .NET Core debugging with OmniSharp in Visual Studio Code, see [Instructions for setting up the .NET Core debugger](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md).
 
 ## See also

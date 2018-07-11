@@ -14,11 +14,11 @@ The `join` clause is useful for associating elements from different source seque
   
  A `join` clause takes two source sequences as input. The elements in each sequence must either be or contain a property that can be compared to a corresponding property in the other sequence. The `join` clause compares the specified keys for equality by using the special `equals` keyword. All joins performed by the `join` clause are equijoins. The shape of the output of a `join` clause depends on the specific type of join you are performing. The following are three most common join types:  
   
--   Inner join  
+- Inner join  
   
--   Group join  
+- Group join  
   
--   Left outer join  
+- Left outer join  
   
 ## Inner Join  
  The following example shows a simple inner equijoin. This query produces a flat sequence of "product name / category" pairs. The same category string will appear in multiple elements. If an element from `categories` has no matching `products`, that category will not appear in the results.  

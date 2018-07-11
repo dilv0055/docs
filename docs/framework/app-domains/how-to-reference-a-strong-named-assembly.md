@@ -24,11 +24,11 @@ The process for referencing types or resources in a strong-named assembly is usu
   
 ### To make a compile-time reference to a strong-named assembly  
   
-1.  At the command prompt, type the following command:  
+1. At the command prompt, type the following command:  
   
-     \<*compiler command*> **/reference:**\<*assembly name*>  
+    \<*compiler command*> **/reference:**\<*assembly name*>  
   
-     In this command, *compiler command* is the compiler command for the language you are using, and *assembly name* is the name of the strong-named assembly being referenced. You can also use other compiler options, such as the **/t:library** option for creating a library assembly.  
+    In this command, *compiler command* is the compiler command for the language you are using, and *assembly name* is the name of the strong-named assembly being referenced. You can also use other compiler options, such as the **/t:library** option for creating a library assembly.  
   
  The following example creates an assembly called `myAssembly.dll` that references a strong-named assembly called `myLibAssembly.dll` from a code module called `myAssembly.cs`.  
   
@@ -38,17 +38,17 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
   
 ### To make a run-time reference to a strong-named assembly  
   
-1.  When you make a run-time reference to a strong-named assembly (for example, by using the <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> or <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> method), you must use the display name of the referenced strong-named assembly. The syntax of a display name is as follows:  
+1. When you make a run-time reference to a strong-named assembly (for example, by using the <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> or <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType> method), you must use the display name of the referenced strong-named assembly. The syntax of a display name is as follows:  
   
-     \<*assembly name*>**,** \<*version number*>**,** \<*culture*>**,** \<*public key token*>  
+    \<*assembly name*>**,** \<*version number*>**,** \<*culture*>**,** \<*public key token*>  
   
-     For example:  
+    For example:  
   
-    ```  
-    myDll, Version=1.1.0.0, Culture=en, PublicKeyToken=03689116d3a4ae33   
-    ```  
+   ```  
+   myDll, Version=1.1.0.0, Culture=en, PublicKeyToken=03689116d3a4ae33   
+   ```  
   
-     In this example, `PublicKeyToken` is the hexadecimal form of the public key token. If there is no culture value, use `Culture=neutral`.  
+    In this example, `PublicKeyToken` is the hexadecimal form of the public key token. If there is no culture value, use `Culture=neutral`.  
   
  The following code example shows how to use this information with the <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> method.  
   

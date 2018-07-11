@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # ICLRAssemblyIdentityManager::GetCLRAssemblyReferenceList Method
 Gets an interface pointer to an [ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md) instance from the supplied list of partial assembly identities.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT  GetCLRAssemblyReferenceList (  
     [in] LPCWSTR *ppwzAssemblyReferences,  
@@ -30,19 +30,20 @@ HRESULT  GetCLRAssemblyReferenceList (
     [out] ICLRAssemblyReferenceList **ppReferenceList  
 );  
 ```  
-  
+
 #### Parameters  
  `ppwzAssemblyReferences`  
  [in] An array of null-terminated strings in the form "name, property=value..." that specify a list of partial assembly identities.  
-  
+
  `dwNumOfReferences`  
  [in] The number of items in `ppwzAssemblyReferences`.  
-  
+
  `ppReferenceList`  
  [out] An interface pointer to an `ICLRAssemblyReferenceList` object that contains the assembly identity data for the list of assemblies specified in `ppwzAssemblyReferences`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|The method returned successfully.|  
@@ -51,16 +52,16 @@ HRESULT  GetCLRAssemblyReferenceList (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. If a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  
  [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)

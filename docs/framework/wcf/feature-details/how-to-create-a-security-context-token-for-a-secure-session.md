@@ -22,65 +22,65 @@ By using a stateful security context token (SCT) in a secure session, the sessio
   
 ### To use stateful SCTs in a secure session  
   
--   Create a custom binding that specifies that SOAP messages are protected by a secure session that uses a stateful SCT.  
+- Create a custom binding that specifies that SOAP messages are protected by a secure session that uses a stateful SCT.  
   
-    1.  Define a custom binding, by adding a [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) to the configuration file for the service.  
+  1. Define a custom binding, by adding a [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) to the configuration file for the service.  
   
-        ```xml  
-        <customBinding>  
-        ```  
+     ```xml  
+     <customBinding>  
+     ```  
   
-    2.  Add a [\<binding>](../../../../docs/framework/misc/binding.md) child element to the [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+  2. Add a [\<binding>](../../../../docs/framework/misc/binding.md) child element to the [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
-         Specify a binding name by setting the `name` attribute to a unique name within the configuration file.  
+      Specify a binding name by setting the `name` attribute to a unique name within the configuration file.  
   
-        ```xml  
-        <binding name="StatefulSCTSecureSession">  
-        ```  
+     ```xml  
+     <binding name="StatefulSCTSecureSession">  
+     ```  
   
-    3.  Specify the authentication mode for messages sent to and from this service by adding a [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) child element to the [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+  3. Specify the authentication mode for messages sent to and from this service by adding a [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) child element to the [\<customBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
-         Specify that a secure session is used by setting the `authenticationMode` attribute to `SecureConversation`. Specify that stateful SCTs are used by setting the `requireSecurityContextCancellation` attribute to `false`.  
+      Specify that a secure session is used by setting the `authenticationMode` attribute to `SecureConversation`. Specify that stateful SCTs are used by setting the `requireSecurityContextCancellation` attribute to `false`.  
   
-        ```xml  
-        <security authenticationMode="SecureConversation"  
-                  requireSecurityContextCancellation="false">  
-        ```  
+     ```xml  
+     <security authenticationMode="SecureConversation"  
+               requireSecurityContextCancellation="false">  
+     ```  
   
-    4.  Specify how the client is authenticated while the secure session is established by adding a [\<secureConversationBootstrap>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) child element to the [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).  
+  4. Specify how the client is authenticated while the secure session is established by adding a [\<secureConversationBootstrap>](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) child element to the [\<security>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).  
   
-         Specify how the client is authenticated by setting the `authenticationMode` attribute.  
+      Specify how the client is authenticated by setting the `authenticationMode` attribute.  
   
-        ```xml  
+     ```xml  
+     <secureConversationBootstrap authenticationMode="UserNameForCertificate" />  
+     ```  
+  
+  5. Specify the message encoding by adding an encoding element, such as [\<textMessageEncoding>](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
+  
+     ```xml  
+     <textMessageEncoding />  
+     ```  
+  
+  6. Specify the transport by adding a transport element, such as the [\<httpTransport>](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md).  
+  
+     ```xml  
+     <httpTransport />  
+     ```  
+  
+   The following code example uses configuration to specify a custom binding that messages can use with stateful SCTs in a secure session.  
+  
+  ```xml  
+  <customBinding>  
+    <binding name="StatefulSCTSecureSession">  
+      <security authenticationMode="SecureConversation"  
+                requireSecurityContextCancellation="false">  
         <secureConversationBootstrap authenticationMode="UserNameForCertificate" />  
-        ```  
-  
-    5.  Specify the message encoding by adding an encoding element, such as [\<textMessageEncoding>](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
-  
-        ```xml  
-        <textMessageEncoding />  
-        ```  
-  
-    6.  Specify the transport by adding a transport element, such as the [\<httpTransport>](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md).  
-  
-        ```xml  
-        <httpTransport />  
-        ```  
-  
-     The following code example uses configuration to specify a custom binding that messages can use with stateful SCTs in a secure session.  
-  
-    ```xml  
-    <customBinding>  
-      <binding name="StatefulSCTSecureSession">  
-        <security authenticationMode="SecureConversation"  
-                  requireSecurityContextCancellation="false">  
-          <secureConversationBootstrap authenticationMode="UserNameForCertificate" />  
-        </security>  
-        <textMessageEncoding />  
-        <httpTransport />  
-      </binding>  
-    </customBinding>  
-    ```  
+      </security>  
+      <textMessageEncoding />  
+      <httpTransport />  
+    </binding>  
+  </customBinding>  
+  ```  
   
 ## Example  
  The following code example creates a custom binding that uses the <xref:System.ServiceModel.Configuration.AuthenticationMode.MutualCertificate> authentication mode to bootstrap a secure session.  

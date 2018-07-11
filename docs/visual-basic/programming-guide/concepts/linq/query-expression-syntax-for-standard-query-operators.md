@@ -5,10 +5,11 @@ ms.assetid: eb978d86-d3b5-497b-95ce-a054bea8f510
 ---
 # Query Expression Syntax for Standard Query Operators (Visual Basic)
 Some of the more frequently used standard query operators have dedicated Visual Basic language keyword syntax that enables them to be called as part of a *query expression*. A query expression is a different, more readable form of expressing a query than its *method-based*  equivalent. Query expression clauses are translated into calls to the query methods at compile time.  
-  
+
 ## Query Expression Syntax Table  
  The following table lists the standard query operators that have equivalent query expression clauses.  
-  
+
+
 |Method|Visual Basic Query Expression Syntax|  
 |------------|------------------------------------------|  
 |<xref:System.Linq.Enumerable.All%2A>|`Aggregate … In … Into All(…)`<br /><br /> (For more information, see [Aggregate Clause](../../../../visual-basic/language-reference/queries/aggregate-clause.md).)|  
@@ -35,7 +36,7 @@ Some of the more frequently used standard query operators have dedicated Visual 
 |<xref:System.Linq.Enumerable.ThenBy%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29>|`Order By …, …`<br /><br /> (For more information, see [Order By Clause](../../../../visual-basic/language-reference/queries/order-by-clause.md).)|  
 |<xref:System.Linq.Enumerable.ThenByDescending%60%602%28System.Linq.IOrderedEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29>|`Order By …, … Descending`<br /><br /> (For more information, see [Order By Clause](../../../../visual-basic/language-reference/queries/order-by-clause.md).)|  
 |<xref:System.Linq.Enumerable.Where%2A>|`Where`<br /><br /> (For more information, see [Where Clause](../../../../visual-basic/language-reference/queries/where-clause.md).)|  
-  
+
 ## See Also  
  <xref:System.Linq.Enumerable>  
  <xref:System.Linq.Queryable>  

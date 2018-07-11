@@ -10,24 +10,25 @@ ms.author: "mairaw"
 ---
 # MDbg.exe (.NET Framework Command-Line Debugger)
 The NET Framework Command-Line Debugger helps tools vendors and application developers find and fix bugs in programs that target the .NET Framework common language runtime. This tool uses the runtime debugging API to provide debugging services. You can use MDbg.exe to debug only managed code; there is no support for debugging unmanaged code.  
-  
+
  This tool is available through NuGet. For installation information, see [MDbg 0.1.0](http://www.nuget.org/packages/MDbg/0.1.0). To run the tool, use the Package Manager Console. For more information how to use the Package Manager Console, see [Using the Package Manager Console](http://docs.nuget.org/docs/start-here/Using-the-Package-Manager-Console).  
-  
+
  At the Package Manager prompt, type the following:  
-  
+
 ## Syntax  
-  
+
 ```  
 MDbg [ProgramName[arguments]] [options]  
 ```  
-  
+
 ## Commands  
  When you are in the debugger (as indicated by the **mdbg>** prompt), type one of the commands described in the next section:  
-  
+
  **command** [*arguments*]  
-  
+
  MDbg.exe commands are case-sensitive.  
-  
+
+
 |Command|Description|  
 |-------------|-----------------|  
 |**ap**[**rocess**] [*number*]|Switches to another debugged process or prints available processes. The numbers are not real process IDs (PIDs), but a 0-indexed list.|  
@@ -78,28 +79,28 @@ MDbg [ProgramName[arguments]] [options]
 |**when**|Displays the currently active `when` statements.<br /><br /> **when** **delete all** &#124; `num` [`num` [`num` …]] - Deletes the `when` statement specified by the number, or all `when` statements if `all` is specified.<br /><br /> **when** `stopReason` [`specific_condition`] **do**`cmd` [`cmd` [`cmd` …] ] - The *stopReason* parameter can be one of the following:<br /><br /> `StepComplete`, `ProcessExited`, `ThreadCreated`, `BreakpointHit`, `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ControlCTrapped`, `ExceptionThrown`, `UnhandledExceptionThrown`, `AsyncStop`, `AttachComplete`, `UserBreak`, `EvalComplete`, `EvalException`, `RemapOpportunityReached`, `NativeStop`.<br /><br /> *specific_condition* can be one of the following:<br /><br /> -   *number* - For `ThreadCreated` and `BreakpointHit`, triggers action only when stopped by a thread ID/breakpoint number with same value.<br />-   [`!`]*name* - For `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ExceptionThrown`, and `UnhandledExceptionThrown`, triggers action only when the name matches the name of the *stopReason*.<br /><br /> *specific_condition* must be empty for other values of *stopReason*.|  
 |**w**[**here**] [`-v`] [`-c` *depth*] [*threadID*]|Displays debug information about stack frames.<br /><br /> -   The `-v` option provides verbose information about each displayed stack frame.<br />-   Specifying a number for `depth` limits how many frames are displayed. Use the **all** command to display all frames. The default is 100.<br />-   If you specify the *threadID* parameter, you can control which thread is associated with the stack. The default is the current thread only. Use the **all** command to get all threads.|  
 |**x** [`-c`*numSymbols*] [*module*[`!`*pattern*]]|Displays functions that match the `pattern` for a module.<br /><br /> If *numSymbols* is specified, the output is limited to the specified number. If `!` (indicating a regular expression) is not specified for *pattern*, all functions are displayed. If *module* is not provided, all loaded modules are displayed. Symbols (*~#*) can be used to set breakpoints using the **break** command.|  
-  
+
 ## Remarks  
  Compile the application to be debugged by using compiler-specific flags that cause your compiler to generate debugging symbols. Refer to your compiler's documentation for more information about these flags. You can debug optimized applications, but some debugging information will be missing. For example, many local variables will not be visible and source lines will be inaccurate.  
-  
+
  After you compile your application, type **mdbg** at the command prompt to start a debugging session, as shown in the following example.  
-  
+
 ```  
 C:\Program Files\Microsoft Visual Studio 8\VC>mdbg  
 MDbg (Managed debugger) v2.0.50727.42 (RTM.050727-4200) started.  
 Copyright (C) Microsoft Corporation. All rights reserved.  
-  
+
 For information about commands type "help";  
 to exit program type "quit".  
 mdbg>  
 ```  
-  
+
  The `mdbg>` prompt indicates that you are in the debugger.  
-  
+
  Once you are in the debugger, use the commands and arguments described in the previous section.  
-  
+
 ## Examples  
-  
+
 ## See Also  
  [Tools](../../../docs/framework/tools/index.md)  
  [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

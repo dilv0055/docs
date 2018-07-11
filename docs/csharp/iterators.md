@@ -4,7 +4,6 @@ description: Learn how to use built-in C# iterators and how to create your own c
 ms.date: 06/20/2016
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
 ---
-
 # Iterators
 
 Almost every program you write will have some need to iterate
@@ -18,7 +17,7 @@ iterator for the elements of that class. These can be used for:
 + Enumerating a custom collection.
 + Extending [LINQ](linq/index.md) or other libraries.
 + Creating a data pipeline where data flows efficiently through iterator
-methods.
+  methods.
 
 The C# language provides
 features for both these scenarios. This article provides an overview
@@ -31,7 +30,7 @@ This tutorial has multiple steps. After each step, you can run the application a
 Enumerating a collection is simple: The `foreach` keyword enumerates
 a collection, executing the embedded statement once for each element
 in the collection:
- 
+
 ```csharp
 foreach (var item in collection)
 {
@@ -97,9 +96,9 @@ public IEnumerable<int> GetSingleDigitNumbers()
     int index = 0;
     while (index++ < 10)
         yield return index;
-        
+
     yield return 50;
-    
+
     index = 100;
     while (index++ < 110)
         yield return index;
@@ -134,9 +133,9 @@ public IEnumerable<int> GetSingleDigitNumbers()
     int index = 0;
     while (index++ < 10)
         yield return index;
-        
+
     yield return 50;
-   
+
     // generates a compile time error: 
     var items = new int[] {100, 101, 102, 103, 104, 105, 106, 107, 108, 109 };
     return items;  
@@ -155,15 +154,15 @@ public IEnumerable<int> GetSingleDigitNumbers()
     int index = 0;
     while (index++ < 10)
         yield return index;
-        
+
     yield return 50;
-   
+
     var items = new int[] {100, 101, 102, 103, 104, 105, 106, 107, 108, 109 };
     foreach (var item in items)
         yield return item;
 }
 ```
- 
+
 Sometimes, the right answer is to split an iterator method into two different
 methods. One that uses `return`, and a second that uses `yield return`. Consider
 a situation where you might want to return an empty collection, or the first 5
@@ -187,7 +186,7 @@ private IEnumerable<int> IteratorMethod()
             yield return index;
 }
 ```
- 
+
 Look at the methods above. The first uses the standard `return` statement to return
 either an empty collection, or the iterator created by the second method. The second
 method uses the `yield return` statement to create the requested sequence.

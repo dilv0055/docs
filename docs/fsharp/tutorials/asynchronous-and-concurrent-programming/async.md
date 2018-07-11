@@ -12,7 +12,7 @@ Async programming in F# can be accomplished through a language-level programming
 
 The core of async programming in F# is `Async<'T>`, a representation of work that can be triggered to run in the background, where `'T` is either the type returned via the special `return` keyword or `unit` if the async workflow has no result to return.
 
-The key concept to understand is that an async expression’s type is `Async<'T>`, which is merely a _specification_ of work to be done in an asynchronous context. It is not executed until you explicitly start it with one of the starting functions (such as `Async.RunSynchronously`). Although this is a different way of thinking about doing work, it ends up being quite simple in practice.
+The key concept to understand is that an async expression’s type is `Async<'T>`, which is merely a *specification* of work to be done in an asynchronous context. It is not executed until you explicitly start it with one of the starting functions (such as `Async.RunSynchronously`). Although this is a different way of thinking about doing work, it ends up being quite simple in practice.
 
 For example, say you wanted to download the HTML from dotnetfoundation.org without blocking the main thread. You can accomplish it like this:
 
@@ -39,11 +39,11 @@ And that’s it! Aside from the use of `async`, `let!`, and `return`, this is ju
 
 There are a few syntactical constructs which are worth noting:
 
-*   `let!` binds the result of an async expression (which runs on another context).
-*   `use!` works just like `let!`, but disposes its bound resources when it goes out of scope.
-*   `do!` will await an async workflow which doesn’t return anything.
-*   `return` simply returns a result from an async expression.
-*   `return!` executes another async workflow and returns its return value as a result.
+* `let!` binds the result of an async expression (which runs on another context).
+* `use!` works just like `let!`, but disposes its bound resources when it goes out of scope.
+* `do!` will await an async workflow which doesn’t return anything.
+* `return` simply returns a result from an async expression.
+* `return!` executes another async workflow and returns its return value as a result.
 
 Additionally, normal `let`, `use`, and `do` keywords can be used alongside the async versions just as they would in a normal function.
 
@@ -51,7 +51,7 @@ Additionally, normal `let`, `use`, and `do` keywords can be used alongside the a
 
 As mentioned earlier, async code is a specification of work to be done in another context which needs to be explicitly started. Here are two primary ways to accomplish this:
 
-1.  `Async.RunSynchronously` will start an async workflow on another thread and await its result.
+1. `Async.RunSynchronously` will start an async workflow on another thread and await its result.
 
 ```fsharp
 open System
@@ -72,7 +72,7 @@ let fetchHtmlAsync url =
  printfn "%s" html
  ```
 
-2.  `Async.Start` will start an async workflow on another thread, and will **not** await its result.
+2. `Async.Start` will start an async workflow on another thread, and will **not** await its result.
 
 ```fsharp
 open System
@@ -138,11 +138,11 @@ for html in htmlList do
 
 ## Important Info and Advice
 
-*   Append "Async" to the end of any functions you’ll consume
+* Append "Async" to the end of any functions you’ll consume
 
  Although this is just a naming convention, it does make things like API discoverability easier. Particularly if there are synchronous and asynchronous versions of the same routine, it’s a good idea to explicitly state which is asynchronous via the name.
 
-*   Listen to the compiler!
+* Listen to the compiler!
 
  F#’s compiler is very strict, making it nearly impossible to do something troubling like run "async" code synchronously. If you come across a warning, that’s a sign that the code won’t execute how you think it will. If you can make the compiler happy, your code will most likely execute as expected.
 
@@ -158,29 +158,29 @@ There are a few other similarities and differences worth noting.
 
 ### Similarities
 
-*   `let!`, `use!`, and `do!` are analogous to `await` when calling an async job from within an `async{ }` block.
+* `let!`, `use!`, and `do!` are analogous to `await` when calling an async job from within an `async{ }` block.
 
  The three keywords can only be used within an `async { }` block, similar to how `await` can only be invoked inside an `async` method. In short, `let!` is for when you want to capture and use a result, `use!` is the same but for something whose resources should get cleaned after it’s used, and `do!` is for when you want to wait for an async workflow with no return value to finish before moving on.
 
-*   F# supports data-parallelism in a similar way.
+* F# supports data-parallelism in a similar way.
 
  Although it operates very differently, `Async.Parallel` corresponds to `Task.WhenAll` for the scenario of wanting the results of a set of async jobs when they all complete.
 
 ### Differences
 
-*   Nested `let!` is not allowed, unlike nested `await`
+* Nested `let!` is not allowed, unlike nested `await`
 
  Unlike `await`, which can be nested indefinitely, `let!` cannot and must have its result bound before using it inside of another `let!`, `do!`, or `use!`.
 
-*   Cancellation support is simpler in F# than in C#/VB.
+* Cancellation support is simpler in F# than in C#/VB.
 
  Supporting cancellation of a task midway through its execution in C#/VB requires checking the `IsCancellationRequested` property or calling `ThrowIfCancellationRequested()` on a `CancellationToken` object that’s passed into the async method.
 
 In contrast, F# async workflows are more naturally cancellable. Cancellation is a simple three-step process.
 
-1.  Create a new `CancellationTokenSource`.
-2.  Pass it into a starting function.
-3.  Call `Cancel` on the token.
+1. Create a new `CancellationTokenSource`.
+2. Pass it into a starting function.
+3. Call `Cancel` on the token.
 
 Example:
 
@@ -208,6 +208,6 @@ And that’s it!
 
 ## Further resources:
 
-*   [Async Workflows on MSDN](https://msdn.microsoft.com/library/dd233250.aspx)
-*   [Asynchronous Sequences for F#](https://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html)
-*   [F# Data HTTP Utilities](https://fsharp.github.io/FSharp.Data/library/Http.html)
+* [Async Workflows on MSDN](https://msdn.microsoft.com/library/dd233250.aspx)
+* [Asynchronous Sequences for F#](https://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html)
+* [F# Data HTTP Utilities](https://fsharp.github.io/FSharp.Data/library/Http.html)

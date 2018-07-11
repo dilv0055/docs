@@ -23,60 +23,60 @@ The methods used most often for tracing are the methods for writing output to li
   
 ### To write a complete line  
   
-1.  Call the <xref:System.Diagnostics.Trace.WriteLine%2A> or <xref:System.Diagnostics.Trace.WriteLineIf%2A> method.  
+1. Call the <xref:System.Diagnostics.Trace.WriteLine%2A> or <xref:System.Diagnostics.Trace.WriteLineIf%2A> method.  
   
-     A carriage return is appended to the end of the message this method returns, so that the next message returned by **Write**, **WriteIf**, **WriteLine**, or **WriteLineIf** will begin on the following line:  
+    A carriage return is appended to the end of the message this method returns, so that the next message returned by **Write**, **WriteIf**, **WriteLine**, or **WriteLineIf** will begin on the following line:  
   
-    ```vb  
-    Dim errorFlag As Boolean = False  
-    Trace.WriteLine("Error in AppendData procedure.")  
-    Trace.WriteLineIf(errorFlag, "Error in AppendData procedure.")  
-    ```  
+   ```vb  
+   Dim errorFlag As Boolean = False  
+   Trace.WriteLine("Error in AppendData procedure.")  
+   Trace.WriteLineIf(errorFlag, "Error in AppendData procedure.")  
+   ```  
   
-    ```csharp  
-    bool errorFlag = false;  
-    System.Diagnostics.Trace.WriteLine ("Error in AppendData procedure.");  
-    System.Diagnostics.Trace.WriteLineIf(errorFlag,   
-       "Error in AppendData procedure.");  
-    ```  
+   ```csharp  
+   bool errorFlag = false;  
+   System.Diagnostics.Trace.WriteLine ("Error in AppendData procedure.");  
+   System.Diagnostics.Trace.WriteLineIf(errorFlag,   
+      "Error in AppendData procedure.");  
+   ```  
   
 ### To write a partial line  
   
-1.  Call the <xref:System.Diagnostics.Trace.Write%2A> or <xref:System.Diagnostics.Trace.WriteIf%2A> method.  
+1. Call the <xref:System.Diagnostics.Trace.Write%2A> or <xref:System.Diagnostics.Trace.WriteIf%2A> method.  
   
-     The next message put out by a **Write**, **WriteIf**, **WriteLine**, or **WriteLineIf** will begin on the same line as the message put out by the **Write** or **WriteIf** statement:  
+    The next message put out by a **Write**, **WriteIf**, **WriteLine**, or **WriteLineIf** will begin on the same line as the message put out by the **Write** or **WriteIf** statement:  
   
-    ```vb  
-    Dim errorFlag As Boolean = False  
-    Trace.WriteIf(errorFlag, "Error in AppendData procedure.")  
-    Debug.WriteIf(errorFlag, "Transaction abandoned.")  
-    Trace.Write("Invalid value for data request")  
-    ```  
+   ```vb  
+   Dim errorFlag As Boolean = False  
+   Trace.WriteIf(errorFlag, "Error in AppendData procedure.")  
+   Debug.WriteIf(errorFlag, "Transaction abandoned.")  
+   Trace.Write("Invalid value for data request")  
+   ```  
   
-    ```csharp  
-    bool errorFlag = false;  
-    System.Diagnostics.Trace.WriteIf(errorFlag,   
-       "Error in AppendData procedure.");  
-    System.Diagnostics.Debug.WriteIf(errorFlag, "Transaction abandoned.");  
-    Trace.Write("Invalid value for data request");  
-    ```  
+   ```csharp  
+   bool errorFlag = false;  
+   System.Diagnostics.Trace.WriteIf(errorFlag,   
+      "Error in AppendData procedure.");  
+   System.Diagnostics.Debug.WriteIf(errorFlag, "Transaction abandoned.");  
+   Trace.Write("Invalid value for data request");  
+   ```  
   
 ### To verify that certain conditions exist either before or after you execute a method  
   
-1.  Call the <xref:System.Diagnostics.Trace.Assert%2A> method.  
+1. Call the <xref:System.Diagnostics.Trace.Assert%2A> method.  
   
-    ```vb  
-    Dim i As Integer = 4  
-    Trace.Assert(i = 5, "i is not equal to 5.")  
-    ```  
+   ```vb  
+   Dim i As Integer = 4  
+   Trace.Assert(i = 5, "i is not equal to 5.")  
+   ```  
   
-    ```csharp  
-    int i = 4;  
-    System.Diagnostics.Trace.Assert(i == 5, "i is not equal to 5.");  
-    ```  
+   ```csharp  
+   int i = 4;  
+   System.Diagnostics.Trace.Assert(i == 5, "i is not equal to 5.");  
+   ```  
   
-    > [!NOTE]
-    >  You can use **Assert** with both tracing and debugging. This example outputs the call stack to any listener in the **Listeners** collection. For more information, see [Assertions in Managed Code](/visualstudio/debugger/assertions-in-managed-code) and <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
+   > [!NOTE]
+   >  You can use **Assert** with both tracing and debugging. This example outputs the call stack to any listener in the **Listeners** collection. For more information, see [Assertions in Managed Code](/visualstudio/debugger/assertions-in-managed-code) and <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
   
 ## See Also  
  <xref:System.Diagnostics.Debug.WriteIf%2A?displayProperty=nameWithType>  

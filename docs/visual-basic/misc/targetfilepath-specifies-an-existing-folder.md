@@ -8,7 +8,7 @@ The parameter `TargetFilePath` specifies an existing directory but must specify 
   
 ## To correct this error  
   
--   Change `TargetFilePath` to specify a new, rather than existing, directory.  
+- Change `TargetFilePath` to specify a new, rather than existing, directory.  
   
 ## See Also  
  [How to: Move a File](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-move-a-file.md)  

@@ -5,25 +5,26 @@ ms.assetid: 2204d82d-d962-4922-a79e-c9a231604f19
 ---
 # Choosing a Message Encoder
 This topic discusses criteria for choosing among the message encoders that are included in Windows Communication Foundation (WCF): binary, text, and Message Transmission Optimization Mechanism (MTOM).  
-  
+
  In WCF, you specify how to transfer data across a network between endpoints by means of a *binding*, which is made up of a sequence of *binding elements*. A message encoder is represented by a message encoding binding element in the binding stack. A binding includes optional protocol binding elements, such as a security binding element or reliable messaging binding element, a required message encoding binding element, and a required transport binding element.  
-  
+
  The message encoding binding element sits below the optional protocol binding elements and above the required transport binding element. On the outgoing side, a message encoder serializes the outgoing <xref:System.ServiceModel.Channels.Message> and passes it to the transport. On the incoming side, a message encoder receives the serialized form of a <xref:System.ServiceModel.Channels.Message> from the transport and passes it to the higher protocol layer, if present, or to the application, if not.  
-  
+
  When connecting to a pre-existing client or server, you may not have a choice about using a particular message encoding since you need to encode your messages in a way that the other side is expecting. However, if you are writing an WCF service, you can expose your service through multiple endpoints, each using a different message encoding. This allows clients to choose the best encoding for talking to your service over the endpoint that is best for them, as well as giving your clients the flexibility to choose the encoding that is best for them. Using multiple endpoints also allows you to combine the advantages of different message encodings with other binding elements.  
-  
+
 ## System-Provided Encoders  
  WCF includes three message encoders, which are represented by the following three classes:  
-  
--   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>, the text message encoder, supports both plain XML encoding and SOAP encoding. The plain XML encoding mode of the text message encoder is called "plain old XML" (POX) to distinguish it from text-based SOAP encoding. To enable POX, set the <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement.MessageVersion%2A> property to <xref:System.ServiceModel.Channels.MessageVersion.None%2A>. Use the text message encoder to interoperate with non-WCF endpoints.  
-  
--   <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>, the binary message encoder, uses a compact binary format and is optimized for WCF to WCF communication, and hence is not interoperable. This is also the most performant encoder of all the encoders WCF provides.  
-  
--   <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`>, the binding element, specifies the character encoding and message versioning for messages using MTOM encoding. MTOM is an efficient technology for transmitting binary data in WCF messages. The MTOM encoder attempts to create a balance between efficiency and interoperability. The MTOM encoding transmits most XML in textual form, but optimizes large blocks of binary data by transmitting them as-is, without conversion to text. In terms of efficiency, among the encoders WCF provides, MTOM is in-between text (the slowest) and binary (the fastest).  
-  
+
+- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>, the text message encoder, supports both plain XML encoding and SOAP encoding. The plain XML encoding mode of the text message encoder is called "plain old XML" (POX) to distinguish it from text-based SOAP encoding. To enable POX, set the <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement.MessageVersion%2A> property to <xref:System.ServiceModel.Channels.MessageVersion.None%2A>. Use the text message encoder to interoperate with non-WCF endpoints.  
+
+- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>, the binary message encoder, uses a compact binary format and is optimized for WCF to WCF communication, and hence is not interoperable. This is also the most performant encoder of all the encoders WCF provides.  
+
+- <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`>, the binding element, specifies the character encoding and message versioning for messages using MTOM encoding. MTOM is an efficient technology for transmitting binary data in WCF messages. The MTOM encoder attempts to create a balance between efficiency and interoperability. The MTOM encoding transmits most XML in textual form, but optimizes large blocks of binary data by transmitting them as-is, without conversion to text. In terms of efficiency, among the encoders WCF provides, MTOM is in-between text (the slowest) and binary (the fastest).  
+
 ## How to Choose a Message Encoder  
  The following table describes common factors used to choose a message encoder. Prioritize the factors that are important for your application, and then choose the message encoders that work best with these factors. Be sure to consider any additional factors not listed in this table and any custom message encoders that may be required in your application.  
-  
+
+
 |Factor|Description|Encoders that support this factor|  
 |------------|-----------------|---------------------------------------|  
 |Supported Character Sets|<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> and <<!--zz xref:System.ServiceModel.Channels.MTOMMessageEncodingBindingElement --> `System.ServiceModel.Channels.MTOMMessageEncodingBindingElement`> support only the UTF8 and UTF16 Unicode (*big-endian* and *little-endian*) encodings. If other encodings are required, such as UTF7 or ASCII, a custom encoder must be used. For a sample custom encoder, see [Custom Message Encoder](http://go.microsoft.com/fwlink/?LinkId=119857).|Text|  
@@ -34,7 +35,7 @@ This topic discusses criteria for choosing among the message encoders that are i
 |Streaming|Streaming allows applications to begin processing a message before the entire message has arrived. Effectively using streaming requires that the important data for a message be available at the beginning of the message so that the receiving application is not required to wait for it to arrive. Moreover, applications that use streamed transfer must organize data in the message incrementally so that the content does not have forward dependencies. In many cases, you must compromise between streaming content and having the smallest possible transfer size for that content.|None|  
 |3rd Party Tool Support|Support areas for an encoding include development and diagnosis. Third-party developers have made a large investment in libraries and toolkits for handling messages encoded in the POX format.|Text (POX)|  
 |Interoperability|This factor refers to the ability of a WCF encoder to interoperate with non-WCF services.|Text<br /><br /> MTOM (partial)|  
-  
+
 Note: When using the Binary Encoder, using the IgnoreWhitespace setting when creating a XMLReader will have no effect.  For example, if you do the following inside a service operation:  
 
 ```csharp
@@ -52,9 +53,9 @@ public void OperationContract(XElement input)
     Console.WriteLine("Read {0} lines with reader", counter);
 }
 ```  
-  
+
 The IgnoreWhitespace setting is ignored.  
-  
+
 ## Compression and the Binary Encoder
 
 Beginning with WCF 4.5 the WCF binary encoder adds support for compression. This enables you to use the gzip/deflate algorithm for sending compressed messages from a WCF client and also respond with compressed messages from a self-hosted WCF service. This feature enables compression on both the HTTP and TCP transports. An IIS hosted WCF service can always be enabled for sending compressed responses by configuring the IIS host server. The type of compression is configured with the <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement.CompressionFormat%2A?displayProperty=nameWithType> property. This property is set to one of the <xref:System.ServiceModel.Channels.CompressionFormat?displayProperty=nameWithType> enum values:
@@ -62,7 +63,7 @@ Beginning with WCF 4.5 the WCF binary encoder adds support for compression. This
 * `CompressionFormat.Deflate`
 * `CompressionFormat.GZip`
 * `CompressionFormat.None`
-  
+
 Since this property is only exposed on the binaryMessageEncodingBindingElement, you will need to create a custom binding like the following to use this feature:
 
  ```xml
@@ -75,7 +76,7 @@ Since this property is only exposed on the binaryMessageEncodingBindingElement, 
  ```
 
 Both the client and the service need to agree to send and receive compressed messages and therefore the compressionFormat property must be configured on the binaryMessageEncoding element on both client and service. A ProtocolException is thrown if either the service or client is not configured for compression but the other side is.Enabling compression should be carefully considered. Compression is mostly useful if network bandwidth is a bottleneck. In the case where the CPU is the bottleneck, compression will decrease throughput. Appropriate testing must be done in a simulated environment to find out if this benefits the application  
-  
+
 ## See Also
 
 [Bindings](../../../../docs/framework/wcf/feature-details/bindings.md)

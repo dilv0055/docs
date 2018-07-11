@@ -15,26 +15,25 @@ ms.date: 05/29/2018
 
 ## Synopsis
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-build] [--no-dependencies]
     [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
 dotnet publish [-h|--help]
 ```
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-dependencies]
     [--no-restore] [-o|--output] [-r|--runtime] [--self-contained] [-v|--verbosity] [--version-suffix]
 dotnet publish [-h|--help]
 ```
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 ```
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
     [--version-suffix]
 dotnet publish [-h|--help]
 ```
----
-
+* * *
 ## Description
 
 `dotnet publish` compiles the application, reads through its dependencies specified in the project file, and publishes the resulting set of files to a directory. The output includes the following assets:
@@ -56,7 +55,7 @@ The project to publish. If not specified, it defaults to the current directory.
 
 ## Options
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 
 `-c|--configuration {Debug|Release}`
 
@@ -111,7 +110,7 @@ Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal
 
 Defines the version suffix to replace the asterisk (`*`) in the version field of the project file.
 
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 
 `-c|--configuration {Debug|Release}`
 
@@ -162,7 +161,7 @@ Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal
 
 Defines the version suffix to replace the asterisk (`*`) in the version field of the project file.
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `-c|--configuration {Debug|Release}`
 
@@ -197,8 +196,7 @@ Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal
 
 Defines the version suffix to replace the asterisk (`*`) in the version field of the project file.
 
----
-
+* * *
 ## Examples
 
 Publish the project in the current directory:

@@ -12,33 +12,33 @@ This sample shows two different ways to apply constraints to a workflow, one is 
   
  The activity author (build) must:  
   
--   Create a constraint (`PriceGreaterThanCost`). This is where all the validation logic resides.  
+- Create a constraint (`PriceGreaterThanCost`). This is where all the validation logic resides.  
   
--   Override `System.Activities.CodeActivity.OnGetConstraints()` and add the constraint (`PriceGreaterThanCost`) to the constraints <xref:System.Collections.IList>.  
+- Override `System.Activities.CodeActivity.OnGetConstraints()` and add the constraint (`PriceGreaterThanCost`) to the constraints <xref:System.Collections.IList>.  
   
  The workflow author (policy) must:  
   
--   Create a workflow with an instance of the activity to validate (`CreateProduct`).  
+- Create a workflow with an instance of the activity to validate (`CreateProduct`).  
   
--   Create a constraint (`MaxPrice`).  
+- Create a constraint (`MaxPrice`).  
   
--   Create a <xref:System.Activities.Validation.ValidationSettings> instance (`validationSettings`) and add the constraint (`MaxPrice`) to the collection `AdditionalConstraints`. Here the workflow author can add policy constraints to any activity, such as a sequence or parallel.  
+- Create a <xref:System.Activities.Validation.ValidationSettings> instance (`validationSettings`) and add the constraint (`MaxPrice`) to the collection `AdditionalConstraints`. Here the workflow author can add policy constraints to any activity, such as a sequence or parallel.  
   
--   Call <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>, which returns a <xref:System.Activities.Validation.ValidationResults> collection of <xref:System.Activities.Validation.ValidationError> objects.  
+- Call <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>, which returns a <xref:System.Activities.Validation.ValidationResults> collection of <xref:System.Activities.Validation.ValidationError> objects.  
   
--   (Optional) Print the <xref:System.Activities.Validation.ValidationError> objects.  
+- (Optional) Print the <xref:System.Activities.Validation.ValidationError> objects.  
   
 ### To set up, build, and run the sample  
   
-1.  Open the ConstraintTypes.sln sample solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1. Open the ConstraintTypes.sln sample solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Build and run the solution.  
+2. Build and run the solution.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Validation\ConstraintLibrary`

@@ -22,11 +22,11 @@ This example demonstrates how to use the <xref:System.Windows.Forms.ComboBoxRend
 ## Compiling the Code  
  This example requires:  
   
--   A custom control derived from the <xref:System.Windows.Forms.Control> class.  
+- A custom control derived from the <xref:System.Windows.Forms.Control> class.  
   
--   A <xref:System.Windows.Forms.Form> that hosts the custom control.  
+- A <xref:System.Windows.Forms.Form> that hosts the custom control.  
   
--   References to the <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, and <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType> namespaces.  
+- References to the <xref:System?displayProperty=nameWithType>, <xref:System.Drawing?displayProperty=nameWithType>, <xref:System.Windows.Forms?displayProperty=nameWithType>, and <xref:System.Windows.Forms.VisualStyles?displayProperty=nameWithType> namespaces.  
   
 ## See Also  
  [Rendering Controls with Visual Styles](../../../../docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)

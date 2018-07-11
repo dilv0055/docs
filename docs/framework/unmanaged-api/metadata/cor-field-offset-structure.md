@@ -19,33 +19,34 @@ ms.author: "mairaw"
 ---
 # COR_FIELD_OFFSET Structure
 Stores the offset, within a class, of the specified field.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct COR_FIELD_OFFSET {  
     mdFieldDef  ridOfField;  
     ULONG       ulOffset;  
 } COR_FIELD_OFFSET;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`ridOfField`|An `mdFieldDef` metadata token that represents the field.|  
 |`ulOffset`|The field's offset within its class.|  
-  
+
 ## Remarks  
  [IMetaDataImport::GetClassLayout](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getclasslayout-method.md) and [IMetaDataEmit::SetClassLayout](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setclasslayout-method.md) methods take a parameter of type `COR_FIELD_OFFSET`.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h, CorProf.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Structures](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
  [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  

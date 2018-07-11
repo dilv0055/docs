@@ -13,9 +13,10 @@ ms.assetid: 1916cd81-ea9d-4faa-81f7-4a0d864b60f4
 ---
 # Typographic and Code Conventions (Visual Basic)
 Visual Basic documentation uses the following typographic and code conventions.  
-  
+
 ## Typographic Conventions  
-  
+
+
 |Example|Description|  
 |-------------|-----------------|  
 |`Sub`, `If`, `ChDir`, `Print`, `True`, `Debug`|Language-specific keywords and runtime members have initial uppercase letters and are formatted as shown in this example.|  
@@ -30,16 +31,17 @@ Visual Basic documentation uses the following typographic and code conventions.
 |*memberName1*<br /><br /> ...<br /><br /> *memberNameN*|In syntax, an ellipsis (...) is used to indicate an indefinite number of items of the kind immediately in front of the ellipsis.<br /><br /> In code, ellipses signify code omitted for the sake of clarity.|  
 |ESC, ENTER|Key names and key sequences on the keyboard appear in all uppercase letters.|  
 |ALT+F1|When plus signs (+) appear between key names, you must hold down one key while pressing the other. For example, ALT+F1 means hold down the ALT key while pressing the F1 key.|  
-  
+
 ## Code Conventions  
-  
+
+
 |Example|Description|  
 |-------------|-----------------|  
 |`sampleString = "Hello, world!"`|Code samples appear in a fixed-pitch font and are formatted as shown in this example.|  
 |The previous statement sets the value of `sampleString` to "Hello, world!"|Code elements in explanatory text appear in a fixed-pitch font, as shown in this example.|  
 |`' This is a comment.`<br /><br /> `REM This is also a comment.`|Code comments are introduced by an apostrophe (') or the REM keyword.|  
 |`sampleVar = "This is an " _`<br /><br /> `& "example" _`<br /><br /> `& " of how to continue code."`|A space followed by an underscore ( _) at the end of a line indicates that the statement continues on the following line.|  
-  
+
 ## See Also  
  [Visual Basic Language Reference](../../visual-basic/language-reference/index.md)  
  [Keywords](../../visual-basic/language-reference/keywords/index.md)  

@@ -19,9 +19,10 @@ ms.author: "mairaw"
 ---
 # IMetaDataEmit2 Interface
 Extends the [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) interface primarily to provide the ability to work with generic types.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[DefineGenericParam Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md)|Creates a definition for a generic type parameter, and gets a token to that generic type parameter.|  
@@ -32,16 +33,16 @@ Extends the [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/im
 |[SaveDeltaToMemory Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatomemory-method.md)|Saves changes from the current edit-and-continue session to memory.|  
 |[SaveDeltaToStream Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-savedeltatostream-method.md)|Saves changes from the current edit-and-continue session to the specified stream.|  
 |[SetGenericParamProps Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-setgenericparamprops-method.md)|Sets property values for the generic parameter definition referenced by the specified token.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
  [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)

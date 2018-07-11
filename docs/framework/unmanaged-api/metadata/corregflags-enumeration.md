@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorRegFlags Enumeration
 Provides flag values used for registration when installing a module or composite image.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum   
 {  
@@ -30,23 +30,24 @@ typedef enum
     regHasRefs = 0x00000004  
 } CorRegFlags;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`regNoCopy`|Specifies that files should not be copied into the destination.|  
 |`regConfig`|Specifies that the module or composite is a configuration.|  
 |`regHasRefs`|Specifies that the module or composite has class references.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -31,11 +31,11 @@ Namespace or type specified in the Imports '\<qualifiedelementname>' doesn't con
   
 ## To correct this error  
   
-1.  Verify that the containing element is accessible from your project.  
+1. Verify that the containing element is accessible from your project.  
   
-2.  Verify that the specification of the containing element does not include any import alias from another import.  
+2. Verify that the specification of the containing element does not include any import alias from another import.  
   
-3.  Verify that the containing element exposes at least one `Public` member.  
+3. Verify that the containing element exposes at least one `Public` member.  
   
 ## See Also  
  [Imports Statement (.NET Namespace and Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  

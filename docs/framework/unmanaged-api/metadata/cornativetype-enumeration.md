@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorNativeType Enumeration
 Contains values that describe native unmanaged types.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorNativeType {  
-  
+
     NATIVE_TYPE_END                  = 0x0,  
     NATIVE_TYPE_VOID                 = 0x1,  
     NATIVE_TYPE_BOOLEAN              = 0x2,  
@@ -42,7 +42,7 @@ typedef enum CorNativeType {
     NATIVE_TYPE_VARIANT              = 0xe,  
     NATIVE_TYPE_CURRENCY             = 0xf,  
     NATIVE_TYPE_PTR                  = 0x10,  
-  
+
     NATIVE_TYPE_DECIMAL              = 0x11,  
     NATIVE_TYPE_DATE                 = 0x12,  
     NATIVE_TYPE_BSTR                 = 0x13,  
@@ -59,30 +59,31 @@ typedef enum CorNativeType {
     NATIVE_TYPE_FIXEDARRAY           = 0x1e,  
     NATIVE_TYPE_INT                  = 0x1f,  
     NATIVE_TYPE_UINT                 = 0x20,  
-  
+
     NATIVE_TYPE_NESTEDSTRUCT         = 0x21,  
     NATIVE_TYPE_BYVALSTR             = 0x22,  
     NATIVE_TYPE_ANSIBSTR             = 0x23,  
     NATIVE_TYPE_TBSTR                = 0x24,  
     NATIVE_TYPE_VARIANTBOOL          = 0x25,  
     NATIVE_TYPE_FUNC                 = 0x26,  
-  
+
     NATIVE_TYPE_ASANY                = 0x28,  
     NATIVE_TYPE_ARRAY                = 0x2a,  
     NATIVE_TYPE_LPSTRUCT             = 0x2b,  
     NATIVE_TYPE_CUSTOMMARSHALER      = 0x2c,  
     NATIVE_TYPE_IINSPECTABLE         = 0x2e,  
     NATIVE_TYPE_HSTRING              = 0x2f,  
-  
+
     NATIVE_TYPE_ERROR                = 0x2d,   
-  
+
     NATIVE_TYPE_MAX                  = 0x50  
-  
+
 } CorNativeType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`NATIVE_TYPE_END`|Obsolete.|  
@@ -132,14 +133,14 @@ typedef enum CorNativeType {
 |`NATIVE_TYPE_IINSPECTABLE`|A native `IInspectable` type.|  
 |`NATIVE_TYPE_HSTRING`|A native `HString`.|  
 |`NATIVE_TYPE_MAX`|An invalid value.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  <xref:System.Runtime.InteropServices.UnmanagedType>  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -19,9 +19,10 @@ ms.author: "mairaw"
 ---
 # ISymUnmanagedWriter Interface
 Represents a symbol writer, and provides methods to define documents, sequence points, lexical scopes, and variables.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[Abort Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-abort-method.md)|Closes the symbol writer without committing the symbols to the symbol store.|  
@@ -48,10 +49,10 @@ Represents a symbol writer, and provides methods to define documents, sequence p
 |[SetSymAttribute Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setsymattribute-method.md)|Defines a custom attribute based upon its name.|  
 |[SetUserEntryPoint Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-setuserentrypoint-method.md)|Specifies the user-defined method that is the entry point for this module.|  
 |[UsingNamespace Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-usingnamespace-method.md)|Specifies that the given fully qualified namespace name is being used within the currently open lexical scope.|  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
  [ISymUnmanagedWriter2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-interface.md)  

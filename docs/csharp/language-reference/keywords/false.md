@@ -11,9 +11,9 @@ ms.assetid: a11aa532-efe2-442b-9fcc-8fdb33b8c8b4
 # false (C# Reference)
 Used as an overloaded operator or as a literal:  
   
--   [false Operator](../../../csharp/language-reference/keywords/false-operator.md)  
+- [false Operator](../../../csharp/language-reference/keywords/false-operator.md)  
   
--   [false Literal](../../../csharp/language-reference/keywords/false-literal.md)  
+- [false Literal](../../../csharp/language-reference/keywords/false-literal.md)  
   
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  

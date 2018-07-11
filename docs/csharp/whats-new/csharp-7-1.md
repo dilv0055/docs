@@ -19,8 +19,10 @@ The new language features in this release are:
 
 * [`async` `Main` method](#async-main)
   - The entry point for an application can have the `async` modifier.
+
 * [`default` literal expressions](#default-literal-expressions)
   - You can use default literal expressions in default value expressions when the target type can be inferred.
+
 * [Inferred tuple element names](#inferred-tuple-element-names)
   - The names of tuple elements can be inferred from tuple initialization in many cases.
 

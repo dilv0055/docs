@@ -16,21 +16,21 @@ You can use the <xref:Microsoft.VisualBasic.PowerPacks.LineShape> control to dra
   
 ### To draw a line at design time  
   
-1.  Drag the <xref:Microsoft.VisualBasic.PowerPacks.LineShape> control from the **Visual Basic PowerPacks** tab in the **Toolbox** drag to a form or container control.  
+1. Drag the <xref:Microsoft.VisualBasic.PowerPacks.LineShape> control from the **Visual Basic PowerPacks** tab in the **Toolbox** drag to a form or container control.  
   
-2.  Drag the sizing and move handles to size and position the line.  
+2. Drag the sizing and move handles to size and position the line.  
   
-     You can also size and position the line by changing the `X1`, `X2`, `Y1`, and `Y2` properties in the **Properties** window.  
+    You can also size and position the line by changing the `X1`, `X2`, `Y1`, and `Y2` properties in the **Properties** window.  
   
-3.  In the **Properties** window, optionally set additional properties such as `BorderStyle` or `BorderColor` to change the appearance of the line.  
+3. In the **Properties** window, optionally set additional properties such as `BorderStyle` or `BorderColor` to change the appearance of the line.  
   
 ### To draw a line at run time  
   
-1.  On the **Project** menu, click **Add Reference**.  
+1. On the **Project** menu, click **Add Reference**.  
   
-2.  In the **Add Reference** dialog box, select **Microsoft.VisualBasic.PowerPacks.VS**, and then click **OK**.  
+2. In the **Add Reference** dialog box, select **Microsoft.VisualBasic.PowerPacks.VS**, and then click **OK**.  
   
-3.  In the **Code Editor**, add an `Imports` or `using` statement at the top of the module:  
+3. In the **Code Editor**, add an `Imports` or `using` statement at the top of the module:  
   
 ```vb  
 Imports Microsoft.VisualBasic.PowerPacks  
@@ -40,10 +40,10 @@ Imports Microsoft.VisualBasic.PowerPacks
 using Microsoft.VisualBasic.PowerPacks;  
 ```  
   
-4.  Add the following code in an `Event` procedure:  
+4. Add the following code in an `Event` procedure:  
   
-     [!code-csharp[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.cs)]
-     [!code-vb[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.vb)]  
+    [!code-csharp[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.cs)]
+    [!code-vb[VbPowerPacksLine#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-lines-with-the-lineshape-control-visual-studio_1.vb)]  
   
 ## See Also  
  <xref:Microsoft.VisualBasic.PowerPacks.LineShape>  

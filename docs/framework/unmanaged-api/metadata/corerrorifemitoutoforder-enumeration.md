@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorErrorIfEmitOutOfOrder Enumeration
 Contains flag values that indicate the conditions under which an error message should be generated when metadata is emitted out of order.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorErrorIfEmitOutOfOrder {  
-  
+
     MDErrorOutOfOrderDefault    = 0x00000000,  
     MDErrorOutOfOrderNone       = 0x00000000,  
     MDErrorOutOfOrderAll        = 0xffffffff,  
@@ -33,12 +33,13 @@ typedef enum CorErrorIfEmitOutOfOrder {
     MDParamOutOfOrder           = 0x00000004,  
     MDPropertyOutOfOrder        = 0x00000008,  
     MDEventOutOfOrder           = 0x00000010  
-  
+
 } CorErrorIfEmitOutOfOrder;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`MDErrorOutOfOrderDefault`|Indicates the default behavior, which does not generate error messages.|  
@@ -49,13 +50,13 @@ typedef enum CorErrorIfEmitOutOfOrder {
 |`MDParamOutOfOrder`|Indicates that the compiler should generate an error message when a parameter is emitted out of order.|  
 |`MDPropertyOutOfOrder`|Indicates that the compiler should generate an error message when a property is emitted out of order.|  
 |`MDEventOutOfOrder`|Indicates that the compiler should generate an error message when an event is emitted out of order.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

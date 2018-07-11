@@ -11,18 +11,19 @@ ms.author: "mairaw"
 ---
 # SOS.dll (SOS Debugging Extension)
 The SOS Debugging Extension (SOS.dll) helps you debug managed programs in Visual Studio and in the Windows debugger (WinDbg.exe) by providing information about the internal Common Language Runtime (CLR) environment. This tool requires your project to have unmanaged debugging enabled. SOS.dll is automatically installed with the .NET Framework. To use SOS.dll in Visual Studio, install the [Windows Driver Kit (WDK)](http://msdn.microsoft.com/windows/hardware/hh852362).  
-  
+
 > [!NOTE]
 >  If you are using [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], SOS.dll is supported in the Windows Debugger within Visual Studio, but not in the Immediate window of the Visual Studio debugger.  
-  
+
 ## Syntax  
-  
+
 ```  
 ![command] [options]   
 ```  
-  
+
 ## Commands  
-  
+
+
 |Command|Description|  
 |-------------|-----------------|  
 |**AnalyzeOOM** (**ao**)|Displays the information for the last OOM that occurred on an allocation request to the garbage collection heap. (In server garbage collection, it displays OOM, if any, on each garbage collection heap.)|  
@@ -89,115 +90,115 @@ The SOS Debugging Extension (SOS.dll) helps you debug managed programs in Visual
 |**VerifyObj** \<*object address*>|Checks the object that is passed as an argument for signs of corruption.|  
 |**VMMap**|Traverses the virtual address space and displays the type of protection applied to each region.|  
 |**VMStat**|Provides a summary view of the virtual address space, ordered by each type of protection applied to that memory (free, reserved, committed, private, mapped, image). The TOTAL column displays the result of the AVERAGE column multiplied by the BLK COUNT column.|  
-  
+
 ## Remarks  
  The SOS Debugging Extension lets you view information about code that is running inside the CLR. For example, you can use the SOS Debugging Extension to display information about the managed heap, look for heap corruptions, display internal data types used by the runtime, and view information about all managed code running inside the runtime.  
-  
+
  To use the SOS Debugging Extension in Visual Studio, install the [Windows Driver Kit (WDK)](http://msdn.microsoft.com/windows/hardware/hh852362). For information about the integrated debugging environment in Visual Studio, see [Debugging Environments](http://msdn.microsoft.com/library/windows/hardware/hh406268.aspx) in the Windows Dev Center.  
-  
+
  You can also use the SOS Debugging Extension by loading it into the WinDbg.exe debugger, which is available from the [WDK and Developer Tools Web site](http://go.microsoft.com/fwlink/?LinkId=103787), and executing commands within WinDbg.exe.  
-  
+
  To load the SOS Debugging Extension into the WinDbg.exe debugger, run the following command in the tool:  
-  
+
 ```  
 .loadby sos clr  
 ```  
-  
+
  WinDbg.exe and Visual Studio use a version of SOS.dll that corresponds to the version of Mscorwks.dll currently in use. In versions 1.1 and 2.0 of the .NET Framework, SOS.dll is installed in the same directory as Mscorwks.dll. By default, you should use the version of SOS.dll that matches the current version of Mscorwks.dll.  
-  
+
  To use a dump file created on another computer, make sure that the Mscorwks.dll file that came with that installation is in your symbol path, and load the corresponding version of SOS.dll.  
-  
+
  To load a specific version of SOS.dll, type the following command into the Windows Debugger:  
-  
+
 ```  
 .load <full path to sos.dll>  
 ```  
-  
+
 ## Examples  
  The following command displays the contents of an array at the address `00ad28d0`.  The display starts from the second element and continues for five elements.  
-  
+
 ```  
 !dumparray -start 2 -length 5 -detail 00ad28d0   
 ```  
-  
+
  The following command displays the contents of an assembly at the address `1ca248`.  
-  
+
 ```  
 !dumpassembly 1ca248  
 ```  
-  
+
  The following command displays information about the garbage collector heap.  
-  
+
 ```  
 !dumpheap  
 ```  
-  
+
  The following command writes the contents of the in-memory stress log to a (default) file called StressLog.txt in the current directory.  
-  
+
 ```  
 !DumpLog  
 ```  
-  
+
  The following command displays the `MethodDesc` structure at the address `902f40`.  
-  
+
 ```  
 !dumpmd 902f40  
 ```  
-  
+
  The following command displays information about a module at the address `1caa50`.  
-  
+
 ```  
 !dumpmodule 1caa50  
 ```  
-  
+
  The following command displays information about an object at the address `a79d40`.  
-  
+
 ```  
 !DumpObj a79d40  
 ```  
-  
+
  The following command displays the fields of a value class at the address `00a79d9c` using the method table at the address `0090320c`.  
-  
+
 ```  
 !DumpVC 0090320c 00a79d9c  
 ```  
-  
+
  The following command displays the process memory used by the garbage collector.  
-  
+
 ```  
 !eeheap -gc  
 ```  
-  
+
  The following command displays all objects scheduled for finalization.  
-  
+
 ```  
 !finalizequeue  
 ```  
-  
+
  The following command determines the application domain of an object at the address `00a79d98`.  
-  
+
 ```  
 !findappdomain 00a79d98  
 ```  
-  
+
  The following command displays all garbage collector handles in the current process.  
-  
+
 ```  
 !gcinfo 5b68dbb8   
 ```  
-  
+
  The following command displays the `MethodTable` and `EEClass` structures for the `Main` method in the class `MainClass` in the module `unittest.exe`.  
-  
+
 ```  
 !name2ee unittest.exe MainClass.Main  
 ```  
-  
+
  The following command displays information about the metadata token at the address `02000003` in the module `unittest.exe`.  
-  
+
 ```  
 !token2ee unittest.exe 02000003  
 ```  
-  
+
 ## See Also  
  [Tools](../../../docs/framework/tools/index.md)  
  [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

@@ -18,31 +18,31 @@ If you encounter problems in getting your application to run with the correct ve
   
 #### Using the registry  
   
-1.  In the Registry Editor, navigate to HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework (on a 32-bit computer) or HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\.NETFramework folder (on a 64-bit computer).  
+1. In the Registry Editor, navigate to HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework (on a 32-bit computer) or HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\.NETFramework folder (on a 64-bit computer).  
   
-2.  Add a string value named `CLRLoadLogDir`, and set it to the full path of an existing directory where you'd like to store CLR activation logs.  
+2. Add a string value named `CLRLoadLogDir`, and set it to the full path of an existing directory where you'd like to store CLR activation logs.  
   
  Activation logging remains enabled until you remove the string value.  
   
 #### Using an environment variable  
   
--   Set the `COMPLUS_CLRLoadLogDir` environment variable to a string that represents the full path of an existing directory where you'd like to store CLR activation logs.  
+- Set the `COMPLUS_CLRLoadLogDir` environment variable to a string that represents the full path of an existing directory where you'd like to store CLR activation logs.  
   
-     How you set the environment variable determines its scope:  
+   How you set the environment variable determines its scope:  
   
-    -   If you set it at the system level, activation logging is enabled for all .NET Framework applications on that computer until the environment variable is removed.  
+  - If you set it at the system level, activation logging is enabled for all .NET Framework applications on that computer until the environment variable is removed.  
   
-    -   If you set it at the user level, activation logging is enabled only for the current user account. Logging continues until the environment variable is removed.  
+  - If you set it at the user level, activation logging is enabled only for the current user account. Logging continues until the environment variable is removed.  
   
-    -   If you set it from within the process before loading the CLR, activation logging is enabled until the process terminates.  
+  - If you set it from within the process before loading the CLR, activation logging is enabled until the process terminates.  
   
-    -   If you set it at a command prompt before you run an application, activation logging is enabled for any application that is run from that command prompt.  
+  - If you set it at a command prompt before you run an application, activation logging is enabled for any application that is run from that command prompt.  
   
-     For example, to store activation logs in the c:\clrloadlogs directory with process-level scope, open a Command Prompt window and type the following before you run the application:  
+   For example, to store activation logs in the c:\clrloadlogs directory with process-level scope, open a Command Prompt window and type the following before you run the application:  
   
-    ```  
-    set COMPLUS_CLRLoadLogDir=c:\clrloadlogs  
-    ```  
+  ```  
+  set COMPLUS_CLRLoadLogDir=c:\clrloadlogs  
+  ```  
   
 ## Example  
  CLR activation logs provide a large amount of data about CLR activation and the use of the CLR hosting APIs. Most of this data is used internally by Microsoft, but some of the data can also be useful to developers, as described in this article.  
@@ -86,29 +86,29 @@ If you encounter problems in getting your application to run with the correct ve
 532,205950.398,FunctionCall: OnShimDllMainCalled. Reason: 0  
 ```  
   
--   **CLR Loading log** provides the path to the executable that started the process that loaded managed code. Note that this could be a native host.  
+- **CLR Loading log** provides the path to the executable that started the process that loaded managed code. Note that this could be a native host.  
   
-    ```  
-    532,205950.367,CLR Loading log for C:\Tests\myapp.exe  
-    ```  
+  ```  
+  532,205950.367,CLR Loading log for C:\Tests\myapp.exe  
+  ```  
   
--   **Installed Runtime** is the set of CLR versions installed on the computer that are candidates for the activation request.  
+- **Installed Runtime** is the set of CLR versions installed on the computer that are candidates for the activation request.  
   
-    ```  
-    532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0  
-    ```  
+  ```  
+  532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0  
+  ```  
   
--   **built with version** is the version of the CLR that was used to build the binary that was provided to a method such as [ICLRMetaHostPolicy::GetRequestedRuntime](../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).  
+- **built with version** is the version of the CLR that was used to build the binary that was provided to a method such as [ICLRMetaHostPolicy::GetRequestedRuntime](../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).  
   
-    ```  
-    532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727  
-    ```  
+  ```  
+  532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727  
+  ```  
   
--   **feature-on-demand installation** refers to enabling the .NET Framework 3.5 on Windows 8. See [.NET Framework Initialization Errors: Managing the User Experience](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) for more information about this scenario.  
+- **feature-on-demand installation** refers to enabling the .NET Framework 3.5 on Windows 8. See [.NET Framework Initialization Errors: Managing the User Experience](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md) for more information about this scenario.  
   
-    ```  
-    532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3  
-    ```  
+  ```  
+  532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3  
+  ```  
   
 ## See Also  
  [Deployment](../../../docs/framework/deployment/index.md)  

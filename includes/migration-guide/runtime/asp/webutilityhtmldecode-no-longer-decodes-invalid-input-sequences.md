@@ -1,5 +1,6 @@
 ### WebUtility.HtmlDecode no longer decodes invalid input sequences
 
+
 |   |   |
 |---|---|
 |Details|By default, decoding methods no longer decode an invalid input sequence into an invalid UTF-16 string. Instead, they return the original input.|

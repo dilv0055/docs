@@ -31,9 +31,9 @@ public virtual double Area()
   
  Virtual properties behave like abstract methods, except for the differences in declaration and invocation syntax.  
   
--   It is an error to use the `virtual` modifier on a static property.  
+- It is an error to use the `virtual` modifier on a static property.  
   
--   A virtual inherited property can be overridden in a derived class by including a property declaration that uses the `override` modifier.  
+- A virtual inherited property can be overridden in a derived class by including a property declaration that uses the `override` modifier.  
   
 ## Example  
  In this example, the `Shape` class contains the two coordinates `x`, `y`, and the `Area()` virtual method. Different shape classes such as `Circle`, `Cylinder`, and `Sphere` inherit the `Shape` class, and the surface area is calculated for each figure. Each derived class has its own override implementation of `Area()`.  

@@ -1,5 +1,6 @@
 ### ObjectContext.Translate and ObjectContext.ExecuteStoreQuery now support enum type
 
+
 |   |   |
 |---|---|
 |Details|In .NET Framework 4.0, the generic parameter <code>T</code> of <code>ObjectContext.Translate</code> and <code>ObjectContext.ExecuteStoreQuery</code> methods could not be an enum. That scenario is now supported.|

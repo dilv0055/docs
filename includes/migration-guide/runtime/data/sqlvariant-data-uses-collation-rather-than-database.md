@@ -1,5 +1,6 @@
 ### Sql_variant data uses sql_variant collation rather than database collation
 
+
 |   |   |
 |---|---|
 |Details|<code>sql_variant</code> data uses <code>sql_variant</code> collation rather than database collation.|

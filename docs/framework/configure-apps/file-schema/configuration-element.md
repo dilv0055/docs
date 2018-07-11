@@ -12,7 +12,6 @@ author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
 ---
-
 # \<configuration> element
 
 The root element in every configuration file used by the common language runtime and .NET Framework applications.
@@ -36,6 +35,7 @@ None
 None
 
 ## Child elements
+
 
 |     | Description |
 | --- | ----------- |

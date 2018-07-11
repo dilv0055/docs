@@ -24,21 +24,21 @@ Type forwarding allows you to move a type to another assembly without having to 
 ## Forwarding Types  
  There are four steps to forwarding a type:  
   
-1.  Move the source code for the type from the original assembly to the destination assembly.  
+1. Move the source code for the type from the original assembly to the destination assembly.  
   
-2.  In the assembly where the type used to be located, add a <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> for the type that was moved. The following code shows the attribute for a type named `Example` that was moved.  
+2. In the assembly where the type used to be located, add a <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> for the type that was moved. The following code shows the attribute for a type named `Example` that was moved.  
   
-    ```csharp  
-    [assembly:TypeForwardedToAttribute(typeof(Example))]  
-    ```  
+   ```csharp  
+   [assembly:TypeForwardedToAttribute(typeof(Example))]  
+   ```  
   
-    ```cpp  
-    [assembly:TypeForwardedToAttribute(Example::typeid)]  
-    ```  
+   ```cpp  
+   [assembly:TypeForwardedToAttribute(Example::typeid)]  
+   ```  
   
-3.  Compile the assembly that now contains the type.  
+3. Compile the assembly that now contains the type.  
   
-4.  Recompile the assembly where the type used to be located, with a reference to the assembly that now contains the type. For example, if you are compiling a C# file from the command line, use the [/reference (C# Compiler Options)](~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md) option to specify the assembly that contains the type. In C++, use the [#using](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a) directive in the source file to specify the assembly that contains the type.  
+4. Recompile the assembly where the type used to be located, with a reference to the assembly that now contains the type. For example, if you are compiling a C# file from the command line, use the [/reference (C# Compiler Options)](~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md) option to specify the assembly that contains the type. In C++, use the [#using](http://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a) directive in the source file to specify the assembly that contains the type.  
   
 ## See Also  
  <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>  

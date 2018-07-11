@@ -16,10 +16,11 @@ ms.assetid: d181afe5-fafa-460f-a13b-81203f6f4587
 ---
 # Common Tasks Performed with Visual Basic Operators
 Operators perform many common tasks involving one or more expressions called *operands*.  
-  
+
 ## Arithmetic and Bit-shift Tasks  
  The following table summarizes the available arithmetic and bit-shift operations.  
-  
+
+
 |To|See|  
 |---|---|  
 |Add one numeric value to another|[+ Operator](../../../../visual-basic/language-reference/operators/addition-operator.md)|  
@@ -32,10 +33,11 @@ Operators perform many common tasks involving one or more expressions called *op
 |Raise one numeric value to the power of another|[^ Operator](../../../../visual-basic/language-reference/operators/exponentiation-operator.md)|  
 |Shift the bit pattern of a numeric value to the left|[<\< Operator](../../../../visual-basic/language-reference/operators/left-shift-operator.md)|  
 |Shift the bit pattern of a numeric value to the right|[>> Operator](../../../../visual-basic/language-reference/operators/right-shift-operator.md)|  
-  
+
 ## Comparison Tasks  
  The following table summarizes the available comparison operations.  
-  
+
+
 |To|See|  
 |---|---|  
 |Determine whether two values are equal|`=` Operator ([Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md))|  
@@ -47,18 +49,20 @@ Operators perform many common tasks involving one or more expressions called *op
 |Determine whether two object variables refer to the same object instance|[Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md)|  
 |Determine whether two object variables refer to different object instances|[IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md)|  
 |Determine whether an object is of a specific type|[TypeOf Operator](../../../../visual-basic/language-reference/operators/typeof-operator.md)|  
-  
+
 ## Concatenation Tasks  
  The following table summarizes the available concatenation operations.  
-  
+
+
 |To|See|  
 |---|---|  
 |Join multiple strings into a single string|`&` Operator ([Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md))|  
 |Join numeric values with string values|`+` Operator ([Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md))|  
-  
+
 ## Logical and Bitwise Tasks  
  The following table summarizes the available logical and bitwise operations.  
-  
+
+
 |To|See|  
 |---|---|  
 |Perform logical negation on a Boolean value|[Not Operator](../../../../visual-basic/language-reference/operators/not-operator.md)|  
@@ -71,7 +75,7 @@ Operators perform many common tasks involving one or more expressions called *op
 |Perform bit-by-bit inclusive logical disjunction on two integral values|[Or Operator](../../../../visual-basic/language-reference/operators/or-operator.md)|  
 |Perform bit-by-bit exclusive logical disjunction on two integral values|[Xor Operator](../../../../visual-basic/language-reference/operators/xor-operator.md)|  
 |Perform bit-by-bit logical negation on an integral value|[Not Operator](../../../../visual-basic/language-reference/operators/not-operator.md)|  
-  
+
 ## See Also  
  [Operators and Expressions](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
  [Operators Listed by Functionality](../../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)

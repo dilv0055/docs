@@ -21,7 +21,7 @@ This topic describes some implementation details that you want to be aware of.
  The following describes certain mismatches that can occur between CLR types and XML data types and how they are handled.  
   
 > [!NOTE]
->  The `xs` prefix is mapped to the http://www.w3.org/2001/XMLSchema and namespace URI.  
+>  The `xs` prefix is mapped to the <http://www.w3.org/2001/XMLSchema> and namespace URI.  
   
 ### System.TimeSpan and xs:duration  
  The `xs:duration` type is partially ordered in that there are certain duration values that are different but equivalent. This means that for the `xs:duration` type value such as 1 month (P1M) is less than 32 days (P32D), larger than 27 days (P27D) and equivalent to 28, 29 or 30 days.  

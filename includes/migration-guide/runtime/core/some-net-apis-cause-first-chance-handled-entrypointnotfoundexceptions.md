@@ -1,5 +1,6 @@
 ### Some .NET APIs cause first chance (handled) EntryPointNotFoundExceptions
 
+
 |   |   |
 |---|---|
 |Details|In the .NET Framework 4.5, a small number of .NET methods began throwing first chance <xref:System.EntryPointNotFoundException?displayProperty=name>s. These exceptions were handled within the .NET Framework, but could break test automation that did not expect the first chance exceptions. These same APIs break some ApiVerifier scenarios when HighVersionLie is enabled.|

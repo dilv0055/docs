@@ -19,9 +19,10 @@ ms.author: "mairaw"
 ---
 # ISymUnmanagedVariable Interface
 Represents a variable, such as a parameter, a local variable, or a field.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetAddressField1 Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getaddressfield1-method.md)|Gets the first address field for this variable. Its meaning depends on the kind of address.|  
@@ -33,9 +34,9 @@ Represents a variable, such as a parameter, a local variable, or a field.
 |[GetName Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getname-method.md)|Gets the name of this variable.|  
 |[GetSignature Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getsignature-method.md)|Gets the signature of this variable.|  
 |[GetStartOffset Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-getstartoffset-method.md)|Gets the start offset of this variable within its parent.|  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

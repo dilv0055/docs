@@ -10,7 +10,7 @@ The `TextFieldParser` is unable to read from the file because the `Delimiters` p
   
 ## To correct this error  
   
--   Supply a valid value for `Delimiters`.  
+- Supply a valid value for `Delimiters`.  
   
 ## See Also  
  [TextFieldParser.SetDelimiters Method](http://msdn.microsoft.com/library/21fa40ec-5866-4d0e-9fd9-c708a190dcc9)  

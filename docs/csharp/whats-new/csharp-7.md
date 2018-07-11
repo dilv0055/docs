@@ -4,30 +4,38 @@ description: Get an overview of the new features coming in the upcoming version 
 ms.date: 12/21/2016
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
 ---
-
 # What's new in C# 7.0
 
 C# 7.0 adds a number of new features to the C# language:
 * [`out` variables](#out-variables)
-    - You can declare `out` values inline as arguments to the method where they are used.
+  - You can declare `out` values inline as arguments to the method where they are used.
+
 * [Tuples](#tuples)
-    - You can create lightweight, unnamed types that contain multiple public fields. Compilers and IDE tools understand the semantics of these types.
+  - You can create lightweight, unnamed types that contain multiple public fields. Compilers and IDE tools understand the semantics of these types.
+
 * [Discards](#discards)
-    - Discards are temporary, write-only variables used in assignments when you don't care about the value assigned. They are particularly useful when deconstructing tuples and user-defined types, as well as when calling methods with `out` parameters.
+  - Discards are temporary, write-only variables used in assignments when you don't care about the value assigned. They are particularly useful when deconstructing tuples and user-defined types, as well as when calling methods with `out` parameters.
+
 * [Pattern Matching](#pattern-matching)
-    - You can create branching logic based on arbitrary types and values of the members of those types.
+  - You can create branching logic based on arbitrary types and values of the members of those types.
+
 * [`ref` locals and returns](#ref-locals-and-returns)
-    - Method arguments and local variables can be references to other storage.
+  - Method arguments and local variables can be references to other storage.
+
 * [Local Functions](#local-functions)
-    - You can nest functions inside other functions to limit their scope and visibility.
+  - You can nest functions inside other functions to limit their scope and visibility.
+
 * [More expression-bodied members](#more-expression-bodied-members)
-    - The list of members that can be authored using expressions has grown.
+  - The list of members that can be authored using expressions has grown.
+
 * [`throw` Expressions](#throw-expressions)
-    - You can throw exceptions in code constructs that previously were not allowed because `throw` was a statement. 
+  - You can throw exceptions in code constructs that previously were not allowed because `throw` was a statement. 
+
 * [Generalized async return types](#generalized-async-return-types)
-    - Methods declared with the `async` modifier can return other types in addition to `Task` and `Task<T>`.
+  - Methods declared with the `async` modifier can return other types in addition to `Task` and `Task<T>`.
+
 * [Numeric literal syntax improvements](#numeric-literal-syntax-improvements)
-    - New tokens improve readability for numeric constants.
+  - New tokens improve readability for numeric constants.
 
 The remainder of this topic discusses each of the features. For each feature,
 you'll learn the reasoning behind it. You'll learn the syntax. You'll see
@@ -56,9 +64,10 @@ typed local variable:
 [!code-csharp[OutVarVariableDeclarations](../../../samples/snippets/csharp/new-in-7/program.cs#02_OutVarVariableDeclarations "Implicitly typed Out variable")]
 
 * The code is easier to read. 
-    - You declare the out variable where you use it, not on another line above.
+  - You declare the out variable where you use it, not on another line above.
+
 * No need to assign an initial value.
-    - By declaring the `out` variable where it is used in a method call, you can't accidentally use it before it is assigned.
+  - By declaring the `out` variable where it is used in a method call, you can't accidentally use it before it is assigned.
 
 The most common use for this feature will be the `Try` pattern. In this
 pattern, a method returns a `bool` indicating success or failure and an
@@ -81,7 +90,7 @@ return result;
 > The new tuples features require the <xref:System.ValueTuple> types.
 > You must add the NuGet package [`System.ValueTuple`](https://www.nuget.org/packages/System.ValueTuple/) in order to use it
 > on platforms that do not include the types.
->
+> 
 > This is similar to other language features that rely on types
 > delivered in the framework. Example include `async` and `await`
 > relying on the `INotifyCompletion` interface, and LINQ relying
@@ -177,7 +186,7 @@ this `Point` class that provides a deconstructor method that extracts
 the `X` and `Y` coordinates:
 
 [!code-csharp[PointWithDeconstruction](../../../samples/snippets/csharp/new-in-7/point.cs#11_PointWithDeconstruction "Point with deconstruction method")]
- 
+
 You can extract the individual fields by assigning a `Point` to a tuple:
 
 [!code-csharp[DeconstructPoint](../../../samples/snippets/csharp/new-in-7/program.cs#12_DeconstructPoint "Deconstruct a point")]
@@ -209,7 +218,7 @@ The following example defines a `QueryCityDataForYears` method that returns a 6-
 [!code-csharp[Tuple-discard](../../../samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
 
 For more information, see [Discards](../discards.md).
- 
+
 ## Pattern matching
 
 *Pattern matching* is a feature that allows you to implement method dispatch on
@@ -394,11 +403,13 @@ The C# language has three other rules that protect you from misusing
 the `ref` locals and returns:
 
 * You cannot assign a standard method return value to a `ref` local variable.
-    - That disallows statements like `ref int i = sequence.Count();`
+  - That disallows statements like `ref int i = sequence.Count();`
+
 * You cannot return a `ref` to a variable whose lifetime does not extend beyond the execution of the method.
-    - That means you cannot return a reference to a local variable or a variable with a similar scope.
+  - That means you cannot return a reference to a local variable or a variable with a similar scope.
+
 * `ref` locals and returns can't be used with async methods.
-    - The compiler can't know if the referenced variable has been set to its final value when the async method returns.
+  - The compiler can't know if the referenced variable has been set to its final value when the async method returns.
 
 The addition of ref locals and ref returns enable algorithms that are more
 efficient by avoiding copying values, or performing dereferencing operations
@@ -557,7 +568,7 @@ with a `Task` parameter so that you can construct a `ValueTask` from the
 return value of any existing async method:
 
 [!code-csharp[AsyncOptimizedValueTask](../../../samples/snippets/csharp/new-in-7/AsyncWork.cs#31_AsyncOptimizedValueTask "Return async result or cached value")]
- 
+
 As with all performance recommendations, you should benchmark
 both versions before making large scale changes to your code.
 

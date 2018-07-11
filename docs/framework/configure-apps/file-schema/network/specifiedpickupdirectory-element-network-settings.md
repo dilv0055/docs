@@ -14,45 +14,47 @@ manager: "markl"
 ---
 # &lt;specifiedPickupDirectory&gt; Element (Network Settings)
 Configures the local directory for a Simple Mail Transport Protocol (SMTP) server.  
-  
+
  \<configuration>  
 \<system.net>  
 \<mailSettings>  
 \<smtp>  
 \<specifiedPickupDirectory>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <specifiedPickupDirectory  
   pickupDirectoryLocation="directory"   
 />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`pickupDirectoryLocation`|The directory where applications save email for later processing by the SMTP server.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<smtp> Element (Network Settings)](../../../../../docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)|Configures Simple Mail Transport Protocol (SMTP) mail sending options.|  
-  
+
 ## Remarks  
  The `specifiedPickupDirectory` attribute sets the directory where applications save mail messages to be processed by the SMTP server.  
-  
+
 ## Example  
  The following example specifies c:\maildrop as the mail pickup directory.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -66,7 +68,7 @@ Configures the local directory for a Simple Mail Transport Protocol (SMTP) serve
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>  
  <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>  

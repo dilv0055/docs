@@ -7,9 +7,9 @@ manager: "mbaldwin"
 ---
 # SecurityBindingElement
 SecurityBindingElement  
-  
+
 ## Syntax  
-  
+
 ```  
 class SecurityBindingElement : BindingElement  
 {  
@@ -21,60 +21,61 @@ class SecurityBindingElement : BindingElement
   string SecurityHeaderLayout;  
 };  
 ```  
-  
+
 ## Methods  
  The SecurityBindingElement class does not define any methods.  
-  
+
 ## Properties  
  The SecurityBindingElement class has the following properties:  
-  
+
 ### DefaultAlgorithmSuite  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  Specifies the algorithms to use with the binding.  
-  
+
 ### IncludeTimestamp  
  Data type: boolean  
-  
+
  Access type: Read-only  
-  
+
  A Boolean value that specifies whether each message contains a timestamp.  
-  
+
 ### KeyEntropyMode  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  The source of entropy used to create keys.  
-  
+
 ### LocalServiceSecuritySettings  
  Data type: LocalServiceSecuritySettings  
-  
+
  Access type: Read-only  
-  
+
  The binding specific security properties for the local service.  
-  
+
 ### MessageSecurityVersion  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  The version used for message security.  
-  
+
 ### SecurityHeaderLayout  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  The order of elements in the security header for this binding.  
-  
+
 ## Requirements  
-  
+
+
 |MOF|Declared in Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Namespace|Defined in root\ServiceModel|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Channels.SecurityBindingElement>

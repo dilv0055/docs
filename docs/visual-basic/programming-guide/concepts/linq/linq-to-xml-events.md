@@ -5,33 +5,35 @@ ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
 ---
 # LINQ to XML Events (Visual Basic)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] events enable you to be notified when an XML tree is altered.  
-  
+
  You can add events to an instance of any <xref:System.Xml.Linq.XObject>. The event handler will then receive events for modifications to that <xref:System.Xml.Linq.XObject> and any of its descendants. For example, you can add an event handler to the root of the tree, and handle all modifications to the tree from that event handler.  
-  
+
  For examples of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] events, see <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed>.  
-  
+
 ## Types and Events  
  You use the following types when working with events:  
-  
+
+
 |Type|Description|  
 |----------|-----------------|  
 |<xref:System.Xml.Linq.XObjectChange>|Specifies the event type when an event is raised for an <xref:System.Xml.Linq.XObject>.|  
 |<xref:System.Xml.Linq.XObjectChangeEventArgs>|Provides data for the <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed> events.|  
-  
+
  The following events are raised when you modify an XML tree:  
-  
+
+
 |Event|Description|  
 |-----------|-----------------|  
 |<xref:System.Xml.Linq.XObject.Changing>|Occurs just before this <xref:System.Xml.Linq.XObject> or any of its descendants is going to change.|  
 |<xref:System.Xml.Linq.XObject.Changed>|Occurs when an <xref:System.Xml.Linq.XObject> has changed or any of its descendants have changed.|  
-  
+
 ## Example  
-  
+
 ### Description  
  Events are useful when you want to maintain some aggregate information in an XML tree. For example, you may want maintain an invoice total that is the sum of the line items of the invoice. This example uses events to maintain the total of all of the child elements under the complex element `Items`.  
-  
+
 ### Code  
-  
+
 ```vb  
 Module Module1  
     Dim WithEvents items As XElement = Nothing  
@@ -41,7 +43,7 @@ Module Module1
                 <Total>0</Total>  
                 <Items></Items>  
             </Root>  
-  
+
     Private Sub XObjectChanged( _  
             ByVal sender As Object, _  
             ByVal cea As XObjectChangeEventArgs) _  
@@ -70,7 +72,7 @@ Module Module1
                             sender.GetType().ToString(), _  
                             cea.ObjectChange.ToString())  
     End Sub  
-  
+
     Sub Main()  
         total = root.<Total>(0)  
         items = root.<Items>(0)  
@@ -85,10 +87,10 @@ Module Module1
     End Sub  
 End Module  
 ```  
-  
+
 ### Comments  
  This code produces the following output:  
-  
+
 ```  
 Changed System.Xml.Linq.XElement Add  
 Changed System.Xml.Linq.XElement Add  
@@ -107,6 +109,6 @@ Total:308
   </Items>  
 </Root>  
 ```  
-  
+
 ## See Also  
  [Advanced LINQ to XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

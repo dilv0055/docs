@@ -19,28 +19,29 @@ ms.author: "mairaw"
 ---
 # AssemblyRefFlags Enumeration
 Contains values that describe features of an assembly reference.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     arfFullOriginator = 0x0001  
 } AssemblyRefFlags;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`arfFullOriginator`|Specifies that the assembly reference contains full, unhashed information about the publisher of the assembly.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
  [IMetaDataAssemblyEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)  

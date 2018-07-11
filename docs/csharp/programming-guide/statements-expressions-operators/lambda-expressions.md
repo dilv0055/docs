@@ -88,9 +88,9 @@ namespace ConsoleApplication1
 
  The body of a statement lambda can consist of any number of statements; however, in practice there are typically no more than two or three.  
   
-[!code-csharp[StatementLamba#1](../../../../samples\snippets\csharp\programming-guide\lambda-expressions/statements.cs#1)]
+[!code-csharp[StatementLamba#1](../../../../samples/snippets/csharp/programming-guide/lambda-expressions/statements.cs#1)]
 
-[!code-csharp[StatementLamba#2](../../../../samples\snippets\csharp\programming-guide\lambda-expressions/statements.cs#2)]
+[!code-csharp[StatementLamba#2](../../../../samples/snippets/csharp/programming-guide/lambda-expressions/statements.cs#2)]
 
  Statement lambdas, like anonymous methods, cannot be used to create expression trees.  
   
@@ -192,11 +192,11 @@ customers.Where(c => c.City == "London");
   
  The general rules for lambdas are as follows:  
   
--   The lambda must contain the same number of parameters as the delegate type.  
+- The lambda must contain the same number of parameters as the delegate type.  
   
--   Each input parameter in the lambda must be implicitly convertible to its corresponding delegate parameter.  
+- Each input parameter in the lambda must be implicitly convertible to its corresponding delegate parameter.  
   
--   The return value of the lambda (if any) must be implicitly convertible to the delegate's return type.  
+- The return value of the lambda (if any) must be implicitly convertible to the delegate's return type.  
   
  Note that lambda expressions in themselves do not have a type because the common type system has no intrinsic concept of "lambda expression." However, it is sometimes convenient to speak informally of the "type" of a lambda expression. In these cases the type refers to the delegate type or <xref:System.Linq.Expressions.Expression> type to which the lambda expression is converted.  
   
@@ -251,15 +251,15 @@ class Test
   
  The following rules apply to variable scope in lambda expressions:  
   
--   A variable that is captured will not be garbage-collected until the delegate that references it becomes eligible for garbage collection.  
+- A variable that is captured will not be garbage-collected until the delegate that references it becomes eligible for garbage collection.  
   
--   Variables introduced within a lambda expression are not visible in the outer method.  
+- Variables introduced within a lambda expression are not visible in the outer method.  
   
--   A lambda expression cannot directly capture an `in`, `ref`, or `out` parameter from an enclosing method.  
+- A lambda expression cannot directly capture an `in`, `ref`, or `out` parameter from an enclosing method.  
   
--   A return statement in a lambda expression does not cause the enclosing method to return.  
+- A return statement in a lambda expression does not cause the enclosing method to return.  
   
--   A lambda expression cannot contain a `goto` statement, `break` statement, or `continue` statement that is inside the lambda function if the jump statement’s target is outside the block. It is also an error to have a jump statement outside the lambda function block if the target is inside the block.  
+- A lambda expression cannot contain a `goto` statement, `break` statement, or `continue` statement that is inside the lambda function if the jump statement’s target is outside the block. It is also an error to have a jump statement outside the lambda function block if the target is inside the block.  
   
 ## C# Language Specification  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

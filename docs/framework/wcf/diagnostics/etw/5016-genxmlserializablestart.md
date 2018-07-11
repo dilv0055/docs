@@ -5,18 +5,19 @@ ms.assetid: e1284ef0-2ec9-4acf-8901-c61521561cce
 ---
 # 5016 - GenXmlSerializableStart
 ## Properties  
-  
+
+
 |||  
 |-|-|  
 |ID|5016|  
 |Keywords|Serialization|  
 |Level|Verbose|  
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
-  
+
 ## Description  
  This event is emitted when the generate Xml serializable starts.  
-  
+
 ## Message  
  Generate Xml serializable for '%1' start.  
-  
+
 ## Details

@@ -7,9 +7,9 @@ manager: "mbaldwin"
 ---
 # PeerSecuritySettings
 PeerSecuritySettings  
-  
+
 ## Syntax  
-  
+
 ```  
 class PeerSecuritySettings  
 {  
@@ -17,32 +17,33 @@ class PeerSecuritySettings
   PeerTransportSecuritySettings Transport;  
 };  
 ```  
-  
+
 ## Methods  
  The PeerSecuritySettings class does not define any methods.  
-  
+
 ## Properties  
  The PeerSecuritySettings class has the following properties:  
-  
+
 ### Mode  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  Whether message-level and transport-level security are used by an endpoint configured with the binding.  
-  
+
 ### Transport  
  Data type: PeerTransportSecuritySettings  
-  
+
  Access type: Read-only  
-  
+
  Transport security settings.  
-  
+
 ## Requirements  
-  
+
+
 |MOF|Declared in Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Namespace|Defined in root\ServiceModel|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.PeerSecuritySettings>

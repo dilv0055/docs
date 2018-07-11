@@ -49,13 +49,13 @@ This topic discusses what you need to think about when writing diagnostic tools 
 ## Introduction  
  If you made it past the introductory paragraph, then you’re familiar with the CLR Profiling API.  You’ve already written a diagnostic tool that works well against managed desktop applications.  Now you’re curious what to do so that your tool works with a managed Windows Store app.  Perhaps you’ve already tried to make this work, and have discovered that it’s not a straightforward task.  Indeed, there are a number of considerations that might not be obvious to all tools developers.  For example:  
   
--   Windows Store apps run in a context with severely reduced permissions.  
+- Windows Store apps run in a context with severely reduced permissions.  
   
--   Windows Metadata files have unique characteristics when compared to traditional managed modules.  
+- Windows Metadata files have unique characteristics when compared to traditional managed modules.  
   
--   Windows Store apps have a habit of suspending themselves when interactivity goes down.  
+- Windows Store apps have a habit of suspending themselves when interactivity goes down.  
   
--   Your inter-process communication mechanisms may no longer work for various reasons.  
+- Your inter-process communication mechanisms may no longer work for various reasons.  
   
  This topic lists the things you need to be aware of and how to deal with them properly.  
   
@@ -83,9 +83,9 @@ This topic discusses what you need to think about when writing diagnostic tools 
   
  Throughout this document, the sample code assumes that:  
   
--   Your Profiler DLL is written in C++, because it must be a native DLL, as per the requirements of the CLR Profiling API.  
+- Your Profiler DLL is written in C++, because it must be a native DLL, as per the requirements of the CLR Profiling API.  
   
--   Your Profiler UI is written in C#.  This isn’t necessary, but because there are no requirements on the language for your Profiler UI’s process, why not pick a language that’s concise and simple?  
+- Your Profiler UI is written in C#.  This isn’t necessary, but because there are no requirements on the language for your Profiler UI’s process, why not pick a language that’s concise and simple?  
   
 <a name="RT"></a>   
 ### Windows RT devices  
@@ -103,9 +103,9 @@ This topic discusses what you need to think about when writing diagnostic tools 
   
  Your Profiler UI can cause your Profiler DLL to be loaded into the application’s process space in two ways:  
   
--   At application startup, as controlled by environment variables.  
+- At application startup, as controlled by environment variables.  
   
--   By attaching to the application after startup is complete by calling the [ICLRProfiling::AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) method.  
+- By attaching to the application after startup is complete by calling the [ICLRProfiling::AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) method.  
   
  One of your first roadblocks will be getting startup-load and attach-load of your Profiler DLL to work properly with Windows Store apps.  Both forms of loading share some special considerations in common, so let’s start with them.  
   
@@ -114,9 +114,9 @@ This topic discusses what you need to think about when writing diagnostic tools 
  **Signing your Profiler DLL**  
  When Windows attempts to load your Profiler DLL, it verifies that your Profiler DLL is properly signed.  If not, the load fails by default. There are two ways to do this:  
   
--   Ensure that your Profiler DLL is signed.  
+- Ensure that your Profiler DLL is signed.  
   
--   Tell your user that they must install a developer license on their Windows 8 machine before using your tool.  This can be done automatically from Visual Studio or manually from a command prompt.  For more information, see [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578.aspx).  
+- Tell your user that they must install a developer license on their Windows 8 machine before using your tool.  This can be done automatically from Visual Studio or manually from a command prompt.  For more information, see [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578.aspx).  
   
  **File system permissions**  
  The Windows Store app must have permission to load and execute your Profiler DLL from the location on the file system in which it resides.  By default, the Windows Store app doesn’t have such permission on most directories, and any failed attempt to load your Profiler DLL will produce an entry in the Windows Application event log that looks something like this:  
@@ -149,7 +149,7 @@ IEnumerable<Package> packages = packageManager.FindPackagesForUser(currentUserSI
 ```  
   
  **Specifying the custom environment block**  
- A new COM interface, [IPackageDebugSettings](https://msdn.microsoft.com/library/hh438393\(v=vs.85\).aspx), allows you to customize the execution behavior of a Windows Store app to make some forms of diagnostics easier.  One of its methods, [EnableDebugging](https://msdn.microsoft.com/library/hh438395\(v=vs.85\).aspx), lets you pass an environment block to the Windows Store app when it’s launched, along with other useful effects like disabling automatic process suspension.  The environment block is important because that’s where you need to specify the environment variables (`COR_PROFILER`, `COR_ENABLE_PROFILING`, and `COR_PROFILER_PATH)`) used by the CLR to load your Profiler DLL .  
+ A new COM interface, [IPackageDebugSettings](https://msdn.microsoft.com/library/hh438393(v=vs.85).aspx), allows you to customize the execution behavior of a Windows Store app to make some forms of diagnostics easier.  One of its methods, [EnableDebugging](https://msdn.microsoft.com/library/hh438395(v=vs.85).aspx), lets you pass an environment block to the Windows Store app when it’s launched, along with other useful effects like disabling automatic process suspension.  The environment block is important because that’s where you need to specify the environment variables (`COR_PROFILER`, `COR_ENABLE_PROFILING`, and `COR_PROFILER_PATH)`) used by the CLR to load your Profiler DLL .  
   
  Consider the following code snippet:  
   
@@ -161,37 +161,37 @@ pkgDebugSettings.EnableDebugging(packgeFullName, debuggerCommandLine,
   
  There are a couple of items you'll need to get right:  
   
--   `packageFullName` can be determined while iterating over the packages and grabbing `package.Id.FullName`.  
+- `packageFullName` can be determined while iterating over the packages and grabbing `package.Id.FullName`.  
   
--   `debuggerCommandLine` is a bit more interesting.  In order to pass the custom environment block to the Windows Store app, you need to write your own, simplistic dummy debugger.  Windows spawns the Windows Store app suspended and then attaches your debugger by launching your debugger with a command line like in this example:  
+- `debuggerCommandLine` is a bit more interesting.  In order to pass the custom environment block to the Windows Store app, you need to write your own, simplistic dummy debugger.  Windows spawns the Windows Store app suspended and then attaches your debugger by launching your debugger with a command line like in this example:  
   
-    ```Output  
-    MyDummyDebugger.exe -p 1336 -tid 1424  
-    ```  
+  ```Output  
+  MyDummyDebugger.exe -p 1336 -tid 1424  
+  ```  
   
-     where `-p 1336` means the Windows Store app has Process ID 1336, and `-tid 1424` means Thread ID 1424 is the thread that is suspended.  Your dummy debugger would parse the ThreadID from the command-line, resume that thread, and then exit.  
+   where `-p 1336` means the Windows Store app has Process ID 1336, and `-tid 1424` means Thread ID 1424 is the thread that is suspended.  Your dummy debugger would parse the ThreadID from the command-line, resume that thread, and then exit.  
   
-     Here’s some example C++ code to do this (be sure to add error checking!):  
+   Here’s some example C++ code to do this (be sure to add error checking!):  
   
-    ```cpp  
-    int wmain(int argc, wchar_t* argv[])  
-    {      
-        // …  
-        // Parse command line here  
-        // …  
+  ```cpp  
+  int wmain(int argc, wchar_t* argv[])  
+  {      
+      // …  
+      // Parse command line here  
+      // …  
   
-        HANDLE hThread = OpenThread(THREAD_SUSPEND_RESUME,   
-                                                                  FALSE /* bInheritHandle */, nThreadID);  
-        ResumeThread(hThread);  
-        CloseHandle(hThread);  
-        return 0;  
-    }  
-    ```  
+      HANDLE hThread = OpenThread(THREAD_SUSPEND_RESUME,   
+                                                                FALSE /* bInheritHandle */, nThreadID);  
+      ResumeThread(hThread);  
+      CloseHandle(hThread);  
+      return 0;  
+  }  
+  ```  
   
-     You’ll need to deploy this dummy debugger as part of your diagnostics tool installation, and then specify the path to this debugger in the `debuggerCommandLine` parameter.  
+   You’ll need to deploy this dummy debugger as part of your diagnostics tool installation, and then specify the path to this debugger in the `debuggerCommandLine` parameter.  
   
  **Launching the Windows Store app**  
- The moment to launch the Windows Store app has finally arrived. If you’ve already already tried doing this yourself, you may have noticed that [CreateProcess](https://msdn.microsoft.com/library/windows/desktop/ms682425\(v=vs.85\).aspx) is not how you create a Windows Store app process.  Instead, you’ll need to use the [IApplicationActivationManager::ActivateApplication](https://msdn.microsoft.com/library/windows/desktop/Hh706903\(v=vs.85\).aspx) method.  To do that, you’ll need to get the App User Model ID of the Windows Store app that you’re launching.  And that means you’ll need to do a little digging through the manifest.  
+ The moment to launch the Windows Store app has finally arrived. If you’ve already already tried doing this yourself, you may have noticed that [CreateProcess](https://msdn.microsoft.com/library/windows/desktop/ms682425(v=vs.85).aspx) is not how you create a Windows Store app process.  Instead, you’ll need to use the [IApplicationActivationManager::ActivateApplication](https://msdn.microsoft.com/library/windows/desktop/Hh706903(v=vs.85).aspx) method.  To do that, you’ll need to get the App User Model ID of the Windows Store app that you’re launching.  And that means you’ll need to do a little digging through the manifest.  
   
  While iterating over your packages (see "Choosing a Windows Store App to Profile" in the [Startup load](#Startup) section earlier), you’ll want to grab the set of applications contained in the current package’s manifest:  
   
@@ -230,14 +230,14 @@ appActivationMgr.ActivateApplication(appUserModelId, appArgs, ACTIVATEOPTIONS.AO
 ```  
   
  **Remember to call DisableDebugging**  
- When you called [IPackageDebugSettings::EnableDebugging](https://msdn.microsoft.com/library/hh438395\(v=VS.85\).aspx), you made a promise that you would clean up after yourself by calling the [IPackageDebugSettings::DisableDebugging](https://msdn.microsoft.com/library/hh438394\(v=vs.85\).aspx) method, so be sure to do that when the profiling session is over.  
+ When you called [IPackageDebugSettings::EnableDebugging](https://msdn.microsoft.com/library/hh438395(v=VS.85).aspx), you made a promise that you would clean up after yourself by calling the [IPackageDebugSettings::DisableDebugging](https://msdn.microsoft.com/library/hh438394(v=vs.85).aspx) method, so be sure to do that when the profiling session is over.  
   
 <a name="Attach"></a>   
 ### Attach load  
  When your Profiler UI wants to attach its Profiler DLL to an application that has already started running, it uses [ICLRProfiling::AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md).  The same holds true with Windows Store apps.  But in addition to the common considerations listed earlier, make sure the that the target Windows Store app is not suspended.  
   
  **EnableDebugging**  
- As with startup load, call the [IPackageDebugSettings::EnableDebugging](https://msdn.microsoft.com/library/hh438395\(v=VS.85\).aspx) method.  You don’t need it for passing an environment block, but you need one of its other features: disabling automatic process suspension.  Otherwise, when your Profiler UI calls [AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md), the target Windows Store app may be suspended.  In fact, this is likely if the user is now interacting with your Profiler UI, and the Windows Store app is not active on any of the user’s screens.  And if the Windows Store app is suspended, it won’t be able to respond to any signal that the CLR sends to it to attach your Profiler DLL.  
+ As with startup load, call the [IPackageDebugSettings::EnableDebugging](https://msdn.microsoft.com/library/hh438395(v=VS.85).aspx) method.  You don’t need it for passing an environment block, but you need one of its other features: disabling automatic process suspension.  Otherwise, when your Profiler UI calls [AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md), the target Windows Store app may be suspended.  In fact, this is likely if the user is now interacting with your Profiler UI, and the Windows Store app is not active on any of the user’s screens.  And if the Windows Store app is suspended, it won’t be able to respond to any signal that the CLR sends to it to attach your Profiler DLL.  
   
  So you’ll want to do something like this:  
   
@@ -250,7 +250,7 @@ pkgDebugSettings.EnableDebugging(packgeFullName, null /* debuggerCommandLine */,
  This is the same call you’d make for the startup load case, except you don’t specify a debugger command line or an environment block.  
   
  **DisableDebugging**  
- As always, don’t forget to call [IPackageDebugSettings::DisableDebugging](https://msdn.microsoft.com/library/hh438394\(v=vs.85\).aspx) when your profiling session is completed.  
+ As always, don’t forget to call [IPackageDebugSettings::DisableDebugging](https://msdn.microsoft.com/library/hh438394(v=vs.85).aspx) when your profiling session is completed.  
   
 <a name="Running"></a>   
 ## Running inside the Windows Store app  
@@ -258,25 +258,25 @@ pkgDebugSettings.EnableDebugging(packgeFullName, null /* debuggerCommandLine */,
   
 <a name="APIs"></a>   
 ### Stick to the Windows Store app APIs  
- As you browse the Windows API, you’ll notice that every API is documented as being applicable to desktop apps, Windows Store apps, or both.  For example, the **Requirements** section of the documentation for the [InitializeCriticalSectionAndSpinCount](https://msdn.microsoft.com/library/windows/desktop/ms683476\(v=vs.85\).aspx) function indicates that the function applies to desktop apps only. In contrast, the [InitializeCriticalSectionEx](https://msdn.microsoft.com/library/windows/desktop/ms683477\(v=vs.85\).aspx) function is available for both desktop apps and Windows Store apps.  
+ As you browse the Windows API, you’ll notice that every API is documented as being applicable to desktop apps, Windows Store apps, or both.  For example, the **Requirements** section of the documentation for the [InitializeCriticalSectionAndSpinCount](https://msdn.microsoft.com/library/windows/desktop/ms683476(v=vs.85).aspx) function indicates that the function applies to desktop apps only. In contrast, the [InitializeCriticalSectionEx](https://msdn.microsoft.com/library/windows/desktop/ms683477(v=vs.85).aspx) function is available for both desktop apps and Windows Store apps.  
   
- When developing your Profiler DLL, treat it as if it’s a Windows Store app and only use APIs that are documented as available to Windows Store apps.  Analyze your dependencies (for example, you can run `link /dump /imports` against your Profiler DLL to audit), and then search the docs to see which of your dependencies are ok and which aren’t.  In most cases, your violations can be fixed by simply replacing them with a newer form of the API that is documented as safe (for example, replacing [InitializeCriticalSectionAndSpinCount](https://msdn.microsoft.com/library/windows/desktop/ms683476\(v=vs.85\).aspx) with [InitializeCriticalSectionEx](https://msdn.microsoft.com/library/windows/desktop/ms683477\(v=vs.85\).aspx)).  
+ When developing your Profiler DLL, treat it as if it’s a Windows Store app and only use APIs that are documented as available to Windows Store apps.  Analyze your dependencies (for example, you can run `link /dump /imports` against your Profiler DLL to audit), and then search the docs to see which of your dependencies are ok and which aren’t.  In most cases, your violations can be fixed by simply replacing them with a newer form of the API that is documented as safe (for example, replacing [InitializeCriticalSectionAndSpinCount](https://msdn.microsoft.com/library/windows/desktop/ms683476(v=vs.85).aspx) with [InitializeCriticalSectionEx](https://msdn.microsoft.com/library/windows/desktop/ms683477(v=vs.85).aspx)).  
   
  You might notice that your Profiler DLL calls some APIs that apply to desktop apps only, and yet they seem to work even when your Profiler DLL is loaded inside a Windows Store app.  Be aware that it’s risky to use any API not documented for use with Windows Store apps in your Profiler DLL when loaded into a Windows Store app process:  
   
--   Such APIs are not guaranteed to work when called in the unique context that Windows Store apps run in.  
+- Such APIs are not guaranteed to work when called in the unique context that Windows Store apps run in.  
   
--   Such APIs might not work consistently when called from within different Windows Store app processes.  
+- Such APIs might not work consistently when called from within different Windows Store app processes.  
   
--   Such APIs might seem to work fine from Windows Store apps in the current version of Windows, but may break or be disabled in future releases of Windows.  
+- Such APIs might seem to work fine from Windows Store apps in the current version of Windows, but may break or be disabled in future releases of Windows.  
   
  The best advice is to fix all your violations and avoid the risk.  
   
  You might find that you absolutely cannot do without a particular API and cannot find a replacement suitable for Windows Store apps.  In such a case, at a minimum:  
   
--   Test, test, test the living daylights out of your usage of that API.  
+- Test, test, test the living daylights out of your usage of that API.  
   
--   Understand that the API might suddenly break or disappear if called from inside Windows Store apps in future releases of Windows.  This won’t be considered a compatibility concern by Microsoft, and supporting your usage of it will not be a priority.  
+- Understand that the API might suddenly break or disappear if called from inside Windows Store apps in future releases of Windows.  This won’t be considered a compatibility concern by Microsoft, and supporting your usage of it will not be a priority.  
   
 <a name="Permissions"></a>   
 ### Reduced permissions  
@@ -309,7 +309,7 @@ tempDir = appData.TemporaryFolder.Path;
  **Communicating via events**  
  If you want simple signaling semantics between your Profiler UI and Profiler DLL, you can use events inside Windows Store apps as well as desktop apps.  
   
- From your Profiler DLL, you can simply call the [CreateEventEx](https://msdn.microsoft.com/library/windows/desktop/ms682400\(v=vs.85\).aspx) function to create a named event with any name you like.  For example:  
+ From your Profiler DLL, you can simply call the [CreateEventEx](https://msdn.microsoft.com/library/windows/desktop/ms682400(v=vs.85).aspx) function to create a named event with any name you like.  For example:  
   
 ```cpp  
 // Profiler DLL in Windows Store app (C++).  
@@ -320,7 +320,7 @@ CreateEventEx(
     EVENT_ALL_ACCESS);  
 ```  
   
- Your Profiler UI then needs to find that named event under the Windows Store app’s namespace.  For example, your Profiler UI could call [CreateEventEx](https://msdn.microsoft.com/library/windows/desktop/ms682400\(v=vs.85\).aspx), specifying the event name as  
+ Your Profiler UI then needs to find that named event under the Windows Store app’s namespace.  For example, your Profiler UI could call [CreateEventEx](https://msdn.microsoft.com/library/windows/desktop/ms682400(v=vs.85).aspx), specifying the event name as  
   
  `AppContainerNamedObjects\<acSid>\MyNamedEvent`  
   
@@ -339,7 +339,7 @@ GetAppContainerFolderPath(acSid, out acDir);
   
 <a name="Shutdown"></a>   
 ### No shutdown notifications  
- When running inside a Windows Store app, your Profiler DLL should not rely on either [ICorProfilerCallback::Shutdown](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-shutdown-method.md) or even [DllMain](https://msdn.microsoft.com/library/windows/desktop/ms682583\(v=vs.85\).aspx) (with `DLL_PROCESS_DETACH`) being called to notify your Profiler DLL that the Windows Store app is exiting.  In fact, you should expect they will never be called.  Historically, many Profiler DLLs have used those notifications as convenient places to flush caches to disk, close files, send notifications back to the Profiler UI, etc.  But now your Profiler DLL needs to be organized a little differently.  
+ When running inside a Windows Store app, your Profiler DLL should not rely on either [ICorProfilerCallback::Shutdown](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-shutdown-method.md) or even [DllMain](https://msdn.microsoft.com/library/windows/desktop/ms682583(v=vs.85).aspx) (with `DLL_PROCESS_DETACH`) being called to notify your Profiler DLL that the Windows Store app is exiting.  In fact, you should expect they will never be called.  Historically, many Profiler DLLs have used those notifications as convenient places to flush caches to disk, close files, send notifications back to the Profiler UI, etc.  But now your Profiler DLL needs to be organized a little differently.  
   
  Your Profiler DLL should be logging information as it goes.  For performance reasons, you may want to batch information in memory and flush it to disk as the batch grows in size past some threshold.  But assume that any information not yet flushed to disk can be lost.  This means you’ll want to pick your threshold wisely, and that your Profiler UI needs to be hardened to deal with incomplete information written by the Profiler DLL.  
   
@@ -406,19 +406,19 @@ GetAppContainerFolderPath(acSid, out acDir);
 <a name="Resources"></a>   
 ## Resources  
  **The Common Language Runtime**  
- -   [CLR Profiling API Reference](../../../../docs/framework/unmanaged-api/profiling/index.md)  
+- [CLR Profiling API Reference](../../../../docs/framework/unmanaged-api/profiling/index.md)  
   
--   [CLR Metadata API Reference](../../../../docs/framework/unmanaged-api/metadata/index.md)  
+  - [CLR Metadata API Reference](../../../../docs/framework/unmanaged-api/metadata/index.md)  
   
  **The CLR's interaction with the Windows Runtime**  
  [.NET Framework Support for Windows Store Apps and Windows Runtime](../../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)  
   
  **Windows Store apps**  
- -   [File access and permissions (Windows Runtime apps](https://msdn.microsoft.com/library/windows/apps/hh967755.aspx)  
+- [File access and permissions (Windows Runtime apps](https://msdn.microsoft.com/library/windows/apps/hh967755.aspx)  
   
--   [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578.aspx)  
+  - [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578.aspx)  
   
--   [IPackageDebugSettings Interface](https://msdn.microsoft.com/library/hh438393\(v=vs.85\).aspx)  
+  - [IPackageDebugSettings Interface](https://msdn.microsoft.com/library/hh438393(v=vs.85).aspx)  
   
 ## See Also  
  [Profiling](../../../../docs/framework/unmanaged-api/profiling/index.md)

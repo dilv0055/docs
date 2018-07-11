@@ -3,7 +3,6 @@ title: "Best Practices for Reliable Sessions"
 ms.date: "03/30/2017"
 ms.assetid: b94f6e01-8070-40b6-aac7-a2cb7b4cb4f2
 ---
-
 # Best Practices for Reliable Sessions
 
 This topic discusses best practices for reliable sessions.

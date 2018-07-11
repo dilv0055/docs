@@ -8,7 +8,8 @@ ms.assetid: fad0c004-e282-4ec8-a127-bca7fd7a0b6f
 ---
 # Statement Keywords (C# Reference)
 Statements are program instructions. Except as described in the topics referenced in the following table, statements are executed in sequence. The following table lists the C# statement keywords. For more information about statements that are not expressed with any keyword, see [Statements](../../../csharp/programming-guide/statements-expressions-operators/statements.md).  
-  
+
+
 |Category|C# keywords|  
 |--------------|------------------|  
 |[Selection statements](../../../csharp/language-reference/keywords/selection-statements.md)|[if](../../../csharp/language-reference/keywords/if-else.md), [else](../../../csharp/language-reference/keywords/if-else.md), [switch](../../../csharp/language-reference/keywords/switch.md), [case](../../../csharp/language-reference/keywords/switch.md)|  
@@ -18,7 +19,7 @@ Statements are program instructions. Except as described in the topics reference
 |[Checked and unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md)|[checked](../../../csharp/language-reference/keywords/checked.md), [unchecked](../../../csharp/language-reference/keywords/unchecked.md)|  
 [fixed Statement](../../../csharp/language-reference/keywords/fixed-statement.md)|[fixed](../../../csharp/language-reference/keywords/fixed-statement.md)|  
 |[lock Statement](../../../csharp/language-reference/keywords/lock-statement.md)|[lock](../../../csharp/language-reference/keywords/lock-statement.md)|  
-  
+
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  
  [Statements](../../../csharp/programming-guide/statements-expressions-operators/statements.md)  

@@ -17,16 +17,17 @@ ms.assetid: 7a03a8be-5381-431f-bd7c-16e887e4e07b
 ---
 # Differences Between Properties and Variables in Visual Basic
 Variables and properties both represent values that you can access. However, there are differences in storage and implementation.  
-  
+
 ## Variables  
  A *variable* corresponds directly to a memory location. You define a variable with a single declaration statement. A variable can be a *local variable*, defined inside a procedure and available only within that procedure, or it can be a *member variable*, defined in a module, class, or structure but not inside any procedure. A member variable is also called a *field*.  
-  
+
 ## Properties  
  A *property* is a data element defined on a module, class, or structure. You define a property with a code block between the `Property` and `End Property` statements. The code block contains a `Get` procedure, a `Set` procedure, or both. These procedures are called *property procedures* or *property accessors*. In addition to retrieving or storing the property's value, they can also perform custom actions, such as updating an access counter.  
-  
+
 ## Differences  
  The following table shows some important differences between variables and properties.  
-  
+
+
 |Point of difference|Variable|Property|  
 |-------------------------|--------------|--------------|  
 |Declaration|Single declaration statement|Series of statements in a code block|  
@@ -35,9 +36,9 @@ Variables and properties both represent values that you can access. However, the
 |Executable code|None|Must have at least one procedure|  
 |Read and write access|Read/write or read-only|Read/write, read-only, or write-only|  
 |Custom actions (in addition to accepting or returning value)|Not possible|Can be performed as part of setting or retrieving property value|  
-  
+
  <sup>1</sup> Unlike a variable, the value of a property might not correspond directly to a single item of storage. The storage might be split into pieces for convenience or security, or the value might be stored in an encrypted form. In these cases the `Get` procedure would assemble the pieces or decrypt the stored value, and the `Set` procedure would encrypt the new value or split it into the constituent storage. A property value might be ephemeral, like time of day, in which case the `Get` procedure would calculate it on the fly each time you access the property.  
-  
+
 ## See Also  
  [Property Procedures](./property-procedures.md)  
  [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md)  

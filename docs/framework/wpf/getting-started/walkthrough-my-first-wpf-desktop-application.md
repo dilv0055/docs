@@ -91,13 +91,13 @@ The first step is to create the application infrastructure, which includes an ap
 
 5. Change the following properties on the <xref:System.Windows.Navigation.NavigationWindow> element:
 
-    - Set the <xref:System.Windows.Window.Title%2A> property to "ExpenseIt".
+   - Set the <xref:System.Windows.Window.Title%2A> property to "ExpenseIt".
 
-    - Set the <xref:System.Windows.FrameworkElement.Width%2A> property to 500 pixels.
+   - Set the <xref:System.Windows.FrameworkElement.Width%2A> property to 500 pixels.
 
-    - Set the <xref:System.Windows.FrameworkElement.Height%2A> property to 350 pixels.
+   - Set the <xref:System.Windows.FrameworkElement.Height%2A> property to 350 pixels.
 
-    - Remove the <xref:System.Windows.Controls.Grid> elements between the <xref:System.Windows.Navigation.NavigationWindow> tags.
+   - Remove the <xref:System.Windows.Controls.Grid> elements between the <xref:System.Windows.Navigation.NavigationWindow> tags.
 
     Your XAML should look like this in Visual Basic:
 
@@ -129,7 +129,7 @@ In this section, you'll add two pages and an image to the application.
 
    1. In **Solution Explorer**, right-click on the **ExpenseIt** project node and choose **Add** > **Page**.
 
-   1. In the **Add New Item** dialog, the **Page (WPF)** template is already selected. Enter the name **ExpenseItHome**, and then select **Add**.
+   2. In the **Add New Item** dialog, the **Page (WPF)** template is already selected. Enter the name **ExpenseItHome**, and then select **Add**.
 
     This page is the first page that's displayed when the application is launched. It will show a list of people to select from, to show an expense report for.
 
@@ -159,14 +159,14 @@ In this section, you'll add two pages and an image to the application.
 
    > [!TIP]
    > You can also set the **Source** property in the **Miscellaneous** category of the **Properties** window.
-   >
+   > 
    > ![Source property in Properties window](media/properties-source.png)
 
 6. Add another new WPF page to the project, and name it *ExpenseReportPage.xaml*::
 
    1. In **Solution Explorer**, right-click on the **ExpenseIt** project node and choose **Add** > **Page**.
 
-   1. In the **Add New Item** dialog, the **Page (WPF)** template is already selected. Enter the name **ExpenseReportPage**, and then select **Add**.
+   2. In the **Add New Item** dialog, the **Page (WPF)** template is already selected. Enter the name **ExpenseReportPage**, and then select **Add**.
 
     This page will show the expense report for the person that is selected on the **ExpenseItHome** page.
 
@@ -198,9 +198,9 @@ In this section, you'll add two pages and an image to the application.
 
 10. Add an image named *watermark.png* to the project. You can create your own image, copy the file from the sample code, or get it [here](https://github.com/dotnet/docs/blob/master/docs/framework/wpf/getting-started/media/watermark.png).
 
-   1. Right-click on the project node and select **Add** > **Existing Item**, or press **Shift**+**Alt**+**A**.
+    1. Right-click on the project node and select **Add** > **Existing Item**, or press **Shift**+**Alt**+**A**.
 
-   2. In the **Add Existing Item** dialog, browse to the image file you want to use, and then select **Add**.
+    2. In the **Add Existing Item** dialog, browse to the image file you want to use, and then select **Add**.
 
 ## Build and run the application
 
@@ -240,7 +240,7 @@ In the section, you create a single-column table with three rows and a 10-pixel 
 
    > [!TIP]
    > You can also set the **Margin** values in the **Properties** window, under the **Layout** category:
-   >
+   > 
    > ![Margin values in Properties window](media/properties-margin.png)
 
 3. Add the following XAML between the <xref:System.Windows.Controls.Grid> tags to create the row and column definitions:
@@ -345,8 +345,8 @@ The following illustration shows the results of what you just added:
 
 3. Build and run the application.
 
-    > [!NOTE]
-    > If you get an error that the <xref:System.Windows.Controls.DataGrid> was not found or does not exist, make sure that your project targets the .NET Framework 4 or later. For more information, see [How to: Target a Version of the .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework).
+   > [!NOTE]
+   > If you get an error that the <xref:System.Windows.Controls.DataGrid> was not found or does not exist, make sure that your project targets the .NET Framework 4 or later. For more information, see [How to: Target a Version of the .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework).
 
 4. Select the **View** button.
 
@@ -368,17 +368,17 @@ The appearance of various elements is often the same for all elements of the sam
 
     This XAML adds the following styles:
 
-    - `headerTextStyle`: To format the page title <xref:System.Windows.Controls.Label>.
+   - `headerTextStyle`: To format the page title <xref:System.Windows.Controls.Label>.
 
-    - `labelStyle`: To format the <xref:System.Windows.Controls.Label> controls.
+   - `labelStyle`: To format the <xref:System.Windows.Controls.Label> controls.
 
-    - `columnHeaderStyle`: To format the <xref:System.Windows.Controls.Primitives.DataGridColumnHeader>.
+   - `columnHeaderStyle`: To format the <xref:System.Windows.Controls.Primitives.DataGridColumnHeader>.
 
-    - `listHeaderStyle`: To format the list header <xref:System.Windows.Controls.Border> controls.
+   - `listHeaderStyle`: To format the list header <xref:System.Windows.Controls.Border> controls.
 
-    - `listHeaderTextStyle`: To format the list header <xref:System.Windows.Controls.Label>.
+   - `listHeaderTextStyle`: To format the list header <xref:System.Windows.Controls.Label>.
 
-    - `buttonStyle`: To format the <xref:System.Windows.Controls.Button> on ExpenseItHome.xaml.
+   - `buttonStyle`: To format the <xref:System.Windows.Controls.Button> on ExpenseItHome.xaml.
 
     Notice that the styles are resources and children of the <xref:System.Windows.Application.Resources%2A?displayProperty=nameWithType> property element. In this location, the styles are applied to all the elements in an application. For an example of using resources in a .NET Framework application, see [Use Application Resources](../../../../docs/framework/wpf/advanced/how-to-use-application-resources.md).
 
@@ -472,13 +472,13 @@ The following illustration shows both pages of the ExpenseIt application with co
 
 > [!NOTE]
 > This sample demonstrates a specific feature of WPF and doesn't follow all best practices for things like security, localization, and accessibility. For comprehensive coverage of WPF and the .NET Framework application development best practices, see the following topics:
->
+> 
 > - [Accessibility](../../../../docs/framework/ui-automation/accessibility-best-practices.md)
->
+> 
 > - [Security](../../../../docs/framework/wpf/security-wpf.md)
->
+> 
 > - [WPF globalization and localization](../../../../docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)
->
+> 
 > - [WPF performance](../../../../docs/framework/wpf/advanced/optimizing-wpf-application-performance.md)
 
 ## Next steps

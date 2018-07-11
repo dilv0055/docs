@@ -17,36 +17,36 @@ For more examples, see [Using Nullable Types](../../../csharp/programming-guide/
 ## Nullable Types Overview  
  Nullable types have the following characteristics:  
   
--   Nullable types represent value-type variables that can be assigned the value of `null`. You cannot create a nullable type based on a reference type. (Reference types already support the `null` value.)  
+- Nullable types represent value-type variables that can be assigned the value of `null`. You cannot create a nullable type based on a reference type. (Reference types already support the `null` value.)  
   
--   The syntax `T?` is shorthand for <xref:System.Nullable%601>, where `T` is a value type. The two forms are interchangeable.  
+- The syntax `T?` is shorthand for <xref:System.Nullable%601>, where `T` is a value type. The two forms are interchangeable.  
   
--   Assign a value to a nullable type just as you would for an ordinary value type, for example `int? x = 10;` or `double? d = 4.108;`. A nullable type can also be assigned the value `null`: `int? x = null;`.  
+- Assign a value to a nullable type just as you would for an ordinary value type, for example `int? x = 10;` or `double? d = 4.108;`. A nullable type can also be assigned the value `null`: `int? x = null;`.  
   
--   Use the <xref:System.Nullable%601.GetValueOrDefault%2A?displayProperty=nameWithType> method to return either the assigned value, or the default value for the underlying type if the value is `null`, for example `int j = x.GetValueOrDefault();`  
+- Use the <xref:System.Nullable%601.GetValueOrDefault%2A?displayProperty=nameWithType> method to return either the assigned value, or the default value for the underlying type if the value is `null`, for example `int j = x.GetValueOrDefault();`  
   
--   Use the <xref:System.Nullable%601.HasValue%2A> and <xref:System.Nullable%601.Value%2A> read-only properties to test for null and retrieve the value, as shown in the following example: `if(x.HasValue) j = x.Value;`  
+- Use the <xref:System.Nullable%601.HasValue%2A> and <xref:System.Nullable%601.Value%2A> read-only properties to test for null and retrieve the value, as shown in the following example: `if(x.HasValue) j = x.Value;`  
   
-    -   The `HasValue` property returns `true` if the variable contains a value, or `false` if it is `null`.  
+  - The `HasValue` property returns `true` if the variable contains a value, or `false` if it is `null`.  
   
-    -   The `Value` property returns a value if one is assigned. Otherwise, a <xref:System.InvalidOperationException?displayProperty=nameWithType> is thrown.  
+  - The `Value` property returns a value if one is assigned. Otherwise, a <xref:System.InvalidOperationException?displayProperty=nameWithType> is thrown.  
   
-    -   The default value for `HasValue` is `false`. The `Value` property has no default value.  
+  - The default value for `HasValue` is `false`. The `Value` property has no default value.  
   
-    -   You can also use the `==` and `!=` operators with a nullable type, as shown in the following example: `if (x != null) y = x;`  
+  - You can also use the `==` and `!=` operators with a nullable type, as shown in the following example: `if (x != null) y = x;`  
   
--   Use the `??` operator to assign a default value that will be applied when a nullable type whose current value is `null` is assigned to a non-nullable type, for example `int? x = null; int y = x ?? -1;`  
+- Use the `??` operator to assign a default value that will be applied when a nullable type whose current value is `null` is assigned to a non-nullable type, for example `int? x = null; int y = x ?? -1;`  
   
--   Nested nullable types are not allowed. The following line will not compile: `Nullable<Nullable<int>> n;`  
+- Nested nullable types are not allowed. The following line will not compile: `Nullable<Nullable<int>> n;`  
   
 ## Related Sections  
  For more information:  
   
--   [Using Nullable Types](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)  
+- [Using Nullable Types](../../../csharp/programming-guide/nullable-types/using-nullable-types.md)  
   
--   [Boxing Nullable Types](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)  
+- [Boxing Nullable Types](../../../csharp/programming-guide/nullable-types/boxing-nullable-types.md)  
   
--   [?? Operator](../../../csharp/language-reference/operators/null-coalescing-operator.md)  
+- [?? Operator](../../../csharp/language-reference/operators/null-coalescing-operator.md)  
   
 ## C# Language Specification  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

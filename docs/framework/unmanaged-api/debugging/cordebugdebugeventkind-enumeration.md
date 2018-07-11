@@ -15,9 +15,9 @@ ms.author: "ronpet"
 ---
 # CorDebugDebugEventKind Enumeration
 Indicates the type of event whose information is decoded by the [DecodeEvent](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess6-decodeevent-method.md) method.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugDebugEventKind {  
     DEBUG_EVENT_KIND_MODULE_LOADED                          = 1,  
@@ -28,9 +28,10 @@ typedef enum CorDebugDebugEventKind {
     DEBUG_EVENT_KIND_MANAGED_EXCEPTION_UNHANDLED            = 6  
 } CorDebugRecordFormat;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`DEBUG_EVENT_KIND_MODULE_LOADED`|A module load event.|  
@@ -39,21 +40,21 @@ typedef enum CorDebugDebugEventKind {
 |`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_USER_FIRST_CHANCE`|A first-chance user exception.|  
 |`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_CATCH_HANDLER_FOUND`|An exception for which a `catch` handler exists.|  
 |`DEBUG_EVENT_KIND_MANAGED_EXCEPTION_UNHANDLED`|An unhandled exception.|  
-  
+
 ## Remarks  
  A member of the `CorDebugDebugEventKind` enumeration is returned by calling the [ICorDebugDebugEvent::GetEventKind](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md) method.  
-  
+
 > [!NOTE]
 >  This enumeration is intended for use in .NET Native debugging scenarios only.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

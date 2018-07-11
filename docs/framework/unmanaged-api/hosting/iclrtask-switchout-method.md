@@ -20,15 +20,16 @@ ms.author: "ronpet"
 ---
 # ICLRTask::SwitchOut Method
 Notifies the common language runtime (CLR) that the task represented by the current [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance is no longer in an operable state.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SwitchOut ();  
 ```  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SwitchOut` returned successfully.|  
@@ -37,19 +38,19 @@ HRESULT SwitchOut ();
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  A host calls `SwitchOut` to inform the CLR that it has temporarily stopped executing the task that the current `ICLRTask` instance represents, and will reschedule the task.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  

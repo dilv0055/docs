@@ -16,25 +16,26 @@ manager: "markl"
 ---
 # Cryptography Settings Schema
 The cryptography settings schema contains elements that specify how to map friendly algorithm names to classes that implement cryptography algorithms.  
-  
+
  [**\<configuration>**](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
-  
+
  [**\<mscorlib>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/mscorlib-element-for-cryptography-settings.md)  
-  
+
  [**\<cryptographySettings>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptographysettings-element.md)  
-  
+
  [**\<cryptoNameMapping>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)  
-  
+
  [**\<cryptoClasses>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclasses-element.md)  
-  
+
  [**\<cryptoClass>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)  
-  
+
  [**\<nameEntry>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)  
-  
+
  [**\<oidMap>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)  
-  
+
  [**\<oidEntry>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[**\<cryptoClasses**>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclasses-element.md)|Contains a list of cryptography classes that have a mapping to a friendly name in the **\<nameEntry>** element.|  
@@ -45,7 +46,7 @@ The cryptography settings schema contains elements that specify how to map frien
 |[**\<nameEntry>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)|Maps a class name to a friendly algorithm name, which allows one class to have many friendly names.|  
 |[**\<oidEntry>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)|Maps an ASN.1 object identifier (OID) to a friendly name.|  
 |[**\<oidMap>**](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|Contains ASN.1 OID mappings to classes.|  
-  
+
 ## See Also  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Cryptographic Services](../../../../../docs/standard/security/cryptographic-services.md)

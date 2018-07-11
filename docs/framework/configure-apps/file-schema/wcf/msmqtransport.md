@@ -5,15 +5,15 @@ ms.assetid: 19d89f35-76ac-49dc-832b-e8bec2d5e33b
 ---
 # &lt;msmqTransport&gt;
 Causes a channel to transfers messages on the MSMQ transport when it is included in a custom binding.  
-  
+
  \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
 \<binding>  
 \<msmqIntegration>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <msmqTransport>  
     customDeadLetterQueue="Uri"  
@@ -37,12 +37,13 @@ Causes a channel to transfers messages on the MSMQ transport when it is included
     </msmqTransportSecurity>  
 </msmqIntegration>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |customDeadLetterQueue|A URI that indicates the location of the per-application dead letter queue, where messages that have expired or failed to be delivered to the application are transferred.<br /><br /> For messages that require ExactlyOnce assurances (that is, `exactlyOnce` is set to `true`), this attribute defaults to the system-wide transactional dead-letter queue in MSMQ.<br /><br /> For messages that require no assurances (that is, `exactlyOnce` is set to `false`), this attribute defaults to `null`.<br /><br /> The value must use the net.msmq scheme. The default is `null`.<br /><br /> If `deadLetterQueue` is set to `None` or `System`, then this attribute must be set to `null`. If this attribute is not `null`, then `deadLetterQueue` must be set to `Custom`.|  
@@ -62,24 +63,26 @@ Causes a channel to transfers messages on the MSMQ transport when it is included
 |UseActiveDirectory|A Boolean value that specifies whether queue addresses should be converted using Active Directory.<br /><br /> MSMQ queue addresses can consist of path names or direct format names. With a direct format name, MSMQ resolves the computer name using DNS, NetBIOS or IP. With a path name, MSMQ resolves the computer name using Active Directory. By default, the Windows Communication Framework (WCF) queued transport converts the URI of a message queue to a direct format name. By setting this attribute to `true`, an application can specify that the queued transport should resolve the computer name using Active Directory rather than DNS, NetBIOS, or IP.|  
 |useMsmqTracing|A Boolean value that specifies whether messages processed by this binding should be traced. The default is `false`.<br /><br /> When tracing is enabled, report messages are created and sent to the report queue each time the message leaves or arrives at a Message Queuing computer.|  
 |useSourceJournal|A Boolean value that specifies whether copies of messages processed by this binding should be stored in the source journal queue. The default is `false`.<br /><br /> Queued applications that want to keep a record of messages that have left the computer's outgoing queue can copy the messages to a journal queue. Once a message leaves the outgoing queue and an acknowledgment is received that the message was received on the destination computer, a copy of the message is kept in the sending computer's system journal queue.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<msmqTransportSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/msmqtransportsecurity.md)|Specifies transport security settings for this binding. This element is of type <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the custom binding.|  
-  
+
 ## Remarks  
  The `msmqTransport` element enables the user to set the properties of the queued communication channel. The queued communication channel uses Message Queuing for its transport.  
-  
+
  This binding element is the default binding element used by the Message Queuing standard binding (`netMsmqBinding`).  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.MsmqTransportElement>  
  <xref:System.ServiceModel.Channels.MsmqTransportBindingElement>  

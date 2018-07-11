@@ -23,6 +23,7 @@ Each pattern acts as a rule for transforming input in some way. In the `match` e
 
 Supported patterns are shown in the following table. At run time, the input is tested against each of the following patterns in the order listed in the table, and patterns are applied recursively, from first to last as they appear in your code, and from left to right for the patterns on each line.
 
+
 |Name|Description|Example|
 |----|-----------|-------|
 |Constant pattern|Any numeric, character, or string literal, an enumeration constant, or a defined literal identifier|`1.0`, `"test"`, `30`, `Color.Red`|

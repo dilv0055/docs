@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Retrieves either a subset or all of the names of the properties of an object. 
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetNames (
    [in] int                 vFunc, 
@@ -59,13 +59,14 @@ HRESULT GetNames (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | There has been a general failure. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | One or more parameters are not valid, or an incorrect combination of flags and parameters was specified. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Not enough memory is available to complete the operation. |
 |`WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::GetNames](https://msdn.microsoft.com/library/aa391447(v=vs.85).aspx) method.
@@ -77,6 +78,7 @@ The flag values in `lFlags` are bit fields
 
 The flags that can be passed as the `lEnumFlags` argument are bit fields that are defined in the *WbemCli.h* header file, or you can define them as constants in your code.  You can combine one flag from each group with any flag from any other group. However, flags from the same group are mutually exclusive. 
 
+
 | Group 1 flags |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_ALWAYS` | 0 | Return all property names. `strQualifierName` and `pQualifierVal` are unused. |
@@ -84,10 +86,12 @@ The flags that can be passed as the `lEnumFlags` argument are bit fields that ar
 |`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Return only properties that do not have a qualifier of the name specified by the `strQualifierName` parameter. If this flag is used, you must specify `strQualifierName`. |
 |`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Return only properties that have a qualifier of the name specified by the `wszQualifierName` parameter and also have a value identical to that specified by the `pQualifierVal` structure. If this flag is used, you must specify both a `wszQualifierName` and a `pQualifierValue`. |
 
+
 | Group 2 flags |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | Return only the names of properties that define the keys. |
 |`WBEM_FLAG_REFS_ONLY` | 0x8 | Return only property names that are object references. |
+
 
 | Group 3 flags |Value  |Description  |
 |---------|---------|---------|
@@ -97,13 +101,13 @@ The flags that can be passed as the `lEnumFlags` argument are bit fields that ar
 |`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Return only the names of non-system properties. |
 
 The function always allocates a new `SAFEARRAY` if it returns `WBEM_S_NO_ERROR`, and `pstrNames` is always set to point to it. The returned array can have 0 elements if no properties match the specified filters. If the function returns an value other than `WBM_S_NO_ERROR`, a new `SAFEARRAY` structure is not returned.
- 
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

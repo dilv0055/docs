@@ -16,11 +16,11 @@ The Getting Started sample demonstrates how to implement a typical service and a
   
 > [!IMPORTANT]
 >  The samples may already be installed on your computer. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\GettingStarted\GettingStarted`  
   
  The service describes the operations it performs in a service contract that it exposes publicly as metadata. The service also contains the code to implement the operations.  
@@ -135,7 +135,7 @@ public class CalculatorService : ICalculator
   
  The service exposes the endpoint at the base address provided by the IIS or WAS host. The binding is configured with a standard <xref:System.ServiceModel.WSHttpBinding>, which provides HTTP communication and standard Web service protocols for addressing and security. The contract is the `ICalculator` implemented by the service.  
   
- As configured, the service can be accessed at http://localhost/servicemodelsamples/service.svc by a client on the same computer. For clients on remote computersto access the service, a fully-qualified domain name must be specified instead of localhost.  
+ As configured, the service can be accessed at <http://localhost/servicemodelsamples/service.svc> by a client on the same computer. For clients on remote computersto access the service, a fully-qualified domain name must be specified instead of localhost.  
   
  The framework does not expose metadata by default. As such, the service turns on the <xref:System.ServiceModel.Description.ServiceMetadataBehavior> and exposes a metadata exchange (MEX) endpoint at http://localhost/servicemodelsamples/service.svc/mex. The following configuration demonstrates this.  
   
@@ -270,11 +270,11 @@ Press <ENTER> to terminate client.
   
 ### To set up, build, and run the sample  
   
-1.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## See Also  
  [How to: Host a WCF Service in a Managed Application](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)  

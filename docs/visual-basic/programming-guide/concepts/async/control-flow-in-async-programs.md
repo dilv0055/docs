@@ -13,9 +13,9 @@ You can write and maintain asynchronous programs more easily by using the `Async
   
  The following example uses async methods to download the contents of a specified website as a string and to display the length of the string. The example contains the following two methods.  
   
--   `startButton_Click`, which calls `AccessTheWebAsync` and displays the result.  
+- `startButton_Click`, which calls `AccessTheWebAsync` and displays the result.  
   
--   `AccessTheWebAsync`, which downloads the contents of a website as a string and returns the length of the string. `AccessTheWebAsync` uses an asynchronous <xref:System.Net.Http.HttpClient> method, <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>, to download the contents.  
+- `AccessTheWebAsync`, which downloads the contents of a website as a string and returns the length of the string. `AccessTheWebAsync` uses an asynchronous <xref:System.Net.Http.HttpClient> method, <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>, to download the contents.  
   
  Numbered display lines appear at strategic points throughout the program to help you understand how the program runs and to explain what happens at each point that is marked. The display lines are labeled "ONE" through "SIX." The labels represent the order in which the program reaches these lines of code.  
   
@@ -94,54 +94,54 @@ Length of the downloaded string: 33946.
 ### Download the Program  
  You can download the application for this topic from [Async Sample: Control Flow in Async Programs](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). The following steps open and run the program.  
   
-1.  Unzip the downloaded file, and then start Visual Studio.  
+1. Unzip the downloaded file, and then start Visual Studio.  
   
-2.  On the menu bar, choose **File**, **Open**, **Project/Solution**.  
+2. On the menu bar, choose **File**, **Open**, **Project/Solution**.  
   
-3.  Navigate to the folder that holds the unzipped sample code, open the solution (.sln) file, and then choose the F5 key to build and run the project.  
+3. Navigate to the folder that holds the unzipped sample code, open the solution (.sln) file, and then choose the F5 key to build and run the project.  
   
 ### Build the Program Yourself  
  The following Windows Presentation Foundation (WPF) project contains the code example for this topic.  
   
  To run the project, perform the following steps:  
   
-1.  Start Visual Studio.  
+1. Start Visual Studio.  
   
-2.  On the menu bar, choose **File**, **New**, **Project**.  
+2. On the menu bar, choose **File**, **New**, **Project**.  
   
-     The **New Project** dialog box opens.  
+    The **New Project** dialog box opens.  
   
-3.  In the **Installed Templates** pane, choose **Visual Basic**, and then choose **WPF Application** from the list of project types.  
+3. In the **Installed Templates** pane, choose **Visual Basic**, and then choose **WPF Application** from the list of project types.  
   
-4.  Enter `AsyncTracer` as the name of the project, and then choose the **OK** button.  
+4. Enter `AsyncTracer` as the name of the project, and then choose the **OK** button.  
   
-     The new project appears in **Solution Explorer**.  
+    The new project appears in **Solution Explorer**.  
   
-5.  In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.  
+5. In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.  
   
-     If the tab isn’t visible, open the shortcut menu for MainWindow.xaml in **Solution Explorer**, and then choose **View Code**.  
+    If the tab isn’t visible, open the shortcut menu for MainWindow.xaml in **Solution Explorer**, and then choose **View Code**.  
   
-6.  In the **XAML** view of MainWindow.xaml, replace the code with the following code.  
+6. In the **XAML** view of MainWindow.xaml, replace the code with the following code.  
   
-    ```vb  
-    <Window  
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="MainWindow"  
-        Title="Control Flow Trace" Height="350" Width="525">  
-        <Grid>  
-            <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="221,10,0,0" VerticalAlignment="Top" Width="75"/>  
-            <TextBox x:Name="ResultsTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="510" Height="265" FontFamily="Lucida Console" FontSize="10" VerticalScrollBarVisibility="Visible" d:LayoutOverrides="HorizontalMargin"/>  
+   ```vb  
+   <Window  
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="MainWindow"  
+       Title="Control Flow Trace" Height="350" Width="525">  
+       <Grid>  
+           <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="221,10,0,0" VerticalAlignment="Top" Width="75"/>  
+           <TextBox x:Name="ResultsTextBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="510" Height="265" FontFamily="Lucida Console" FontSize="10" VerticalScrollBarVisibility="Visible" d:LayoutOverrides="HorizontalMargin"/>  
   
-        </Grid>  
-    </Window>  
-    ```  
+       </Grid>  
+   </Window>  
+   ```  
   
-     A simple window that contains a text box and a button appears in the **Design** view of MainWindow.xaml.  
+    A simple window that contains a text box and a button appears in the **Design** view of MainWindow.xaml.  
   
-7.  Add a reference for <xref:System.Net.Http>.  
+7. Add a reference for <xref:System.Net.Http>.  
   
-8.  In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.vb, and then choose **View Code**.  
+8. In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.vb, and then choose **View Code**.  
   
 9. In MainWindow.xaml.vb , replace the code with the following code.  
   
@@ -282,7 +282,7 @@ Dim urlContents As String = Await getStringTask
   
 > [!NOTE]
 >  Typically, you await the call to an asynchronous method immediately. For example, the following assignment could replace the previous code that creates and then awaits `getStringTask`: `Dim urlContents As String = Await client.GetStringAsync("http://msdn.microsoft.com")`  
->   
+> 
 >  In this topic, the await operator is applied later to accommodate the output lines that mark the flow of control through the program.  
   
 ### Step FOUR  

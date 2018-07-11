@@ -8,7 +8,7 @@ An attempt has been made to access an event log that does not exist on this mach
   
 ## To correct this error  
   
--   Check that you are supplying the correct file name and path.  
+- Check that you are supplying the correct file name and path.  
   
 ## See Also  
  [Administering Event Logs](http://msdn.microsoft.com/library/35f53238-bdd2-417b-acd8-2fd9f7397f18)  

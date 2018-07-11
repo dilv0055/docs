@@ -5,16 +5,16 @@ ms.assetid: 3b180006-1661-43bf-a699-96fd3da469af
 ---
 # &lt;transport&gt; of &lt;netHttpBinding&gt;
 Defines properties that control authentication parameters for the HTTP transport.  
-  
+
 \<system.serviceModel>  
 \<bindings>  
 \<netHttpBinding>  
 \<binding>  
 \<security>  
 \<transport>  
-  
+
 ## Syntax  
-  
+
 ```xml
 <netHttpBinding>  
   <binding>  
@@ -30,12 +30,13 @@ Defines properties that control authentication parameters for the HTTP transport
   </binding>  
 </netHttpBinding>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |clientCredentialType|-   Specifies the type of credential to be used when performing client authentication using HTTP authentication.  The default is `None`. This attribute is of type <xref:System.ServiceModel.HttpClientCredentialType>.|  
@@ -43,9 +44,10 @@ Defines properties that control authentication parameters for the HTTP transport
 |realm|A string that specifies the realm that is used by the HTTP authentication scheme for digest or basic authentication. The default is an empty string.|  
 |policyEnforcement|This enumeration specifies when the <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> should be enforced.<br /><br /> 1.  Never – The policy is never enforced (Extended Protection is disabled).<br />2.  WhenSupported – The policy is enforced only if the client supports Extended Protection.<br />3.  Always – The policy is always enforced. Clients which don’t support Extended Protection will fail to authenticate.|  
 |protectionScenario|This enumeration specifies the protection scenario enforced by the policy.|  
-  
+
 ## clientCredentialType Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |None|Messages are not secured during transfer.|  
@@ -53,9 +55,10 @@ Defines properties that control authentication parameters for the HTTP transport
 |Digest|Specifies digest authentication.|  
 |Ntlm|Specifies NTLM authentication when possible, and if Windows authentication fails.|  
 |Windows|Specifies Windows integrated authentication.|  
-  
+
 ## proxyCredentialType Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |None|-   Messages are not secured during transfer.|  
@@ -64,19 +67,20 @@ Defines properties that control authentication parameters for the HTTP transport
 |Ntlm|Specifies NTLM authentication when possible, and if Windows authentication fails.|  
 |Windows|Specifies Windows integrated authentication.|  
 |Certificate|Performs client authentication using a certificate. This option works only if the `Mode` attribute of the parent `security` element is set to Transport, and will not work if it is set to TransportCredentialOnly.|  
-  
+
 ### Child Elements  
  None  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-nethttpbinding.md)|Defines the security capabilities for the [\<netHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/nethttpbinding.md).|  
-  
+
 ## Example  
  The following example demonstrates the use of SSL transport security with the basic binding. By default, the basic binding supports HTTP communication.  
-  
+
 ```xml
 <system.serviceModel>  
   <services>  
@@ -107,7 +111,7 @@ Defines properties that control authentication parameters for the HTTP transport
   </bindings>  
 </system.serviceModel>  
 ```  
-  
+
 ## See Also  
  <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>
  <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>  

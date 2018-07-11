@@ -14,66 +14,66 @@ This is the first of six tasks required to create a basic Windows Communication 
   
 ### To define a service contract  
   
-1.  Open  [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] as an administrator by right-clicking the program in the **Start** menu and selecting **Run as administrator**.  
+1. Open  [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] as an administrator by right-clicking the program in the **Start** menu and selecting **Run as administrator**.  
   
-2.  Create a WCF Service Library project by clicking the **File** menu and selecting **New**, **Project**. In the **New Project** dialog, on the left-hand side of the dialog expand **Visual C#** for a C# project or **Other Languages** and then **Visual Basic** for a Visual Basic project. Under the language selected select **WCF** and a list of project templates will be displayed on the center section of the dialog. Select **WCF Service Library**, and type `GettingStartedLib` in the **Name** textbox and `GettingStarted` in the **Solution name** textbox at the bottom of the dialog.  
+2. Create a WCF Service Library project by clicking the **File** menu and selecting **New**, **Project**. In the **New Project** dialog, on the left-hand side of the dialog expand **Visual C#** for a C# project or **Other Languages** and then **Visual Basic** for a Visual Basic project. Under the language selected select **WCF** and a list of project templates will be displayed on the center section of the dialog. Select **WCF Service Library**, and type `GettingStartedLib` in the **Name** textbox and `GettingStarted` in the **Solution name** textbox at the bottom of the dialog.  
   
-3.  Visual Studio will create the project which contains 3 files: IService1.cs (or IService1.vb), Service1.cs (or Service1.vb), and App.config.  The IService1 file contains a default service contract.  The Service1 file contains a default implementation of the service contract. The App.config file contains configuration needed to load the default service with the Visual Studio WCF Service Host. For more information about the WCF Service Host tool, see [WCF Service Host (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
+3. Visual Studio will create the project which contains 3 files: IService1.cs (or IService1.vb), Service1.cs (or Service1.vb), and App.config.  The IService1 file contains a default service contract.  The Service1 file contains a default implementation of the service contract. The App.config file contains configuration needed to load the default service with the Visual Studio WCF Service Host. For more information about the WCF Service Host tool, see [WCF Service Host (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
   
-4.  Open the IService1.cs or IService1.vb file and delete the code within the namespace declaration leaving the namespace declaration. Inside the namespace declaration define a new interface called `ICalculator` as shown in the code below.  
+4. Open the IService1.cs or IService1.vb file and delete the code within the namespace declaration leaving the namespace declaration. Inside the namespace declaration define a new interface called `ICalculator` as shown in the code below.  
   
-    ```  
-    // IService.cs  
-    using System;  
-    using System.Collections.Generic;  
-    using System.Linq;  
-    using System.Runtime.Serialization;  
-    using System.ServiceModel;  
-    using System.Text;  
+   ```  
+   // IService.cs  
+   using System;  
+   using System.Collections.Generic;  
+   using System.Linq;  
+   using System.Runtime.Serialization;  
+   using System.ServiceModel;  
+   using System.Text;  
   
-    namespace GettingStartedLib  
-    {  
-            [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
-            public interface ICalculator  
-            {  
-                [OperationContract]  
-                double Add(double n1, double n2);  
-                [OperationContract]  
-                double Subtract(double n1, double n2);  
-                [OperationContract]  
-                double Multiply(double n1, double n2);  
-                [OperationContract]  
-                double Divide(double n1, double n2);  
-            }  
-    }  
-    ```  
+   namespace GettingStartedLib  
+   {  
+           [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
+           public interface ICalculator  
+           {  
+               [OperationContract]  
+               double Add(double n1, double n2);  
+               [OperationContract]  
+               double Subtract(double n1, double n2);  
+               [OperationContract]  
+               double Multiply(double n1, double n2);  
+               [OperationContract]  
+               double Divide(double n1, double n2);  
+           }  
+   }  
+   ```  
   
-    ```  
-    ‘IService.vb  
-    Imports System  
-    Imports System.ServiceModel  
+   ```  
+   ‘IService.vb  
+   Imports System  
+   Imports System.ServiceModel  
   
-    Namespace GettingStartedLib  
+   Namespace GettingStartedLib  
   
-        <ServiceContract(Namespace:="http://Microsoft.ServiceModel.Samples")> _  
-        Public Interface ICalculator  
+       <ServiceContract(Namespace:="http://Microsoft.ServiceModel.Samples")> _  
+       Public Interface ICalculator  
   
-            <OperationContract()> _  
-            Function Add(ByVal n1 As Double, ByVal n2 As Double) As Double  
-            <OperationContract()> _  
-            Function Subtract(ByVal n1 As Double, ByVal n2 As Double) As Double  
-            <OperationContract()> _  
-            Function Multiply(ByVal n1 As Double, ByVal n2 As Double) As Double  
-            <OperationContract()> _  
-            Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double  
-        End Interface  
-    End Namespace  
-    ```  
+           <OperationContract()> _  
+           Function Add(ByVal n1 As Double, ByVal n2 As Double) As Double  
+           <OperationContract()> _  
+           Function Subtract(ByVal n1 As Double, ByVal n2 As Double) As Double  
+           <OperationContract()> _  
+           Function Multiply(ByVal n1 As Double, ByVal n2 As Double) As Double  
+           <OperationContract()> _  
+           Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double  
+       End Interface  
+   End Namespace  
+   ```  
   
-     This contract defines an online calculator. Notice the `ICalculator` interface is marked with the <xref:System.ServiceModel.ServiceContractAttribute> attribute. This attribute defines a namespace that is used to disambiguate the contract name. Each calculator operation is marked with the <xref:System.ServiceModel.OperationContractAttribute> attribute.  
+    This contract defines an online calculator. Notice the `ICalculator` interface is marked with the <xref:System.ServiceModel.ServiceContractAttribute> attribute. This attribute defines a namespace that is used to disambiguate the contract name. Each calculator operation is marked with the <xref:System.ServiceModel.OperationContractAttribute> attribute.  
   
-    > [!NOTE]
-    >  When using attributes to annotate an interface, member, or class, you can drop the "Attribute" part from the attribute name. So <xref:System.ServiceModel.ServiceContractAttribute> becomes `[ServiceContract]` in C#, or `<ServiceContract>` in Visual Basic.  
+   > [!NOTE]
+   >  When using attributes to annotate an interface, member, or class, you can drop the "Attribute" part from the attribute name. So <xref:System.ServiceModel.ServiceContractAttribute> becomes `[ServiceContract]` in C#, or `<ServiceContract>` in Visual Basic.  
   
 ## See Also  
  <xref:System.ServiceModel.ServiceContractAttribute>  

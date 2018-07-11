@@ -20,25 +20,26 @@ ms.author: "ronpet"
 ---
 # IHostMemoryManager::GetMemoryLoad Method
 Gets the amount of physical memory that is currently in use, and therefore unavailable, as reported by the host.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetMemoryLoad (  
     [out] DWORD*  pMemoryLoad,   
     [out] SIZE_T  *pAvailableBytes  
 );  
 ```  
-  
+
 #### Parameters  
  `pMemoryLoad`  
  [out] A pointer to the approximate percentage of total physical memory that is currently in use.  
-  
+
  `pAvailableBytes`  
  [out] A pointer to the number of bytes available to the common language runtime (CLR).  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`GetMemoryLoad` returned successfully.|  
@@ -47,21 +48,21 @@ HRESULT GetMemoryLoad (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  `GetMemoryLoad` wraps the Win32 `GlobalMemoryStatus` function. The value of `pMemoryLoad` is the equivalent of the `dwMemoryLoad` field in the `MEMORYSTATUS` structure returned from `GlobalMemoryStatus`.  
-  
+
  The runtime uses the return value as a heuristic for the garbage collector. For example, if the host reports that the majority of memory is in use, the garbage collector may elect to collect from multiple generations to increase the amount of memory that can potentially become available.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  <xref:System.GC?displayProperty=nameWithType>  
  [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)

@@ -8,15 +8,15 @@ Microsoft SQL Server provides support for user-defined types (UDTs) implemented 
   
  UDTs can provide two key benefits from an application architecture perspective:  
   
--   Strong encapsulation (both in the client and the server) between the internal state and the external behaviors.  
+- Strong encapsulation (both in the client and the server) between the internal state and the external behaviors.  
   
--   Deep integration with other related server features. Once you define your own UDT, you can use it in all contexts where you can use a system type in SQL Server, including column definitions, and as variables, parameters, function results, cursors, triggers, and replication.  
+- Deep integration with other related server features. Once you define your own UDT, you can use it in all contexts where you can use a system type in SQL Server, including column definitions, and as variables, parameters, function results, cursors, triggers, and replication.  
   
  For more detailed information, see the version of SQL Server Books Online for the version of SQL Server you are using.  
   
  **SQL Server Books Online**  
   
-1.  [CLR User-Defined Types](http://go.microsoft.com/fwlink/?LinkId=98366)  
+1. [CLR User-Defined Types](http://go.microsoft.com/fwlink/?LinkId=98366)  
   
 ## See Also  
  [Creating SQL Server 2005 Objects In Managed Code](http://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)  

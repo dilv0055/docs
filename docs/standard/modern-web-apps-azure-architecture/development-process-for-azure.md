@@ -7,8 +7,8 @@ ms.date: 06/28/2018
 ---
 # Development process for Azure
 
-> _"With the cloud, individuals and small businesses can snap their fingers and instantly set up enterprise-class services."_  
-> _- Roy Stephan_
+> *"With the cloud, individuals and small businesses can snap their fingers and instantly set up enterprise-class services."*  
+> *- Roy Stephan*
 
  ## Vision
 
@@ -103,6 +103,6 @@ While the Web App is running, you can monitor the health of the application and 
 **Build and Deploy Your ASP.NET Core App to Azure**  
 <https://docs.microsoft.com/vsts/build-release/apps/aspnet/build-aspnet-core>
 
->[!div class="step-by-step"]
-[Previous](test-asp-net-core-mvc-apps.md)
-[Next](azure-hosting-recommendations-for-asp-net-web-apps.md)
+> [!div  class="step-by-step"]
+> [Previous](test-asp-net-core-mvc-apps.md)
+> [Next](azure-hosting-recommendations-for-asp-net-web-apps.md)

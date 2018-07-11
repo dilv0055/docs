@@ -19,23 +19,24 @@ ms.author: "ronpet"
 ---
 # ICorPublishAppDomain Interface
 Represents and provides information about an application domain.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetID Method](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getid-method.md)|Gets the unique identifier for this `ICorPublishAppDomain`.|  
 |[GetName Method](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-getname-method.md)|Gets the name of the application domain referenced by this `ICorPublishAppDomain`.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorPub.idl, CorPub.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [CorpubPublish Coclass](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)

@@ -55,9 +55,9 @@ Write your articles in active voice. Active voice means that the subject of the 
 the action (verb) of that sentence. It contrasts with passive voice, where the sentence is arranged
 such that the subject of the sentence is acted upon. Contrast these two examples:
 
->The compiler transformed source code into an executable.
+> The compiler transformed source code into an executable.
 
->The source code was transformed into an executable by the compiler.
+> The source code was transformed into an executable by the compiler.
 
 The first sentence uses active voice. The second sentence was written in passive voice.
 (Those two sentences provide another example of each style).
@@ -76,8 +76,8 @@ Programming, Class, and Object, Function and Method are familiar terms. However,
 reading your articles has a formal computer science degree. Terms like 'idempotent' probably
 need to be defined if you use it:
 
->The Close() method is idempotent, meaning that you can call it multiple times and the effect is
-the same as if you called it once.
+> The Close() method is idempotent, meaning that you can call it multiple times and the effect is
+> the same as if you called it once.
 
 ### Avoid future tense
 In some non-English languages the concept of future tense is not the same as English. Using future tense can make your documents harder to read. Additionally, when using the future tense, the obvious question is when. So if you say 'Learning PowerShell will be good for you" - the obvious question for the reader is when will it be good? Instead, just say "Learning PowerShell is good for you".

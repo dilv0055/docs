@@ -10,47 +10,50 @@ ms.author: "ronpet"
 ---
 # &lt;loadFromRemoteSources&gt; element
 Specifies whether assemblies loaded from remote sources should be granted full trust in .NET Framework 4 and later.
-  
+
 > [!NOTE]
 >  If you were directed to this topic because of an error message in the Visual Studio project error list or a build error, see [How to: Use an Assembly from the Web in Visual Studio](http://msdn.microsoft.com/library/d8635b63-89a0-41aa-90f4-f351b2111070).  
-  
+
  \<configuration>  
 \<runtime>  
 \<loadFromRemoteSources>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <loadFromRemoteSources    
    enabled="true|false"/>  
 ```  
-  
+
 ## Attributes and elements
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`enabled`|Required attribute.<br /><br /> Specifies whether an assembly that is loaded from a remote source should be granted full trust.|  
-  
+
 ## enabled attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |`false`|Do not grant full trust to applications from remote sources. This is the default.|  
 |`true`|Grant full trust to applications from remote sources.|  
-  
+
 ### Child elements  
  None.  
-  
+
 ### Parent elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`runtime`|Contains information about runtime initialization options.|  
-  
+
 ## Remarks
 
 In the .NET Framework 3.5 and earlier versions, if you load an assembly from a remote location, code in the assembly runs in partial trust with a grant set that depends on the zone from which it is loaded. For example, if you load an assembly from a website, it is loaded into the Internet zone and granted the Internet permission set. In other words, it executes in an Internet sandbox.

@@ -15,28 +15,27 @@ ms.date: 06/12/2018
 
 ## Synopsis
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 ```
 dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [--nuget-source] [-o|--output]
     [-u|--uninstall] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
 dotnet new [-h|--help]
 ```
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 ```
 dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [-o|--output] [-u|--uninstall] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
 dotnet new [-h|--help]
 ```
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 ```
 dotnet new <TEMPLATE> [-lang|--language] [-n|--name] [-o|--output] [-all|--show-all] [-h|--help] [Template options]
 dotnet new <TEMPLATE> [-l|--list]
 dotnet new [-all|--show-all]
 dotnet new [-h|--help]
 ```
----
-
+* * *
 ## Description
 
 The `dotnet new` command provides a convenient way to initialize a valid .NET Core project.
@@ -49,9 +48,10 @@ The command calls the [template engine](https://github.com/dotnet/templating) to
 
 The template to instantiate when the command is invoked. Each template might have specific options you can pass. For more information, see [Template options](#template-options).
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 
 The command contains a default list of templates. Use `dotnet new -l` to obtain a list of the available templates. The following table shows the templates that come pre-installed with the .NET Core SDK 2.1.300. The default language for the template is shown inside the brackets.
+
 
 |Template description                          | Template name   | Languages     |
 |----------------------------------------------|-----------------|---------------|
@@ -75,9 +75,10 @@ The command contains a default list of templates. Use `dotnet new -l` to obtain 
 | Web config                                   | `webconfig`     |               |
 | Solution file                                | `sln`           |               |
 
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 
 The command contains a default list of templates. Use `dotnet new -l` to obtain a list of the available templates. The following table shows the templates that come pre-installed with the .NET Core SDK 2.0. The default language for the template is shown inside the brackets.
+
 
 |Template description                          | Template name | Languages     |
 |----------------------------------------------|---------------|---------------|
@@ -100,9 +101,10 @@ The command contains a default list of templates. Use `dotnet new -l` to obtain 
 | MVC ViewImports                              | `viewimports` |               |
 | MVC ViewStart                                | `viewstart`   |               |
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 The command contains a default list of templates. Use `dotnet new -all` to obtain a list of the available templates. The following table shows the templates that come pre-installed with the .NET Core SDK 1.x. The default language for the template is shown inside the brackets.
+
 
 |Template description  | Template name | Languages |
 |----------------------|---------------|-----------|
@@ -117,11 +119,10 @@ The command contains a default list of templates. Use `dotnet new -all` to obtai
 | Web config           | `webconfig`   |           |
 | Solution file        | `sln`         |           |
 
----
-
+* * *
 ## Options
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 
 `--force`
 
@@ -172,7 +173,7 @@ Uninstalls a source or template pack at the `PATH` or `NUGET_ID` provided.
 > To uninstall a template using a `PATH`, you need to fully qualify the path. For example, *C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* will work, but *./GarciaSoftware.ConsoleTemplate.CSharp* from the containing folder will not.
 > Additionally, do not include a final terminating directory slash on your template path.
 
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 
 `--force`
 
@@ -219,7 +220,7 @@ Uninstalls a source or template pack at the `PATH` or `NUGET_ID` provided.
 > To uninstall a template using a `PATH`, you need to fully qualify the path. For example, *C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* will work, but *./GarciaSoftware.ConsoleTemplate.CSharp* from the containing folder will not.
 > Additionally, do not include a final terminating directory slash on your template path.
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `-all|--show-all`
 
@@ -248,13 +249,12 @@ The name for the created output. If no name is specified, the name of the curren
 
 Location to place the generated output. The default is the current directory.
 
----
-
+* * *
 ## Template options
 
 Each project template may have additional options available. The core templates have the following additional options:
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 
 **console, angular, react, reactredux, razorclasslib**
 
@@ -360,7 +360,7 @@ Each project template may have additional options available. The core templates 
 
 `-na|--namespace <NAMESPACE_NAME>`- Namespace for the generated code. The default value is `MyApp.Namespace`.
 
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 
 **console, angular, react, reactredux**
 
@@ -466,7 +466,7 @@ Each project template may have additional options available. The core templates 
 
 `-na|--namespace <NAMESPACE_NAME>`- Namespace for the generated code. The default value is `MyApp.Namespace`.
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 **console, xunit, mstest, web, webapi**
 
@@ -484,8 +484,7 @@ Each project template may have additional options available. The core templates 
 
 `-uld|--use-local-db` - Specifies whether or not to use LocalDB instead of SQLite. Values: `true` or `false`. The default value is `false`.
 
----
-
+* * *
 ## Examples
 
 Create an F# console application project in the current directory:

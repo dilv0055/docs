@@ -4,7 +4,6 @@ description: Arrays are the most basic collection type in the C# language
 ms.date: 08/10/2016
 ms.assetid: a440704c-9e88-4c75-97dd-bfe30ca0fb97
 ---
-
 # Arrays
 
 An ***array*** is a data structure that contains a number of variables that are accessed through computed indices. The variables contained in an array, also called the ***elements*** of the array, are all of the same type, and this type is called the ***element type*** of the array.
@@ -38,6 +37,6 @@ Both of the previous examples are equivalent to the following:
 
 [!code-csharp[ArrayAssignment](../../../samples/snippets/csharp/tour/arrays/Program.cs#L49-L53)]
 
->[!div class="step-by-step"]
-[Previous](structs.md)
-[Next](interfaces.md)
+> [!div  class="step-by-step"]
+> [Previous](structs.md)
+> [Next](interfaces.md)

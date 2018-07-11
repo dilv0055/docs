@@ -19,13 +19,13 @@ All versioning of assemblies that use the common language runtime is done at the
   
  The runtime performs several steps to resolve an assembly binding request:  
   
-1.  Checks the original assembly reference to determine the version of the assembly to be bound.  
+1. Checks the original assembly reference to determine the version of the assembly to be bound.  
   
-2.  Checks for all applicable configuration files to apply version policy.  
+2. Checks for all applicable configuration files to apply version policy.  
   
-3.  Determines the correct assembly from the original assembly reference and any redirection specified in the configuration files, and determines the version that should be bound to the calling assembly.  
+3. Determines the correct assembly from the original assembly reference and any redirection specified in the configuration files, and determines the version that should be bound to the calling assembly.  
   
-4.  Checks the global assembly cache, codebases specified in configuration files, and then checks the application's directory and subdirectories using the probing rules explained in [How the Runtime Locates Assemblies](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+4. Checks the global assembly cache, codebases specified in configuration files, and then checks the application's directory and subdirectories using the probing rules explained in [How the Runtime Locates Assemblies](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
  The following illustration shows these steps.  
   
@@ -37,9 +37,9 @@ Resolving an assembly binding request
 ## Version Information  
  Each assembly has two distinct ways of expressing version information:  
   
--   The assembly's version number, which, together with the assembly name and culture information, is part of the assembly's identity. This number is used by the runtime to enforce version policy and plays a key part in the type resolution process at run time.  
+- The assembly's version number, which, together with the assembly name and culture information, is part of the assembly's identity. This number is used by the runtime to enforce version policy and plays a key part in the type resolution process at run time.  
   
--   An informational version, which is a string that represents additional version information included for informational purposes only.  
+- An informational version, which is a string that represents additional version information included for informational purposes only.  
   
 ### Assembly Version Number  
  Each assembly has a version number as part of its identity. As such, two assemblies that differ by version number are considered by the runtime to be completely different assemblies. This version number is physically represented as a four-part string with the following format:  

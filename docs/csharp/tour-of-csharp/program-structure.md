@@ -4,7 +4,6 @@ description: Learn the basic building blocks of a C# program
 ms.date: 08/10/2016
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
 ---
-
 # Program Structure
 
 The key organizational concepts in C# are ***programs***, ***namespaces***, ***types***, ***members***, and ***assemblies***. C# programs consist of one or more source files. Programs declare types, which contain members and can be organized into namespaces. Classes and interfaces are examples of types. Fields, methods, properties, and events are examples of members. When C# programs are compiled, they are physically packaged into assemblies. Assemblies typically have the file extension `.exe` or `.dll`, depending on whether they implement ***applications*** or ***libraries***, respectively.
@@ -46,6 +45,6 @@ This creates an executable assembly named `example.exe`, which, when run, produc
 
 C# permits the source text of a program to be stored in several source files. When a multi-file C# program is compiled, all of the source files are processed together, and the source files can freely reference each other—conceptually, it is as if all the source files were concatenated into one large file before being processed. Forward declarations are never needed in C# because, with very few exceptions, declaration order is insignificant. C# does not limit a source file to declaring only one public type nor does it require the name of the source file to match a type declared in the source file.
 
->[!div class="step-by-step"]
-[Previous](index.md)
-[Next](types-and-variables.md)
+> [!div  class="step-by-step"]
+> [Previous](index.md)
+> [Next](types-and-variables.md)

@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # IAppIdAuthority Interface
 Provides methods that generate and compare keys for application identities and references.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |`IAppIdAuthority::AreDefinitionsEqual`|Gets a value that indicates whether the two specified [IDefinitionAppId](../../../../docs/framework/unmanaged-api/fusion/idefinitionappid-interface.md) instances are equal. You can pass the flag value IAPPIDAUTHORITY_ARE_DEFINITIONS_EQUAL_FLAG_IGNORE_VERSION to ignore their respective version information.|  
@@ -40,13 +41,13 @@ Provides methods that generate and compare keys for application identities and r
 |`IAppIdAuthority::ReferenceToText`|Gets a string version of the specified `IReferenceAppId`, using the specified flag values.|  
 |`IAppIdAuthority::TextToDefinition`|Gets an interface pointer to an `IDefinitionAppId` instance that represents the assembly referenced by the specified string key.|  
 |`IAppIdAuthority::TextToReference`|Gets an interface pointer to an `IReferenceAppId` instance that represents the assembly referenced by the specified string key.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Isolation.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Fusion Interfaces](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)

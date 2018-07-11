@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # COR_ARRAY_LAYOUT Structure
 Provides information about the layout of an array object in memory.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct COR_ARRAY_LAYOUT {  
     COR_TYPEID componentID;  
@@ -34,9 +34,10 @@ typedef struct COR_ARRAY_LAYOUT {
     ULONG32 rankOffset;   
 } COR_ARRAY_LAYOUT;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`componentID`|The identifier of the type of objects that the array contains.|  
@@ -47,21 +48,21 @@ typedef struct COR_ARRAY_LAYOUT {
 |`rankSize`|The size of the rank, in bytes.|  
 |`numRanks`|The number of ranks in the array.|  
 |`rankOffset`|The offset at which the ranks start.|  
-  
+
 ## Remarks  
  The `rankSize` field specifies the size of a rank in a multi-dimensional array. It is accurate for single-dimensional arrays as well.  
-  
+
  The value of `numRanks` is 1 for a single-dimensional array and `N` for a multi-dimensional array of `N` dimensions.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

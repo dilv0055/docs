@@ -21,23 +21,23 @@ This sample demonstrates how to extend the Windows Communication Foundation (WCF
   
 #### To run this sample  
   
-1.  Open the solution for the Advanced Format Selection Sample. When launching [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], you should run as an administrator for the sample to execute successfully. Do this by right-clicking the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] icon and choosing **Run as Administrator** from the context menu.  
+1. Open the solution for the Advanced Format Selection Sample. When launching [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], you should run as an administrator for the sample to execute successfully. Do this by right-clicking the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] icon and choosing **Run as Administrator** from the context menu.  
   
-2.  Press CTRL+SHIFT+B to build the solution and then press Ctrl-F5 to run the console application AdvancedFormatSelection project without debugging. The console window appears and provides the URI of the running service and the URI of the HTML help page for the running service.  
+2. Press CTRL+SHIFT+B to build the solution and then press Ctrl-F5 to run the console application AdvancedFormatSelection project without debugging. The console window appears and provides the URI of the running service and the URI of the HTML help page for the running service.  
   
-3.  As the sample runs, the client sends requests to the service and writes the responses to the console window. Notice the different formats of the responses: XML, JSON, Atom, and XHTML.  
+3. As the sample runs, the client sends requests to the service and writes the responses to the console window. Notice the different formats of the responses: XML, JSON, Atom, and XHTML.  
   
-4.  You are then prompted to browse to a URI in which you can request the response in a .jpeg format. Open a browser and browse to the given URI.  
+4. You are then prompted to browse to a URI in which you can request the response in a .jpeg format. Open a browser and browse to the given URI.  
   
-5.  Press any key to terminate the sample.  
+5. Press any key to terminate the sample.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AdvancedFormatSelection`  
   
 ## See Also

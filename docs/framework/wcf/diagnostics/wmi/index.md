@@ -50,89 +50,89 @@ Windows Communication Foundation (WCF) exposes inspection data of a service at r
   
  To modify user privilege levels, use the following steps.  
   
-1.  Click Start and then Run and type **compmgmt.msc**.  
+1. Click Start and then Run and type **compmgmt.msc**.  
   
-2.  Right-click **Services and Application/WMI Controls** to select **Properties**.  
+2. Right-click **Services and Application/WMI Controls** to select **Properties**.  
   
-3.  Select the **Security** Tab, and navigate to the **Root/ServiceModel** namespace. Click the **Security** button.  
+3. Select the **Security** Tab, and navigate to the **Root/ServiceModel** namespace. Click the **Security** button.  
   
-4.  Select the specific group or user that you want to control access and use the **Allow** or **Deny** checkbox to configure permissions.  
+4. Select the specific group or user that you want to control access and use the **Allow** or **Deny** checkbox to configure permissions.  
   
 ## Granting WCF WMI Registration Permissions to Additional Users  
  WCF exposes management data to WMI. It does so by hosting an in-process WMI provider, sometimes called a "decoupled provider". For the management data to be exposed, the account that registers this provider must have the appropriate permissions. In Windows, only a small set of privileged accounts can register decoupled providers by default. This is a problem because users commonly want to expose WMI data from a WCF service running under an account that is not in the default set.  
   
  To provide this access, an administrator must grant the following permissions to the additional account in the following order:  
   
-1.  Permission to access to the WCF WMI Namespace.  
+1. Permission to access to the WCF WMI Namespace.  
   
-2.  Permission to register the WCF Decoupled WMI Provider.  
+2. Permission to register the WCF Decoupled WMI Provider.  
   
 #### To grant WMI namespace access permission  
   
-1.  Run the following PowerShell script.  
+1. Run the following PowerShell script.  
   
-    ```powershell  
-    write-host ""  
-    write-host "Granting Access to root/servicemodel WMI namespace to built in users group"  
-    write-host ""  
+   ```powershell  
+   write-host ""  
+   write-host "Granting Access to root/servicemodel WMI namespace to built in users group"  
+   write-host ""  
   
-    # Create the binary representation of the permissions to grant in SDDL  
-    $newPermissions = "O:BAG:BAD:P(A;CI;CCDCLCSWRPWPRCWD;;;BA)(A;CI;CC;;;NS)(A;CI;CC;;;LS)(A;CI;CC;;;BU)"  
-    $converter = new-object system.management.ManagementClass Win32_SecurityDescriptorHelper  
-    $binarySD = $converter.SDDLToBinarySD($newPermissions)  
-    $convertedPermissions = ,$binarySD.BinarySD  
+   # Create the binary representation of the permissions to grant in SDDL  
+   $newPermissions = "O:BAG:BAD:P(A;CI;CCDCLCSWRPWPRCWD;;;BA)(A;CI;CC;;;NS)(A;CI;CC;;;LS)(A;CI;CC;;;BU)"  
+   $converter = new-object system.management.ManagementClass Win32_SecurityDescriptorHelper  
+   $binarySD = $converter.SDDLToBinarySD($newPermissions)  
+   $convertedPermissions = ,$binarySD.BinarySD  
   
-    # Get the object used to set the permissions  
-    $security = gwmi -namespace root/servicemodel -class __SystemSecurity  
+   # Get the object used to set the permissions  
+   $security = gwmi -namespace root/servicemodel -class __SystemSecurity  
   
-    # Get and output the current settings  
-    $binarySD = @($null)  
-    $result = $security.PsBase.InvokeMethod("GetSD",$binarySD)  
+   # Get and output the current settings  
+   $binarySD = @($null)  
+   $result = $security.PsBase.InvokeMethod("GetSD",$binarySD)  
   
-    $outsddl = $converter.BinarySDToSDDL($binarySD[0])  
-    write-host "Previous ACL: "$outsddl.SDDL  
+   $outsddl = $converter.BinarySDToSDDL($binarySD[0])  
+   write-host "Previous ACL: "$outsddl.SDDL  
   
-    # Change the Access Control List (ACL) using SDDL  
-    $result = $security.PsBase.InvokeMethod("SetSD",$convertedPermissions)   
+   # Change the Access Control List (ACL) using SDDL  
+   $result = $security.PsBase.InvokeMethod("SetSD",$convertedPermissions)   
   
-    # Get and output the current settings  
-    $binarySD = @($null)  
-    $result = $security.PsBase.InvokeMethod("GetSD",$binarySD)  
+   # Get and output the current settings  
+   $binarySD = @($null)  
+   $result = $security.PsBase.InvokeMethod("GetSD",$binarySD)  
   
-    $outsddl = $converter.BinarySDToSDDL($binarySD[0])  
-    write-host "New ACL:      "$outsddl.SDDL  
-    write-host ""  
-    ```  
+   $outsddl = $converter.BinarySDToSDDL($binarySD[0])  
+   write-host "New ACL:      "$outsddl.SDDL  
+   write-host ""  
+   ```  
   
-     This PowerShell script uses Security Descriptor Definition Language (SDDL) to grant the Built-In Users group access to the "root/servicemodel" WMI namespace. It specifies the following ACLs:  
+    This PowerShell script uses Security Descriptor Definition Language (SDDL) to grant the Built-In Users group access to the "root/servicemodel" WMI namespace. It specifies the following ACLs:  
   
-    -   Built-In Administrator (BA) - Already Had Access.  
+   - Built-In Administrator (BA) - Already Had Access.  
   
-    -   Network Service (NS) - Already Had Access.  
+   - Network Service (NS) - Already Had Access.  
   
-    -   Local System (LS) - Already Had Access.  
+   - Local System (LS) - Already Had Access.  
   
-    -   Built-In Users - The group to grant access to.  
+   - Built-In Users - The group to grant access to.  
   
 #### To grant provider registration access  
   
-1.  Run the following PowerShell script.  
+1. Run the following PowerShell script.  
   
-    ```powershell  
-    write-host ""  
-    write-host "Granting WCF provider registration access to built in users group"  
-    write-host ""  
-    # Set security on ServiceModel provider  
-    $provider = get-WmiObject -namespace "root\servicemodel" __Win32Provider  
+   ```powershell  
+   write-host ""  
+   write-host "Granting WCF provider registration access to built in users group"  
+   write-host ""  
+   # Set security on ServiceModel provider  
+   $provider = get-WmiObject -namespace "root\servicemodel" __Win32Provider  
   
-    write-host "Previous ACL: "$provider.SecurityDescriptor  
-    $result = $provider.SecurityDescriptor = "O:BUG:BUD:(A;;0x1;;;BA)(A;;0x1;;;NS)(A;;0x1;;;LS)(A;;0x1;;;BU)"  
+   write-host "Previous ACL: "$provider.SecurityDescriptor  
+   $result = $provider.SecurityDescriptor = "O:BUG:BUD:(A;;0x1;;;BA)(A;;0x1;;;NS)(A;;0x1;;;LS)(A;;0x1;;;BU)"  
   
-    # Commit the changes and display it to the console  
-    $result = $provider.Put()  
-    write-host "New ACL:      "$provider.SecurityDescriptor  
-    write-host ""  
-    ```  
+   # Commit the changes and display it to the console  
+   $result = $provider.Put()  
+   write-host "New ACL:      "$provider.SecurityDescriptor  
+   write-host ""  
+   ```  
   
 ### Granting Access to Arbitrary Users or Groups  
  The example in this section grants WMI Provider registration privileges to all local users. If you want to grant access to a user or group that is not built in, then you must obtain that user or group’s Security Identifier (SID). There is no simple way to get the SID for an arbitrary user. One method is to log on as the desired user and then issue the following shell command.  
@@ -151,16 +151,16 @@ Whoami /user
   
  **%windir%\Program Files\WMI Tools\\**  
   
-1.  In the **Connect to namespace:** window, type **root\ServiceModel** and click **OK.**  
+1. In the **Connect to namespace:** window, type **root\ServiceModel** and click **OK.**  
   
-2.  In the **WMI CIM Studio Login** window, click the **Options >>** button to expand the window. Select **Packet privacy** for **Authentication level**, and click **OK**.  
+2. In the **WMI CIM Studio Login** window, click the **Options >>** button to expand the window. Select **Packet privacy** for **Authentication level**, and click **OK**.  
   
 ### Windows Management Instrumentation Tester  
  This tool is installed by Windows. To run it, launch a command console by typing **cmd.exe** in the **Start/Run** dialog box and click **OK**. Then, type **wbemtest.exe** in the command window. The Windows Management Instrumentation Tester tool is then launched.  
   
-1.  Click the **Connect** button on the top right corner of the window.  
+1. Click the **Connect** button on the top right corner of the window.  
   
-2.  In the new window, enter **root\ServiceModel** for the **Namespace** field, and select **Packet privacy** for **Authentication level**. Click **Connect**.  
+2. In the new window, enter **root\ServiceModel** for the **Namespace** field, and select **Packet privacy** for **Authentication level**. Click **Connect**.  
   
 ### Using Managed Code  
  You can also access remote WMI instances programmatically by using classes provided by the <xref:System.Management> namespace. The following code sample demonstrates how to do this.  

@@ -1,5 +1,6 @@
 ### Allow Unicode Bidirectional Control Characters in URIs
 
+
 |   |   |
 |---|---|
 |Details|Unicode specifies several special control characters used to specify the orientation of text. In previous versions of the .NET Framework, these characters were incorrectly stripped from all URIs even if they were present in their percent-encoded form. In order to better follow [RFC 3987](http://tools.ietf.org/html/rfc3987), we now allow these characters in URIs. When found unencoded in a URI, they are percent-encoded. When found percent-encoded they are left as-is.|

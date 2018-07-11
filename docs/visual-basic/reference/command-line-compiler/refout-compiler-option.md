@@ -10,7 +10,6 @@ helpviewer_keywords:
 author: "rpetrusha"
 ms.author: "ronpet"
 ---
-
 # -refout (Visual Basic)
 
 The **-refout** option specifies a file path where the reference assembly should be output.

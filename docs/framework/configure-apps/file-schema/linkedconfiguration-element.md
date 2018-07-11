@@ -15,7 +15,6 @@ author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
 ---
-
 # \<linkedConfiguration> element
 
 Specifies a configuration file to include.
@@ -32,11 +31,13 @@ Specifies a configuration file to include.
 
 ## Attribute
 
+
 |           | Description |
 | --------- | ----------- |
 | **href**  | Required attribute.<br><br>The URL of the configuration file to include. The only format supported for the **href** attribute is `file://`. Local files and UNC files are supported. |
 
 ## Parent element
+
 
 |     | Description |
 | --- | ----------- |

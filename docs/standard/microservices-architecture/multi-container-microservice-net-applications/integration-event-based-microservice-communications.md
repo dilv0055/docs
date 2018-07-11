@@ -78,9 +78,9 @@ How do you achieve anonymity between publisher and subscriber? An easy way is le
 
 An event bus is typically composed of two parts:
 
--   The abstraction or interface.
+- The abstraction or interface.
 
--   One or more implementations.
+- One or more implementations.
 
 In Figure 8-19 you can see how, from an application point of view, the event bus is nothing more than a Pub/Sub channel. The way you implement this asynchronous communication can vary. It can have multiple implementations so that you can swap between them, depending on the environment requirements (for example, production versus development environments).
 
@@ -122,6 +122,6 @@ The `Publish` method is straightforward. The event bus will broadcast the integr
 The `Subscribe` methods (you can have several implementations depending on the arguments) are used by the microservices that want to receive events. This method has two arguments. The first is the integration event to subscribe to (`IntegrationEvent`). The second argument is the integration event handler (or callback method), named `IIntegrationEventHandler<T>`, to be executed when the receiver microservice gets that integration event message.
 
 
->[!div class="step-by-step"]
-[Previous](database-server-container.md)
-[Next](rabbitmq-event-bus-development-test-environment.md)
+> [!div  class="step-by-step"]
+> [Previous](database-server-container.md)
+> [Next](rabbitmq-event-bus-development-test-environment.md)

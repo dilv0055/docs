@@ -28,6 +28,7 @@ Bindings specify the communication mechanism to use when talking to an endpoint 
 
 The following bindings ship with WCF:
 
+
 |Binding|Configuration Element|Description|
 |-------------|---------------------------|-----------------|
 |<xref:System.ServiceModel.BasicHttpBinding>|[\<basicHttpBinding>](../configure-apps/file-schema/wcf/basichttpbinding.md)|A binding that is suitable for communicating with WS-Basic Profile-conformant Web services, for example, ASP.NET Web services (ASMX)-based services. This binding uses HTTP as the transport and text/XML as the default message encoding.|
@@ -48,6 +49,7 @@ The following bindings ship with WCF:
 |<xref:System.ServiceModel.UdpBinding>|[\<udpBinding>](../configure-apps/file-schema/wcf/udpbinding.md)|A binding to use when sending a burst of simple messages to a large number of clients simultaneously.|
 
  The following table shows the features of each of the system-provided bindings. The bindings are found in the table columns; the features are listed in the rows and described in a second table. The following table provides a key for the binding abbreviations used. To select a binding, determine which column satisfies all of the row features you need.
+
 
 |Binding|Interoperability|Security (Default)|Session<br />(Default)|Transactions|Duplex|Encoding (Default)|Streaming<br />(Default)|
 |-------------|----------------------|--------------------------|-----------------------------|------------------|------------|--------------------------|-------------------------------|
@@ -71,6 +73,7 @@ The following bindings ship with WCF:
 > <xref:System.ServiceModel.NetHttpBinding> is a binding designed for consuming HTTP or WebSocket services and uses binary encoding by default. <xref:System.ServiceModel.NetHttpBinding> detects whether it's used with a request-reply contract or duplex contract and changes its behavior to match; it uses HTTP for request-reply and WebSockets for duplex. This behavior can be overridden using the <xref:System.ServiceModel.Channels.WebSocketTransportUsage> binding setting: WhenDuplex - This is the default value and behaves as described above. Never - This prevents WebSockets from being used. Attempting to use a duplex contract with this setting results in an exception. Always - This forces WebSockets to be used even for request-reply contracts. NetHttpBinding supports reliable sessions in both HTTP mode and WebSocket mode. In WebSocket mode sessions are provided by the transport.
 
  The following table explains the features listed in the previous table.
+
 
 |Feature|Description|
 |-------------|-----------------|

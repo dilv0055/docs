@@ -7,16 +7,16 @@ manager: "mbaldwin"
 ---
 # &lt;secureConversationBootstrap&gt;
 Specifies the default values used for initiating a secure conversation service.  
-  
+
  \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
 \<binding>  
 \<security>  
 \<secureConversationBootstrap>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <secureConversationBootstrap  
    allowSerializedSigningTokenOnReply="Boolean"  
@@ -33,15 +33,16 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
    securityHeaderLayout="Strict/Lax/LaxTimestampFirst/LaxTimestampLast"  
    includeTimestamp="Boolean" />  
 ```  
-  
+
 ## Type  
  `Type`  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`allowSerializedSigningTokenOnReply`|Optional. A Boolean value that specifies if a serialized token can be used on reply. The default value is `false`. When using a dual binding, the setting defaults to `true` any setting made will be ignored.|  
@@ -55,21 +56,23 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
 |`requireSecurityContextCancellation`|A Boolean value that specifies whether security context should be cancelled and terminated when it is no longer required. The default is `true`.|  
 |`requireSignatureConfirmation`|A Boolean value that specifies whether WS-Security signature confirmation is enabled. When set to `true`, message signatures are confirmed by the responder. The default is `false`.<br /><br /> Signature confirmation is used to confirm that the service is responding in full awareness of a request.|  
 |`securityHeaderLayout`|Specifies the ordering of the elements in security header. Valid values are:<br /><br /> -   Strict. Items are added to the security header according to the general principle of "declare before use".<br />-   Lax. Items are added to the security header in any order that confirms to WSS: SOAP Message security.<br />-   LaxWithTimestampFirst. Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the first element in the security header must be a wsse:Timestamp element.<br />-   LaxWithTimestampLast. Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the last element in the security header must be a wsse:Timestamp element.<br /><br /> The default is Strict.<br /><br /> This element is of type <xref:System.ServiceModel.Channels.SecurityHeaderLayout>.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<issuedTokenParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Specifies a current issued token. This element is of type <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>.|  
 |[\<localClientSettings>](../../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)|Specifies the security settings of a local client for this binding. This element is of type <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>.|  
 |[\<localServiceSettings>](../../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)|Specifies the security settings of a local service for this binding. This element is of type <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Specifies the security options for a custom binding.|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>  
  <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>  

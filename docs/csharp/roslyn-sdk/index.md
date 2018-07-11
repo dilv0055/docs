@@ -1,10 +1,10 @@
+
 ---
 title: The .NET Compiler Platform SDK (Roslyn APIs)
 description: Learn to use the .NET Compiler Platform SDK (also called the Roslyn APIs) to understand .NET code, spot errors, and fix those errors.
 ms.date: 10/10/2017
 ms.custom: mvc
 ---
-
 # The .NET Compiler Platform SDK
 
 Compilers build a detailed model of application code as they validate the
@@ -62,8 +62,8 @@ performance.
 There are three main scenarios for writing analyzers and code fixes:
 
 1. [*Enforce team coding standards*](#enforce-team-coding-standards)
-1. [*Provide guidance with library packages*](#provide-guidance-with-library-packages)
-1. [*Provide general coding guidance*](#provide-general-coding-guidance)
+2. [*Provide guidance with library packages*](#provide-guidance-with-library-packages)
+3. [*Provide general coding guidance*](#provide-general-coding-guidance)
 
 ## Enforce team coding standards
 
@@ -124,11 +124,11 @@ found in the quickstarts, samples and tutorials sections.
 
 You can learn more about the concepts in the .NET Compiler Platform SDK in these four topics:
 
- - [Explore code with the syntax visualizer](syntax-visualizer.md)
- - [Understand the compiler API model](compiler-api-model.md)
- - [Work with syntax](work-with-syntax.md)
- - [Work with semantics](work-with-semantics.md)
- - [Work with a workspace](work-with-workspace.md)
+- [Explore code with the syntax visualizer](syntax-visualizer.md)
+- [Understand the compiler API model](compiler-api-model.md)
+- [Work with syntax](work-with-syntax.md)
+- [Work with semantics](work-with-semantics.md)
+- [Work with a workspace](work-with-workspace.md)
  
 To get started, you'll need to install the **.NET Compiler Platform SDK**:
 

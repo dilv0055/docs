@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Sets a named property to a new value.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```  
 HRESULT Put (
    [in] int               vFunc, 
@@ -54,11 +54,12 @@ HRESULT Put (
 
 `vtType`  
 [in] The type of `VARIANT` pointed to by `pVal`. See the [Remarks](#remarks) section for more information.
- 
+
 
 ## Return value
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
+
 
 |Constant  |Value  |Description  |
 |---------|---------|---------|
@@ -68,7 +69,7 @@ The following values returned by this function are defined in the *WbemCli.h* he
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Not enough memory is available to complete the operation. |
 | `WBEM_E_TYPE_MISMATCH` | 0x80041005 | For instances: Indicates that `pVal` points to a `VARIANT` of an incorrect type for the property. <br/> For class definitions: The property already exists in the parent class, and the new COM type is different from the old COM type. |
 |`WBEM_S_NO_ERROR` | 0 | The function call was successful. |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::Put](https://msdn.microsoft.com/library/aa391455(v=vs.85).aspx) method.
@@ -89,10 +90,10 @@ For an example, see the [IWbemClassObject::Put](https://msdn.microsoft.com/libra
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

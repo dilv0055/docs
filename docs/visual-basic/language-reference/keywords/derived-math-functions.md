@@ -24,7 +24,8 @@ ms.assetid: 63e449d8-9444-44fb-8db1-6d9cf346e2aa
 ---
 # Derived Math Functions (Visual Basic)
 The following table shows non-intrinsic math functions that can be derived from the intrinsic math functions of the <xref:System.Math?displayProperty=nameWithType> object. You can access the intrinsic math functions by adding `Imports System.Math` to your file or project.  
-  
+
+
 |Function|Derived equivalents|  
 |--------------|-------------------------|  
 |Secant (Sec(x))|1 / Cos(x)|  
@@ -47,6 +48,6 @@ The following table shows non-intrinsic math functions that can be derived from 
 |Inverse hyperbolic secant (AsecH(x))|Log((Sqrt(-x * x + 1) + 1) / x)|  
 |Inverse hyperbolic cosecant (Acsch(x))|Log((Sign(x) * Sqrt(x \* x + 1) + 1) / x)|  
 |Inverse hyperbolic cotangent (Acoth(x))|Log((x + 1) / (x – 1)) / 2|  
-  
+
 ## See Also  
  [Math Functions](../../../visual-basic/language-reference/functions/math-functions.md)

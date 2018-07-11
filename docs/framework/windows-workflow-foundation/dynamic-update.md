@@ -9,13 +9,13 @@ Dynamic update provides a mechanism for workflow application developers to updat
 ## Dynamic Update  
  To apply dynamic updates to a persisted workflow instance, a <xref:System.Activities.DynamicUpdate.DynamicUpdateMap> is created that contains instructions for the runtime that describe how to modify the persisted workflow instance to reflect the desired changes. Once the update map is created, it is applied to the desired persisted workflow instances. Once the dynamic update is applied, the workflow instance may be resumed using the new updated workflow definition. There are four steps required to create and apply an update map.  
   
-1.  [Prepare the workflow definition for dynamic update](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Prepare)  
+1. [Prepare the workflow definition for dynamic update](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Prepare)  
   
-2.  [Update the workflow definition to reflect the desired changes](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Update)  
+2. [Update the workflow definition to reflect the desired changes](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Update)  
   
-3.  [Create the update map](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Create)  
+3. [Create the update map](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Create)  
   
-4.  [Apply the update map to the desired persisted workflow instances](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Apply)  
+4. [Apply the update map to the desired persisted workflow instances](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Apply)  
   
 > [!NOTE]
 >  Note that steps 1 through 3, which cover the creation of the update map, may be performed independently of applying the update. A common scenario that that the workflow developer will create the update map offline, and then an administrator will apply the update at a later time.  

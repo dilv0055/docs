@@ -30,7 +30,7 @@ This article helps project owners who want to compile their solution against .NE
 
 Consider the repository below:
 
-![Existing project][example-initial-project]
+![Existing project](media/project-structure/project.png "Existing project")
 
 [**Source Code**][example-initial-project-code]
 
@@ -40,7 +40,7 @@ The following describes several ways to add support for .NET Core for this repos
 
 Reorganize the repository so that any existing *\*.csproj* files are removed and a single *\*.csproj* file is created that targets multiple frameworks. This is a great option because a single project is able to compile for different frameworks. It also has the power to handle different compilation options and dependencies per targeted framework.
 
-![Create an csproj that targets multiple frameworks][example-csproj]
+![Create an csproj that targets multiple frameworks](media/project-structure/project.csproj.png "Create an csproj that targets multiple frameworks")
 
 [**Source Code**][example-csproj-code]
 
@@ -51,13 +51,13 @@ Changes to note are:
 
 If there are existing projects that target older frameworks, you may want to leave these projects untouched and use a .NET Core project to target future frameworks.
 
-![.NET Core project with existing project in different folder][example-csproj-different-folder]
+![.NET Core project with existing project in different folder](media/project-structure/project.csproj.different.png ".NET Core project with existing PCL in different folder")
 
 [**Source Code**][example-csproj-different-code]
 
 Changes to note are:
 * The .NET Core and existing projects are kept in separate folders.
-    * Keeping projects in separate folders avoids forcing you to have Visual Studio 2017. You can create a separate solution that only opens the old projects.
+  * Keeping projects in separate folders avoids forcing you to have Visual Studio 2017. You can create a separate solution that only opens the old projects.
 
 ## See Also
 

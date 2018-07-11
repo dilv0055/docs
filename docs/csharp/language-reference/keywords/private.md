@@ -11,7 +11,7 @@ ms.assetid: 654c0bb8-e6ac-4086-bf96-7474fa6aa1c8
 # private (C# Reference)
 The `private` keyword is a member access modifier. 
    
- > This page covers `private` access. The `private` keyword is also part of the [`private protected`](./private-protected.md) access modifier.
+> This page covers `private` access. The `private` keyword is also part of the [`private protected`](./private-protected.md) access modifier.
   
 Private access is the least permissive access level. Private members are accessible only within the body of the class or the struct in which they are declared, as in this example:  
   

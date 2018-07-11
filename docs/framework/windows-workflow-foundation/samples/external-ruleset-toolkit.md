@@ -15,11 +15,11 @@ Normally when rules are used within a workflow application, the rules are part o
   
  The components of this sample include:  
   
--   A RuleSet graphical user interface tool that you can use to edit and manage RuleSet versions in the database.  
+- A RuleSet graphical user interface tool that you can use to edit and manage RuleSet versions in the database.  
   
--   A RuleSet service that is configured on the host application and accesses RuleSets from the database.  
+- A RuleSet service that is configured on the host application and accesses RuleSets from the database.  
   
--   An `ExternalPolicy` activity that requests a RuleSet from the RuleSet service and runs the RuleSet against the workflow.  
+- An `ExternalPolicy` activity that requests a RuleSet from the RuleSet service and runs the RuleSet against the workflow.  
   
  The interaction of the components is shown in Figure 1. The sections that follow describe each component.  
   
@@ -29,11 +29,11 @@ Normally when rules are used within a workflow application, the rules are part o
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ExternalRuleSetToolKit`  
   
 ## RuleSet Tool  
@@ -93,35 +93,35 @@ Normally when rules are used within a workflow application, the rules are part o
   
 #### To run the tool  
   
-1.  The folder that sets up the RuleSet table used by the tool and the service contains a Setup.sql file. You can run the Setup.cmd batch file to create the Rules database on SQL Express and to set up the RuleSet table.  
+1. The folder that sets up the RuleSet table used by the tool and the service contains a Setup.sql file. You can run the Setup.cmd batch file to create the Rules database on SQL Express and to set up the RuleSet table.  
   
-2.  If you edit the batch file or Setup.sql and specify not to use SQL Express or to place the table in a database named something other than `Rules`, the application configuration files in the RuleSet tool and `UsageSample` projects should be edited with the same information.  
+2. If you edit the batch file or Setup.sql and specify not to use SQL Express or to place the table in a database named something other than `Rules`, the application configuration files in the RuleSet tool and `UsageSample` projects should be edited with the same information.  
   
-3.  After you run the Setup.sql script, you can build the `ExternalRuleSetToolkit` solution and then launch the RuleSet tool from the ExternalRuleSetTool project.  
+3. After you run the Setup.sql script, you can build the `ExternalRuleSetToolkit` solution and then launch the RuleSet tool from the ExternalRuleSetTool project.  
   
-4.  The `RuleSetToolkitUsageSample` Sequential Workflow Console Application solution includes a sample workflow. The workflow consists of a `PolicyFromService` activity and two variables, `orderValue` and `discount`, against which the target RuleSet runs.  
+4. The `RuleSetToolkitUsageSample` Sequential Workflow Console Application solution includes a sample workflow. The workflow consists of a `PolicyFromService` activity and two variables, `orderValue` and `discount`, against which the target RuleSet runs.  
   
-5.  To use the sample, build the `RuleSetToolkitUsageSample` solution. Then from the RuleSet tool main menu, click **Data-Import** and point to the DiscountRuleSet.rules file in the RuleSetToolkitUsageSample folder. Click the **Rule Store-Save** menu option to save the imported RuleSet to the database.  
+5. To use the sample, build the `RuleSetToolkitUsageSample` solution. Then from the RuleSet tool main menu, click **Data-Import** and point to the DiscountRuleSet.rules file in the RuleSetToolkitUsageSample folder. Click the **Rule Store-Save** menu option to save the imported RuleSet to the database.  
   
-6.  Because the `PolicyActivities` assembly is referenced from the sample workflow project, the `PolicyFromService` activity appears in the workflow. It does not, however, appear in the toolbox by default. To add it to the toolbox, do the following:  
+6. Because the `PolicyActivities` assembly is referenced from the sample workflow project, the `PolicyFromService` activity appears in the workflow. It does not, however, appear in the toolbox by default. To add it to the toolbox, do the following:  
   
-    -   Right-click the toolbox and select **Choose Items** (this may take a while).  
+   - Right-click the toolbox and select **Choose Items** (this may take a while).  
   
-    -   When the **Choose Toolbox Items** dialog appears, click the **Activities** tab.  
+   - When the **Choose Toolbox Items** dialog appears, click the **Activities** tab.  
   
-    -   Browse to the `PolicyActivities` assembly in the `ExternalRuleSetToolkit` solution and click **Open**.  
+   - Browse to the `PolicyActivities` assembly in the `ExternalRuleSetToolkit` solution and click **Open**.  
   
-    -   Ensure that the `PolicyFromService` activity is selected in the **Choose Toolbox Items** dialog and then click **OK**.  
+   - Ensure that the `PolicyFromService` activity is selected in the **Choose Toolbox Items** dialog and then click **OK**.  
   
-    -   The activity should now appear in the toolbox in the **RuleSetToolkitUsageSample Components** category.  
+   - The activity should now appear in the toolbox in the **RuleSetToolkitUsageSample Components** category.  
   
-7.  The RuleSet service is already configured on the console application host using the following statement in Program.cs.  
+7. The RuleSet service is already configured on the console application host using the following statement in Program.cs.  
   
-    ```  
-    workflowRuntime.AddService(new RuleSetService());  
-    ```  
+   ```  
+   workflowRuntime.AddService(new RuleSetService());  
+   ```  
   
-8.  You can also configure the service on the host using a configuration file; see the SDK documentation for details.  
+8. You can also configure the service on the host using a configuration file; see the SDK documentation for details.  
   
 9. An application configuration file is added to the workflow project to specify the connection string for the database to be used by the service. This should be the same connection string used by the RuleSet tool, which points to the database that contains the RuleSet table.  
   

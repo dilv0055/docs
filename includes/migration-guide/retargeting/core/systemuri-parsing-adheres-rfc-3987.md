@@ -1,5 +1,6 @@
 ### System.Uri parsing adheres to RFC 3987
 
+
 |   |   |
 |---|---|
 |Details|URI parsing has changed in several ways in .NET Framework 4.5. Note, however, that these changes only affect code targeting .NET Framework 4.5. If a binary targets .NET Framework 4.0, the old behavior will be observed. Changes to URI parsing in .NET Framework 4.5 include:<ul><li>URI parsing will perform normalization and character checking according to the latest IRI rules in RFC 3987.</li><li>Unicode normalization form C will only be performed on the host portion of the URI.</li><li>Invalid mailto: URIs will now cause an exception.</li><li>Trailing dots at the end of a path segment are now preserved.</li><li><code>file://</code> URIs do not escape the <code>?</code> character.</li><li>Unicode control characters <code>U+0080</code> through <code>U+009F</code> are not supported.</li><li>Comma characters <code>,</code> or <code>%2c</code> are not automatically unescaped.</li></ul>|

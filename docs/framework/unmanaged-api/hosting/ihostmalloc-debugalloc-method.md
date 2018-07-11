@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # IHostMAlloc::DebugAlloc Method
 Requests that the host allocate the specified amount of memory from the heap, and additionally track where the memory was allocated.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT DebugAlloc (  
     [in]  SIZE_T  cbSize,   
@@ -32,25 +32,26 @@ HRESULT DebugAlloc (
     [out] void**  ppMem  
 );  
 ```  
-  
+
 #### Parameters  
  `cbSize`  
  [in] The size, in bytes, of the current memory allocation request.  
-  
+
  `dwCriticalLevel`  
  [in] One of the [EMemoryCriticalLevel](../../../../docs/framework/unmanaged-api/hosting/ememorycriticallevel-enumeration.md) values, indicating the impact of an allocation failure.  
-  
+
  `pszFileName`  
  [in] The code file of the executable being debugged.  
-  
+
  `iLineNo`  
  [in] The line number in `pszFileName` where the allocation was requested.  
-  
+
  `ppMem`  
  [out] A pointer to the allocated memory, or null if the request could not be completed.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`DebugAlloc` returned successfully.|  
@@ -60,19 +61,19 @@ HRESULT DebugAlloc (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Not enough memory was available to complete the allocation request.|  
-  
+
 ## Remarks  
  The CLR gets an interface pointer to an [IHostMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md) instance by calling the [IHostMemoryManager::CreateMalloc](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-createmalloc-method.md) method. `DebugAlloc` allows the runtime to get code file information for use during debugging.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
  [IHostMalloc Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmalloc-interface.md)

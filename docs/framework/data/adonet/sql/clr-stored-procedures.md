@@ -17,7 +17,7 @@ Public Shared Sub ExecuteToClient( <Out()> ByRef number As Integer)
   
  **SQL Server Books Online**  
   
-1.  [CLR Stored Procedures](http://go.microsoft.com/fwlink/?LinkId=115400)  
+1. [CLR Stored Procedures](http://go.microsoft.com/fwlink/?LinkId=115400)  
   
 ## See Also  
  [Creating SQL Server 2005 Objects In Managed Code](http://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)  

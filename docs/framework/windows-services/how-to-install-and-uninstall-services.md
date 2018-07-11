@@ -29,33 +29,33 @@ If you’re developing a Windows Service by using the .NET Framework, you can qu
   
 ### To install your service manually  
   
-1.  On the Windows **Start** menu or **Start** screen, choose **Visual Studio** , **Visual Studio Tools**, **Developer Command Prompt**.  
+1. On the Windows **Start** menu or **Start** screen, choose **Visual Studio** , **Visual Studio Tools**, **Developer Command Prompt**.  
   
-     A Visual Studio command prompt appears.  
+    A Visual Studio command prompt appears.  
   
-2.  Access the directory where your project's compiled executable file is located.  
+2. Access the directory where your project's compiled executable file is located.  
   
-3.  Run InstallUtil.exe from the command prompt with your project's executable as a parameter:  
+3. Run InstallUtil.exe from the command prompt with your project's executable as a parameter:  
   
-    ```  
-    installutil <yourproject>.exe  
-    ```  
+   ```  
+   installutil <yourproject>.exe  
+   ```  
   
-     If you’re using the Visual Studio command prompt, InstallUtil.exe should be on the system path. If not, you can add it to the path, or use the fully qualified path to invoke it. This tool is installed with the .NET Framework, and its path is `%WINDIR%\Microsoft.NET\Framework[64]\<framework_version>`. For example, for the 32-bit version of the .NET Framework 4 or 4.5.*, if your Windows installation directory is C:\Windows, the path is `C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe`. For the 64-bit version of the .NET Framework 4 or 4.5.\*, the default path is `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe`.  
+    If you’re using the Visual Studio command prompt, InstallUtil.exe should be on the system path. If not, you can add it to the path, or use the fully qualified path to invoke it. This tool is installed with the .NET Framework, and its path is `%WINDIR%\Microsoft.NET\Framework[64]\<framework_version>`. For example, for the 32-bit version of the .NET Framework 4 or 4.5.*, if your Windows installation directory is C:\Windows, the path is `C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe`. For the 64-bit version of the .NET Framework 4 or 4.5.\*, the default path is `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe`.  
   
 ### To uninstall your service manually  
   
-1.  On the Windows **Start** menu or **Start** screen, choose **Visual Studio**, **Visual Studio Tools**, **Developer Command Prompt**.  
+1. On the Windows **Start** menu or **Start** screen, choose **Visual Studio**, **Visual Studio Tools**, **Developer Command Prompt**.  
   
-     A Visual Studio command prompt appears.  
+    A Visual Studio command prompt appears.  
   
-2.  Run InstallUtil.exe from the command prompt with your project's output as a parameter:  
+2. Run InstallUtil.exe from the command prompt with your project's output as a parameter:  
   
-    ```  
-    installutil /u <yourproject>.exe  
-    ```  
+   ```  
+   installutil /u <yourproject>.exe  
+   ```  
   
-3.  Sometimes, after the executable for a service is deleted, the service might still be present in the registry. In that case, use the command [sc delete](http://technet.microsoft.com/library/cc742045.aspx) to remove the entry for the service from the registry.  
+3. Sometimes, after the executable for a service is deleted, the service might still be present in the registry. In that case, use the command [sc delete](http://technet.microsoft.com/library/cc742045.aspx) to remove the entry for the service from the registry.  
   
 ## See Also  
  [Introduction to Windows Service Applications](../../../docs/framework/windows-services/introduction-to-windows-service-applications.md)  

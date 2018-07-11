@@ -25,20 +25,20 @@ By installing [Docker Community Edition (CE)](https://www.docker.com/community-e
 
 ### Additional resources
 
--   **Visual Studio Tools for Docker**
-    [*https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker*](https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker)
+- **Visual Studio Tools for Docker**
+  [*https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker*](https://docs.microsoft.com/aspnet/core/publishing/visual-studio-tools-for-docker)
 
--   **Visual Studio Code**. Official site.
-    [*https://code.visualstudio.com/download*](https://code.visualstudio.com/download)
+- **Visual Studio Code**. Official site.
+  [*https://code.visualstudio.com/download*](https://code.visualstudio.com/download)
 
--   **Docker Community Edition (CE) for Mac and Windows**
-    [*https://www.docker.com/community-editions*](https://www.docker.com/community-edition)
+- **Docker Community Edition (CE) for Mac and Windows**
+  [*https://www.docker.com/community-editions*](https://www.docker.com/community-edition)
 
 ## .NET languages and frameworks for Docker containers
 
 As mentioned in earlier sections of this guide, you can use .NET Framework, .NET Core, or the open-source Mono project when developing Docker containerized .NET applications. You can develop in C\#, F\#, or Visual Basic when targeting Linux or Windows Containers, depending on which .NET framework is in use. For more details about.NET languages, see the blog post [The .NET Language Strategy](https://blogs.msdn.microsoft.com/dotnet/2017/02/01/the-net-language-strategy/).
 
 
->[!div class="step-by-step"]
-[Previous](../architect-microservice-container-applications/using-azure-service-fabric.md)
-[Next](docker-app-development-workflow.md)
+> [!div  class="step-by-step"]
+> [Previous](../architect-microservice-container-applications/using-azure-service-fabric.md)
+> [Next](docker-app-development-workflow.md)

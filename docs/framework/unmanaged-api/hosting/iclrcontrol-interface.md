@@ -19,23 +19,24 @@ ms.author: "ronpet"
 ---
 # ICLRControl Interface
 Provides methods that allow a host to get references to, and configure aspects of, the common language runtime (CLR).  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetCLRManager Method](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md)|Gets an interface pointer to an instance of any of the manager types the host can use to configure the CLR.|  
 |[SetAppDomainManagerType Method](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-setappdomainmanagertype-method.md)|Sets a type derived from <xref:System.AppDomainManager> as the type for application domain managers.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  
  [ICLRDebugManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)  

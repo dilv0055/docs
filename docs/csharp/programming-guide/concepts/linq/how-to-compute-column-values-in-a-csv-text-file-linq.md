@@ -8,22 +8,22 @@ This example shows how to perform aggregate computations such as Sum, Average, M
   
 ### To create the source file  
   
-1.  Copy the following lines into a file that is named scores.csv and save it in your project folder. Assume that the first column represents a student ID, and subsequent columns represent scores from four exams.  
+1. Copy the following lines into a file that is named scores.csv and save it in your project folder. Assume that the first column represents a student ID, and subsequent columns represent scores from four exams.  
   
-    ```  
-    111, 97, 92, 81, 60  
-    112, 75, 84, 91, 39  
-    113, 88, 94, 65, 91  
-    114, 97, 89, 85, 82  
-    115, 35, 72, 91, 70  
-    116, 99, 86, 90, 94  
-    117, 93, 92, 80, 87  
-    118, 92, 90, 83, 78  
-    119, 68, 79, 88, 92  
-    120, 99, 82, 81, 79  
-    121, 96, 85, 91, 60  
-    122, 94, 92, 91, 91  
-    ```  
+   ```  
+   111, 97, 92, 81, 60  
+   112, 75, 84, 91, 39  
+   113, 88, 94, 65, 91  
+   114, 97, 89, 85, 82  
+   115, 35, 72, 91, 70  
+   116, 99, 86, 90, 94  
+   117, 93, 92, 80, 87  
+   118, 92, 90, 83, 78  
+   119, 68, 79, 88, 92  
+   120, 99, 82, 81, 79  
+   121, 96, 85, 91, 60  
+   122, 94, 92, 91, 91  
+   ```  
   
 ## Example  
   

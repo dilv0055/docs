@@ -15,6 +15,7 @@ The following table shows F# collection types.
 
 
 
+
 |Type|Description|Related Links|
 |----|-----------|-------------|
 |[List](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|An ordered, immutable series of elements of the same type. Implemented as a linked list.|[Lists](lists.md)<br /><br />[List Module](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
@@ -25,6 +26,7 @@ The following table shows F# collection types.
 
 ### Table of Functions
 This section compares the functions that are available on F# collection types. The computational complexity of the function is given, where N is the size of the first collection, and M is the size of the second collection, if any. A dash (-) indicates that this function isn't available on the collection. Because sequences are lazily evaluated, a function such as Seq.distinct may be O(1) because it returns immediately, although it still affects the performance of the sequence when enumerated.
+
 
 
 

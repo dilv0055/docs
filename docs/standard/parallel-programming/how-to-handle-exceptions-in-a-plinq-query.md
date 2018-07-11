@@ -18,7 +18,7 @@ The first example in this topic shows how to handle the <xref:System.AggregateEx
   
 > [!NOTE]
 >  When "Just My Code" is enabled, Visual Studio will break on the line that throws the exception and display an error message that says "exception not handled by user code." This error is benign. You can press F5 to continue from it, and see the exception-handling behavior that is demonstrated in the examples below. To prevent Visual Studio from breaking on the first error, just uncheck the "Just My Code" checkbox under **Tools, Options, Debugging, General**.  
->   
+> 
 >  This example is intended to demonstrate usage, and might not run faster than the equivalent sequential LINQ to Objects query. For more information about speedup, see [Understanding Speedup in PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
 ## Example  
@@ -37,7 +37,7 @@ The first example in this topic shows how to handle the <xref:System.AggregateEx
   
 ## Compiling the Code  
   
--   To compile and run these examples, copy them into the PLINQ Data Sample example and call the method from Main.  
+- To compile and run these examples, copy them into the PLINQ Data Sample example and call the method from Main.  
   
 ## Robust Programming  
  Do not catch an exception unless you know how to handle it so that you do not corrupt the state of your program.  

@@ -1,5 +1,6 @@
 ### RSACng.VerifyHash now returns False for any verification failure
 
+
 |   |   |
 |---|---|
 |Details|Starting with the .NET Framework 4.6.2, this method returns <strong>False</strong> if the signature itself is badly formatted. It now returns false for any verification failure.In the .NET Framework 4.6 and 4.6.1, the method throws a <xref:System.Security.Cryptography.CryptographicException?displayProperty=name> if the signature itself is badly formatted.|

@@ -19,11 +19,11 @@ ms.author: "ronpet"
 ---
 # BlessIWbemServices function
 Indicates whether the user credentials permit access to the specified [IWbemServices](https://msdn.microsoft.com/library/aa392093(v=vs.85).aspx) class.   
-  
+
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT BlessIWbemServices (
    [in] IWbemServices* pIWbemServices,
@@ -59,6 +59,7 @@ HRESULT BlessIWbemServices (
 
 The following values returned by this function are defined in the *WinError.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `E_INVALIDARG` | 0x80070057 | One or more arguments are invalid. |
@@ -69,10 +70,10 @@ The following values returned by this function are defined in the *WinError.h* h
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

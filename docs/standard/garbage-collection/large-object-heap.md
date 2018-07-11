@@ -127,7 +127,7 @@ Before you collect performance data for a specific area, you should already have
 
 1. Found evidence that you should be looking at this area.
 
-1. Exhausted other areas that you know of without finding anything that could explain the performance problem you saw.
+2. Exhausted other areas that you know of without finding anything that could explain the performance problem you saw.
 
 See the blog [Understand the problem before you try to find a solution](https://blogs.msdn.microsoft.com/maoni/2006/09/01/understand-the-problem-before-you-try-to-find-a-solution/) for more information on the fundamentals of memory and the CPU.
 

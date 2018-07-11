@@ -19,15 +19,15 @@ You can use the `binding` element to configure different types of predefined bin
   
  The order in which elements appear in the stack matters, because it is the order in which operations are applied to the message. The recommended order of stack elements is the following:  
   
-1.  Transactions (optional)  
+1. Transactions (optional)  
   
-2.  Reliable Messaging (optional)  
+2. Reliable Messaging (optional)  
   
-3.  Security (optional)  
+3. Security (optional)  
   
-4.  Encoder  
+4. Encoder  
   
-5.  Transport  
+5. Transport  
   
  Custom bindings are identified by their `name` attribute.  
   

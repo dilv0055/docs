@@ -18,23 +18,23 @@ When all the items on a <xref:System.Windows.Forms.ToolStrip> control do not fit
   
 ### To enable overflow on a ToolStrip control  
   
--   Ensure that the <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> property is not set to `false` for the <xref:System.Windows.Forms.ToolStrip>. The default is `True`.  
+- Ensure that the <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> property is not set to `false` for the <xref:System.Windows.Forms.ToolStrip>. The default is `True`.  
   
-     When <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> is `True` (the default), a <xref:System.Windows.Forms.ToolStripItem> is sent to the drop-down overflow menu when the content of the <xref:System.Windows.Forms.ToolStripItem> exceeds the width of a horizontal <xref:System.Windows.Forms.ToolStrip> or the height of a vertical <xref:System.Windows.Forms.ToolStrip>.  
+   When <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> is `True` (the default), a <xref:System.Windows.Forms.ToolStripItem> is sent to the drop-down overflow menu when the content of the <xref:System.Windows.Forms.ToolStripItem> exceeds the width of a horizontal <xref:System.Windows.Forms.ToolStrip> or the height of a vertical <xref:System.Windows.Forms.ToolStrip>.  
   
 ### To specify overflow behavior of a specific ToolStripItem  
   
--   Set the <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> property of the <xref:System.Windows.Forms.ToolStripItem> to the desired value. The possibilities are `Always`, `Never`, and `AsNeeded`. The defaultis `AsNeeded`.  
+- Set the <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> property of the <xref:System.Windows.Forms.ToolStripItem> to the desired value. The possibilities are `Always`, `Never`, and `AsNeeded`. The defaultis `AsNeeded`.  
   
-    ```vb  
-    toolStripTextBox1.Overflow = _  
-    System.Windows.Forms.ToolStripItemOverflow.Never  
-    ```  
+  ```vb  
+  toolStripTextBox1.Overflow = _  
+  System.Windows.Forms.ToolStripItemOverflow.Never  
+  ```  
   
-    ```csharp  
-    toolStripTextBox1.Overflow = _  
-    System.Windows.Forms.ToolStripItemOverflow.Never;  
-    ```  
+  ```csharp  
+  toolStripTextBox1.Overflow = _  
+  System.Windows.Forms.ToolStripItemOverflow.Never;  
+  ```  
   
 ## See Also  
  <xref:System.Windows.Forms.ToolStrip>  

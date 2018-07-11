@@ -7,15 +7,15 @@ manager: "mbaldwin"
 ---
 # &lt;userNameSecurityTokenHandlerRequirement&gt;
 Provides configuration for the <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler> class or derived classes.  
-  
+
  \<system.identityModel>  
 \<identityConfiguration>  
 \<securityTokenHandlers>  
 \<add>  
 \<userNameSecurityTokenHandlerRequirement>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <system.identityModel>  
   <identityConfiguration>  
@@ -28,30 +28,32 @@ Provides configuration for the <xref:System.IdentityModel.Services.Tokens.Member
   </identityConfiguration>  
 </system.identityModel>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |membershipProviderName|Specifies the <xref:System.Web.Security.MembershipProvider> that should be used by the security token handler.|  
-  
+
 ### Child Elements  
  None  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<add>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|Adds the specified security token handler to the token handler collection.|  
-  
+
 ## Remarks  
  The `<userNameSecurityTokenHandlerRequirement>` element sets the <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler.MembershipProvider%2A> property when a <xref:System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler> object is initialized from configuration.  
-  
+
 ## Example  
-  
+
 ```xml  
 <add type="System.IdentityModel.Services.Tokens.MembershipUserNameSecurityTokenHandler, System.IdentityModel.Services">  
     <userNameSecurityTokenHandlerRequirement membershipProviderName="AspNetSqlProvider/>  

@@ -5,9 +5,10 @@ ms.assetid: baad1e68-28fc-4a6a-8a43-75e47e7fa871
 ---
 # Metadata Formats
 Windows Communication Foundation (WCF) supports the metadata formats in the following table.  
-  
+
 ## Metadata Specifications and Usage  
-  
+
+
 |Protocol|Specification and usage|  
 |--------------|-----------------------------|  
 |WSDL 1.1|[Web Services Description Language (WSDL) 1.1](http://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> WCF uses Web Services Description Language (WSDL) to describe services.|  
@@ -16,7 +17,7 @@ Windows Communication Foundation (WCF) supports the metadata formats in the foll
 |WS Policy Attachments|[Web Services Policy 1.2 - Attachment (WS-PolicyAttachment)](http://go.microsoft.com/fwlink/?LinkId=94866)<br /><br /> WCF implements WS-Policy Attachments to attach policy expressions at various scopes in WSDL.|  
 |WS Metadata Exchange|[Web Services Metadata Exchange (WS-MetadataExchange) version 1.1](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implements WS-MetadataExchange to retrieve XML Schema, WSDL, and WS-Policy.|  
 |WS Addressing Binding for WSDL|[Web Services Addressing 1.0 - WSDL Binding](http://go.microsoft.com/fwlink/?LinkId=94869)<br /><br /> WCF implements WS-Addressing Binding for WSDL to attach addressing information in WSDL.|  
-  
+
 ## See Also  
  [Web Services Protocols Supported by System-Provided Interoperability Bindings](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
  [WSDL and Policy](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)

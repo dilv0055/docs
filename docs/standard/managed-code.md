@@ -21,7 +21,7 @@ Managed code is written in one of the high-level languages that can be run on to
 
 What is "Intermediate Language" (or IL for short)? It is a product of compilation of code written in high-level .NET languages. Once you compile your code written in one of these languages, you will get a binary that is made out of IL. It is important to note that the IL is independent from any specific language that runs on top of the runtime; there is even a separate specification for it that you can read if you’re so inclined.
 
-Once you produce IL from your high-level code, you will most likely want to run it. This is where the CLR takes over and starts the process of **Just-In-Time** compiling, or **JIT-ing** your code from IL to machine code that can actually be run on a CPU. In this way, the CLR knows exactly what your code is doing and can effectively _manage_ it.
+Once you produce IL from your high-level code, you will most likely want to run it. This is where the CLR takes over and starts the process of **Just-In-Time** compiling, or **JIT-ing** your code from IL to machine code that can actually be run on a CPU. In this way, the CLR knows exactly what your code is doing and can effectively *manage* it.
 
 Intermediate Language is sometimes also called Common Intermediate Language (CIL) or Microsoft Intermediate Language (MSIL).
 
@@ -33,6 +33,6 @@ Similar to this, C# is one language that allows you to use unmanaged constructs 
 
 ## More resources
 
-*   [.NET Framework Conceptual Overview](https://msdn.microsoft.com/library/zw4w595w.aspx)
-*   [Unsafe Code and Pointers](../../docs/csharp/programming-guide/unsafe-code-pointers/index.md)
-*   [Interoperability (C# Programming guide)](https://msdn.microsoft.com/library/ms173184.aspx)
+* [.NET Framework Conceptual Overview](https://msdn.microsoft.com/library/zw4w595w.aspx)
+* [Unsafe Code and Pointers](../../docs/csharp/programming-guide/unsafe-code-pointers/index.md)
+* [Interoperability (C# Programming guide)](https://msdn.microsoft.com/library/ms173184.aspx)

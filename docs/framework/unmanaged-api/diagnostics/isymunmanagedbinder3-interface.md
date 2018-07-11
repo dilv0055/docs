@@ -19,19 +19,20 @@ ms.author: "mairaw"
 ---
 # ISymUnmanagedBinder3 Interface
 Extends the symbol binder interface. Obtain this interface by calling `QueryInterface` on an object that implements the `ISymUnmanagedBinder` interface.  
-  
+
 > [!IMPORTANT]
 >  It is a security risk to open a program database (PDB) file from an untrusted source.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetReaderFromCallback Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md)|Allows the user to implement or supply via callback either an `IID_IDiaReadExeAtRVACallback` or `IID_IDiaReadExeAtOffsetCallback` to obtain the Debug directory information from memory|  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [Diagnostics Symbol Store Interfaces](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
  [ISymUnmanagedBinder Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)  

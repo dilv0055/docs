@@ -10,7 +10,7 @@ When using the `PeekChars` method of the `TextFieldParser` object, you must supp
   
 ## To correct this error  
   
--   Change `NumberOfChars` to a value that is greater than `0`.  
+- Change `NumberOfChars` to a value that is greater than `0`.  
   
 ## See Also  
  [How to: Read From Text Files with Multiple Formats](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)  

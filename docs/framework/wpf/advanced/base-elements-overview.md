@@ -26,49 +26,49 @@ A high percentage of classes in [!INCLUDE[TLA#tla_winclient](../../../../include
   
  If you create a class that derives from <xref:System.Windows.DependencyObject>, you inherit the following functionality:  
   
--   <xref:System.Windows.DependencyObject.GetValue%2A> and <xref:System.Windows.DependencyObject.SetValue%2A> support, and general property system support.  
+- <xref:System.Windows.DependencyObject.GetValue%2A> and <xref:System.Windows.DependencyObject.SetValue%2A> support, and general property system support.  
   
--   Ability to use dependency properties and attached properties that are implemented as dependency properties.  
+- Ability to use dependency properties and attached properties that are implemented as dependency properties.  
   
  If you create a class that derives from <xref:System.Windows.UIElement>, you inherit the following functionality in addition to that provided by <xref:System.Windows.DependencyObject>:  
   
--   Basic support for animated property values. For more information, see [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
+- Basic support for animated property values. For more information, see [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
   
--   Basic input event support, and commanding support. For more information, see [Input Overview](../../../../docs/framework/wpf/advanced/input-overview.md) and [Commanding Overview](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
+- Basic input event support, and commanding support. For more information, see [Input Overview](../../../../docs/framework/wpf/advanced/input-overview.md) and [Commanding Overview](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
   
--   Virtual methods that can be overridden to provide information to a layout system.  
+- Virtual methods that can be overridden to provide information to a layout system.  
   
  If you create a class that derives from <xref:System.Windows.FrameworkElement>, you inherit the following functionality in addition to that provided by <xref:System.Windows.UIElement>:  
   
--   Support for styling and storyboards. For more information, see <xref:System.Windows.Style> and [Storyboards Overview](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
+- Support for styling and storyboards. For more information, see <xref:System.Windows.Style> and [Storyboards Overview](../../../../docs/framework/wpf/graphics-multimedia/storyboards-overview.md).  
   
--   Support for data binding. For more information, see [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+- Support for data binding. For more information, see [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).  
   
--   Support for dynamic resource references. For more information, see [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+- Support for dynamic resource references. For more information, see [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
--   Property value inheritance support, and other flags in the metadata that help report conditions about properties to framework services such as data binding, styles, or the framework implementation of layout. For more information, see [Framework Property Metadata](../../../../docs/framework/wpf/advanced/framework-property-metadata.md).  
+- Property value inheritance support, and other flags in the metadata that help report conditions about properties to framework services such as data binding, styles, or the framework implementation of layout. For more information, see [Framework Property Metadata](../../../../docs/framework/wpf/advanced/framework-property-metadata.md).  
   
--   The concept of the logical tree. For more information, see [Trees in WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md).  
+- The concept of the logical tree. For more information, see [Trees in WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md).  
   
--   Support for the practical WPF framework-level implementation of the layout system, including an <xref:System.Windows.FrameworkElement.OnPropertyChanged%2A> override that can detect changes to properties that influence layout.  
+- Support for the practical WPF framework-level implementation of the layout system, including an <xref:System.Windows.FrameworkElement.OnPropertyChanged%2A> override that can detect changes to properties that influence layout.  
   
  If you create a class that derives from <xref:System.Windows.ContentElement>, you inherit the following functionality in addition to that provided by <xref:System.Windows.DependencyObject>:  
   
--   Support for animations. For more information, see [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
+- Support for animations. For more information, see [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
   
--   Basic input event support, and commanding support. For more information, see [Input Overview](../../../../docs/framework/wpf/advanced/input-overview.md) and [Commanding Overview](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
+- Basic input event support, and commanding support. For more information, see [Input Overview](../../../../docs/framework/wpf/advanced/input-overview.md) and [Commanding Overview](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
   
  If you create a class that derives from <xref:System.Windows.FrameworkContentElement>, you get the following functionality in addition to that provided by <xref:System.Windows.ContentElement>:  
   
--   Support for styling and storyboards. For more information, see <xref:System.Windows.Style> and [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
+- Support for styling and storyboards. For more information, see <xref:System.Windows.Style> and [Animation Overview](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md).  
   
--   Support for data binding. For more information, see [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).  
+- Support for data binding. For more information, see [Data Binding Overview](../../../../docs/framework/wpf/data/data-binding-overview.md).  
   
--   Support for dynamic resource references. For more information, see [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
+- Support for dynamic resource references. For more information, see [XAML Resources](../../../../docs/framework/wpf/advanced/xaml-resources.md).  
   
--   Property value inheritance support, and other flags in the metadata that help report conditions about properties to framework services like data binding, styles, or the framework implementation of layout. For more information, see [Framework Property Metadata](../../../../docs/framework/wpf/advanced/framework-property-metadata.md).  
+- Property value inheritance support, and other flags in the metadata that help report conditions about properties to framework services like data binding, styles, or the framework implementation of layout. For more information, see [Framework Property Metadata](../../../../docs/framework/wpf/advanced/framework-property-metadata.md).  
   
--   You do not inherit access to layout system modifications (such as <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>). Layout system implementations are only available on <xref:System.Windows.FrameworkElement>. However, you inherit an <xref:System.Windows.FrameworkElement.OnPropertyChanged%2A> override that can detect changes to properties that influence layout and report these to any content hosts.  
+- You do not inherit access to layout system modifications (such as <xref:System.Windows.FrameworkElement.ArrangeOverride%2A>). Layout system implementations are only available on <xref:System.Windows.FrameworkElement>. However, you inherit an <xref:System.Windows.FrameworkElement.OnPropertyChanged%2A> override that can detect changes to properties that influence layout and report these to any content hosts.  
   
  Content models are documented for a variety of classes. The content model for a class is one possible factor you should consider if you want to find an appropriate class to derive from. For more information, see [WPF Content Model](../../../../docs/framework/wpf/controls/wpf-content-model.md).  
   

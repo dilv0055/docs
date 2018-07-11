@@ -17,64 +17,64 @@ Starting with [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], when you c
   
 #### To disable automatic binding redirects  
   
-1.  In Visual Studio, select the project in **Solution Explorer**, and then choose **Open Folder in File Explorer** from the shortcut menu.  
+1. In Visual Studio, select the project in **Solution Explorer**, and then choose **Open Folder in File Explorer** from the shortcut menu.  
   
-2.  In File Explorer, find the project (.csproj or .vbproj) file, and open it in Notepad.  
+2. In File Explorer, find the project (.csproj or .vbproj) file, and open it in Notepad.  
   
-3.  In the project file, find the following property entry:  
+3. In the project file, find the following property entry:  
   
-     `<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>`  
+    `<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>`  
   
-4.  Change `true` to `false`:  
+4. Change `true` to `false`:  
   
-     `<AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>`  
+    `<AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>`  
   
 ## Enabling automatic binding redirects manually  
  You can enable automatic binding redirects in existing apps that target older versions of the .NET Framework, or in cases where you are not automatically prompted to add a redirect. If you are targeting a newer version of the framework but do not get automatically prompted to add a redirect, you will likely get   build output that suggests you remap assemblies.  
   
 #### To manually add an automatic binding redirect property  
   
-1.  In Visual Studio, select the project in **Solution Explorer**, and then choose **Open Folder in File Explorer** from the shortcut menu.  
+1. In Visual Studio, select the project in **Solution Explorer**, and then choose **Open Folder in File Explorer** from the shortcut menu.  
   
-2.  In File Explorer, find the project (.csproj or .vbproj) file, and open it in Notepad.  
+2. In File Explorer, find the project (.csproj or .vbproj) file, and open it in Notepad.  
   
-3.  Add the following element to the first configuration property group (under the \<PropertyGroup> tag):  
+3. Add the following element to the first configuration property group (under the \<PropertyGroup> tag):  
   
-     `<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>`  
+    `<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>`  
   
-     The following shows an example project file with the element inserted.  
+    The following shows an example project file with the element inserted.  
   
-    ```xml  
-    <?xml version="1.0" encoding="utf-8"?>  
-    <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
-      <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />  
-      <PropertyGroup>  
-        <Configuration Condition=" '$(Configuration)' == ''     ">Debug</Configuration>  
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>  
-        <ProjectGuid>{123334}</ProjectGuid>  
-        ...  
-        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>  
-      </PropertyGroup>  
-    ...  
-    </Project>  
-    ```  
+   ```xml  
+   <?xml version="1.0" encoding="utf-8"?>  
+   <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">  
+     <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />  
+     <PropertyGroup>  
+       <Configuration Condition=" '$(Configuration)' == ''     ">Debug</Configuration>  
+       <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>  
+       <ProjectGuid>{123334}</ProjectGuid>  
+       ...  
+       <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>  
+     </PropertyGroup>  
+   ...  
+   </Project>  
+   ```  
   
-4.  Compile your app.  
+4. Compile your app.  
   
 ## Enabling automatic binding redirects in web apps  
  Automatic binding redirects are implemented differently for web apps. Because the source configuration (web.config) file must be modified for web apps, binding redirects are not automatically added to the configuration file. However, Visual Studio notifies you of binding conflicts, and you can add binding redirects to resolve the conflicts. Because you are always prompted to add binding redirects, you do not need to explicitly disable this feature for a web app.  
   
 #### To add binding redirects to a web.config file  
   
-1.  In Visual Studio, compile the app, and check for build warnings.  
+1. In Visual Studio, compile the app, and check for build warnings.  
   
-     ![Build warning for assembly reference conflicts](../../../docs/framework/configure-apps/media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")  
+    ![Build warning for assembly reference conflicts](../../../docs/framework/configure-apps/media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")  
   
-2.  If there are assembly binding conflicts, a warning appears. Double-click the warning. (Keyboard: Select the warning and press **Enter**.)  
+2. If there are assembly binding conflicts, a warning appears. Double-click the warning. (Keyboard: Select the warning and press **Enter**.)  
   
-     A dialog box that enables you to automatically add the necessary binding redirects to the source web.config file appears.  
+    A dialog box that enables you to automatically add the necessary binding redirects to the source web.config file appears.  
   
-     ![Binding redirect permission dialog](../../../docs/framework/configure-apps/media/clr-addbindingredirect.png "CLR_AddBindingRedirect")  
+    ![Binding redirect permission dialog](../../../docs/framework/configure-apps/media/clr-addbindingredirect.png "CLR_AddBindingRedirect")  
   
 ## See Also  
  [\<bindingRedirect> Element](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)  

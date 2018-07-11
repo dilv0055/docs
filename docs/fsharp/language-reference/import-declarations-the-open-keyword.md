@@ -6,7 +6,7 @@ ms.date: 05/16/2016
 # Import Declarations: The `open` Keyword
 
 > [!NOTE]
-The API reference links in this article will take you to MSDN.  The docs.microsoft.com API reference is not complete.
+> The API reference links in this article will take you to MSDN.  The docs.microsoft.com API reference is not complete.
 
 An *import declaration* specifies a module or namespace whose elements you can reference without using a fully qualified name.
 
@@ -43,6 +43,7 @@ Therefore, be careful when you open modules or namespaces such as `List` or `Seq
 
 ## Namespaces That Are Open by Default
 Some namespaces are so frequently used in F# code that they are opened implicitly without the need of an explicit import declaration. The following table shows the namespaces that are open by default.
+
 
 |Namespace|Description|
 |---------|-----------|

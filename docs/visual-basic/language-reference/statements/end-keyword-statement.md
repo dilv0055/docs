@@ -37,8 +37,9 @@ End Try
 End While
 End With  
 ```  
-  
+
 ## Parts
+
 
 |Part|Description|
 |---|---|
@@ -66,7 +67,7 @@ End With
 |`While`|Required to terminate a `While` loop definition begun by a matching `While` statement. See [While...End While Statement](while-end-while-statement.md).  
 |`With`| Required to terminate a `With` block definition begun by a matching `With` statement. See [With...End With Statement](with-end-with-statement.md).  
 |||
-  
+
 ## Directives
 
 When preceded by a number sign (`#`), the `End` keyword terminates a preprocessing block introduced by the corresponding directive.  
@@ -76,6 +77,7 @@ When preceded by a number sign (`#`), the `End` keyword terminates a preprocessi
 #End If
 #End Region
 ```
+
 
 |Part|Description|
 |---|---|
@@ -92,7 +94,7 @@ The [End Statement](end-statement.md), without an additional keyword, terminates
 ## Smart Device Developer Notes  
 
 The `End` statement, without an additional keyword, is not supported.  
-  
+
 ## See also
 
 [End Statement](end-statement.md)

@@ -10,7 +10,7 @@ The rank of an array argument is greater than 1, but it can only be a one-dimens
   
 ## To correct this error  
   
--   Change the argument rank to 1.  
+- Change the argument rank to 1.  
   
 ## See Also  
  [Arrays in Visual Basic](~/docs/visual-basic/programming-guide/language-features/arrays/index.md)  

@@ -15,44 +15,46 @@ manager: "markl"
 ---
 # &lt;sources&gt; Element
 Specifies trace sources that initiate tracing messages.  
-  
+
  \<configuration>  
 \<system.diagnostics>  
 \<sources>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <sources>  
    <source>...</source>  
 </sources>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<source>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)|Required element.<br /><br /> Specifies a trace source that initiates tracing messages.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`system.diagnostics`|Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.|  
-  
+
 ## Remarks  
  This element can be used in the machine configuration file (Machine.config) and the application configuration file.  
-  
+
 ## Example  
  The following example shows how to use the `<sources>` element to add the trace source `mySource` and to set the level for the source switch named `sourceSwitch`. A console trace listener is added that writes trace information to the console.  
-  
+
 ```xml  
 <configuration>  
    <system.diagnostics>  
@@ -75,7 +77,7 @@ Specifies trace sources that initiate tracing messages.
    </system.diagnostics>   
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Diagnostics.TraceListener>  
  <xref:System.Diagnostics.DefaultTraceListener>  

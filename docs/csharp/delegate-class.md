@@ -4,7 +4,6 @@ description: Learn about the classes in the .NET Framework that support delegate
 ms.date: 06/20/2016
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
 ---
-
 # System.Delegate and the `delegate` keyword
 
 [Previous](delegates-overview.md)
@@ -71,7 +70,7 @@ public Comparison<T> comparator;
 
 The type of the variable is `Comparison<T>`, the delegate type
  defined earlier. The name of the variable is `comparator`.
- 
+
  That code snippet above declared a member variable inside a class. You can also
  declare delegate variables that are local variables, or arguments to methods.
 
@@ -173,7 +172,7 @@ classes are not themselves delegate types. They do provide the
 basis for all specific delegate types. That same language
 design process mandated that you cannot declare a class that derives
 from `Delegate` or `MulticastDelegate`. The C# language rules prohibit it.
- 
+
 Instead, the C# compiler creates instances of a class derived from `MulticastDelegate`
 when you use the C# language keyword to declare delegate types.
 

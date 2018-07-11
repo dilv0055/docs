@@ -10,7 +10,6 @@ ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # \<remove> element for NameValueSectionHandler and DictionarySectionHandler
 
 Removes a previously defined setting.
@@ -27,11 +26,13 @@ Removes a previously defined setting.
 
 ## Attribute
 
+
 |           | Description |
 | --------- | ----------- |
 | **key**   | Required attribute.<br><br>Specifies the name of the setting to remove. |
 
 ## Parent element
+
 
 | Element | Description |
 | ------- | ------------|

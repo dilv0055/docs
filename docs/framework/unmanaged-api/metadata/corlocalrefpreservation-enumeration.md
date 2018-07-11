@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorLocalRefPreservation Enumeration
 Contains flag values for the treatment of local references.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorLocalRefPreservation  
 {  
@@ -30,21 +30,22 @@ typedef enum CorLocalRefPreservation
     MDPreserveLocalMemberRef    =   0x00000002  
 } CorLocalRefPreservation;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`MDPreserveLocalRefsNone`|Preserve no local references.|  
 |`MDPreserveLocalTypeRef`|Preserve local type references.|  
 |`MDPreserveLocalMemberRef`|Preserve local member references.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

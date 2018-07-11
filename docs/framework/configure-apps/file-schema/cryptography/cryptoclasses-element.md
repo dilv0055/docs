@@ -14,44 +14,46 @@ manager: "markl"
 ---
 # &lt;cryptoClasses&gt; Element
 Contains a list of cryptography classes that have a mapping to a friendly name in the [\<nameEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) element.  
-  
+
  \<configuration>  
 \<mscorlib>  
 \<cryptographySettings>  
 \<cryptoNameMapping>  
 \<cryptoClasses>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <cryptoClasses>   
 </cryptoClasses>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<cryptoClass>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)|Contains a cryptography class that has a mapping to a friendly name in the **\<nameEntry>** element.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`cryptographySettings`|Contains cryptography settings.|  
 |`cryptoNameMapping`|Contains mappings of classes to friendly names.|  
 |`mscorlib`|Contains the `cryptographySettings` element.|  
-  
+
 ## Example  
  The following example shows how use the **\<cryptoClass>** element to reference a cryptography class and to configure the runtime. You can then pass the string "RSA" to the <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> method and use the <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> method to return a `MyCryptoRSAClass` object.  
-  
+
 ```xml  
 <configuration>  
    <mscorlib>  
@@ -72,7 +74,7 @@ Contains a list of cryptography classes that have a mapping to a friendly name i
    </mscorlib>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Security.Cryptography>  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  

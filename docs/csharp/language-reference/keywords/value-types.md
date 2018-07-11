@@ -12,23 +12,23 @@ ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
 # Value Types (C# Reference)
 The value types consist of two main categories:  
   
--   [Structs](../../../csharp/language-reference/keywords/struct.md)  
+- [Structs](../../../csharp/language-reference/keywords/struct.md)  
   
--   [Enumerations](../../../csharp/language-reference/keywords/enum.md)  
+- [Enumerations](../../../csharp/language-reference/keywords/enum.md)  
   
  Structs fall into these categories:  
   
--   Numeric types  
+- Numeric types  
   
-    -   [Integral types](../../../csharp/language-reference/keywords/integral-types-table.md)  
+  - [Integral types](../../../csharp/language-reference/keywords/integral-types-table.md)  
   
-    -   [Floating-point types](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
+  - [Floating-point types](../../../csharp/language-reference/keywords/floating-point-types-table.md)  
   
-    -   [decimal](../../../csharp/language-reference/keywords/decimal.md)  
+  - [decimal](../../../csharp/language-reference/keywords/decimal.md)  
   
--   [bool](../../../csharp/language-reference/keywords/bool.md)  
+- [bool](../../../csharp/language-reference/keywords/bool.md)  
   
--   User defined structs.  
+- User defined structs.  
   
 ## Main Features of Value Types  
  Variables that are based on value types directly contain values. Assigning one value type variable to another copies the contained value. This differs from the assignment of reference type variables, which copies a reference to the object but not the object itself.  

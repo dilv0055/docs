@@ -1,5 +1,6 @@
 ### Assemblies compiled with Regex.CompileToAssembly breaks between 4.0 and 4.5
 
+
 |   |   |
 |---|---|
 |Details|If an assembly of compiled regular expressions is built with the .NET Framework 4.5 but targets the .NET Framework 4, attempting to use one of the regular expressions in that assembly on a system with .NET Framework 4 installed throws an exception.|

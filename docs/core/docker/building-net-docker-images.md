@@ -12,7 +12,7 @@ ms.custom: mvc
  In this tutorial, We focus on how to use .NET Core on Docker. First, we explore the different Docker images offered and maintained by Microsoft, and use cases. We then learn how to build and dockerize an ASP.NET Core app.
 
 During the course of this tutorial, you learn:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * Learn about Microsoft .NET Core Docker images 
 > * Get an ASP.NET Core sample app to Dockerize
 > * Run the ASP.NET sample app locally
@@ -38,8 +38,8 @@ When developing, building, and running containerized applications, we have diffe
 
     For example, the `dotnet publish` output contains:
 
-    * the compiled binaries
-    * .js and .css files
+  * the compiled binaries
+  * .js and .css files
 
 
 The reason to include the `dotnet publish` command output in your production image is to keep its size to a minimum.
@@ -124,13 +124,13 @@ The Docker client can be installed in:
 
 * Linux distributions
 
-   * [CentOS](https://www.docker.com/docker-centos-distribution)
+  * [CentOS](https://www.docker.com/docker-centos-distribution)
 
-   * [Debian](https://www.docker.com/docker-debian)
+  * [Debian](https://www.docker.com/docker-debian)
 
-   * [Fedora](https://www.docker.com/docker-fedora)
+  * [Fedora](https://www.docker.com/docker-fedora)
 
-   * [Ubuntu](https://www.docker.com/docker-ubuntu)
+  * [Ubuntu](https://www.docker.com/docker-ubuntu)
 
 * [macOS](https://docs.docker.com/docker-for-mac/)
 
@@ -165,7 +165,7 @@ cd aspnetapp // project scope
 dotnet run
 ```
 
-After the application starts, visit **http://localhost:5000** in your web browser.
+After the application starts, visit **<http://localhost:5000>** in your web browser.
 
 ### Build and run the sample with Docker for Linux containers
 
@@ -183,7 +183,7 @@ docker run -it --rm -p 5000:80 --name aspnetcore_sample aspnetapp
 > [!NOTE]
 > The `docker run` '-p' argument maps port 5000 on your local machine to port 80 in the container (the port mapping form is `host:container`). For more information, see the [docker run](https://docs.docker.com/engine/reference/commandline/exec/) reference on command-line parameters.
 
-After the application starts, visit **http://localhost:5000** in your web browser.
+After the application starts, visit **<http://localhost:5000>** in your web browser.
 
 ### Build and run the sample with Docker for Windows containers
 
@@ -199,7 +199,7 @@ docker run -it --rm --name aspnetcore_sample aspnetapp
 ```
 
 > [!IMPORTANT]
-> You must navigate to the **container IP address** (as opposed to http://localhost) in your browser directly when using Windows containers. You can get the IP address of your container with the following steps:
+> You must navigate to the **container IP address** (as opposed to <http://localhost>) in your browser directly when using Windows containers. You can get the IP address of your container with the following steps:
 
 * Open up another command prompt.
 * Run `docker ps` to see your running containers. The "aspnetcore_sample" container should be there.
@@ -257,7 +257,7 @@ The following Docker images are used in this sample's dockerfile.
 * `microsoft/dotnet:2.1-aspnetcore-runtime`
 
 Congratulations! you have just:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * Learned about Microsoft .NET Core Docker images
 > * Got an ASP.NET Core sample app to Dockerize
 > * Ran the ASP.NET sample app locally

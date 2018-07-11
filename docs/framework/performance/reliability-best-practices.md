@@ -46,11 +46,11 @@ The following reliability rules are oriented to SQL Server; however, they also a
   
  With these weaker guarantees and running in a single process, reliability is based on terminating threads or recycling application domains when necessary and taking precautions to ensure operating system resources such as handles or memory are not leaked.  Even with this simpler reliability constraint, there is still a significant reliability requirement:  
   
--   Never leak operating system resources.  
+- Never leak operating system resources.  
   
--   Identify all managed locks in all forms to the CLR.  
+- Identify all managed locks in all forms to the CLR.  
   
--   Never break cross-application domain shared state, allowing <xref:System.AppDomain> recycling to function smoothly.  
+- Never break cross-application domain shared state, allowing <xref:System.AppDomain> recycling to function smoothly.  
   
  Although it is theoretically possible to write managed code to handle <xref:System.Threading.ThreadAbortException>, <xref:System.StackOverflowException>, and <xref:System.OutOfMemoryException> exceptions, expecting developers to write such robust code throughout an entire application is unreasonable.  For that reason, out-of-band exceptions result in the executing thread being terminated; and if the terminated thread was editing shared state, which can be determined by whether the thread holds a lock, then the <xref:System.AppDomain> is unloaded.  When a method that is editing shared state is terminated, the state will be corrupt because it is not possible to write reliable back-out code for updates to shared state.  
   
@@ -199,11 +199,11 @@ public static MyClass SingletonProperty
   
  This attribute identifies the following:  
   
--   Methods or classes that do not fit the host programming model, but are otherwise benign.  
+- Methods or classes that do not fit the host programming model, but are otherwise benign.  
   
--   Methods or classes that do not fit the host programming model and could lead to destabilizing server-managed user code.  
+- Methods or classes that do not fit the host programming model and could lead to destabilizing server-managed user code.  
   
--   Methods or classes that do not fit the host programming model and could lead to a destabilization of the server process itself.  
+- Methods or classes that do not fit the host programming model and could lead to a destabilization of the server process itself.  
   
 > [!NOTE]
 >  If you are creating a class library that is to be called by applications that may execute in a host protected environment, you should apply this attribute to members that expose <xref:System.Security.Permissions.HostProtectionResource> resource categories. The .NET Framework class library members with this attribute cause only the immediate caller to be checked.  Your library member must also cause a check of its immediate caller in the same manner.  

@@ -1,5 +1,6 @@
 ### Calling Attribute.GetCustomAttributes on an indexer property no longer throws AmbiguousMatchException if the ambiguity can be resolved by index's type
 
+
 |   |   |
 |---|---|
 |Details|Prior to the .NET Framework 4.6, calling <code>GetCustomAttribute(s)</code> on an indexer property which differed from another property only by the type of the index would result in an <xref:System.Reflection.AmbiguousMatchException?displayProperty=name>. Beginning in the .NET Framework 4.6, the property's attributes will be correctly returned.|

@@ -8,33 +8,33 @@ This example shows how to associate a method with a delegate and then invoke tha
   
 ### Create the delegate and matching procedures  
   
-1.  Create a delegate named `MySubDelegate`.  
+1. Create a delegate named `MySubDelegate`.  
   
-    ```  
-    Delegate Sub MySubDelegate(ByVal x As Integer)  
-    ```  
+   ```  
+   Delegate Sub MySubDelegate(ByVal x As Integer)  
+   ```  
   
-2.  Declare a class that contains a method with the same signature as the delegate.  
+2. Declare a class that contains a method with the same signature as the delegate.  
   
-    ```  
-    Class class1  
-        Sub Sub1(ByVal x As Integer)  
-            MsgBox("The value of x is: " & CStr(x))  
-        End Sub  
-    End Class  
-    ```  
+   ```  
+   Class class1  
+       Sub Sub1(ByVal x As Integer)  
+           MsgBox("The value of x is: " & CStr(x))  
+       End Sub  
+   End Class  
+   ```  
   
-3.  Define a method that creates an instance of the delegate and invokes the method associated with the delegate by calling the built-in `Invoke` method.  
+3. Define a method that creates an instance of the delegate and invokes the method associated with the delegate by calling the built-in `Invoke` method.  
   
-    ```  
-    Protected Sub DelegateTest()  
-        Dim c1 As New class1  
-        ' Create an instance of the delegate.  
-        Dim msd As MySubDelegate = AddressOf c1.Sub1  
-        ' Call the method.  
-        msd.Invoke(10)  
-    End Sub  
-    ```  
+   ```  
+   Protected Sub DelegateTest()  
+       Dim c1 As New class1  
+       ' Create an instance of the delegate.  
+       Dim msd As MySubDelegate = AddressOf c1.Sub1  
+       ' Call the method.  
+       msd.Invoke(10)  
+   End Sub  
+   ```  
   
 ## See Also  
  [Delegate Statement](../../../../visual-basic/language-reference/statements/delegate-statement.md)  

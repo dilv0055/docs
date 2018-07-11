@@ -13,13 +13,12 @@ ms.assetid: eab9b789-beb4-4c28-b2d8-78debc7ba129
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # HttpWebRequest.\_HttpResponse Field
 
 `HttpWebRequest._HttpResponse` is an <xref:System.Net.HttpWebResponse> containing HTTP response details from an HTTP request. It can be `null` until an HTTP response is received.
 
 ## Syntax
-  
+
 ```csharp  
 internal HttpWebResponse _HttpResponse
 ```

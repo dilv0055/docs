@@ -13,11 +13,11 @@ When sending large messages using Windows Communication Foundation (WCF), it is 
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\ChunkingChannel`  
   
 ## Chunking Channel Assumptions and Limitations  
@@ -234,30 +234,30 @@ interface ITestService
   
  A few details worth noting:  
   
--   Send first calls `ThrowIfDisposedOrNotOpened` to ensure the `CommunicationState` is opened.  
+- Send first calls `ThrowIfDisposedOrNotOpened` to ensure the `CommunicationState` is opened.  
   
--   Sending is synchronized so that only one message can be sent at a time for each session. There is a `ManualResetEvent` named `sendingDone` that is reset when a chunked message is being sent. Once the end chunk message is sent, this event is set. The Send method waits for this event to be set before it tries to send the outgoing message.  
+- Sending is synchronized so that only one message can be sent at a time for each session. There is a `ManualResetEvent` named `sendingDone` that is reset when a chunked message is being sent. Once the end chunk message is sent, this event is set. The Send method waits for this event to be set before it tries to send the outgoing message.  
   
--   Send locks the `CommunicationObject.ThisLock` to prevent synchronized state changes while sending. See the <xref:System.ServiceModel.Channels.CommunicationObject> documentation for more information about <xref:System.ServiceModel.Channels.CommunicationObject> states and state machine.  
+- Send locks the `CommunicationObject.ThisLock` to prevent synchronized state changes while sending. See the <xref:System.ServiceModel.Channels.CommunicationObject> documentation for more information about <xref:System.ServiceModel.Channels.CommunicationObject> states and state machine.  
   
--   The timeout passed to Send is used as the timeout for the entire send operation which includes sending all of the chunks.  
+- The timeout passed to Send is used as the timeout for the entire send operation which includes sending all of the chunks.  
   
--   The custom `XmlDictionaryWriter` design was chosen to avoid buffering the entire original message body. If we were to get an `XmlDictionaryReader` on the body using `message.GetReaderAtBodyContents` the entire body would be buffered. Instead, we have a custom `XmlDictionaryWriter` that is passed to `message.WriteBodyContents`. As the message calls WriteBase64 on the writer, the writer packages up chunks into messages and sends them using the inner channel. WriteBase64 blocks until the chunk is sent.  
+- The custom `XmlDictionaryWriter` design was chosen to avoid buffering the entire original message body. If we were to get an `XmlDictionaryReader` on the body using `message.GetReaderAtBodyContents` the entire body would be buffered. Instead, we have a custom `XmlDictionaryWriter` that is passed to `message.WriteBodyContents`. As the message calls WriteBase64 on the writer, the writer packages up chunks into messages and sends them using the inner channel. WriteBase64 blocks until the chunk is sent.  
   
 ## Implementing the Receive Operation  
  At a high level, the Receive operation first checks that the incoming message is not `null` and that its action is the `ChunkingAction`. If it does not meet both criteria, the message is returned unchanged from Receive. Otherwise, Receive creates a new `ChunkingReader` and a new `ChunkingMessage` wrapped around it (by calling `GetNewChunkingMessage`). Before returning that new `ChunkingMessage`, Receive uses a threadpool thread to execute `ReceiveChunkLoop`, which calls `innerChannel.Receive` in a loop and hands off chunks to the `ChunkingReader` until the end chunk message is received or the receive timeout is hit.  
   
  A few details worth noting:  
   
--   Like Send, Receive first calls `ThrowIfDisposedOrNotOepned` to ensure the `CommunicationState` is Opened.  
+- Like Send, Receive first calls `ThrowIfDisposedOrNotOepned` to ensure the `CommunicationState` is Opened.  
   
--   Receive is also synchronized so that only one message can be received at a time from the session. This is especially important because once a start chunk message is received, all subsequent received messages are expected to be chunks within this new chunk sequence until an end chunk message is received. Receive cannot pull messages from the inner channel until all chunks that belong to the message currently being de-chunked are received. To accomplish this, Receive uses a `ManualResetEvent` named `currentMessageCompleted`, which is set when the end chunk message is received and reset when a new start chunk message is received.  
+- Receive is also synchronized so that only one message can be received at a time from the session. This is especially important because once a start chunk message is received, all subsequent received messages are expected to be chunks within this new chunk sequence until an end chunk message is received. Receive cannot pull messages from the inner channel until all chunks that belong to the message currently being de-chunked are received. To accomplish this, Receive uses a `ManualResetEvent` named `currentMessageCompleted`, which is set when the end chunk message is received and reset when a new start chunk message is received.  
   
--   Unlike Send, Receive does not prevent synchronized state transitions while receiving. For example, Close can be called while receiving and waits until the pending receive of the original message is completed or the specified timeout value is reached.  
+- Unlike Send, Receive does not prevent synchronized state transitions while receiving. For example, Close can be called while receiving and waits until the pending receive of the original message is completed or the specified timeout value is reached.  
   
--   The timeout passed to Receive is used as the timeout for the entire receive operation, which includes receiving all of the chunks.  
+- The timeout passed to Receive is used as the timeout for the entire receive operation, which includes receiving all of the chunks.  
   
--   If the layer that consumes the message is consuming the message body at a rate lower than the rate of incoming chunk messages, the `ChunkingReader` buffers those incoming chunks up to the limit specified by `ChunkingBindingElement.MaxBufferedChunks`. Once that limit is reached, no more chunks are pulled from the lower layer until either a buffered chunk is consumed or the receive timeout is reached.  
+- If the layer that consumes the message is consuming the message body at a rate lower than the rate of incoming chunk messages, the `ChunkingReader` buffers those incoming chunks up to the limit specified by `ChunkingBindingElement.MaxBufferedChunks`. Once that limit is reached, no more chunks are pulled from the lower layer until either a buffered chunk is consumed or the receive timeout is reached.  
   
 ## CommunicationObject Overrides  
   
@@ -303,19 +303,19 @@ interface ITestService
   
 #### To set up, build, and run the sample  
   
-1.  Install [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 using the following command.  
+1. Install [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 using the following command.  
   
-    ```  
-    %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
-    ```  
+   ```  
+   %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
+   ```  
   
-2.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3.  To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-5.  Run Service.exe first, then run Client.exe and watch both console windows for output.  
+5. Run Service.exe first, then run Client.exe and watch both console windows for output.  
   
  When running the sample, the following output is expected.  
   

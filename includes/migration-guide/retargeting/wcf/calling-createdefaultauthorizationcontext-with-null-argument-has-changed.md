@@ -1,5 +1,6 @@
 ### Calling CreateDefaultAuthorizationContext with a null argument has changed
 
+
 |   |   |
 |---|---|
 |Details|The implementation of the <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=name> returned by a call to the <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=name> with a null authorizationPolicies argument has changed its implementation in the .NET Framework 4.6.|

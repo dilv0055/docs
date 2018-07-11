@@ -20,41 +20,42 @@ ms.author: "ronpet"
 ---
 # ICLRAppDomainResourceMonitor::GetCurrentAllocated Method
 Gets the total size, in bytes, of all memory allocations that have been made by the application domain since it was created, without subtracting memory that has been garbage-collected.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetCurrentAllocated([in]  DWORD dwAppDomainId,  
                             [out] ULONGLONG* pBytesAllocated);  
 ```  
-  
+
 #### Parameters  
  `dwAppDomainId`  
  [in] The ID of the requested application domain.  
-  
+
  `pBytesAllocated`  
  [out] A pointer to the total size of all memory allocations.  
-  
+
 ## Return Value  
  This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|The method completed successfully.|  
 |COR_E_APPDOMAINUNLOADED|The application domain has been unloaded or does not exist.|  
-  
+
 ## Remarks  
  This method is the unmanaged equivalent of the managed <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType> property.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MetaHost.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
-  
+
 ## See Also  
  [ICLRAppDomainResourceMonitor Interface](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
  [Application Domain Resource Monitoring](../../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)  

@@ -73,10 +73,10 @@ Common AppDomain properties include:
 
 * `TRUSTED_PLATFORM_ASSEMBLIES` This is a list of assembly paths (delimited by ';' on Windows and ':' on Unix) which the AppDomain should prioritize loading and give full trust to (even in partially-trusted domains). This list is meant to contain 'Framework' assemblies and other trusted modules, similar to the GAC in .NET Framework scenarios. Some hosts will put any library next to *coreclr.dll* on this list, others have hard-coded manifests listing trusted assemblies for their purposes.
 * `APP_PATHS` This is a list of paths to probe in for an assembly if it can't be found in the trusted platform assemblies (TPA) list. These paths are meant to be the locations where users' assemblies can be found. In a sandboxed AppDomain, assemblies loaded from these paths will only be granted partial trust. Common APP_PATH paths include the path the target app was loaded from or other locations where user assets are known to live.
-*  `APP_NI_PATHS` This list is very similar to APP_PATHS except that it's meant to be paths that will be probed for native images.
-*  `NATIVE_DLL_SEARCH_DIRECTORIES` This property is a list of paths the loader should probe when looking for native DLLs called via p/invoke.
-*  `PLATFORM_RESOURCE_ROOTS` This list includes paths to probe in for resource satellite assemblies (in culture-specific sub-directories).
-*  `AppDomainCompatSwitch` This string specifies which compatibility quirks should be used for assemblies without an explicit Target Framework Moniker (an assembly-level attribute indicating which Framework an assembly is meant to run against). Typically, this should be set to `"UseLatestBehaviorWhenTFMNotSpecified"` but some hosts may prefer to get older Silverlight or Windows Phone compatibility quirks, instead.
+* `APP_NI_PATHS` This list is very similar to APP_PATHS except that it's meant to be paths that will be probed for native images.
+* `NATIVE_DLL_SEARCH_DIRECTORIES` This property is a list of paths the loader should probe when looking for native DLLs called via p/invoke.
+* `PLATFORM_RESOURCE_ROOTS` This list includes paths to probe in for resource satellite assemblies (in culture-specific sub-directories).
+* `AppDomainCompatSwitch` This string specifies which compatibility quirks should be used for assemblies without an explicit Target Framework Moniker (an assembly-level attribute indicating which Framework an assembly is meant to run against). Typically, this should be set to `"UseLatestBehaviorWhenTFMNotSpecified"` but some hosts may prefer to get older Silverlight or Windows Phone compatibility quirks, instead.
 
 In our [simple sample host](https://github.com/dotnet/samples/tree/master/core/hosting), these properties are set up as follows:
 
@@ -98,9 +98,9 @@ Another option, if `ExecuteAssembly` doesn't meet your host's needs, is to use `
 void *pfnDelegate = NULL;
 hr = runtimeHost->CreateDelegate(
   domainId,
-  L"HW, Version=1.0.0.0, Culture=neutral",	// Target managed assembly
-  L"ConsoleApplication.Program",			// Target managed type
-  L"Main",									// Target entry point (static method)
+  L"HW, Version=1.0.0.0, Culture=neutral",  // Target managed assembly
+  L"ConsoleApplication.Program",            // Target managed type
+  L"Main",                                  // Target entry point (static method)
   (INT_PTR*)&pfnDelegate);
 
 ((MainMethodFp*)pfnDelegate)(NULL);
@@ -120,12 +120,15 @@ An example of using coreclrhost.h (instead of mscoree.h directly) can be seen in
 
 1. Identify the managed code to execute (from command line parameters, for example). 
 2. Load the CoreCLR library.
-	1. `dlopen("./libcoreclr.so", RTLD_NOW | RTLD_LOCAL);` 
+   1. `dlopen("./libcoreclr.so", RTLD_NOW | RTLD_LOCAL);` 
+
 3. Get function pointers to CoreCLR's `coreclr_initialize`, `coreclr_create_delegate`, `coreclr_execute_assembly`, and `coreclr_shutdown` functions using `dlsym`
-	1. `coreclr_initialize_ptr coreclr_initialize = (coreclr_initialize_ptr)dlsym(coreclrLib, "coreclr_initialize");`
+   1. `coreclr_initialize_ptr coreclr_initialize = (coreclr_initialize_ptr)dlsym(coreclrLib, "coreclr_initialize");`
+
 4. Set up AppDomain properties (such as the TPA list). This is the same as step 5 from the mscoree workflow, above.
 5. Use `coreclr_initialize` to start the runtime and create an AppDomain. This will also create a `hostHandle` pointer that will be used in future hosting calls.
-	1. Note that this function performs the roles of both steps 4 and 6 from the previous workflow. 
+   1. Note that this function performs the roles of both steps 4 and 6 from the previous workflow. 
+
 6. Use either `coreclr_execute_assembly` or `coreclr_create_delegate` to execute managed code. These functions are analogous to mscoree's `ExecuteAssembly` and `CreateDelegate` functions from step 7 of the previous workflow.
 7. Use `coreclr_shutdown` to unload the AppDomain and shut down the runtime. 
 

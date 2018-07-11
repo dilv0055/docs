@@ -20,36 +20,37 @@ ms.author: "ronpet"
 ---
 # ICLRAssemblyReferenceList::IsAssemblyReferenceInList Method
 Gets a value that indicates whether the supplied pointer refers to an assembly in the list.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT IsAssemblyReferenceInList (  
     [in] IUnknown *pName  
 );  
 ```  
-  
+
 #### Parameters  
  `pName`  
  [in] An interface pointer to the assembly for which to search. Valid values are of type `IAssemblyName` or `IReferenceIdentity`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|The string appears in the list.|  
 |S_FALSE|The string does not appear in the list.|  
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the common language runtime is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  
  [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)  

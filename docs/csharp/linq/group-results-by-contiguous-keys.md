@@ -8,6 +8,7 @@ ms.assetid: cbda9c08-151b-4c9e-82f7-c3d7f3dac66b
 
 The following example shows how to group elements into chunks that represent subsequences of contiguous keys. For example, assume that you are given the following sequence of key-value pairs:
 
+
 |Key|Value|
 |---------|-----------|
 |A|We|

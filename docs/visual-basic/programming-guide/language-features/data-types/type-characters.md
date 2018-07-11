@@ -48,7 +48,8 @@ The type character is not part of the name of the element. An element defined wi
 ## Identifier type characters
 
 Visual Basic supplies a set of *identifier type characters* that you can use in a declaration to specify the data type of a variable or constant. The following table shows the available identifier type characters with examples of usage.
-  
+
+
 |Identifier type character|Data type|Example|  
 |-------------------------------|---------------|-------------|  
 |`%`|`Integer`|`Dim L%`|  
@@ -57,7 +58,7 @@ Visual Basic supplies a set of *identifier type characters* that you can use in 
 |`!`|`Single`|`Dim Q!`|  
 |`#`|`Double`|`Dim X#`|  
 |`$`|`String`|`Dim V$ = "Secret"`|  
-  
+
  No identifier type characters exist for the `Boolean`, `Byte`, `Char`, `Date`, `Object`, `SByte`, `Short`, `UInteger`, `ULong`, or `UShort` data types, or for any composite data types such as arrays or structures.
 
 In some cases, you can append the `$` character to a Visual Basic function, for example `Left$` instead of `Left`, to obtain a returned value of type `String`.
@@ -71,7 +72,8 @@ A *literal* is a textual representation of a particular value of a data type.
 ### Default literal types
 
 The form of a literal as it appears in your code ordinarily determines its data type. The following table shows these default types.  
-  
+
+
 |Textual form of literal|Default data type|Example|  
 |-----------------------------|-----------------------|-------------|  
 |Numeric, no fractional part|`Integer`|`2147483647`|  
@@ -83,7 +85,8 @@ The form of a literal as it appears in your code ordinarily determines its data 
 ### Forced literal types
 
 Visual Basic supplies a set of *literal type characters*, which you can use to force a literal to assume a data type other than the one its form indicates. You do this by appending the character to the end of the literal. The following table shows the available literal type characters with examples of usage.
-  
+
+
 |Literal type character|Data type|Example|  
 |----------------------------|---------------|-------------|  
 |`S`|`Short`|`I = 347S`|
@@ -106,7 +109,8 @@ In all cases, the literal type character must immediately follow the literal val
 ## Hexadecimal, binary, and octal literals
 
 The compiler normally interprets an integer literal to be in the decimal (base 10) number system. You can also define an integer literal as a hexadecimal (base 16) number with the `&H` prefix, as a binary (base 2) number with the `&B` prefix, and as an octal (base 8) number with the `&O` prefix. The digits that follow the prefix must be appropriate for the number system. The following table illustrates this.  
-  
+
+
 |Number base|Prefix|Valid digit values|Example|
 |-----------------|------------|------------------------|-------------|
 |Hexadecimal (base 16)|`&H`|0-9 and A-F|`&HFFFF`|

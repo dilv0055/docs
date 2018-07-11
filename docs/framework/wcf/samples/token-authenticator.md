@@ -8,19 +8,19 @@ This sample demonstrates how to implement a custom token authenticator. A token 
   
  Custom token authenticators are useful in a variety of cases, such as:  
   
--   When you want to override the default authentication mechanism associated with a token.  
+- When you want to override the default authentication mechanism associated with a token.  
   
--   When you are building a custom token.  
+- When you are building a custom token.  
   
  This sample demonstrates the following:  
   
--   How a client can authenticate using a username/password pair.  
+- How a client can authenticate using a username/password pair.  
   
--   How the server can validate the client credentials using a custom token authenticator.  
+- How the server can validate the client credentials using a custom token authenticator.  
   
--   How the WCF service code ties in with the custom token authenticator.  
+- How the WCF service code ties in with the custom token authenticator.  
   
--   How the server can be authenticated using the server's X.509 certificate.  
+- How the server can be authenticated using the server's X.509 certificate.  
   
  This sample also shows how the caller's identity is accessible from WCF after the custom token authentication process.  
   
@@ -115,163 +115,163 @@ static void Main()
 ## Custom Token Authenticator  
  Use the following steps to create a custom token authenticator:  
   
-1.  Write a custom token authenticator.  
+1. Write a custom token authenticator.  
   
-     The sample implements a custom token authenticator that validates that the username has a valid email format. It derives the <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator>. The most important method in this class is <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%28System.String%2CSystem.String%29>. In this method, the authenticator validates the format of the username and also that the host name is not from a rogue domain. If both conditions are met, then it returns a read-only collection of <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instances that is then used to provide claims that represent the information stored inside the username token.  
+    The sample implements a custom token authenticator that validates that the username has a valid email format. It derives the <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator>. The most important method in this class is <xref:System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%28System.String%2CSystem.String%29>. In this method, the authenticator validates the format of the username and also that the host name is not from a rogue domain. If both conditions are met, then it returns a read-only collection of <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instances that is then used to provide claims that represent the information stored inside the username token.  
   
-    ```  
-    protected override ReadOnlyCollection<IAuthorizationPolicy> ValidateUserNamePasswordCore(string userName, string password)  
-    {  
-        if (!ValidateUserNameFormat(userName))  
-            throw new SecurityTokenValidationException("Incorrect UserName format");  
+   ```  
+   protected override ReadOnlyCollection<IAuthorizationPolicy> ValidateUserNamePasswordCore(string userName, string password)  
+   {  
+       if (!ValidateUserNameFormat(userName))  
+           throw new SecurityTokenValidationException("Incorrect UserName format");  
   
-        ClaimSet claimSet = new DefaultClaimSet(ClaimSet.System, new Claim(ClaimTypes.Name, userName, Rights.PossessProperty));  
-        List<IIdentity> identities = new List<IIdentity>(1);  
-        identities.Add(new GenericIdentity(userName));  
-        List<IAuthorizationPolicy> policies = new List<IAuthorizationPolicy>(1);  
-        policies.Add(new UnconditionalPolicy(ClaimSet.System, claimSet, DateTime.MaxValue.ToUniversalTime(), identities));  
-        return policies.AsReadOnly();  
-    }  
-    ```  
+       ClaimSet claimSet = new DefaultClaimSet(ClaimSet.System, new Claim(ClaimTypes.Name, userName, Rights.PossessProperty));  
+       List<IIdentity> identities = new List<IIdentity>(1);  
+       identities.Add(new GenericIdentity(userName));  
+       List<IAuthorizationPolicy> policies = new List<IAuthorizationPolicy>(1);  
+       policies.Add(new UnconditionalPolicy(ClaimSet.System, claimSet, DateTime.MaxValue.ToUniversalTime(), identities));  
+       return policies.AsReadOnly();  
+   }  
+   ```  
   
-2.  Provide an authorization policy that is returned by custom token authenticator.  
+2. Provide an authorization policy that is returned by custom token authenticator.  
   
-     This sample provides its own implementation of <xref:System.IdentityModel.Policy.IAuthorizationPolicy> called `UnconditionalPolicy` that returns set of claims and identities that were passed to it in its constructor.  
+    This sample provides its own implementation of <xref:System.IdentityModel.Policy.IAuthorizationPolicy> called `UnconditionalPolicy` that returns set of claims and identities that were passed to it in its constructor.  
   
-    ```  
-    class UnconditionalPolicy : IAuthorizationPolicy  
-    {  
-        String id = Guid.NewGuid().ToString();  
-        ClaimSet issuer;  
-        ClaimSet issuance;  
-        DateTime expirationTime;  
-        IList<IIdentity> identities;  
+   ```  
+   class UnconditionalPolicy : IAuthorizationPolicy  
+   {  
+       String id = Guid.NewGuid().ToString();  
+       ClaimSet issuer;  
+       ClaimSet issuance;  
+       DateTime expirationTime;  
+       IList<IIdentity> identities;  
   
-        public UnconditionalPolicy(ClaimSet issuer, ClaimSet issuance, DateTime expirationTime, IList<IIdentity> identities)  
-        {  
-            if (issuer == null)  
-                throw new ArgumentNullException("issuer");  
-            if (issuance == null)  
-                throw new ArgumentNullException("issuance");  
+       public UnconditionalPolicy(ClaimSet issuer, ClaimSet issuance, DateTime expirationTime, IList<IIdentity> identities)  
+       {  
+           if (issuer == null)  
+               throw new ArgumentNullException("issuer");  
+           if (issuance == null)  
+               throw new ArgumentNullException("issuance");  
   
-            this.issuer = issuer;  
-            this.issuance = issuance;  
-            this.identities = identities;  
-            this.expirationTime = expirationTime;  
-        }  
+           this.issuer = issuer;  
+           this.issuance = issuance;  
+           this.identities = identities;  
+           this.expirationTime = expirationTime;  
+       }  
   
-        public string Id  
-        {  
-            get { return this.id; }  
-        }  
+       public string Id  
+       {  
+           get { return this.id; }  
+       }  
   
-        public ClaimSet Issuer  
-        {  
-            get { return this.issuer; }  
-        }  
+       public ClaimSet Issuer  
+       {  
+           get { return this.issuer; }  
+       }  
   
-        public DateTime ExpirationTime  
-        {  
-            get { return this.expirationTime; }  
-        }  
+       public DateTime ExpirationTime  
+       {  
+           get { return this.expirationTime; }  
+       }  
   
-        public bool Evaluate(EvaluationContext evaluationContext, ref object state)  
-        {  
-            evaluationContext.AddToTarget(this, this.issuance);  
+       public bool Evaluate(EvaluationContext evaluationContext, ref object state)  
+       {  
+           evaluationContext.AddToTarget(this, this.issuance);  
   
-            if (this.identities != null)  
-            {  
-                object value;  
-                IList<IIdentity> contextIdentities;  
-                if (!evaluationContext.Properties.TryGetValue("Identities", out value))  
-                {  
-                    contextIdentities = new List<IIdentity>(this.identities.Count);  
-                    evaluationContext.Properties.Add("Identities", contextIdentities);  
-                }  
-                else  
-                {  
-                    contextIdentities = value as IList<IIdentity>;  
-                }  
-                foreach (IIdentity identity in this.identities)  
-                {  
-                    contextIdentities.Add(identity);  
-                }  
-            }  
+           if (this.identities != null)  
+           {  
+               object value;  
+               IList<IIdentity> contextIdentities;  
+               if (!evaluationContext.Properties.TryGetValue("Identities", out value))  
+               {  
+                   contextIdentities = new List<IIdentity>(this.identities.Count);  
+                   evaluationContext.Properties.Add("Identities", contextIdentities);  
+               }  
+               else  
+               {  
+                   contextIdentities = value as IList<IIdentity>;  
+               }  
+               foreach (IIdentity identity in this.identities)  
+               {  
+                   contextIdentities.Add(identity);  
+               }  
+           }  
   
-            evaluationContext.RecordExpirationTime(this.expirationTime);  
-            return true;  
-        }  
-    }  
-    ```  
+           evaluationContext.RecordExpirationTime(this.expirationTime);  
+           return true;  
+       }  
+   }  
+   ```  
   
-3.  Write a custom security token manager.  
+3. Write a custom security token manager.  
   
-     The <xref:System.IdentityModel.Selectors.SecurityTokenManager> is used to create a <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> for specific <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> objects that are passed to it in the `CreateSecurityTokenAuthenticator` method. The security token manager is also used to create token providers and token serializers, but those are not covered by this sample. In this sample, the custom security token manager inherits from <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> class and overrides the `CreateSecurityTokenAuthenticator` method to return custom username token authenticator when the passed token requirements indicate that username authenticator is requested.  
+    The <xref:System.IdentityModel.Selectors.SecurityTokenManager> is used to create a <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator> for specific <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> objects that are passed to it in the `CreateSecurityTokenAuthenticator` method. The security token manager is also used to create token providers and token serializers, but those are not covered by this sample. In this sample, the custom security token manager inherits from <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> class and overrides the `CreateSecurityTokenAuthenticator` method to return custom username token authenticator when the passed token requirements indicate that username authenticator is requested.  
   
-    ```  
-    public class MySecurityTokenManager : ServiceCredentialsSecurityTokenManager  
-    {  
-        MyUserNameCredential myUserNameCredential;  
+   ```  
+   public class MySecurityTokenManager : ServiceCredentialsSecurityTokenManager  
+   {  
+       MyUserNameCredential myUserNameCredential;  
   
-        public MySecurityTokenManager(MyUserNameCredential myUserNameCredential)  
-            : base(myUserNameCredential)  
-        {  
-            this.myUserNameCredential = myUserNameCredential;  
-        }  
+       public MySecurityTokenManager(MyUserNameCredential myUserNameCredential)  
+           : base(myUserNameCredential)  
+       {  
+           this.myUserNameCredential = myUserNameCredential;  
+       }  
   
-        public override SecurityTokenAuthenticator CreateSecurityTokenAuthenticator(SecurityTokenRequirement tokenRequirement, out SecurityTokenResolver outOfBandTokenResolver)  
-        {  
-            if (tokenRequirement.TokenType ==  SecurityTokenTypes.UserName)  
-            {  
-                outOfBandTokenResolver = null;  
-                return new MyTokenAuthenticator();  
-            }  
-            else  
-            {  
-                return base.CreateSecurityTokenAuthenticator(tokenRequirement, out outOfBandTokenResolver);  
-            }  
-        }  
-    }  
-    ```  
+       public override SecurityTokenAuthenticator CreateSecurityTokenAuthenticator(SecurityTokenRequirement tokenRequirement, out SecurityTokenResolver outOfBandTokenResolver)  
+       {  
+           if (tokenRequirement.TokenType ==  SecurityTokenTypes.UserName)  
+           {  
+               outOfBandTokenResolver = null;  
+               return new MyTokenAuthenticator();  
+           }  
+           else  
+           {  
+               return base.CreateSecurityTokenAuthenticator(tokenRequirement, out outOfBandTokenResolver);  
+           }  
+       }  
+   }  
+   ```  
   
-4.  Write a custom service credential.  
+4. Write a custom service credential.  
   
-     The service credentials class is used to represent the credentials that are configured for the service and creates a security token manager that is used to obtain token authenticators, token providers and token serializers.  
+    The service credentials class is used to represent the credentials that are configured for the service and creates a security token manager that is used to obtain token authenticators, token providers and token serializers.  
   
-    ```  
-    public class MyUserNameCredential : ServiceCredentials  
-    {  
+   ```  
+   public class MyUserNameCredential : ServiceCredentials  
+   {  
   
-        public MyUserNameCredential()  
-            : base()  
-        {  
-        }  
+       public MyUserNameCredential()  
+           : base()  
+       {  
+       }  
   
-        protected override ServiceCredentials CloneCore()  
-        {  
-            return new MyUserNameCredential();  
-        }  
+       protected override ServiceCredentials CloneCore()  
+       {  
+           return new MyUserNameCredential();  
+       }  
   
-        public override SecurityTokenManager CreateSecurityTokenManager()  
-        {  
-            return new MySecurityTokenManager(this);  
-        }  
+       public override SecurityTokenManager CreateSecurityTokenManager()  
+       {  
+           return new MySecurityTokenManager(this);  
+       }  
   
-    }  
-    ```  
+   }  
+   ```  
   
-5.  Configure the service to use the custom service credential.  
+5. Configure the service to use the custom service credential.  
   
-     In order for the service to use the custom service credential, we delete the default service credential class after capturing the service certificate that is already preconfigured in the default service credential, and configure the new service credential instance to use the preconfigured service certificates and add this new service credential instance to service behaviors.  
+    In order for the service to use the custom service credential, we delete the default service credential class after capturing the service certificate that is already preconfigured in the default service credential, and configure the new service credential instance to use the preconfigured service certificates and add this new service credential instance to service behaviors.  
   
-    ```  
-    ServiceCredentials sc = serviceHost.Credentials;  
-    X509Certificate2 cert = sc.ServiceCertificate.Certificate;  
-    MyUserNameCredential serviceCredential = new MyUserNameCredential();  
-    serviceCredential.ServiceCertificate.Certificate = cert;  
-    serviceHost.Description.Behaviors.Remove((typeof(ServiceCredentials)));  
-    serviceHost.Description.Behaviors.Add(serviceCredential);  
-    ```  
+   ```  
+   ServiceCredentials sc = serviceHost.Credentials;  
+   X509Certificate2 cert = sc.ServiceCertificate.Certificate;  
+   MyUserNameCredential serviceCredential = new MyUserNameCredential();  
+   serviceCredential.ServiceCertificate.Certificate = cert;  
+   serviceHost.Description.Behaviors.Remove((typeof(ServiceCredentials)));  
+   serviceHost.Description.Behaviors.Add(serviceCredential);  
+   ```  
   
  To display the caller's information, you can use the <xref:System.ServiceModel.ServiceSecurityContext.PrimaryIdentity%2A> as shown in the following code. The <xref:System.ServiceModel.ServiceSecurityContext.Current%2A> contains claims information about the current caller.  
   
@@ -291,67 +291,67 @@ static void DisplayIdentityInformation()
   
  The following provides a brief overview of the different sections of the batch files so that they can be modified to run in appropriate configuration.  
   
--   Creating the server certificate.  
+- Creating the server certificate.  
   
-     The following lines from the Setup.bat batch file create the server certificate to be used. The `%SERVER_NAME%` variable specifies the server name. Change this variable to specify your own server name. The default in this batch file is localhost.  
+   The following lines from the Setup.bat batch file create the server certificate to be used. The `%SERVER_NAME%` variable specifies the server name. Change this variable to specify your own server name. The default in this batch file is localhost.  
   
-    ```  
-    echo ************  
-    echo Server cert setup starting  
-    echo %SERVER_NAME%  
-    echo ************  
-    echo making server cert  
-    echo ************  
-    makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
-    ```  
+  ```  
+  echo ************  
+  echo Server cert setup starting  
+  echo %SERVER_NAME%  
+  echo ************  
+  echo making server cert  
+  echo ************  
+  makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe  
+  ```  
   
--   Installing the server certificate into client's trusted certificate store.  
+- Installing the server certificate into client's trusted certificate store.  
   
-     The following lines in the Setup.bat batch file copy the server certificate into the client trusted people store. This step is required because certificates generated by Makecert.exe are not implicitly trusted by the client system. If you already have a certificate that is rooted in a client trusted root certificate—for example, a Microsoft issued certificate—this step of populating the client certificate store with the server certificate is not required.  
+   The following lines in the Setup.bat batch file copy the server certificate into the client trusted people store. This step is required because certificates generated by Makecert.exe are not implicitly trusted by the client system. If you already have a certificate that is rooted in a client trusted root certificate—for example, a Microsoft issued certificate—this step of populating the client certificate store with the server certificate is not required.  
   
-    ```  
-    certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
-    ```  
+  ```  
+  certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
+  ```  
   
-    > [!NOTE]
-    >  The setup batch file is designed to be run from a Windows SDK Command Prompt. It requires that the MSSDK environment variable point to the directory where the SDK is installed. This environment variable is automatically set within a Windows SDK Command Prompt.  
+  > [!NOTE]
+  >  The setup batch file is designed to be run from a Windows SDK Command Prompt. It requires that the MSSDK environment variable point to the directory where the SDK is installed. This environment variable is automatically set within a Windows SDK Command Prompt.  
   
 #### To set up and build the sample  
   
-1.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. To build the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 #### To run the sample on the same computer  
   
-1.  Run Setup.bat from the sample installation folder inside a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] command prompt opened with administrator privileges. This installs all the certificates required for running the sample.  
+1. Run Setup.bat from the sample installation folder inside a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] command prompt opened with administrator privileges. This installs all the certificates required for running the sample.  
   
-    > [!NOTE]
-    >  The Setup.bat batch file is designed to be run from a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt. The PATH environment variable set within the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt points to the directory that contains executables required by the Setup.bat script.  
+   > [!NOTE]
+   >  The Setup.bat batch file is designed to be run from a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt. The PATH environment variable set within the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] Command Prompt points to the directory that contains executables required by the Setup.bat script.  
   
-2.  Launch service.exe from service\bin.  
+2. Launch service.exe from service\bin.  
   
-3.  Launch client.exe from \client\bin. Client activity is displayed on the client console application.  
+3. Launch client.exe from \client\bin. Client activity is displayed on the client console application.  
   
-4.  If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+4. If the client and service are not able to communicate, see [Troubleshooting Tips](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
 #### To run the sample across computers  
   
-1.  Create a directory on the service computer for the service binaries.  
+1. Create a directory on the service computer for the service binaries.  
   
-2.  Copy the service program files to the service directory on the service computer. Also copy the Setup.bat and Cleanup.bat files to the service computer.  
+2. Copy the service program files to the service directory on the service computer. Also copy the Setup.bat and Cleanup.bat files to the service computer.  
   
-3.  You must have a server certificate with the subject name that contains the fully-qualified domain name of the computer. The service App.config file must be updated to reflect this new certificate name. You can create one by using the Setup.bat if you set the `%SERVER_NAME%` variable to fully-qualified host name of the computer on which the service will run. Note that the setup.bat file must be run from a Visual Studio command prompt opened with administrator privileges.  
+3. You must have a server certificate with the subject name that contains the fully-qualified domain name of the computer. The service App.config file must be updated to reflect this new certificate name. You can create one by using the Setup.bat if you set the `%SERVER_NAME%` variable to fully-qualified host name of the computer on which the service will run. Note that the setup.bat file must be run from a Visual Studio command prompt opened with administrator privileges.  
   
-4.  Copy the server certificate into the CurrentUser-TrustedPeople store of the client. You do not need to do this except when the server certificate is issued by a client trusted issuer.  
+4. Copy the server certificate into the CurrentUser-TrustedPeople store of the client. You do not need to do this except when the server certificate is issued by a client trusted issuer.  
   
-5.  In the App.config file on the service computer, change the value of the base address to specify a fully-qualified computer name instead of localhost.  
+5. In the App.config file on the service computer, change the value of the base address to specify a fully-qualified computer name instead of localhost.  
   
-6.  On the service computer, run service.exe from a command prompt.  
+6. On the service computer, run service.exe from a command prompt.  
   
-7.  Copy the client program files from the \client\bin\ folder, under the language-specific folder, to the client computer.  
+7. Copy the client program files from the \client\bin\ folder, under the language-specific folder, to the client computer.  
   
-8.  In the Client.exe.config file on the client computer, change the address value of the endpoint to match the new address of your service.  
+8. In the Client.exe.config file on the client computer, change the address value of the endpoint to match the new address of your service.  
   
 9. On the client computer, launch Client.exe from a command prompt.  
   
@@ -359,6 +359,6 @@ static void DisplayIdentityInformation()
   
 #### To clean up after the sample  
   
-1.  Run Cleanup.bat in the samples folder once you have finished running the sample.  
+1. Run Cleanup.bat in the samples folder once you have finished running the sample.  
   
 ## See Also

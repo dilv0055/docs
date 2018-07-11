@@ -1,5 +1,6 @@
 ### WPF DataTemplate elements are now visible to UIA
 
+
 |   |   |
 |---|---|
 |Details|Previously, <xref:System.Windows.DataTemplate?displayProperty=name> elements were invisible to UI Automation. Beginning in 4.5, UI Automation will detect these elements. This is useful in many cases, but can break tests that depend on UIA trees not containing <xref:System.Windows.DataTemplate?displayProperty=name> elements.|

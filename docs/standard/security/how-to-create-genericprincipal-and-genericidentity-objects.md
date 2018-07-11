@@ -19,37 +19,37 @@ You can use the <xref:System.Security.Principal.GenericIdentity> class in conjun
   
 ### To create a GenericPrincipal object  
   
-1.  Create a new instance of the identity class and initialize it with the name you want it to hold. The following code creates a new **GenericIdentity** object and initializes it with the name `MyUser`.  
+1. Create a new instance of the identity class and initialize it with the name you want it to hold. The following code creates a new **GenericIdentity** object and initializes it with the name `MyUser`.  
   
-    ```vb  
-    Dim MyIdentity As New GenericIdentity("MyUser")  
-    ```  
+   ```vb  
+   Dim MyIdentity As New GenericIdentity("MyUser")  
+   ```  
   
-    ```csharp  
-    GenericIdentity MyIdentity = new GenericIdentity("MyUser");  
-    ```  
+   ```csharp  
+   GenericIdentity MyIdentity = new GenericIdentity("MyUser");  
+   ```  
   
-2.  Create a new instance of the **GenericPrincipal** class and initialize it with the previously created **GenericIdentity** object and an array of strings that represent the roles that you want associated with this principal. The following code example specifies an array of strings that represent an administrator role and a user role. The **GenericPrincipal** is then initialized with the previous **GenericIdentity** and the string array.  
+2. Create a new instance of the **GenericPrincipal** class and initialize it with the previously created **GenericIdentity** object and an array of strings that represent the roles that you want associated with this principal. The following code example specifies an array of strings that represent an administrator role and a user role. The **GenericPrincipal** is then initialized with the previous **GenericIdentity** and the string array.  
   
-    ```vb  
-    Dim MyStringArray As String() = {"Manager", "Teller"}  
-    DIm MyPrincipal As New GenericPrincipal(MyIdentity, MyStringArray)  
-    ```  
+   ```vb  
+   Dim MyStringArray As String() = {"Manager", "Teller"}  
+   DIm MyPrincipal As New GenericPrincipal(MyIdentity, MyStringArray)  
+   ```  
   
-    ```csharp  
-    String[] MyStringArray = {"Manager", "Teller"};  
-    GenericPrincipal MyPrincipal = new GenericPrincipal(MyIdentity, MyStringArray);  
-    ```  
+   ```csharp  
+   String[] MyStringArray = {"Manager", "Teller"};  
+   GenericPrincipal MyPrincipal = new GenericPrincipal(MyIdentity, MyStringArray);  
+   ```  
   
-3.  Use the following code to attach the principal to the current thread. This is valuable in situations where the principal must be validated several times, it must be validated by other code running in your application, or it must be validated by a <xref:System.Security.Permissions.PrincipalPermission> object. You can still perform role-based validation on the principal object without attaching it to the thread. For more information, see [Replacing a Principal Object](../../../docs/standard/security/replacing-a-principal-object.md).  
+3. Use the following code to attach the principal to the current thread. This is valuable in situations where the principal must be validated several times, it must be validated by other code running in your application, or it must be validated by a <xref:System.Security.Permissions.PrincipalPermission> object. You can still perform role-based validation on the principal object without attaching it to the thread. For more information, see [Replacing a Principal Object](../../../docs/standard/security/replacing-a-principal-object.md).  
   
-    ```vb  
-    Thread.CurrentPrincipal = MyPrincipal  
-    ```  
+   ```vb  
+   Thread.CurrentPrincipal = MyPrincipal  
+   ```  
   
-    ```csharp  
-    Thread.CurrentPrincipal = MyPrincipal;  
-    ```  
+   ```csharp  
+   Thread.CurrentPrincipal = MyPrincipal;  
+   ```  
   
 ## Example  
  The following code example demonstrates how to create an instance of a **GenericPrincipal** and a **GenericIdentity**. This code displays the values of these objects to the console.  

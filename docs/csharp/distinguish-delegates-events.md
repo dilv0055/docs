@@ -4,7 +4,6 @@ description: Learn the difference between delegates and events and when to use e
 ms.date: 06/20/2016
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
 ---
-
 # Distinguishing Delegates and Events
 
 [Previous](modern-events.md)

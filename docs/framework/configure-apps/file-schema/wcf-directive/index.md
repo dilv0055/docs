@@ -15,7 +15,7 @@ Specifies settings used by the Windows Communication Foundation (WCF) directives
  Describes how the @ServiceHost directive is used when hosting a service in Internet Information Services (IIS)  
   
  [How to: Host a WCF Service in WAS](../../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)  
- Describes how the @ServiceHost directive is used when hosting a service in Windows Process Activation Service (WAS)  
+ Describes how the @"ServiceHost" directive is used when hosting a service in Windows Process Activation Service (WAS)  
   
 ## See Also  
  [Hosting](../../../../../docs/framework/wcf/feature-details/hosting.md)  

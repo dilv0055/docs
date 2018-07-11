@@ -17,18 +17,18 @@ You can dock controls to the edges of your form or have them fill the control's 
   
 ### To dock a control  
   
-1.  Select the control that you want to dock.  
+1. Select the control that you want to dock.  
   
-2.  In the Properties window, click the arrow to the right of the <xref:System.Windows.Forms.Control.Dock%2A> property.  
+2. In the Properties window, click the arrow to the right of the <xref:System.Windows.Forms.Control.Dock%2A> property.  
   
-     An editor is displayed that shows a series of boxes representing the edges and the center of the form.  
+    An editor is displayed that shows a series of boxes representing the edges and the center of the form.  
   
-3.  Click the button that represents the edge of the form where you want to dock the control. To fill the contents of the control's form or container control, click the center box. Click **(none)** to disable docking.  
+3. Click the button that represents the edge of the form where you want to dock the control. To fill the contents of the control's form or container control, click the center box. Click **(none)** to disable docking.  
   
-     The control is automatically resized to fit the boundaries of the docked edge.  
+    The control is automatically resized to fit the boundaries of the docked edge.  
   
-    > [!NOTE]
-    >  Inherited controls must be `Protected` to be able to be docked. To change the access level of a control, set its **Modifier** property in the Properties window.  
+   > [!NOTE]
+   >  Inherited controls must be `Protected` to be able to be docked. To change the access level of a control, set its **Modifier** property in the Properties window.  
   
 ## See Also  
  [Windows Forms Controls](../../../../docs/framework/winforms/controls/index.md)  

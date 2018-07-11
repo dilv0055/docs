@@ -17,17 +17,17 @@ You can set up a button that you can use to cancel an async application if you d
 ### Downloading the Example  
  You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.  
   
-1.  Decompress the file that you downloaded, and then start Visual Studio.  
+1. Decompress the file that you downloaded, and then start Visual Studio.  
   
-2.  On the menu bar, choose **File**, **Open**, **Project/Solution**.  
+2. On the menu bar, choose **File**, **Open**, **Project/Solution**.  
   
-3.  In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningVB.  
+3. In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningVB.  
   
-4.  In **Solution Explorer**, open the shortcut menu for the **CancelATask** project, and then choose **Set as StartUp Project**.  
+4. In **Solution Explorer**, open the shortcut menu for the **CancelATask** project, and then choose **Set as StartUp Project**.  
   
-5.  Choose the F5 key to run the project.  
+5. Choose the F5 key to run the project.  
   
-     Choose the Ctrl+F5 keys to run the project without debugging it.  
+    Choose the Ctrl+F5 keys to run the project without debugging it.  
   
  If you don't want to download the project, you can review the MainWindow.xaml.vb files at the end of this topic.  
   
@@ -38,96 +38,96 @@ You can set up a button that you can use to cancel an async application if you d
   
  Then add the following changes to the MainWindow.xaml.vb file of that project.  
   
-1.  Declare a `CancellationTokenSource` variable, `cts`, that’s in scope for all methods that access it.  
+1. Declare a `CancellationTokenSource` variable, `cts`, that’s in scope for all methods that access it.  
   
-    ```vb  
-    Class MainWindow  
+   ```vb  
+   Class MainWindow  
   
-        ' ***Declare a System.Threading.CancellationTokenSource.  
-        Dim cts As CancellationTokenSource  
-    ```  
+       ' ***Declare a System.Threading.CancellationTokenSource.  
+       Dim cts As CancellationTokenSource  
+   ```  
   
-2.  Add the following event handler for the **Cancel** button. The event handler uses the <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> method to notify `cts` when the user requests cancellation.  
+2. Add the following event handler for the **Cancel** button. The event handler uses the <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> method to notify `cts` when the user requests cancellation.  
   
-    ```vb  
-    ' ***Add an event handler for the Cancel button.  
-    Private Sub cancelButton_Click(sender As Object, e As RoutedEventArgs)  
+   ```vb  
+   ' ***Add an event handler for the Cancel button.  
+   Private Sub cancelButton_Click(sender As Object, e As RoutedEventArgs)  
   
-        If cts IsNot Nothing Then  
-            cts.Cancel()  
-        End If  
-    End Sub  
-    ```  
+       If cts IsNot Nothing Then  
+           cts.Cancel()  
+       End If  
+   End Sub  
+   ```  
   
-3.  Make the following changes in the event handler for the **Start** button, `startButton_Click`.  
+3. Make the following changes in the event handler for the **Start** button, `startButton_Click`.  
   
-    -   Instantiate the `CancellationTokenSource`, `cts`.  
+   - Instantiate the `CancellationTokenSource`, `cts`.  
   
-        ```vb  
-        ' ***Instantiate the CancellationTokenSource.  
-        cts = New CancellationTokenSource()  
-        ```  
+     ```vb  
+     ' ***Instantiate the CancellationTokenSource.  
+     cts = New CancellationTokenSource()  
+     ```  
   
-    -   In the call to `AccessTheWebAsync`, which downloads the contents of a specified website, send the <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> property of `cts` as an argument. The `Token` property propagates the message if cancellation is requested. Add a catch block that displays a message if the user chooses to cancel the download operation. The following code shows the changes.  
+   - In the call to `AccessTheWebAsync`, which downloads the contents of a specified website, send the <xref:System.Threading.CancellationTokenSource.Token%2A?displayProperty=nameWithType> property of `cts` as an argument. The `Token` property propagates the message if cancellation is requested. Add a catch block that displays a message if the user chooses to cancel the download operation. The following code shows the changes.  
   
-        ```vb  
-        Try  
-            ' ***Send a token to carry the message if cancellation is requested.  
-            Dim contentLength As Integer = Await AccessTheWebAsync(cts.Token)  
+     ```vb  
+     Try  
+         ' ***Send a token to carry the message if cancellation is requested.  
+         Dim contentLength As Integer = Await AccessTheWebAsync(cts.Token)  
   
-            resultsTextBox.Text &=  
-                String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, contentLength)  
+         resultsTextBox.Text &=  
+             String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, contentLength)  
   
-            ' *** If cancellation is requested, an OperationCanceledException results.  
-        Catch ex As OperationCanceledException  
-            resultsTextBox.Text &= vbCrLf & "Download canceled." & vbCrLf  
+         ' *** If cancellation is requested, an OperationCanceledException results.  
+     Catch ex As OperationCanceledException  
+         resultsTextBox.Text &= vbCrLf & "Download canceled." & vbCrLf  
   
-        Catch ex As Exception  
-            resultsTextBox.Text &= vbCrLf & "Download failed." & vbCrLf  
-        End Try  
-        ```  
+     Catch ex As Exception  
+         resultsTextBox.Text &= vbCrLf & "Download failed." & vbCrLf  
+     End Try  
+     ```  
   
-4.  In `AccessTheWebAsync`, use the  <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> overload of the `GetAsync` method in the <xref:System.Net.Http.HttpClient> type to download the contents of a website. Pass `ct`, the <xref:System.Threading.CancellationToken> parameter of `AccessTheWebAsync`, as the second argument. The token carries the message if the user chooses the **Cancel** button.  
+4. In `AccessTheWebAsync`, use the  <xref:System.Net.Http.HttpClient.GetAsync%28System.String%2CSystem.Threading.CancellationToken%29?displayProperty=nameWithType> overload of the `GetAsync` method in the <xref:System.Net.Http.HttpClient> type to download the contents of a website. Pass `ct`, the <xref:System.Threading.CancellationToken> parameter of `AccessTheWebAsync`, as the second argument. The token carries the message if the user chooses the **Cancel** button.  
   
-     The following code shows the changes in `AccessTheWebAsync`.  
+    The following code shows the changes in `AccessTheWebAsync`.  
   
-    ```vb  
-    ' ***Provide a parameter for the CancellationToken.  
-    Async Function AccessTheWebAsync(ct As CancellationToken) As Task(Of Integer)  
+   ```vb  
+   ' ***Provide a parameter for the CancellationToken.  
+   Async Function AccessTheWebAsync(ct As CancellationToken) As Task(Of Integer)  
   
-        Dim client As HttpClient = New HttpClient()  
+       Dim client As HttpClient = New HttpClient()  
   
-        resultsTextBox.Text &=  
-            String.Format(vbCrLf & "Ready to download." & vbCrLf)  
+       resultsTextBox.Text &=  
+           String.Format(vbCrLf & "Ready to download." & vbCrLf)  
   
-        ' You might need to slow things down to have a chance to cancel.  
-        Await Task.Delay(250)  
+       ' You might need to slow things down to have a chance to cancel.  
+       Await Task.Delay(250)  
   
-        ' GetAsync returns a Task(Of HttpResponseMessage).   
-        ' ***The ct argument carries the message if the Cancel button is chosen.  
-        Dim response As HttpResponseMessage = Await client.GetAsync("http://msdn.microsoft.com/library/dd470362.aspx", ct)  
+       ' GetAsync returns a Task(Of HttpResponseMessage).   
+       ' ***The ct argument carries the message if the Cancel button is chosen.  
+       Dim response As HttpResponseMessage = Await client.GetAsync("http://msdn.microsoft.com/library/dd470362.aspx", ct)  
   
-        ' Retrieve the website contents from the HttpResponseMessage.  
-        Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()  
+       ' Retrieve the website contents from the HttpResponseMessage.  
+       Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()  
   
-        ' The result of the method is the length of the downloaded website.  
-        Return urlContents.Length  
-    End Function  
-    ```  
+       ' The result of the method is the length of the downloaded website.  
+       Return urlContents.Length  
+   End Function  
+   ```  
   
-5.  If you don’t cancel the program, it produces the following output.  
+5. If you don’t cancel the program, it produces the following output.  
   
-    ```  
-    Ready to download.  
-    Length of the downloaded string: 158125.  
-    ```  
+   ```  
+   Ready to download.  
+   Length of the downloaded string: 158125.  
+   ```  
   
-     If you choose the **Cancel** button before the program finishes downloading the content, the program produces the following output.  
+    If you choose the **Cancel** button before the program finishes downloading the content, the program produces the following output.  
   
-    ```  
-    Ready to download.  
-    Download canceled.  
-    ```  
+   ```  
+   Ready to download.  
+   Download canceled.  
+   ```  
   
 ##  <a name="BKMK_CancelaListofTasks"></a> Cancel a List of Tasks  
  You can extend the previous example to cancel many tasks by associating the same `CancellationTokenSource` instance with each task. If you choose the **Cancel** button, you cancel all tasks that aren’t yet complete.  
@@ -135,111 +135,111 @@ You can set up a button that you can use to cancel an async application if you d
 ### Downloading the Example  
  You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.  
   
-1.  Decompress the file that you downloaded, and then start Visual Studio.  
+1. Decompress the file that you downloaded, and then start Visual Studio.  
   
-2.  On the menu bar, choose **File**, **Open**, **Project/Solution**.  
+2. On the menu bar, choose **File**, **Open**, **Project/Solution**.  
   
-3.  In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningVB.  
+3. In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningVB.  
   
-4.  In **Solution Explorer**, open the shortcut menu for the **CancelAListOfTasks** project, and then choose **Set as StartUp Project**.  
+4. In **Solution Explorer**, open the shortcut menu for the **CancelAListOfTasks** project, and then choose **Set as StartUp Project**.  
   
-5.  Choose the F5 key to run the project.  
+5. Choose the F5 key to run the project.  
   
-     Choose the Ctrl+F5 keys to run the project without debugging it.  
+    Choose the Ctrl+F5 keys to run the project without debugging it.  
   
  If you don't want to download the project, you can review the MainWindow.xaml.vb files at the end of this topic.  
   
 ### Building the Example  
  To extend the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **CancelATask** as the **StartUp Project**. Add the following changes to that project. Asterisks mark the changes in the program.  
   
-1.  Add a method to create a list of web addresses.  
+1. Add a method to create a list of web addresses.  
   
-    ```vb  
-    ' ***Add a method that creates a list of web addresses.  
-    Private Function SetUpURLList() As List(Of String)  
+   ```vb  
+   ' ***Add a method that creates a list of web addresses.  
+   Private Function SetUpURLList() As List(Of String)  
   
-        Dim urls = New List(Of String) From  
-            {  
-                "http://msdn.microsoft.com",  
-                "http://msdn.microsoft.com/library/hh290138.aspx",  
-                "http://msdn.microsoft.com/library/hh290140.aspx",  
-                "http://msdn.microsoft.com/library/dd470362.aspx",  
-                "http://msdn.microsoft.com/library/aa578028.aspx",  
-                "http://msdn.microsoft.com/library/ms404677.aspx",  
-                "http://msdn.microsoft.com/library/ff730837.aspx"  
-            }  
-        Return urls  
-    End Function  
-    ```  
+       Dim urls = New List(Of String) From  
+           {  
+               "http://msdn.microsoft.com",  
+               "http://msdn.microsoft.com/library/hh290138.aspx",  
+               "http://msdn.microsoft.com/library/hh290140.aspx",  
+               "http://msdn.microsoft.com/library/dd470362.aspx",  
+               "http://msdn.microsoft.com/library/aa578028.aspx",  
+               "http://msdn.microsoft.com/library/ms404677.aspx",  
+               "http://msdn.microsoft.com/library/ff730837.aspx"  
+           }  
+       Return urls  
+   End Function  
+   ```  
   
-2.  Call the method in `AccessTheWebAsync`.  
+2. Call the method in `AccessTheWebAsync`.  
   
-    ```vb  
-    ' ***Call SetUpURLList to make a list of web addresses.  
-    Dim urlList As List(Of String) = SetUpURLList()  
-    ```  
+   ```vb  
+   ' ***Call SetUpURLList to make a list of web addresses.  
+   Dim urlList As List(Of String) = SetUpURLList()  
+   ```  
   
-3.  Add the following loop in `AccessTheWebAsync` to process each web address in the list.  
+3. Add the following loop in `AccessTheWebAsync` to process each web address in the list.  
   
-    ```vb  
-    ' ***Add a loop to process the list of web addresses.  
-    For Each url In urlList  
-        ' GetAsync returns a Task(Of HttpResponseMessage).   
-        ' Argument ct carries the message if the Cancel button is chosen.   
-        ' ***Note that the Cancel button can cancel all remaining downloads.  
-        Dim response As HttpResponseMessage = Await client.GetAsync(url, ct)  
+   ```vb  
+   ' ***Add a loop to process the list of web addresses.  
+   For Each url In urlList  
+       ' GetAsync returns a Task(Of HttpResponseMessage).   
+       ' Argument ct carries the message if the Cancel button is chosen.   
+       ' ***Note that the Cancel button can cancel all remaining downloads.  
+       Dim response As HttpResponseMessage = Await client.GetAsync(url, ct)  
   
-        ' Retrieve the website contents from the HttpResponseMessage.  
-        Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()  
+       ' Retrieve the website contents from the HttpResponseMessage.  
+       Dim urlContents As Byte() = Await response.Content.ReadAsByteArrayAsync()  
   
-        resultsTextBox.Text &=  
-            String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, urlContents.Length)  
-    Next  
-    ```  
+       resultsTextBox.Text &=  
+           String.Format(vbCrLf & "Length of the downloaded string: {0}." & vbCrLf, urlContents.Length)  
+   Next  
+   ```  
   
-4.  Because `AccessTheWebAsync` displays the lengths, the method doesn't need to return anything. Remove the return statement, and change the return type of the method to <xref:System.Threading.Tasks.Task> instead of <xref:System.Threading.Tasks.Task%601>.  
+4. Because `AccessTheWebAsync` displays the lengths, the method doesn't need to return anything. Remove the return statement, and change the return type of the method to <xref:System.Threading.Tasks.Task> instead of <xref:System.Threading.Tasks.Task%601>.  
   
-    ```vb  
-    Async Function AccessTheWebAsync(ct As CancellationToken) As Task  
-    ```  
+   ```vb  
+   Async Function AccessTheWebAsync(ct As CancellationToken) As Task  
+   ```  
   
-     Call the method from `startButton_Click` by using a statement instead of an expression.  
+    Call the method from `startButton_Click` by using a statement instead of an expression.  
   
-    ```vb  
-    Await AccessTheWebAsync(cts.Token)  
-    ```  
+   ```vb  
+   Await AccessTheWebAsync(cts.Token)  
+   ```  
   
-5.  If you don’t cancel the program, it produces the following output.  
+5. If you don’t cancel the program, it produces the following output.  
   
-    ```  
-    Length of the downloaded string: 35939.  
+   ```  
+   Length of the downloaded string: 35939.  
   
-    Length of the downloaded string: 237682.  
+   Length of the downloaded string: 237682.  
   
-    Length of the downloaded string: 128607.  
+   Length of the downloaded string: 128607.  
   
-    Length of the downloaded string: 158124.  
+   Length of the downloaded string: 158124.  
   
-    Length of the downloaded string: 204890.  
+   Length of the downloaded string: 204890.  
   
-    Length of the downloaded string: 175488.  
+   Length of the downloaded string: 175488.  
   
-    Length of the downloaded string: 145790.  
+   Length of the downloaded string: 145790.  
   
-    Downloads complete.  
-    ```  
+   Downloads complete.  
+   ```  
   
-     If you choose the **Cancel** button before the downloads are complete, the output contains the lengths of the downloads that completed before the cancellation.  
+    If you choose the **Cancel** button before the downloads are complete, the output contains the lengths of the downloads that completed before the cancellation.  
   
-    ```  
-    Length of the downloaded string: 35939.  
+   ```  
+   Length of the downloaded string: 35939.  
   
-    Length of the downloaded string: 237682.  
+   Length of the downloaded string: 237682.  
   
-    Length of the downloaded string: 128607.  
+   Length of the downloaded string: 128607.  
   
-    Downloads canceled.  
-    ```  
+   Downloads canceled.  
+   ```  
   
 ##  <a name="BKMK_CompleteExamples"></a> Complete Examples  
  The following sections contain the code for each of the previous examples. Notice that you must add a reference for <xref:System.Net.Http>.  

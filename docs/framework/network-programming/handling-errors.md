@@ -37,11 +37,12 @@ manager: "markl"
 ---
 # Handling Errors
 The <xref:System.Net.WebRequest> and <xref:System.Net.WebResponse> classes throw both system exceptions (such as <xref:System.ArgumentException>) and Web-specific exceptions (which are <xref:System.Net.WebException> thrown by the <xref:System.Net.WebRequest.GetResponse%2A> method).  
-  
+
  Each **WebException** includes a <xref:System.Net.WebException.Status%2A> property that contains a value from the <xref:System.Net.WebExceptionStatus> enumeration. You can examine the **Status** property to determine the error that occurred and take the proper steps to resolve the error.  
-  
+
  The following table describes the possible values for the **Status** property.  
-  
+
+
 |Status|Description|  
 |------------|-----------------|  
 |ConnectFailure|The remote service could not be contacted at the transport level.|  
@@ -62,11 +63,11 @@ The <xref:System.Net.WebRequest> and <xref:System.Net.WebResponse> classes throw
 |PipelineFailure|This value supports the .NET Framework infrastructure and is not intended to be used directly in your code.|  
 |ProxyNameResolutionFailure|The name resolver service could not resolve the proxy host name.|  
 |UnknownError|An exception of unknown type has occurred.|  
-  
+
  When the **Status** property is **WebExceptionStatus.ProtocolError**, a **WebResponse** that contains the response from the server is available. You can examine this response to determine the actual source of the protocol error.  
-  
+
  The following example shows how to catch a **WebException**.  
-  
+
 ```csharp  
 try   
 {  
@@ -77,7 +78,7 @@ try
     WebResponse myResponse = myRequest.GetResponse();  
     //Get a readable stream from the server.   
     Stream sr = myResponse.GetResponseStream();  
-  
+
     //Read from the stream and write any data to the console.  
     bytesread = sr.Read( myBuffer, 0, length);  
     while( bytesread > 0 )   
@@ -115,7 +116,7 @@ catch (Exception e)
     // Code to catch other exceptions goes here.  
 }  
 ```  
-  
+
 ```vb  
 Try  
     ' Create a request instance.  
@@ -124,7 +125,7 @@ Try
     Dim myResponse As WebResponse = myRequest.GetResponse()  
     'Get a readable stream from the server.   
     Dim sr As Stream = myResponse.GetResponseStream()  
-  
+
     Dim i As Integer      
     'Read from the stream and write any data to the console.  
     bytesread = sr.Read(myBuffer, 0, length)  
@@ -159,11 +160,11 @@ Catch e As Exception
     ' Code to catch other exceptions goes here.  
 End Try  
 ```  
-  
+
  Applications that use the <xref:System.Net.Sockets.Socket> class throw <xref:System.Net.Sockets.SocketException> when errors occur on the Windows socket. The <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener>, and <xref:System.Net.Sockets.UdpClient> classes are built on top of the **Socket** class and throw **SocketExceptions** as well.  
-  
+
  When a **SocketException** is thrown, the **SocketException** class sets the <xref:System.Net.Sockets.SocketException.ErrorCode%2A> property to the last operating system socket error that occurred. For more information about socket error codes, see the Winsock 2.0 API error code documentation in MSDN.  
-  
+
 ## See Also  
  [Exception Handling Fundamentals](../../../docs/standard/exceptions/exception-handling-fundamentals.md)  
  [Requesting Data](../../../docs/framework/network-programming/requesting-data.md)

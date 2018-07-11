@@ -35,11 +35,11 @@ This example shows how to use a <xref:System.Threading.Tasks.Parallel.ForEach%2A
   
 ## Compiling the Code  
   
--   Copy and paste this code into a Visual Studio 2010 Console Application project.  
+- Copy and paste this code into a Visual Studio 2010 Console Application project.  
   
--   Add a reference to System.Drawing.dll  
+- Add a reference to System.Drawing.dll  
   
--   Press F5  
+- Press F5  
   
 ## See Also  
  [Data Parallelism](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)  

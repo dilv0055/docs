@@ -20,6 +20,7 @@ Table 6-1 lists common management tools related to their orchestrators, schedule
 Table 6-1: Docker management tools
 
 
+
 | Management tools      | Description           | Related orchestrators |
 |-----------------------|-----------------------|-----------------------|
 | Container Service\(UI management in Azure portal) | [Container Service](https://azure.microsoft.com/en-us/services/container-service/) provides an easy to get started way to [deploy a container-cluster in Azure](https://docs.microsoft.com/azure/container-service/dcos-swarm/container-service-deployment) based on popular orchestrators like Mesosphere DC/OS, Kubernetes and Docker Swarm. <br /><br /> Container Service optimizes the configuration of those platforms. You just need to select the size, the number of hosts, and choice of orchestrator tools, and Container Service handles everything else. | Mesosphere DC/OS <br /><br /> Kubernetes <br /><br /> Docker Swarm |
@@ -34,11 +35,11 @@ Another choice for cluster-deployment and management is Azure Service Fabric. [S
 
 Following are Service Fabric management tools:
 
--   [Azure portal for Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal) cluster-related operations (create/update/delete) a cluster or configure its infrastructure (VMs, load balancer, networking, etc.)
+- [Azure portal for Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal) cluster-related operations (create/update/delete) a cluster or configure its infrastructure (VMs, load balancer, networking, etc.)
 
--   [Azure Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-visualizing-your-cluster) is a specialized web UI tool that provides insights and certain operations on the Service Fabric cluster from the nodes/VMs point of view and from the application and services point of view.
+- [Azure Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-visualizing-your-cluster) is a specialized web UI tool that provides insights and certain operations on the Service Fabric cluster from the nodes/VMs point of view and from the application and services point of view.
 
 
->[!div class="step-by-step"]
-[Previous](run-microservices-based-applications-in-production.md)
-[Next](monitor-containerized-application-services.md)
+> [!div  class="step-by-step"]
+> [Previous](run-microservices-based-applications-in-production.md)
+> [Next](monitor-containerized-application-services.md)

@@ -21,9 +21,9 @@ To host containers in development environments and provide additional developer 
 
 To run [Windows Containers](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview), there are two types of runtimes:
 
--   **Windows Server Container** This runtime provides application isolation through process and namespace isolation technology. A Windows Server Container shares a kernel with the container host and with all containers running on the host.
+- **Windows Server Container** This runtime provides application isolation through process and namespace isolation technology. A Windows Server Container shares a kernel with the container host and with all containers running on the host.
 
--   **Hyper-V Container** This expands on the isolation provided by Windows Server Containers by running each container in a highly optimized VM. In this configuration, the kernel of the container host is not shared with the Hyper-V Containers, providing better isolation.
+- **Hyper-V Container** This expands on the isolation provided by Windows Server Containers by running each container in a highly optimized VM. In this configuration, the kernel of the container host is not shared with the Hyper-V Containers, providing better isolation.
 
 The images for these containers are created in the same way and function the same. The difference is in how the container is created from the image—running a Hyper-V Container requires an extra parameter. For details, see [Hyper-V Containers](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview).
 
@@ -46,6 +46,6 @@ When using Docker, you will not hear developers say, "It works on my machine, wh
 Figure 1-3: Comparison of traditional VMs to Docker containers
 
 
->[!div class="step-by-step"]
-[Previous](index.md)
-[Next](docker-terminology.md)
+> [!div  class="step-by-step"]
+> [Previous](index.md)
+> [Next](docker-terminology.md)

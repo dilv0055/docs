@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # IHostTaskManager::CreateTask Method
 Requests that the host create a new task.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT CreateTask (  
     [in]  DWORD stacksize,   
@@ -31,22 +31,23 @@ HRESULT CreateTask (
     [out] IHostTask **ppTask  
 );  
 ```  
-  
+
 #### Parameters  
  `stacksize`  
  [in] The requested size, in bytes, of the requested stack, or 0 (zero) for the default size.  
-  
+
  `pStartAddress`  
  [in] A pointer to the function the task is to execute.  
-  
+
  `pParameter`  
  [in] A pointer to the user data to be passed to the function, or null if the function takes no parameters.  
-  
+
  `ppTask`  
  [out] A pointer to the address of an [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance created by the host, or null if the task cannot be created. The task remains in a suspended state until it is explicitly started by a call to [IHostTask::Start](../../../../docs/framework/unmanaged-api/hosting/ihosttask-start-method.md).  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`CreateTask` returned successfully.|  
@@ -56,19 +57,19 @@ HRESULT CreateTask (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Not enough memory was available to create the requested task.|  
-  
+
 ## Remarks  
  The CLR calls `CreateTask` to request that the host create a new task. The host returns an interface pointer to an `IHostTask` instance. The returned task must remain suspended until it is explicitly started by a call to `IHostTask::Start`.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  

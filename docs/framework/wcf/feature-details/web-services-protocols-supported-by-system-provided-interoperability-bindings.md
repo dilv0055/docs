@@ -9,15 +9,16 @@ ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
 ---
 # Web Services Protocols Supported by System-Provided Interoperability Bindings
 Windows Communication Foundation (WCF) is built to interoperate with Web services that support a set of specifications known as Web services specifications. To simplify service configuration for interoperability best practices, WCF introduces three interoperable system-provided bindings: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, and <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. For interoperability with Organization for the Advancement of Structured Information Standards (OASIS) standards, WCF includes one interoperable system-provided binding: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. For metadata publication, WCF includes two interoperable system-provided bindings: [\<mexHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) and [\<mexHttpsBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). This topic lists specifications that system-provided interoperable bindings support.  
-  
+
 ## Web Services Protocols Supported by basicHttpBinding, wsHttpBinding, ws2007HttpBinding, and wsDualHttpBinding Bindings  
-  
+
 ### All Bindings  
  The [\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md), [\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), and [\<ws2007HttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007httpbinding.md) bindings support the following protocols.  
-  
+
 > [!NOTE]
 >  For information about bindings used to publish metadata, see the "System-Provided Metadata Bindings" section later in this topic.  
-  
+
+
 |Category|Protocol|Specification and Usage|  
 |--------------|--------------|-----------------------------|  
 |Transport|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> `BasicHttpBinding`, `WSHttpBinding`, and `WS2007HttpBinding` use the HTTP and HTTPS transports.|  
@@ -27,18 +28,20 @@ Windows Communication Foundation (WCF) is built to interoperate with Web service
 |Metadata|WS-Policy 1.5|[WS-Policy 1.5](http://go.microsoft.com/fwlink/?LinkId=95327)<br /><br /> WCF uses the WS-Policy specification together with domain-specific assertions to describe service requirements and capabilities.|  
 |Metadata|WS-PolicyAttachment|[WS-PolicyAttachment](http://go.microsoft.com/fwlink/?LinkId=95328)<br /><br /> WCF implements WS-PolicyAttachment to attach policy expressions at various scopes in Web Services Description Language (WSDL).|  
 |Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implements WS-MetadataExchange to retrieve XML Schema, WSDL, and WS-Policy.|  
-  
+
 ### basicHttpBinding  
-  
+
+
 |Category|Protocol|Specification and Usage|  
 |--------------|--------------|-----------------------------|  
 |Messaging|SOAP 1.1|[SOAP 1.1](http://go.microsoft.com/fwlink/?LinkId=90520)<br /><br /> In accordance with Basic Profile 1.1, the `basicHttpBinding` element implements the SOAP 1.1 message protocol.|  
 |Security|WSS SOAP Message Security 1.0|[WSS SOAP Message Security 1.0](http://go.microsoft.com/fwlink/?LinkId=94684)<br /><br /> In accordance with the Basic Security Profile, the `basicHttpBinding` element implements the Web Services Security (WSS) SOAP Message Security 1.0 specification for user name/password and X.509-based security.<br /><br /> `<basicHttpBinding> <binding name="Binding1"> <security mode="TransportWithMessageCredential &#124;                     "Message" .../> </binding> </basicHttpBinding>`|  
 |Security|WSS SOAP Message Security UsernameToken Profile 1.0|[WSS SOAP Message Security UsernameToken Profile 1.0](http://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> `<basicHttpBinding> <binding name="Binding1"> <security mode="TransportWithMessageCredential"> <transport clientCredentialType="Basic"/> </security> </basicHttpBinding>`|  
 |Security|WSS SOAP Message Security X.509 Certificate Token Profile 1.0|[WSS SOAP Message Security X.509 Certificate Token Profile 1.0](http://go.microsoft.com/fwlink/?LinkId=95335)<br /><br /> `<basicHttpBinding>   <security mode="Message"> <message clientCredentialType="Certificate"/> </security> </basicHttpBinding>`|  
-  
+
 ### wsHttpBinding, ws2007HttpBinding, and wsDualHttpBinding  
-  
+
+
 |Category|Protocol|Specification and Usage|  
 |--------------|--------------|-----------------------------|  
 |Messaging|SOAP 1.2|[Primer](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Messaging framework](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (including HTTP binding)](http://go.microsoft.com/fwlink/?LinkId=95329)|  
@@ -53,16 +56,16 @@ Windows Communication Foundation (WCF) is built to interoperate with Web service
 |Reliable Messaging|WS-ReliableMessaging|[WS-ReliableMessaging](http://go.microsoft.com/fwlink/?LinkId=95322)<br /><br /> Use when the binding is configured to use `reliableSession`.<br /><br /> `<wsHttpBinding>  <binding name="myBinding">    <reliableSession/>   </binding> </wsHttpBinding>`|  
 |Transactions|WS-AtomicTransaction|[WS-AtomicTransaction](http://go.microsoft.com/fwlink/?LinkId=95323)<br /><br /> Use for communication between transaction managers. WCF clients and services always use local transaction managers.|  
 |Transactions|WS-Coordination|[WS-Coordination](http://go.microsoft.com/fwlink/?LinkId=95324)<br /><br /> Use to flow the transaction context when the `flowTransactions` attribute is set to "Allowed" or "Required".<br /><br /> `<wsHttpBinding>   <binding transactionFlow="true"/> </wsHttpBinding>`|  
-  
+
 ## wsFederationHttpBinding and ws2007FederationHttpBinding  
  The [\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) and [\<ws2007FederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) elements are introduced to provide support for federated scenarios, where a third party issues a token used to authenticate a client. In addition to the protocols used by `wsHttpBinding`, `wsFederationHttpBinding` leverages:  
-  
--   `WS-Trust` for token issuance.  
-  
--   WSS Security Assertions Markup Language (SAML) Token Profile 1.0 and 1.1 for the most commonly issued token format.  
-  
+
+- `WS-Trust` for token issuance.  
+
+- WSS Security Assertions Markup Language (SAML) Token Profile 1.0 and 1.1 for the most commonly issued token format.  
+
  Example:  
-  
+
 ```xml  
 <wsFederationHttpBinding>  
   <binding name="myBinding">  
@@ -76,32 +79,34 @@ Windows Communication Foundation (WCF) is built to interoperate with Web service
   </binding>  
 </wsFederationHttpBinding>  
 ```  
-  
+
  For more information, see [Federation](../../../../docs/framework/wcf/feature-details/federation.md) .  
-  
+
 ## System-Provided Metadata Bindings  
  The following tables describe the protocols supported by the system-provided interoperable metadata bindings exposed by the <xref:System.ServiceModel.Description.MetadataExchangeBindings?displayProperty=nameWithType> class.  
-  
+
 ### mexHttpBinding  
  The [\<mexHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) binding supports the following protocols. For more information about using this binding, see [Publishing Metadata](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
-  
+
+
 |Category|Protocol|Specification and Usage|  
 |--------------|--------------|-----------------------------|  
 |Transport|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)|  
 |Messaging|SOAP 1.2|[Primer](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Messaging framework](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (including HTTP binding)](http://go.microsoft.com/fwlink/?LinkId=95329)|  
 |Messaging|WS-Addressing 2005/08|[Web Services Addressing 1.0 - Core](http://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Web Services Addressing 1.0 - SOAP](http://go.microsoft.com/fwlink/?LinkId=95330)|  
 |Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implements WS-MetadataExchange to retrieve XML Schema, WSDL, and WS-Policy.|  
-  
+
 ### mexHttpsBinding  
  [\<mexHttpsBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md) supports the following protocols. For more information about using this binding, see [Publishing Metadata](../../../../docs/framework/wcf/feature-details/publishing-metadata.md).  
-  
+
+
 |Category|Protocol|Specification and Usage|  
 |--------------|--------------|-----------------------------|  
 |Transport|HTTP 1.1|[HTTP 1.1](http://go.microsoft.com/fwlink/?LinkId=84048)<br /><br /> Transport security is enabled.|  
 |Messaging|SOAP 1.2|[Primer](http://go.microsoft.com/fwlink/?LinkId=48282)<br /><br /> [Messaging framework](http://go.microsoft.com/fwlink/?LinkId=94664)<br /><br /> [Adjuncts (including HTTP binding)](http://go.microsoft.com/fwlink/?LinkId=95329)|  
 |Messaging|WS-Addressing 2005/08|[Web Services Addressing 1.0 - Core](http://go.microsoft.com/fwlink/?LinkId=90574)<br /><br /> [Web Services Addressing 1.0 - SOAP](http://go.microsoft.com/fwlink/?LinkId=95330)|  
 |Metadata|WS-MetadataExchange|[WS-MetadataExchange](http://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implements WS-MetadataExchange to retrieve XML Schema, WSDL, and WS-Policy.|  
-  
+
 ## See Also  
  [System-Provided Bindings](../../../../docs/framework/wcf/system-provided-bindings.md)  
  [\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)  

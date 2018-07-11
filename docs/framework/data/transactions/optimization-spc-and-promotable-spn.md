@@ -33,19 +33,19 @@ This topic describes the mechanisms provided by the <xref:System.Transactions> i
   
  In this scenario,  
   
-1.  CN1 calls the <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> method to enlist in the transaction. Then, the transaction is still local and there are no other promotable enlistments on the transaction, so the <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> call succeeds.  
+1. CN1 calls the <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> method to enlist in the transaction. Then, the transaction is still local and there are no other promotable enlistments on the transaction, so the <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> call succeeds.  
   
-2.  When the second connection, CN2 calls <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A>, the call fails because there is another promotable enlistment involved. Because of this, CN2 must get a DTC transaction in order to pass it to SQL. To do this, it uses one of the methods provided by the <xref:System.Transactions.TransactionInterop> class to produce a format of the transaction that can be given to SQL.  
+2. When the second connection, CN2 calls <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A>, the call fails because there is another promotable enlistment involved. Because of this, CN2 must get a DTC transaction in order to pass it to SQL. To do this, it uses one of the methods provided by the <xref:System.Transactions.TransactionInterop> class to produce a format of the transaction that can be given to SQL.  
   
-3.  <xref:System.Transactions> calls the <xref:System.Transactions.ITransactionPromoter.Promote%2A> method on the <xref:System.Transactions.ITransactionPromoter> interface implemented by CN1.  
+3. <xref:System.Transactions> calls the <xref:System.Transactions.ITransactionPromoter.Promote%2A> method on the <xref:System.Transactions.ITransactionPromoter> interface implemented by CN1.  
   
-4.  At this point, CN1 escalates the transaction, using some mechanism specific to SQL 2005 and <xref:System.Data>.  
+4. At this point, CN1 escalates the transaction, using some mechanism specific to SQL 2005 and <xref:System.Data>.  
   
-5.  The return value from the <xref:System.Transactions.ITransactionPromoter.Promote%2A> method is a byte array that contains a propagation token for the transaction. <xref:System.Transactions> uses this propagaition token to create a DTC transaction that it can incorporate into the local transaction.  
+5. The return value from the <xref:System.Transactions.ITransactionPromoter.Promote%2A> method is a byte array that contains a propagation token for the transaction. <xref:System.Transactions> uses this propagaition token to create a DTC transaction that it can incorporate into the local transaction.  
   
-6.  At this point, CN2 can use the data received from calling one of the methods by <xref:System.Transactions.TransactionInterop> to pass the transaction to SQL.  
+6. At this point, CN2 can use the data received from calling one of the methods by <xref:System.Transactions.TransactionInterop> to pass the transaction to SQL.  
   
-7.  Now, both are enlisted in a DTC distributed transaction.  
+7. Now, both are enlisted in a DTC distributed transaction.  
   
 ## Single Phase Commit Optimization  
  The Single Phase Commit protocol is more efficient at runtime as all updates are done without any explicit coordination. To take advantage of this optimization, you should implement a resource manager using <xref:System.Transactions.ISinglePhaseNotification> interface for the resource and enlist in a transaction using the <xref:System.Transactions.Transaction.EnlistDurable%2A> or <xref:System.Transactions.Transaction.EnlistVolatile%2A> method. Specifically, the *EnlistmentOptions* parameter should equal to <xref:System.Transactions.EnlistmentOptions.None> to ensure that a single phase commit would be performed.  

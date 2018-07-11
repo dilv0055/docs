@@ -4,7 +4,6 @@ description: Interfaces define contracts implemented by types in C#
 ms.date: 08/10/2016
 ms.assetid: a9bf82f4-efd1-4216-bd34-4ef0fa48c968
 ---
-
 # Interfaces
 
 An ***interface*** defines a contract that can be implemented by classes and structs. An interface can contain methods, properties, events, and indexers. An interface does not provide implementations of the members it defines—it merely specifies the members that must be supplied by classes or structs that implement the interface.
@@ -33,6 +32,6 @@ Explicit interface members can only be accessed via the interface type. For exam
 
 [!code-csharp[InterfacesFive](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L71-L74)]
 
->[!div class="step-by-step"]
-[Previous](arrays.md)
-[Next](enums.md)
+> [!div  class="step-by-step"]
+> [Previous](arrays.md)
+> [Next](enums.md)

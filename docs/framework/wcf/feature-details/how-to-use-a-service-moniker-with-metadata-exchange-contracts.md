@@ -11,27 +11,27 @@ After developing some new WCF services, you may decide that you want to be able 
   
 ### Using the service moniker with a Mex address  
   
-1.  Build the Getting Started sample and use Internet Explorer to browse to its URL (http://localhost/ServiceModelSamples/Service.svc) to ensure that the service is working.  
+1. Build the Getting Started sample and use Internet Explorer to browse to its URL (<http://localhost/ServiceModelSamples/Service.svc>) to ensure that the service is working.  
   
-2.  Create a Visual Basic script or Visual Basic application that contains the following code:  
+2. Create a Visual Basic script or Visual Basic application that contains the following code:  
   
-    ```  
-    monString = "service:mexaddress=http://localhost/ServiceModelSamples/Service.svc/MEX"  
-    monString = monString + ", address=http://localhost/ServiceModelSamples/Service.svc"  
-    monString = monString + ", contract=ICalculator, contractNamespace=http://Microsoft.ServiceModel.Samples"  
-    monString = monString + ", binding=WSHttpBinding_ICalculator, bindingNamespace=http://Microsoft.ServiceModel.Samples"  
+   ```  
+   monString = "service:mexaddress=http://localhost/ServiceModelSamples/Service.svc/MEX"  
+   monString = monString + ", address=http://localhost/ServiceModelSamples/Service.svc"  
+   monString = monString + ", contract=ICalculator, contractNamespace=http://Microsoft.ServiceModel.Samples"  
+   monString = monString + ", binding=WSHttpBinding_ICalculator, bindingNamespace=http://Microsoft.ServiceModel.Samples"  
   
-    Set calc = GetObject(monString)  
-    MsgBox calc.Add(3, 4)  
-    ```  
+   Set calc = GetObject(monString)  
+   MsgBox calc.Add(3, 4)  
+   ```  
   
-3.  Run the Visual Basic application or script.  
+3. Run the Visual Basic application or script.  
   
-    > [!NOTE]
-    >  The service you are calling must expose a Mex endpoint for the moniker to be able to read the metadata from the service. For more information, see [How to: Publish Metadata for a Service Using a Configuration File](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
+   > [!NOTE]
+   >  The service you are calling must expose a Mex endpoint for the moniker to be able to read the metadata from the service. For more information, see [How to: Publish Metadata for a Service Using a Configuration File](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md).  
   
-    > [!NOTE]
-    >  If the moniker is malformed or if the service is unavailable, the call to `GetObject` will return an error saying "Invalid Syntax."  If you receive this error, make sure the moniker you are using is correct and the service is available.  
+   > [!NOTE]
+   >  If the moniker is malformed or if the service is unavailable, the call to `GetObject` will return an error saying "Invalid Syntax."  If you receive this error, make sure the moniker you are using is correct and the service is available.  
   
 ## See Also  
  [How to: Use the Windows Communication Foundation Service Moniker without Registration](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)  

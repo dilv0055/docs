@@ -22,7 +22,7 @@ By default, the CLI installs in a side-by-side (SxS) manner, so multiple version
 
 The following commands are installed by default:
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 
 **Basic commands**
 
@@ -56,7 +56,7 @@ The following commands are installed by default:
 * [msbuild](dotnet-msbuild.md)
 * [dotnet install script](dotnet-install-script.md)
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 **Basic commands**
 
@@ -88,15 +88,14 @@ The following commands are installed by default:
 * [msbuild](dotnet-msbuild.md)
 * [dotnet install script](dotnet-install-script.md)
 
----
-
+* * *
 The CLI adopts an extensibility model that allows you to specify additional tools for your projects. For more information, see the [.NET Core CLI extensibility model](extensibility.md) topic.
 
 ## Command structure
 
 CLI command structure consists of [the driver ("dotnet")](#driver), [the command (or "verb")](#command-verb), and possibly command [arguments](#arguments) and [options](#options). You see this pattern in most CLI operations, such as creating a new console app and running it from the command line as the following commands show when executed from a directory named *my_app*:
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 
 ```console
 dotnet new console
@@ -104,7 +103,7 @@ dotnet build --output /build_output
 dotnet /build_output/my_app.dll
 ```
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 ```console
 dotnet new console
@@ -114,8 +113,7 @@ dotnet /build_output/my_app.dll
 ```
 
 
----
-
+* * *
 ### Driver
 
 The driver is named [dotnet](dotnet.md) and has two responsibilities, either running a [framework-dependent app](../deploying/index.md) or executing a command. The only time `dotnet` is used without a command is when it's used to start an application.

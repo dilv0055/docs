@@ -20,15 +20,16 @@ ms.author: "ronpet"
 ---
 # IHostGCManager::ThreadIsBlockingForSuspension Method
 Notifies the host that the thread from which the method call was made is about to block for a garbage collection.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT ThreadIsBlockingForSuspension ();  
 ```  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`ThreadIsBlockingForSuspension` returned successfully.|  
@@ -37,22 +38,22 @@ HRESULT ThreadIsBlockingForSuspension ();
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  The CLR typically calls the `ThreadIsBlockForSuspension` method in preparation for a garbage collection, to give the host an opportunity to reschedule the thread for unmanaged tasks.  
-  
+
 > [!IMPORTANT]
 >  The host can reschedule tasks only after a call to `ThreadIsBlockingForSuspension`. After the runtime calls [SuspensionStarting](../../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionstarting-method.md), the host must not reschedule a task.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  

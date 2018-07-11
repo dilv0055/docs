@@ -19,75 +19,75 @@ ms.assetid: 2fe661b9-aa06-49b9-a314-a0d3cbfdcb4d
   
 ### To add a table and column to a DataGrid programmatically  
   
-1.  In order to display data in the table, you must first bind the <xref:System.Windows.Forms.DataGrid> control to a dataset. For more information, see [How to: Bind the Windows Forms DataGrid Control to a Data Source](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
+1. In order to display data in the table, you must first bind the <xref:System.Windows.Forms.DataGrid> control to a dataset. For more information, see [How to: Bind the Windows Forms DataGrid Control to a Data Source](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
   
-    > [!CAUTION]
-    >  When programmatically specifying column styles, always create **DataGridColumnStyle** objects and add them to the **GridColumnStylesCollection** object before adding **DataGridTableStyle** objects to the **GridTableStylesCollection** object. When you add an empty **DataGridTableStyle** object to the collection, **DataGridColumnStyle** objects are automatically generated for you. Consequently, an exception will be thrown if you try to add new **DataGridColumnStyle** objects with duplicate **MappingName** values to the **GridColumnStylesCollection** object.  
+   > [!CAUTION]
+   >  When programmatically specifying column styles, always create **DataGridColumnStyle** objects and add them to the **GridColumnStylesCollection** object before adding **DataGridTableStyle** objects to the **GridTableStylesCollection** object. When you add an empty **DataGridTableStyle** object to the collection, **DataGridColumnStyle** objects are automatically generated for you. Consequently, an exception will be thrown if you try to add new **DataGridColumnStyle** objects with duplicate **MappingName** values to the **GridColumnStylesCollection** object.  
   
-2.  Declare a new table style and set its mapping name.  
+2. Declare a new table style and set its mapping name.  
   
-    ```vb  
-    Dim ts1 As New DataGridTableStyle()  
-    ts1.MappingName = "Customers"  
-    ```  
+   ```vb  
+   Dim ts1 As New DataGridTableStyle()  
+   ts1.MappingName = "Customers"  
+   ```  
   
-    ```csharp  
-    DataGridTableStyle ts1 = new DataGridTableStyle();  
-    ts1.MappingName = "Customers";  
-    ```  
+   ```csharp  
+   DataGridTableStyle ts1 = new DataGridTableStyle();  
+   ts1.MappingName = "Customers";  
+   ```  
   
-    ```cpp  
-    DataGridTableStyle* ts1 = new DataGridTableStyle();  
-    ts1->MappingName = S"Customers";  
-    ```  
+   ```cpp  
+   DataGridTableStyle* ts1 = new DataGridTableStyle();  
+   ts1->MappingName = S"Customers";  
+   ```  
   
-3.  Declare a new column style and set its mapping name and other properties.  
+3. Declare a new column style and set its mapping name and other properties.  
   
-    ```vb  
-    Dim myDataCol As New DataGridBoolColumn()  
-    myDataCol.HeaderText = "My New Column"  
-    myDataCol.MappingName = "Current"  
-    ```  
+   ```vb  
+   Dim myDataCol As New DataGridBoolColumn()  
+   myDataCol.HeaderText = "My New Column"  
+   myDataCol.MappingName = "Current"  
+   ```  
   
-    ```csharp  
-    DataGridBoolColumn myDataCol = new DataGridBoolColumn();  
-    myDataCol.HeaderText = "My New Column";  
-    myDataCol.MappingName = "Current";  
-    ```  
+   ```csharp  
+   DataGridBoolColumn myDataCol = new DataGridBoolColumn();  
+   myDataCol.HeaderText = "My New Column";  
+   myDataCol.MappingName = "Current";  
+   ```  
   
-    ```cpp  
-    DataGridBoolColumn^ myDataCol = gcnew DataGridBoolColumn();  
-    myDataCol->HeaderText = "My New Column";  
-    myDataCol->MappingName = "Current";  
-    ```  
+   ```cpp  
+   DataGridBoolColumn^ myDataCol = gcnew DataGridBoolColumn();  
+   myDataCol->HeaderText = "My New Column";  
+   myDataCol->MappingName = "Current";  
+   ```  
   
-4.  Call the **Add** method of the **GridColumnStylesCollection** object to add the column to the table style  
+4. Call the **Add** method of the **GridColumnStylesCollection** object to add the column to the table style  
   
-    ```vb  
-    ts1.GridColumnStyles.Add(myDataCol)  
-    ```  
+   ```vb  
+   ts1.GridColumnStyles.Add(myDataCol)  
+   ```  
   
-    ```csharp  
-    ts1.GridColumnStyles.Add(myDataCol);  
-    ```  
+   ```csharp  
+   ts1.GridColumnStyles.Add(myDataCol);  
+   ```  
   
-    ```cpp  
-    ts1->GridColumnStyles->Add(myDataCol);  
-    ```  
+   ```cpp  
+   ts1->GridColumnStyles->Add(myDataCol);  
+   ```  
   
-5.  Call the **Add** method of the **GridTableStylesCollection** object to add the table style to the data grid.  
+5. Call the **Add** method of the **GridTableStylesCollection** object to add the table style to the data grid.  
   
-    ```vb  
-    DataGrid1.TableStyles.Add(ts1)  
-    ```  
+   ```vb  
+   DataGrid1.TableStyles.Add(ts1)  
+   ```  
   
-    ```csharp  
-    dataGrid1.TableStyles.Add(ts1);  
-    ```  
+   ```csharp  
+   dataGrid1.TableStyles.Add(ts1);  
+   ```  
   
-    ```cpp  
-    dataGrid1->TableStyles->Add(ts1);  
-    ```  
+   ```cpp  
+   dataGrid1->TableStyles->Add(ts1);  
+   ```  
   
 ## See Also  
  [DataGrid Control](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  

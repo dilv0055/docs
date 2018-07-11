@@ -25,7 +25,6 @@ author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
 ---
-
 # Configuration file schema for the .NET Framework
 
 Configuration files are standard XML files that you can use to change settings and set policies for your apps. The .NET Framework configuration schema consists of elements that you can use in configuration files to control the behavior of your apps. The table of contents for this section reflects the schema hierarchy for startup, runtime, network, and other types of configuration settings.
@@ -93,7 +92,7 @@ All elements of the Windows Identity Foundation (WIF) configuration schema.
 [Remoting Settings Schema](http://msdn.microsoft.com/library/dc2d1e62-9af7-4ca1-99fd-98b93bb4db9e)
 Describes the elements that configure client and server applications that implement remoting.
 
-[ASP.NET Settings Schema](http://msdn.microsoft.com/library/b5ysx397\(v=vs.100\).aspx)
+[ASP.NET Settings Schema](http://msdn.microsoft.com/library/b5ysx397(v=vs.100).aspx)
 Describes the elements that control the behavior of ASP.NET Web applications.
 
 [Web Services Settings Schema](http://msdn.microsoft.com/library/f84d6d55-1add-4eb7-ae46-33df5833ea2e)

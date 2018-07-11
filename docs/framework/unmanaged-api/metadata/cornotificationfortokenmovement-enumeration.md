@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorNotificationForTokenMovement Enumeration
 Specifies the notifications that will be sent to the metadata API client when a token remap occurs.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorNotificationForTokenMovement {  
-  
+
     MDNotifyDefault             = 0x0000000f,  
     MDNotifyAll                 = 0xffffffff,  
     MDNotifyNone                = 0x00000000,  
@@ -32,7 +32,7 @@ typedef enum CorNotificationForTokenMovement {
     MDNotifyMemberRef           = 0x00000002,  
     MDNotifyFieldDef            = 0x00000004,  
     MDNotifyTypeRef             = 0x00000008,  
-  
+
     MDNotifyTypeDef             = 0x00000010,  
     MDNotifyParamDef            = 0x00000020,  
     MDNotifyInterfaceImpl       = 0x00000040,  
@@ -44,19 +44,20 @@ typedef enum CorNotificationForTokenMovement {
     MDNotifySecurityValue       = 0x00001000,  
     MDNotifyPermission          = 0x00002000,  
     MDNotifyModuleRef           = 0x00004000,  
-  
+
     MDNotifyNameSpace           = 0x00008000,  
-  
+
     MDNotifyAssemblyRef         = 0x01000000,  
     MDNotifyFile                = 0x02000000,  
     MDNotifyExportedType        = 0x04000000,  
     MDNotifyResource            = 0x08000000  
-  
+
 } CorNotificationForTokenMovement;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`MDNotifyDefault`|Notify when `mdTypeRef`, `mdMethodDef`, `mdMemberRef`, or `mdFieldDef` tokens move.|  
@@ -82,16 +83,16 @@ typedef enum CorNotificationForTokenMovement {
 |`MDNotifyFile`|Notify when an `mdFile` token moves.|  
 |`MDNotifyExportedType`|Notify when an `mdExportedType` token moves.|  
 |`MDNotifyResource`|Notify when an `mdManifestResource` token moves.|  
-  
+
 ## Remarks  
  A token may be re-mapped (that is, moved) during a metadata merge.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

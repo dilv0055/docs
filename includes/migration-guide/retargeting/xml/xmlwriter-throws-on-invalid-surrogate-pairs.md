@@ -1,5 +1,6 @@
 ### XmlWriter throws on invalid surrogate pairs
 
+
 |   |   |
 |---|---|
 |Details|For apps that target the .NET Framework 4.5.2 or previous versions, writing an invalid surrogate pair using exception fallback handling does not always throw an exception. For apps that target the .NET Framework 4.6, attempting to write an invalid surrogate pair throws an <xref:System.ArgumentException?displayProperty=name>.|

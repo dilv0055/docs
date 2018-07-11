@@ -23,10 +23,10 @@ By putting images in a registry, you can store static and immutable application 
 
 Private image registries, either hosted on-premises or in the cloud, are recommended for the following situations:
 
--   Your images must not be shared publicly due to confidentiality.
+- Your images must not be shared publicly due to confidentiality.
 
--   You want to have minimum network latency between your images and your chosen deployment environment. For example, if your production environment is Azure, you probably want to store your images in Azure Container Registry so that network latency will be minimal. In a similar way, if your production environment is on-premises, you might want to have an on-premises Docker Trusted Registry available within the same local network.
+- You want to have minimum network latency between your images and your chosen deployment environment. For example, if your production environment is Azure, you probably want to store your images in Azure Container Registry so that network latency will be minimal. In a similar way, if your production environment is on-premises, you might want to have an on-premises Docker Trusted Registry available within the same local network.
 
->[!div class="step-by-step"]
-[Previous](docker-terminology.md)
-[Next](Docker-application-lifecycle/index.md)
+> [!div  class="step-by-step"]
+> [Previous](docker-terminology.md)
+> [Next](Docker-application-lifecycle/index.md)

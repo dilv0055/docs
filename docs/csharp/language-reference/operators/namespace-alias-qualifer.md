@@ -20,7 +20,7 @@ The namespace alias qualifier (`::`) is used to look up identifiers. It is alway
 ## For More Information  
  For an example of how to use the `::` operator, see the following section:  
   
--   [How to: Use the Global Namespace Alias](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)  
+- [How to: Use the Global Namespace Alias](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)  
   
 ## C# Language Specification  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

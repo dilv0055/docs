@@ -7,12 +7,12 @@ ms.author: "ronpet"
 ---
 # &lt;Application&gt; Element (.NET Native)
 Serves as a container for application-wide types and type members whose metadata is available for reflection at run time, and applies runtime reflection policy to all the program elements in an app.  
-  
+
  \<Directives> Element  
 \<Application> Element (rd.xml)  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <Application Activate="policy_setting"  
              Browse="policy_setting"  
@@ -25,12 +25,13 @@ Serves as a container for application-wide types and type members whose metadata
              MarshalDelegate="policy_setting"  
              MarshalStructure="policy_setting" />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements. In the Child Elements table, policy refers to the kind of metadata that is made available for particular program elements at run time.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Attribute type|Description|  
 |---------------|--------------------|-----------------|  
 |`Activate`|Reflection|Optional attribute. Controls runtime access to constructors to enable activation of instances.|  
@@ -43,15 +44,17 @@ Serves as a container for application-wide types and type members whose metadata
 |`MarshalObject`|Interop|Optional Attribute. Controls policy for marshaling reference types to Windows Runtime and COM.|  
 |`MarshalDelegate`|Interop|Optional Attribute. Controls policy for marshaling delegate types as function pointers to native code.|  
 |`MarshalStructure`|Interop|Optional Attribute. Controls policy for marshaling structures to native code.|  
-  
+
 ## All attributes  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |*policy_setting*|The setting for this policy to apply to the types in the app. Possible values are `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, and `Required All`. For more information, see [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md)|Applies policy to all the types in a particular assembly.|  
@@ -63,22 +66,23 @@ Serves as a container for application-wide types and type members whose metadata
 |[\<Property>](../../../docs/framework/net-native/property-element-net-native.md)|Applies policy to a property on a particular type.|  
 |[\<Field>](../../../docs/framework/net-native/field-element-net-native.md)|Applies policy to a field on a particular type.|  
 |[\<Event>](../../../docs/framework/net-native/event-element-net-native.md)|Applies policy to an event on a particular type.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md)|The root element of a runtime directives file.|  
-  
+
 ## Remarks  
  The [\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md) element can contain zero or one `<Application>` element. Multiple `<Application>` elements in a single reflection directives file are not supported.  
-  
+
  The `<Application>` element can be used in one of two ways:  
-  
--   As a container to define the program elements whose metadata is needed at run time. In this case, the `<Application>` element need not have any attributes. At compile time, compiler tools search all libraries, including .NET Framework core libraries, for program elements identified by child elements of the `<Application>` element. In contrast, compiler tools search only the library designated by the [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) element for program elements identified by the child elements of [\<Library>](../../../docs/framework/net-native/library-element-net-native.md).  
-  
--   As an element that sets application-wide policy for reflection, serialization, and interop. The attributes of the `<Application>` element define application-wide policy, which may be overridden by the child elements defined by the `<Application>` or [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) element.  
-  
+
+- As a container to define the program elements whose metadata is needed at run time. In this case, the `<Application>` element need not have any attributes. At compile time, compiler tools search all libraries, including .NET Framework core libraries, for program elements identified by child elements of the `<Application>` element. In contrast, compiler tools search only the library designated by the [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) element for program elements identified by the child elements of [\<Library>](../../../docs/framework/net-native/library-element-net-native.md).  
+
+- As an element that sets application-wide policy for reflection, serialization, and interop. The attributes of the `<Application>` element define application-wide policy, which may be overridden by the child elements defined by the `<Application>` or [\<Library>](../../../docs/framework/net-native/library-element-net-native.md) element.  
+
 ## See Also  
  [\<Library> Element](../../../docs/framework/net-native/library-element-net-native.md)  
  [\<Directives> Element](../../../docs/framework/net-native/directives-element-net-native.md)  

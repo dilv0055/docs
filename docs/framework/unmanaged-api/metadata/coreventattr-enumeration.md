@@ -19,34 +19,35 @@ ms.author: "mairaw"
 ---
 # CorEventAttr Enumeration
 Contains values that describe the metadata of an event.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorEventAttr {  
-  
+
     evSpecialName           =   0x0200,  
-  
+
     evReservedMask          =   0x0400,  
     evRTSpecialName         =   0x0400,  
-  
+
 } CorEventAttr;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`evSpecialName`|Specifies that the event is special, and that its name describes how.|  
 |`evReservedMask`|Reserved for internal use by the common language runtime.|  
 |`evRTSpecialName`|Specifies that the common language runtime should check the encoding of the event name.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

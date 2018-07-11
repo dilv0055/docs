@@ -15,9 +15,9 @@ In a query expression, it is sometimes useful to store the result of a sub-expre
 ## Example  
  In the following example `let` is used in two ways:  
   
-1.  To create an enumerable type that can itself be queried.  
+1. To create an enumerable type that can itself be queried.  
   
-2.  To enable the query to call `ToLower` only one time on the range variable `word`. Without using `let`, you would have to call `ToLower` in each predicate in the `where` clause.  
+2. To enable the query to call `ToLower` only one time on the range variable `word`. Without using `let`, you would have to call `ToLower` in each predicate in the `where` clause.  
   
  [!code-csharp[cscsrefQueryKeywords#28](../../../csharp/language-reference/keywords/codesnippet/CSharp/let-clause_1.cs)]  
   

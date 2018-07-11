@@ -7,7 +7,6 @@ helpviewer_keywords:
   - "strings [C#], searching with regular expressions"
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
 ---
-
 # How to: search strings
 
 You can use two main strategies to search for text in strings. Methods of the <xref:System.String> class search for specific text. Regular expressions search for patterns in text.
@@ -27,7 +26,7 @@ The preceding example demonstrates an important point for using these methods. S
 ## Where does the sought text occur in a string?
 
 The <xref:System.String.IndexOf%2A> and <xref:System.String.LastIndexOf%2A> methods also search for text in strings. These methods return the location of the text being sought. If the text isn't found, they return `-1`. The following example shows a search for the first and last occurrence of the word "methods" and displays the text in between.
-  
+
 [!code-csharp-interactive[search strings for indices](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#2)]
 
 ## Finding specific text using regular expressions
@@ -38,20 +37,22 @@ The following code example searches for the word "the" or "their" in a sentence,
 
 The search pattern describes the text you search for. The following table describes each element of the search pattern. (The table below uses the single `\` which must be escaped as `\\` in a C# string).
 
+
 | pattern  | Meaning     |
 | -------- |-------------|
 | the      | match the text "the" |
 | (eir)?   | match 0 or 1 occurence of "eir" |
 | \s       | match a white-space character    |
-  
+
 [!code-csharp-interactive[Search using regular expressions](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#3)]
-  
+
 > [!TIP]
 > The `string` methods are usually better choices when you are searching for an exact string. Regular expressions are better when you are searching for some pattern is a source string.
 
 ## Does a string follow a pattern?
 
 The following code uses regular expressions to validate the format of each string in an array. The validation requires that each string have the form of a telephone number in which three groups of digits are separated by dashes, the first two groups contain three digits, and the third group contains four digits. The search pattern uses the regular expression `^\\d{3}-\\d{3}-\\d{4}$`. For more information, see [Regular Expression Language - Quick Reference](../../standard/base-types/regular-expression-language-quick-reference.md).
+
 
 | pattern  | Meaning                             |
 | -------- |-------------------------------------|

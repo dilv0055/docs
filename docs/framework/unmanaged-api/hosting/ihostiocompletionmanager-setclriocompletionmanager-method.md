@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostIoCompletionManager::SetCLRIoCompletionManager Method
 Provides the host with an interface pointer to the [ICLRIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md) instance implemented by the common language runtime (CLR).  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SetCLRIoCompletionManager (  
     [in] ICLRIoCompletionManager *pManager  
 );  
 ```  
-  
+
 #### Parameters  
  `pManager`  
  [in] An interface pointer to an `ICLRIoCompletionManager` instance provided by the CLR.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetCLRIoCompletionManager` returned successfully.|  
@@ -43,19 +44,19 @@ HRESULT SetCLRIoCompletionManager (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  After the CLR has called `SetCLRIoCompletionManager`, the host must call [ICLRIoCompletionManager::OnComplete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md) to notify the CLR when an I/O request has been completed.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
  [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

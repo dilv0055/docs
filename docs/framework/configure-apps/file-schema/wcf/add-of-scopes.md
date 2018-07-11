@@ -5,7 +5,7 @@ ms.assetid: 0563a7d8-fc84-4c85-9066-af32665857c2
 ---
 # &lt;add&gt; of &lt;scopes&gt;
 Adds a custom scope Uri that can be used to filter service endpoints during query.  
-  
+
 \<system.ServiceModel>  
 \<behaviors>  
 \<endpointBehaviors>  
@@ -13,9 +13,9 @@ Adds a custom scope Uri that can be used to filter service endpoints during quer
 \<endpointDiscovery>  
 \<scopes>  
 \<add>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <behaviors>
   <endpointBehaviors>
@@ -29,24 +29,26 @@ Adds a custom scope Uri that can be used to filter service endpoints during quer
   </endpointBehaviors>
 </behaviors>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |scope|A URI that contains scope information for the endpoint that can be used in matching criteria for finding services.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<scopes>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Contains a collection of configuration elements that specify custom scope Uris that can be used to filter service endpoints during query.|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

@@ -8,7 +8,8 @@ ms.assetid: 6f803bd7-21ff-4569-b1fe-b00a6678b1e3
 ---
 # My Reference (Visual Basic)
 The `My` feature makes programming faster and easier by giving you intuitive access to commonly used methods, properties, and events. This table lists the objects contained in `My`, and the actions that can be performed with each.  
-  
+
+
 |**Action**|**Object**|  
 |----------------|----------------|  
 |Accessing application information and services.|The `My.Application` object consists of the following classes:<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> provides members that are available in all projects.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> provides members available in Windows Forms applications.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> provides members available in console applications.|  
@@ -21,7 +22,7 @@ The `My` feature makes programming faster and easier by giving you intuitive acc
 |Accessing user and application level settings.|[My.Settings Object](../../../visual-basic/language-reference/objects/my-settings-object.md)|  
 |Accessing the current user's security context.|`My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>)|  
 |Accessing XML Web services referenced by the current project.|[My.WebServices Object](../../../visual-basic/language-reference/objects/my-webservices-object.md)|  
-  
+
 ## See Also  
  [Overview of the Visual Basic Application Model](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)  
  [Development with My](../../../visual-basic/developing-apps/development-with-my/index.md)

@@ -23,9 +23,9 @@ ms.assetid: 449276b8-4633-46f0-85c9-81f01d127636
   
  This custom binding contains two elements:  
   
--   The [\<httpTransport>](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md) and  
+- The [\<httpTransport>](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md) and  
   
--   The [\<textMessageEncoding>](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
+- The [\<textMessageEncoding>](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
   
  The standard WCF Text Message Encoder is specially configured to use the <xref:System.ServiceModel.Channels.MessageVersion.None%2A> value, which allows it to process XML message payloads that do not arrive wrapped in a SOAP envelope.  
   
@@ -46,9 +46,9 @@ private static Binding CreatePoxBinding()
   
  Because POX messages do not use SOAP headers to convey important protocol information, POX clients and services often must manipulate pieces of the underlying HTTP request used to send or receive a message. HTTP-specific protocol information such as the HTTP headers and status codes are surfaced in the WCF programming model through two classes:  
   
--   <xref:System.ServiceModel.Channels.HttpRequestMessageProperty>, which contains information about the HTTP request, such as the HTTP method and request headers.  
+- <xref:System.ServiceModel.Channels.HttpRequestMessageProperty>, which contains information about the HTTP request, such as the HTTP method and request headers.  
   
--   <xref:System.ServiceModel.Channels.HttpResponseMessageProperty>, which contains information about the HTTP response, such as the HTTP status code and status description, as well as any HTTP response headers.  
+- <xref:System.ServiceModel.Channels.HttpResponseMessageProperty>, which contains information about the HTTP response, such as the HTTP status code and status description, as well as any HTTP response headers.  
   
  The following code example shows how to create an HTTP GET request message that is addressed to http://localhost:8100/customers.  
   

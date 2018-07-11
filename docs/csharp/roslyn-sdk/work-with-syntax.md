@@ -4,7 +4,6 @@ description: This overview provides an understanding of the types you use to und
 ms.date: 10/15/2017
 ms.custom: mvc
 ---
-
 # Work with syntax
 
 The **syntax tree** is a fundamental data structure exposed by the compiler APIs. These trees represent the lexical and syntactic structure of source code. They serve two important purposes:

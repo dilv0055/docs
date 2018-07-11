@@ -5,7 +5,8 @@ ms.assetid: ec34ae21-bbbb-4adb-b672-83865e2a8451
 ---
 # Oracle Data Type Mappings
 The following table lists Oracle data types and their mappings to the <xref:System.Data.OracleClient.OracleDataReader>.  
-  
+
+
 |Oracle data type|.NET Framework data type returned by OracleDataReader.GetValue|OracleClient data type returned by OracleDataReader.GetOracleValue|Remarks|  
 |----------------------|--------------------------------------------------------------------|------------------------------------------------------------------------|-------------|  
 |**BFILE**|**Byte[]**|<xref:System.Data.OracleClient.OracleBFile>||  
@@ -31,9 +32,10 @@ The following table lists Oracle data types and their mappings to the <xref:Syst
 |**TIMESTAMP WITH TIME ZONE**|**DateTime**|<xref:System.Data.OracleClient.OracleDateTime>||  
 |**UNSIGNED INTEGER**|**Number**|<xref:System.Data.OracleClient.OracleNumber>|This data type is an alias for the **NUMBER(38)** data type, and is designed so that the <xref:System.Data.OracleClient.OracleDataReader> returns a **System.Decimal** or <xref:System.Data.OracleClient.OracleNumber> instead of an unsigned integer value. Using the .NET Framework data type can cause an overflow.|  
 |**VARCHAR2**|**String**|<xref:System.Data.OracleClient.OracleString>||  
-  
+
  The following table lists Oracle data types and the .NET Framework data types (**System.Data.DbType** and <xref:System.Data.OracleClient.OracleType>) to use when binding them as parameters.  
-  
+
+
 |Oracle data type|DbType enumeration to bind as a parameter|OracleType enumeration to bind as a parameter|Remarks|  
 |----------------------|-----------------------------------------------|---------------------------------------------------|-------------|  
 |**BFILE**||**BFile**|Oracle only allows binding a **BFILE** as a **BFILE** parameter. The .NET Data Provider for Oracle does not automatically construct one for you if you attempt to bind a non-**BFILE** value, such as **byte[]** or <xref:System.Data.OracleClient.OracleBinary>.|  
@@ -59,9 +61,9 @@ The following table lists Oracle data types and their mappings to the <xref:Syst
 |**TIMESTAMP WITH TIME ZONE**|**DateTime**|**TimestampWithTz**|<xref:System.Data.OracleClient.OracleType> is only available when using both Oracle 9i client and server software.|  
 |**UNSIGNED INTEGER**|**Byte, UInt16, UInt32, UInt64, Decimal**|**Byte, UInt16, Uint32, Number**|<xref:System.Data.OracleClient.OracleParameter.Size%2A> determines the **System.Data.DBType** and <xref:System.Data.OracleClient.OracleType>.|  
 |**VARCHAR2**|**AnsiString**|**VarChar**||  
-  
+
  The **InputOutput**, **Output**, and **ReturnValue** **ParameterDirection** values used by the <xref:System.Data.OracleClient.OracleParameter.Value%2A> property of the <xref:System.Data.OracleClient.OracleParameter> object are .NET Framework data types, unless the input value is an Oracle data type (for example, <xref:System.Data.OracleClient.OracleNumber> or <xref:System.Data.OracleClient.OracleString>). This does not apply to **REF CURSOR**, **BFILE**, or **LOB** data types.  
-  
+
 ## See Also  
  [Oracle and ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

@@ -7,9 +7,9 @@ ms.author: "ronpet"
 ---
 # AXL_AUTHENTICODE_TIMESTAMPER_INFO Structure
 Defines the Authenticode time stamper information.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {  
     DWORD cbSize;  
@@ -19,9 +19,10 @@ typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {
     PCCERT_CHAIN_CONTEXT pChainContext;  
 } AXL_AUTHENTICODE_TIMESTAMPER_INFO, * PAXL_AUTHENTICODE_TIMESTAMPER_INFO;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`cbSize`|The size of this structure.|  
@@ -29,6 +30,6 @@ typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {
 |`algHash`|The hash algorithm.|  
 |`ftTimestamp`|The time of the time stamp.|  
 |`pChainContext`|The time stamper’s chain context.  See the [CERT_CONTEXT](http://msdn.microsoft.com/library/windows/desktop/aa377189.aspx) structure.|  
-  
+
 ## See Also  
  [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

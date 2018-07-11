@@ -1,3 +1,4 @@
+
 ---
 title: Securing .NET Microservices and Web Applications
 description: .NET Microservices Architecture for Containerized .NET Applications | Securing .NET Microservices and Web Applications
@@ -39,11 +40,11 @@ Once ASP.NET Core Identity is configured, you enable it by calling app.UseIdenti
 
 Using ASP.NET Core Identity enables several scenarios:
 
--   Create new user information using the UserManager type (userManager.CreateAsync).
+- Create new user information using the UserManager type (userManager.CreateAsync).
 
--   Authenticate users using the SignInManager type. You can use signInManager.SignInAsync to sign in directly, or signInManager.PasswordSignInAsync to confirm the user’s password is correct and then sign them in.
+- Authenticate users using the SignInManager type. You can use signInManager.SignInAsync to sign in directly, or signInManager.PasswordSignInAsync to confirm the user’s password is correct and then sign them in.
 
--   Identify a user based on information stored in a cookie (which is read by ASP.NET Core Identity middleware) so that subsequent requests from a browser will include a signed-in user’s identity and claims.
+- Identify a user based on information stored in a cookie (which is read by ASP.NET Core Identity middleware) so that subsequent requests from a browser will include a signed-in user’s identity and claims.
 
 ASP.NET Core Identity also supports [two-factor authentication](https://docs.microsoft.com/aspnet/core/security/authentication/2fa).
 
@@ -152,27 +153,27 @@ If you prefer to issue security tokens for local ASP.NET Core Identity users rat
 
 [IdentityServer4](https://github.com/IdentityServer/IdentityServer4) and [OpenIddict](https://github.com/openiddict/openiddict-core) are OpenID Connect providers that integrate easily with ASP.NET Core Identity to let you issue security tokens from an ASP.NET Core service. The [IdentityServer4 documentation](https://identityserver4.readthedocs.io/en/release/) has in-depth instructions for using the library. However, the basic steps to using IdentityServer4 to issue tokens are as follows.
 
-1.  You call app.UseIdentityServer in the Startup.Configure method to add IdentityServer4 to the application’s HTTP request processing pipeline. This lets the library serve requests to OpenID Connect and OAuth2 endpoints like /connect/token.
+1. You call app.UseIdentityServer in the Startup.Configure method to add IdentityServer4 to the application’s HTTP request processing pipeline. This lets the library serve requests to OpenID Connect and OAuth2 endpoints like /connect/token.
 
-2.  You configure IdentityServer4 in Startup.ConfigureServices by making a call to services.AddIdentityServer.
+2. You configure IdentityServer4 in Startup.ConfigureServices by making a call to services.AddIdentityServer.
 
-3.  You configure identity server by providing the following data:
+3. You configure identity server by providing the following data:
 
--   The [credentials](https://identityserver4.readthedocs.io/en/release/topics/crypto.html) to use for signing.
+- The [credentials](https://identityserver4.readthedocs.io/en/release/topics/crypto.html) to use for signing.
 
--   The [Identity and API resources](https://identityserver4.readthedocs.io/en/release/topics/resources.html) that users might request access to:
-
-<!-- -->
-
--   API resources represent protected data or functionality that a user can access with an access token. An example of an API resource would be a web API (or set of APIs) that requires authorization.
-
--   Identity resources represent information (claims) that are given to a client to identify a user. The claims might include the user name, email address, and so on.
+- The [Identity and API resources](https://identityserver4.readthedocs.io/en/release/topics/resources.html) that users might request access to:
 
 <!-- -->
 
--   The [clients](https://identityserver4.readthedocs.io/en/release/topics/clients.html) that will be connecting in order to request tokens.
+- API resources represent protected data or functionality that a user can access with an access token. An example of an API resource would be a web API (or set of APIs) that requires authorization.
 
--   The storage mechanism for user information, such as [ASP.NET Core Identity](https://identityserver4.readthedocs.io/en/release/quickstarts/6_aspnet_identity.html) or an alternative.
+- Identity resources represent information (claims) that are given to a client to identify a user. The claims might include the user name, email address, and so on.
+
+<!-- -->
+
+- The [clients](https://identityserver4.readthedocs.io/en/release/topics/clients.html) that will be connecting in order to request tokens.
+
+- The storage mechanism for user information, such as [ASP.NET Core Identity](https://identityserver4.readthedocs.io/en/release/quickstarts/6_aspnet_identity.html) or an alternative.
 
 When you specify clients and resources for IdentityServer4 to use, you can pass an IEnumerable&lt;T&gt; collection of the appropriate type to methods that take in-memory client or resource stores. Or for more complex scenarios, you can provide client or resource provider types via Dependency Injection.
 
@@ -204,11 +205,11 @@ app.UseJwtBearerAuthentication(new JwtBearerOptions()
 
 The parameters in this usage are:
 
--   Audience represents the receiver of the incoming token or the resource that the token grants access to. If the value specified in this parameter does not match the aud parameter in the token, the token will be rejected.
+- Audience represents the receiver of the incoming token or the resource that the token grants access to. If the value specified in this parameter does not match the aud parameter in the token, the token will be rejected.
 
--   Authority is the address of the token-issuing authentication server. The JWT bearer authentication middleware uses this URI to get the public key that can be used to validate the token's signature. The middleware also confirms that the iss parameter in the token matches this URI.
+- Authority is the address of the token-issuing authentication server. The JWT bearer authentication middleware uses this URI to get the public key that can be used to validate the token's signature. The middleware also confirms that the iss parameter in the token matches this URI.
 
--   AutomaticAuthenticate is a Boolean value that indicates whether the user defined by the token should be automatically signed in.
+- AutomaticAuthenticate is a Boolean value that indicates whether the user defined by the token should be automatically signed in.
 
 Another parameter, RequireHttpsMetadata, is not used in this example. It is useful for testing purposes; you set this parameter to false so that you can test in environments where you do not have certificates. In real-world deployments, JWT bearer tokens should always be passed only over HTTPS.
 
@@ -218,31 +219,31 @@ The JWT bearer authentication middleware can also support more advanced scenario
 
 ## Additional resources
 
--   **Sharing cookies between applications**
-    [*https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing\#sharing-authentication-cookies-between-applications*](https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing#sharing-authentication-cookies-between-applications)
+- **Sharing cookies between applications**
+  [*https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing\#sharing-authentication-cookies-between-applications*](https://docs.microsoft.com/aspnet/core/security/data-protection/compatibility/cookie-sharing#sharing-authentication-cookies-between-applications)
 
--   **Introduction to Identity**
-    [*https://docs.microsoft.com/aspnet/core/security/authentication/identity*](https://docs.microsoft.com/aspnet/core/security/authentication/identity)
+- **Introduction to Identity**
+  [*https://docs.microsoft.com/aspnet/core/security/authentication/identity*](https://docs.microsoft.com/aspnet/core/security/authentication/identity)
 
--   **Rick Anderson. Two-factor authentication with SMS**
-    [*https://docs.microsoft.com/aspnet/core/security/authentication/2fa*](https://docs.microsoft.com/aspnet/core/security/authentication/2fa)
+- **Rick Anderson. Two-factor authentication with SMS**
+  [*https://docs.microsoft.com/aspnet/core/security/authentication/2fa*](https://docs.microsoft.com/aspnet/core/security/authentication/2fa)
 
--   **Enabling authentication using Facebook, Google and other external providers**
-    [*https://docs.microsoft.com/aspnet/core/security/authentication/social/*](https://docs.microsoft.com/aspnet/core/security/authentication/social/)
+- **Enabling authentication using Facebook, Google and other external providers**
+  [*https://docs.microsoft.com/aspnet/core/security/authentication/social/*](https://docs.microsoft.com/aspnet/core/security/authentication/social/)
 
--   **Michell Anicas. An Introduction to OAuth 2**
-    [*https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2*](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
+- **Michell Anicas. An Introduction to OAuth 2**
+  [*https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2*](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
 
--   **AspNet.Security.OAuth.Providers** (GitHub repo for ASP.NET OAuth providers.
-    [*https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src*](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src)
+- **AspNet.Security.OAuth.Providers** (GitHub repo for ASP.NET OAuth providers.
+  [*https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src*](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers/tree/dev/src)
 
--   **Danny Strockis. Integrating Azure AD into an ASP.NET Core web app**
-    [*https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/*](https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+- **Danny Strockis. Integrating Azure AD into an ASP.NET Core web app**
+  [*https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/*](https://azure.microsoft.com/resources/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
 
--   **IdentityServer4. Official documentation**
-    [*https://identityserver4.readthedocs.io/en/release/*](https://identityserver4.readthedocs.io/en/release/)
+- **IdentityServer4. Official documentation**
+  [*https://identityserver4.readthedocs.io/en/release/*](https://identityserver4.readthedocs.io/en/release/)
 
 
->[!div class="step-by-step"]
-[Previous](../implement-resilient-applications/monitor-app-health.md)
-[Next](authorization-net-microservices-web-applications.md)
+> [!div  class="step-by-step"]
+> [Previous](../implement-resilient-applications/monitor-app-health.md)
+> [Next](authorization-net-microservices-web-applications.md)

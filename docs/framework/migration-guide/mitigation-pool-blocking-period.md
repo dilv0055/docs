@@ -19,11 +19,11 @@ The connection pool blocking period has been removed for connections to Azure SQ
 ## Mitigation  
  For apps that are adversely affected by this change, the connection pool blocking period can be configured by setting the new <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A> property.  The value of the property is a member of the <xref:System.Data.SqlClient.PoolBlockingPeriod?displayProperty=nameWithType> enumeration that can take either of three values:  
   
--   `PoolBlockingPeriod.AlwaysBlock` 
+- `PoolBlockingPeriod.AlwaysBlock` 
   
--   `PoolBlockingPeriod.Auto`  
+- `PoolBlockingPeriod.Auto`  
   
--   `PoolBlockingPeriod.NeverBlock` 
+- `PoolBlockingPeriod.NeverBlock` 
   
  The previous behavior can be restored by setting the <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod%2A> property to `PoolBlockingPeriod.AlwaysBlock`.  
   

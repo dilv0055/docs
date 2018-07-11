@@ -8,9 +8,10 @@ ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
 ---
 # Query Keywords (C# Reference)
 This section contains the contextual keywords used in query expressions.  
-  
+
 ## In This Section  
-  
+
+
 |Clause|Description|  
 |------------|-----------------|  
 |[from](../../../csharp/language-reference/keywords/from-clause.md)|Specifies a data source and a range variable (similar to an iteration variable).|  
@@ -27,7 +28,7 @@ This section contains the contextual keywords used in query expressions.
 |[by](../../../csharp/language-reference/keywords/by.md)|Contextual keyword in a [group](../../../csharp/language-reference/keywords/group-clause.md) clause.|  
 |[ascending](../../../csharp/language-reference/keywords/ascending.md)|Contextual keyword in an [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) clause.|  
 |[descending](../../../csharp/language-reference/keywords/descending.md)|Contextual keyword in an [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) clause.|  
-  
+
 ## See Also  
  [C# Keywords](../../../csharp/language-reference/keywords/index.md)  
  [LINQ (Language-Integrated Query)](../../programming-guide/concepts/linq/index.md)  

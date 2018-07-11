@@ -25,33 +25,33 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
   
 ## Parts  
   
--   `listField1`, `listField2`  
+- `listField1`, `listField2`  
   
-     Optional. One or more fields of the query variable or variables that explicitly identify the fields to be included in the grouped result. If no fields are specified, all fields of the query variable or variables are included in the grouped result.  
+   Optional. One or more fields of the query variable or variables that explicitly identify the fields to be included in the grouped result. If no fields are specified, all fields of the query variable or variables are included in the grouped result.  
   
--   `keyExp1`  
+- `keyExp1`  
   
-     Required. An expression that identifies the key to use to determine the groups of elements. You can specify more than one key to specify a composite key.  
+   Required. An expression that identifies the key to use to determine the groups of elements. You can specify more than one key to specify a composite key.  
   
--   `keyExp2`  
+- `keyExp2`  
   
-     Optional. One or more additional keys that are combined with `keyExp1` to create a composite key.  
+   Optional. One or more additional keys that are combined with `keyExp1` to create a composite key.  
   
--   `aggregateList`  
+- `aggregateList`  
   
-     Required. One or more expressions that identify how the groups are aggregated. To identify a member name for the grouped results, use the `Group` keyword, which can be in either of the following forms:  
+   Required. One or more expressions that identify how the groups are aggregated. To identify a member name for the grouped results, use the `Group` keyword, which can be in either of the following forms:  
   
-    ```  
-    Into Group  
-    ```  
+  ```  
+  Into Group  
+  ```  
   
-     -or-  
+   -or-  
   
-    ```  
-    Into <alias> = Group  
-    ```  
+  ```  
+  Into <alias> = Group  
+  ```  
   
-     You can also include aggregate functions to apply to the group.  
+   You can also include aggregate functions to apply to the group.  
   
 ## Remarks  
  You can use the `Group By` clause to break the results of a query into groups. The grouping is based on a key or a composite key consisting of multiple keys. Elements that are associated with matching key values are included in the same group.  

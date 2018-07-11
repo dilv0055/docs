@@ -7,9 +7,9 @@ manager: "mbaldwin"
 ---
 # SymmetricSecurityBindingElement
 SymmetricSecurityBindingElement  
-  
+
 ## Syntax  
-  
+
 ```  
 class SymmetricSecurityBindingElement : SecurityBindingElement  
 {  
@@ -17,32 +17,33 @@ class SymmetricSecurityBindingElement : SecurityBindingElement
   boolean RequireSignatureConfirmation;  
 };  
 ```  
-  
+
 ## Methods  
  The SymmetricSecurityBindingElement class does not define any methods.  
-  
+
 ## Properties  
  The SymmetricSecurityBindingElement class has the following properties:  
-  
+
 ### MessageProtectionOrder  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  The order of message encryption and signing for this binding.  
-  
+
 ### RequireSignatureConfirmation  
  Data type: boolean  
-  
+
  Access type: Read-only  
-  
+
  Whether the binding requires signature confirmation.  
-  
+
 ## Requirements  
-  
+
+
 |MOF|Declared in Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Namespace|Defined in root\ServiceModel|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>

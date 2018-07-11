@@ -11,7 +11,6 @@ ms.assetid: f61f02f2-2f20-483d-8f56-a9c8f3a54986
 author: "rpetrusha"
 ms.author: "ronpet"
 ---
-
 # .NET Framework Guide
 
 > [!NOTE]
@@ -32,26 +31,26 @@ The .NET Framework comes with Windows, enabling you to run .NET Framework applic
 See [Repair the .NET Framework](./install/repair.md) to learn how to repair your .NET Framework installation if you are experiencing errors when installing the .NET Framework.
 
 For more detailed information on downloading the .NET Framework, see [Install the .NET Framework for developers](../../docs/framework/install/guide-for-developers.md).  
-  
+
 ## In This Section
 
 [What's New](../../docs/framework/whats-new/index.md)  
 Describes key new features and changes in the latest versions of the .NET Framework. Includes lists of obsolete types and members, and provides a guide for migrating your applications from the previous version of the .NET Framework.  
-  
+
 [Getting Started](../../docs/framework/get-started/index.md)  
 Provides a comprehensive overview of the .NET Framework and links to additional resources.  
-  
+
 [Migration Guide](../../docs/framework/migration-guide/index.md)   
 Provides resources and a list of changes you need to consider  if you're migrating your application to a new version of the .NET Framework.  
-  
+
 [Development Guide](../../docs/framework/development-guide.md)  
 Provides a guide to all key technology areas and tasks for application development, including creating, configuring, debugging, securing, and deploying your application, and information about dynamic programming, interoperability, extensibility, memory management, and threading.  
-  
+
 [Tools](../../docs/framework/tools/index.md)  
 Describes the tools that help you develop, configure, and deploy applications by using .NET Framework technologies.  
-  
+
 [.NET Framework Class Library](/dotnet/api/?view=netframework-4.7.2)   
 Supplies syntax, code examples, and related information for each class contained in the .NET Framework namespaces.  
-  
+
 [Additional Class Libraries and APIs](../../docs/framework/additional-apis/index.md)  
 Provides documentation for classes contained in out-of-band (OOB) releases, as well as for classes that target specific platforms or implementations of the .NET Framework.

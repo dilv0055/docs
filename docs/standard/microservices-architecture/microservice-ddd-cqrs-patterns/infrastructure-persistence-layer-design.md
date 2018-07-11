@@ -137,32 +137,32 @@ The upcoming sections explain how to implement the specification pattern with EF
   [https://deviq.com/repository-pattern/](https://deviq.com/repository-pattern/)
 
 - **Edward Hieatt and Rob Mee. Repository pattern.**
-  [_https://martinfowler.com/eaaCatalog/repository.html_](https://martinfowler.com/eaaCatalog/repository.html)
+  [*https://martinfowler.com/eaaCatalog/repository.html*](https://martinfowler.com/eaaCatalog/repository.html)
 
 - **The Repository pattern**
-  [_https://docs.microsoft.com/previous-versions/msp-n-p/ff649690(v=pandp.10)_](https://docs.microsoft.com/previous-versions/msp-n-p/ff649690(v=pandp.10))
+  [*https://docs.microsoft.com/previous-versions/msp-n-p/ff649690(v=pandp.10)*](https://docs.microsoft.com/previous-versions/msp-n-p/ff649690(v=pandp.10))
 
 - **Eric Evans. Domain-Driven Design: Tackling Complexity in the Heart of Software.** (Book; includes a discussion of the Repository pattern)
-  [_https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/_](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
+  [*https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/*](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/)
 
 ### Unit of Work pattern
 
 - **Martin Fowler. Unit of Work pattern.**
-  [_https://martinfowler.com/eaaCatalog/unitOfWork.html_](https://martinfowler.com/eaaCatalog/unitOfWork.html)
+  [*https://martinfowler.com/eaaCatalog/unitOfWork.html*](https://martinfowler.com/eaaCatalog/unitOfWork.html)
 
 - **Implementing the Repository and Unit of Work Patterns in an ASP.NET MVC Application**
-  [_https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application_](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
+  [*https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application*](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)
 
 ### The Specification pattern
 
 - **The Specification pattern.**
-  [_https://deviq.com/specification-pattern/_](https://deviq.com/specification-pattern/)
+  [*https://deviq.com/specification-pattern/*](https://deviq.com/specification-pattern/)
 
 - **Evans, Eric (2004). Domain Driven Design. Addison-Wesley. p. 224.**
 
 - **Specifications. Martin Fowler**
-  [_https://www.martinfowler.com/apsupp/spec.pdf/_](https://www.martinfowler.com/apsupp/spec.pdf)
+  [*https://www.martinfowler.com/apsupp/spec.pdf/*](https://www.martinfowler.com/apsupp/spec.pdf)
 
->[!div class="step-by-step"]
-[Previous](domain-events-design-implementation.md)
-[Next](infrastructure-persistence-layer-implemenation-entity-framework-core.md)
+> [!div  class="step-by-step"]
+> [Previous](domain-events-design-implementation.md)
+> [Next](infrastructure-persistence-layer-implemenation-entity-framework-core.md)

@@ -10,10 +10,11 @@ ms.assetid: 2c5640e9-6c6c-49d7-a5e4-a768f6be7853
 ---
 # Attributes in Windows Forms Controls
 The .NET Framework provides a variety of attributes you can apply to the members of your custom controls and components. Some of these attributes affect the run-time behavior of a class, and others affect the design-time behavior.  
-  
+
 ## Attributes for Control and Component Properties  
  The following table shows the attributes you can apply to properties or other members of your custom controls and components. For an example that uses many of these attributes, see [How to: Apply Attributes in Windows Forms Controls](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md).  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |<xref:System.ComponentModel.AmbientValueAttribute>|Specifies the value to pass to a property to cause the property to get its value from another source. This is known as *ambience*.|  
@@ -30,10 +31,11 @@ The .NET Framework provides a variety of attributes you can apply to the members
 |<xref:System.ComponentModel.ReadOnlyAttribute>|Specifies whether the property this attribute is bound to is read-only or read/write at design time.|  
 |<xref:System.ComponentModel.RefreshPropertiesAttribute>|Indicates that the property grid should refresh when the associated property value changes.|  
 |<xref:System.ComponentModel.TypeConverterAttribute>|Specifies what type to use as a converter for the object this attribute is bound to.|  
-  
+
 ## Attributes for Data Binding Properties  
  The following table shows the attributes you can apply to specify how your custom controls and components interact with data binding.  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |<xref:System.ComponentModel.BindableAttribute>|Specifies whether a property is typically used for binding.|  
@@ -41,10 +43,11 @@ The .NET Framework provides a variety of attributes you can apply to the members
 |<xref:System.ComponentModel.DefaultBindingPropertyAttribute>|Specifies the default binding property for a component.|  
 |<xref:System.ComponentModel.LookupBindingPropertiesAttribute>|Specifies the data source and data member properties for a component.|  
 |<xref:System.ComponentModel.AttributeProviderAttribute>|Enables attribute redirection.|  
-  
+
 ## Attributes for Classes  
  The following table shows the attributes you can apply to specify the behavior of your custom controls and components at design time.  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |<xref:System.ComponentModel.DefaultEventAttribute>|Specifies the default event for a component.|  
@@ -53,7 +56,7 @@ The .NET Framework provides a variety of attributes you can apply to the members
 |<xref:System.ComponentModel.DesignerCategoryAttribute>|Specifies that the designer for a class belongs to a certain category.|  
 |<xref:System.ComponentModel.ToolboxItemAttribute>|Represents an attribute of a toolbox item.|  
 |<xref:System.ComponentModel.ToolboxItemFilterAttribute>|Specifies the filter string and filter type to use for a Toolbox item.|  
-  
+
 ## See Also  
  <xref:System.Attribute>  
  [How to: Apply Attributes in Windows Forms Controls](../../../../docs/framework/winforms/controls/how-to-apply-attributes-in-windows-forms-controls.md)  

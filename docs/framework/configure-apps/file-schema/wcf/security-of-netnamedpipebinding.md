@@ -7,15 +7,15 @@ manager: "mbaldwin"
 ---
 # &lt;security&gt; of &lt;netNamedPipeBinding&gt;
 Defines the security settings for a binding.  
-  
+
  \<system.ServiceModel>  
 \<bindings>  
 \<netNamedPipeBinding>  
 \<binding>  
 \<security>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <netNamedPipeBinding>  
       <binding>  
@@ -25,28 +25,31 @@ Defines the security settings for a binding.
       </binding>  
 </netNamedPipeBinding>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |mode|Specifies the type of security that is applied to this binding. Valid values include the following:<br /><br /> -   None: This disables security.<br />-   Transport: Security is provided using underlying transport based security. It is possible to control the protection level with this mode.<br />-   The default value is Transport. This attribute is of type <xref:System.ServiceModel.NetNamedPipeSecurityMode>.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |transport|Defines the security settings for the transport. This element is of type <xref:System.ServiceModel.Configuration.NamedPipeTransportSecurityElement>.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |binding|The binding element of the [\<netNamedPipeBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.NetNamedPipeSecurity>  
  <xref:System.ServiceModel.NetNamedPipeBinding.Security%2A>  

@@ -14,7 +14,7 @@ ms.custom: mvc
 This sample tutorial illustrates using ML.NET to create a sentiment classifier via a .NET Core console application using C# in Visual Studio 2017.
 
 In this tutorial, you learn how to:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * Understand the problem
 > * Select the appropriate machine learning task
 > * Prepare your data
@@ -122,7 +122,7 @@ You need to create some classes for your input data and predictions. Add a new c
 
 1. In **Solution Explorer**, right-click the project, and then select **Add** > **New Item**.
 
-1. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *SentimentData.cs*. Then, select the **Add** button.
+2. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *SentimentData.cs*. Then, select the **Add** button.
 
     The *SentimentData.cs* file opens in the code editor. Add the following `using` statement to the top of *SentimentData.cs*:
 
@@ -147,7 +147,7 @@ You add `async` to `Main` with a <xref:System.Threading.Tasks.Task> return type 
 
 > [!NOTE]
 > An *async main* method enables you to use `await` in your `Main` method. For more information, see the
-[async main](../../../docs/csharp/programming-guide/main-and-command-args/index.md) topic in the C# programming guide.
+> [async main](../../../docs/csharp/programming-guide/main-and-command-args/index.md) topic in the C# programming guide.
 
 Replace the `Console.WriteLine("Hello World!")` line with the following code in the `Main` method:
 
@@ -316,7 +316,6 @@ Sentiment Predictions
 ---------------------
 Sentiment: Please refrain from adding nonsense to Wikipedia. | Prediction: Negative
 Sentiment: He is the best, and the article should say that. | Prediction: Positive
-
 ```
 
 Congratulations! You've now successfully built a machine learning model for classifying and predicting messages sentiment. You can find the source code for this tutorial at the [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) repository.
@@ -324,7 +323,7 @@ Congratulations! You've now successfully built a machine learning model for clas
 ## Next steps
 
 In this tutorial, you learned how to:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * Understand the problem
 > * Select the appropriate machine learning task
 > * Prepare your data
@@ -335,5 +334,5 @@ In this tutorial, you learned how to:
 > * Predict the test data outcomes with the model
 
 Advance to the next tutorial to learn more
-> [!div class="nextstepaction"]
+> [!div  class="nextstepaction"]
 > [Taxi Fare Predictor](taxi-fare.md)

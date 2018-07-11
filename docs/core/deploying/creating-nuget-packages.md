@@ -6,7 +6,6 @@ ms.author: mairaw
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
 ---
-
 # How to Create a NuGet Package with Cross Platform Tools
 
 > [!NOTE]
@@ -26,7 +25,7 @@ After ensuring packages are restored, you can navigate to the directory where a 
 `$ cd src/SuperAwesomeLibrary`
 
 Then it's just a single command from the command line:
-    
+
 `$ dotnet pack`
 
 Your `/bin/Debug` folder will now look like this:

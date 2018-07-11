@@ -13,9 +13,9 @@ manager: "markl"
 # Specifying an Assembly&#39;s Location
 There are two ways to specify an assembly's location:  
   
--   Using the [\<codeBase>](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) element.  
+- Using the [\<codeBase>](../../../docs/framework/configure-apps/file-schema/runtime/codebase-element.md) element.  
   
--   Using the [\<probing>](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) element.  
+- Using the [\<probing>](../../../docs/framework/configure-apps/file-schema/runtime/probing-element.md) element.  
   
  You can also use the [.NET Framework Configuration Tool (Mscorcfg.msc)](http://msdn.microsoft.com/library/a7106c52-68da-490e-b129-971b2c743764) to specify assembly locations or specify locations for the common language runtime to probe for assemblies.  
   

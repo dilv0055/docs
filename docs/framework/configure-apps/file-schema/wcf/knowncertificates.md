@@ -5,7 +5,7 @@ ms.assetid: 678e21b4-6493-47c3-8359-fcf0d37e2138
 ---
 # &lt;knownCertificates&gt;
 Represents a collection of X.509 certificates that are provided to authenticate security credentials issued from a Security Token Service (STS).  
-  
+
  \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
@@ -13,9 +13,9 @@ Represents a collection of X.509 certificates that are provided to authenticate 
 \<serviceCredentials>  
 \<issuedTokenAuthentication>  
 \<knownCertificates>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <knownCertificates>   
       <add findValue="String"  
@@ -24,30 +24,32 @@ Represents a collection of X.509 certificates that are provided to authenticate 
            x509FindType="FindByThumbprint/FindBySubjectName/FindBySubjectDistinguishedName/FindByIssuerName/FindByIssuerDistinguishedName/FindBySerialNumber/FindByTimeValid/FindByTimeNotYetValid/FindBySerialNumber/FindByTimeExpired/FindByTemplateName/FindByApplicationPolicy/FindByCertificatePolicy/FindByExtension/FindByKeyUsage/FindBySubjectKeyIdentifier"/>  
 </knownCertificates>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-knowncertificates.md)|Adds an X.509 certificate to the collection.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<issuedTokenAuthentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md)|Specifies a token issued as a service credential.|  
-  
+
 ## Remarks  
  The issued token scenario has three stages. In the first stage, a client trying to access a service is referred to a *secure token service*. The secure token service then authenticates the client and subsequently issues the client a token, typically a Security Assertions Markup Language (SAML) token. The client then returns to the service with the token. The service examines the token for data that allows the service to authenticate the token and therefore the client. To authenticate the token, the certificate the secure token service uses must be known to the service.  
-  
+
  The [\<issuedTokenAuthentication>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenauthentication-of-servicecredentials.md) element is the repository for any such secure token service certificates. To add certificates, use the [\<knownCertificates> element](../../../../../docs/framework/configure-apps/file-schema/wcf/knowncertificates.md). Insert an [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-knowncertificates.md) for each certificate, as shown in the following example.  
-  
+
 ```xml  
 <issuedTokenAuthentication>  
    <knownCertificates>  
@@ -57,13 +59,13 @@ Represents a collection of X.509 certificates that are provided to authenticate 
     </knownCertificates>  
 </issuedTokenAuthentication>  
 ```  
-  
+
  By default, the certificates must be obtained from a secure token service. These "known" certificates ensure that only legitimate clients can access a service.  
-  
+
  To review conditions required for a client to be authenticated by a federated service, as well as more information on using this configuration element, see [How to: Configure Credentials on a Federation Service](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md). For more information about federated scenarios, see [Federation and Issued Tokens](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
-  
+
  For an example that shows how to populate the collection in configuration, see [\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-knowncertificates.md).  
-  
+
 ## See Also  
  <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>  
  <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A>  

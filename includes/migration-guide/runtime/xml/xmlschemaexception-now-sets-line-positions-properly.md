@@ -1,5 +1,6 @@
 ### XmlSchemaException now sets line positions properly
 
+
 |   |   |
 |---|---|
 |Details|If the <xref:System.Xml.Linq.LoadOptions.SetLineInfo> value is passed to the Load method and a validation error occurs, the <xref:System.Xml.Schema.XmlSchemaException.LineNumber> and <xref:System.Xml.Schema.XmlSchemaException.LinePosition> properties now contain line information.|

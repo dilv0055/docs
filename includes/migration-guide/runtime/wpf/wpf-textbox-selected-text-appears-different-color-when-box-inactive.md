@@ -1,5 +1,6 @@
 ### WPF TextBox selected text appears a different color when the text box is inactive
 
+
 |   |   |
 |---|---|
 |Details|In .NET Framework 4.5, when a WPF text box control is inactive (it doesn't have focus), the selected text inside the box will appear a different color than when the control is active.|

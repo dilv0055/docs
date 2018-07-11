@@ -23,7 +23,7 @@ Block-based ciphers have another property, called the mode, which determines the
 
 An attacker can use a padding oracle, in combination with how CBC data is structured, to send slightly changed messages to the code that exposes the oracle, and keep sending data until the oracle tells them the data is correct. From this response, the attacker can decrypt the message byte by byte.
 
-Modern computer networks are of such high quality that an attacker can detect very small (less than 0.1 ms) differences in execution time on remote systems. Applications that are assuming that a successful decryption can only happen when the data wasn't tampered with may be vulnerable to attack from tools that are designed to observe differences in successful and unsuccessful decryption. While this timing difference may be more significant in some languages or libraries than others, it's now believed that this is a practical threat for all languages and libraries when the application's response to failure is taken into account.
+Modern computer networks are of such high quality that an attacker can detect very small (less than 0.1 ms) differences in execution time on remote systems. Applications that are assuming that a successful decryption can only happen when the data wasn't tampered with may be vulnerable to attack from tools that are designed to observe differences in successful and unsuccessful decryption. While this timing difference may be more significant in some languages or libraries than others, it's now believed that this is a practical threat for all languages and libraries when the application's response to failure is taken into account.
 
 This attack relies on the ability to change the encrypted data and test the result with the oracle. The only way to fully mitigate the attack is to detect changes to the encrypted data and refuse to perform any actions on it. The standard way to do this is to create a signature for the data and validate that signature before any operations are performed. The signature must be verifiable, it cannot be created by the attacker, otherwise they'd change the encrypted data, then compute a new signature based on the changed data. One common type of appropriate signature is known as a keyed-hash message authentication code (HMAC). An HMAC differs from a checksum in that it takes a secret key, known only to the person producing the HMAC and to the person validating it. Without possession of the key, you can't produce a correct HMAC. When you receive your data, you'd take the encrypted data, independently compute the HMAC using the secret key you and the sender share, then compare the HMAC they sent against the one you computed. This comparison must be constant time, otherwise you've added another detectable oracle, allowing a different type of attack.
 
@@ -81,15 +81,18 @@ Applications that are unable to change their messaging format but perform unauth
   - Any padding that was applied still needs to be removed or ignored, you're moving the burden into your application.
   - The benefit is that the padding verification and removal can be incorporated into other application data verification logic. If the padding verification and data verification can be done in constant time, the threat is reduced.
   - Since the interpretation of the padding changes the perceived message length, there may still be timing information emitted from this approach.
+
 - Change the decryption padding mode to ISO10126:
   - ISO10126 decryption padding is compatible with both PKCS7 encryption padding and ANSIX923 encryption padding.
   - Changing the mode reduces the padding oracle knowledge to 1 byte instead of the entire block. However, if the content has a well-known footer, such as a closing XML element, related attacks can continue to attack the rest of the message.
   - This also doesn't prevent plaintext recovery in situations where the attacker can coerce the same plaintext to be encrypted multiple times with a different message offset.
+
 - Gate the evaluation of a decryption call to dampen the timing signal:
   - The computation of hold time must have a minimum in excess of the maximum amount of time the decryption operation would take for any data segment that contains padding.
   - Time computations should be done according to the guidance in [Acquiring high-resolution time stamps](https://msdn.microsoft.com/library/windows/desktop/dn55340.aspx), not by using <xref:System.Environment.TickCount?displayProperty=nameWithType> (subject to roll-over/overflow) or subtracting two system timestamps (subject to NTP adjustment errors).
   - Time computations must be inclusive of the decryption operation including all potential exceptions in managed or C++ applications, not just padded onto the end.
   - If success or failure has been determined yet, the timing gate needs to return failure when it expires.
+
 - Services that are performing unauthenticated decryption should have monitoring in place to detect that a flood of "invalid" messages has come through.
   - Bear in mind that this signal carries both false positives (legitimately corrupted data) and false negatives (spreading out the attack over a sufficiently long time to evade detection).
 
@@ -124,8 +127,10 @@ For programs built against the older Windows Cryptographic API:
     - <xref:System.Security.Cryptography.TripleDES>
     - <xref:System.Security.Cryptography.TripleDESCng>
     - <xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>
+
 - The <xref:System.Security.Cryptography.SymmetricAlgorithm.Padding?displayProperty=nameWithType> property was set to <xref:System.Security.Cryptography.PaddingMode.PKCS7?displayProperty=nameWithType>, <xref:System.Security.Cryptography.PaddingMode.ANSIX923?displayProperty=nameWithType>, or <xref:System.Security.Cryptography.PaddingMode.ISO10126?displayProperty=nameWithType>.
   - Since <xref:System.Security.Cryptography.PaddingMode.PKCS7?displayProperty=nameWithType> is the default, affected code may never have assigned the <xref:System.Security.Cryptography.SymmetricAlgorithm.Padding?displayProperty=nameWithType> property.
+
 - The <xref:System.Security.Cryptography.SymmetricAlgorithm.Mode?displayProperty=nameWithType> property was set to <xref:System.Security.Cryptography.CipherMode.CBC?displayProperty=nameWithType>
   - Since <xref:System.Security.Cryptography.CipherMode.CBC?displayProperty=nameWithType> is the default, affected code may never have assigned the <xref:System.Security.Cryptography.SymmetricAlgorithm.Mode?displayProperty=nameWithType> property.
 

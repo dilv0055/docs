@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # COR_PRF_MONITOR Enumeration
 Contains values that are used to specify behavior, capabilities, or events to which the profiler wishes to subscribe.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     COR_PRF_MONITOR_NONE                = 0x00000000,  
@@ -92,30 +92,32 @@ typedef enum {
                                           COR_PRF_DISABLE_ALL_NGEN_IMAGES  
 } COR_PRF_MONITOR;  
 ```  
-  
+
 ## Members  
  The following sections list `COR_PRF_MONITOR` enumeration members by category. The categories are:  
-  
--   [No flags set](#None)  
-  
--   [Callback flags](#Callback)  
-  
--   [Feature-enabling flags](#Feature)  
-  
--   [Configuration flags](#Config)  
-  
--   [Composite flags](#Composite)  
-  
+
+- [No flags set](#None)  
+
+- [Callback flags](#Callback)  
+
+- [Feature-enabling flags](#Feature)  
+
+- [Configuration flags](#Config)  
+
+- [Composite flags](#Composite)  
+
 <a name="None"></a>   
 ### No flags set  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_MONITOR_NONE`|No flags are set.|  
-  
+
 <a name="Callback"></a>   
 ### Callback flags  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_MONITOR_ALL`|Enables all callback events.|  
@@ -138,10 +140,11 @@ typedef enum {
 |`COR_PRF_MONITOR_REMOTING_COOKIE`|Controls whether a cookie is passed to the `Remoting*` callbacks.|  
 |`COR_PRF_MONITOR_SUSPENDS`|Controls the `RuntimeSuspend*`, `RuntimeResume*`, [RuntimeThreadSuspended](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadsuspended-method.md), and [RuntimeThreadResumed](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimethreadresumed-method.md) callbacks in the [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) interface.|  
 |`COR_PRF_MONITOR_THREADS`|Controls the [ThreadCreated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threadcreated-method.md),  [ThreadDestroyed](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md),  [ThreadAssignedToOSThread](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threadassignedtoosthread-method.md), and [ThreadNameChanged](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-threadnamechanged-method.md) callbacks in the [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) and [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) interfaces.|  
-  
+
 <a name="Feature"></a>   
 ### Feature-enabling flags  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_ENABLE_FRAME_INFO`|Enables the retrieval of an exact `ClassID` for a generic function by calling the [GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) method with a `COR_PRF_FRAME_INFO` value returned by the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) callback.|  
@@ -152,10 +155,11 @@ typedef enum {
 |`COR_PRF_ENABLE_OBJECT_ALLOCATED`|Informs the runtime that the profiler may want object allocation notifications. This flag must be set during initialization. It allows the profiler to subsequently use the `COR_PRF_MONITOR_OBJECT_ALLOCATED` flag to receive [ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md) callbacks.|  
 |`COR_PRF_ENABLE_REJIT`|Enables calls to the [RequestReJIT](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-requestrejit-method.md) and [RequestRevert](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-requestrevert-method.md) methods. The profiler must set this flag on startup.  If the profiler specifies this flag, it must also specify `COR_PRF_DISABLE_ALL_NGEN_IMAGES`.|  
 |`COR_PRF_ENABLE_STACK_SNAPSHOT`|Enables calls to the [DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) method.|  
-  
+
 <a name="Config"></a>   
 ### Configuration flags  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_DISABLE_ALL_NGEN_IMAGES`|Prevents all native images (including profiler-enhanced images) from loading.  If this flag and the `COR_PRF_USE_PROFILE_IMAGES` flag are both specified, `COR_PRF_DISABLE_ALL_NGEN_IMAGES` is used.|  
@@ -163,10 +167,11 @@ typedef enum {
 |`COR_PRF_DISABLE_OPTIMIZATIONS`|Disables all code optimizations.|  
 |`COR_PRF_DISABLE_TRANSPARENCY_CHECKS_UNDER_FULL_TRUST`|Disables security transparency checks that are normally done during just-in-time (JIT) compilation and class loading for full-trust assemblies. This can make some instrumentation easier to perform.|  
 |`COR_PRF_USE_PROFILE_IMAGES`|Causes the native image search to look for profiler-enhanced images. If no profiler-enhanced image is found for a given assembly, the common language runtime falls back to JIT for that assembly. If this flag and the `COR_PRF_DISABLE_ALL_NGEN_IMAGES` flag are both specified, `COR_PRF_DISABLE_ALL_NGEN_IMAGES` is used.|  
-  
+
 <a name="Composite"></a>   
 ### Composite flags  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_ALL`|Represents all `COR_PRF_MONITOR` flag values.|  
@@ -174,19 +179,19 @@ typedef enum {
 |`COR_PRF_MONITOR_ALL`|Enables all callback events.|  
 |`COR_PRF_MONITOR_IMMUTABLE`|Represents all `COR_PRF_MONITOR` flags that can be set only during initialization. Trying to change any of these flags after initialization returns an `HRESULT` value that indicates failure.|  
 |`COR_PRF_REQUIRE_PROFILE_IMAGE`|Represents all `COR_PRF_MONITOR` flags that require profile-enhanced images.|  
-  
+
 ## Remarks  
  A `COR_PRF_MONITOR` value is used with the [ICorProfilerInfo::GetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md) and [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) methods to define the event notifications that the common language runtime makes to the profiler.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorProf.idl, CorProf.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)  
  [GetEventMask Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md)  

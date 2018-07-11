@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # SYMLINEDELTA Structure
 Provides information to the symbol handler about methods that were moved as a result of edits.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct _SYMLINEDELTA  
     {  
@@ -29,16 +29,17 @@ typedef struct _SYMLINEDELTA
         INT32        delta;  
     } SYMLINEDELTA;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`mdMethod`|The method's metadata token.|  
 |`delta`|The number of lines the method was moved.|  
-  
+
 ## Requirements  
  **Header:** CorSym.idl  
-  
+
 ## See Also  
  [Diagnostics Symbol Store Structures](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

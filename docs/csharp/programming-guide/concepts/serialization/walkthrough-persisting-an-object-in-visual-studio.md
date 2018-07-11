@@ -30,9 +30,9 @@ You can examine the sample code online [at the .NET samples GitHub repository](h
 The first step is to create a `Loan` class and a console application that uses the class:
 
 1. Create a new application. Type `dotnet new console -o serialization` to
-create a new console application in a subdirectory named `serialization`.
-1. Open the application in your editor, and add a new class named `Loan.cs`.
-1. Add the following code to your `Loan` class:
+   create a new console application in a subdirectory named `serialization`.
+2. Open the application in your editor, and add a new class named `Loan.cs`.
+3. Add the following code to your `Loan` class:
 
 [!code-csharp[Loan class definition](../../../../../samples/csharp/serialization/Loan.cs#1)]
 

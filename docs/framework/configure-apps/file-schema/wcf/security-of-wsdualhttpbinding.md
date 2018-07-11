@@ -7,15 +7,15 @@ manager: "mbaldwin"
 ---
 # &lt;security&gt; of &lt;wsDualHttpBinding&gt;
 Defines the security capabilities of the [\<wsDualHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
-  
+
  \<system.ServiceModel>  
 \<bindings>  
 \<wsDualHttpBinding>  
 \<binding>  
 \<security>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <security mode="Message/None">  
    <message  
@@ -24,38 +24,42 @@ Defines the security capabilities of the [\<wsDualHttpBinding>](../../../../../d
       negotiateServiceCredential="Boolean"/>  
 </security>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |mode|-   Optional. Specifies the type of security that is applied. The default value is `Message`. This attribute is of type <xref:System.ServiceModel.WSDualHttpSecurityMode>.|  
-  
+
 ## Mode Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |None|Security is disabled.|  
 |Message|Security is provided using SOAP message security.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wsdualhttpbinding.md)|Defines the settings for the message-level security. This element is of type <xref:System.ServiceModel.MessageSecurityOverHttp>.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the [\<wsDualHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
-  
+
 ## Remarks  
  A dual binding exposes the IP address of the client to the service. The client should use security to ensure that it only connects to services it trusts.  
-  
+
 ## See Also  
  <xref:System.ServiceModel.WSDualHttpSecurity>  
  <xref:System.ServiceModel.BasicHttpSecurity>  

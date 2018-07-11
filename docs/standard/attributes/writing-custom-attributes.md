@@ -24,13 +24,13 @@ To design your own custom attributes, you do not need to master many new concept
   
  The primary steps to properly design custom attribute classes are as follows:  
   
--   [Applying the AttributeUsageAttribute](#cpconapplyingattributeusageattribute)  
+- [Applying the AttributeUsageAttribute](#cpconapplyingattributeusageattribute)  
   
--   [Declaring the attribute class](#cpcondeclaringattributeclass)  
+- [Declaring the attribute class](#cpcondeclaringattributeclass)  
   
--   [Declaring constructors](#cpcondeclaringconstructors)  
+- [Declaring constructors](#cpcondeclaringconstructors)  
   
--   [Declaring properties](#cpcondeclaringproperties)  
+- [Declaring properties](#cpcondeclaringproperties)  
   
  This section describes each of these steps and concludes with a [custom attribute example](#cpconcustomattributeexample).  
   
@@ -102,13 +102,13 @@ To design your own custom attributes, you do not need to master many new concept
   
  This attribute definition demonstrates the following points:  
   
--   Attribute classes must be declared as public classes.  
+- Attribute classes must be declared as public classes.  
   
--   By convention, the name of the attribute class ends with the word **Attribute**. While not required, this convention is recommended for readability. When the attribute is applied, the inclusion of the word Attribute is optional.  
+- By convention, the name of the attribute class ends with the word **Attribute**. While not required, this convention is recommended for readability. When the attribute is applied, the inclusion of the word Attribute is optional.  
   
--   All attribute classes must inherit directly or indirectly from **System.Attribute**.  
+- All attribute classes must inherit directly or indirectly from **System.Attribute**.  
   
--   In Microsoft Visual Basic, all custom attribute classes must have the **AttributeUsageAttribute** attribute.  
+- In Microsoft Visual Basic, all custom attribute classes must have the **AttributeUsageAttribute** attribute.  
   
 <a name="cpcondeclaringconstructors"></a>   
 ## Declaring Constructors  

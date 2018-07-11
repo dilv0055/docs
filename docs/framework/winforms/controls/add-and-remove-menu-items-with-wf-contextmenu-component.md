@@ -29,44 +29,44 @@ Explains how to add and remove shortcut menu items in Windows Forms.
   
 ### To remove items from a shortcut menu  
   
-1.  Use the <xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A> or <xref:System.Windows.Forms.Menu.MenuItemCollection.RemoveAt%2A> method of the <xref:System.Windows.Forms.Menu.MenuItems%2A> collection of the <xref:System.Windows.Forms.ContextMenu> component to remove a particular menu item.  
+1. Use the <xref:System.Windows.Forms.Menu.MenuItemCollection.Remove%2A> or <xref:System.Windows.Forms.Menu.MenuItemCollection.RemoveAt%2A> method of the <xref:System.Windows.Forms.Menu.MenuItems%2A> collection of the <xref:System.Windows.Forms.ContextMenu> component to remove a particular menu item.  
   
-    ```vb  
-    ' Removes the first item in the shortcut menu.  
-    ContextMenu1.MenuItems.RemoveAt(0)  
-    ' Removes a particular object from the shortcut menu.  
-    ContextMenu1.MenuItems.Remove(mnuItemNew)  
-    ```  
+   ```vb  
+   ' Removes the first item in the shortcut menu.  
+   ContextMenu1.MenuItems.RemoveAt(0)  
+   ' Removes a particular object from the shortcut menu.  
+   ContextMenu1.MenuItems.Remove(mnuItemNew)  
+   ```  
   
-    ```csharp  
-    // Removes the first item in the shortcut menu.  
-    contextMenu1.MenuItems.RemoveAt(0);  
-    // Removes a particular object from the shortcut menu.  
-    contextMenu1.MenuItems.Remove(mnuItemNew);  
-    ```  
+   ```csharp  
+   // Removes the first item in the shortcut menu.  
+   contextMenu1.MenuItems.RemoveAt(0);  
+   // Removes a particular object from the shortcut menu.  
+   contextMenu1.MenuItems.Remove(mnuItemNew);  
+   ```  
   
-    ```cpp  
-    // Removes the first item in the shortcut menu.  
-    contextMenu1->MenuItems->RemoveAt(0);  
-    // Removes a particular object from the shortcut menu.  
-    contextMenu1->MenuItems->Remove(mnuItemNew);  
-    ```  
+   ```cpp  
+   // Removes the first item in the shortcut menu.  
+   contextMenu1->MenuItems->RemoveAt(0);  
+   // Removes a particular object from the shortcut menu.  
+   contextMenu1->MenuItems->Remove(mnuItemNew);  
+   ```  
   
-     -or-  
+    -or-  
   
-2.  Use the `Clear` method of the `MenuItems` collection of the <xref:System.Windows.Forms.ContextMenu> component to remove all items from the menu.  
+2. Use the `Clear` method of the `MenuItems` collection of the <xref:System.Windows.Forms.ContextMenu> component to remove all items from the menu.  
   
-    ```vb  
-    ContextMenu1.MenuItems.Clear()  
-    ```  
+   ```vb  
+   ContextMenu1.MenuItems.Clear()  
+   ```  
   
-    ```csharp  
-    contextMenu1.MenuItems.Clear();  
-    ```  
+   ```csharp  
+   contextMenu1.MenuItems.Clear();  
+   ```  
   
-    ```cpp  
-    contextMenu1->MenuItems->Clear();  
-    ```  
+   ```cpp  
+   contextMenu1->MenuItems->Clear();  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.ContextMenu>  

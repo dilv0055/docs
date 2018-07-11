@@ -9,7 +9,8 @@ ms.assetid: 5d3197eb-fe66-417e-9e2a-20450660c9c6
 ---
 # String Manipulation Summary (Visual Basic)
 Visual Basic language keywords and run-time library members are organized by purpose and use.  
-  
+
+
 |Action|Language element|  
 |------------|----------------------|  
 |Compare two strings.|<xref:Microsoft.VisualBasic.Strings.StrComp%2A>|  
@@ -25,7 +26,7 @@ Visual Basic language keywords and run-time library members are organized by pur
 |Replace a specified substring.|<xref:Microsoft.VisualBasic.Strings.Replace%2A>|  
 |Return a filter-based string array.|<xref:Microsoft.VisualBasic.Strings.Filter%2A>|  
 |Return a specified number of substrings.|<xref:Microsoft.VisualBasic.Strings.Split%2A>, <xref:Microsoft.VisualBasic.Strings.Join%2A>|  
-  
+
 ## See Also  
  [Keywords](../../../visual-basic/language-reference/keywords/index.md)  
  [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)

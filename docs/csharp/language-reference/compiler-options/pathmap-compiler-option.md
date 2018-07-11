@@ -33,8 +33,8 @@ To specify multiple mapped source paths, separate each with a comma.
 The compiler writes the source path path into its output for the following reasons:
 
 1. The source path is substituted for an argument when the <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> is applied to an optional parameter.
-1. The source path is embedded in a PDB file.
-1. The path of the PDB file is embedded into a PE (portable executable) file.
+2. The source path is embedded in a PDB file.
+3. The path of the PDB file is embedded into a PE (portable executable) file.
 
 This option maps each physical path on the machine where the compiler runs to a corresponding path that should be written in the output files.
 

@@ -1,5 +1,6 @@
 ### HttpUtility.JavaScriptStringEncode escapes ampersand
 
+
 |   |   |
 |---|---|
 |Details|Starting with the .NET Framework 4.5, <xref:System.Web.HttpUtility.JavaScriptStringEncode(System.String)?displayProperty=name> escapes the ampersand (&amp;) character.|

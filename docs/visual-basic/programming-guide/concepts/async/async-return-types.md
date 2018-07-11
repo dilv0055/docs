@@ -144,127 +144,127 @@ End Sub
   
  To run the project, perform the following steps:  
   
-1.  Start Visual Studio.  
+1. Start Visual Studio.  
   
-2.  On the menu bar, choose **File**, **New**, **Project**.  
+2. On the menu bar, choose **File**, **New**, **Project**.  
   
-     The **New Project** dialog box opens.  
+    The **New Project** dialog box opens.  
   
-3.  In the **Installed**, **Templates** category, choose **Visual Basic**, and then choose **Windows**. Choose **WPF Application** from the list of project types.  
+3. In the **Installed**, **Templates** category, choose **Visual Basic**, and then choose **Windows**. Choose **WPF Application** from the list of project types.  
   
-4.  Enter `AsyncReturnTypes` as the name of the project, and then choose the **OK** button.  
+4. Enter `AsyncReturnTypes` as the name of the project, and then choose the **OK** button.  
   
-     The new project appears in **Solution Explorer**.  
+    The new project appears in **Solution Explorer**.  
   
-5.  In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.  
+5. In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.  
   
-     If the tab is not visible, open the shortcut menu for MainWindow.xaml in **Solution Explorer**, and then choose **Open**.  
+    If the tab is not visible, open the shortcut menu for MainWindow.xaml in **Solution Explorer**, and then choose **Open**.  
   
-6.  In the **XAML** window of MainWindow.xaml, replace the code with the following code.  
+6. In the **XAML** window of MainWindow.xaml, replace the code with the following code.  
   
-    ```vb  
-    <Window x:Class="MainWindow"  
-            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
-            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
-            Title="MainWindow" Height="350" Width="525">  
-        <Grid>  
-            <Button x:Name="button1" Content="Start" HorizontalAlignment="Left" Margin="214,28,0,0" VerticalAlignment="Top" Width="75" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Aharoni" Click="button1_Click"/>  
-            <TextBox x:Name="textBox1" Margin="0,80,0,0" TextWrapping="Wrap" FontFamily="Lucida Console"/>  
+   ```vb  
+   <Window x:Class="MainWindow"  
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+           Title="MainWindow" Height="350" Width="525">  
+       <Grid>  
+           <Button x:Name="button1" Content="Start" HorizontalAlignment="Left" Margin="214,28,0,0" VerticalAlignment="Top" Width="75" HorizontalContentAlignment="Center" FontWeight="Bold" FontFamily="Aharoni" Click="button1_Click"/>  
+           <TextBox x:Name="textBox1" Margin="0,80,0,0" TextWrapping="Wrap" FontFamily="Lucida Console"/>  
   
-        </Grid>  
-    </Window>  
-    ```  
+       </Grid>  
+   </Window>  
+   ```  
   
-     A simple window that contains a text box and a button appears in the **Design** window of MainWindow.xaml.  
+    A simple window that contains a text box and a button appears in the **Design** window of MainWindow.xaml.  
   
-7.  In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.vb, and then choose **View Code**.  
+7. In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.vb, and then choose **View Code**.  
   
-8.  Replace the code in MainWindow.xaml.vb with the following code.  
+8. Replace the code in MainWindow.xaml.vb with the following code.  
   
-    ```vb  
-    Class MainWindow  
+   ```vb  
+   Class MainWindow  
   
-        ' SUB EXAMPLE  
-        Async Sub button1_Click(sender As Object, e As RoutedEventArgs) Handles button1.Click  
+       ' SUB EXAMPLE  
+       Async Sub button1_Click(sender As Object, e As RoutedEventArgs) Handles button1.Click  
   
-            textBox1.Clear()  
+           textBox1.Clear()  
   
-            ' Start the process and await its completion. DriverAsync is a   
-            ' Task-returning async method.  
-            Await DriverAsync()  
+           ' Start the process and await its completion. DriverAsync is a   
+           ' Task-returning async method.  
+           Await DriverAsync()  
   
-            ' Say goodbye.  
-            textBox1.Text &= vbCrLf & "All done, exiting button-click event handler."  
-        End Sub  
+           ' Say goodbye.  
+           textBox1.Text &= vbCrLf & "All done, exiting button-click event handler."  
+       End Sub  
   
-        Async Function DriverAsync() As Task  
+       Async Function DriverAsync() As Task  
   
-            ' Task(Of T)   
-            ' Call and await the Task(Of T)-returning async method in the same statement.  
-            Dim result1 As Integer = Await TaskOfT_MethodAsync()  
+           ' Task(Of T)   
+           ' Call and await the Task(Of T)-returning async method in the same statement.  
+           Dim result1 As Integer = Await TaskOfT_MethodAsync()  
   
-            ' Call and await in separate statements.  
-            Dim integerTask As Task(Of Integer) = TaskOfT_MethodAsync()  
+           ' Call and await in separate statements.  
+           Dim integerTask As Task(Of Integer) = TaskOfT_MethodAsync()  
   
-            ' You can do other work that does not rely on resultTask before awaiting.  
-            textBox1.Text &= String.Format("Application can continue working while the Task(Of T) runs. . . . " & vbCrLf)  
+           ' You can do other work that does not rely on resultTask before awaiting.  
+           textBox1.Text &= String.Format("Application can continue working while the Task(Of T) runs. . . . " & vbCrLf)  
   
-            Dim result2 As Integer = Await integerTask  
+           Dim result2 As Integer = Await integerTask  
   
-            ' Display the values of the result1 variable, the result2 variable, and  
-            ' the resultTask.Result property.  
-            textBox1.Text &= String.Format(vbCrLf & "Value of result1 variable:   {0}" & vbCrLf, result1)  
-            textBox1.Text &= String.Format("Value of result2 variable:   {0}" & vbCrLf, result2)  
-            textBox1.Text &= String.Format("Value of resultTask.Result:  {0}" & vbCrLf, integerTask.Result)  
+           ' Display the values of the result1 variable, the result2 variable, and  
+           ' the resultTask.Result property.  
+           textBox1.Text &= String.Format(vbCrLf & "Value of result1 variable:   {0}" & vbCrLf, result1)  
+           textBox1.Text &= String.Format("Value of result2 variable:   {0}" & vbCrLf, result2)  
+           textBox1.Text &= String.Format("Value of resultTask.Result:  {0}" & vbCrLf, integerTask.Result)  
   
-            ' Task   
-            ' Call and await the Task-returning async method in the same statement.  
-            Await Task_MethodAsync()  
+           ' Task   
+           ' Call and await the Task-returning async method in the same statement.  
+           Await Task_MethodAsync()  
   
-            ' Call and await in separate statements.  
-            Dim simpleTask As Task = Task_MethodAsync()  
+           ' Call and await in separate statements.  
+           Dim simpleTask As Task = Task_MethodAsync()  
   
-            ' You can do other work that does not rely on simpleTask before awaiting.  
-            textBox1.Text &= String.Format(vbCrLf & "Application can continue working while the Task runs. . . ." & vbCrLf)  
+           ' You can do other work that does not rely on simpleTask before awaiting.  
+           textBox1.Text &= String.Format(vbCrLf & "Application can continue working while the Task runs. . . ." & vbCrLf)  
   
-            Await simpleTask  
-        End Function  
+           Await simpleTask  
+       End Function  
   
-        ' TASK(OF T) EXAMPLE  
-        Async Function TaskOfT_MethodAsync() As Task(Of Integer)  
+       ' TASK(OF T) EXAMPLE  
+       Async Function TaskOfT_MethodAsync() As Task(Of Integer)  
   
-            ' The body of an async method is expected to contain an awaited   
-            ' asynchronous call.  
-            ' Task.FromResult is a placeholder for actual work that returns a string.  
-            Dim today As String = Await Task.FromResult(Of String)(DateTime.Now.DayOfWeek.ToString())  
+           ' The body of an async method is expected to contain an awaited   
+           ' asynchronous call.  
+           ' Task.FromResult is a placeholder for actual work that returns a string.  
+           Dim today As String = Await Task.FromResult(Of String)(DateTime.Now.DayOfWeek.ToString())  
   
-            ' The method then can process the result in some way.  
-            Dim leisureHours As Integer  
-            If today.First() = "S" Then  
-                leisureHours = 16  
-            Else  
-                leisureHours = 5  
-            End If  
+           ' The method then can process the result in some way.  
+           Dim leisureHours As Integer  
+           If today.First() = "S" Then  
+               leisureHours = 16  
+           Else  
+               leisureHours = 5  
+           End If  
   
-            ' Because the return statement specifies an operand of type Integer, the   
-            ' method must have a return type of Task(Of Integer).   
-            Return leisureHours  
-        End Function  
+           ' Because the return statement specifies an operand of type Integer, the   
+           ' method must have a return type of Task(Of Integer).   
+           Return leisureHours  
+       End Function  
   
-        ' TASK EXAMPLE  
-        Async Function Task_MethodAsync() As Task  
+       ' TASK EXAMPLE  
+       Async Function Task_MethodAsync() As Task  
   
-            ' The body of an async method is expected to contain an awaited   
-            ' asynchronous call.  
-            ' Task.Delay is a placeholder for actual work.  
-            Await Task.Delay(2000)  
-            textBox1.Text &= String.Format(vbCrLf & "Sorry for the delay. . . ." & vbCrLf)  
+           ' The body of an async method is expected to contain an awaited   
+           ' asynchronous call.  
+           ' Task.Delay is a placeholder for actual work.  
+           Await Task.Delay(2000)  
+           textBox1.Text &= String.Format(vbCrLf & "Sorry for the delay. . . ." & vbCrLf)  
   
-            ' This method has no return statement, so its return type is Task.   
-        End Function  
+           ' This method has no return statement, so its return type is Task.   
+       End Function  
   
-    End Class  
-    ```  
+   End Class  
+   ```  
   
 9. Choose the F5 key to run the program, and then choose the **Start** button.  
   

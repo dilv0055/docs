@@ -41,7 +41,7 @@ Starting with Visual Basic 15.3, Visual Basic can infer the names of tuple eleme
 The following example creates a `stateInfo` tuple that contains three explicitly named elements, `state`, `stateName`, and `capital`. Note that, in naming the elements, the tuple initialization statement simply assigns the named elements the values of the identically named variables.
 
 [!code-vb[ExplicitlyNamed](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#1)]
- 
+
 Because elements and variables have the same name, the Visual Basic compiler can infer the names of the fields, as the following example shows.
 
 [!code-vb[ExplicitlyNamed](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
@@ -63,9 +63,9 @@ In some cases, the Visual Basic compiler cannot infer the tuple element name fro
 - The candidate name is the same as the name of a tuple member, such as `Item3`, `Rest`, or `ToString`.
 
 - The candidate name is duplicated in the tuple.
- 
+
 When field name inference fails, Visual Basic does not generate a compiler error, nor is an exception thrown at runtime. Instead, tuple fields must be referenced by their predefined names, such as `Item1` and `Item2`. 
-  
+
 ## Tuples versus structures
 
 A Visual Basic tuple is a value type that is an instance of one of the a **System.ValueTuple** generic types. For example, the `holiday` tuple defined in the previous example is an instance of the <xref:System.ValueTuple%603> structure. It is designed to be a lightweight container for data. Since the tuple aims to make it easy to create an object with multiple data items, it lacks some of the features that a custom structure might have. These include:
@@ -79,6 +79,7 @@ A Visual Basic tuple is a value type that is an instance of one of the a **Syste
 If custom members, property and field validation, or immutability are important, you should use the Visual Basic [Structure](../../../language-reference/statements/structure-statement.md) statement to define a custom value type.
 
 A Visual Basic tuple does inherit the members of its **ValueTuple** type. In addition to its fields, these include the following methods:
+
 
 | Member | Description |
 | ---|---|

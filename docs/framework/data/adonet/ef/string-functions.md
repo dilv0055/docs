@@ -5,9 +5,10 @@ ms.assetid: 338f0c26-8aee-43eb-bd1a-ec0849a376b9
 ---
 # String Functions
 The .NET Framework Data Provider for SQL Server (SqlClient) provides `String` functions that perform operations on an input `String` and return a `String` or numeric value result. These functions are in the SqlServer namespace, which is available when you use SqlClient. A provider's namespace property allows the Entity Framework to discover which prefix is used by this provider for specific constructs, such as types and functions.  
-  
+
  The following table shows the SqlClient `String` functions.  
-  
+
+
 |Function|Description|  
 |--------------|-----------------|  
 |`ASCII(expression)`|Returns the ASCII code value of the leftmost character of a string expression.<br /><br /> **Arguments**<br /><br /> `expression`: Any valid expression of an ASCII `String` type.<br /><br /> **Return Value**<br /><br /> An `Int32`.<br /><br /> **Example**<br /><br /> `SqlServer.ASCII('A')`|  
@@ -33,13 +34,14 @@ The .NET Framework Data Provider for SQL Server (SqlClient) provides `String` fu
 |`SUBSTRING(str_expression, start, length)`|Returns part of a `String` expression.<br /><br /> **Arguments**<br /><br /> `str_expression`: An expression of a `String` (ASCII or Unicode) type or a `Binary` type.<br /><br /> `start`: An `Int64` (not returned in SQL Server 2000) or `Int32` that specifies where the substring starts. 1 refers to the first character in the string.<br /><br /> `length`: An `Int64` (not returned in SQL Server 2000) or `Int32` that specifies how many characters of the expression will be returned.<br /><br /> **Return Value**<br /><br /> A `String` (ASCII or Unicode) type or a `Binary` type.<br /><br /> **Example**<br /><br /> `SqlServer.SUBSTRING('abcd', 2, 2)`|  
 |`UNICODE(expression)`|Returns the integer value, as defined by the Unicode standard, for the first character of the input expression.<br /><br /> **Arguments**<br /><br /> `expression`: A Unicode `String`.<br /><br /> **Return Value**<br /><br /> An `Int32`.<br /><br /> **Example**<br /><br /> `SqlServer.UNICODE('a')`|  
 |`UPPER(expression)`|Returns a `String` expression after converting lowercase character data to uppercase.<br /><br /> **Arguments**<br /><br /> `expression`: An expression of an ASCII or a Unicode String type.<br /><br /> **Return Value**<br /><br /> An ASCII or a Unicode `String` type.<br /><br /> **Example**<br /><br /> `SqlServer.UPPER('AbB')`|  
-  
+
  For more information about the `String` functions that SqlClient supports, see the documentation for the SQL Server version that you specified in the SqlClient provider manifest:  
-  
+
+
 |SQL Server 2000|SQL Server 2005|SQL Server 2008|  
 |---------------------|---------------------|---------------------|  
 |[String Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115915)|[String Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115916)|[String Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115914)|  
-  
+
 ## See Also  
  [SqlClient for Entity Framework Functions](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)  
  [Known Issues in SqlClient for Entity Framework](../../../../../docs/framework/data/adonet/ef/known-issues-in-sqlclient-for-entity-framework.md)

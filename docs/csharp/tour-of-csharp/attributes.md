@@ -4,7 +4,6 @@ description: Learn about declarative programming using attributes in C#
 ms.date: 08/10/2016
 ms.assetid: 753bcfe2-7ddd-4487-9513-ba70937fc8e9
 ---
-
 # Attributes
 
 Types, members, and other entities in a C# program support modifiers that control certain aspects of their behavior. For example, the accessibility of a method is controlled using the `public`, `protected`, `internal`, and `private` modifiers. C# generalizes this capability such that user-defined types of declarative information can be attached to program entities and retrieved at run-time. Programs specify this additional declarative information by defining and using ***attributes***.
@@ -21,5 +20,5 @@ This example attaches a `HelpAttribute` to the `Widget` class. It adds another `
 
 When a particular attribute is requested through reflection, the constructor for the attribute class is invoked with the information provided in the program source, and the resulting attribute instance is returned. If additional information was provided through properties, those properties are set to the given values before the attribute instance is returned.
 
->[!div class="step-by-step"]
-[Previous](delegates.md)
+> [!div  class="step-by-step"]
+> [Previous](delegates.md)

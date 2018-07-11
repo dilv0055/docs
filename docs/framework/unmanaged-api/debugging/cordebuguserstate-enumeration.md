@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # CorDebugUserState Enumeration
 Indicates the user state of a thread.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugUserState {  
     USER_STOP_REQUESTED     =  0x01,  
@@ -35,9 +35,10 @@ typedef enum CorDebugUserState {
     USER_THREADPOOL         = 0x100  
 } CorDebugUserState;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |`USER_STOP_REQUESTED`|A termination of the thread has been requested.|  
@@ -49,20 +50,20 @@ typedef enum CorDebugUserState {
 |`USER_SUSPENDED`|The thread has been suspended.|  
 |`USER_UNSAFE_POINT`|The thread is at an unsafe point. That is, the thread is at a point in execution where it may block garbage collection.<br /><br /> Debug events may be dispatched from unsafe points, but suspending a thread at an unsafe point  will very likely cause a deadlock until the thread is resumed. The safe and unsafe points are determined by the just-in-time (JIT) and garbage collection implementation.|  
 |`USER_THREADPOOL`|The thread is from the thread pool.|  
-  
+
 ## Remarks  
  The user state of a thread is the state that the thread has when the debugger examines it. A thread may have a combination of user states.  
-  
+
  Use the [ICorDebugThread::GetUserState](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md) method to retrieve a thread's user state.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

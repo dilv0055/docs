@@ -19,45 +19,45 @@ ms.assetid: a01bee43-d9eb-4954-84e6-45a93532d08d
   
 ### To set the size of a panel  
   
-1.  In a procedure, set the <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>, <xref:System.Windows.Forms.StatusBarPanel.MinWidth%2A>, and <xref:System.Windows.Forms.StatusBarPanel.Width%2A> properties (or any subset therein) for the status-bar panels using their index passed through the <xref:System.Windows.Forms.StatusBar.Panels%2A> property of the <xref:System.Windows.Forms.StatusBarPanel> collection.  
+1. In a procedure, set the <xref:System.Windows.Forms.StatusBarPanel.AutoSize%2A>, <xref:System.Windows.Forms.StatusBarPanel.MinWidth%2A>, and <xref:System.Windows.Forms.StatusBarPanel.Width%2A> properties (or any subset therein) for the status-bar panels using their index passed through the <xref:System.Windows.Forms.StatusBar.Panels%2A> property of the <xref:System.Windows.Forms.StatusBarPanel> collection.  
   
-    ```vb  
-    Public Sub SetStatusBarPanelSize()  
-    ' Create panel and set text property.  
-       StatusBar1.Panels.Add("One")  
-    ' Set properties of panels.  
-       StatusBar1.Panels(0).AutoSize = StatusBarPanelAutoSize.Spring  
-       StatusBar1.Panels(0).Width = 200  
-    ' Enable the StatusBar control to display panels.  
-       StatusBar1.ShowPanels = True  
-        End Sub  
-    ```  
+   ```vb  
+   Public Sub SetStatusBarPanelSize()  
+   ' Create panel and set text property.  
+      StatusBar1.Panels.Add("One")  
+   ' Set properties of panels.  
+      StatusBar1.Panels(0).AutoSize = StatusBarPanelAutoSize.Spring  
+      StatusBar1.Panels(0).Width = 200  
+   ' Enable the StatusBar control to display panels.  
+      StatusBar1.ShowPanels = True  
+       End Sub  
+   ```  
   
-    ```csharp  
-    public void SetStatusBarPanelSize()  
-    {  
-       // Create panel and set text property.  
-       statusBar1.Panels.Add("One");  
-       // Set properties of panels.  
-       statusBar1.Panels[0].AutoSize = StatusBarPanelAutoSize.Spring;  
-       statusBar1.Panels[0].Width = 200;  
-       statusBar1.ShowPanels = true;  
-    }  
-    ```  
+   ```csharp  
+   public void SetStatusBarPanelSize()  
+   {  
+      // Create panel and set text property.  
+      statusBar1.Panels.Add("One");  
+      // Set properties of panels.  
+      statusBar1.Panels[0].AutoSize = StatusBarPanelAutoSize.Spring;  
+      statusBar1.Panels[0].Width = 200;  
+      statusBar1.ShowPanels = true;  
+   }  
+   ```  
   
-    ```cpp  
-    public:  
-       void SetStatusBarPanelSize()  
-       {  
-          // Create panel and set text property.  
-          statusBar1->Panels->Add("One");  
-          // Set properties of panels.  
-          statusBar1->Panels[0]->AutoSize =  
-             StatusBarPanelAutoSize::Spring;  
-          statusBar1->Panels[0]->Width = 200;  
-          statusBar1->ShowPanels = true;  
-       }  
-    ```  
+   ```cpp  
+   public:  
+      void SetStatusBarPanelSize()  
+      {  
+         // Create panel and set text property.  
+         statusBar1->Panels->Add("One");  
+         // Set properties of panels.  
+         statusBar1->Panels[0]->AutoSize =  
+            StatusBarPanelAutoSize::Spring;  
+         statusBar1->Panels[0]->Width = 200;  
+         statusBar1->ShowPanels = true;  
+      }  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.StatusBar>  

@@ -7,15 +7,15 @@ manager: "mbaldwin"
 ---
 # &lt;security&gt; element of &lt;ws2007FederationHttpBinding&gt;
 Defines the security settings of the [\<ws2007FederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) element.  
-  
+
  \<system.ServiceModel>  
 \<bindings>  
 \<ws2007FederationHttpBinding>  
 \<binding>  
 \<security>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <ws2007FederationBinding>  
     <binding >  
@@ -30,36 +30,40 @@ Defines the security settings of the [\<ws2007FederationHttpBinding>](../../../.
     </binding>  
 </ws2007FederationBinding>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`mode`|Optional. Specifies the type of security that is applied. The default value is `Message`. This attribute is of type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.|  
-  
+
 ## mode Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |None|The SOAP message is not secure during transfer.|  
 |Message|Integrity, confidentiality, server authentication and client authentication are provided using SOAP message security. By default, the body is encrypted and signed. The service must be configured with a certificate. Client authentication is based on the token issued to the client by a security token service.|  
 |TransportWithMessageCredential|Integrity, confidentiality and server authentication are provided by HTTPS. The service must be configured with a certificate. Client authentication is provided by means of SOAP message security and is based on the token issued to the client by a security token service.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-of-ws2007httpbinding.md)|Defines the settings for the message-level security. This element is of type <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the [\<wsDualHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.WSFederationHttpSecurity>  
  <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>  

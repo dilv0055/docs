@@ -16,22 +16,22 @@ In Visual Basic, two variable references are considered identical if their point
   
 #### To determine if two objects are identical  
   
-1.  Set up a `Boolean` expression to test the two objects.  
+1. Set up a `Boolean` expression to test the two objects.  
   
-2.  In your testing expression, use the `Is` operator with the two objects as operands.  
+2. In your testing expression, use the `Is` operator with the two objects as operands.  
   
-     `Is` returns `True` if the objects point to the same class instance.  
+    `Is` returns `True` if the objects point to the same class instance.  
   
 ## Determining if Two Objects Are Not Identical  
  Sometimes you want to perform an action if the two objects are not identical, and it can be awkward to combine `Not` and `Is`, for example `If Not obj1 Is obj2`. In such a case you can use the `IsNot` operator.  
   
 #### To determine if two objects are not identical  
   
-1.  Set up a `Boolean` expression to test the two objects.  
+1. Set up a `Boolean` expression to test the two objects.  
   
-2.  In your testing expression, use the `IsNot` operator with the two objects as operands.  
+2. In your testing expression, use the `IsNot` operator with the two objects as operands.  
   
-     `IsNot` returns `True` if the objects do not point to the same class instance.  
+    `IsNot` returns `True` if the objects do not point to the same class instance.  
   
 ## Example  
  The following example tests pairs of `Object` variables to see if they point to the same class instance.  

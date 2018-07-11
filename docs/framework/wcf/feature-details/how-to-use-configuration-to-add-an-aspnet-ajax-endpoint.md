@@ -12,91 +12,91 @@ Windows Communication Foundation (WCF) allows you to create a service that makes
   
 ### To create a basic WCF service  
   
-1.  Define a basic WCF service contract with an interface marked with the <xref:System.ServiceModel.ServiceContractAttribute> attribute. Mark each operation with the <xref:System.ServiceModel.OperationContractAttribute>. Be sure to set the <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> property.  
+1. Define a basic WCF service contract with an interface marked with the <xref:System.ServiceModel.ServiceContractAttribute> attribute. Mark each operation with the <xref:System.ServiceModel.OperationContractAttribute>. Be sure to set the <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> property.  
   
-    ```  
-    [ServiceContract(Namespace = "MyService")]  
-    public interface ICalculator  
-    {  
-        [OperationContract]  
-         // This operation returns the sum of d1 and d2.  
-        double Add(double n1, double n2);  
+   ```  
+   [ServiceContract(Namespace = "MyService")]  
+   public interface ICalculator  
+   {  
+       [OperationContract]  
+        // This operation returns the sum of d1 and d2.  
+       double Add(double n1, double n2);  
   
-        //Other operations omitted…  
+       //Other operations omitted…  
   
-    }  
-    ```  
+   }  
+   ```  
   
-2.  Implement the `ICalculator` service contract with a `CalculatorService`.  
+2. Implement the `ICalculator` service contract with a `CalculatorService`.  
   
-    ```  
-    public class CalculatorService : ICalculator  
-    {  
-        public double Add(double n1, double n2)  
-        {  
-            return n1 + n2;  
-        }  
+   ```  
+   public class CalculatorService : ICalculator  
+   {  
+       public double Add(double n1, double n2)  
+       {  
+           return n1 + n2;  
+       }  
   
-    //Other operations omitted…  
-    ```  
+   //Other operations omitted…  
+   ```  
   
-3.  Define a namespace for the `ICalculator` and `CalculatorService` implementations by wrapping them in a namespace block.  
+3. Define a namespace for the `ICalculator` and `CalculatorService` implementations by wrapping them in a namespace block.  
   
-    ```  
-    Namespace Microsoft.Ajax.Samples  
-    {  
-        //Include the code for ICalculator and Caculator here.  
-    }  
-    ```  
+   ```  
+   Namespace Microsoft.Ajax.Samples  
+   {  
+       //Include the code for ICalculator and Caculator here.  
+   }  
+   ```  
   
 ### To create an ASP.NET AJAX endpoint for the service  
   
-1.  Create a behavior configuration and specify the [\<enableWebScript>](../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md) behavior for ASP.NET AJAX-enabled endpoints of the service.  
+1. Create a behavior configuration and specify the [\<enableWebScript>](../../../../docs/framework/configure-apps/file-schema/wcf/enablewebscript.md) behavior for ASP.NET AJAX-enabled endpoints of the service.  
   
-    ```xml  
-    <system.serviceModel>  
-        <behaviors>  
-            <endpointBehaviors>  
-                <behavior name="AspNetAjaxBehavior">  
-                    <enableWebScript />  
-                </behavior>  
-            </endpointBehaviors>  
-        </behaviors>  
-    </system.serviceModel>  
-    ```  
+   ```xml  
+   <system.serviceModel>  
+       <behaviors>  
+           <endpointBehaviors>  
+               <behavior name="AspNetAjaxBehavior">  
+                   <enableWebScript />  
+               </behavior>  
+           </endpointBehaviors>  
+       </behaviors>  
+   </system.serviceModel>  
+   ```  
   
-2.  Create an endpoint for the service that uses the <xref:System.ServiceModel.WebHttpBinding> and the ASP.NET AJAX behavior defined in the previous step.  
+2. Create an endpoint for the service that uses the <xref:System.ServiceModel.WebHttpBinding> and the ASP.NET AJAX behavior defined in the previous step.  
   
-    ```xml  
-    <system.serviceModel>  
-        <services>  
-            <service name="Microsoft.Ajax.Samples.CalculatorService">  
-                <endpoint address=""  
-                    behaviorConfiguration="AspNetAjaxBehavior"   
-                    binding="webHttpBinding"  
-                    contract="Microsoft.Ajax.Samples.ICalculator" />  
-            </service>  
-        </services>  
-    </system.serviceModel>   
-    ```  
+   ```xml  
+   <system.serviceModel>  
+       <services>  
+           <service name="Microsoft.Ajax.Samples.CalculatorService">  
+               <endpoint address=""  
+                   behaviorConfiguration="AspNetAjaxBehavior"   
+                   binding="webHttpBinding"  
+                   contract="Microsoft.Ajax.Samples.ICalculator" />  
+           </service>  
+       </services>  
+   </system.serviceModel>   
+   ```  
   
 ### To host the service in IIS  
   
-1.  To host the service in IIS, create a new file named service with a .svc extension in the application. Edit this file by adding the appropriate [@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) directive information for the service. For example, the content in the service file for the `CalculatorService` sample contains the following information.  
+1. To host the service in IIS, create a new file named service with a .svc extension in the application. Edit this file by adding the appropriate [@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) directive information for the service. For example, the content in the service file for the `CalculatorService` sample contains the following information.  
   
-    ```  
-    <%@ServiceHost   
-    language=c#   
-    Debug="true"   
-    Service="Microsoft.Ajax.Samples.CalculatorService"  
-    %>  
-    ```  
+   ```  
+   <%@ServiceHost   
+   language=c#   
+   Debug="true"   
+   Service="Microsoft.Ajax.Samples.CalculatorService"  
+   %>  
+   ```  
   
-2.  For more information about hosting in IIS, see [How to: Host a WCF Service in IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md).  
+2. For more information about hosting in IIS, see [How to: Host a WCF Service in IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md).  
   
 ### To call the service  
   
-1.  The endpoint is configured at an empty address relative to the .svc file, so the service is now available and can be invoked by sending requests to service.svc/\<operation> - for example, service.svc/Add for the `Add` operation. You can use it by entering the endpoint URL into the Scripts collection of the ASP.NET AJAX Script Manager control. For an example, see the [AJAX Service Using HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md).  
+1. The endpoint is configured at an empty address relative to the .svc file, so the service is now available and can be invoked by sending requests to service.svc/\<operation> - for example, service.svc/Add for the `Add` operation. You can use it by entering the endpoint URL into the Scripts collection of the ASP.NET AJAX Script Manager control. For an example, see the [AJAX Service Using HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md).  
   
 ## See Also  
  [Creating WCF Services for ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)  

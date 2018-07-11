@@ -10,7 +10,7 @@ The operation cannot be performed because no network connection is available.
   
 ## To correct this error  
   
--   Connect to the network and reattempt the operation.  
+- Connect to the network and reattempt the operation.  
   
 ## See Also  
  [My.Computer.Network.Ping](xref:Microsoft.VisualBasic.Devices.Network.Ping%2A)  

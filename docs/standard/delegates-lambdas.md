@@ -31,16 +31,16 @@ public class Program
 }
 ```
 
-*   On line 4 we create a delegate type of a certain signature, in this case a method that takes a string parameter and then returns a string parameter.
-*   On line 6, we define the implementation of the delegate by providing a method that has the exact same signature.
-*   On line 13, the method is assigned to a type that conforms to the `Reverse` delegate.
-*   Finally, on line 15 we invoke the delegate passing a string to be reversed.
+* On line 4 we create a delegate type of a certain signature, in this case a method that takes a string parameter and then returns a string parameter.
+* On line 6, we define the implementation of the delegate by providing a method that has the exact same signature.
+* On line 13, the method is assigned to a type that conforms to the `Reverse` delegate.
+* Finally, on line 15 we invoke the delegate passing a string to be reversed.
 
 In order to streamline the development process, .NET includes a set of delegate types that programmers can reuse and not have to create new types. These are `Func<>`, `Action<>` and `Predicate<>`, and they can be used in various places throughout the .NET APIs without the need to define new delegate types. Of course, there are some differences between the three as you will see in their signatures which mostly have to do with the way they were meant to be used:
 
-*   `Action<>` is used when there is a need to perform an action using the arguments of the delegate.
-*   `Func<>` is used usually when you have a transformation on hand, that is, you need to transform the arguments of the delegate into a different result. Projections are a prime example of this.
-*   `Predicate<>` is used when you need to determine if the argument satisfies the condition of the delegate. It can also be written as a `Func<T, bool>`.
+* `Action<>` is used when there is a need to perform an action using the arguments of the delegate.
+* `Func<>` is used usually when you have a transformation on hand, that is, you need to transform the arguments of the delegate into a different result. Projections are a prime example of this.
+* `Predicate<>` is used when you need to determine if the argument satisfies the condition of the delegate. It can also be written as a `Func<T, bool>`.
 
 We can now take our example above and rewrite it using the `Func<>` delegate instead of a custom type. The program will continue running exactly the same.
 
@@ -94,7 +94,7 @@ public class Program
 }
 ```
 
-Notice the highlighted lines. As you can see, the body of the delegate is just a set of expressions, as any other delegate. But instead of it being a separate definition, we’ve introduced it _ad hoc_ in our call to the `FindAll()` method of the `List<T>` type.
+Notice the highlighted lines. As you can see, the body of the delegate is just a set of expressions, as any other delegate. But instead of it being a separate definition, we’ve introduced it *ad hoc* in our call to the `FindAll()` method of the `List<T>` type.
 
 However, even with this approach, there is still much code that we can throw away. This is where **lambda expressions** come into play.
 
@@ -143,6 +143,6 @@ public MainWindow()
 
 ## Further reading and resources
 
-*   [Delegates](../../docs/csharp/programming-guide/delegates/index.md)
-*   [Anonymous Functions](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
-*   [Lambda expressions](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+* [Delegates](../../docs/csharp/programming-guide/delegates/index.md)
+* [Anonymous Functions](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
+* [Lambda expressions](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)

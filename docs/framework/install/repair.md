@@ -5,7 +5,6 @@ author: rlander
 ms.author: mairaw
 ms.date: 08/03/2017
 ---
-
 # Repair the .NET Framework
 
 In some situations, your .NET Framework installation can become damaged and require repairs. This might be the case if your app crashes right after you try to start it or if you cannot install newer .NET Framework versions.

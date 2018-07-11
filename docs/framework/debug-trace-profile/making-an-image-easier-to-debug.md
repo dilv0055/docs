@@ -16,9 +16,9 @@ When compiling unmanaged code, you can configure an executable image for debuggi
   
  This JIT configuration has two aspects:  
   
--   You can request the JIT-compiler to generate tracking information. This makes it possible for the debugger to match up a chain of MSIL with its machine code counterpart, and to track where local variables and function arguments are stored.  In the .NET Framework version 2.0, the JIT compiler will always generate tracking information, so there is no need to request it.  
+- You can request the JIT-compiler to generate tracking information. This makes it possible for the debugger to match up a chain of MSIL with its machine code counterpart, and to track where local variables and function arguments are stored.  In the .NET Framework version 2.0, the JIT compiler will always generate tracking information, so there is no need to request it.  
   
--   You can request the JIT-compiler to not optimize the resulting machine code.  
+- You can request the JIT-compiler to not optimize the resulting machine code.  
   
  Normally, the compiler that generates the MSIL sets these JIT-compiler options appropriately, based upon the IDE switches or command-line options you specify, for example, /**Od**.  
   

@@ -9,39 +9,39 @@ This example shows how to join data from two comma-delimited files that share a 
   
 ## To create the data files
   
-1.  Copy the following lines into a file that is named *scores.csv* and save it to your project folder. The file represents spreadsheet data. Column 1 is the student's ID, and columns 2 through 5 are test scores.  
+1. Copy the following lines into a file that is named *scores.csv* and save it to your project folder. The file represents spreadsheet data. Column 1 is the student's ID, and columns 2 through 5 are test scores.  
   
-    ```  
-    111, 97, 92, 81, 60  
-    112, 75, 84, 91, 39  
-    113, 88, 94, 65, 91  
-    114, 97, 89, 85, 82  
-    115, 35, 72, 91, 70  
-    116, 99, 86, 90, 94  
-    117, 93, 92, 80, 87  
-    118, 92, 90, 83, 78  
-    119, 68, 79, 88, 92  
-    120, 99, 82, 81, 79  
-    121, 96, 85, 91, 60  
-    122, 94, 92, 91, 91  
-    ```  
+   ```  
+   111, 97, 92, 81, 60  
+   112, 75, 84, 91, 39  
+   113, 88, 94, 65, 91  
+   114, 97, 89, 85, 82  
+   115, 35, 72, 91, 70  
+   116, 99, 86, 90, 94  
+   117, 93, 92, 80, 87  
+   118, 92, 90, 83, 78  
+   119, 68, 79, 88, 92  
+   120, 99, 82, 81, 79  
+   121, 96, 85, 91, 60  
+   122, 94, 92, 91, 91  
+   ```  
   
-2.  Copy the following lines into a file that is named *names.csv* and save it to your project folder. The file represents a spreadsheet that contains the student's last name, first name, and student ID.  
+2. Copy the following lines into a file that is named *names.csv* and save it to your project folder. The file represents a spreadsheet that contains the student's last name, first name, and student ID.  
   
-    ```  
-    Omelchenko,Svetlana,111  
-    O'Donnell,Claire,112  
-    Mortensen,Sven,113  
-    Garcia,Cesar,114  
-    Garcia,Debra,115  
-    Fakhouri,Fadi,116  
-    Feng,Hanying,117  
-    Garcia,Hugo,118  
-    Tucker,Lance,119  
-    Adams,Terry,120  
-    Zabokritski,Eugene,121  
-    Tucker,Michael,122  
-    ```  
+   ```  
+   Omelchenko,Svetlana,111  
+   O'Donnell,Claire,112  
+   Mortensen,Sven,113  
+   Garcia,Cesar,114  
+   Garcia,Debra,115  
+   Fakhouri,Fadi,116  
+   Feng,Hanying,117  
+   Garcia,Hugo,118  
+   Tucker,Lance,119  
+   Adams,Terry,120  
+   Zabokritski,Eugene,121  
+   Tucker,Michael,122  
+   ```  
   
 ## Example  
 

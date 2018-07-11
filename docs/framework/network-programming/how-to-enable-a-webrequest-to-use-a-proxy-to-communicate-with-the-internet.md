@@ -27,7 +27,7 @@ GlobalProxySelection.Select = proxyObject
 ## Compiling the Code  
  This example requires:  
   
--   References to the **System.Net** namespace.  
+- References to the **System.Net** namespace.  
   
 ## See Also  
  [Using Application Protocols](../../../docs/framework/network-programming/using-application-protocols.md)  

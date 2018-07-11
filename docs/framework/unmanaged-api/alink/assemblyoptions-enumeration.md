@@ -20,9 +20,9 @@ ms.author: "mairaw"
 ---
 # AssemblyOptions Enumeration
 Enumerates the assembly options.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum _AssemblyOptions {  
     optAssemTitle = 0,  
@@ -47,9 +47,10 @@ typedef enum _AssemblyOptions {
     optLastAssemOption  
 }   AssemblyOptions;  
 ```  
-  
+
 ## Fields  
-  
+
+
 |Field|Description|  
 |-----------|-----------------|  
 |optAssemTitle|String - Represents the assembly title.|  
@@ -72,11 +73,11 @@ typedef enum _AssemblyOptions {
 |optAssemFileVersion|String - Encoded as "Major.Minor.Build.Revision"--same as ProductVersion.|  
 |optAssemSatelliteVer|String - Encoded as "Major.Minor.Build.Revision".|  
 |optLastAssemOption|A counter of the number of elements.|  
-  
+
 ## Requirements  
  **Header:** alink.h  
-  
+
  **Library**: alink.dll  
-  
+
 ## See Also  
  [Al.exe (Assembly Linker)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

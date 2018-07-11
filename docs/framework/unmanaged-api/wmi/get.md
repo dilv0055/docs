@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Retrieves the specified property value if it exists.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```  
 HRESULT Get (
    [in] int               vFunc, 
@@ -59,6 +59,7 @@ HRESULT Get (
 `plFlavor`
 [out] If the function returns successfully, receives information about the origin of the property. Its value can be `null`, or one of the following WBEM_FLAVOR_TYPE constants defined in the *WbemCli.h* header file: 
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | The property is a standard system property. |
@@ -69,6 +70,7 @@ HRESULT Get (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | There has been a general failure. |
@@ -76,7 +78,7 @@ The following values returned by this function are defined in the *WbemCli.h* he
 |`WBEM_E_NOT_FOUND` | 0x80041002 | The specified property was not found. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Not enough memory is available to complete the operation. |
 |`WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::Get](https://msdn.microsoft.com/library/aa391442(v=vs.85).aspx) method.
@@ -87,10 +89,10 @@ The `pVal` argument is assigned the correct type and value for the qualifier and
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

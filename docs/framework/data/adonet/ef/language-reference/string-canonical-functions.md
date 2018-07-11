@@ -5,10 +5,11 @@ ms.assetid: 5e2cbebd-5df3-47c7-b0e2-49a17ab22bfb
 ---
 # String Canonical Functions
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] includes string canonical functions.  
-  
+
 ## Remarks  
  The following table shows the string [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions.  
-  
+
+
 |Function|Description|  
 |--------------|-----------------|  
 |`Concat (` `string1`, `string2``)`|Returns a string that contains `string2` appended to `string1`.<br /><br /> **Arguments**<br /><br /> `string1`: The string to which `string2` is appended.<br /><br /> `string2`: The string that is appended to `string1`.<br /><br /> **Return Value**<br /><br /> A `String`. An error will occur if the length of the return value string is greater than the maximum length allowed.<br /><br /> **Example**<br /><br /> `-- The following example returns abcxyz.`<br /><br /> `Concat('abc', 'xyz')`|  
@@ -27,10 +28,10 @@ ms.assetid: 5e2cbebd-5df3-47c7-b0e2-49a17ab22bfb
 |`ToLower(` `string` `)`|Returns `string` with uppercase characters converted to lowercase.<br /><br /> **Arguments**<br /><br /> A `String`.<br /><br /> **Return Value**<br /><br /> A `String`.<br /><br /> **Example**<br /><br /> `-- The following example returns abc.`<br /><br /> `ToLower('ABC')`|  
 |`ToUpper(` `string` `)`|Returns `string` with lowercase characters converted to uppercase.<br /><br /> **Arguments**<br /><br /> A `String`.<br /><br /> **Return Value**<br /><br /> A `String`.<br /><br /> **Example**<br /><br /> `-- The following example returns ABC.`<br /><br /> `ToUpper('abc')`|  
 |`Trim(` `string` `)`|Returns `string` without leading and trailing whitespace.<br /><br /> **Arguments**<br /><br /> A `String`.<br /><br /> **Return Value**<br /><br /> A `String`.<br /><br /> **Example**<br /><br /> `-- The following example returns abc.`<br /><br /> `Trim('      abc   ')`|  
-  
+
  These functions will return `null` if given `null` input.  
-  
+
  Equivalent functionality is available in the Microsoft SQL Client Managed Provider. For more information, see [SqlClient for Entity Framework Functions](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).  
-  
+
 ## See Also  
  [Canonical Functions](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)

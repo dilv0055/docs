@@ -1,5 +1,6 @@
 ### System.Threading.Tasks.Task no longer throw ObjectDisposedException after object is disposed
 
+
 |   |   |
 |---|---|
 |Details|Except for <xref:System.Threading.Tasks.Task.System%23IAsyncResult%23AsyncWaitHandle>, <xref:System.Threading.Tasks.Task?displayProperty=name> methods no longer throw an <xref:System.ObjectDisposedException?displayProperty=name> exception after the object is disposed.This change supports the use of cached tasks. For example, a method can return a cached task to represent an already completed operation instead of allocating a new task. This was impossible in previous .NET Framework versions, because any consumer of the task could dispose of it, which rendered it unusable.|

@@ -8,7 +8,6 @@ helpviewer_keywords:
   - "-refonly compiler option [C#]"
   - "refonly compiler option [C#]"
 ---
-
 # -refonly (C# Compiler Options)
 
 The **-refonly** option indicates that a reference assembly should be output instead of an implementation assembly, as the primary output. The `-refonly` parameter silently disables outputting PDBs, as reference assemblies cannot be executed.

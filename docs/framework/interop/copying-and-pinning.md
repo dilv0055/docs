@@ -32,32 +32,32 @@ Reference types passed by value and by reference
 ## Formatted Non-Blittable Classes  
  Formatted [non-blittable](blittable-and-non-blittable-types.md) classes have fixed layout (formatted) but the data representation is different in managed and unmanaged memory. The data can require transformation under the following conditions:  
   
--   If a non-blittable class is marshaled by value, the callee receives a pointer to a copy of the data structure.  
+- If a non-blittable class is marshaled by value, the callee receives a pointer to a copy of the data structure.  
   
--   If a non-blittable class is marshaled by reference, the callee receives a pointer to a pointer to a copy of the data structure.  
+- If a non-blittable class is marshaled by reference, the callee receives a pointer to a pointer to a copy of the data structure.  
   
--   If the <xref:System.Runtime.InteropServices.InAttribute> attribute is set, this copy is always initialized with the instance's state, marshaling as necessary.  
+- If the <xref:System.Runtime.InteropServices.InAttribute> attribute is set, this copy is always initialized with the instance's state, marshaling as necessary.  
   
--   If the <xref:System.Runtime.InteropServices.OutAttribute> attribute is set, the state is always copied back to the instance on return, marshaling as necessary.  
+- If the <xref:System.Runtime.InteropServices.OutAttribute> attribute is set, the state is always copied back to the instance on return, marshaling as necessary.  
   
--   If both **InAttribute** and **OutAttribute** are set, both copies are required. If either attribute is omitted, the marshaler can optimize by eliminating either copy.  
+- If both **InAttribute** and **OutAttribute** are set, both copies are required. If either attribute is omitted, the marshaler can optimize by eliminating either copy.  
   
 ## Reference Types  
  Reference types can be passed by value or by reference. When they are passed by value, a pointer to the type is passed on the stack. When passed by reference, a pointer to a pointer to the type is passed on the stack.  
   
  Reference types have the following conditional behavior:  
   
--   If a reference type is passed by value and it has members of non-blittable types, the types are converted twice:  
+- If a reference type is passed by value and it has members of non-blittable types, the types are converted twice:  
   
-    -   When an argument is passed to the unmanaged side.  
+  - When an argument is passed to the unmanaged side.  
   
-    -   On return from the call.  
+  - On return from the call.  
   
-     To avoid unnecessarily copying and conversion, these types are marshaled as In parameters. You must explicitly apply the **InAttribute** and **OutAttribute** attributes to an argument for the caller to see changes made by the callee.  
+   To avoid unnecessarily copying and conversion, these types are marshaled as In parameters. You must explicitly apply the **InAttribute** and **OutAttribute** attributes to an argument for the caller to see changes made by the callee.  
   
--   If a reference type is passed by value and it has only members of blittable types, it can be pinned during marshaling and any changes made to the members of the type by the callee are seen by the caller. Apply **InAttribute** and **OutAttribute** explicitly if you want this behavior. Without these directional attributes, the interop marshaler does not export directional information to the type library (it exports as In, which is the default) and this can cause problems with COM cross-apartment marshaling.  
+- If a reference type is passed by value and it has only members of blittable types, it can be pinned during marshaling and any changes made to the members of the type by the callee are seen by the caller. Apply **InAttribute** and **OutAttribute** explicitly if you want this behavior. Without these directional attributes, the interop marshaler does not export directional information to the type library (it exports as In, which is the default) and this can cause problems with COM cross-apartment marshaling.  
   
--   If a reference type is passed by reference, it will be marshaled as In/Out by default.  
+- If a reference type is passed by reference, it will be marshaled as In/Out by default.  
   
 ## System.String and System.Text.StringBuilder  
  When data is marshaled to unmanaged code by value or by reference, the marshaler typically copies the data to a secondary buffer (possibly converting character sets during the copy) and passes a reference to the buffer to the callee. Unless the reference is a **BSTR** allocated with **SysAllocString**, the reference is always allocated with **CoTaskMemAlloc**.  

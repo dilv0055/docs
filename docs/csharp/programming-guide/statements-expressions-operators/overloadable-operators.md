@@ -10,6 +10,7 @@ ms.assetid: 390d9d01-79fc-40ab-9ed3-0bf448da1b6a
 
 C# allows user-defined types to overload operators by defining static member functions using the [operator](../../../csharp/language-reference/keywords/operator.md) keyword. Not all operators can be overloaded, however, and others have restrictions, as listed in this table:
 
+
 | Operators | Overloadability |
 | --------- | --------------- |
 |[+](../../../csharp/language-reference/operators/addition-operator.md), [-](../../../csharp/language-reference/operators/subtraction-operator.md), [!](../../../csharp/language-reference/operators/logical-negation-operator.md), [~](../../../csharp/language-reference/operators/bitwise-complement-operator.md), [++](../../../csharp/language-reference/operators/increment-operator.md), [--](../../../csharp/language-reference/operators/decrement-operator.md), [true](../../../csharp/language-reference/keywords/true.md), [false](../../../csharp/language-reference/keywords/false.md)|These unary operators can be overloaded.|
@@ -38,7 +39,7 @@ It is common to have definitions that simply return immediately with the result 
 ```csharp
 public static Complex operator +(Complex c1, Complex c2) =>
         new Complex(c1.real + c2.real, c1.imaginary + c2.imaginary);
-  
+
 // Override ToString() to display a complex number in the traditional format:
 public override string ToString() => $"{this.real} + {this.imaginary}";
 ```

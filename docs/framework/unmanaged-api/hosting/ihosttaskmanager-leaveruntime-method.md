@@ -20,24 +20,25 @@ ms.author: "ronpet"
 ---
 # IHostTaskManager::LeaveRuntime Method
 Notifies the host that the currently executing task is about to leave the common language runtime (CLR) and enter unmanaged code.  
-  
+
 > [!IMPORTANT]
 >  A corresponding call to [IHostTaskManager::EnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-enterruntime-method.md) notifies the host that the currently executing task is reentering managed code.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT LeaveRuntime (  
     [in] SIZE_T target  
 );  
 ```  
-  
+
 #### Parameters  
  `target`  
  [in] The address within the mapped portable executable file of the unmanaged function to be called.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`LeaveRuntime` returned successfully.|  
@@ -47,10 +48,11 @@ HRESULT LeaveRuntime (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Not enough memory is available to complete the requested allocation.|  
-  
+
 ## Remarks  
  Call sequences to and from unmanaged code can be nested. For example, the list below describes a hypothetical situation in which the sequence of calls to `LeaveRuntime`, [IHostTaskManager::ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md), [IHostTaskManager::ReverseLeaveRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseleaveruntime-method.md), and `IHostTaskManager::EnterRuntime` allows the host to identify the nested layers.  
-  
+
+
 |Action|Corresponding Method Call|  
 |------------|-------------------------------|  
 |A managed Visual Basic executable calls an unmanaged function written in C by using platform invoke.|`IHostTaskManager::LeaveRuntime`|  
@@ -59,16 +61,16 @@ HRESULT LeaveRuntime (
 |The second unmanaged function returns execution to the C# function.|`IHostTaskManager::EnterRuntime`|  
 |The C# function returns execution to the first unmanaged function.|`IHostTaskManager::ReverseLeaveRuntime`|  
 |The first unmanaged function returns execution to the Visual Basic program.|`IHostTaskManager::EnterRuntime`|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  

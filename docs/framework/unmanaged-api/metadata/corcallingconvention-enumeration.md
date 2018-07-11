@@ -19,14 +19,14 @@ ms.author: "mairaw"
 ---
 # CorCallingConvention Enumeration
 Contains values that describe the types of calling conventions that are made in managed code.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorCallingConvention  
 {  
     IMAGE_CEE_CS_CALLCONV_DEFAULT       = 0x0,  
-  
+
     IMAGE_CEE_CS_CALLCONV_VARARG        = 0x5,  
     IMAGE_CEE_CS_CALLCONV_FIELD         = 0x6,  
     IMAGE_CEE_CS_CALLCONV_LOCAL_SIG     = 0x7,  
@@ -35,17 +35,18 @@ typedef enum CorCallingConvention
     IMAGE_CEE_CS_CALLCONV_GENERICINST   = 0xa,  
     IMAGE_CEE_CS_CALLCONV_NATIVEVARARG  = 0xb,  
     IMAGE_CEE_CS_CALLCONV_MAX           = 0xc,  
-  
+
     IMAGE_CEE_CS_CALLCONV_MASK          = 0x0f,  
     IMAGE_CEE_CS_CALLCONV_HASTHIS       = 0x20,  
     IMAGE_CEE_CS_CALLCONV_EXPLICITTHIS  = 0x40,  
     IMAGE_CEE_CS_CALLCONV_GENERIC       = 0x10  
-  
+
 } CorCallingConvention;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`IMAGE_CEE_CS_CALLCONV_DEFAULT`|Indicates a default calling convention.|  
@@ -61,13 +62,13 @@ typedef enum CorCallingConvention
 |`IMAGE_CEE_CS_CALLCONV_HASTHIS`|Indicates that the top bit describes a `this` parameter.|  
 |`IMAGE_CEE_CS_CALLCONV_EXPLICITTHIS`|Indicates that a `this` parameter is explicitly described in the signature.|  
 |`IMAGE_CEE_CS_CALLCONV_GENERIC`|Indicates a generic method signature with an explicit number of type arguments. This precedes an ordinary parameter count.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -12,26 +12,26 @@ ms.author: "ronpet"
 # Asynchronous Programming Patterns
 
 The .NET Framework provides three patterns for performing asynchronous operations:  
-  
+
 - **Asynchronous Programming Model (APM)** pattern (also called the <xref:System.IAsyncResult> pattern), where asynchronous operations require `Begin` and `End` methods (for example, `BeginWrite` and `EndWrite` for asynchronous write operations). This pattern is no longer recommended for new development. For more information, see [Asynchronous Programming Model (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md).  
-  
+
 - **Event-based Asynchronous Pattern (EAP)**, which requires a method that has the `Async` suffix, and also requires one or more events, event handler delegate types, and `EventArg`-derived types. EAP was introduced in the .NET Framework 2.0. It is no longer recommended for new development. For more information, see [Event-based Asynchronous Pattern (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  
-  
+
 - **Task-based Asynchronous Pattern (TAP)**, which uses a single method to represent the initiation and completion of an asynchronous operation. TAP was introduced in the .NET Framework 4 and is the recommended approach to asynchronous programming in the .NET Framework. The [async](~/docs/csharp/language-reference/keywords/async.md) and [await](~/docs/csharp/language-reference/keywords/await.md) keywords in C# and the [Async](~/docs/visual-basic/language-reference/modifiers/async.md) and [Await](~/docs/visual-basic/language-reference/operators/await-operator.md) operators in Visual Basic Language add language support for TAP. For more information, see [Task-based Asynchronous Pattern (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).  
-  
+
 ## Comparing Patterns  
 
 For a quick comparison of how the three patterns model asynchronous operations, consider a `Read` method that reads a specified amount of data into a provided buffer starting at a specified offset:  
-  
+
 ```csharp  
 public class MyClass  
 {  
     public int Read(byte [] buffer, int offset, int count);  
 }  
 ```  
-  
+
 The APM counterpart of this method would expose the `BeginRead` and `EndRead` methods:  
-  
+
 ```csharp  
 public class MyClass  
 {  
@@ -41,9 +41,9 @@ public class MyClass
     public int EndRead(IAsyncResult asyncResult);  
 }  
 ```  
-  
+
 The EAP counterpart would expose the following set of types and members:  
-  
+
 ```csharp  
 public class MyClass  
 {  
@@ -51,19 +51,20 @@ public class MyClass
     public event ReadCompletedEventHandler ReadCompleted;  
 }  
 ```  
-  
+
 The TAP counterpart would expose the following single `ReadAsync` method:  
-  
+
 ```csharp  
 public class MyClass  
 {  
     public Task<int> ReadAsync(byte [] buffer, int offset, int count);  
 }  
 ```  
-  
+
 For a comprehensive discussion of TAP, APM, and EAP, see the links provided in the next section.  
-  
+
 ## Related topics
+
 
 | Title | Description |
 | ----- | ----------- |

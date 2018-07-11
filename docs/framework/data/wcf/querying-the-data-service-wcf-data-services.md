@@ -20,15 +20,15 @@ The [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client library e
   
  A query is executed in the following scenarios:  
   
--   When results are enumerated implicitly, such as:  
+- When results are enumerated implicitly, such as:  
   
-    -   When a property on the <xref:System.Data.Services.Client.DataServiceContext> that represents and entity set is enumerated, such as during a `foreach` (C#) or `For Each` (Visual Basic) loop.  
+  - When a property on the <xref:System.Data.Services.Client.DataServiceContext> that represents and entity set is enumerated, such as during a `foreach` (C#) or `For Each` (Visual Basic) loop.  
   
-    -   When the query is assigned to a `List` collection.  
+  - When the query is assigned to a `List` collection.  
   
--   When the <xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A> or <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> method is explicitly called.  
+- When the <xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A> or <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> method is explicitly called.  
   
--   When a LINQ query execution operator, such as <xref:System.Linq.Enumerable.First%2A> or <xref:System.Linq.Enumerable.Single%2A> is called.  
+- When a LINQ query execution operator, such as <xref:System.Linq.Enumerable.First%2A> or <xref:System.Linq.Enumerable.Single%2A> is called.  
   
  The following query, when it is executed, returns all `Customers` entities in the Northwind data service:  
   
@@ -93,17 +93,17 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
   
  The <xref:System.Data.Services.Client.QueryOperationResponse%601> also has the following members that enable you to access additional information about a query result:  
   
--   <xref:System.Data.Services.Client.OperationResponse.Error%2A> - gets an error thrown by the operation, if any has occurred.  
+- <xref:System.Data.Services.Client.OperationResponse.Error%2A> - gets an error thrown by the operation, if any has occurred.  
   
--   <xref:System.Data.Services.Client.OperationResponse.Headers%2A> - contains the collection of HTTP response headers associated with the query response.  
+- <xref:System.Data.Services.Client.OperationResponse.Headers%2A> - contains the collection of HTTP response headers associated with the query response.  
   
--   <xref:System.Data.Services.Client.QueryOperationResponse.Query%2A> - gets the original <xref:System.Data.Services.Client.DataServiceQuery%601> that generated the <xref:System.Data.Services.Client.QueryOperationResponse%601>.  
+- <xref:System.Data.Services.Client.QueryOperationResponse.Query%2A> - gets the original <xref:System.Data.Services.Client.DataServiceQuery%601> that generated the <xref:System.Data.Services.Client.QueryOperationResponse%601>.  
   
--   <xref:System.Data.Services.Client.OperationResponse.StatusCode%2A> - gets the HTTP response code for the query response.  
+- <xref:System.Data.Services.Client.OperationResponse.StatusCode%2A> - gets the HTTP response code for the query response.  
   
--   <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A> - gets the total number of entities in the entity set when the <xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> method was called on the <xref:System.Data.Services.Client.DataServiceQuery%601>.  
+- <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A> - gets the total number of entities in the entity set when the <xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> method was called on the <xref:System.Data.Services.Client.DataServiceQuery%601>.  
   
--   <xref:System.Data.Services.Client.QueryOperationResponse.GetContinuation%2A> - returns a <xref:System.Data.Services.Client.DataServiceQueryContinuation> object that contains the URI of the next page of results.  
+- <xref:System.Data.Services.Client.QueryOperationResponse.GetContinuation%2A> - returns a <xref:System.Data.Services.Client.DataServiceQueryContinuation> object that contains the URI of the next page of results.  
   
  By default, [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] only returns data that is explicitly selected by the query URI. This gives you the option to explicitly load additional data from the data service when it is needed. A request is sent to the data service each time you explicitly load data from the data service. Data that can be explicitly loaded includes related entities, paged response data, and binary data streams.  
   

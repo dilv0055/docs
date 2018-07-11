@@ -14,31 +14,33 @@ manager: "markl"
 ---
 # &lt;defaultFtpCachePolicy&gt; Element (Network Settings)
 Describes whether FTP caching is active and describes the default caching policy.  
-  
+
  \<configuration>  
 \<system.net>  
 \<requestCaching>  
 \<defaultFtpCachePolicy>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <defaultFtpCachePolicy  
   policyLevel="BypassCache|Default|CacheOnly|CacheIfAvailable|Revalidate|Reload|NoCacheNoStore|Revalidate"  
 />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`policyLevel`|Specifies the FTP caching policy. The default value is `Default`.|  
-  
+
 ## policyLevel Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |`Default`|Returns the cached resource if the resource is fresh, the content length is accurate, and the expiration, modification, and content length attributes are present.|  
@@ -49,21 +51,22 @@ Describes whether FTP caching is active and describes the default caching policy
 |`Reload`|Downloads the resource from the server, stores it in the cache, and returns the resource to the caller.|  
 |`NoCacheNoStore`|If a cached resource exists, it is deleted. The resource is downloaded from the server and is returned to the caller.|  
 |`Revalidate`|Satisfies a request by using the cached copy of the resource if the timestamp is the same as the timestamp of the resource on the server; otherwise, the resource is downloaded from the server, presented to the caller, and stored in the cache.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Controls the caching mechanism for network requests.|  
-  
+
 ## Remarks  
-  
+
 ## Example  
  The following example shows how to specify an FTP caching policy of `NoCacheNoStore`.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -75,7 +78,7 @@ Describes whether FTP caching is active and describes the default caching policy
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.Cache>  
  <xref:System.Net.WebRequest>  

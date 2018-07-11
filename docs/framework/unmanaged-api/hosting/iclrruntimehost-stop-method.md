@@ -20,18 +20,19 @@ ms.author: "ronpet"
 ---
 # ICLRRuntimeHost::Stop Method
 Stops the execution of code by the common language runtime (CLR).  
-  
+
 > [!IMPORTANT]
 >  This method does not release resources to the host, unload application domains, or destroy threads. You must terminate the process to release these resources.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT Stop();  
 ```  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`Stop` returned successfully.|  
@@ -40,15 +41,15 @@ HRESULT Stop();
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. If a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRRuntimeHost Interface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-interface.md)

@@ -8,9 +8,10 @@ ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
 ---
 # Members (C# Programming Guide)
 Classes and structs have members that represent their data and behavior. A class's members include all the members declared in the class, along with all members (except constructors and finalizers) declared in all classes in its inheritance hierarchy. Private members in base classes are inherited but are not accessible from derived classes.  
-  
+
  The following table lists the kinds of members a class or struct may contain:  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |[Fields](../../../csharp/programming-guide/classes-and-structs/fields.md)|Fields are variables declared at class scope. A field may be a built-in numeric type or an instance of another class. For example, a calendar class may have a field that contains the current date.|  
@@ -23,7 +24,7 @@ Classes and structs have members that represent their data and behavior. A class
 |[Constructors](../../../csharp/programming-guide/classes-and-structs/constructors.md)|Constructors are methods that are called when the object is first created. They are often used to initialize the data of an object.|  
 |[Finalizers](../../../csharp/programming-guide/classes-and-structs/destructors.md)|Finalizers are used very rarely in C#. They are methods that are called by the runtime execution engine when the object is about to be removed from memory. They are generally used to make sure that any resources which must be released are handled appropriately.|  
 |[Nested Types](../../../csharp/programming-guide/classes-and-structs/nested-types.md)|Nested types are types declared within another type. Nested types are often used to describe objects that are used only by the types that contain them.|  
-  
+
 ## See Also  
  [C# Programming Guide](../../../csharp/programming-guide/index.md)  
  [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)  

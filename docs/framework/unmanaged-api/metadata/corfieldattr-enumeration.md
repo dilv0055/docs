@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorFieldAttr Enumeration
 Contains values that describe metadata about a field.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorFieldAttr {  
-  
+
     fdFieldAccessMask           =   0x0007,  
     fdPrivateScope              =   0x0000,  
     fdPrivate                   =   0x0001,  
@@ -33,27 +33,28 @@ typedef enum CorFieldAttr {
     fdFamily                    =   0x0004,  
     fdFamORAssem                =   0x0005,  
     fdPublic                    =   0x0006,  
-  
+
     fdStatic                    =   0x0010,  
     fdInitOnly                  =   0x0020,  
     fdLiteral                   =   0x0040,  
     fdNotSerialized             =   0x0080,  
-  
+
     fdSpecialName               =   0x0200,  
-  
+
     fdPinvokeImpl               =   0x2000,  
-  
+
     fdReservedMask              =   0x9500,  
     fdRTSpecialName             =   0x0400,  
     fdHasFieldMarshal           =   0x1000,  
     fdHasDefault                =   0x8000,  
     fdHasFieldRVA               =   0x0100  
-  
+
 } CorFieldAttr;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`fdFieldAccessMask`|Specifies accessibility information.|  
@@ -75,13 +76,13 @@ typedef enum CorFieldAttr {
 |`fdHasFieldMarshal`|Specifies that the field contains marshaling information.|  
 |`fdHasDefault`|Specifies that the field has a default value.|  
 |`fdHasFieldRVA`|Specifies that the field has a relative virtual address.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

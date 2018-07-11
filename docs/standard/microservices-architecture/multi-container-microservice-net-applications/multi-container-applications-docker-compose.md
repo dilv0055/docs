@@ -11,7 +11,7 @@ In this guide, the [docker-compose.yml](https://docs.docker.com/compose/compose-
 
 For example, you can explicitly describe how you want to deploy your multi-container application in the docker-compose.yml file. Optionally, you can also describe how you are going to build your custom Docker images. (Custom Docker images can also be built with the Docker CLI.)
 
-Basically, you define each of the containers you want to deploy plus certain characteristics for each container deployment. Once you have a multi-container deployment description file, you can deploy the whole solution in a single action orchestrated by the [docker-compose up](https://docs.docker.com/compose/overview/) CLI command, or you can deploy it transparently from Visual Studio. Otherwise, you would need to use the Docker CLI to deploy container-by-container in multiple steps by using the docker run command from the command line. Therefore, each service defined in docker-compose.yml must specify exactly one image or build. Other keys are optional, and are analogous to their docker run command-line counterparts.
+Basically, you define each of the containers you want to deploy plus certain characteristics for each container deployment. Once you have a multi-container deployment description file, you can deploy the whole solution in a single action orchestrated by the [docker-compose up](https://docs.docker.com/compose/overview/) CLI command, or you can deploy it transparently from Visual Studio. Otherwise, you would need to use the Docker CLI to deploy container-by-container in multiple steps by using the docker run command from the command line. Therefore, each service defined in docker-compose.yml must specify exactly one image or build. Other keys are optional, and are analogous to their docker run command-line counterparts.
 
 The following YAML code is the definition of a possible global but single docker-compose.yml file for the eShopOnContainers sample. This is not the actual docker-compose file from eShopOnContainers. Instead, it is a simplified and consolidated version in a single file, which is not the best way to work with docker-compose files, as will be explained later.
 
@@ -78,25 +78,25 @@ services:
     image: redis
 ```
 
-The root key in this file is services. Under that key you define the services you want to deploy and run when you execute the docker-compose up command or when you deploy from Visual Studio by using this docker-compose.yml file. In this case, the docker-compose.yml file has multiple services defined, as described in the following list.
+The root key in this file is services. Under that key you define the services you want to deploy and run when you execute the docker-compose up command or when you deploy from Visual Studio by using this docker-compose.yml file. In this case, the docker-compose.yml file has multiple services defined, as described in the following list.
 
--   webmvc
-    Container including the ASP.NET Core MVC application consuming the microservices from server-side C\#
+- webmvc
+  Container including the ASP.NET Core MVC application consuming the microservices from server-side C\#
 
--   catalog.api
-    Container including the Catalog ASP.NET Core Web API microservice
+- catalog.api
+  Container including the Catalog ASP.NET Core Web API microservice
 
--   ordering.api
-    Container including the Ordering ASP.NET Core Web API microservice
+- ordering.api
+  Container including the Ordering ASP.NET Core Web API microservice
 
--   sql.data
-    Container running SQL Server for Linux, holding the microservices databases
+- sql.data
+  Container running SQL Server for Linux, holding the microservices databases
 
--   basket.api
-    Container with the Basket ASP.NET Core Web API microservice
+- basket.api
+  Container with the Basket ASP.NET Core Web API microservice
 
--   basket.data
-    Container running the REDIS cache service, with the basket database as a REDIS cache
+- basket.data
+  Container running the REDIS cache service, with the basket database as a REDIS cache
 
 ### A simple Web Service API container
 
@@ -120,21 +120,21 @@ Focusing on a single container, the catalog.api container-microservice has a str
 
 This containerized service has the following basic configuration:
 
--   It is based on the custom eshop/catalog.api image. For simplicity’s sake, there is no build: key setting in the file. This means that the image must have been previously built (with docker build) or have been downloaded (with the docker pull command) from any Docker registry.
+- It is based on the custom eshop/catalog.api image. For simplicity’s sake, there is no build: key setting in the file. This means that the image must have been previously built (with docker build) or have been downloaded (with the docker pull command) from any Docker registry.
 
--   It defines an environment variable named ConnectionString with the connection string to be used by Entity Framework to access the SQL Server instance that contains the catalog data model. In this case, the same SQL Server container is holding multiple databases. Therefore, you need less memory in your development machine for Docker. However, you could also deploy one SQL Server container for each microservice database.
+- It defines an environment variable named ConnectionString with the connection string to be used by Entity Framework to access the SQL Server instance that contains the catalog data model. In this case, the same SQL Server container is holding multiple databases. Therefore, you need less memory in your development machine for Docker. However, you could also deploy one SQL Server container for each microservice database.
 
--   The SQL Server name is sql.data, which is the same name used for the container that is running the SQL Server instance for Linux. This is convenient; being able to use this name resolution (internal to the Docker host) will resolve the network address so you don’t need to know the internal IP for the containers you are accessing from other containers.
+- The SQL Server name is sql.data, which is the same name used for the container that is running the SQL Server instance for Linux. This is convenient; being able to use this name resolution (internal to the Docker host) will resolve the network address so you don’t need to know the internal IP for the containers you are accessing from other containers.
 
 Because the connection string is defined by an environment variable, you could set that variable through a different mechanism and at a different time. For example, you could set a different connection string when deploying to production in the final hosts, or by doing it from your CI/CD pipelines in VSTS or your preferred DevOps system.
 
--   It exposes port 80 for internal access to the catalog.api service within the Docker host. The host is currently a Linux VM because it is based on a Docker image for Linux, but you could configure the container to run on a Windows image instead.
+- It exposes port 80 for internal access to the catalog.api service within the Docker host. The host is currently a Linux VM because it is based on a Docker image for Linux, but you could configure the container to run on a Windows image instead.
 
--   It forwards the exposed port 80 on the container to port 5101 on the Docker host machine (the Linux VM).
+- It forwards the exposed port 80 on the container to port 5101 on the Docker host machine (the Linux VM).
 
--   It links the web service to the sql.data service (the SQL Server instance for Linux database running in a container). When you specify this dependency, the catalog.api container will not start until the sql.data container has already started; this is important because catalog.api needs to have the SQL Server database up and running first. However, this kind of container dependency is not enough in many cases, because Docker checks only at the container level. Sometimes the service (in this case SQL Server) might still not be ready, so it is advisable to implement retry logic with exponential backoff in your client microservices. That way, if a dependency container is not ready for a short time, the application will still be resilient.
+- It links the web service to the sql.data service (the SQL Server instance for Linux database running in a container). When you specify this dependency, the catalog.api container will not start until the sql.data container has already started; this is important because catalog.api needs to have the SQL Server database up and running first. However, this kind of container dependency is not enough in many cases, because Docker checks only at the container level. Sometimes the service (in this case SQL Server) might still not be ready, so it is advisable to implement retry logic with exponential backoff in your client microservices. That way, if a dependency container is not ready for a short time, the application will still be resilient.
 
--   It is configured to allow access to external servers: the extra\_hosts setting allows you to access external servers or machines outside of the Docker host (that is, outside the default Linux VM which is a development Docker host), such as a local SQL Server instance on your development PC.
+- It is configured to allow access to external servers: the extra\_hosts setting allows you to access external servers or machines outside of the Docker host (that is, outside the default Linux VM which is a development Docker host), such as a local SQL Server instance on your development PC.
 
 There are also other, more advanced docker-compose.yml settings that we will discuss in the following sections.
 
@@ -148,7 +148,7 @@ Therefore, by using the docker-compose command you can target the following main
 
 When you develop applications, it is important to be able to run an application in an isolated development environment. You can use the docker-compose CLI command to create that environment or use Visual Studio which uses docker-compose under the covers.
 
-The docker-compose.yml file allows you to configure and document all your application’s service dependencies (other services, cache, databases, queues, etc.). Using the docker-compose CLI command, you can create and start one or more containers for each dependency with a single command (docker-compose up).
+The docker-compose.yml file allows you to configure and document all your application’s service dependencies (other services, cache, databases, queues, etc.). Using the docker-compose CLI command, you can create and start one or more containers for each dependency with a single command (docker-compose up).
 
 The docker-compose.yml files are configuration files interpreted by Docker engine but also serve as convenient documentation files about the composition of your multi-container application.
 
@@ -186,7 +186,7 @@ By default, Compose reads two files, a docker-compose.yml and an optional docker
 
 **Figure 8-11**. docker-compose files in Visual Studio 2017
 
-You can edit the docker-compose files with any editor, like Visual Studio Code or Sublime, and run the application with the docker-compose up command.
+You can edit the docker-compose files with any editor, like Visual Studio Code or Sublime, and run the application with the docker-compose up command.
 
 By convention, the docker-compose.yml file contains your base configuration and other static settings. That means that the service configuration should not change depending on the deployment environment you are targeting.
 
@@ -256,23 +256,22 @@ services:
 
   basket.data:
     image: redis
-      
+
   rabbitmq:
     image: rabbitmq:3-management
-
 ```
 
 The values in the base docker-compose.yml file should not change because of different target deployment environments.
 
 If you focus on the webmvc service definition, for instance, you can see how that information is much the same no matter what environment you might be targeting. You have the following information:
 
--   The service name: webmvc.
+- The service name: webmvc.
 
--   The container’s custom image: eshop/webmvc.
+- The container’s custom image: eshop/webmvc.
 
--   The command to build the custom Docker image, indicating which Dockerfile to use.
+- The command to build the custom Docker image, indicating which Dockerfile to use.
 
--   Dependencies on other services, so this container does not start until the other dependency containers have started.
+- Dependencies on other services, so this container does not start until the other dependency containers have started.
 
 You can have additional configuration, but the important point is that in the base docker-compose.yml file, you just want to set the information that is common across environments. Then in the docker-compose.override.yml or similar files for production or staging, you should place configuration that is specific for each environment.
 
@@ -284,7 +283,7 @@ version: '3'
 
 services: 
 # Simplified number of services here: 
-      
+
   basket.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -385,12 +384,11 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
-
 ```
 
 In this example, the development override configuration exposes some ports to the host, defines environment variables with redirect URLs, and specifies connection strings for the development environment. These settings are all just for the development environment.
 
-When you run `docker-compose up` (or launch it from Visual Studio), the command reads the overrides automatically as if it were merging both files.
+When you run `docker-compose up` (or launch it from Visual Studio), the command reads the overrides automatically as if it were merging both files.
 
 Suppose that you want another Compose file for the production environment, with different configuration values, ports or connection strings. You can create another override file, like file named `docker-compose.prod.yml` with different settings and environment variables.  That file might be stored in a different Git repo or managed and secured by a different team.
 
@@ -428,11 +426,11 @@ Note that the values set in the runtime environment always override the values d
 
 #### Additional resources
 
--   **Overview of Docker Compose**
-    [*https://docs.docker.com/compose/overview/*](https://docs.docker.com/compose/overview/)
+- **Overview of Docker Compose**
+  [*https://docs.docker.com/compose/overview/*](https://docs.docker.com/compose/overview/)
 
--   **Multiple Compose files**
-    [*https://docs.docker.com/compose/extends/\#multiple-compose-files*](https://docs.docker.com/compose/extends/#multiple-compose-files)
+- **Multiple Compose files**
+  [*https://docs.docker.com/compose/extends/\#multiple-compose-files*](https://docs.docker.com/compose/extends/#multiple-compose-files)
 
 ### Building optimized ASP.NET Core Docker images
 
@@ -456,14 +454,14 @@ ENTRYPOINT ["dotnet", "run"]
 
 A Dockerfile like this will work. However, you can substantially optimize your images, especially your production images.
 
-In the container and microservices model, you are constantly starting containers. The typical way of using containers does not restart a sleeping container, because the container is disposable. Orchestrators (like Docker Swarm, Kubernetes, DCOS or Azure Service Fabric) simply create new instances of images. What this means is that you would need to optimize by precompiling the application when it is built so the instantiation process will be faster. When the container is started, it should be ready to run. You should not restore and compile at run time, using dotnet restore and dotnet build commands from the dotnet CLI that, as you see in many blog posts about .NET Core and Docker.
+In the container and microservices model, you are constantly starting containers. The typical way of using containers does not restart a sleeping container, because the container is disposable. Orchestrators (like Docker Swarm, Kubernetes, DCOS or Azure Service Fabric) simply create new instances of images. What this means is that you would need to optimize by precompiling the application when it is built so the instantiation process will be faster. When the container is started, it should be ready to run. You should not restore and compile at run time, using dotnet restore and dotnet build commands from the dotnet CLI that, as you see in many blog posts about .NET Core and Docker.
 
 The .NET team has been doing important work to make .NET Core and ASP.NET Core a container-optimized framework. Not only is .NET Core a lightweight framework with a small memory footprint; the team has focused on startup performance and produced some optimized Docker images, like the [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) image available at [Docker Hub](https://hub.docker.com/r/microsoft/aspnetcore/), in comparison to the regular [microsoft/dotnet](https://hub.docker.com/r/microsoft/dotnet/) or [microsoft/nanoserver](https://github.com/dotnet/dotnet-docker/blob/master/1.0/nanoserver/runtime/Dockerfile) images. The [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore/) image provides automatic setting of aspnetcore\_urls to port 80 and the pre-ngend cache of assemblies; both of these settings result in faster startup.
 
 #### Additional resources
 
--   **Building Optimized Docker Images with ASP.NET Core**
-    [*https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/*](https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/)
+- **Building Optimized Docker Images with ASP.NET Core**
+  [*https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/*](https://blogs.msdn.microsoft.com/stevelasker/2016/09/29/building-optimized-docker-images-with-asp-net-core/)
 
 ### Building the application from a build (CI) container
 
@@ -508,45 +506,44 @@ services:
     working_dir: /src
 
     command: /bin/bash -c "pushd ./src/Web/WebSPA && npm rebuild node-sass && popd && dotnet restore ./eShopOnContainers-ServicesAndWebApps.sln && dotnet publish ./eShopOnContainers-ServicesAndWebApps.sln -c Release -o ./obj/Docker/publish"
-
 ```
 
 * Starting with **.NET Core 2.0**, `dotnet restore` command executes automatically when the `dotnet publish` command is executed.
 
-Once the build container is up and running, it runs the .NET SDK dotnet restore and dotnet publish commands against all the projects in the solution in order to compile the .NET bits. In this case, because eShopOnContainers also has an SPA based on TypeScript and Angular for the client code, it also needs to check JavaScript dependencies with npm, but that action is not related to the .NET bits.
+Once the build container is up and running, it runs the .NET SDK dotnet restore and dotnet publish commands against all the projects in the solution in order to compile the .NET bits. In this case, because eShopOnContainers also has an SPA based on TypeScript and Angular for the client code, it also needs to check JavaScript dependencies with npm, but that action is not related to the .NET bits.
 
-The dotnet publish command builds and publishes the compiled output within each project’s folder to the ../obj/Docker/publish folder, as shown in Figure 8-15.
+The dotnet publish command builds and publishes the compiled output within each project’s folder to the ../obj/Docker/publish folder, as shown in Figure 8-15.
 
 ![](./media/image16.png)
 
-**Figure 8-15.** Binary files generated by the dotnet publish command
+**Figure 8-15.** Binary files generated by the dotnet publish command
 
 #### Creating the Docker images from the CLI
 
-Once the application output is published to the related folders (within each project), the next step is to actually build the Docker images. To do this, you use the docker-compose build and docker-compose up commands, as shown in Figure 8-16.
+Once the application output is published to the related folders (within each project), the next step is to actually build the Docker images. To do this, you use the docker-compose build and docker-compose up commands, as shown in Figure 8-16.
 
 ![](./media/image17.png)
 
 **Figure 8-16.** Building Docker images and running the containers
 
-In Figure 8-17, you can see how the docker-compose build command runs.
+In Figure 8-17, you can see how the docker-compose build command runs.
 
 ![](./media/image18.png)
 
-**Figure 8-17**. Building the Docker images with the docker-compose build command
+**Figure 8-17**. Building the Docker images with the docker-compose build command
 
-The difference between the docker-compose build and docker-compose up commands is that docker-compose up both builds and starts the images.
+The difference between the docker-compose build and docker-compose up commands is that docker-compose up both builds and starts the images.
 
 When you use Visual Studio, all these steps are performed under the covers. Visual Studio compiles your .NET application, creates the Docker images, and deploys the containers into the Docker host. Visual Studio offers additional features, like the ability to debug your containers running in Docker, directly from Visual Studio.
 
-The overall takeway here is that you are able to build your application the same way your CI/CD pipeline should build it—from a container instead of from a local machine. After having the images created, then you just need to run the Docker images using the docker-compose up command.
+The overall takeway here is that you are able to build your application the same way your CI/CD pipeline should build it—from a container instead of from a local machine. After having the images created, then you just need to run the Docker images using the docker-compose up command.
 
 #### Additional resources
 
--   **Building bits from a container: Setting the eShopOnContainers solution up in a Windows CLI environment (dotnet CLI, Docker CLI and VS Code)**
-    [*https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI,-Docker-CLI-and-VS-Code)*](https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI,-Docker-CLI-and-VS-Code))
+- **Building bits from a container: Setting the eShopOnContainers solution up in a Windows CLI environment (dotnet CLI, Docker CLI and VS Code)**
+  [*https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI,-Docker-CLI-and-VS-Code)*](https://github.com/dotnet/eShopOnContainers/wiki/03.-Setting-the-eShopOnContainers-solution-up-in-a-Windows-CLI-environment-(dotnet-CLI,-Docker-CLI-and-VS-Code))
 
 
->[!div class="step-by-step"]
-[Previous](data-driven-crud-microservice.md)
-[Next](database-server-container.md)
+> [!div  class="step-by-step"]
+> [Previous](data-driven-crud-microservice.md)
+> [Next](database-server-container.md)

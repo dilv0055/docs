@@ -88,7 +88,7 @@ In F#, the order of declarations matters, including with `open` statements. This
 
 In F#, elements opened into a scope can shadow others already present. This means that reordering `open` statements could alter the meaning of code. As a result, any arbitrary sorting of all `open` statements (for example, alphanumerically) is generally not recommended, lest you generate different behavior that you might expect.
 
-Instead, we recommend that you sort them [topologically](https://en.wikipedia.org/wiki/Topological_sorting); that is, order your `open` statements in the order in which _layers_ of your system are defined. Doing alphanumeric sorting within different topological layers may also be considered.
+Instead, we recommend that you sort them [topologically](https://en.wikipedia.org/wiki/Topological_sorting); that is, order your `open` statements in the order in which *layers* of your system are defined. Doing alphanumeric sorting within different topological layers may also be considered.
 
 As an example, here is the topological sorting for the F# compiler service public API file:
 
@@ -218,6 +218,7 @@ Not all errors can be represented in a problem domain. These kinds of faults are
 First, it is recommended that you read the [Exception Design Guidelines](../../standard/design-guidelines/exceptions.md). These are also applicable to F#.
 
 The main constructs available in F# for the purposes of raising exceptions should be considered in the following order of preference:
+
 
 | Function | Syntax | Purpose |
 |----------|--------|---------|
@@ -576,7 +577,7 @@ F# has full support for objects and object-oriented (OO) concepts. Although many
 
 ### Use object expressions to implement interfaces if you don't need a class
 
-[Object Expressions](../language-reference/object-expressions.md) allow you to implement interfaces on the fly, binding the implemented interface to a value without needing to do so inside of a class. This is convenient, especially if you _only_ need to implement the interface and have no need for a full class.
+[Object Expressions](../language-reference/object-expressions.md) allow you to implement interfaces on the fly, binding the implemented interface to a value without needing to do so inside of a class. This is convenient, especially if you *only* need to implement the interface and have no need for a full class.
 
 For example, here is the code that is run in [Ionide](http://ionide.io/) to provide a code fix action if you've added a symbol that you don't have an `open` statement for:
 

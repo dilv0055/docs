@@ -17,9 +17,9 @@ Line and shape controls do not have `TabStop` or `TabIndex` properties, but you 
   
 ## To enable tabbing among shapes  
   
-1.  Drag three <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> controls and two <xref:System.Windows.Forms.Button> controls from the **Toolbox** to a form.  
+1. Drag three <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> controls and two <xref:System.Windows.Forms.Button> controls from the **Toolbox** to a form.  
   
-2.  In the **Code Editor**, add an `Imports` or `using` statement at the top of the module:  
+2. In the **Code Editor**, add an `Imports` or `using` statement at the top of the module:  
   
 ```vb  
 Imports Microsoft.VisualBasic.PowerPacks  
@@ -29,12 +29,12 @@ Imports Microsoft.VisualBasic.PowerPacks
 using Microsoft.VisualBasic.PowerPacks;  
 ```  
 
-3.  Add the following code in an event procedure:  
+3. Add the following code in an event procedure:  
   
 [!code-csharp[VbPowerPacksTabbing#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-enable-tabbing-between-shapes-visual-studio_1.cs)]
 [!code-vb[VbPowerPacksTabbing#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-enable-tabbing-between-shapes-visual-studio_1.vb)]  
   
-4.  Add the following code in the `Button1_PreviewKeyDown` event procedure:  
+4. Add the following code in the `Button1_PreviewKeyDown` event procedure:  
   
 [!code-csharp[VbPowerPacksTabbing#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-enable-tabbing-between-shapes-visual-studio_2.cs)]
 [!code-vb[VbPowerPacksTabbing#2](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-enable-tabbing-between-shapes-visual-studio_2.vb)]  

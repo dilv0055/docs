@@ -13,7 +13,6 @@ helpviewer_keywords:
   - "dates [Visual Basic], converting"
 ms.assetid: 8a8fb553-a8ac-424e-8103-26eea25eaa71
 ---
-
 # Conversion functions (Visual Basic)
 
 <xref:Microsoft.VisualBasic.Strings.Asc%2A>   

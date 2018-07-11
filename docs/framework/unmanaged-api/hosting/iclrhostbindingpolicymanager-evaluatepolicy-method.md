@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # ICLRHostBindingPolicyManager::EvaluatePolicy Method
 Evaluates binding policy on behalf of the host.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT EvaluatePolicy (  
     [in] LPCWSTR     pwzReferenceIdentity,  
@@ -33,28 +33,29 @@ HRESULT EvaluatePolicy (
     [out] DWORD     *pdwPoliciesApplied  
 );  
 ```  
-  
+
 #### Parameters  
  `pwzReferenceIdentity`  
  [in] A reference to the assembly before the policy evaluation.  
-  
+
  `pbApplicationPolicy`  
  [in] A pointer to a buffer that contains the policy data.  
-  
+
  `cbAppPolicySize`  
  [in] The size of the `pbApplicationPolicy` buffer.  
-  
+
  `pwzPostPolicyReferenceIdentity`  
  [out] A reference to the assembly after the evaluation of the new policy data.  
-  
+
  `pcchPostPolicyReferenceIdentity`  
  [in, out] A pointer to the size of the assembly identity reference buffer after the evaluation of the new policy data.  
-  
+
  `pdwPoliciesApplied`  
  [out] A pointer to a logical OR combination of [EBindPolicyLevels](../../../../docs/framework/unmanaged-api/hosting/ebindpolicylevels-enumeration.md) values, indicating which policies have been applied.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|The evaluation completed successfully.|  
@@ -65,18 +66,18 @@ HRESULT EvaluatePolicy (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  The `EvaluatePolicy` method allows the host to influence binding policy to maintain host-specific assembly versioning requirements. The policy engine itself remains inside the CLR.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRHostBindingPolicyManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrhostbindingpolicymanager-interface.md)

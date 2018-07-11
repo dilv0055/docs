@@ -1,5 +1,6 @@
 ### HtmlTextWriter does not render `<br/>` element correctly
 
+
 |   |   |
 |---|---|
 |Details|Beginning in the .NET Framework 4.6, calling <xref:System.Web.UI.HtmlTextWriter.RenderBeginTag(System.String)> and <xref:System.Web.UI.HtmlTextWriter.RenderEndTag> with a <code>&lt;BR /&gt;</code> element will correctly insert only one <code>&lt;BR /&gt;</code> (instead of two)|

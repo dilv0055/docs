@@ -7,7 +7,8 @@ ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
 ---
 # Contextual Keywords (C# Reference)
 A contextual keyword is used to provide a specific meaning in the code, but it is not a reserved word in C#. The following contextual keywords are introduced in this section:  
-  
+
+
 |Keyword|Description|  
 |-------------|-----------------|  
 |[add](../../../csharp/language-reference/keywords/add.md)|Defines a custom event accessor that is invoked when client code subscribes to the event.|  
@@ -24,9 +25,9 @@ A contextual keyword is used to provide a specific meaning in the code, but it i
 |[when](when.md)|Specifies a filter condition for a `catch` block or the `case` label of a `switch` statement.|
 |[where](../../../csharp/language-reference/keywords/where-generic-type-constraint.md)|Adds constraints to a generic declaration. (See also [where](../../../csharp/language-reference/keywords/where-clause.md)).|  
 |[yield](../../../csharp/language-reference/keywords/yield.md)|Used in an iterator block to return a value to the enumerator object or to signal the end of iteration.|  
-  
+
  All query keywords introduced in C# 3.0 are also contextual. For more information, see [Query Keywords (LINQ)](../../../csharp/language-reference/keywords/query-keywords.md).  
-  
+
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  
  [C# Programming Guide](../../../csharp/programming-guide/index.md)  

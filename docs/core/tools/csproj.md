@@ -17,7 +17,7 @@ Metapackages are implicitly referenced based on the target framework(s) specifie
    <TargetFramework>netcoreapp1.1</TargetFramework>
  </PropertyGroup>
  ```
- 
+
  ```xml
  <PropertyGroup>
    <TargetFrameworks>netcoreapp1.1;net462</TargetFrameworks>
@@ -29,7 +29,8 @@ Since `Microsoft.NETCore.App` or `NetStandard.Library` metapackages are implicit
 
 * When targeting .NET Core or .NET Standard, never have an explicit reference to the `Microsoft.NETCore.App` or `NetStandard.Library` metapackages via a `<PackageReference>` item in your project file.
 * If you need a specific version of the runtime when targeting .NET Core, you should use the `<RuntimeFrameworkVersion>` property in your project (for example, `1.0.4`) instead of referencing the metapackage.
-    * This might happen if you are using [self-contained deployments](../deploying/index.md#self-contained-deployments-scd) and you need a specific patch version of 1.0.0 LTS runtime, for example.
+  * This might happen if you are using [self-contained deployments](../deploying/index.md#self-contained-deployments-scd) and you need a specific patch version of 1.0.0 LTS runtime, for example.
+
 * If you need a specific version of the `NetStandard.Library` metapackage when targeting .NET Standard, you can use the `<NetStandardImplicitPackageVersion>` property and set the version you need.
 * Don't explicitly add or update references to either the `Microsoft.NETCore.App` or `NetStandard.Library` metapackage in .NET Framework projects. If any version of `NetStandard.Library` is needed when using a .NET Standard-based NuGet package, NuGet automatically installs that version.
 
@@ -40,11 +41,12 @@ The main reason for doing this is to reduce the clutter in your project file. Th
 
 The following table shows which element and which [globs](https://en.wikipedia.org/wiki/Glob_(programming)) are both included and excluded in the SDK: 
 
-| Element          	| Include glob                           	| Exclude glob                                     	            | Remove glob             	 |
+
+| Element           | Include glob                              | Exclude glob                                                  | Remove glob                |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Compile          	| \*\*/\*.cs (or other language extensions) | \*\*/\*.user;  \*\*/\*.\*proj;  \*\*/\*.sln;  \*\*/\*.vssscc 	| N/A                     	 |
-| EmbeddedResource 	| \*\*/\*.resx                             	| \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | N/A                     	 |
-| None             	| \*\*/\*                                  	| \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | - \*\*/\*.cs; \*\*/\*.resx |
+| Compile           | \*\*/\*.cs (or other language extensions) | \*\*/\*.user;  \*\*/\*.\*proj;  \*\*/\*.sln;  \*\*/\*.vssscc  | N/A                        |
+| EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | N/A                        |
+| None              | \*\*/\*                                   | \*\*/\*.user; \*\*/\*.\*proj; \*\*/\*.sln; \*\*/\*.vssscc     | - \*\*/\*.cs; \*\*/\*.resx |
 
 If you have globs in your project and you try to build it using the newest SDK, you'll get the following error:
 
@@ -66,7 +68,7 @@ This change does not modify the main mechanics of other includes. However, if yo
 To disable **all implicit globs**, you can set the `<EnableDefaultItems>` property to `false` as in the following example:
 ```xml
 <PropertyGroup>
-    <EnableDefaultItems>false</EnableDefaultItems>
+    <EnableDefaultItems>false</EnableDefaultItems>
 </PropertyGroup>
 ```
 

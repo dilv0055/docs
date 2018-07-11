@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugNativeFrame Interface1
 A specialized implementation of ICorDebugFrame used for native frames.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[CanSetIP Method](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-cansetip-method.md)|Gets a value that indicates whether it is safe to set the instruction pointer to the specified offset location in native code.|  
@@ -33,20 +34,20 @@ A specialized implementation of ICorDebugFrame used for native frames.
 |[GetLocalRegisterValue Method](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-getlocalregistervalue-method.md)|Gets a pointer to an `ICorDebugValue` that represents the value of an argument or a local variable stored in the specified native register.|  
 |[GetRegisterSet Method](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-getregisterset-method.md)|Gets a pointer to an [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) that represents the register set for this `ICorDebugNativeFrame`.|  
 |[SetIP Method](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md)|Sets the instruction pointer to the specified offset location in native code.|  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

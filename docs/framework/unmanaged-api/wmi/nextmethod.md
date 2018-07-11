@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Retrieves the next method in an enumeration that begins with a call to [BeginMethodEnumeration](beginmethodenumeration.md).  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT NextMethod (
    [in] int                 vFunc, 
@@ -59,12 +59,13 @@ HRESULT NextMethod (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_UNEXPECTED` | 0x8004101d | There was no call to the [`BeginEnumeration`](beginenumeration.md) function. |
 | `WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
 | `WBEM_S_NO_MORE_DATA` | 0x40005 | There are no more properties in the enumeration. |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::NextMethod](https://msdn.microsoft.com/library/aa391454(v=vs.85).aspx) method.
@@ -77,10 +78,10 @@ For a C++ example, see the [IWbemClassObject::NextMethod](https://msdn.microsoft
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

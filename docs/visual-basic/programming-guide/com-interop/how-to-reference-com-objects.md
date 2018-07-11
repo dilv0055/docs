@@ -18,33 +18,33 @@ In Visual Basic, adding references to COM objects that have type libraries requi
   
 ### To add references to COM objects  
   
-1.  On the **Project** menu, choose **Add Reference** and then click the **COM** tab in the dialog box.  
+1. On the **Project** menu, choose **Add Reference** and then click the **COM** tab in the dialog box.  
   
-2.  Select the component you want to use from the list of COM objects.  
+2. Select the component you want to use from the list of COM objects.  
   
-3.  To simplify access to the interop assembly, add an `Imports` statement to the top of the class or module in which you will use the COM object. For example, the following code example imports the namespace `INKEDLib` for objects referenced in the `Microsoft InkEdit Control 1.0` library.  
+3. To simplify access to the interop assembly, add an `Imports` statement to the top of the class or module in which you will use the COM object. For example, the following code example imports the namespace `INKEDLib` for objects referenced in the `Microsoft InkEdit Control 1.0` library.  
   
-     [!code-vb[VbVbalrInterop#40](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/how-to-reference-com-objects_1.vb)]  
+    [!code-vb[VbVbalrInterop#40](../../../visual-basic/programming-guide/com-interop/codesnippet/VisualBasic/how-to-reference-com-objects_1.vb)]  
   
 ### To create an interop assembly using Tlbimp  
   
-1.  Add the location of Tlbimp to the search path, if it is not already part of the search path and you are not currently in the directory where it is located.  
+1. Add the location of Tlbimp to the search path, if it is not already part of the search path and you are not currently in the directory where it is located.  
   
-2.  Call Tlbimp from a command prompt, providing the following information:  
+2. Call Tlbimp from a command prompt, providing the following information:  
   
-    -   Name and location of the DLL that contains the type library  
+   - Name and location of the DLL that contains the type library  
   
-    -   Name and location of the namespace where the information should be placed  
+   - Name and location of the namespace where the information should be placed  
   
-    -   Name and location of the target interop assembly  
+   - Name and location of the target interop assembly  
   
-     The following code provides an example:  
+    The following code provides an example:  
   
-    ```  
-    Tlbimp test3.dll /out:NameSpace1 /out:Interop1.dll  
-    ```  
+   ```  
+   Tlbimp test3.dll /out:NameSpace1 /out:Interop1.dll  
+   ```  
   
-     You can use Tlbimp to create interop assemblies for type libraries, even for unregistered COM objects. However, the COM objects referred to by interop assemblies must be properly registered on the computer where they are to be used. You can register a COM object by using the Regsvr32 utility included with the Windows operating system.  
+    You can use Tlbimp to create interop assemblies for type libraries, even for unregistered COM objects. However, the COM objects referred to by interop assemblies must be properly registered on the computer where they are to be used. You can register a COM object by using the Regsvr32 utility included with the Windows operating system.  
   
 ## See Also  
  [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)  

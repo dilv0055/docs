@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # ESymbolReadingPolicy Enumeration
 Contains values that set the policy for reading program database (PDB) files.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     eSymbolReadingNever,  
@@ -29,26 +29,27 @@ typedef enum {
     eSymbolReadingFullTrustOnly  
 } ESymbolReadingPolicy;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`eSymbolReadingAlways`|Specifies that the debugger should always read PDB files.|  
 |`eSymbolReadingFullTrustOnly`|Specifies that the debugger should read only PDB files that are associated with full-trust assemblies.|  
 |`eSymbolReadingNever`|Specifies that the debugger should never read PDB files.|  
-  
+
 ## Remarks  
  The `ESymbolReadingPolicy` enumeration is used with the [ICLRDebugManager::SetSymbolReadingPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setsymbolreadingpolicy-method.md) method.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

@@ -33,8 +33,9 @@ You can assign an initial value to a mutable variable by using the `let` keyword
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet602.fs)]
 
 Values marked `mutable` may be automatically promoted to `'a ref` if captured by a closure, including forms that create closures, such as `seq` builders. If you wish to be notified when this occurs, enable warning 3180 in your project file or when invoking the compiler.
-    
+
 ## Related Topics
+
 
 
 |Title|Description|

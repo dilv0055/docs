@@ -4,7 +4,6 @@ description: Learn about common patterns for using delegates in your code to avo
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
 ---
-
 # Common Patterns for Delegates
 
 [Previous](delegates-strongly-typed.md)

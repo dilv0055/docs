@@ -19,37 +19,38 @@ ms.author: "ronpet"
 ---
 # CreateHistoryReader Function
 Creates a history reader for the specified file.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT CreateHistoryReader (  
     [in]  LPCWSTR        wzFilePath,  
     [out] IHistoryReader **ppHistoryReader  
  );  
 ```  
-  
+
 #### Parameters  
  `wzFilePath`  
  [in] The file path.  
-  
+
  `ppHistoryReader`  
  [out] On successful completion, contains a pointer to the history reader.  
-  
+
 ## Return Value  
  This method returns standard COM error codes as defined in WinError.h, in addition to the values described in the following table.  
-  
+
+
 |Return code|Description|  
 |-----------------|-----------------|  
 |S_OK|Indicates that the method completed successfully.|  
 |E_INVALIDARG|Indicates that `wzFilePath` or `ppHistoryReader` are set to a null reference.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Library:** Fusion.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Fusion Global Static Functions](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)

@@ -16,15 +16,15 @@ The process of adding an item to a Windows Forms <xref:System.Windows.Forms.List
   
 ### To add or remove items using the designer  
   
-1.  Select the <xref:System.Windows.Forms.ListView> control.  
+1. Select the <xref:System.Windows.Forms.ListView> control.  
   
-2.  In the **Properties** window, click the **Ellipsis** (![VisualStudioEllipsesButton screenshot](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) button next to the <xref:System.Windows.Forms.ListView.Items%2A> property.  
+2. In the **Properties** window, click the **Ellipsis** (![VisualStudioEllipsesButton screenshot](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) button next to the <xref:System.Windows.Forms.ListView.Items%2A> property.  
   
-     The **ListViewItem Collection Editor** appears.  
+    The **ListViewItem Collection Editor** appears.  
   
-3.  To add an item, click the **Add** button. You can then set properties of the new item, such as the <xref:System.Windows.Forms.ListView.Text%2A> and <xref:System.Windows.Forms.ListViewItem.ImageIndex%2A> properties.  
+3. To add an item, click the **Add** button. You can then set properties of the new item, such as the <xref:System.Windows.Forms.ListView.Text%2A> and <xref:System.Windows.Forms.ListViewItem.ImageIndex%2A> properties.  
   
-4.  To remove an item, select it and click the **Remove** button.  
+4. To remove an item, select it and click the **Remove** button.  
   
 ## See Also  
  [ListView Control Overview](../../../../docs/framework/winforms/controls/listview-control-overview-windows-forms.md)  

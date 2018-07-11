@@ -89,8 +89,8 @@ type Type100 =
 Note that the set of types and members provided is statically known. This example doesn't leverage the ability of providers to provide types that depend on a schema. The implementation of the type provider is outlined in the following code, and the details are covered in later sections of this topic.
 
 
->[!WARNING] 
-There may be differences between this code and the online samples.
+> [!WARNING]
+> There may be differences between this code and the online samples.
 
 ```fsharp
 namespace Samples.FSharp.HelloWorldTypeProvider
@@ -352,7 +352,7 @@ t.AddMembersDelayed(fun () ->
           p.AddXmlDocDelayed(fun () -> 
               sprintf "This is StaticProperty%d on NestedType" i)
 
-          yield p ]
+          yield p ]
 
     staticPropsInNestedType)
 
@@ -743,6 +743,7 @@ Frequently you might want type providers to present APIs based on not only stati
 As a simple example, consider a type provider for accessing scientific data in Comma Separated Value (CSV) format. This section assumes that the CSV files contain a header row followed by floating point data, as the following table illustrates:
 
 
+
 |Distance (meter)|Time (second)|
 |----------------|-------------|
 |50.0|3.7|
@@ -807,7 +808,7 @@ type public MiniCsvProvider(cfg:TypeProviderConfig) as this =
     // Parameterize the type by the file to use as a template.
     let filename = ProvidedStaticParameter("filename", typeof<string>)
     do csvTy.DefineStaticParameters([filename], fun tyName [| :? string as filename |] ->
-    
+
         // Resolve the filename relative to the resolution folder.
         let resolvedFilename = Path.Combine(cfg.ResolutionFolder, filename)
 
@@ -961,7 +962,7 @@ In this case, the provided type would appear at an appropriate point according t
 
 ```fsharp
   open Fabrikam.Core.Text.RegexTyped
-  
+
   let regex = new RegexTyped<"a+b+a+b+">()
 ```
 
@@ -969,7 +970,7 @@ In this case, the provided type would appear at an appropriate point according t
 
 ```fsharp
 #r "Fabrikam.Data.Freebase.dll"
-  
+
 let data = Fabrikam.Data.Freebase.Astronomy.Asteroids
 ```
 
@@ -1070,7 +1071,7 @@ Providers must often cache access to schema information. The cached data should 
 
 When you compile a `.dll` or `.exe` file, the backing .dll file for generated types is statically linked into the resulting assembly. This link is created by copying the Intermediate Language (IL) type definitions and any managed resources from the backing assembly into the final assembly. When you use F# Interactive, the backing .dll file isn't copied and is instead loaded directly into the F# Interactive process.
 
-### Exceptions and Diagnostics from Type Providers
+### Exceptions and Diagnostics from Type Providers
 
 All uses of all members from provided types may throw exceptions. In all cases, if a type provider throws an exception, the host compiler attributes the error to a specific type provider.
 
@@ -1122,7 +1123,7 @@ The type provider mechanism in F# has the following limitations:
 
 You might find the following tips helpful during the development process.
 
-### Run Two Instances of Visual Studio
+### Run Two Instances of Visual Studio
 
 You can develop the type provider in one instance and test the provider in the other because the test IDE will take a lock on the .dll file that prevents the type provider from being rebuilt. Thus, you must close the second instance of Visual Studio while the provider is built in the first instance, and then you must reopen the second instance after the provider is built.
 

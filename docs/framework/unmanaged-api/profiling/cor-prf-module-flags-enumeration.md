@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # COR_PRF_MODULE_FLAGS Enumeration
 Specifies the properties of a module.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum  
 {  
@@ -34,9 +34,10 @@ typedef enum
     COR_PRF_MODULE_WINDOWS_RUNTIME  = 0x00000040  
 }   COR_PRF_MODULE_FLAGS;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |COR_PRF_MODULE_DISK|The module was loaded from disk.|  
@@ -46,18 +47,18 @@ typedef enum
 |COR_PRF_MODULE_RESOURCE|The module contains no metadata and is used strictly as a resource. The managed equivalent of this bit is the <xref:System.Reflection.Module.IsResource%2A?displayProperty=nameWithType> method.|  
 |COR_PRF_MODULE_FLAT_LAYOUT|The module's layout in memory is flat, not mapped. If a module has this bit set, profilers that read information directly from the portable executable (PE) file header will have to be careful when interpreting relative virtual addresses (RVAs) in the header.|  
 |COR_PRF_MODULE_WINDOWS_RUNTIME|The Windows Runtime content type flag is set in the metadata for this module's assembly. This is the case for all Windows Metadata (.winmd) modules.|  
-  
+
 ## Remarks  
  Bits from COR_PRF_MODULE_FLAGS are returned to the profiler in the `pdwModuleFlags` output parameter of the [ICorProfilerInfo3::GetModuleInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getmoduleinfo2-method.md) method. Some combinations of two or more flags are possible, but not all combinations are possible.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorProf.idl, CorProf.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
-  
+
 ## See Also  
  [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

@@ -5,10 +5,9 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/27/2018
 ---
-
 # Deploying Single-Container-Based .NET Core Web Applications on Linux or Windows Nano Server Hosts
 
-_You can use Docker containers for monolithic deployment of simpler web applications. This improves continuous integration and continuous deployment pipelines and helps achieve deployment-to-production success. No more “It works in my machine, why does it not work in production?”_
+*You can use Docker containers for monolithic deployment of simpler web applications. This improves continuous integration and continuous deployment pipelines and helps achieve deployment-to-production success. No more “It works in my machine, why does it not work in production?”*
 
 A microservices-based architecture has many benefits, but those benefits come at a cost of increased complexity. In some cases, the costs outweigh the benefits and a monolithic deployment application running in one or a few containers is a better option.
 
@@ -123,11 +122,11 @@ This section describes a few issues that might arise when your run containers lo
 
 ### Stop Docker containers
 
-After you launch the containerized application, the containers continue to run, even after you have stopped debugging. You can run the `docker ps` command from the command line to see which containers are running. The `docker stop` command stops a running container, as shown in Figure 6-2.
+After you launch the containerized application, the containers continue to run, even after you have stopped debugging. You can run the `docker ps` command from the command line to see which containers are running. The `docker stop` command stops a running container, as shown in Figure 6-2.
 
 ![](./media/image2.png)
 
-**Figure 6-2**. Listing and stopping containers with the docker ps and docker stop CLI commands
+**Figure 6-2**. Listing and stopping containers with the docker ps and docker stop CLI commands
 
 You might need to stop running processes when you switch between different configurations. Otherwise, the container that is running the web application is using the port for your application (5106 in this example).
 
@@ -135,6 +134,6 @@ You might need to stop running processes when you switch between different confi
 
 The wizard that adds Docker support communicates with the running Docker process. If Docker isn't running when you start the wizard, the wizard won't run correctly. The wizard examines your current container choice to add the correct Docker support. To add support for Windows Containers, run the wizard while you have Docker running with Windows Containers configured. To add support for Linux containers, run the wizard while you have Docker running with Linux containers configured.
 
->[!div class="step-by-step"]
-[Previous](../docker-application-development-process/docker-app-development-workflow.md)
-[Next](../containerize-net-framework-applications/index.md)
+> [!div  class="step-by-step"]
+> [Previous](../docker-application-development-process/docker-app-development-workflow.md)
+> [Next](../containerize-net-framework-applications/index.md)

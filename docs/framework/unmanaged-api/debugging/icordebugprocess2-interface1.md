@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugProcess2 Interface1
 A logical extension of the ICorDebugProcess interface, which represents a process running managed code.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[ClearUnmanagedBreakpoint Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-clearunmanagedbreakpoint-method.md)|Removes a breakpoint at the specified offset that was set by an earlier call to `ICorDebugProcess2::SetUnmanagedBreakpoint`.|  
@@ -31,20 +32,20 @@ A logical extension of the ICorDebugProcess interface, which represents a proces
 |[GetVersion Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-getversion-method.md)|Gets the version of the CLR upon which the process being debugged is running.|  
 |[SetDesiredNGENCompilerFlags Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setdesiredngencompilerflags-method.md)|Sets the flags that are required for the just-in-time (JIT) compiler to load an image into the process being debugged.|  
 |[SetUnmanagedBreakpoint Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess2-setunmanagedbreakpoint-method.md)|Sets an unmanaged breakpoint at the specified native image offset.|  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

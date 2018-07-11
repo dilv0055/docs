@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Executes a query to receive events. The call returns immediately, and the caller can poll the returned enumerator for events as they arrive. Releasing the returned enumerator cancels the query.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT ExecNotificationQueryWmi (
    [in] BSTR                    strQueryLanguage,
@@ -50,6 +50,7 @@ HRESULT ExecNotificationQueryWmi (
 
 `lFlags`   
 [in] A combination of the following two flags that affect the behavior of this function. These values are defined in the *WbemCli.h* header file, or you can define them as constants in your code. 
+
 
 | Constant | Value  | Description  |
 |---------|---------|---------|
@@ -84,6 +85,7 @@ HRESULT ExecNotificationQueryWmi (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | The user does not have permission to view one or more of the classes that the function can return. |
@@ -100,7 +102,7 @@ The following values returned by this function are defined in the *WbemCli.h* he
 | `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | The remote procedure call (RPC) link between the current process and WMI has failed. |
 | `WBEM_E_UNPARSABLE_QUERY` | 0x80041058 | The query cannot be parsed. |
 | `WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemServices::ExecNotificationQuery](https://msdn.microsoft.com/library/aa392105(v=vs.85).aspx) method.
@@ -113,10 +115,10 @@ If the function call fails, you can obtain additional error information by calli
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

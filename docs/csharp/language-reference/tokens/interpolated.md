@@ -33,6 +33,7 @@ The structure of an item with an interpolated expression is as follows:
 
 Elements in square brackets are optional. The following table describes each element:
 
+
 |Element|Description|
 |-------------|-----------------|
 |`interpolatedExpression`|The expression that produces a result to be formatted. String representation of the `null` result is <xref:System.String.Empty?displayProperty=nameWithType>.|
@@ -64,15 +65,15 @@ There are three implicit conversions from an interpolated string:
 
 1. Conversion of an interpolated string to a <xref:System.String> instance that is the result of interpolated string resolution with interpolated expression items being replaced with the properly formatted string representations of their results. This conversion uses the current culture.
 
-1. Conversion of an interpolated string to a <xref:System.FormattableString> instance that represents a composite format string along with the expression results to be formatted. That allows you to create multiple result strings with culture-specific content from a single <xref:System.FormattableString> instance. To do that call one of the following methods:
+2. Conversion of an interpolated string to a <xref:System.FormattableString> instance that represents a composite format string along with the expression results to be formatted. That allows you to create multiple result strings with culture-specific content from a single <xref:System.FormattableString> instance. To do that call one of the following methods:
 
-      - A <xref:System.FormattableString.ToString> overload that produces a result string for the <xref:System.Globalization.CultureInfo.CurrentCulture>.
-      - An <xref:System.FormattableString.Invariant%2A> method that produces a result string for the <xref:System.Globalization.CultureInfo.InvariantCulture>.
-      - A <xref:System.FormattableString.ToString(System.IFormatProvider)> method that produces a result string for a specified culture.
+   - A <xref:System.FormattableString.ToString> overload that produces a result string for the <xref:System.Globalization.CultureInfo.CurrentCulture>.
+   - An <xref:System.FormattableString.Invariant%2A> method that produces a result string for the <xref:System.Globalization.CultureInfo.InvariantCulture>.
+   - A <xref:System.FormattableString.ToString(System.IFormatProvider)> method that produces a result string for a specified culture.
 
     You also can use the <xref:System.FormattableString.ToString(System.IFormatProvider)> method to provide a user-defined implementation of the <xref:System.IFormatProvider> interface that supports custom formatting. For more information, see [Custom Formatting with ICustomFormatter](../../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter).
 
-1. Conversion of an interpolated string to an <xref:System.IFormattable> instance that also allows you to create multiple result strings with culture-specific content from a single <xref:System.IFormattable> instance.
+3. Conversion of an interpolated string to an <xref:System.IFormattable> instance that also allows you to create multiple result strings with culture-specific content from a single <xref:System.IFormattable> instance.
 
 The following example uses implicit conversion to <xref:System.FormattableString> to create culture-specific result strings:
 

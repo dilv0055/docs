@@ -21,17 +21,17 @@ ms.assetid: 44719f90-7e15-42e8-a9e2-282287e2b5bf
   
 ### To create qualified names in an XML document  
   
-1.  Create an instance of the `XmlSerializerNamespaces` class.  
+1. Create an instance of the `XmlSerializerNamespaces` class.  
   
-2.  Add all prefixes and namespace pairs to the `XmlSerializerNamespaces`.  
+2. Add all prefixes and namespace pairs to the `XmlSerializerNamespaces`.  
   
-3.  Apply the appropriate `System.Xml.Serialization` attribute to each member or class that the <xref:System.Xml.Serialization.XmlSerializer> is to serialize into an XML document.  
+3. Apply the appropriate `System.Xml.Serialization` attribute to each member or class that the <xref:System.Xml.Serialization.XmlSerializer> is to serialize into an XML document.  
   
-     The available attributes are: <xref:System.Xml.Serialization.XmlAnyElementAttribute>, <xref:System.Xml.Serialization.XmlArrayAttribute>, <xref:System.Xml.Serialization.XmlArrayItemAttribute>, <xref:System.Xml.Serialization.XmlAttributeAttribute>, <xref:System.Xml.Serialization.XmlElementAttribute>, <xref:System.Xml.Serialization.XmlRootAttribute>, and <xref:System.Xml.Serialization.XmlTypeAttribute>.  
+    The available attributes are: <xref:System.Xml.Serialization.XmlAnyElementAttribute>, <xref:System.Xml.Serialization.XmlArrayAttribute>, <xref:System.Xml.Serialization.XmlArrayItemAttribute>, <xref:System.Xml.Serialization.XmlAttributeAttribute>, <xref:System.Xml.Serialization.XmlElementAttribute>, <xref:System.Xml.Serialization.XmlRootAttribute>, and <xref:System.Xml.Serialization.XmlTypeAttribute>.  
   
-4.  Set the `Namespace` property of each attribute to one of the namespace values from the `XmlSerializerNamespaces`.  
+4. Set the `Namespace` property of each attribute to one of the namespace values from the `XmlSerializerNamespaces`.  
   
-5.  Pass the `XmlSerializerNamespaces` to the `Serialize` method of the `XmlSerializer`.  
+5. Pass the `XmlSerializerNamespaces` to the `Serialize` method of the `XmlSerializer`.  
   
 ## Example  
  The following example creates an `XmlSerializerNamespaces`, and adds two prefix and namespace pairs to the object. The code creates an `XmlSerializer` that is used to serialize an instance of the `Books` class. The code calls the `Serialize` method with the `XmlSerializerNamespaces`, allowing the XML to contain prefixed namespaces.  

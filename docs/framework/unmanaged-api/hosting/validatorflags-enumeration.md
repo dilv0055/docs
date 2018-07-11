@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # ValidatorFlags Enumeration
 Contains values that indicate the type of validation that should be performed in a call to the [ICLRValidator::Validate](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-validate-method.md) method.  
-  
+
 ## Syntax  
-  
+
 ```  
 enum ValidatorFlags {  
     VALIDATOR_EXTRA_VERBOSE =       0x00000001,  
@@ -31,9 +31,10 @@ enum ValidatorFlags {
     VALIDATOR_NOCHECK_PEFORMAT =    0x00000010,  
 };  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`VALIDATOR_CHECK_ILONLY`|Specifies that only the Microsoft intermediate language (MSIL) in the executable file should be validated.|  
@@ -41,16 +42,16 @@ enum ValidatorFlags {
 |`VALIDATOR_EXTRA_VERBOSE`|Specifies that all types of validation should be performed and reported on.|  
 |`VALIDATOR_NOCHECK_PEFORMAT`|Specifies that the format of the executable file should not be validated.|  
 |`VALIDATOR_SHOW_SOURCE_LINES`|Specifies that validation error messages should include the lines of source code that raise validation errors. This field value is not valid in the .NET Framework version 2.0.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** IValidator.idl, IValidator.h  
-  
+
  **Library:** MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRErrorReportingManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)  
  [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

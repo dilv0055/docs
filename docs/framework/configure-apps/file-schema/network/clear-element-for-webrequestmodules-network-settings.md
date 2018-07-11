@@ -16,42 +16,43 @@ manager: "markl"
 ---
 # &lt;clear&gt; Element for webRequestModules (Network Settings)
 Removes all registered Web request modules from the application.  
-  
+
  \<configuration>  
 \<system.net>  
 \<webRequestModules>  
 \<clear>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <clear/>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |**Element**|**Description**|  
 |-----------------|---------------------|  
 |[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Specifies modules to use to request information from network hosts.|  
-  
+
 ## Remarks  
  The `clear` element removes all registered Web request modules that were defined earlier in the configuration file or at a higher level in the configuration hierarchy.  
-  
+
 ## Configuration Files  
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
-  
+
 ## Example  
  The following example clears all Web request modules and then registers a Web request module for HTTP.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -65,7 +66,7 @@ Removes all registered Web request modules from the application.
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.WebRequest>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

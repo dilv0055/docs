@@ -63,10 +63,10 @@ To learn more about UWP, see [Intro to the Universal Windows Platform](https://d
 
 A runtime is the execution environment for a managed program. The OS is part of the runtime environment but is not part of the .NET runtime. Here are some examples of .NET runtimes:
  
- - Common Language Runtime (CLR) for the .NET Framework
- - Core Common Language Runtime (CoreCLR) for .NET Core
- - .NET Native for Universal Windows Platform 
- - The Mono runtime for Xamarin.iOS, Xamarin.Android, Xamarin.Mac, and the Mono desktop framework
+- Common Language Runtime (CLR) for the .NET Framework
+- Core Common Language Runtime (CoreCLR) for .NET Core
+- .NET Native for Universal Windows Platform 
+- The Mono runtime for Xamarin.iOS, Xamarin.Android, Xamarin.Mac, and the Mono desktop framework
 
 ## .NET tooling and common infrastructure
 

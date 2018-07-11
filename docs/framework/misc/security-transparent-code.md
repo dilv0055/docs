@@ -19,11 +19,11 @@ ms.author: "mairaw"
   
  This topic describes the transparency model in more detail. It contains the following sections:  
   
--   [Purpose of the Transparency Model](#purpose)  
+- [Purpose of the Transparency Model](#purpose)  
   
--   [Specifying the Transparency Level](#level)  
+- [Specifying the Transparency Level](#level)  
   
--   [Transparency Enforcement](#enforcement)  
+- [Transparency Enforcement](#enforcement)  
   
 <a name="purpose"></a>   
 ## Purpose of the Transparency Model  
@@ -47,9 +47,9 @@ ms.author: "mairaw"
   
  The levels are as follows:  
   
--   Level 2 (<xref:System.Security.SecurityRuleSet.Level2>) – the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] transparency rules.  
+- Level 2 (<xref:System.Security.SecurityRuleSet.Level2>) – the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] transparency rules.  
   
--   Level 1 (<xref:System.Security.SecurityRuleSet.Level1>) – the .NET Framework 2.0 transparency rules.  
+- Level 1 (<xref:System.Security.SecurityRuleSet.Level1>) – the .NET Framework 2.0 transparency rules.  
   
  The primary difference between the two transparency levels is that level 1 does not enforce transparency rules for calls from outside the assembly and is intended only for compatibility.  
   
@@ -59,40 +59,40 @@ ms.author: "mairaw"
 ### Level 2 Transparency  
  Level 2 transparency was introduced in the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. The three tenets of this model are transparent code, security-safe-critical code, and security-critical code.  
   
--   Transparent code, regardless of the permissions it is granted (including full trust), can call only other transparent code or security-safe-critical code. If the code is partially trusted, it can only perform actions that are allowed by the domain’s permission set. Transparent code cannot do the following:  
+- Transparent code, regardless of the permissions it is granted (including full trust), can call only other transparent code or security-safe-critical code. If the code is partially trusted, it can only perform actions that are allowed by the domain’s permission set. Transparent code cannot do the following:  
   
-    -   Perform an <xref:System.Security.CodeAccessPermission.Assert%2A> operation or elevation of privilege.  
+  - Perform an <xref:System.Security.CodeAccessPermission.Assert%2A> operation or elevation of privilege.  
   
-    -   Contain unsafe or unverifiable code.  
+  - Contain unsafe or unverifiable code.  
   
-    -   Directly call critical code.  
+  - Directly call critical code.  
   
-    -   Call native code or code that has the <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute> attribute.  
+  - Call native code or code that has the <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute> attribute.  
   
-    -   Call a member that is protected by a <xref:System.Security.Permissions.SecurityAction.LinkDemand>.  
+  - Call a member that is protected by a <xref:System.Security.Permissions.SecurityAction.LinkDemand>.  
   
-    -   Inherit from critical types.  
+  - Inherit from critical types.  
   
-     In addition, transparent methods cannot override critical virtual methods or implement critical interface methods.  
+   In addition, transparent methods cannot override critical virtual methods or implement critical interface methods.  
   
--   Security-safe-critical code is fully trusted but is callable by transparent code. It exposes a limited surface area of full-trust code. Correctness and security verifications happen in safe-critical code.  
+- Security-safe-critical code is fully trusted but is callable by transparent code. It exposes a limited surface area of full-trust code. Correctness and security verifications happen in safe-critical code.  
   
--   Security-critical code can call any code and is fully trusted, but it cannot be called by transparent code.  
+- Security-critical code can call any code and is fully trusted, but it cannot be called by transparent code.  
   
 ### Level 1 Transparency  
  The level 1 transparency model was introduced in the .NET Framework version 2.0 to enable developers to reduce the amount of code that is subject to a security audit. Although level 1 transparency was publicly available in version 2.0, it was primarily used only within Microsoft for security auditing purposes. Through annotations, developers are able to declare which types and members can perform security elevations and other trusted actions (security-critical) and which cannot (security-transparent). Code that is identified as transparent does not require a high degree of security auditing. Level 1 transparency states that the transparency enforcement is limited to within the assembly. In other words, any public types or members that are identified as security-critical are security-critical only within the assembly. If you want to enforce security for those types and members when they are called from outside the assembly, you must use link demands for full trust. If you do not, publicly visible security-critical types and members are treated as security-safe-critical and can be called by partially trusted code outside the assembly.  
   
  The level 1 transparency model has the following limitations:  
   
--   Security-critical types and members that are public are accessible from security-transparent code.  
+- Security-critical types and members that are public are accessible from security-transparent code.  
   
--   The transparency annotations are enforced only within an assembly.  
+- The transparency annotations are enforced only within an assembly.  
   
--   Security-critical types and members must use link demands to enforce security for calls from outside the assembly.  
+- Security-critical types and members must use link demands to enforce security for calls from outside the assembly.  
   
--   Inheritance rules are not enforced.  
+- Inheritance rules are not enforced.  
   
--   The potential exists for transparent code to do harmful things when run in full trust.  
+- The potential exists for transparent code to do harmful things when run in full trust.  
   
  [Back to top](#top)  
   

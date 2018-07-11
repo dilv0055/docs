@@ -16,55 +16,55 @@ manager: "markl"
   
 ### To assign user information to a group connection  
   
-1.  Create a connection group name.  
+1. Create a connection group name.  
   
-    ```csharp  
-    SHA1Managed Sha1 = new SHA1Managed();  
-    Byte[] updHash = Sha1.ComputeHash(Encoding.UTF8.GetBytes(UserName + SecurelyStoredPassword + Domain));  
-    String secureGroupName = Encoding.Default.GetString(updHash);  
-    ```  
+   ```csharp  
+   SHA1Managed Sha1 = new SHA1Managed();  
+   Byte[] updHash = Sha1.ComputeHash(Encoding.UTF8.GetBytes(UserName + SecurelyStoredPassword + Domain));  
+   String secureGroupName = Encoding.Default.GetString(updHash);  
+   ```  
   
-    ```vb  
-    Dim Sha1 As New SHA1Managed()  
-    Dim updHash As [Byte]() = Sha1.ComputeHash(Encoding.UTF8.GetBytes((UserName + SecurelyStoredPassword + Domain)))  
-    Dim secureGroupName As [String] = Encoding.Default.GetString(updHash)  
-    ```  
+   ```vb  
+   Dim Sha1 As New SHA1Managed()  
+   Dim updHash As [Byte]() = Sha1.ComputeHash(Encoding.UTF8.GetBytes((UserName + SecurelyStoredPassword + Domain)))  
+   Dim secureGroupName As [String] = Encoding.Default.GetString(updHash)  
+   ```  
   
-2.  Create a request for a specific URL. For example, the following code creates a request for the URL `http://www.contoso.com.`  
+2. Create a request for a specific URL. For example, the following code creates a request for the URL `http://www.contoso.com.`  
   
-    ```csharp  
-    WebRequest myWebRequest=WebRequest.Create("http://www.contoso.com");  
-    ```  
+   ```csharp  
+   WebRequest myWebRequest=WebRequest.Create("http://www.contoso.com");  
+   ```  
   
-    ```vb  
-    Dim myWebRequest As WebRequest = WebRequest.Create("http://www.contoso.com")  
-    ```  
+   ```vb  
+   Dim myWebRequest As WebRequest = WebRequest.Create("http://www.contoso.com")  
+   ```  
   
-3.  Set the credentials and Connection GroupName for the Web request, and call **GetResponse** to retrieve a **WebResponse** object.  
+3. Set the credentials and Connection GroupName for the Web request, and call **GetResponse** to retrieve a **WebResponse** object.  
   
-    ```csharp  
-    myWebRequest.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword, Domain);   
-    myWebRequest.ConnectionGroupName = secureGroupName;  
+   ```csharp  
+   myWebRequest.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword, Domain);   
+   myWebRequest.ConnectionGroupName = secureGroupName;  
   
-    WebResponse myWebResponse=myWebRequest.GetResponse();  
-    ```  
+   WebResponse myWebResponse=myWebRequest.GetResponse();  
+   ```  
   
-    ```vb  
-    myWebRequest.Credentials = New NetworkCredential(UserName, SecurelyStoredPassword, Domain)  
-    myWebRequest.ConnectionGroupName = secureGroupName  
+   ```vb  
+   myWebRequest.Credentials = New NetworkCredential(UserName, SecurelyStoredPassword, Domain)  
+   myWebRequest.ConnectionGroupName = secureGroupName  
   
-    Dim myWebResponse As WebResponse = myWebRequest.GetResponse()  
-    ```  
+   Dim myWebResponse As WebResponse = myWebRequest.GetResponse()  
+   ```  
   
-4.  Close the response stream after using the WebRespose object.  
+4. Close the response stream after using the WebRespose object.  
   
-    ```csharp  
-    MyWebResponse.Close();  
-    ```  
+   ```csharp  
+   MyWebResponse.Close();  
+   ```  
   
-    ```vb  
-    MyWebResponse.Close()  
-    ```  
+   ```vb  
+   MyWebResponse.Close()  
+   ```  
   
  Example  
   

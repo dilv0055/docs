@@ -19,29 +19,30 @@ ms.author: "ronpet"
 ---
 # ComCallUnmarshal Coclass
 Provides interfaces for managing the marshaling of interface pointers.  
-  
+
 ## Syntax  
-  
+
 ```  
 coclass ComCallUnmarshal {  
     [default] interface IMarshal;  
 };  
 ```  
-  
+
 ## Interfaces  
-  
+
+
 |Interface|Description|  
 |---------------|-----------------|  
 |`IMarshal`|Provides methods for creating, initializing, and managing a proxy in a client process.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.idl  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Coclasses](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)

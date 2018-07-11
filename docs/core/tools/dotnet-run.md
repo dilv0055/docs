@@ -15,25 +15,24 @@ ms.date: 05/29/2018
 
 ## Synopsis
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 ```
 dotnet run [-c|--configuration] [-f|--framework] [--force] [--launch-profile] [--no-build] [--no-dependencies]
     [--no-launch-profile] [--no-restore] [-p|--project] [--runtime] [-v|--verbosity] [[--] [application arguments]]
 dotnet run [-h|--help]
 ```
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 ```
 dotnet run [-c|--configuration] [-f|--framework] [--force] [--launch-profile] [--no-build] [--no-dependencies]
     [--no-launch-profile] [--no-restore] [-p|--project] [--runtime] [[--] [application arguments]]
 dotnet run [-h|--help]
 ```
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 ```
 dotnet run [-c|--configuration] [-f|--framework] [-p|--project] [[--] [application arguments]]
 dotnet run [-h|--help]
 ```
----
-
+* * *
 ## Description
 
 The `dotnet run` command provides a convenient option to run your application from the source code with one command. It's useful for fast iterative development from the command line. The command depends on the [`dotnet build`](dotnet-build.md) command to build the code. Any requirements for the build, such as that the project must be restored first, apply to `dotnet run` as well.
@@ -56,7 +55,7 @@ To run the application, the `dotnet run` command resolves the dependencies of th
 
 ## Options
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 
 `--`
 
@@ -111,7 +110,7 @@ Specifies the target runtime to restore packages for. For a list of Runtime Iden
 
 Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.
 
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 
 `--`
 
@@ -162,7 +161,7 @@ Specifies the path of the project file to run (folder name or full path). If not
 
 Specifies the target runtime to restore packages for. For a list of Runtime Identifiers (RIDs), see the [RID catalog](../rid-catalog.md).
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `--`
 
@@ -187,8 +186,7 @@ Specifies the path and name of the project file. (See the NOTE.) If not specifie
 > [!NOTE]
 > Use the path and name of the project file with the `-p|--project` option. A regression in the CLI prevents providing a folder path with .NET Core SDK 1.x. For more information about this issue, see [dotnet run -p, can not start a project (dotnet/cli #5992)](https://github.com/dotnet/cli/issues/5992).
 
----
-
+* * *
 ## Examples
 
 Run the project in the current directory:

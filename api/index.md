@@ -8,7 +8,6 @@ quickFilterColumn3: azure-dotnet,aspnetcore-2.1
 ms.topic: landing-page
 ms.custom: "updateeachrelease"
 ---
-
 # .NET API Browser
 
 Welcome to the .NET API Browser – your one-stop shop for all .NET-based APIs from Microsoft. Start searching for any managed APIs by typing in the box below. You can learn more about the API Browser [in our blog post](https://aka.ms/apibrowser). If you have any feedback, create a new issue in the [MicrosoftDocs/feedback repo on GitHub](https://github.com/MicrosoftDocs/feedback/issues). 

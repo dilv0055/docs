@@ -1,5 +1,6 @@
 ### HttpRuntime.AppDomainAppPath Throws a NullReferenceException
 
+
 |   |   |
 |---|---|
 |Details|In the .NET Framework 4.6.2, the runtime throws a <code>T:System.NullReferenceException</code> when retrieving a <code>P:System.Web.HttpRuntime.AppDomainAppPath</code> value that includes null characters.In the .NET Framework 4.6.1 and earlier versions, the runtime throws an <code>T:System.ArgumentNullException</code>.|

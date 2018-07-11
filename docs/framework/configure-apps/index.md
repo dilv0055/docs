@@ -63,25 +63,25 @@ The .NET Framework, through configuration files, gives developers and administra
   
  The name and location of the application configuration file depend on the app's host, which can be one of the following:  
   
--   Executable–hosted app.  
+- Executable–hosted app.  
   
-     These apps have two configuration files:  a source configuration file, which is modified by the developer during development, and an output file that is distributed with the app.  
+   These apps have two configuration files:  a source configuration file, which is modified by the developer during development, and an output file that is distributed with the app.  
   
-     When you develop in Visual Studio, place the source configuration file for your app in the project directory and set its **Copy To Output Directory** property to **Copy always** or **Copy if newer**. The name of the configuration file is the name of the app with a .config extension. For example, an app called myApp.exe should have a source configuration file called myApp.exe.config.  
+   When you develop in Visual Studio, place the source configuration file for your app in the project directory and set its **Copy To Output Directory** property to **Copy always** or **Copy if newer**. The name of the configuration file is the name of the app with a .config extension. For example, an app called myApp.exe should have a source configuration file called myApp.exe.config.  
   
-     Visual Studio automatically copies the source configuration file to the directory where the compiled assembly is placed to create the output configuration file, which is deployed with the app. In some cases, Visual Studio may modify the output configuration file; for more information, see the [Redirecting assembly versions at the app level](../../../docs/framework/configure-apps/redirect-assembly-versions.md#BKMK_Redirectingassemblyversionsattheapplevel) section of the [Redirecting Assembly Versions](../../../docs/framework/configure-apps/redirect-assembly-versions.md) article.  
+   Visual Studio automatically copies the source configuration file to the directory where the compiled assembly is placed to create the output configuration file, which is deployed with the app. In some cases, Visual Studio may modify the output configuration file; for more information, see the [Redirecting assembly versions at the app level](../../../docs/framework/configure-apps/redirect-assembly-versions.md#BKMK_Redirectingassemblyversionsattheapplevel) section of the [Redirecting Assembly Versions](../../../docs/framework/configure-apps/redirect-assembly-versions.md) article.  
   
--   ASP.NET-hosted app.  
+- ASP.NET-hosted app.  
   
-     For more information about ASP.NET configuration files, see [ASP.NET Configuration Settings](https://msdn.microsoft.com/library/116608f3-c03d-4413-9fc7-978703e18b0f(v=vs.100))  
+   For more information about ASP.NET configuration files, see [ASP.NET Configuration Settings](https://msdn.microsoft.com/library/116608f3-c03d-4413-9fc7-978703e18b0f(v=vs.100))  
   
--   Internet Explorer-hosted app.  
+- Internet Explorer-hosted app.  
   
-     If an app hosted in Internet Explorer has a configuration file, the location of this file is specified in a `<link>` tag with the following syntax:  
+   If an app hosted in Internet Explorer has a configuration file, the location of this file is specified in a `<link>` tag with the following syntax:  
   
-     \<link rel="*ConfigurationFileName*" href="*location*">  
+   \<link rel="*ConfigurationFileName*" href="*location*">  
   
-     In this tag, `location` is a URL to the configuration file. This sets the app base. The configuration file must be located on the same website as the app.  
+   In this tag, `location` is a URL to the configuration file. This sets the app base. The configuration file must be located on the same website as the app.  
   
 ## Security Configuration Files  
  Security configuration files contain information about the code group hierarchy and permission sets associated with a policy level. We strongly recommend that you use the [Code Access Security Policy tool (Caspol.exe)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md) to modify security policy to ensure that policy changes do not corrupt the security configuration files.  
@@ -91,11 +91,11 @@ The .NET Framework, through configuration files, gives developers and administra
   
  The security configuration files are in the following locations:  
   
--   Enterprise policy configuration file: %*runtime-install-path*%\Config\Enterprisesec.config  
+- Enterprise policy configuration file: %*runtime-install-path*%\Config\Enterprisesec.config  
   
--   Machine policy configuration file: %*runtime-install-path*%\Config\Security.config  
+- Machine policy configuration file: %*runtime-install-path*%\Config\Security.config  
   
--   User policy configuration file: %USERPROFILE%\Application data\Microsoft\CLR security config\v*xx.xx*\Security.config  
+- User policy configuration file: %USERPROFILE%\Application data\Microsoft\CLR security config\v*xx.xx*\Security.config  
   
 ## In This Section  
  [How to: Locate Assemblies by Using DEVPATH](../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)  

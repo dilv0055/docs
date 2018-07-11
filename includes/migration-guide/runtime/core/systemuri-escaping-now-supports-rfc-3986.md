@@ -1,5 +1,6 @@
 ### System.Uri escaping now supports RFC 3986
 
+
 |   |   |
 |---|---|
 |Details|URI escaping has changed in .NET Framework 4.5 to support [RFC 3986](http://tools.ietf.org/html/rfc3986). Specific changes include:<ul><li><xref:System.Uri.EscapeDataString(System.String)?displayProperty=name> escapes reserved characters based on RFC 3986.</li><li><xref:System.Uri.EscapeUriString(System.String)?displayProperty=name> does not escape reserved characters.</li><li><xref:System.Uri.UnescapeDataString(System.String)?displayProperty=name> does not throw an exception if it encounters an invalid escape sequence.</li><li>Unreserved escaped characters are un-escaped.</li></ul>|

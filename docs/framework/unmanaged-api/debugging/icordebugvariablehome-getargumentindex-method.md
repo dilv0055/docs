@@ -20,38 +20,39 @@ ms.author: "ronpet"
 ---
 # ICorDebugVariableHome::GetArgumentIndex Method
 Gets the index of a function argument.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetArgumentIndex(  
     [out] ULONG32* pArgumentIndex  
 );  
 ```  
-  
+
 #### Parameters  
  `pArgumentIndex`  
  [out] A pointer to the argument index.  
-  
+
 ## Return Value  
  The method returns the following values.  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |`S_OK`|The method call returned a valid argument index.|  
 |`E_FAIL`|The current [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instance represents a local variable.|  
-  
+
 ## Remarks  
  The argument index can be used to retrieve metadata for this argument.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
-  
+
 ## See Also  
  [ICorDebugVariableHome Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)

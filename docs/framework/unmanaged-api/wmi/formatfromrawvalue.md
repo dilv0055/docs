@@ -19,11 +19,11 @@ ms.author: "ronpet"
 ---
 # FormatFromRawValue function
 Converts one raw performance data value to the specified format, or two raw performance data values if the format conversion is time-based.   
-  
+
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 int FormatFromRawValue (
    [in] uint                    dwCounterType, 
@@ -43,6 +43,7 @@ int FormatFromRawValue (
 `dwFormat`  
 [in] The format to which to convert the raw performance data. It can be one of the following values:
 
+
 |Constant  |Value  |Description |
 |---------|---------|---------|
 | `PDH_FMT_DOUBLE` |0x00000200 | Return the calculated value as a double-precision floating point value. | 
@@ -50,6 +51,7 @@ int FormatFromRawValue (
 | `PDH_FMT_LONG` | 0x00000100 | Return the calculated value as a 32-bit integer. |
 
 One of the previous values can be ORed with one of the following scaling flags:
+
 
 |Constant  |Value  |Description |
 |---------|---------|---------|
@@ -72,22 +74,23 @@ One of the previous values can be ORed with one of the following scaling flags:
 
 The following values are returned by this function:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `ERROR_SUCCESS` | 0 | The function call is successful. |
 | `PDH_INVALID_ARGUMENT` | 0xC0000BBD | A required argument is missing or incorrect. | 
 | `PDH_INVALID_HANDLE` | 0xC0000BBC | The handle is not a valid PDH object. |
-  
+
 ## Remarks
 
 This function wraps a call to the [FormatFromRawValue](https://msdn.microsoft.com/library/ms231047(v=vs.85).aspx) function.
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Library:** PerfCounter.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

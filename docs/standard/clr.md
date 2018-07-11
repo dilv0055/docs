@@ -60,6 +60,7 @@ Language compilers and tools expose the runtime's functionality in ways that are
 
 The version number of the .NET Framework doesn't necessarily correspond to the version number of the CLR it includes. The following table shows how the two version numbers correlate.
 
+
 |.NET Framework version|Includes CLR version|
 |----------------------------|--------------------------|
 |1.0|1.0|
@@ -73,6 +74,7 @@ The version number of the .NET Framework doesn't necessarily correspond to the v
 |4.7 (including 4.7.1 and 4.7.2)|4|
 
 ## Related topics
+
 
 |Title|Description|
 |-----------|-----------------|

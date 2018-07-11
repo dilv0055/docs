@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Writes a specified number of bytes to a property identified by a property handle.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```  
 HRESULT WritePropertyValue (
    [in] int                  vFunc, 
@@ -55,12 +55,13 @@ HRESULT WritePropertyValue (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | A parameter is not valid. |
 |`WBEM_E_TYPE_MISMATCH` | 0x80041005 | A type mismatch occurred. |
 |`WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::WritePropertyValue](https://msdn.microsoft.com/library/aa391783(v=vs.85).aspx) method.
@@ -71,10 +72,10 @@ For nonstring property values, `lNumBytes` must be the correct data size of the 
 
 ## Requirements  
 **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

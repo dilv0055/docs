@@ -9,7 +9,6 @@ ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # Custom element for NameValueSectionHandler and DictionarySectionHandler
 
 Defines settings for custom configuration sections that use the <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler> classes.
@@ -23,16 +22,18 @@ None
 
 ## Parent element
 
+
 |     | Description |
 | --- | ----------- |
 | [**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) | The root element in every configuration file used by the common language runtime and .NET Framework applications. |
 
 ## Child elements
 
+
 |     | Description |
 | --- | ----------- |
 | [**\<add>**](~/docs/framework/configure-apps/file-schema/add-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler>  | Adds custom application settings. |
-| [**\<remove>**](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler> | 	Removes a previously defined setting. |
+| [**\<remove>**](~/docs/framework/configure-apps/file-schema/remove-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler> |    Removes a previously defined setting. |
 | [**\<clear>**](~/docs/framework/configure-apps/file-schema/clear-element-for-custom-2.md) for <xref:System.Configuration.NameValueSectionHandler> and <xref:System.Configuration.DictionarySectionHandler> | Clears all previously defined settings in a section. |
 
 ## Remarks
@@ -40,6 +41,7 @@ None
 The **\<sectionName>** element is a custom element defined by a **\<section>** tag in the **\<configSections>** element.
 
 The following table shows the type of object the ConfigurationSettings.GetConfig method returns for each configuration section handler:
+
 
 | Configuration section handler                        | Return type                                                |
 | ---------------------------------------------------- | ---------------------------------------------------------- |

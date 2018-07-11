@@ -6,7 +6,6 @@ author: rlander
 ms.author: mairaw
 ms.date: 08/03/2017
 ---
-
 # Install the .NET Framework on Windows Vista and Windows Server 2008
 
 The .NET Framework is required to run many applications on Windows. You can use the following instructions to install it. You may have arrived on this page after trying to run an application and seeing the following dialog on your machine.

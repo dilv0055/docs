@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # BucketParameters Structure
 Stores the type name of an event and the parameters for the current exception that is associated with the event.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct _BucketParameters {  
     BOOL  fInited;                    
@@ -29,21 +29,22 @@ typedef struct _BucketParameters {
     WCHAR pszParams[10][255];         
 } BucketParameters;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`fInited`|`true`, if the rest of this structure is valid; otherwise, `false`.|  
 |`pszEventTypeName`|Name of the event type.|  
 |`pszParams`|An array of strings, each of which specifies a parameter for the current exception associated with the event.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Structures](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)

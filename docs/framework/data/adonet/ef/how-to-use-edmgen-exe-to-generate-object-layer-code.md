@@ -8,29 +8,29 @@ This topic shows how to use the [EDM Generator (EdmGen.exe)](../../../../../docs
   
 ### To generate object-layer code for the School model for a Visual Basic project using EdmGen.exe  
   
-1.  Create the School database. For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).  
+1. Create the School database. For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).  
   
-2.  Generate the School model or obtain the School.csdl file. For more information, see [How to: Use EdmGen.exe to Generate the Model and Mapping Files](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
+2. Generate the School model or obtain the School.csdl file. For more information, see [How to: Use EdmGen.exe to Generate the Model and Mapping Files](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
   
-3.  At the command prompt, execute the following command without line breaks:  
+3. At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:EntityClassGeneration   
-    /incsdl:.\School.csdl /outobjectlayer:.\School.Objects.vb /language:VB  
-    ```  
+   ```  
+   "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:EntityClassGeneration   
+   /incsdl:.\School.csdl /outobjectlayer:.\School.Objects.vb /language:VB  
+   ```  
   
 ### To generate object-layer code for the School model for a C# project using EdmGen.exe  
   
-1.  Create the School database. For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).  
+1. Create the School database. For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).  
   
-2.  Generate the School model or obtain the School.csdl file. For more information, see [How to: Use EdmGen.exe to Generate the Model and Mapping Files](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
+2. Generate the School model or obtain the School.csdl file. For more information, see [How to: Use EdmGen.exe to Generate the Model and Mapping Files](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).  
   
-3.  At the command prompt, execute the following command without line breaks:  
+3. At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:EntityClassGeneration   
-    /incsdl:.\School.csdl /outobjectlayer:.\School.Objects.cs /language:CSharp  
-    ```  
+   ```  
+   "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:EntityClassGeneration   
+   /incsdl:.\School.csdl /outobjectlayer:.\School.Objects.cs /language:CSharp  
+   ```  
   
 ## See Also  
  [Modeling and Mapping](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)  

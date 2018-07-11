@@ -30,29 +30,29 @@ This sample demonstrates how to host a Windows Communication Foundation (WCF) RE
   
 #### To use this sample  
   
-1.  Open the solution for the ASP.NET Routes Integration sample in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
+1. Open the solution for the ASP.NET Routes Integration sample in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
   
-2.  Press CTRL+SHIFT+B to build the solution.  
+2. Press CTRL+SHIFT+B to build the solution.  
   
-3.  If it is not already open, press "CTRL+W, S" to open the **Solution Explorer** window.  
+3. If it is not already open, press "CTRL+W, S" to open the **Solution Explorer** window.  
   
-4.  From the **Solution Explorer** windows, right-click the **Service** project and place the cursor over the **Debug** context menu option so that the **Start New Instance** context menu appears and select **Start New Instance**.  This launches the ASP.NET development server, which hosts the service.  
+4. From the **Solution Explorer** windows, right-click the **Service** project and place the cursor over the **Debug** context menu option so that the **Start New Instance** context menu appears and select **Start New Instance**.  This launches the ASP.NET development server, which hosts the service.  
   
-5.  From the **Solution Explorer** windows, right-click the **Client** project and place the cursor over the **Debug** context menu option so that the **Start New Instance** context menu appears and select **Start New Instance**.  
+5. From the **Solution Explorer** windows, right-click the **Client** project and place the cursor over the **Debug** context menu option so that the **Start New Instance** context menu appears and select **Start New Instance**.  
   
-6.  The client console window appears and provides the URI of the running service and the URI of the HTML help page for the running service. At any point in time you can view the HTML help page by typing the URI of the help page in a browser. As the sample runs, the client writes the status of the current activity.  
+6. The client console window appears and provides the URI of the running service and the URI of the HTML help page for the running service. At any point in time you can view the HTML help page by typing the URI of the help page in a browser. As the sample runs, the client writes the status of the current activity.  
   
-7.  Press any key to terminate the client console application.  
+7. Press any key to terminate the client console application.  
   
-8.  Press Shift+F5 to stop debugging the service and in the Windows Notification Area, right-click the ASP.NET development server icon and select **Stop** from the context menu.  
+8. Press Shift+F5 to stop debugging the service and in the Windows Notification Area, right-click the ASP.NET development server icon and select **Stop** from the context menu.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AspNetRouteIntegration`  
   
 ## See Also

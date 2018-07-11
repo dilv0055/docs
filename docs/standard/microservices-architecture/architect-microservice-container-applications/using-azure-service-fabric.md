@@ -13,9 +13,9 @@ The aim of Service Fabric is to solve the hard problems of building and running 
 
 Service Fabric provides two broad areas to help you build applications that use a microservices approach:
 
--   A platform that provides system services to deploy, scale, upgrade, detect, and restart failed services, discover service location, manage state, and monitor health. These system services in effect enable many of the characteristics of microservices described previously.
+- A platform that provides system services to deploy, scale, upgrade, detect, and restart failed services, discover service location, manage state, and monitor health. These system services in effect enable many of the characteristics of microservices described previously.
 
--   Programming APIs, or frameworks, to help you build applications as microservices: [reliable actors and reliable services](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework). Of course, you can choose any code to build your microservice, but these APIs make the job more straightforward, and they integrate with the platform at a deeper level. This way you can get health and diagnostics information, or you can take advantage of reliable state management.
+- Programming APIs, or frameworks, to help you build applications as microservices: [reliable actors and reliable services](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework). Of course, you can choose any code to build your microservice, but these APIs make the job more straightforward, and they integrate with the platform at a deeper level. This way you can get health and diagnostics information, or you can take advantage of reliable state management.
 
 Service Fabric is agnostic with respect to how you build your service, and you can use any technology. However, it provides built-in programming APIs that make it easier to build microservices.
 
@@ -82,6 +82,6 @@ Other microservice frameworks that allow stateful services, that support the Act
 
 Note that Docker containers are themselves stateless. If you want to implement a stateful service, you need one of the additional prescriptive and higher-level frameworks noted earlier. 
 
->[!div class="step-by-step"]
-[Previous](scalable-available-multi-container-microservice-applications.md)
-[Next](../docker-application-development-process/index.md)
+> [!div  class="step-by-step"]
+> [Previous](scalable-available-multi-container-microservice-applications.md)
+> [Next](../docker-application-development-process/index.md)

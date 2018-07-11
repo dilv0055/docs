@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Creates or updates an instance of an existing class. The instance is written to the WMI repository. 
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT PutInstanceWmi (
    [in] IWbemClassObject*    pInst,
@@ -40,6 +40,7 @@ HRESULT PutInstanceWmi (
 
 `lFlags`   
 [in] A combination of flags that affect the behavior of this function. The following values are defined in the *WbemCli.h* header file, or you can define them as constants in your code: 
+
 
 |Constant  |Value  |Description  |
 |---------|---------|---------|
@@ -59,6 +60,7 @@ HRESULT PutInstanceWmi (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_ACCESS_DENIED` | 0x80041003 | The user does not have permission to update an instance of the specified class. |
@@ -73,7 +75,7 @@ The following values returned by this function are defined in the *WbemCli.h* he
 | `WBEM_E_SHUTTING_DOWN` | 0x80041033 | WMI was probably stopped and restarting. Call [ConnectServerWmi](connectserverwmi.md) again. |
 | `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | The remote procedure call (RPC) link between the current process and WMI has failed. |
 | `WBEM_S_NO_ERROR` | 0 | The function call was successful. |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemServices::PutInstance](https://msdn.microsoft.com/library/aa392115(v=vs.85).aspx) method.
@@ -91,10 +93,10 @@ If the function call fails, you can obtain additional error information by calli
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

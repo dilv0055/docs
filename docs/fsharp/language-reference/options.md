@@ -39,6 +39,7 @@ The option type supports the following properties and methods.
 
 
 
+
 |Property or method|Type|Description|
 |------------------|----|-----------|
 |[None](https://msdn.microsoft.com/library/83ef260a-aa33-4e6f-aee6-b9bf0a461476)|`'T option`|A static property that enables you to create an option value that has the `None` value.|

@@ -15,28 +15,28 @@ On any Windows Form, you can designate a <xref:System.Windows.Forms.Button> cont
   
 ### To designate the cancel button  
   
-1.  Set the form's <xref:System.Windows.Forms.Form.CancelButton%2A> property to the appropriate <xref:System.Windows.Forms.Button> control.  
+1. Set the form's <xref:System.Windows.Forms.Form.CancelButton%2A> property to the appropriate <xref:System.Windows.Forms.Button> control.  
   
-    ```vb  
-    Private Sub SetCancelButton(ByVal myCancelBtn As Button)  
-       Me.CancelButton = myCancelBtn  
-    End Sub  
-    ```  
+   ```vb  
+   Private Sub SetCancelButton(ByVal myCancelBtn As Button)  
+      Me.CancelButton = myCancelBtn  
+   End Sub  
+   ```  
   
-    ```csharp  
-    private void SetCancelButton(Button myCancelBtn)  
-    {  
-       this.CancelButton = myCancelBtn;  
-    }  
-    ```  
+   ```csharp  
+   private void SetCancelButton(Button myCancelBtn)  
+   {  
+      this.CancelButton = myCancelBtn;  
+   }  
+   ```  
   
-    ```cpp  
-    private:  
-       void SetCancelButton(Button ^ myCancelBtn)  
-       {  
-          this->CancelButton = myCancelBtn;  
-       }  
-    ```  
+   ```cpp  
+   private:  
+      void SetCancelButton(Button ^ myCancelBtn)  
+      {  
+         this->CancelButton = myCancelBtn;  
+      }  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.Form.CancelButton%2A>  

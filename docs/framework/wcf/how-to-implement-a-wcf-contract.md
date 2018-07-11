@@ -15,103 +15,103 @@ This is the second of six tasks required to create a basic Windows Communication
   
 ### To implement a WCF service contract  
   
-1.  Open the Service1.cs or Service1.vb file and add the following code:  
+1. Open the Service1.cs or Service1.vb file and add the following code:  
   
-    ```csharp  
-    //Service1.cs  
-    using System;  
-    using System.Collections.Generic;  
-    using System.Linq;  
-    using System.Runtime.Serialization;  
-    using System.ServiceModel;  
-    using System.Text;  
+   ```csharp  
+   //Service1.cs  
+   using System;  
+   using System.Collections.Generic;  
+   using System.Linq;  
+   using System.Runtime.Serialization;  
+   using System.ServiceModel;  
+   using System.Text;  
   
-    namespace GettingStartedLib  
-    {  
-        public class CalculatorService : ICalculator  
-        {  
-            public double Add(double n1, double n2)  
-            {  
-                double result = n1 + n2;  
-                Console.WriteLine("Received Add({0},{1})", n1, n2);  
-                // Code added to write output to the console window.  
-                Console.WriteLine("Return: {0}", result);  
-                return result;  
-            }  
+   namespace GettingStartedLib  
+   {  
+       public class CalculatorService : ICalculator  
+       {  
+           public double Add(double n1, double n2)  
+           {  
+               double result = n1 + n2;  
+               Console.WriteLine("Received Add({0},{1})", n1, n2);  
+               // Code added to write output to the console window.  
+               Console.WriteLine("Return: {0}", result);  
+               return result;  
+           }  
   
-            public double Subtract(double n1, double n2)  
-            {  
-                double result = n1 - n2;  
-                Console.WriteLine("Received Subtract({0},{1})", n1, n2);  
-                Console.WriteLine("Return: {0}", result);  
-                return result;  
-            }  
+           public double Subtract(double n1, double n2)  
+           {  
+               double result = n1 - n2;  
+               Console.WriteLine("Received Subtract({0},{1})", n1, n2);  
+               Console.WriteLine("Return: {0}", result);  
+               return result;  
+           }  
   
-            public double Multiply(double n1, double n2)  
-            {  
-                double result = n1 * n2;  
-                Console.WriteLine("Received Multiply({0},{1})", n1, n2);  
-                Console.WriteLine("Return: {0}", result);  
-                return result;  
-            }  
+           public double Multiply(double n1, double n2)  
+           {  
+               double result = n1 * n2;  
+               Console.WriteLine("Received Multiply({0},{1})", n1, n2);  
+               Console.WriteLine("Return: {0}", result);  
+               return result;  
+           }  
   
-            public double Divide(double n1, double n2)  
-            {  
-                double result = n1 / n2;  
-                Console.WriteLine("Received Divide({0},{1})", n1, n2);  
-                Console.WriteLine("Return: {0}", result);  
-                return result;  
-            }  
-        }  
-    }  
-    ```  
+           public double Divide(double n1, double n2)  
+           {  
+               double result = n1 / n2;  
+               Console.WriteLine("Received Divide({0},{1})", n1, n2);  
+               Console.WriteLine("Return: {0}", result);  
+               return result;  
+           }  
+       }  
+   }  
+   ```  
   
-    ```vb
-    ‘Service1.vb  
-    Imports System  
-    Imports System.ServiceModel  
+   ```vb
+   ‘Service1.vb  
+   Imports System  
+   Imports System.ServiceModel  
   
-    Namespace GettingStartedLib  
+   Namespace GettingStartedLib  
   
-        Public Class CalculatorService  
-            Implements ICalculator  
+       Public Class CalculatorService  
+           Implements ICalculator  
   
-            Public Function Add(ByVal n1 As Double, ByVal n2 As Double) As Double Implements ICalculator.Add  
-                Dim result As Double = n1 + n2  
-                ' Code added to write output to the console window.  
-                Console.WriteLine("Received Add({0},{1})", n1, n2)  
-                Console.WriteLine("Return: {0}", result)  
-                Return result  
-            End Function  
+           Public Function Add(ByVal n1 As Double, ByVal n2 As Double) As Double Implements ICalculator.Add  
+               Dim result As Double = n1 + n2  
+               ' Code added to write output to the console window.  
+               Console.WriteLine("Received Add({0},{1})", n1, n2)  
+               Console.WriteLine("Return: {0}", result)  
+               Return result  
+           End Function  
   
-            Public Function Subtract(ByVal n1 As Double, ByVal n2 As Double) As Double Implements ICalculator.Subtract  
-                Dim result As Double = n1 - n2  
-                Console.WriteLine("Received Subtract({0},{1})", n1, n2)  
-                Console.WriteLine("Return: {0}", result)  
-                Return result  
+           Public Function Subtract(ByVal n1 As Double, ByVal n2 As Double) As Double Implements ICalculator.Subtract  
+               Dim result As Double = n1 - n2  
+               Console.WriteLine("Received Subtract({0},{1})", n1, n2)  
+               Console.WriteLine("Return: {0}", result)  
+               Return result  
   
-            End Function  
+           End Function  
   
-            Public Function Multiply(ByVal n1 As Double, ByVal n2 As Double) As Double Implements ICalculator.Multiply  
-                Dim result As Double = n1 * n2  
-                Console.WriteLine("Received Multiply({0},{1})", n1, n2)  
-                Console.WriteLine("Return: {0}", result)  
-                Return result  
+           Public Function Multiply(ByVal n1 As Double, ByVal n2 As Double) As Double Implements ICalculator.Multiply  
+               Dim result As Double = n1 * n2  
+               Console.WriteLine("Received Multiply({0},{1})", n1, n2)  
+               Console.WriteLine("Return: {0}", result)  
+               Return result  
   
-            End Function  
+           End Function  
   
-            Public Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double Implements ICalculator.Divide  
-                Dim result As Double = n1 / n2  
-                Console.WriteLine("Received Divide({0},{1})", n1, n2)  
-                Console.WriteLine("Return: {0}", result)  
-                Return result  
+           Public Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double Implements ICalculator.Divide  
+               Dim result As Double = n1 / n2  
+               Console.WriteLine("Received Divide({0},{1})", n1, n2)  
+               Console.WriteLine("Return: {0}", result)  
+               Return result  
   
-            End Function  
-        End Class  
-    End Namespace  
-    ```  
+           End Function  
+       End Class  
+   End Namespace  
+   ```  
   
-     Each method implements the calculator operation and writes some text to the console to make testing easier.  
+    Each method implements the calculator operation and writes some text to the console to make testing easier.  
   
 ## Example  
  The following code shows both the interface that defines the contract and the implementation of the interface.  

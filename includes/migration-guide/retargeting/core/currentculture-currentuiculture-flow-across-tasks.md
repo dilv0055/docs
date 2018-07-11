@@ -1,5 +1,6 @@
 ### CurrentCulture and CurrentUICulture flow across tasks
 
+
 |   |   |
 |---|---|
 |Details|Beginning in the .NET Framework 4.6, <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> and <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> are stored in the thread's <xref:System.Threading.ExecutionContext?displayProperty=name>, which flows across asynchronous operations.This means that changes to <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> or <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> will be reflected in tasks which are later run asynchronously. This is different from the behavior of previous .NET Framework versions (which would reset <xref:System.Globalization.CultureInfo.CurrentCulture?displayProperty=name> and <xref:System.Globalization.CultureInfo.CurrentUICulture?displayProperty=name> in all asynchronous tasks).|

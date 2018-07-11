@@ -27,6 +27,7 @@ The `dotnet tool install` command provides a way for you to install .NET Core Gl
 
 Global Tools are installed in the following directories by default when you specify the `-g` (or `--global`) option:
 
+
 | OS          | Path                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |

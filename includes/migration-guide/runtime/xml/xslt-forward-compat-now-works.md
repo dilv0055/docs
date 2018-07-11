@@ -1,5 +1,6 @@
 ### XSLT forward compat now works
 
+
 |   |   |
 |---|---|
 |Details|In the .NET Framework 4, XSLT 1.0 forward compatibility had the following issues:<ul><li>Loading a style sheet failed if its version was set to 2.0 and the parser encountered an unrecognized XSLT 1.0 construct.</li><li>The <code>xsl:sort</code> construct failed to sort data if the style sheet version was set to 1.1.</li></ul>In the .NET Framework 4.5, these issues have been fixed, and XSLT 1.0 forward compatibility mode works properly.|

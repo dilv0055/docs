@@ -10,11 +10,11 @@ You tried to use a variable defined in a type library or object library that has
   
 ## To correct this error  
   
--   Use a variable of a type recognized by Visual Basic.  
+- Use a variable of a type recognized by Visual Basic.  
   
-     -or-  
+   -or-  
   
--   If you encounter this error while using `FileGet` or `FileGetOBject`, make sure the file you are trying to use was written to with `FilePut` or `FilePutObject`.  
+- If you encounter this error while using `FileGet` or `FileGetOBject`, make sure the file you are trying to use was written to with `FilePut` or `FilePutObject`.  
   
 ## See Also  
  [Data Types](../../../visual-basic/language-reference/data-types/data-type-summary.md)

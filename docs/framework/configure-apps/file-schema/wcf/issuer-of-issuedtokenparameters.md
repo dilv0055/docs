@@ -5,7 +5,7 @@ ms.assetid: d6a95f32-d58c-40fc-8658-dd92564d3c90
 ---
 # &lt;issuer&gt; of &lt;issuedTokenParameters&gt;
 Specifies the Security Token Service (STS) that issues security tokens.  
-  
+
  \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
@@ -13,35 +13,38 @@ Specifies the Security Token Service (STS) that issues security tokens.
 \<security>  
 \<issuedTokenParameters>  
 \<issuer>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <issuer address="Uri" />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |address|Required string. The URL of the STS.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|A collection of address headers for the endpoints that the builder can create.|  
 |[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|When using an issued token, specifies settings that enable the client to authenticate the server.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<issuedTokenParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Specifies the current issued token.|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.AdditionalRequestParameters%2A>  
  <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement.AdditionalRequestParameters%2A>  

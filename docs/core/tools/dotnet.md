@@ -15,23 +15,22 @@ ms.date: 06/04/2018
 
 ## Synopsis
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 ```
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
     [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
 ```
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 ```
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics]
     [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
 ```
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 ```
 dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
     [-h|--help] [--info] [-v|--verbosity] [--version]
 ```
----
-
+* * *
 ## Description
 
 `dotnet` is a generic driver for the Command Line Interface (CLI) toolchain. Invoked on its own, it provides brief usage instructions.
@@ -42,7 +41,7 @@ The only time `dotnet` is used as a command on its own is to run [framework-depe
 
 ## Options
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 
 `--additional-deps <PATH>`
 
@@ -88,7 +87,7 @@ Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal
 
 Prints out the version of the .NET Core SDK in use.
 
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 
 `--additional-deps <PATH>`
 
@@ -126,7 +125,7 @@ Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal
 
 Prints out the version of the .NET Core SDK in use.
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `--additionalprobingpath <PATH>`
 
@@ -156,13 +155,13 @@ Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal
 
 Prints out the version of the .NET Core SDK in use.
 
----
-
+* * *
 ## dotnet commands
 
 ### General
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
+
 
 | Command                                       | Function                                                            |
 | --------------------------------------------- | ------------------------------------------------------------------- |
@@ -181,7 +180,8 @@ Prints out the version of the .NET Core SDK in use.
 | [dotnet store](dotnet-store.md)               | Stores assemblies in the runtime package store.                     |
 | [dotnet test](dotnet-test.md)                 | Runs tests using a test runner.                                     |
 
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
+
 
 | Command                             | Function                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
@@ -199,7 +199,8 @@ Prints out the version of the .NET Core SDK in use.
 | [dotnet store](dotnet-store.md)     | Stores assemblies in the runtime package store.                     |
 | [dotnet test](dotnet-test.md)       | Runs tests using a test runner.                                     |
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
+
 
 | Command                             | Function                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
@@ -215,9 +216,9 @@ Prints out the version of the .NET Core SDK in use.
 | [dotnet sln](dotnet-sln.md)         | Options to add, remove, and list projects in a solution file.       |
 | [dotnet test](dotnet-test.md)       | Runs tests using a test runner.                                     |
 
----
-
+* * *
 ### Project references
+
 
 Command | Function
 --- | ---
@@ -227,12 +228,14 @@ Command | Function
 
 ### NuGet packages
 
+
 Command | Function
 --- | ---
 [dotnet add package](dotnet-add-package.md) | Adds a NuGet package.
 [dotnet remove package](dotnet-remove-package.md) | Removes a NuGet package.
 
 ### NuGet commands
+
 
 Command | Function
 --- | ---
@@ -244,6 +247,7 @@ Command | Function
 
 [.NET Core Global Tools](global-tools.md) are available starting with .NET Core SDK 2.1.300:
 
+
 Command | Function
 --- | ---
 [dotnet tool install](dotnet-tool-install.md) | Installs a Global Tool on your machine.
@@ -254,6 +258,7 @@ Command | Function
 ### Additional tools
 
 Starting with .NET Core SDK 2.1.300, a number of tools that were available only on a per project basis using `DotnetCliToolReference` are now available as part of the .NET Core SDK. These tools include:
+
 
 | Tool                                              | Function                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------ |
@@ -287,7 +292,7 @@ Run a framework-dependent app named `myapp.dll`:
 
 ## Environment variables
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 
 `DOTNET_PACKAGES`
 
@@ -309,7 +314,7 @@ Specifies whether .NET Core runtime, shared framework, or SDK are resolved from 
 
 Disables minor version roll forward. For more information, see [Roll forward](../whats-new/dotnet-core-2-1.md#roll-forward).
 
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 
 `DOTNET_PACKAGES`
 
@@ -327,7 +332,7 @@ Specifies whether data about the .NET Core tools usage is collected and sent to 
 
 Specifies whether .NET Core runtime, shared framework, or SDK are resolved from the global location. If not set, it defaults to `true`. Set to `false` to not resolve from the global location and have isolated .NET Core installations (values `0` or `false` are accepted). For more information about multi-level lookup, see [Multi-level SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `DOTNET_PACKAGES`
 
@@ -341,4 +346,4 @@ Specifies the location of the servicing index to use by the shared host when loa
 
 Specifies whether data about the .NET Core tools usage is collected and sent to Microsoft. Set to `true` to opt-out of the telemetry feature (values `true`, `1`, or `yes` accepted). Otherwise, set to `false` to opt into the telemetry features (values `false`, `0`, or `no` accepted). If not set, the default is `false` and the telemetry feature is active.
 
----
+* * *

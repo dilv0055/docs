@@ -7,14 +7,14 @@ manager: "mbaldwin"
 ---
 # &lt;sessionSecurityTokenCache&gt;
 Registers a cache for session tokens with a service or a security token handler collection.  
-  
+
  \<system.identityModel>  
 \<identityConfiguration>  
 \<caches>  
 \<sessionSecurityTokenCache>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <system.identityModel>  
   <identityConfiguration>  
@@ -25,28 +25,30 @@ Registers a cache for session tokens with a service or a security token handler 
   </identityConfiguration>  
 </system.identityModel>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |type|A type that derives from the <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> class.|  
-  
+
 ### Child Elements  
  None  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<caches>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Registers the caches used by a service or a security token handler collection.|  
-  
+
 ## Example  
  The following XML shows the configuration of a custom cache for holding session security tokens (<xref:System.IdentityModel.Tokens.SessionSecurityToken>). The configuration is taken from the `ClaimsAwareWebFarm` sample. For more information about this sample, see [WIF Code Sample Index](../../../../../docs/framework/security/wif-code-sample-index.md).  
-  
+
 ```xml  
 <caches>  
   <sessionSecurityTokenCache type="CacheLibrary.SharedSessionSecurityTokenCache, CacheLibrary">  
@@ -55,6 +57,6 @@ Registers a cache for session tokens with a service or a security token handler 
   </sessionSecurityTokenCache>  
 </caches>  
 ```  
-  
+
 ## See Also  
  <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>

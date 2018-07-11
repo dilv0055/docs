@@ -11,10 +11,11 @@ ms.author: "ronpet"
 ---
 # Constants (Unmanaged API Reference)
 This topic describes the language type, language vendor, and document type constants that are defined in CorSym.idl.  
-  
+
 ## Language Type Constants  
  The following table shows language type constants, which represent GUIDs that identify programming languages.  
-  
+
+
 |Symbol|Description|  
 |------------|-----------------|  
 |CorSym_LanguageType_C|Indicates the C language.|  
@@ -28,21 +29,23 @@ This topic describes the language type, language vendor, and document type const
 |CorSym_LanguageType_JScript|Indicates the JScript language.|  
 |CorSym_LanguageType_SMC|Indicates the SMC language.|  
 |CorSym_LanguageType_MCPlusPlus|Indicates the C++ language enabled for the .NET Framework.|  
-  
+
 ## Language Vendor Constants  
  The following table shows language vendor constants, which represent GUIDs that identify programming language vendors.  
-  
+
+
 |Symbol|Description|  
 |------------|-----------------|  
 |CorSym_LanguageVendor_Microsoft|Indicates Microsoft.|  
-  
+
 ## Document Type Constants  
  The following table shows document type constants, which represent GUIDs that identify document types.  
-  
+
+
 |Symbol|Description|  
 |------------|-----------------|  
 |CorSym_DocumentType_Text|Indicates a text document.|  
 |CorSym_DocumentType_MC|Indicates a non-text document.|  
-  
+
 ## See Also  
  [Unmanaged API Reference](../../../docs/framework/unmanaged-api/index.md)

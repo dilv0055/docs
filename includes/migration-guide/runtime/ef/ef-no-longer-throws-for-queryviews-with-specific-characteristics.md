@@ -1,5 +1,6 @@
 ### EF no longer throws for QueryViews with specific characteristics
 
+
 |   |   |
 |---|---|
 |Details|Entity Framework no longer throws a <xref:System.StackOverflowException?displayProperty=name> exception when an app executes a query that involves a QueryView with a 0..1 navigation property that attempts to include the related entities as part of the query. For example, by calling <code>.Include(e =&gt; e.RelatedNavProp)</code>.|

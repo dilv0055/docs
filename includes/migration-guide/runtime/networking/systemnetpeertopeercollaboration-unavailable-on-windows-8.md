@@ -1,5 +1,6 @@
 ### System.Net.PeerToPeer.Collaboration unavailable on Windows 8
 
+
 |   |   |
 |---|---|
 |Details|The System.Net.PeerToPeer.Collaboration namespace is unavailable on Windows 8 or above.|

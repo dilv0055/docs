@@ -14,11 +14,11 @@ The following sections describe features and classes that can be used to synchro
   
  For background information on multithreaded programming, see:  
   
--   [Managed Threading Basics](../../../../standard/threading/managed-threading-basics.md)  
+- [Managed Threading Basics](../../../../standard/threading/managed-threading-basics.md)  
   
--   [Using Threads and Threading](../../../../standard/threading/using-threads-and-threading.md)  
+- [Using Threads and Threading](../../../../standard/threading/using-threads-and-threading.md)  
   
--   [Managed Threading Best Practices](../../../../standard/threading/managed-threading-best-practices.md)  
+- [Managed Threading Best Practices](../../../../standard/threading/managed-threading-best-practices.md)  
   
 ## The lock and SyncLock Keywords  
  The Visual Basic `SyncLock` statement can be used to ensure that a block of code runs to completion without interruption by other threads. This is accomplished by obtaining a mutual-exclusion lock for a given object for the duration of the code block.  
@@ -43,9 +43,9 @@ End Class
   
  For more information about the `SyncLock` statement, see the following topics:  
   
--   [SyncLock Statement](../../../../visual-basic/language-reference/statements/synclock-statement.md)  
+- [SyncLock Statement](../../../../visual-basic/language-reference/statements/synclock-statement.md)  
   
--   <xref:System.Threading.Monitor>  
+- <xref:System.Threading.Monitor>  
   
 ## Monitors  
  Like the `SyncLock` keyword, monitors prevent blocks of code from simultaneous execution by multiple threads. The <xref:System.Threading.Monitor.Enter%2A> method allows one and only one thread to proceed into the following statements; all other threads are blocked until the executing thread calls <xref:System.Threading.Monitor.Exit%2A>. This is just like using the `SyncLock` keyword. For example:  

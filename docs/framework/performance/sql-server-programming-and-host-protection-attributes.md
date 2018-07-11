@@ -17,21 +17,22 @@ ms.author: "mairaw"
 ---
 # SQL Server Programming and Host Protection Attributes
 The ability to load and execute managed code in a SQL Server host requires meeting the host's requirements for both code access security and host resource protection.  The code access security requirements are specified by one of three SQL Server permission sets: SAFE, EXTERNAL-ACCESS, or UNSAFE. Code executing within the SAFE or EXTERNAL-ACCESS permission sets must avoid certain types or members that have the <xref:System.Security.Permissions.HostProtectionAttribute> attribute applied. The <xref:System.Security.Permissions.HostProtectionAttribute> is not a security permission as much as a reliability guarantee in that it identifies specific code constructs, either types or methods, that the host may disallow.  The use of the <xref:System.Security.Permissions.HostProtectionAttribute> enforces a programming model that helps protect the stability of the host.  
-  
+
 ## Host Protection Attributes  
  Host protection attributes identify types or members that do not fit the host programming model and represent the following increasing levels of reliability threat:  
-  
--   Are otherwise benign.  
-  
--   Could lead to destabilization of server-managed user code.  
-  
--   Could lead to destabilization of the server process itself.  
-  
+
+- Are otherwise benign.  
+
+- Could lead to destabilization of server-managed user code.  
+
+- Could lead to destabilization of the server process itself.  
+
  SQL Server disallows the use of a type or member that has a <xref:System.Security.Permissions.HostProtectionAttribute> that specifies a <xref:System.Security.Permissions.HostProtectionResource> value of <xref:System.Security.Permissions.HostProtectionResource.SharedState>, <xref:System.Security.Permissions.HostProtectionResource.Synchronization>, <xref:System.Security.Permissions.HostProtectionResource.MayLeakOnAbort>, or <xref:System.Security.Permissions.HostProtectionResource.ExternalProcessMgmt>. This prevents the assemblies from calling members that enable sharing state, perform synchronization, might cause a resource leak on termination, or affect the integrity of the SQL Server process.  
-  
+
 ### Disallowed Types and Members  
  The following table identifies types and members whose <xref:System.Security.Permissions.HostProtectionResource> values are disallowed by SQL Server.  
-  
+
+
 |Namespace|Type or member|  
 |---------------|--------------------|  
 |`Microsoft.Win32`|<xref:Microsoft.Win32.PowerModeChangedEventArgs> class<br /><br /> <xref:Microsoft.Win32.PowerModeChangedEventHandler> delegate<br /><br /> <xref:Microsoft.Win32.SessionEndedEventArgs> class<br /><br /> <xref:Microsoft.Win32.SessionEndedEventHandler> delegate<br /><br /> <xref:Microsoft.Win32.SessionEndingEventArgs> class<br /><br /> <xref:Microsoft.Win32.SessionEndingEventHandler> delegate<br /><br /> <xref:Microsoft.Win32.SessionSwitchEventArgs> class<br /><br /> <xref:Microsoft.Win32.SessionSwitchEventHandler> delegate<br /><br /> <xref:Microsoft.Win32.SystemEvents> class<br /><br /> <xref:Microsoft.Win32.TimerElapsedEventArgs> class<br /><br /> <xref:Microsoft.Win32.TimerElapsedEventHandler> delegate<br /><br /> <xref:Microsoft.Win32.UserPreferenceChangedEventArgs> class<br /><br /> <xref:Microsoft.Win32.UserPreferenceChangingEventArgs> class|  
@@ -45,30 +46,31 @@ The ability to load and execute managed code in a SQL Server host requires meeti
 |`System.Timers`|<xref:System.Timers.Timer> class|  
 |`System.Web.Configuration`|<xref:System.Web.Configuration.MachineKeyValidationConverter> class|  
 |`System.Windows.Forms`|<xref:System.Windows.Forms.AutoCompleteStringCollection.SyncRoot%2A?displayProperty=nameWithType> property|  
-  
+
 ## SQL Server Permission Sets  
  SQL Server allows users to specify the reliability requirements for code deployed into a database. When assemblies are uploaded into the database, the author of the assembly can specify one of three permission sets for that assembly: SAFE, EXTERNAL-ACCESS, or UNSAFE.  
-  
+
+
 |Permission set|SAFE|EXTERNAL-ACCESS|UNSAFE|  
 |--------------------|----------|----------------------|------------|  
 |Code access security|Execute only|Execute + access to external resources|Unrestricted|  
 |Programming model restrictions|Yes|Yes|No restrictions|  
 |Verifiability requirement|Yes|Yes|No|  
 |Ability to call native code|No|No|Yes|  
-  
+
  SAFE is the most reliable and secure mode with associated restrictions in terms of the allowed programming model. SAFE code has high reliability and security features. SAFE assemblies are given enough permission to run, perform computations, and have access to the local database. SAFE assemblies need to be verifiably type safe and are not allowed to call unmanaged code.  
-  
+
  EXTERNAL-ACCESS provides an intermediate security option, allowing code to access resources external to the database but still having the reliability and safety of SAFE.  
-  
+
  UNSAFE is for highly trusted code that can only be created by database administrators. This trusted code has no code access restrictions, and it can call unmanaged (native) code.  
-  
+
  SQL Server uses the host-level code access security policy layer to set up a host policy that grants one of the three sets of permissions based on the permission set stored in SQL Server catalogs. Managed code running inside the database always gets one of these code access permission sets.  
-  
+
 ## Programming Model Restrictions  
  The programming model for managed code in SQL Server requires functions, procedures, and types which do not require the use of state held across multiple invocations or the sharing of state across multiple user sessions. Further, as described earlier, the presence of shared state can cause critical exceptions that impact the scalability and the reliability of the application.  
-  
+
  Given these considerations, SQL Server disallows the use of static variables and static data members. For SAFE and EXTERNAL-ACCESS assemblies, SQL Server examines the metadata of the assembly at CREATE ASSEMBLY time, and fails the creation of such assemblies if it finds the use of static data members and variables.  
-  
+
 ## See Also  
  <xref:System.Security.Permissions.HostProtectionAttribute>  
  <xref:System.Security.Permissions.HostProtectionResource>

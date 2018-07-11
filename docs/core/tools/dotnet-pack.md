@@ -15,20 +15,19 @@ ms.date: 05/29/2018
 
 ## Synopsis
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies]
     [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output]
     [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
----
-
+* * *
 ## Description
 
 The `dotnet pack` command builds the project and creates NuGet packages. The result of this command is a NuGet package. If the `--include-symbols` option is present, another package containing the debug symbols is created.
@@ -49,7 +48,7 @@ The project to pack. It's either a path to a [csproj file](csproj.md) or to a di
 
 ## Options
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 
 `-c|--configuration {Debug|Release}`
 
@@ -103,7 +102,7 @@ Defines the value for the `$(VersionSuffix)` MSBuild property in the project.
 
 Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `-c|--configuration {Debug|Release}`
 
@@ -141,8 +140,7 @@ Defines the value for the `$(VersionSuffix)` MSBuild property in the project.
 
 Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.
 
----
-
+* * *
 ## Examples
 
 Pack the project in the current directory:

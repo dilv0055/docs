@@ -17,7 +17,7 @@ This sample demonstrates how to build the channel stack in a custom way by imple
  The dispatcher first opens the channel listener and then accepts the singleton reply channel. With the channel, it starts to send messages (requests) in an infinite loop. For each request, it creates a reply message and sends it back to the client.  
   
 ## Creating a Response Message  
- The message processing is implemented in the type `MyServiceManager`. In the `HandleRequest` method, the `Action` header of the message is first checked to see whether the request is supported. A predefined SOAP action "http://tempuri.org/HelloWorld/Hello" is defined to provide message filtering. This is similar to the service contract concept in the WCF implementation of <xref:System.ServiceModel.ServiceHost>.  
+ The message processing is implemented in the type `MyServiceManager`. In the `HandleRequest` method, the `Action` header of the message is first checked to see whether the request is supported. A predefined SOAP action "<http://tempuri.org/HelloWorld/Hello>" is defined to provide message filtering. This is similar to the service contract concept in the WCF implementation of <xref:System.ServiceModel.ServiceHost>.  
   
  For the correct SOAP action case, the sample retrieves the requested message data and generates a corresponding response to the request similar to what is seen in the <xref:System.ServiceModel.ServiceHost> case.  
   
@@ -42,9 +42,9 @@ Server replied: You said: Howdy. Message id: 5
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\CustomChannelDispatcher`

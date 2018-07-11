@@ -19,9 +19,9 @@ Windows Communication Foundation (WCF) applications handle error situations by m
   
  Typically, services (and duplex clients) take the following steps to successfully integrate error handling into their applications:  
   
--   Map exception conditions to custom SOAP faults.  
+- Map exception conditions to custom SOAP faults.  
   
--   Clients and services send and receive SOAP faults as exceptions.  
+- Clients and services send and receive SOAP faults as exceptions.  
   
  In addition, WCF clients and services can use undeclared soap faults for debugging purposes and can extend the default error behavior. The following sections discuss these tasks and concepts.  
   
@@ -40,7 +40,7 @@ Windows Communication Foundation (WCF) applications handle error situations by m
   
 > [!IMPORTANT]
 >  Because managed exceptions can expose internal application information, setting <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> or <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> to `true` can permit WCF clients to obtain information about internal service operation exceptions, including personally identifiable or other sensitive information.  
->   
+> 
 >  Therefore, setting <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> or <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> to `true` is recommended only as a way to temporarily debug a service application. In addition, the WSDL for a method that returns unhandled managed exceptions in this way does not contain the contract for the <xref:System.ServiceModel.FaultException%601> of type <xref:System.ServiceModel.ExceptionDetail>. Clients must expect the possibility of an unknown SOAP fault (returned to WCF clients as <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> objects) to obtain the debugging information properly.  
   
 ## Customizing Error Handling with IErrorHandler  

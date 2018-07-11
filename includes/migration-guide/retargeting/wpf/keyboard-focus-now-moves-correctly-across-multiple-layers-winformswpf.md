@@ -1,5 +1,6 @@
 ### Keyboard focus now moves correctly across multiple layers of WinForms/WPF hosting
 
+
 |   |   |
 |---|---|
 |Details|Consider a WPF application hosting a WinForms control which in turn hosts WPF controls. Users may not be able to tab out of the WinForms layer if the first or last control in that layer is the WPF <code>System.Windows.Forms.Integration.ElementHost</code>. This change fixes this issue, and users are now able to tab out of the WinForms layer.Automated applications that rely on focus never escaping the WinForms layer may no longer work as expected.|

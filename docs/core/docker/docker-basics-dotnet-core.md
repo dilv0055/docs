@@ -7,12 +7,11 @@ ms.date: 11/06/2017
 ms.topic: tutorial
 ms.custom: mvc
 ---
-
 # Learn Docker Basics with .NET Core
 
 This tutorial teaches the Docker container build and deploy tasks for a .NET Core application. During the course of this tutorial, you learn:
 
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * How to create a Dockerfile
 > * How to create a .NET Core app.
 > * How to deploy your app into a Docker container.
@@ -52,13 +51,13 @@ The Docker client can be installed in:
 
 * Linux distributions
 
-   * [CentOS](https://www.docker.com/docker-centos-distribution)
+  * [CentOS](https://www.docker.com/docker-centos-distribution)
 
-   * [Debian](https://www.docker.com/docker-debian)
+  * [Debian](https://www.docker.com/docker-debian)
 
-   * [Fedora](https://www.docker.com/docker-fedora)
+  * [Fedora](https://www.docker.com/docker-fedora)
 
-   * [Ubuntu](https://www.docker.com/docker-ubuntu)
+  * [Ubuntu](https://www.docker.com/docker-ubuntu)
 
 * [macOS](https://docs.docker.com/docker-for-mac/)
 
@@ -78,7 +77,7 @@ Let's do a quick walkthrough:
 1. `$ dotnet new console`
 
    [`dotnet new`](../tools/dotnet-new.md) creates an up-to-date `Hello.csproj` project file with the dependencies necessary to build a console app.  It also creates a `Program.cs`, a basic file containing the entry point for the application.
-   
+
    `Hello.csproj`:
 
    The project file specifies everything that's needed to restore dependencies and build the program.
@@ -102,16 +101,16 @@ Let's do a quick walkthrough:
 
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
-   
+
    The *project.assets.json* file is a complete set of the NuGet dependencies graph, binding resolutions, and other app metadata. This required file is used by other tools, such as [`dotnet build`](../tools/dotnet-build.md) and [`dotnet run`](../tools/dotnet-run.md), to correctly process the source code.
-   
+
 3. `$ dotnet run`
 
    [`dotnet run`](../tools/dotnet-run.md) calls [`dotnet build`](../tools/dotnet-build.md) to confirm a successful build, and then calls `dotnet <assembly.dll>` to run the application.
-   
+
     ```console
     $ dotnet run
-    
+
     Hello World!
     ```
 
@@ -251,7 +250,7 @@ Hello World!
 ```
 
 Congratulations! you have just:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * Created a local .NET Core app
 > * Created a Dockerfile to build your first container
 > * Built and ran your Dockerized app

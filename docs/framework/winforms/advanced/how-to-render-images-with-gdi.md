@@ -15,65 +15,65 @@ You can use [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] 
   
 ### To render an image with GDI+  
   
-1.  Create an object representing the image you want to display. This object must be a member of a class that inherits from <xref:System.Drawing.Image>, such as <xref:System.Drawing.Bitmap> or <xref:System.Drawing.Imaging.Metafile>. An example is shown:  
+1. Create an object representing the image you want to display. This object must be a member of a class that inherits from <xref:System.Drawing.Image>, such as <xref:System.Drawing.Bitmap> or <xref:System.Drawing.Imaging.Metafile>. An example is shown:  
   
-    ```vb  
-    ' Uses the System.Environment.GetFolderPath to get the path to the   
-    ' current user's MyPictures folder.  
-    Dim myBitmap as New Bitmap _  
-       (System.Environment.GetFolderPath _  
-          (System.Environment.SpecialFolder.MyPictures))  
-    ```  
+   ```vb  
+   ' Uses the System.Environment.GetFolderPath to get the path to the   
+   ' current user's MyPictures folder.  
+   Dim myBitmap as New Bitmap _  
+      (System.Environment.GetFolderPath _  
+         (System.Environment.SpecialFolder.MyPictures))  
+   ```  
   
-    ```csharp  
-    // Uses the System.Environment.GetFolderPath to get the path to the   
-    // current user's MyPictures folder.  
-    Bitmap myBitmap = new Bitmap  
-       (System.Environment.GetFolderPath  
-          (System.Environment.SpecialFolder.MyPictures));  
-    ```  
+   ```csharp  
+   // Uses the System.Environment.GetFolderPath to get the path to the   
+   // current user's MyPictures folder.  
+   Bitmap myBitmap = new Bitmap  
+      (System.Environment.GetFolderPath  
+         (System.Environment.SpecialFolder.MyPictures));  
+   ```  
   
-    ```cpp  
-    // Uses the System.Environment.GetFolderPath to get the path to the   
-    // current user's MyPictures folder.  
-    Bitmap^ myBitmap = gcnew Bitmap  
-       (System::Environment::GetFolderPath  
-          (System::Environment::SpecialFolder::MyPictures));  
-    ```  
+   ```cpp  
+   // Uses the System.Environment.GetFolderPath to get the path to the   
+   // current user's MyPictures folder.  
+   Bitmap^ myBitmap = gcnew Bitmap  
+      (System::Environment::GetFolderPath  
+         (System::Environment::SpecialFolder::MyPictures));  
+   ```  
   
-2.  Create a <xref:System.Drawing.Graphics> object that represents the drawing surface you want to use. For more information, see [How to: Create Graphics Objects for Drawing](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md).  
+2. Create a <xref:System.Drawing.Graphics> object that represents the drawing surface you want to use. For more information, see [How to: Create Graphics Objects for Drawing](../../../../docs/framework/winforms/advanced/how-to-create-graphics-objects-for-drawing.md).  
   
-    ```vb  
-    ' Creates a Graphics object that represents the drawing surface of   
-    ' Button1.  
-    Dim g as Graphics = Button1.CreateGraphics  
-    ```  
+   ```vb  
+   ' Creates a Graphics object that represents the drawing surface of   
+   ' Button1.  
+   Dim g as Graphics = Button1.CreateGraphics  
+   ```  
   
-    ```csharp  
-    // Creates a Graphics object that represents the drawing surface of   
-    // Button1.  
-    Graphics g = Button1.CreateGraphics();  
-    ```  
+   ```csharp  
+   // Creates a Graphics object that represents the drawing surface of   
+   // Button1.  
+   Graphics g = Button1.CreateGraphics();  
+   ```  
   
-    ```cpp  
-    // Creates a Graphics object that represents the drawing surface of   
-    // Button1.  
-    Graphics^ g = button1->CreateGraphics();  
-    ```  
+   ```cpp  
+   // Creates a Graphics object that represents the drawing surface of   
+   // Button1.  
+   Graphics^ g = button1->CreateGraphics();  
+   ```  
   
-3.  Call the <xref:System.Drawing.Graphics.DrawImage%2A> of your graphics object to render the image. You must specify both the image to be drawn, and the coordinates where it is to be drawn.  
+3. Call the <xref:System.Drawing.Graphics.DrawImage%2A> of your graphics object to render the image. You must specify both the image to be drawn, and the coordinates where it is to be drawn.  
   
-    ```vb  
-    g.DrawImage(myBitmap, 1, 1)  
-    ```  
+   ```vb  
+   g.DrawImage(myBitmap, 1, 1)  
+   ```  
   
-    ```csharp  
-    g.DrawImage(myBitmap, 1, 1);  
-    ```  
+   ```csharp  
+   g.DrawImage(myBitmap, 1, 1);  
+   ```  
   
-    ```cpp  
-    g->DrawImage(myBitmap, 1, 1);  
-    ```  
+   ```cpp  
+   g->DrawImage(myBitmap, 1, 1);  
+   ```  
   
 ## See Also  
  [Getting Started with Graphics Programming](../../../../docs/framework/winforms/advanced/getting-started-with-graphics-programming.md)  

@@ -8,7 +8,6 @@ helpviewer_keywords:
   - "/refout compiler option [C#]"
   - "-refout compiler option [C#]"
 ---
-
 # -refout (C# Compiler Options)
 
 The **-refout** option specifies a file path where the reference assembly should be output. This translates to `metadataPeStream` in the Emit API.

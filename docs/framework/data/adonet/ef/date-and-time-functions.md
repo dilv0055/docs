@@ -5,7 +5,8 @@ ms.assetid: 971762d0-663b-4b64-8c61-352a8e6d3949
 ---
 # Date and Time Functions
 The .NET Framework Data Provider for SQL Server (SqlClient) provides date and time functions that perform operations on a `System.DateTime` input value and return a `string`, numeric, or `System.DateTime` value result. These functions are in the SqlServer namespace, which is available when you use SqlClient. A provider's namespace property allows the Entity Framework to discover which prefix is used by this provider for specific constructs, such as types and functions.The following table shows the SqlClient date and time functions.  
-  
+
+
 |Function|Description|  
 |--------------|-----------------|  
 |`DATEADD(` `datepart`, `number`, `date``)`|Returns a new `DateTime` value that is based on adding an interval to the specified date.<br /><br /> **Arguments**<br /><br /> `datepart`: A `String` that represents the part of the date on which to return a new value.<br /><br /> `number`: The `Int32`, `Int64`, `Decimal`, or `Double` value used to increment `datepart`.<br /><br /> `date:` An expression that returns a `DateTime`, or `DateTimeOffset`, or `Time` with precision = [0-7], or a character string in a date format.<br /><br /> **Return Value**<br /><br /> A new `DateTime`, or `DateTimeOffset`, or `Time` value with precision = [0-7].<br /><br /> **Example**<br /><br /> `SqlServer.DATEADD('day', 22, cast('6/9/2006' as DateTime))`|  
@@ -20,12 +21,13 @@ The .NET Framework Data Provider for SQL Server (SqlClient) provides date and ti
 |`SYSDATETIME()`|Returns a `DateTime` value with a precision of 7.<br /><br /> **Return Value**<br /><br /> A `DateTime` value with a precision of 7.<br /><br /> **Example**<br /><br /> `SqlServer.SYSDATETIME()`|  
 |`SYSUTCDATE()`|Produces the datetime value in UTC (Coordinated Universal Time or Greenwich Mean Time) format.<br /><br /> **Return Value**<br /><br /> The `DateTime` value with precision = 7 in UTC format.<br /><br /> **Example**<br /><br /> `SqlServer.SYSUTCDATE()`|  
 |`SYSDATETIMEOFFSET()`|Returns a `DateTimeOffset` with a precision of 7.<br /><br /> **Return Value**<br /><br /> A `DateTimeOffset` value with precision of 7 in UTC format.<br /><br /> **Example**<br /><br /> `SqlServer.SYSDATETIMEOFFSET()`|  
-  
+
  For more information about the date and time functions that SqlClient supports, see the documentation for the SQL Server version that you specified in the SqlClient provider manifest:  
-  
+
+
 |SQL Server 2000|SQL Server 2005|SQL Server 2008|  
 |---------------------|---------------------|---------------------|  
 |[Date and Time Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115908)|[Date and Time Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=115909)|[Date and Time Functions (Transact-SQL)](http://go.microsoft.com/fwlink/?LinkId=98360)|  
-  
+
 ## See Also  
  [SqlClient for Entity Framework Functions](../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md)

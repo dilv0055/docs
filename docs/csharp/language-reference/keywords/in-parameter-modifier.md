@@ -5,7 +5,6 @@ helpviewer_keywords:
   - "parameters [C#], in"
   - "in parameters [C#]"
 ---
-
 # in parameter modifier (C# Reference)
 
 The `in` keyword causes arguments to be passed by reference. It is like the [ref](ref.md) or [out](out-parameter-modifier.md) keywords, except that `in` arguments cannot be modified by the called method. Whereas `ref` arguments may be modified,  `out` arguments must be modified by the caller, and those modifications are observable in the calling context.
@@ -14,13 +13,13 @@ The `in` keyword causes arguments to be passed by reference. It is like the [ref
 
 The preceding example demonstrates that the `in` modifier is usually unnecessary at the call site. It is only required in the method declaration.
 
-> [!NOTE] 
+> [!NOTE]
 > The `in` keyword can also be used with a generic type parameter to specify that the type parameter is contravariant, as part of a `foreach` statement, or as part of a `join` clause in a LINQ query. For more information on the use of the `in` keyword in these contexts, see [in](in.md), which provides links to all those uses.
-  
+
  Variables passed as `in` arguments must be initialized before being passed in a method call. However, the called method may not assign a value or modify the argument.  
-  
+
  Although the `in`, `ref`, and `out` keywords cause different run-time behavior, they are not considered part of the method signature at compile time. Therefore, methods cannot be overloaded if the only difference is that one method takes a `ref` or `in` argument and the other takes an `out` argument. The following code, for example, will not compile:  
-  
+
 ```csharp
 class CS0663_Example
 {
@@ -30,9 +29,9 @@ class CS0663_Example
     public void SampleMethod(ref int i) { }
 }
 ```
-  
+
 Overloading based on the presence of `in` is allowed:  
-  
+
 ```csharp
 class InOverloads
 {
@@ -106,13 +105,13 @@ The only method call where the argument is passed by reference is the final one.
 ## Limitations on `in` parameters
 
 You can't use the `in`, `ref`, and `out` keywords for the following kinds of methods:  
-  
+
 - Async methods, which you define by using the [async](async.md) modifier.  
 - Iterator methods, which include a [yield return](yield.md) or `yield break` statement.  
 
 ## C# Language Specification  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
+
 ## See Also  
  [C# Reference](../index.md)  
  [C# Programming Guide](../../programming-guide/index.md)  

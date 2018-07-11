@@ -22,6 +22,7 @@ This topic contains the following sections:
   - [Passing parameters by value](#byval)
   - [Passing parameters by reference](#byref)
   - [Parameter arrays](#paramarray)
+
 - [Optional parameters and arguments](#optional)
 - [Return values](#return)
 - [Extension methods](#extension)

@@ -33,7 +33,7 @@ Sometimes called "fake sign" or "OSS sign", public signing includes the public k
 ### To set this compiler option in the Visual Studio development environment
 
 1. Open the **Properties** page for the project.
-1. Modify the **Delay sign only** property.
+2. Modify the **Delay sign only** property.
 
 ## See Also
  [C# Compiler -delaysign option](delaysign-compiler-option.md)  

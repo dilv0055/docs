@@ -3,7 +3,6 @@ title: Select the C# language version - C# Guide
 description: Configure the compiler to perform syntax validation using a specific compiler version
 ms.date: 05/24/2018
 ---
-
 # Select the C# language version
 
 The C# compiler defaults to the latest major version of the language that has been released. You may choose to compile any project using a new point release of the language. Choosing a newer version of the language enables your project to make use of the latest language features. In other scenarios, you may need to validate that a project compiles cleanly when using an older version of the language.
@@ -34,17 +33,16 @@ You can set the version in Visual Studio. Right-click on the project node in Sol
 > set the value the same in all build configurations, but you need to
 > set it explicitly for each build configuration, or select "All Configurations"
 > when you modify this setting. You'll see the following in your csproj file:
->
->```xml
+> 
+> ```xml
 > <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 >  <LangVersion>latest</LangVersion>
-></PropertyGroup>
->
+> </PropertyGroup>
+> 
 > <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 >  <LangVersion>latest</LangVersion>
 > </PropertyGroup>
 > ```
->
 
 ## Edit the csproj file
 
@@ -57,6 +55,7 @@ You can set the language version in your **.csproj** file. Add an element like t
 ```
 
 The value `latest` uses the latest minor version of the C# language. Valid values are:
+
 
 |Value|Meaning|
 |------------|-------------|

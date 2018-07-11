@@ -12,11 +12,11 @@ A flowchart is a well-known paradigm for designing programs. The Flowchart activ
 ## Types of Flow Nodes  
  Different types of elements are used depending on the type of flow control required when the element executes. Types of flowchart elements include:  
   
--   `FlowStep` - Models one step of execution in the flowchart.  
+- `FlowStep` - Models one step of execution in the flowchart.  
   
--   `FlowDecision` - Branches execution based on a Boolean condition, similar to <xref:System.Activities.Statements.If>.  
+- `FlowDecision` - Branches execution based on a Boolean condition, similar to <xref:System.Activities.Statements.If>.  
   
--   `FlowSwitch` – Branches execution based on an exclusive switch, similar to <xref:System.Activities.Statements.Switch%601>.  
+- `FlowSwitch` – Branches execution based on an exclusive switch, similar to <xref:System.Activities.Statements.Switch%601>.  
   
  Each link has an `Action` property that defines a <xref:System.Activities.ActivityAction> that can be used to execute child activities, and one or more `Next` properties that define which element or elements to execute when the current element finishes execution.  
   

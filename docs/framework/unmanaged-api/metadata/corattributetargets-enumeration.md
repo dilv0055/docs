@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorAttributeTargets Enumeration
 Specifies the application elements on which it is valid to apply an attribute.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorAttributeTargets  
 {  
@@ -39,23 +39,24 @@ typedef enum CorAttributeTargets
     catParameter           = 0x0800,  
     catDelegate            = 0x1000,  
     catGenericParameter    = 0x4000,  
-  
+
     catAll                 =   
         catAssembly | catModule | catClass | catStruct |   
         catEnum | catConstructor | catMethod | catProperty |   
         catField | catEvent | catInterface | catParameter |   
         catDelegate | catGenericParameter,  
-  
+
     catClassMembers        =   
         catClass | catStruct | catEnum | catConstructor |   
         catMethod | catProperty | catField | catEvent |   
         catDelegate | catInterface  
-  
+
 } CorAttributeTargets;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`catAssembly`|Attribute can be applied to an assembly.|  
@@ -74,18 +75,18 @@ typedef enum CorAttributeTargets
 |`catGenericParameter`|Attribute can be applied to a generic parameter.|  
 |`catAll`|Attribute can be applied to any application element.|  
 |`catClassMembers`|Attribute can be applied to a member of a class.|  
-  
+
 ## Remarks  
  The `CorAttributeTargets` enumeration values can be combined with a bitwise OR operation to get the preferred combination.  
-  
+
  The `CorAttributeTargets` parallels the managed <xref:System.AttributeTargets?displayProperty=nameWithType> enumeration.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

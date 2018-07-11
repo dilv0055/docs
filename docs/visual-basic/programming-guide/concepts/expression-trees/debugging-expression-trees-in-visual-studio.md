@@ -10,11 +10,11 @@ You can analyze the structure and content of expression trees when you debug you
   
 ### To open a visualizer for an expression tree  
   
-1.  Click the magnifying glass icon that appears next to the `DebugView` property of an expression tree in **DataTips**, a **Watch** window, the **Autos** window, or the **Locals** window.  
+1. Click the magnifying glass icon that appears next to the `DebugView` property of an expression tree in **DataTips**, a **Watch** window, the **Autos** window, or the **Locals** window.  
   
-     A list of visualizers is displayed.  
+    A list of visualizers is displayed.  
   
-2.  Click the visualizer you want to use.  
+2. Click the visualizer you want to use.  
   
  Each expression type is displayed in the visualizer as described in the following sections.  
   
@@ -25,88 +25,88 @@ You can analyze the structure and content of expression trees when you debug you
   
 ### Examples  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim numParam As ParameterExpression =   
-    Expression.Parameter(GetType(Integer), "num")  
-    ```  
+  ```vb  
+  Dim numParam As ParameterExpression =   
+  Expression.Parameter(GetType(Integer), "num")  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `$num`  
+   `$num`  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim numParam As ParameterExpression =   
-    Expression.Parameter(GetType(Integer))  
-    ```  
+  ```vb  
+  Dim numParam As ParameterExpression =   
+  Expression.Parameter(GetType(Integer))  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `$var1`  
+   `$var1`  
   
 ## ConstantExpressions  
  For <xref:System.Linq.Expressions.ConstantExpression> objects that represent integer values, strings, and `null`, the value of the constant is displayed.  
   
 ### Examples  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim num as Integer= 10  
-    Dim expr As ConstantExpression = Expression.Constant(num)  
-    ```  
+  ```vb  
+  Dim num as Integer= 10  
+  Dim expr As ConstantExpression = Expression.Constant(num)  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     10  
+   10  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim num As Double = 10  
-    Dim expr As ConstantExpression = Expression.Constant(num)  
-    ```  
+  ```vb  
+  Dim num As Double = 10  
+  Dim expr As ConstantExpression = Expression.Constant(num)  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     10D  
+   10D  
   
 ## BlockExpression  
  If the type of a <xref:System.Linq.Expressions.BlockExpression> object differs from the type of the last expression in the block, the type is displayed in the `DebugInfo` property in angle brackets (\< and >). Otherwise, the type of the <xref:System.Linq.Expressions.BlockExpression> object is not displayed.  
   
 ### Examples  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim block As BlockExpression = Expression.Block(Expression.Constant("test"))  
-    ```  
+  ```vb  
+  Dim block As BlockExpression = Expression.Block(Expression.Constant("test"))  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `.Block() {`  
+   `.Block() {`  
   
-     `"test"`  
+   `"test"`  
   
-     `}`  
+   `}`  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim block As BlockExpression =   
-    Expression.Block(GetType(Object), Expression.Constant("test"))  
-    ```  
+  ```vb  
+  Dim block As BlockExpression =   
+  Expression.Block(GetType(Object), Expression.Constant("test"))  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `.Block<System.Object>() {`  
+   `.Block<System.Object>() {`  
   
-     `"test"`  
+   `"test"`  
   
-     `}`  
+   `}`  
   
 ## LambdaExpression  
  <xref:System.Linq.Expressions.LambdaExpression> objects are displayed together with their delegate types.  
@@ -115,35 +115,35 @@ You can analyze the structure and content of expression trees when you debug you
   
 ### Examples  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim lambda As LambdaExpression =   
-    Expression.Lambda(Of Func(Of Integer))(Expression.Constant(1))  
-    ```  
+  ```vb  
+  Dim lambda As LambdaExpression =   
+  Expression.Lambda(Of Func(Of Integer))(Expression.Constant(1))  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `.Lambda #Lambda1<System.Func'1[System.Int32]>() {`  
+   `.Lambda #Lambda1<System.Func'1[System.Int32]>() {`  
   
-     `1`  
+   `1`  
   
-     `}`  
+   `}`  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim lambda As LambdaExpression =   
-    Expression.Lambda(Of Func(Of Integer))(Expression.Constant(1), "SampleLamda", Nothing)  
-    ```  
+  ```vb  
+  Dim lambda As LambdaExpression =   
+  Expression.Lambda(Of Func(Of Integer))(Expression.Constant(1), "SampleLamda", Nothing)  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `.Lambda SampleLambda<System.Func'1[System.Int32]>() {`  
+   `.Lambda SampleLambda<System.Func'1[System.Int32]>() {`  
   
-     `1`  
+   `1`  
   
-     `}`  
+   `}`  
   
 ## LabelExpression  
  If you specify a default value for the <xref:System.Linq.Expressions.LabelExpression> object, this value is displayed before the <xref:System.Linq.Expressions.LabelTarget> object.  
@@ -154,75 +154,75 @@ You can analyze the structure and content of expression trees when you debug you
   
 ### Examples  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim target As LabelTarget = Expression.Label(GetType(Integer), "SampleLabel")  
-    Dim label1 As BlockExpression = Expression.Block(  
-    Expression.Goto(target, Expression.Constant(0)),  
-    Expression.Label(target, Expression.Constant(-1)))  
-    ```  
+  ```vb  
+  Dim target As LabelTarget = Expression.Label(GetType(Integer), "SampleLabel")  
+  Dim label1 As BlockExpression = Expression.Block(  
+  Expression.Goto(target, Expression.Constant(0)),  
+  Expression.Label(target, Expression.Constant(-1)))  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `.Block() {`  
+   `.Block() {`  
   
-     `.Goto SampleLabel { 0 };`  
+   `.Goto SampleLabel { 0 };`  
   
-     `.Label`  
+   `.Label`  
   
-     `-1`  
+   `-1`  
   
-     `.LabelTarget SampleLabel:`  
+   `.LabelTarget SampleLabel:`  
   
-     `}`  
+   `}`  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim target As LabelTarget = Expression.Label()  
-    Dim block As BlockExpression = Expression.Block(  
-    Expression.Goto(target), Expression.Label(target))  
-    ```  
+  ```vb  
+  Dim target As LabelTarget = Expression.Label()  
+  Dim block As BlockExpression = Expression.Block(  
+  Expression.Goto(target), Expression.Label(target))  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `.Block() {`  
+   `.Block() {`  
   
-     `.Goto #Label1 { };`  
+   `.Goto #Label1 { };`  
   
-     `.Label`  
+   `.Label`  
   
-     `.LabelTarget #Label1:`  
+   `.LabelTarget #Label1:`  
   
-     `}`  
+   `}`  
   
 ## Checked Operators  
  Checked operators are displayed with the "#" symbol in front of the operator. For example, the checked addition operator is displayed as `#+`.  
   
 ### Examples  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim expr As Expression = Expression.AddChecked(  
-    Expression.Constant(1), Expression.Constant(2))  
-    ```  
+  ```vb  
+  Dim expr As Expression = Expression.AddChecked(  
+  Expression.Constant(1), Expression.Constant(2))  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `1 #+ 2`  
+   `1 #+ 2`  
   
--   `Expression`  
+- `Expression`  
   
-    ```vb  
-    Dim expr As Expression = Expression.ConvertChecked(  
-    Expression.Constant(10.0), GetType(Integer))  
-    ```  
+  ```vb  
+  Dim expr As Expression = Expression.ConvertChecked(  
+  Expression.Constant(10.0), GetType(Integer))  
+  ```  
   
-     `DebugView` property  
+   `DebugView` property  
   
-     `#(System.Int32)10D`  
+   `#(System.Int32)10D`  
   
 ## See Also  
  [Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)  

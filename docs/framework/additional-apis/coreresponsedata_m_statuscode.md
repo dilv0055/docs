@@ -11,13 +11,12 @@ api_type:
   - "Assembly"
 author: "stevewhims"
 ---
-
 # CoreResponseData.m\_StatusCode Field
 
 `CoreResponseData.m_StatusCode` is an <xref:System.Net.HttpStatusCode> containing the status of the response.
 
 ## Syntax
-  
+
 ```csharp
 public HttpStatusCode m_StatusCode
 ```

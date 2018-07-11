@@ -5,18 +5,19 @@ ms.assetid: a8b6efce-cf46-485f-9cd6-58126b627032
 ---
 # 1432 - ConcurrentSessionsRatio
 ## Properties  
-  
+
+
 |||  
 |-|-|  
 |ID|1432|  
 |Keywords|Quota|  
 |Level|Verbose|  
 |Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
-  
+
 ## Description  
  This event is emitted to provide the concurrent sessions ratio information.  
-  
+
 ## Message  
  Concurrent sessions ratio: %1/%2  
-  
+
 ## Details

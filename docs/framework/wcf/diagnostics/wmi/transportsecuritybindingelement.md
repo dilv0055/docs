@@ -7,23 +7,24 @@ manager: "mbaldwin"
 ---
 # TransportSecurityBindingElement
 TransportSecurityBindingElement  
-  
+
 ## Syntax  
-  
+
 ```  
 class TransportSecurityBindingElement : SecurityBindingElement  
 {  
 };  
 ```  
-  
+
 ## Methods  
  The TransportSecurityBindingElement class inherits from SecurityBindingElement but does not define additional methods or properties.  
-  
+
 ## Requirements  
-  
+
+
 |MOF|Declared in Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Namespace|Defined in root\ServiceModel|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>

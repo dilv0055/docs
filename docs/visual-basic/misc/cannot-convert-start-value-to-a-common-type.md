@@ -10,7 +10,7 @@ The specified `For...Next` control values have different types, and therefore ar
   
 ## To correct this error  
   
-1.  Change the type of one or more of the values so all can be converted to a common type.  
+1. Change the type of one or more of the values so all can be converted to a common type.  
   
 ## See Also  
  [Debugging Changes in Visual Basic .NET](http://msdn.microsoft.com/library/0e82bb0d-8bb2-4fe8-87d1-75f24c7cfd75)  

@@ -24,11 +24,11 @@ The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component for Vis
 ### Key Methods, Properties, and Events  
  The key method of the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component is the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> method, which prints an image of the form to a printer, print preview window, or file. There are two versions of the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> method:  
   
--   A basic version without parameters: `Print()`  
+- A basic version without parameters: `Print()`  
   
--   An overloaded version with parameters that specify printing behavior: `Print(printForm As Form, printFormOption As PrintOption)`  
+- An overloaded version with parameters that specify printing behavior: `Print(printForm As Form, printFormOption As PrintOption)`  
   
-     The `PrintOption` parameter of the overloaded method determines the underlying implementation used to print the form, whether the form's title bar, scroll bars, and border are printed, and whether scrollable parts of the form are printed.  
+   The `PrintOption` parameter of the overloaded method determines the underlying implementation used to print the form, whether the form's title bar, scroll bars, and border are printed, and whether scrollable parts of the form are printed.  
   
  The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property is a key property of the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component. This property determines whether the output is sent to a printer, displayed in a print preview window, or saved as an Encapsulated PostScript file. If the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property is set to <xref:System.Drawing.Printing.PrintAction.PrintToFile>, the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintFileName%2A> property specifies the path and file name.  
   
@@ -38,11 +38,11 @@ The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component for Vis
   
  Key events for the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component include the following:  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.BeginPrint> event. Occurs when the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> method is called and before the first page of the document prints.  
+- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.BeginPrint> event. Occurs when the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> method is called and before the first page of the document prints.  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.EndPrint> event. Occurs after the last page is printed.  
+- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.EndPrint> event. Occurs after the last page is printed.  
   
--   <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.QueryPageSettings> event. Occurs immediately before each page is printed.  
+- <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.QueryPageSettings> event. Occurs immediately before each page is printed.  
   
 ### Remarks  
  If a form contains text or graphics drawn by <xref:System.Drawing.Graphics> methods, use the basic <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> (`Print()`) method to print it. Graphics may not render on some operating systems when the overloaded <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.Print%2A> method is used.  

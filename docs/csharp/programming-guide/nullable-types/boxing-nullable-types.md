@@ -35,31 +35,31 @@ int? i2 = (int?)iBoxed;
 ## Remarks  
  The behavior of nullable types when boxed provides two advantages:  
   
-1.  Nullable objects and their boxed counterpart can be tested for null:  
+1. Nullable objects and their boxed counterpart can be tested for null:  
   
-    ```csharp  
-    bool? b = null;  
-    object boxedB = b;  
-    if (b == null)  
-    {  
-      // True.  
-    }  
-    if (boxedB == null)  
-    {  
-      // Also true.  
-    }  
-    ```  
+   ```csharp  
+   bool? b = null;  
+   object boxedB = b;  
+   if (b == null)  
+   {  
+     // True.  
+   }  
+   if (boxedB == null)  
+   {  
+     // Also true.  
+   }  
+   ```  
   
-2.  Boxed nullable types fully support the functionality of the underlying type:  
+2. Boxed nullable types fully support the functionality of the underlying type:  
   
-    ```csharp  
-    double? d = 44.4;  
-    object iBoxed = d;  
-    // Access IConvertible interface implemented by double.  
-    IConvertible ic = (IConvertible)iBoxed;  
-    int i = ic.ToInt32(null);  
-    string str = ic.ToString();  
-    ```  
+   ```csharp  
+   double? d = 44.4;  
+   object iBoxed = d;  
+   // Access IConvertible interface implemented by double.  
+   IConvertible ic = (IConvertible)iBoxed;  
+   int i = ic.ToInt32(null);  
+   string str = ic.ToString();  
+   ```  
   
 ## See Also  
  [C# Programming Guide](../../../csharp/programming-guide/index.md)  

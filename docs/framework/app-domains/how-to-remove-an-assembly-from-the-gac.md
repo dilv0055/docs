@@ -17,20 +17,20 @@ ms.author: "ronpet"
 # How to: Remove an Assembly from the Global Assembly Cache
 There are two ways to remove an assembly from the global assembly cache (GAC):  
   
--   By using the [Global Assembly Cache tool (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md). You can use this option to uninstall assemblies that you've placed in the GAC during development and testing.  
+- By using the [Global Assembly Cache tool (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md). You can use this option to uninstall assemblies that you've placed in the GAC during development and testing.  
   
--   By using [Windows Installer](http://msdn.microsoft.com/library/windows/desktop/cc185688.aspx). You should use this option to uninstall assemblies when testing installation packages and for production systems.  
+- By using [Windows Installer](http://msdn.microsoft.com/library/windows/desktop/cc185688.aspx). You should use this option to uninstall assemblies when testing installation packages and for production systems.  
   
 ### Removing an assembly with Gacutil.exe  
   
-1.  At the command prompt, type the following command:  
+1. At the command prompt, type the following command:  
   
-     **gacutil –u** \<*assembly name*>  
+    **gacutil –u** \<*assembly name*>  
   
-     In this command, *assembly name* is the name of the assembly to remove from the global assembly cache.  
+    In this command, *assembly name* is the name of the assembly to remove from the global assembly cache.  
   
-    > [!WARNING]
-    >  You should not use Gacutil.exe to remove assemblies on production systems because of the possibility that the assembly may still be required by some application. Instead, you should use the Windows Installer, which maintains a reference count for each assembly it installs in the GAC.  
+   > [!WARNING]
+   >  You should not use Gacutil.exe to remove assemblies on production systems because of the possibility that the assembly may still be required by some application. Instead, you should use the Windows Installer, which maintains a reference count for each assembly it installs in the GAC.  
   
  The following example removes an assembly named `hello.dll` from the global assembly cache.  
   
@@ -40,10 +40,10 @@ gacutil -u hello
   
 ### Removing an assembly with Windows Installer  
   
-1.  From the **Programs and Features** app in **Control Panel**, select the app that you want to uninstall. If the installation package placed assemblies in the GAC, Windows Installer will remove them if they are not used by another application.  
+1. From the **Programs and Features** app in **Control Panel**, select the app that you want to uninstall. If the installation package placed assemblies in the GAC, Windows Installer will remove them if they are not used by another application.  
   
-    > [!NOTE]
-    >  Windows Installer maintains a reference count for assemblies installed in the GAC. An assembly is removed from the GAC only when its reference count reaches zero, which indicates that it is not used by any application installed by a Windows Installer package.  
+   > [!NOTE]
+   >  Windows Installer maintains a reference count for assemblies installed in the GAC. An assembly is removed from the GAC only when its reference count reaches zero, which indicates that it is not used by any application installed by a Windows Installer package.  
   
 ## See Also  
  [Working with Assemblies and the Global Assembly Cache](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)  

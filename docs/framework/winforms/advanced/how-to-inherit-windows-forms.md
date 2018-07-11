@@ -19,18 +19,18 @@ Creating new Windows Forms by inheriting from base forms is a handy way to dupli
   
 ### To inherit a form programmatically  
   
-1.  In your class, add a reference to the namespace containing the form you wish to inherit from.  
+1. In your class, add a reference to the namespace containing the form you wish to inherit from.  
   
-2.  In the class definition, add a reference to the form to inherit from. The reference should include the namespace that contains the form, followed by a period, then the name of the base form itself.  
+2. In the class definition, add a reference to the form to inherit from. The reference should include the namespace that contains the form, followed by a period, then the name of the base form itself.  
   
-    ```vb  
-    Public Class Form2  
-        Inherits Namespace1.Form1  
-    ```  
+   ```vb  
+   Public Class Form2  
+       Inherits Namespace1.Form1  
+   ```  
   
-    ```csharp  
-    public class Form2 : Namespace1.Form1  
-    ```  
+   ```csharp  
+   public class Form2 : Namespace1.Form1  
+   ```  
   
  When inheriting forms, keep in mind that issues may arise with regard to event handlers being called twice, because each event is being handled by both the base class and the inherited class. For more information on how to avoid this problem, see [Troubleshooting Inherited Event Handlers in Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md).  
   

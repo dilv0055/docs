@@ -15,38 +15,38 @@ You can add items to the Windows Forms <xref:System.Windows.Forms.DomainUpDown> 
   
 ### To add a new item  
   
-1.  Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method to add an item to the end of the list of items.  
+1. Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method to add an item to the end of the list of items.  
   
-    ```vb  
-    DomainUpDown1.Items.Add("noodles")  
-    ```  
+   ```vb  
+   DomainUpDown1.Items.Add("noodles")  
+   ```  
   
-    ```csharp  
-    domainUpDown1.Items.Add("noodles");  
-    ```  
+   ```csharp  
+   domainUpDown1.Items.Add("noodles");  
+   ```  
   
-    ```cpp  
-    domainUpDown1->Items->Add("noodles");  
-    ```  
+   ```cpp  
+   domainUpDown1->Items->Add("noodles");  
+   ```  
   
-     -or-  
+    -or-  
   
-2.  Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method to insert an item into the list at a specified position.  
+2. Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method to insert an item into the list at a specified position.  
   
-    ```vb  
-    ' Inserts an item at the third position in the list  
-    DomainUpDown1.Items.Insert(2, "rice")  
-    ```  
+   ```vb  
+   ' Inserts an item at the third position in the list  
+   DomainUpDown1.Items.Insert(2, "rice")  
+   ```  
   
-    ```csharp  
-    // Inserts an item at the third position in the list  
-    domainUpDown1.Items.Insert(2, "rice");  
-    ```  
+   ```csharp  
+   // Inserts an item at the third position in the list  
+   domainUpDown1.Items.Insert(2, "rice");  
+   ```  
   
-    ```cpp  
-    // Inserts an item at the third position in the list  
-    domainUpDown1->Items->Insert(2, "rice");  
-    ```  
+   ```cpp  
+   // Inserts an item at the third position in the list  
+   domainUpDown1->Items->Insert(2, "rice");  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.DomainUpDown>  

@@ -11,13 +11,13 @@ The [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framewor
 ## General Migration Considerations  
  The following considerations apply when you migrate any application to the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]:  
   
--   Any application that uses the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] starting with version 3.5 SP1 can be migrated to the Entity Framework, as long as the data provider for the data source that is used by the application supports the Entity Framework.  
+- Any application that uses the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] starting with version 3.5 SP1 can be migrated to the Entity Framework, as long as the data provider for the data source that is used by the application supports the Entity Framework.  
   
--   The Entity Framework may not support all the functionality of a data source provider, even if that provider supports the Entity Framework.  
+- The Entity Framework may not support all the functionality of a data source provider, even if that provider supports the Entity Framework.  
   
--   For a large or complex application, you are not required to migrate the whole application to the Entity Framework at one time. However, any part of the application that does not use the Entity Framework must still be changed when the data source changes.  
+- For a large or complex application, you are not required to migrate the whole application to the Entity Framework at one time. However, any part of the application that does not use the Entity Framework must still be changed when the data source changes.  
   
--   The data provider connection used by the Entity Framework can be shared with other parts of your application because the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] uses [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] data providers to access the data source. For example, the SqlClient provider is used by the Entity Framework to access a SQL Server database. For more information, see [EntityClient Provider for the Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
+- The data provider connection used by the Entity Framework can be shared with other parts of your application because the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] uses [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] data providers to access the data source. For example, the SqlClient provider is used by the Entity Framework to access a SQL Server database. For more information, see [EntityClient Provider for the Entity Framework](../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
   
 ## Common Migration Tasks  
  The path to migrate an existing application to the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] depends both on the type of application and on the existing data access strategy. However, you must always perform the following tasks when you migrate an existing application to the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
@@ -25,26 +25,26 @@ The [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framewor
 > [!NOTE]
 >  All of these tasks are performed automatically when you use the Entity Data Model tools starting with [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)]. For more information, see [How to: Use the Entity Data Model Wizard](http://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
   
-1.  Upgrade the application.  
+1. Upgrade the application.  
   
-     A project created by using an earlier version of Visual Studio and the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] must be upgraded to use [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)] SP1 and the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] starting with version 3.5 SP1.  
+    A project created by using an earlier version of Visual Studio and the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] must be upgraded to use [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)] SP1 and the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] starting with version 3.5 SP1.  
   
-2.  Define the models and mapping.  
+2. Define the models and mapping.  
   
-     The model and mapping files define entities in the conceptual model; structures in the data source, such as tables, stored procedures, and views; and the mapping between the entities and data source structures. For more information, see [How to: Manually Define the Model and Mapping Files](http://msdn.microsoft.com/library/d4fd6864-f2a1-48f0-aa32-1e318775a99a).  
+    The model and mapping files define entities in the conceptual model; structures in the data source, such as tables, stored procedures, and views; and the mapping between the entities and data source structures. For more information, see [How to: Manually Define the Model and Mapping Files](http://msdn.microsoft.com/library/d4fd6864-f2a1-48f0-aa32-1e318775a99a).  
   
-     Types that are defined in the storage model must match the name of objects in the data source. If the existing application exposes data as objects, you must ensure that the entities and properties that are defined in the conceptual model match the names of these existing data classes and properties. For more information, see [How to: Customize Modeling and Mapping Files to Work with Custom Objects](http://msdn.microsoft.com/library/bb40c4db-0121-4e45-a167-8fb06707a708).  
+    Types that are defined in the storage model must match the name of objects in the data source. If the existing application exposes data as objects, you must ensure that the entities and properties that are defined in the conceptual model match the names of these existing data classes and properties. For more information, see [How to: Customize Modeling and Mapping Files to Work with Custom Objects](http://msdn.microsoft.com/library/bb40c4db-0121-4e45-a167-8fb06707a708).  
   
-    > [!NOTE]
-    >  The Entity Data Model Designer can be used to rename entities in the conceptual model to match existing objects. For more information, see [Entity Data Model Designer](http://msdn.microsoft.com/library/4ccd7ad6-b934-4f7c-82a0-cfd2d4a95faf).  
+   > [!NOTE]
+   >  The Entity Data Model Designer can be used to rename entities in the conceptual model to match existing objects. For more information, see [Entity Data Model Designer](http://msdn.microsoft.com/library/4ccd7ad6-b934-4f7c-82a0-cfd2d4a95faf).  
   
-3.  Define the connection string.  
+3. Define the connection string.  
   
-     The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] uses a specially formatted connection string when executing queries against a conceptual model. This connection string encapsulates information about the model and mapping files and the connection to the data source. For more information, see [How to: Define the Connection String](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md).  
+    The [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] uses a specially formatted connection string when executing queries against a conceptual model. This connection string encapsulates information about the model and mapping files and the connection to the data source. For more information, see [How to: Define the Connection String](../../../../../docs/framework/data/adonet/ef/how-to-define-the-connection-string.md).  
   
-4.  Configure the Visual Studio project.  
+4. Configure the Visual Studio project.  
   
-     References to [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] assemblies and the model and mapping files must be added to the Visual Studio project. You can add these mapping files to the project to ensure that they are deployed with the application in the location that is indicated in the connection string. For more information, see [How to: Manually Configure an Entity Framework Project](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
+    References to [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] assemblies and the model and mapping files must be added to the Visual Studio project. You can add these mapping files to the project to ensure that they are deployed with the application in the location that is indicated in the connection string. For more information, see [How to: Manually Configure an Entity Framework Project](http://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  
   
 ## Considerations for Applications with Existing Objects  
  Starting with the [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] 4, the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] supports "plain old" CLR objects (POCO), also called persistence-ignorant objects. In most cases, your existing objects can work with the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] by making minor changes. For more information, see [Working with POCO Entities](http://msdn.microsoft.com/library/5e0fb82a-b6d1-41a1-b37b-c12db61629d3). You can also migrate an application to the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] and use the data classes that are generated by the Entity Framework tools. For more information, see [How to: Use the Entity Data Model Wizard](http://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  

@@ -4,7 +4,6 @@ description: Learn about techniques for building expression trees.
 ms.date: 06/20/2016
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
 ---
-
 # Building Expression Trees
 
 [Previous -- Interpreting Expressions](expression-trees-interpreting.md)
@@ -84,7 +83,7 @@ Let's build an expression tree to create this expression:
 Expression<Func<double, double, double>> distanceCalc =
     (x, y) => Math.Sqrt(x * x + y * y);
 ```
- 
+
 You'll start by creating parameter expressions for `x` and `y`:
 
 ```csharp

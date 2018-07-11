@@ -22,10 +22,11 @@ Members of many of the types in the <xref:System.IO> namespace include a `path` 
 A standard DOS path can consist of three components:
 
 - A volume or drive letter followed by the volume separator (`:`).
-- A directory name. The [directory separator character](<xref:System.IO.Path.DirectorySeparatorChar>) separates subdirectories within the nested directory hierarchy.
-- An optional filename. The [directory separator character](<xref:System.IO.Path.DirectorySeparatorChar>) separates the file path and the filename.
+- A directory name. The [directory separator character](xref:System.IO.Path.DirectorySeparatorChar) separates subdirectories within the nested directory hierarchy.
+- An optional filename. The [directory separator character](xref:System.IO.Path.DirectorySeparatorChar) separates the file path and the filename.
 
-If all three components are present, the path is absolute. If no volume or drive letter is specified and the directory names begins with the [directory separator character](<xref:System.IO.Path.DirectorySeparatorChar>), the path is relative from the root of the current drive. Otherwise, the path is relative to the current directory. The following table shows some possible directory and file paths.
+If all three components are present, the path is absolute. If no volume or drive letter is specified and the directory names begins with the [directory separator character](xref:System.IO.Path.DirectorySeparatorChar), the path is relative from the root of the current drive. Otherwise, the path is relative to the current directory. The following table shows some possible directory and file paths.
+
 
 |Path  |Description  |
 | -- | -- |
@@ -52,10 +53,11 @@ Universal naming convention (UNC) paths, which are used to access network resour
 
 - A server or host name, which is prefaced by \\\\. The server name can be a NetBIOS machine name or an IP/FQDN address (IPv4 as well as v6 are supported).
 - A share name, which is separated from the host name by \\. Together, the server and share name make up the volume.
-- A directory name. The [directory separator character](<xref:System.IO.Path.DirectorySeparatorChar>) separates subdirectories within the nested directory hierarchy.
-- An optional filename. The [directory separator character](<xref:System.IO.Path.DirectorySeparatorChar>) separates the file path and the filename.
+- A directory name. The [directory separator character](xref:System.IO.Path.DirectorySeparatorChar) separates subdirectories within the nested directory hierarchy.
+- An optional filename. The [directory separator character](xref:System.IO.Path.DirectorySeparatorChar) separates the file path and the filename.
 
 The following are some examples of UNC paths:
+
 
 |Path  |Description  |
 | -- | -- |
@@ -78,9 +80,9 @@ The DOS device path consists of the following components:
 
 - The device path specifier (`\\.\` or `\\?\`), which identifies the path as a DOS device path.
 
-   > [!NOTE]
-   > The `\\?\` is supported in all versions of .NET Core and in the .NET Framework starting with version 4.6.2.
-   
+  > [!NOTE]
+  > The `\\?\` is supported in all versions of .NET Core and in the .NET Framework starting with version 4.6.2.
+
 - A symbolic link to the "real" device object (C: in this case).
 
    The first segment of the DOS device path after the device path specifier identifies the volume or drive. (For example, `\\?\C:\` and `\\.\BootPartition\`.)
@@ -170,8 +172,8 @@ Along with the runs of separators and relative segments removed earlier, some ad
 
    This rule means that you can create a directory name with a trailing space by adding a trailing separator after the space.  
 
-   > [!IMPORTANT]
-   > You should **never** create a directory or filename with a trailing space. Trailing spaces can make it difficult or impossible to access a directory, and applications commonly fail when attempting to handle directories or files whose names include trailing spaces.
+  > [!IMPORTANT]
+  > You should **never** create a directory or filename with a trailing space. Trailing spaces can make it difficult or impossible to access a directory, and applications commonly fail when attempting to handle directories or files whose names include trailing spaces.
 
 ## Skipping normalization
 
@@ -181,9 +183,9 @@ Why would you want to skip normalization? There are three major reasons:
 
 1. To get access to paths that are normally unavailable but are legal. A file or directory called `hidden.`, for example, is impossible to access in any other way. 
 
-1. To improve performance by skipping normalization if you've already normalized.
+2. To improve performance by skipping normalization if you've already normalized.
 
-1. On the .NET Framework only, to skip the `MAX_PATH` check for path length to allow for paths that are greater than 259 characters. Most APIs allow this, with some exceptions.
+3. On the .NET Framework only, to skip the `MAX_PATH` check for path length to allow for paths that are greater than 259 characters. Most APIs allow this, with some exceptions.
 
 > [!NOTE]
 > .NET Core handles long paths implicitly and does not perform a `MAX_PATH` check. The `MAX_PATH` check applies only to the .NET Framework.

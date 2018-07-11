@@ -22,48 +22,48 @@ The Windows Forms <xref:System.Windows.Forms.NotifyIcon> component displays a si
   
 ### To set the icon  
   
-1.  Assign a value to the <xref:System.Windows.Forms.NotifyIcon.Icon%2A> property. The value must be of type `System.Drawing.Icon` and can be loaded from an .ico file. You can specify the icon file in code or by clicking the ellipsis button (![VisualStudioEllipsesButton screenshot](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) next to the <xref:System.Windows.Forms.NotifyIcon.Icon%2A> property in the **Properties** window, and then selecting the file in the **Open** dialog box that appears.  
+1. Assign a value to the <xref:System.Windows.Forms.NotifyIcon.Icon%2A> property. The value must be of type `System.Drawing.Icon` and can be loaded from an .ico file. You can specify the icon file in code or by clicking the ellipsis button (![VisualStudioEllipsesButton screenshot](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) next to the <xref:System.Windows.Forms.NotifyIcon.Icon%2A> property in the **Properties** window, and then selecting the file in the **Open** dialog box that appears.  
   
-2.  Set the <xref:System.Windows.Forms.NotifyIcon.Visible%2A> property to `true`.  
+2. Set the <xref:System.Windows.Forms.NotifyIcon.Visible%2A> property to `true`.  
   
-3.  Set the <xref:System.Windows.Forms.NotifyIcon.Text%2A> property to an appropriate ToolTip string.  
+3. Set the <xref:System.Windows.Forms.NotifyIcon.Text%2A> property to an appropriate ToolTip string.  
   
-     In the following code example, the path set for the location of the icon is the **My Documents** folder. This location is used because you can assume that most computers running the Windows operating system will include this folder. Choosing this location also enables users with minimal system access levels to safely run the application. The following example requires a form with a <xref:System.Windows.Forms.NotifyIcon> control already added. It also requires an icon file named `Icon.ico`.  
+    In the following code example, the path set for the location of the icon is the **My Documents** folder. This location is used because you can assume that most computers running the Windows operating system will include this folder. Choosing this location also enables users with minimal system access levels to safely run the application. The following example requires a form with a <xref:System.Windows.Forms.NotifyIcon> control already added. It also requires an icon file named `Icon.ico`.  
   
-    ```vb  
-    ' You should replace the bold icon in the sample below  
-    ' with an icon of your own choosing.  
-    NotifyIcon1.Icon = New _   
-       System.Drawing.Icon(System.Environment.GetFolderPath _  
-       (System.Environment.SpecialFolder.Personal) _  
-       & "\Icon.ico")  
-    NotifyIcon1.Visible = True  
-    NotifyIcon1.Text = "Antivirus program"  
-    ```  
+   ```vb  
+   ' You should replace the bold icon in the sample below  
+   ' with an icon of your own choosing.  
+   NotifyIcon1.Icon = New _   
+      System.Drawing.Icon(System.Environment.GetFolderPath _  
+      (System.Environment.SpecialFolder.Personal) _  
+      & "\Icon.ico")  
+   NotifyIcon1.Visible = True  
+   NotifyIcon1.Text = "Antivirus program"  
+   ```  
   
-    ```csharp  
-    // You should replace the bold icon in the sample below  
-    // with an icon of your own choosing.  
-    // Note the escape character used (@) when specifying the path.  
-    notifyIcon1.Icon =   
-       new System.Drawing.Icon (System.Environment.GetFolderPath  
-       (System.Environment.SpecialFolder.Personal)  
-       + @"\Icon.ico");  
-    notifyIcon1.Visible = true;  
-    notifyIcon1.Text = "Antivirus program";  
-    ```  
+   ```csharp  
+   // You should replace the bold icon in the sample below  
+   // with an icon of your own choosing.  
+   // Note the escape character used (@) when specifying the path.  
+   notifyIcon1.Icon =   
+      new System.Drawing.Icon (System.Environment.GetFolderPath  
+      (System.Environment.SpecialFolder.Personal)  
+      + @"\Icon.ico");  
+   notifyIcon1.Visible = true;  
+   notifyIcon1.Text = "Antivirus program";  
+   ```  
   
-    ```cpp  
-    // You should replace the bold icon in the sample below  
-    // with an icon of your own choosing.  
-    notifyIcon1->Icon = gcnew   
-       System::Drawing::Icon(String::Concat  
-       (System::Environment::GetFolderPath  
-       (System::Environment::SpecialFolder::Personal),  
-       "\\Icon.ico"));  
-    notifyIcon1->Visible = true;  
-    notifyIcon1->Text = "Antivirus program";  
-    ```  
+   ```cpp  
+   // You should replace the bold icon in the sample below  
+   // with an icon of your own choosing.  
+   notifyIcon1->Icon = gcnew   
+      System::Drawing::Icon(String::Concat  
+      (System::Environment::GetFolderPath  
+      (System::Environment::SpecialFolder::Personal),  
+      "\\Icon.ico"));  
+   notifyIcon1->Visible = true;  
+   notifyIcon1->Text = "Antivirus program";  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.NotifyIcon>  

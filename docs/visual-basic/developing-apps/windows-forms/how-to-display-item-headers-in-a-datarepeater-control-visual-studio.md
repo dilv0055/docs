@@ -28,31 +28,31 @@ The item header in a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> contro
   
 ### To change the appearance of item headers  
   
-1.  In the Windows Forms Designer, select the lower region of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
+1. In the Windows Forms Designer, select the lower region of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
   
-    > [!NOTE]
-    >  You must select the lower region of the control. If you select the item template section, a different set of properties will appear in the Properties window.  
+   > [!NOTE]
+   >  You must select the lower region of the control. If you select the item template section, a different set of properties will appear in the Properties window.  
   
-2.  In the Properties window, use the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> property to change the color of the item headers.  
+2. In the Properties window, use the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> property to change the color of the item headers.  
   
-    > [!NOTE]
-    >  If you set the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> to <xref:System.Drawing.Color.White%2A>, the selection symbol will not be visible when the item is first selected.  
+   > [!NOTE]
+   >  If you set the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.SelectionColor%2A> to <xref:System.Drawing.Color.White%2A>, the selection symbol will not be visible when the item is first selected.  
   
-3.  Use the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> property to change the width (or height) of the item headers.  
+3. Use the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> property to change the width (or height) of the item headers.  
   
-    > [!NOTE]
-    >  If the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> property is set to a value that is less than 11, the indicator symbols in the item header will not be displayed.  
+   > [!NOTE]
+   >  If the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderSize%2A> property is set to a value that is less than 11, the indicator symbols in the item header will not be displayed.  
   
 ### To hide item headers  
   
-1.  In the Windows Forms Designer, select the lower region of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
+1. In the Windows Forms Designer, select the lower region of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
   
-    > [!NOTE]
-    >  You must select the lower region of the control. If you select the item template section, a different set of properties will appear in the Properties window.  
+   > [!NOTE]
+   >  You must select the lower region of the control. If you select the item template section, a different set of properties will appear in the Properties window.  
   
-2.  In the Properties window, set the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderVisible%2A> property to **False**.  
+2. In the Properties window, set the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater.ItemHeaderVisible%2A> property to **False**.  
   
-     When an item in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> is selected, the only indication will be a dotted line around the perimeter of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>.  
+    When an item in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> is selected, the only indication will be a dotted line around the perimeter of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeaterItem>.  
   
 ## See Also  
  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>  

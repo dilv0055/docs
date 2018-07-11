@@ -12,21 +12,21 @@ Settings that are application-scoped are read-only, and can only be changed at d
   
 ### How To: Write and Persist User Settings at Run Time with C#  
   
-1.  Access the setting and assign it a new value as shown in this example:  
+1. Access the setting and assign it a new value as shown in this example:  
   
-    ```  
-    // C#  
-    Properties.Settings.Default.myColor = Color.AliceBlue;  
-    ```  
+   ```  
+   // C#  
+   Properties.Settings.Default.myColor = Color.AliceBlue;  
+   ```  
   
-2.  If you want to persist the changes to the settings between application sessions, call the Save method as shown in this example:  
+2. If you want to persist the changes to the settings between application sessions, call the Save method as shown in this example:  
   
-    ```  
-    // C#  
-    Properties.Settings.Default.Save();  
-    ```  
+   ```  
+   // C#  
+   Properties.Settings.Default.Save();  
+   ```  
   
-     User settings are saved in a file within a subfolder of the user’s local hidden application data folder.  
+    User settings are saved in a file within a subfolder of the user’s local hidden application data folder.  
   
 ## See Also  
  [Using Application Settings and User Settings](../../../../docs/framework/winforms/advanced/using-application-settings-and-user-settings.md)  

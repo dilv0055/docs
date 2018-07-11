@@ -5,9 +5,10 @@ ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
 ---
 # Programming Concepts (C#)
 This section explains programming concepts in the C# language.  
-  
+
 ## In This Section  
-  
+
+
 |Title|Description|  
 |-----------|-----------------|  
 |[Assemblies and the Global Assembly Cache (C#)](../../../csharp/programming-guide/concepts/assemblies-gac/index.md)|Describes how to create and use assemblies.|  
@@ -23,9 +24,11 @@ This section explains programming concepts in the C# language.
 |[Reflection (C#)](../../../csharp/programming-guide/concepts/reflection.md)|Explains how to use reflection to dynamically create an instance of a type, bind the type to an existing object, or get the type from an existing object and invoke its methods or access its fields and properties.|  
 |[Serialization (C# )](../../../csharp/programming-guide/concepts/serialization/index.md)|Describes key concepts in binary, XML, and SOAP serialization.|  
 |[Threading (C#)](../../../csharp/programming-guide/concepts/threading/index.md)|Provides an overview of the .NET threading model and shows how to write code that performs multiple tasks at the same time to improve the performance and responsiveness of your applications.|  
-  
+
 ## Related Sections  
-  
-|||  
-|---|---|  
-|[Performance Tips](https://msdn.microsoft.com/library/ms173196(VS.110).aspx) | Discusses several basic rules that may help you increase the performance of your application.|
+
+
+|                                                                              |                                                                                               |
+|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| [Performance Tips](https://msdn.microsoft.com/library/ms173196(VS.110).aspx) | Discusses several basic rules that may help you increase the performance of your application. |
+

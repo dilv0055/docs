@@ -1,3 +1,4 @@
+
 ---
 title: What's new in .NET Core 2.0
 description: Learn about the new features found in .NET Core.
@@ -66,11 +67,11 @@ For example, to create a Visual Basic "Hello World" application, do the followin
 
 1. Open a console window, create a directory for your project, and make it the current directory.
 
-1. Enter the command `dotnet new console -lang vb`.
+2. Enter the command `dotnet new console -lang vb`.
 
    The command creates a project file with a `.vbproj` file extension, along with a Visual Basic source code file named *Program.vb*. This file contains the source code to write the string "Hello World!" to the console window.
 
-1.  Enter the command `dotnet run`. The [.NET Core CLI](../tools/index.md) automatically compiles and executes the application, which displays the message "Hello World!" in the console window.
+3. Enter the command `dotnet run`. The [.NET Core CLI](../tools/index.md) automatically compiles and executes the application, which displays the message "Hello World!" in the console window.
 
 ### Support for C# 7.1
 

@@ -8,13 +8,13 @@ ms.author: "ronpet"
 # Mitigation: Custom IMessageFilter.PreFilterMessage Implementations
 In Windows Forms apps that target versions of the .NET Framework starting with the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], a custom <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementation can safely filter messages when the <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> method is called if the <xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A?displayProperty=nameWithType> implementation:  
   
--   Does one or both of the following:  
+- Does one or both of the following:  
   
-    -   Adds a message filter by calling the <xref:System.Windows.Forms.Application.AddMessageFilter%2A> method.  
+  - Adds a message filter by calling the <xref:System.Windows.Forms.Application.AddMessageFilter%2A> method.  
   
-    -   Removes a message filter by calling the <xref:System.Windows.Forms.Application.RemoveMessageFilter%2A> method. method.  
+  - Removes a message filter by calling the <xref:System.Windows.Forms.Application.RemoveMessageFilter%2A> method. method.  
   
--   **And** pumps messages by calling the <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> method.  
+- **And** pumps messages by calling the <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> method.  
   
 ## Impact  
  This change only affects Windows Forms apps that target versions of the .NET Framework starting with the [!INCLUDE[net_v461](../../../includes/net-v461-md.md)].  

@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorValidatorModuleType Enumeration
 Specifies the type of a module.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum  
 {  
@@ -34,9 +34,10 @@ typedef enum
     ValidatorModuleTypeMax      = 0x00000004  
 } CorValidatorModuleType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`ValidatorModuleTypeInvalid`|The module is an invalid type.|  
@@ -46,15 +47,15 @@ typedef enum
 |`ValidatorModuleTypeEnc`|The module is an edit-and-continue debugger session.|  
 |`ValidatorModuleTypeIncr`|The module is one that has been incrementally built.|  
 |`ValidatorModuleTypeMax`|The maximum value of the `CorValidatorModuleType` enum.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

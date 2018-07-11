@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugAssembly Interface1
 Represents an assembly.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[EnumerateModules Method](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-enumeratemodules-method.md)|Gets an enumerator for the modules contained in the assembly.|  
@@ -29,20 +30,20 @@ Represents an assembly.
 |[GetCodeBase Method](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-getcodebase-method.md)|Not implemented in the current version of the .NET Framework.|  
 |[GetName Method](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-getname-method.md)|Gets the name of the assembly.|  
 |[GetProcess Method](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-getprocess-method.md)|Gets the ICorDebugProcess instance in which the assembly is running.|  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

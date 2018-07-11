@@ -13,35 +13,35 @@ The different types of [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md
   
 ### To target the .NET Framework 3.5  
   
-1.  In [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)], create a new Visual Basic or C# project. Alternatively, you can open a Visual Basic or C# project that was created in Visual Studio 2005 and follow the prompts to convert it to a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] project.  
+1. In [!INCLUDE[vs_orcas_long](../../../../includes/vs-orcas-long-md.md)], create a new Visual Basic or C# project. Alternatively, you can open a Visual Basic or C# project that was created in Visual Studio 2005 and follow the prompts to convert it to a [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] project.  
   
-2.  For a C# project, click the **Project** menu, and then click **Properties**.  
+2. For a C# project, click the **Project** menu, and then click **Properties**.  
   
-    1.  In the **Application** property page, select .NET Framework 3.5 in the **Target Framework** drop-down list.  
+   1. In the **Application** property page, select .NET Framework 3.5 in the **Target Framework** drop-down list.  
   
-3.  For a Visual Basic project, click the **Project** menu, and then click **Properties**.  
+3. For a Visual Basic project, click the **Project** menu, and then click **Properties**.  
   
-    1.  In the **Compile** property page, click **Advanced Compile Options** and then select .NET Framework 3.5 in the **Target Framework (all configurations)** drop-down list.  
+   1. In the **Compile** property page, click **Advanced Compile Options** and then select .NET Framework 3.5 in the **Target Framework (all configurations)** drop-down list.  
   
-4.  On the **Project** menu, click **Add Reference**, click the **.NET** tab, scroll down to **System.Core**, click it, and then click **OK**.  
+4. On the **Project** menu, click **Add Reference**, click the **.NET** tab, scroll down to **System.Core**, click it, and then click **OK**.  
   
-5.  Add a `using` directive or imported namespace for <xref:System.Linq> to your source code file or project.  
+5. Add a `using` directive or imported namespace for <xref:System.Linq> to your source code file or project.  
   
-     For more information, see [using Directive](~/docs/csharp/language-reference/keywords/using-directive.md) or [How to: Add or Remove Imported Namespaces (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).  
+    For more information, see [using Directive](~/docs/csharp/language-reference/keywords/using-directive.md) or [How to: Add or Remove Imported Namespaces (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).  
   
 ### To enable LINQ to DataSet functionality  
   
-1.  If necessary, follow the steps earlier in this topic to add a reference to System.Core.dll and a `using` directive or imported namespace for System.Linq.  
+1. If necessary, follow the steps earlier in this topic to add a reference to System.Core.dll and a `using` directive or imported namespace for System.Linq.  
   
-2.  In C# or Visual Basic, click the **Project** menu, and then click **Add Reference**.  
+2. In C# or Visual Basic, click the **Project** menu, and then click **Add Reference**.  
   
-3.  In the **Add Reference** dialog box, click the **.NET** tab if it is not on top. Scroll down to **System.Data** and **System.Data.DataSetExtensions** and click on them. Click the **OK** button.  
+3. In the **Add Reference** dialog box, click the **.NET** tab if it is not on top. Scroll down to **System.Data** and **System.Data.DataSetExtensions** and click on them. Click the **OK** button.  
   
-4.  Add a `using` directive or imported namespace for <xref:System.Data> to your source code file or project. For more information, see [using Directive](~/docs/csharp/language-reference/keywords/using-directive.md) or [How to: Add or Remove Imported Namespaces (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).  
+4. Add a `using` directive or imported namespace for <xref:System.Data> to your source code file or project. For more information, see [using Directive](~/docs/csharp/language-reference/keywords/using-directive.md) or [How to: Add or Remove Imported Namespaces (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).  
   
-5.  Add a reference to System.Data.DataSetExtensions.dll for LINQ to Dataset functionality. Add a reference to System.Data.dll if it does not already exist.  
+5. Add a reference to System.Data.DataSetExtensions.dll for LINQ to Dataset functionality. Add a reference to System.Data.dll if it does not already exist.  
   
-6.  Optionally, add a `using` directive or imported namespace for `System.Data.Common` or `System.Data.SqlClient`, depending on how you connect to the database.  
+6. Optionally, add a `using` directive or imported namespace for `System.Data.Common` or `System.Data.SqlClient`, depending on how you connect to the database.  
   
 ## See Also  
  [Getting Started](../../../../docs/framework/data/adonet/getting-started-linq-to-dataset.md)  

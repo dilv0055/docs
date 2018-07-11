@@ -126,7 +126,7 @@ When deploying a [framework-dependent deployment (FDD)](index.md#framework-depen
 </PropertyGroup>
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > For [self-contained deployment (SCD)](index.md#self-contained-deployments-scd) apps, it's assumed that the target system doesn't necessarily contain the required manifest packages. Therefore, **\<PublishWithAspNetCoreTargetManifest>** cannot be set to `true` for an SCD app.
 
 If you deploy an application with a manifest dependency that's present in the deployment (the assembly is present in the *bin* folder), the runtime package store *isn't used* on the host for that assembly. The *bin* folder assembly is used regardless of its presence in the runtime package store on the host.

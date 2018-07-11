@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostSecurityManager::SetThreadToken Method
 Sets a handle for the currently executing thread.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SetThreadToken (  
     [in] HANDLE hToken  
 );  
 ```  
-  
+
 #### Parameters  
  `hToken`  
  [in] A handle to the token to set for the currently executing thread.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetThreadToken` returned successfully.|  
@@ -43,21 +44,21 @@ HRESULT SetThreadToken (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  `IHostSecurityManager::SetThreadToken` behaves similarly to the corresponding Win32 function of the same name, except that the Win32 function allows the caller to pass in a handle to an arbitrary thread, while `IHostSecurityManager::SetThreadToken` can associate a token only with the currently executing thread.  
-  
+
  The `HANDLE` type is not COM-compliant; that is, its size is specific to an operating system and it requires custom marshaling. Thus, this token is for use only within the process, between the CLR and the host.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [IHostSecurityManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  
  [IHostThreadPoolManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-interface.md)

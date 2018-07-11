@@ -7,15 +7,15 @@ manager: "mbaldwin"
 ---
 # &lt;security&gt; of &lt;netPeerBinding&gt;
 Defines the security settings of the [\<netPeerTcpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md), including the type of authentication used and the security used for the message transport.  
-  
+
  \<system.ServiceModel>  
 \<bindings>  
 \<netPeerBinding>  
 \<binding>  
 \<security>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <netPeerBinding>  
     <binding>  
@@ -25,40 +25,44 @@ Defines the security settings of the [\<netPeerTcpBinding>](../../../../../docs/
     </binding>  
 </netPeerBinding>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |mode|Optional. Specifies the type of security used by peers configured with this binding. The default value is `Message`. This attribute is of type <xref:System.ServiceModel.SecurityMode>.|  
-  
+
 ## mode Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |Message|SOAP security provides authentication, integrity and confidentiality.|  
 |None|Security is disabled.|  
 |Transport|Security is provided using HTTPS.|  
 |TransportWithMessageCredential|HTTPS provides authentication and confidentiality. SOAP messages provide rich credential types.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-netpeertcpbinding.md)|Defines the transport type for secured messages sent by peers configured with this binding. This element is of type <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the [\<netPeerTcpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/netpeertcpbinding.md).|  
-  
+
 ## Remarks  
  Security can be either message- or transport-specific.  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.PeerSecurityElement>  
  <xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>  

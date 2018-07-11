@@ -8,7 +8,8 @@ ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
 ---
 # Built-In Types Table (C# Reference)
 The following table shows the keywords for built-in C# types, which are aliases of predefined types in the <xref:System> namespace.  
-  
+
+
 |C# Type|.NET Framework Type|  
 |--------------|-------------------------|  
 |[bool](../../../csharp/language-reference/keywords/bool.md)|`System.Boolean`|  
@@ -26,25 +27,25 @@ The following table shows the keywords for built-in C# types, which are aliases 
 |[short](../../../csharp/language-reference/keywords/short.md)|`System.Int16`|  
 |[ushort](../../../csharp/language-reference/keywords/ushort.md)|`System.UInt16`|  
 |[string](../../../csharp/language-reference/keywords/string.md)|`System.String`|  
-  
+
 ## Remarks  
  All of the types in the table, except `object` and `string`, are referred to as simple types.  
-  
+
  The C# type keywords and their aliases are interchangeable. For example, you can declare an integer variable by using either of the following declarations:  
-  
+
 ```csharp  
 int x = 123;  
 System.Int32 x = 123;  
 ```  
-  
+
  To display the actual type for any C# type, use the system method `GetType()`. For example, the following statement displays the system alias that represents the type of `myVariable`:  
-  
+
 ```csharp  
 Console.WriteLine(myVariable.GetType());  
 ```  
-  
+
  You can also use the [typeof](../../../csharp/language-reference/keywords/typeof.md) operator.  
-  
+
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  
  [C# Programming Guide](../../../csharp/programming-guide/index.md)  

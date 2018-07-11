@@ -1,5 +1,6 @@
 ### WinRT stream adapters no long call FlushAsync automatically on close
 
+
 |   |   |
 |---|---|
 |Details|In Windows Store apps, Windows Runtime stream adapters no longer call the FlushAsync method from the Dispose method.|

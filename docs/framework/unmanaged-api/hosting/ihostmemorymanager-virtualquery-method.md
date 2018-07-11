@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # IHostMemoryManager::VirtualQuery Method
 Serves as a logical wrapper for the corresponding Win32 function. The Win32 implementation of `VirtualQuery` retrieves information about a range of pages in the virtual address space of the calling process.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT VirtualQuery (  
     [in]  void*    lpAddress,  
@@ -31,22 +31,23 @@ HRESULT VirtualQuery (
     [out] SIZE_T*  pResult  
 );  
 ```  
-  
+
 #### Parameters  
  `lpAddress`  
  [in] A pointer to the address in virtual memory to be queried.  
-  
+
  `lpBuffer`  
  [out] A pointer to a structure that contains information about the specified memory region.  
-  
+
  `dwLength`  
  [in] The size, in bytes, of the buffer that `lpBuffer` points to.  
-  
+
  `pResult`  
  [out] A pointer to the number of bytes returned by the information buffer.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`VirtualQuery` returned successfully.|  
@@ -55,21 +56,21 @@ HRESULT VirtualQuery (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  `VirtualQuery` provides information about a range of pages in the virtual address space of the calling process. This implementation sets the value of the `pResult` parameter to the number of bytes returned in the information buffer, and returns an HRESULT value. In the Win32 `VirtualQuery` function, the return value is the buffer size. For more information, see the Windows Platform documentation.  
-  
+
 > [!IMPORTANT]
 >  The operating system's implementation of `VirtualQuery` does not incur deadlock and can run to completion with random threads suspended in user code. Use great caution when implementing a hosted version of this method.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)

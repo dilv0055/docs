@@ -5,7 +5,6 @@ author: blackdwarf
 ms.author: mairaw
 ms.date: 04/12/2017
 ---
-
 # .NET Core CLI tools extensibility model
 
 This document covers the different ways you can extend the .NET Core Command-line Interface (CLI) tools and explain the scenarios that drive each one of them.

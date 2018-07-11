@@ -4,7 +4,6 @@ description: Understand how versioning works in C# and .NET
 ms.date: 01/08/2017
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
 ---
-
 # Versioning in C# #
 
 In this tutorial you'll learn what versioning means in .NET. You'll also learn the factors to consider when versioning your library as well as upgrading
@@ -23,7 +22,7 @@ Ideally, the version information you give your library should help developers de
 with their projects that make use of older versions of that same library.
 
 The most basic approach to SemVer is the 3 component format `MAJOR.MINOR.PATCH`, where:
- 
+
 * `MAJOR` is incremented when you make incompatible API changes
 * `MINOR` is incremented when you add functionality in a backwards-compatible manner
 * `PATCH` is incremented when you make backwards-compatible bug fixes
@@ -39,11 +38,11 @@ A new version of your library is binary compatible if an application that depend
 Here are some things to consider when trying to maintain backwards compatibility with older versions of your library:
 
 * Virtual methods: When you make a virtual method non-virtual in your new version it means that projects that override that method
-will have to be updated. This is a huge breaking change and is strongly discouraged.
+  will have to be updated. This is a huge breaking change and is strongly discouraged.
 * Method signatures: When updating a method behaviour requires you to change its signature as well, you should instead create an overload so that code calling into that method will still work.
-You can always manipulate the old method signature to call into the new method signature so that implementation remains consistent.
+  You can always manipulate the old method signature to call into the new method signature so that implementation remains consistent.
 * [Obsolete attribute](programming-guide/concepts/attributes/common-attributes.md#Obsolete): You can use this attribute in your code to specify classes or class members that are deprecated and likely to be removed in future versions.
-This ensures developers utilizing your library are better prepared for breaking changes.
+  This ensures developers utilizing your library are better prepared for breaking changes.
 * Optional Method Arguments: When you make previously optional method arguments compulsory or change their default value then all code that does not supply those arguments will need to be updated.
 > [!NOTE]
 > Making compulsory arguments optional should have very little effect especially if it doesn't change the method's behaviour.

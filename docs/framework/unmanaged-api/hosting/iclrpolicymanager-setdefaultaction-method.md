@@ -20,25 +20,26 @@ ms.author: "ronpet"
 ---
 # ICLRPolicyManager::SetDefaultAction Method
 Specifies the policy action the common language runtime (CLR) should take when the specified operation occurs.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SetDefaultAction (  
     [in] EClrOperation operation,  
     [in] EPolicyAction action  
 );  
 ```  
-  
+
 #### Parameters  
  `operation`  
  [in] One of the [EClrOperation](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) values, indicating the action for which CLR behavior should be customized.  
-  
+
  `action`  
  [in] One of the [EPolicyAction](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) values, indicating the policy action the CLR should take when `operation` occurs.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetDefaultAction` returned successfully.|  
@@ -48,10 +49,11 @@ HRESULT SetDefaultAction (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_INVALIDARG|An invalid `action` was specified for the `operation`, or an invalid value was supplied for `operation`.|  
-  
+
 ## Remarks  
  Not all policy action values can be specified as the default behavior for CLR operations. `SetDefaultAction` can typically be used only to escalate behavior. For example, a host can specify that thread aborts be turned into rude thread aborts, but cannot specify the opposite. The table below describes the valid `action` values for each possible `operation` value.  
-  
+
+
 |Value for `operation`|Valid values for `action`|  
 |---------------------------|-------------------------------|  
 |OPR_ThreadAbort|-   eAbortThread<br />-   eRudeAbortThread<br />-   eUnloadAppDomain<br />-   eRudeUnloadAppDomain<br />-   eExitProcess<br />-   eFastExitProcess<br />-   eRudeExitProcess<br />-   eDisableRuntime|  
@@ -60,16 +62,16 @@ HRESULT SetDefaultAction (
 |OPR_AppDomainRudeUnload|-   eRudeUnloadAppDomain<br />-   eExitProcess<br />-   eFastExitProcess<br />-   eRudeExitProcess<br />-   eDisableRuntime|  
 |OPR_ProcessExit|-   eExitProcess<br />-   eFastExitProcess<br />-   eRudeExitProcess<br />-   eDisableRuntime|  
 |OPR_FinalizerRun|-   eNoAction<br />-   eAbortThread<br />-   eRudeAbortThread<br />-   eUnloadAppDomain<br />-   eRudeUnloadAppDomain<br />-   eExitProcess<br />-   eFastExitProcess<br />-   eRudeExitProcess<br />-   eDisableRuntime|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [EClrOperation Enumeration](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)  
  [EPolicyAction Enumeration](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)  

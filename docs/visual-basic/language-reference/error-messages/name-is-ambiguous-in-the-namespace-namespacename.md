@@ -15,7 +15,7 @@ You have provided a name that is ambiguous and therefore conflicts with another 
   
 ## To correct this error  
   
--   Fully qualify the name.  
+- Fully qualify the name.  
   
 ## See Also  
  [Namespaces in Visual Basic](../../../visual-basic/programming-guide/program-structure/namespaces.md)  

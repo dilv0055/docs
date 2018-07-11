@@ -15,11 +15,11 @@ This quickstart helps you become familiar with [!INCLUDE[ssAstoria](../../../../
 ## Prerequisites  
  To complete this quickstart, you must install the following components:  
   
--   [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+- [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
--   An instance of [!INCLUDE[msCoName](../../../../includes/msconame-md.md)] SQL Server. This includes SQL Server Express, which is included in a default installation of Visual Studio.  
+- An instance of [!INCLUDE[msCoName](../../../../includes/msconame-md.md)] SQL Server. This includes SQL Server Express, which is included in a default installation of Visual Studio.  
   
--   The Northwind sample database. To download this sample database, see the download page, [Sample Databases for SQL Server](http://go.microsoft.com/fwlink/?linkid=24758).  
+- The Northwind sample database. To download this sample database, see the download page, [Sample Databases for SQL Server](http://go.microsoft.com/fwlink/?linkid=24758).  
   
 ## WCF Data Services Quickstart Tasks  
  [Creating the Data Service](../../../../docs/framework/data/wcf/creating-the-data-service.md)  

@@ -13,20 +13,20 @@ The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component enables
   
 ### To print the complete client area of a scrollable form  
   
-1.  In the **Toolbox**, click the **Visual Basic PowerPacks** tab and then drag the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component onto the form.  
+1. In the **Toolbox**, click the **Visual Basic PowerPacks** tab and then drag the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component onto the form.  
   
-     The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component will be added to the component tray.  
+    The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component will be added to the component tray.  
   
-2.  In the **Properties** window, set the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property to <xref:System.Drawing.Printing.PrintAction.PrintToPrinter>.  
+2. In the **Properties** window, set the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property to <xref:System.Drawing.Printing.PrintAction.PrintToPrinter>.  
   
-3.  Add the following code in the appropriate event handler (for example, in the `Click` event handler for a **Print**`Button`).  
+3. Add the following code in the appropriate event handler (for example, in the `Click` event handler for a **Print**`Button`).  
   
-    ```  
-    PrintForm1.Print(Me, PowerPacks.Printing.PrintForm.PrintOption.Scrollable)  
-    ```  
+   ```  
+   PrintForm1.Print(Me, PowerPacks.Printing.PrintForm.PrintOption.Scrollable)  
+   ```  
   
-    > [!NOTE]
-    >  On some operating systems, text or graphics drawn by <xref:System.Drawing.Graphics> methods may not print correctly. In this case, you will not be able to print with the `Scrollable` parameter.  
+   > [!NOTE]
+   >  On some operating systems, text or graphics drawn by <xref:System.Drawing.Graphics> methods may not print correctly. In this case, you will not be able to print with the `Scrollable` parameter.  
   
 ## See Also  
  <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A>  

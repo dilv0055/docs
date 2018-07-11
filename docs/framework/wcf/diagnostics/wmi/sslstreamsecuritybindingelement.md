@@ -7,34 +7,35 @@ manager: "mbaldwin"
 ---
 # SslStreamSecurityBindingElement
 SslStreamSecurityBindingElement  
-  
+
 ## Syntax  
-  
+
 ```  
 class SslStreamSecurityBindingElement : BindingElement  
 {  
   boolean RequireClientCertificate;  
 };  
 ```  
-  
+
 ## Methods  
  The SslStreamSecurityBindingElement class does not define any methods.  
-  
+
 ## Properties  
  The SslStreamSecurityBindingElement class has the following property:  
-  
+
 ### RequireClientCertificate  
  Data type: boolean  
-  
+
  Access type: Read-only  
-  
+
  Specifies whether a client certificate is required for this binding.  
-  
+
 ## Requirements  
-  
+
+
 |MOF|Declared in Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Namespace|Defined in root\ServiceModel|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>

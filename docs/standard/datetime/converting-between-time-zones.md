@@ -28,6 +28,7 @@ Coordinated Universal Time (UTC) is a high-precision, atomic time standard. The 
 
 The easiest way to convert a time to UTC is to call the `static` (`Shared` in Visual Basic) <xref:System.TimeZoneInfo.ConvertTimeToUtc%28System.DateTime%29?displayProperty=nameWithType> method. The exact conversion performed by the method depends on the value of the `dateTime` parameter's <xref:System.DateTime.Kind%2A> property, as the following table shows.
 
+
 | `DateTime.Kind`            | Conversion                                                                     |
 | -------------------------- | ------------------------------------------------------------------------------ |
 | `DateTimeKind.Local`       | Converts local time to UTC.                                                    |
@@ -70,6 +71,7 @@ The following code converts UTC to Central Standard Time.
 ## Converting UTC to local time
 
 To convert UTC to local time, call the <xref:System.DateTime.ToLocalTime%2A> method of the <xref:System.DateTime> object whose time you want to convert. The exact behavior of the method depends on the value of the object’s <xref:System.DateTime.Kind%2A> property, as the following table shows.
+
 
 | `DateTime.Kind`            | Conversion                                                                               |
 | -------------------------- | ---------------------------------------------------------------------------------------- |

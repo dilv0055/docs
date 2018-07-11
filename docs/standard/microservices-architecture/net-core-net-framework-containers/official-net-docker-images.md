@@ -18,9 +18,9 @@ Most image repos provide extensive tagging to help you select not just a specifi
 
 When building Docker images for developers, Microsoft focused on the following main scenarios:
 
--   Images used to *develop* and build .NET Core apps.
+- Images used to *develop* and build .NET Core apps.
 
--   Images used to *run* .NET Core apps.
+- Images used to *run* .NET Core apps.
 
 Why multiple images? When developing, building, and running containerized applications, you usually have different priorities. By providing different images for these separate tasks, Microsoft helps optimize the separate processes of developing, building, and deploying apps.
 
@@ -40,15 +40,15 @@ Although there are multiple versions of the .NET Core and ASP.NET Core images, t
 
 When you explore the .NET image repositories at Docker Hub, you will find multiple image versions classified or marked with tags. These tags help to decide which one to use, depending on the version you need, like those in the following table:
 
--   microsoft/dotnet:**2.1-aspnetcore-runtime**
+- microsoft/dotnet:**2.1-aspnetcore-runtime**
 
-        ASP.NET Core, with runtime only and ASP.NET Core optimizations, on Linux and Windows (multi-arch)
+      ASP.NET Core, with runtime only and ASP.NET Core optimizations, on Linux and Windows (multi-arch)
 
--   microsoft/**dotnet:2.1-sdk**
+- microsoft/**dotnet:2.1-sdk**
 
-        .NET Core, with SDKs included, on Linux and Windows (multi-arch)
+      .NET Core, with SDKs included, on Linux and Windows (multi-arch)
 
 
->[!div class="step-by-step"]
-[Previous](net-container-os-targets.md)
-[Next](../architect-microservice-container-applications/index.md)
+> [!div  class="step-by-step"]
+> [Previous](net-container-os-targets.md)
+> [Next](../architect-microservice-container-applications/index.md)

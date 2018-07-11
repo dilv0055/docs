@@ -8,7 +8,7 @@ When checking event log names for uniqueness, only the first eight characters ar
   
 ## To correct this error  
   
--   Give the event log a name in which the first eight characters are unique.  
+- Give the event log a name in which the first eight characters are unique.  
   
 ## See Also  
  [How to: Create and Remove Custom Event Logs](http://msdn.microsoft.com/library/af9b7da0-80c7-46ac-b7f7-897063ddd503)  

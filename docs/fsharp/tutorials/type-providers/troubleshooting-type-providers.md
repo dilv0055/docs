@@ -13,6 +13,7 @@ If you encounter a problem when you work with type providers, you can review the
 
 
 
+
 |Problem|Suggested Actions|
 |-------|-----------------|
 |**Schema Changes**. Type providers work best  when the data source schema is stable. If you add a data table or column or make another change to that schema, the type provider doesn’t automatically recognize these changes.|Clean or rebuild the project. To clean the project, choose **Build**, **Clean** *ProjectName* on the menu bar. To rebuild the project, choose **Build**, **Rebuild** *ProjectName* on the menu bar. These actions reset all type provider state and force the provider to reconnect to the data source and obtain updated schema information.|

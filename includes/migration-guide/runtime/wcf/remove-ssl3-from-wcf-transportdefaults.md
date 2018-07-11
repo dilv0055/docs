@@ -1,5 +1,6 @@
 ### Remove Ssl3 from the WCF TransportDefaults
 
+
 |   |   |
 |---|---|
 |Details|When using NetTcp with transport security and a credential type of certificate, the SSL 3 protocol is no longer a default protocol used for negotiating a secure connection. In most cases there should be no impact to existing apps as TLS 1.0 has always been included in the protocol list for NetTcp. All existing clients should be able to negotiate a connection using at least TLS1.0.|

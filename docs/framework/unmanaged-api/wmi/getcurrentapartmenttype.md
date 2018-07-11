@@ -19,11 +19,11 @@ ms.author: "ronpet"
 ---
 # GetCurrentApartmentType function
 Retrieves the type of apartment in which the caller is executing.   
-  
+
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetCurrentApartmentType (
    [in] int                   vFunc, 
@@ -46,21 +46,22 @@ HRESULT GetCurrentApartmentType (
 ## Return value
 
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `S_OK` | 0 | The function completed successfully. |
 | `E_FAIL` | 0x80000008 | The caller is not executing in an apartment. |
-  
+
 ## Remarks
 
 This function wraps a call to the [IComThreadingInfo::GetCurrentApartmentType](https://msdn.microsoft.com/library/windows/desktop/ms683752(v=vs.85).aspx) method.
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

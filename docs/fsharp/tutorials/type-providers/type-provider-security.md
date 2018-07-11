@@ -19,10 +19,10 @@ If you decide to change the trust setting directly in Visual Studio, perform the
 #### To change the trust settings for type providers
 
 1. On the `Tools` menu, select `Options`, and expand the `F# Tools` node.
-<br />
+   <br />
 
 2. Select `Type Providers`, and in the list of type providers, select the check box for type providers you trust, and clear the check box for those you don't trust.
-<br />
+   <br />
 
 
 ## See Also

@@ -20,38 +20,39 @@ ms.author: "ronpet"
 ---
 # ICorDebugVariableHome::GetSlotIndex Method
 Gets the managed slot-index of a local variable.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetSlotIndex(  
     [out] ULONG32 *pSlotIndex  
 );  
 ```  
-  
+
 #### Parameters  
  `pSlotIndex`  
  [out] A pointer to the slot-index of a local variable.  
-  
+
 ## Return Value  
  The method returns the following values.  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |`S_OK`|The method call returned a slot-index value in `pSlotIndex`.|  
 |`E_FAIL`|The current [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) instance represents a function argument.|  
-  
+
 ## Remarks  
  The slot-index can be used to retrieve the metadata for this local variable.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
-  
+
 ## See Also  
  [ICorDebugVariableHome Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)

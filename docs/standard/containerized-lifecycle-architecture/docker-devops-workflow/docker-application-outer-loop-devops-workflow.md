@@ -49,17 +49,17 @@ Figure 5-2: The steps involved in CI
 
 Here are the basic CI workflow steps with Docker and Visual Studio Team Services:
 
-1.  The developer pushes a commit to an SCC repository (Git/Visual Studio Team Services, GitHub, etc.).
+1. The developer pushes a commit to an SCC repository (Git/Visual Studio Team Services, GitHub, etc.).
 
-2.  If you're using Visual Studio Team Services or Git, CI is built in, which means that it is as simple as selecting a check box in Visual Studio Team Services. If you're using an external SCC (like GitHub), a *webhook* will notify Visual Studio Team Services of the update or push to Git/GitHub.
+2. If you're using Visual Studio Team Services or Git, CI is built in, which means that it is as simple as selecting a check box in Visual Studio Team Services. If you're using an external SCC (like GitHub), a *webhook* will notify Visual Studio Team Services of the update or push to Git/GitHub.
 
-3.  Visual Studio Team Services pulls the SCC repository, including the DockerFile describing the image as well as the application and test code.
+3. Visual Studio Team Services pulls the SCC repository, including the DockerFile describing the image as well as the application and test code.
 
-4.  Visual Studio Team Services builds a Docker image and labels it with a build number.
+4. Visual Studio Team Services builds a Docker image and labels it with a build number.
 
-5.  Visual Studio Team Services instantiates the Docker container within the provisioned Docker Host, and runs the appropriate tests.
+5. Visual Studio Team Services instantiates the Docker container within the provisioned Docker Host, and runs the appropriate tests.
 
-6.  If the tests are successful, the image is first relabeled to a meaningful name so that you know it is a "blessed build" (like "/1.0.0" or any other label), and then pushed up to your Docker Registry (Docker Hub, Azure Container Registry, DTR, etc.)
+6. If the tests are successful, the image is first relabeled to a meaningful name so that you know it is a "blessed build" (like "/1.0.0" or any other label), and then pushed up to your Docker Registry (Docker Hub, Azure Container Registry, DTR, etc.)
 
 ### Implementing the CI pipeline with Visual Studio Team Services and the Docker extension for Visual Studio Team Services
 
@@ -73,29 +73,29 @@ The Docker extension can use service endpoints for Docker hosts and for containe
 
 The Visual Studio Team Services Docker extension installs the following components in your Visual Studio Team Services account:
 
--   A service endpoint for connecting to a Docker registry
+- A service endpoint for connecting to a Docker registry
 
--   A service endpoint for connecting to a Docker Container Host
+- A service endpoint for connecting to a Docker Container Host
 
--   A Docker task to do the following:
+- A Docker task to do the following:
 
--   Build an image
+- Build an image
 
--   Push an image or a repository to a registry
+- Push an image or a repository to a registry
 
--   Run an image in a container
+- Run an image in a container
 
--   Run a Docker command
+- Run a Docker command
 
--   A Docker Compose task to run a Docker Compose command
+- A Docker Compose task to run a Docker Compose command
 
 With these Visual Studio Team Services tasks, a build Linux-Docker Host/VM provisioned in Azure and your preferred Docker registry (Azure Container Registry, Docker Hub, private Docker DTR, or any other Docker registry) you can assemble your Docker CI pipeline in a very consistent way.
 
 ***Requirements:***
 
--   Visual Studio Team Services, or for on-premises installations, Team Foundation Server 2015 Update 3 or later.
+- Visual Studio Team Services, or for on-premises installations, Team Foundation Server 2015 Update 3 or later.
 
--   A Visual Studio Team Services agent that has the Docker binaries.
+- A Visual Studio Team Services agent that has the Docker binaries.
 
 An easy way to create one of these is to use Docker to run a container based on the Visual Studio Team Services agent Docker image.
 
@@ -120,11 +120,11 @@ If you're using a single host, you can use Docker commands such as docker-compos
 
 Following are several types of tests that you can run against Docker containers:
 
--   Unit tests for Docker containers
+- Unit tests for Docker containers
 
--   Testing groups of interrelated applications or microservices
+- Testing groups of interrelated applications or microservices
 
--   Test in production and "canary" releases
+- Test in production and "canary" releases
 
 The important point is that when running integration and functional tests, you must run those tests from outside of the containers. Tests must not be defined and run within the containers that you are deploying, because the containers are based on static images that should be exactly like those that you will be deploying into production.
 
@@ -229,6 +229,6 @@ This topic also is covered in the next chapter as part of the tasks that IT oper
 
 Only when monitoring and diagnostics are 100 percent within the realm of DevOps are the monitoring processes and analytics performed by the development team against testing or beta environments. This is done either by performing load testing or simply by monitoring beta or QA environments, where beta testers are trying the new versions.
 
->[!div class="step-by-step"]
-[Previous](index.md)
-[Next](../run-manage-monitor-docker-environments/index.md)
+> [!div  class="step-by-step"]
+> [Previous](index.md)
+> [Next](../run-manage-monitor-docker-environments/index.md)

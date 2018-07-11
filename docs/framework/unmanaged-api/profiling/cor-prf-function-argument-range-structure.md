@@ -19,31 +19,32 @@ ms.author: "mairaw"
 ---
 # COR_PRF_FUNCTION_ARGUMENT_RANGE Structure
 Represents a block of function arguments stored contiguously in left-to-right order in memory.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct _COR_PRF_FUNCTION_ARGUMENT_RANGE {  
     UINT_PTR startAddress;  
     ULONG length;  
 } COR_PRF_FUNCTION_ARGUMENT_RANGE;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Members|Description|  
 |-------------|-----------------|  
 |`startAddress`|The starting address of the block.|  
 |`length`|The length of the contiguous block.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorProf.idl  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Profiling Structures](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

@@ -184,8 +184,8 @@ public class D : B
 In every release, the overload resolution rules get updated to address situations where ambiguous method invocations have an "obvious" choice. This release adds three new rules to help the compiler pick the obvious choice:
 
 1. When a method group contains both instance and static members, the compiler discards the instance members if the method was invoked without an instance receiver or context. The compiler discards the static members if the method was invoked with an instance receiver. When there is no receiver, the compiler includes only static members in a static context, otherwise both static and instance members. When the receiver is ambiguously an instance or type, the compiler includes both. A static context, where an implicit `this` instance receiver cannot be used, includes the body of members where no `this` is defined, such as static members, as well as places where `this` cannot be used, such as field initializers and constructor-initializers.
-1. When a method group contains some generic methods whose type arguments do not satisfy their constraints, these members are removed from the candidate set.
-1. For a method group conversion, candidate methods whose return type doesn't match up with the delegate's return type are removed from the set.
+2. When a method group contains some generic methods whose type arguments do not satisfy their constraints, these members are removed from the candidate set.
+3. For a method group conversion, candidate methods whose return type doesn't match up with the delegate's return type are removed from the set.
 
 You'll only notice this change because you'll find fewer compiler errors for ambiguous method overloads when you are sure which method is better.
 

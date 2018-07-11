@@ -3,7 +3,6 @@ title: "Reliable Sessions Overview"
 ms.date: "03/30/2017"
 ms.assetid: a7fc4146-ee2c-444c-82d4-ef6faffccc2d
 ---
-
 # Reliable Sessions Overview
 
 Windows Communication Foundation (WCF) SOAP reliable messaging provides end-to-end message transfer reliability between SOAP endpoints. It does this on networks that are unreliable by overcoming transport failures and SOAP message-level failures. In particular, it provides session-based, single, and (optionally) ordered delivery for messages sent across SOAP or transport intermediaries. Session-based delivery provides for grouping messages in a session with optional ordering of the messages.
@@ -58,6 +57,7 @@ Use a reliable session on any other bindings by creating a custom binding, such 
 
 You can stack a reliable session on different underlying channel types, and the resulting reliable session channel shape varies. On both the client and the server, the type of reliable session channel supported depends on the type of underlying channel used. The following table lists the types of session channels supported on the client as a function of the underlying channel type.
 
+
 | Supported reliable session channel types&#8224; | `IRequestChannel` | `IRequestSessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
 | ----------------------------------------------- | :---------------: | :----------------------: | :--------------: | :---------------------: |
 | `IOutputSessionChannel`                         | Yes               | Yes                      | Yes              | Yes                     |
@@ -67,6 +67,7 @@ You can stack a reliable session on different underlying channel types, and the 
 &#8224;The supported channel types are the values available for the generic `TChannel` parameter value that is passed into the <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.BuildChannelFactory%60%601%28System.ServiceModel.Channels.BindingContext%29> method.
 
 The following table lists the types of session channels supported on the server as a function of the underlying channel type.
+
 
 | Supported reliable session channel types&#8225; | `IReplyChannel` | `IReplySessionChannel` | `IDuplexChannel` | `IDuplexSessionChannel` |
 | ----------------------------------------------- | :-------------: | :--------------------: | :--------------: | :---------------------: |

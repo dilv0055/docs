@@ -42,8 +42,8 @@ An advantage of serverless code is that you can release new functions without ha
 A popular approach to solve schema versioning is to never modify existing properties and columns, but instead add new information. For example, consider a change to move from a Boolean "completed" flag for a todo list to a "completed date." Instead of removing the old field, the database change will:
 
 1. Add a new "completed date" field.
-1. Transform the "completed" Boolean field to a computed function that evaluates whether the completed date is after the current date.
-1. Add a trigger to set the completed date to the current date when the completed Boolean is set to true.
+2. Transform the "completed" Boolean field to a computed function that evaluates whether the completed date is after the current date.
+3. Add a trigger to set the completed date to the current date when the completed Boolean is set to true.
 
 The sequence of changes ensures that legacy code continues to run "as is" while newer serverless functions can take advantage of the new field.
 
@@ -75,6 +75,6 @@ For more information, see [Implementing the Circuit Breaker pattern](../microser
 
 A major benefit of serverless is the ability to upgrade a specific function without having to redeploy the entire application. For upgrades to be successful, functions must be versioned so that services calling them are routed to the correct version of code. A strategy for deploying new versions is also important. A common approach is to use "green/blue deployments." The green deployment is the current function. A new "blue" version is deployed to production and tested. When testing passes, the green and blue versions are swapped so the new version comes live. If any issues are encountered, they can be swapped back. Supporting versioning and green/blue deployments requires a combination of authoring the functions to accommodate version changes and working with the serverless platform to handle deployments. One possible approach is to use proxies, which are described in the [./azure-functions.md](Azure serverless platform) chapter.
 
->[!div class="step-by-step"]
-[Previous](serverless-architecture.md)
-[Next](serverless-design-examples.md)
+> [!div  class="step-by-step"]
+> [Previous](serverless-architecture.md)
+> [Next](serverless-design-examples.md)

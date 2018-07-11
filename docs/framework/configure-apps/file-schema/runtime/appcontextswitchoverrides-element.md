@@ -13,49 +13,53 @@ ms.author: "ronpet"
 ---
 # &lt;AppContextSwitchOverrides&gt; Element
 Defines one or more switches used by the <xref:System.AppContext> class to provide an opt-out mechanism for new functionality.  
-  
+
  \<configuration>  
  \<runtime>  
 \<AppContextSwitchOverrides>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <AppContextSwitchOverrides value="name1=value1[[;name2=value2];...]" />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`value`|Required attribute.<br /><br /> Defines one or more switch names and their associated Boolean values.|  
-  
+
 ### value Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |"name=value"|A predefined switch name along with its value (`true` or `false`). Multiple switch name/value pairs are separated by semicolons (";"). For a list of predefined switch names supported by the .NET Framework, see the Remarks section.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`runtime`|Contains information about runtime initialization options.|  
-  
+
 ## Remarks  
  Starting with the .NET Framework 4.6, the `<AppContextSwitchOverrides>` element in a configuration file allows callers of an API to determine whether their app can take advantage of new functionality or preserve compatibility with previous versions of a library. For example, if the behavior of an API has changed between two versions of a library, the `<AppContextSwitchOverrides>` element allows callers of that API to opt out of the new behavior on versions of the library that support the new functionality. For apps that call APIs in the .NET Framework, the `<AppContextSwitchOverrides>` element can also allow callers whose apps target an earlier version of the .NET Framework to opt into new functionality if their app is running on a version of the .NET Framework that includes that functionality.  
-  
+
  The `value` attribute of the `<AppContextSwitchOverrides>` element consists of a single string that consists of one or more semicolon-delimited name/value pairs.  Each name identifies a compatibility switch, and its corresponding value is a Boolean (`true` or `false`) that indicates whether the switch is set. By default, the switch is `false`, and libraries  provide the new functionality. They only provide the previous functionality if the switch is set (that is, its value is `true`). This allows libraries to provide new behavior for an existing API while allowing callers who depend on the previous behavior to opt out of the new functionality.  
-  
+
  The .NET Framework supports the following switches:  
-  
+
+
 |Switch name|Description|Introduced|  
 |-----------------|-----------------|----------------|  
 |`Switch.MS.Internal.`<br/>`DoNotApplyLayoutRoundingToMarginsAndBorderThickness`|Controls whether Windows Presentation Foundation uses legacy a algorithm for control layout. For more information, see [Mitigation: WPF Layout](~/docs/framework/migration-guide/mitigation-wpf-layout.md).|.NET Framework 4.6|  
@@ -113,15 +117,15 @@ Defines one or more switches used by the <xref:System.AppContext> class to provi
 |`Switch.UseLegacyAccessibilityFeatures`|Controls whether accessibility features available starting with the .NET Framework 4.7.1 are enabled or disabled. | .NET Framework 4.7.1 |
 |`Switch.UseLegacyAccessibilityFeatures.2`|Controls whether accessibility features available in the .NET Framework 4.7.2 are enabled (`false`) or disabled (`true`). If `true`, `Switch.UseLegacyAccessibilityFeatures` must also be `true` to enable .NET Framework 4.7.1 accessibility features.|.NET Framework 4.7.2|
 |`System.Xml.`<br /><br /> `IgnoreEmptyKeySequences`|Controls whether empty key sequences in compound keys are ignored by XSD schema validation. For more information, see [Mitigation: XML Schema Validation](~/docs/framework/migration-guide/mitigation-xml-schema-validation.md).|.NET Framework 4.6|  
-  
+
 > [!NOTE]
 >  Instead of adding an `AppContextSwitchOverrides` element to an application configuration file, you can also set the switches programmatically by calling the `static` (in C#) or `Shared` (in Visual Basic) <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> method.  
-  
+
  Library developers can also define custom switches to allow callers to opt out of changed functionality introduced  in later versions of their libraries. For more information, see the <xref:System.AppContext> class.  
-  
+
 ## Example  
  The following example uses the `AppContextSwitchOverrides` element to define a single application  compatibility switch, `Switch.System.Globalization.NoAsyncCurrentCulture`, that prevents culture from flowing across threads in asynchronous method calls.  
-  
+
 ```xml  
 <configuration>  
    <runtime>  
@@ -129,9 +133,9 @@ Defines one or more switches used by the <xref:System.AppContext> class to provi
    </runtime>  
 </configuration>  
 ```  
-  
+
  The following example uses the `AppContextSwitchOverrides` element to define two application  compatibility switches, `Switch.System.Globalization.NoAsyncCurrentCulture` and `Switch.System.IO.BlockLongPaths`. Note that a semicolon separates the two name/value pairs.  
-  
+
 ```xml  
 <configuration>  
     <runtime>  
@@ -140,7 +144,7 @@ Defines one or more switches used by the <xref:System.AppContext> class to provi
     </runtime>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.AppContext?displayProperty=nameWithType>  
  [\<runtime> Element](runtime-element.md)  

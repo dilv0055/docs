@@ -10,20 +10,20 @@ This sample demonstrates how to use basic expressions in a workflow. It consists
   
 #### To run the sample  
   
-1.  Open the Expressions.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1. Open the Expressions.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Press CTRL+SHIFT+B to build the solution or select **Build Solution** from the **Build** menu.  
+2. Press CTRL+SHIFT+B to build the solution or select **Build Solution** from the **Build** menu.  
   
-    > [!NOTE]
-    >  To open SalaryCalculation.xaml in the Visual Studio designer, you must first compile your project to ensure that `Employee` and `SalaryStats` classes are available to the designer.  
+   > [!NOTE]
+   >  To open SalaryCalculation.xaml in the Visual Studio designer, you must first compile your project to ensure that `Employee` and `SalaryStats` classes are available to the designer.  
   
-3.  Once the build has succeeded, press F5 or select **Start Debugging** from the **Debug** menu. Alternatively you can press Ctrl+F5 or select **Start Without Debugging** from the **Debug** menu to run without debugging.  
+3. Once the build has succeeded, press F5 or select **Start Debugging** from the **Debug** menu. Alternatively you can press Ctrl+F5 or select **Start Without Debugging** from the **Debug** menu to run without debugging.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your computer. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Expressions`

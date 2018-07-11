@@ -48,23 +48,23 @@ A schema can include an **msdata:Relationship** annotation to explicitly specify
   
  The XML Schema mapping process creates the following in the <xref:System.Data.DataSet>:  
   
--   An **Order** and an **OrderDetail** table.  
+- An **Order** and an **OrderDetail** table.  
   
-    ```  
-    Order(OrderNumber, EmpNumber)  
-    OrderDetail(OrderNo, ItemNo)  
-    ```  
+  ```  
+  Order(OrderNumber, EmpNumber)  
+  OrderDetail(OrderNo, ItemNo)  
+  ```  
   
--   A relationship between the **Order** and **OrderDetail** tables. The **Nested** property for this relationship is set to **True** because the **Order** and **OrderDetail** elements are nested in the schema.  
+- A relationship between the **Order** and **OrderDetail** tables. The **Nested** property for this relationship is set to **True** because the **Order** and **OrderDetail** elements are nested in the schema.  
   
-    ```  
-    ParentTable: Order  
-    ParentColumns: OrderNumber   
-    ChildTable: OrderDetail  
-    ChildColumns: OrderNo   
-    RelationName: OrdODRelation  
-    Nested: True  
-    ```  
+  ```  
+  ParentTable: Order  
+  ParentColumns: OrderNumber   
+  ChildTable: OrderDetail  
+  ChildColumns: OrderNo   
+  RelationName: OrdODRelation  
+  Nested: True  
+  ```  
   
  The mapping process does not create any constraints.  
   

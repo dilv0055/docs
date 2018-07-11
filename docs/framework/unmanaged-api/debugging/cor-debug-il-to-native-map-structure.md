@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # COR_DEBUG_IL_TO_NATIVE_MAP Structure
 Contains the offsets that are used to map Microsoft intermediate language (MSIL) code to native code.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct COR_DEBUG_IL_TO_NATIVE_MAP {  
     ULONG32  ilOffset;  
@@ -29,24 +29,25 @@ typedef struct COR_DEBUG_IL_TO_NATIVE_MAP {
     ULONG32  nativeEndOffset;  
 } COR_DEBUG_IL_TO_NATIVE_MAP;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`ilOffset`|The offset of the MSIL code.|  
 |`nativeStartOffset`|The offset of the start of the native code.|  
 |`nativeEndOffset`|The offset of the end of the native code.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorProf.idl, CorDebug.idl  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [GetILToNativeMapping Method](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md)  
  [GetILToNativeMapping Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getiltonativemapping-method.md)  

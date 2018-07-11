@@ -17,37 +17,37 @@ While you can set options related to printing at design time, you will sometimes
   
 ### To change print options programmatically  
   
-1.  Add a <xref:System.Windows.Forms.PrintDialog> and a <xref:System.Drawing.Printing.PrintDocument> component to your form.  
+1. Add a <xref:System.Windows.Forms.PrintDialog> and a <xref:System.Drawing.Printing.PrintDocument> component to your form.  
   
-2.  Set the <xref:System.Windows.Forms.PrintDialog.Document%2A> property of the <xref:System.Windows.Forms.PrintDialog> to the <xref:System.Drawing.Printing.PrintDocument> added to the form.  
+2. Set the <xref:System.Windows.Forms.PrintDialog.Document%2A> property of the <xref:System.Windows.Forms.PrintDialog> to the <xref:System.Drawing.Printing.PrintDocument> added to the form.  
   
-    ```vb  
-    PrintDialog1.Document = PrintDocument1  
-    ```  
+   ```vb  
+   PrintDialog1.Document = PrintDocument1  
+   ```  
   
-    ```csharp  
-    printDialog1.Document = PrintDocument1;  
-    ```  
+   ```csharp  
+   printDialog1.Document = PrintDocument1;  
+   ```  
   
-    ```cpp  
-    printDialog1->Document = PrintDocument1;  
-    ```  
+   ```cpp  
+   printDialog1->Document = PrintDocument1;  
+   ```  
   
-3.  Display the <xref:System.Windows.Forms.PrintDialog> component by using the <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> method.  
+3. Display the <xref:System.Windows.Forms.PrintDialog> component by using the <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> method.  
   
-    ```vb  
-    PrintDialog1.ShowDialog()  
-    ```  
+   ```vb  
+   PrintDialog1.ShowDialog()  
+   ```  
   
-    ```csharp  
-    printDialog1.ShowDialog();  
-    ```  
+   ```csharp  
+   printDialog1.ShowDialog();  
+   ```  
   
-    ```cpp  
-    printDialog1->ShowDialog();  
-    ```  
+   ```cpp  
+   printDialog1->ShowDialog();  
+   ```  
   
-4.  The user's printing choices from the dialog will be copied to the <xref:System.Drawing.Printing.PrinterSettings> property of the <xref:System.Drawing.Printing.PrintDocument> component.  
+4. The user's printing choices from the dialog will be copied to the <xref:System.Drawing.Printing.PrinterSettings> property of the <xref:System.Drawing.Printing.PrintDocument> component.  
   
 ## See Also  
  [How to: Print a Multi-Page Text File in Windows Forms](../../../../docs/framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)  

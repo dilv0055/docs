@@ -5,13 +5,13 @@ ms.assetid: de6238ae-bbf8-48e9-a1b5-e24c0bea8afa
 ---
 # &lt;endpoint&gt; of &lt;client&gt;
 Specifies contract, binding, and address properties of the channel endpoint, which is used by clients to connect to service endpoints on the server.  
-  
+
  \<system.ServiceModel>  
 \<client>  
 \<endpoint>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <endpoint address="String"  
    behaviorConfiguration="String"  
@@ -21,12 +21,13 @@ Specifies contract, binding, and address properties of the channel endpoint, whi
    name="String"  
 </endpoint>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |address|Required string attribute.<br /><br /> Specifies the address of the endpoint. The default is an empty string. The address must be an absolute URI.|  
@@ -37,23 +38,25 @@ Specifies contract, binding, and address properties of the channel endpoint, whi
 |endpointConfiguration|A string that specifies the name of the standard endpoint that is set by the `kind` attribute, which references to the additional configuration information of this standard endpoint. The same name must be defined in the `<standardEndpoints>` section.|  
 |kind|A string that specifies the type of standard endpoint applied. The type must be registered in the `<extensions>` section or in machine.config. If nothing is specified, a common channel endpoint is created.|  
 |name|Optional string attribute. This attribute uniquely identifies an endpoint for a given contract. You can define multiple clients for a given Contract type. Each definition must be differentiated by a unique configuration name. If this attribute is omitted, the corresponding endpoint is used as the default endpoint associated with the specified Contract type. The default is an empty string.<br /><br /> The `name` attribute of a binding is used for definition export through WSDL.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|A collection of address headers.|  
 |[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|An identity that enables the authentication of an endpoint by other endpoints exchanging messages with it.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<client>](../../../../../docs/framework/configure-apps/file-schema/wcf/client.md)|A configuration section that defines a list of endpoints that a client can connect to.|  
-  
+
 ## Example  
  This is an example of a channel endpoint configuration.  
-  
+
 ```xml  
 <endpoint address="/HelloWorld/"  
     bindingConfiguration="usingDefaults"  
@@ -62,7 +65,7 @@ Specifies contract, binding, and address properties of the channel endpoint, whi
     contract="HelloWorld">  
 </endpoint>  
 ```  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.ChannelEndpointElement>  
  <xref:System.ServiceModel.Configuration.ClientSection>  

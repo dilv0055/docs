@@ -14,9 +14,9 @@ This topic describes the XML schema definition (XSD) used by the Microsoft Annot
   
  The [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] XML schema definition consists of two subschemas  
   
--   The Annotations XML Core Schema (Core Schema).  
+- The Annotations XML Core Schema (Core Schema).  
   
--   The Annotations XML Base Schema (Base Schema).  
+- The Annotations XML Base Schema (Base Schema).  
   
  The Core Schema defines the primary XML structure of an <xref:System.Windows.Annotations.Annotation>.  The majority of XML elements defined in the Core Schema correspond to types in the <xref:System.Windows.Annotations> namespace.  The Core Schema exposes three extension points where applications can add their own XML data.  These extension points include the <xref:System.Windows.Annotations.Annotation.Authors%2A>, <xref:System.Windows.Annotations.ContentLocatorPart>, and "Content".  (Content elements are provided in the form of an <xref:System.Xml.XmlElement> list.)  
   

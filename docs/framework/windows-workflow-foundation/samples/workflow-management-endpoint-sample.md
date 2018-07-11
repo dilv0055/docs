@@ -10,21 +10,21 @@ This sample shows how a workflow control endpoint can be used to create and run 
   
 #### To run the sample  
   
-1.  Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] with administrator privileges.  
+1. Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] with administrator privileges.  
   
-2.  Open the ManagementEndpoint.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+2. Open the ManagementEndpoint.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-3.  To build the solution, press CTRL+SHIFT+B or select **Build Solution** from the **Build** menu.  
+3. To build the solution, press CTRL+SHIFT+B or select **Build Solution** from the **Build** menu.  
   
-4.  Start the ManagementEndpoint.exe application.  
+4. Start the ManagementEndpoint.exe application.  
   
-5.  Start the Client.exe application.  
+5. Start the Client.exe application.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your computer. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Execution\ManagementEndpoint`

@@ -19,23 +19,24 @@ ms.author: "mairaw"
 ---
 # CorPropertyAttr Enumeration
 Contains values that describe the metadata of a property.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorPropertyAttr {  
-  
+
     prSpecialName           =   0x0200,   
     prReservedMask          =   0xf400,  
     prRTSpecialName         =   0x0400,  
     prHasDefault            =   0x1000,  
     prUnused                =   0xe9ff  
-  
+
 } CorPropertyAttr;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`prSpecialName`|Specifies that the property is special, and that its name describes how.|  
@@ -43,13 +44,13 @@ typedef enum CorPropertyAttr {
 |`prRTSpecialName`|Specifies that the common language runtime metadata internal APIs should check the encoding of the property name.|  
 |`prHasDefault`|Specifies that the property has a default value.|  
 |`prUnused`|Unused.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

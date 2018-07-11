@@ -27,7 +27,7 @@ End Class
   
 ## To correct this error  
   
--   Change the access level of the variable, procedure parameter, or function return to be at least as restrictive as the access level of its data type.  
+- Change the access level of the variable, procedure parameter, or function return to be at least as restrictive as the access level of its data type.  
   
 ## See Also  
  [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)

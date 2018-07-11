@@ -14,25 +14,26 @@ manager: "markl"
 ---
 # &lt;system.diagnostics&gt; Element
 Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.  
-  
+
  \<configuration>  
 \<system.diagnostics>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <system.diagnostics>   
 </system.diagnostics>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<assert>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/assert-element.md)|Specifies whether to display a message box when you call the <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method; also specifies the name of the file to write messages to.|  
@@ -41,19 +42,20 @@ Specifies trace listeners that collect, store, and route messages and the level 
 |[\<sources>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sources-element.md)|Specifies trace sources that initiate tracing messages.|  
 |[\<switches>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/switches-element.md)|Contains trace switches and the levels where the trace switches are set.|  
 |[\<trace>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)|Contains listeners that collect, store, and route tracing messages.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
-  
+
 ## Example  
  The following example shows how to embed a trace switch and a trace listener inside the **\<system.diagnostics>** element. The `General` trace switch is set to the <xref:System.Diagnostics.TraceLevel> level. The trace listener `myListener` creates a file called `MyListener.log` and writes the output to the file.  
-  
+
 > [!NOTE]
 >  In the .NET Framework version 2.0, you can use text to specify the value for a switch. For example, you can specify `true` for a <xref:System.Diagnostics.BooleanSwitch> or use the text representing an enumeration value such as `Error` for a <xref:System.Diagnostics.TraceSwitch>. The line `<add name="myTraceSwitch" value="Error" />` is equivalent to `<add name="myTraceSwitch" value="1" />`.  
-  
+
 ```xml  
 <configuration>  
    <system.diagnostics>  
@@ -68,7 +70,7 @@ Specifies trace listeners that collect, store, and route messages and the level 
    </system.diagnostics>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Diagnostics.Trace>  
  <xref:System.Diagnostics.Debug>  

@@ -19,15 +19,15 @@ You can add leading zeros to an integer by using the "D" [standard numeric forma
   
 ### To pad an integer with leading zeros to a specific length  
   
-1.  Determine the minimum number of digits you want the integer value to display. Include any leading digits in this number.  
+1. Determine the minimum number of digits you want the integer value to display. Include any leading digits in this number.  
   
-2.  Determine whether you want to display the integer as a decimal value or a hexadecimal value.  
+2. Determine whether you want to display the integer as a decimal value or a hexadecimal value.  
   
-    -   To display the integer as a decimal value, call its `ToString(String)` method, and pass the string "D*n*" as the value of the `format` parameter, where *n* represents the minimum length of the string.  
+   - To display the integer as a decimal value, call its `ToString(String)` method, and pass the string "D*n*" as the value of the `format` parameter, where *n* represents the minimum length of the string.  
   
-    -   To display the integer as a hexadecimal value, call its `ToString(String)` method and pass the string "X*n*" as the value of the `format` parameter, where *n* represents the minimum length of the string.  
+   - To display the integer as a hexadecimal value, call its `ToString(String)` method and pass the string "X*n*" as the value of the `format` parameter, where *n* represents the minimum length of the string.  
   
-     You can also use the format string in a method, such as <xref:System.String.Format%2A> or <xref:System.Console.WriteLine%2A>, that uses [composite formatting](../../../docs/standard/base-types/composite-formatting.md).  
+    You can also use the format string in a method, such as <xref:System.String.Format%2A> or <xref:System.Console.WriteLine%2A>, that uses [composite formatting](../../../docs/standard/base-types/composite-formatting.md).  
   
  The following example formats several integer values with leading zeros so that the total length of the formatted number is at least eight characters.  
   
@@ -36,15 +36,15 @@ You can add leading zeros to an integer by using the "D" [standard numeric forma
   
 ### To pad an integer with a specific number of leading zeros  
   
-1.  Determine how many leading zeros you want the integer value to display.  
+1. Determine how many leading zeros you want the integer value to display.  
   
-2.  Determine whether you want to display the integer as a decimal value or a hexadecimal value. Formatting it as a decimal value requires that you use the "D" standard format specifier; formatting it as a hexadecimal value requires that you use the "X" standard format specifier.  
+2. Determine whether you want to display the integer as a decimal value or a hexadecimal value. Formatting it as a decimal value requires that you use the "D" standard format specifier; formatting it as a hexadecimal value requires that you use the "X" standard format specifier.  
   
-3.  Determine the length of the unpadded numeric string by calling the integer value's `ToString("D").Length` or `ToString("X").Length` method.  
+3. Determine the length of the unpadded numeric string by calling the integer value's `ToString("D").Length` or `ToString("X").Length` method.  
   
-4.  Add the number of leading zeros that you want to include in the formatted string to the length of the unpadded numeric string. This defines the total length of the padded string.  
+4. Add the number of leading zeros that you want to include in the formatted string to the length of the unpadded numeric string. This defines the total length of the padded string.  
   
-5.  Call the integer value's `ToString(String)` method, and pass the string "D*n*" for decimal strings and "X*n*" for hexadecimal strings, where *n* represents the total length of the padded string. You can also use the "D*n*" or "X*n*" format string in a method that supports composite formatting.  
+5. Call the integer value's `ToString(String)` method, and pass the string "D*n*" for decimal strings and "X*n*" for hexadecimal strings, where *n* represents the total length of the padded string. You can also use the "D*n*" or "X*n*" format string in a method that supports composite formatting.  
   
  The following example pads an integer value with five leading zeros.  
   
@@ -53,11 +53,11 @@ You can add leading zeros to an integer by using the "D" [standard numeric forma
   
 ### To pad a numeric value with leading zeros to a specific length  
   
-1.  Determine how many digits to the left of the decimal you want the string representation of the number to have. Include any leading zeros in this total number of digits.  
+1. Determine how many digits to the left of the decimal you want the string representation of the number to have. Include any leading zeros in this total number of digits.  
   
-2.  Define a custom numeric format string that uses the zero placeholder ("0") to represent the minimum number of zeros.  
+2. Define a custom numeric format string that uses the zero placeholder ("0") to represent the minimum number of zeros.  
   
-3.  Call the number's `ToString(String)` method and pass it the custom format string. You can also use the custom format string with a method that supports composite formatting.  
+3. Call the number's `ToString(String)` method and pass it the custom format string. You can also use the custom format string with a method that supports composite formatting.  
   
  The following example formats several numeric values with leading zeros so that the total length of the formatted number is at least eight digits to the left of the decimal.  
   
@@ -66,21 +66,21 @@ You can add leading zeros to an integer by using the "D" [standard numeric forma
   
 ### To pad a numeric value with a specific number of leading zeros  
   
-1.  Determine how many leading zeros you want the numeric value to have.  
+1. Determine how many leading zeros you want the numeric value to have.  
   
-2.  Determine the number of digits to the left of the decimal in the unpadded numeric string. To do this:  
+2. Determine the number of digits to the left of the decimal in the unpadded numeric string. To do this:  
   
-    1.  Determine whether the string representation of a number includes a decimal point symbol.  
+   1. Determine whether the string representation of a number includes a decimal point symbol.  
   
-    2.  If it does include a decimal point symbol, determine the number of characters to the left of the decimal point.  
+   2. If it does include a decimal point symbol, determine the number of characters to the left of the decimal point.  
   
-         -or-  
+       -or-  
   
-         If it does not include a decimal point symbol, determine the string's length.  
+       If it does not include a decimal point symbol, determine the string's length.  
   
-3.  Create a custom format string that uses the zero placeholder ("0") for each of the leading zeros to appear in the string, and that uses either the zero placeholder or the digit placeholder ("#") to represent each digit in the default string.  
+3. Create a custom format string that uses the zero placeholder ("0") for each of the leading zeros to appear in the string, and that uses either the zero placeholder or the digit placeholder ("#") to represent each digit in the default string.  
   
-4.  Supply the custom format string as a parameter either to the number's `ToString(String)` method or to a method that supports composite formatting.  
+4. Supply the custom format string as a parameter either to the number's `ToString(String)` method or to a method that supports composite formatting.  
   
  The following example pads two <xref:System.Double> values with five leading zeros.  
   

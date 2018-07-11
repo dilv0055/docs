@@ -15,17 +15,17 @@ In addition to bound controls, you may want to add other controls to a <xref:Mic
   
 ### To add unbound controls to a DataRepeater  
   
-1.  Drag a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
+1. Drag a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
   
-2.  Drag the sizing and position handles to size and position the control.  
+2. Drag the sizing and position handles to size and position the control.  
   
-     You can also size and position the control by changing the **Size** and **Position** properties in the Properties window.  
+    You can also size and position the control by changing the **Size** and **Position** properties in the Properties window.  
   
-3.  Add at least one data-bound control to the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control. For more information, see [How to: Display Bound Data in a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md).  
+3. Add at least one data-bound control to the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control. For more information, see [How to: Display Bound Data in a DataRepeater Control](../../../visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md).  
   
-4.  Drag a control from the **Toolbox** onto the item template region of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
+4. Drag a control from the **Toolbox** onto the item template region of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
   
-     Note that the control has two rectangular regions. The inner region is the *item template*; controls added to the template will be repeated in each item in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control at run time. The outer region is the *viewport*, where the items will be displayed; controls that are added to this region will not be displayed at run time.  
+    Note that the control has two rectangular regions. The inner region is the *item template*; controls added to the template will be repeated in each item in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control at run time. The outer region is the *viewport*, where the items will be displayed; controls that are added to this region will not be displayed at run time.  
   
 ## See Also  
  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>  

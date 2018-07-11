@@ -19,32 +19,33 @@ ms.author: "ronpet"
 ---
 # CorDebugMDAFlags Enumeration
 Specifies the status of the thread on which the managed debugging assistant (MDA) is fired.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugMDAFlags {  
     MDA_FLAG_SLIP = 0x2  
 } CorDebugMDAFlags;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`MDA_FLAG_SLIP`|The thread on which the MDA was fired has slipped since the MDA was fired.|  
-  
+
 ## Remarks  
  When the call stack no longer describes where the MDA was originally raised, the thread is considered to have *slipped*. This is an unusual circumstance brought about by the thread's execution of an invalid operation upon exiting.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

@@ -7,24 +7,25 @@ ms.author: "ronpet"
 ---
 # ISymUnmanagedAsyncMethod::GetKickoffMethod Method
 See [DefineKickoffMethod Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-definekickoffmethod-method.md).  
-  
+
 ## Syntax  
-  
+
 ```idl  
 HRESULT GetKickoffMethod(    [out, retval] mdToken* kickoffMethod);  
 ```  
-  
+
 #### Parameters  
-  
+
+
 |Parameter|Description|  
 |---------------|-----------------|  
 |`kickoffMethod`||  
-  
+
 ## Return Value  
  Returns `HRESULT`.  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [ISymUnmanagedAsyncMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethod-interface.md)

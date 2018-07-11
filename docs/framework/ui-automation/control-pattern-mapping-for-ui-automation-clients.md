@@ -12,23 +12,24 @@ manager: "markl"
 # Control Pattern Mapping for UI Automation Clients
 > [!NOTE]
 >  This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](http://go.microsoft.com/fwlink/?LinkID=156746).  
-  
+
  This topic lists control types and their associated control patterns.  
-  
+
  The following table organizes the control patterns into the following categories:  
-  
--   Supported. The control must support this control pattern.  
-  
--   Conditional support. The control may support this control pattern depending on the state of the control.  
-  
--   Not supported. The control does not support this control pattern; custom controls may support this control pattern.  
-  
+
+- Supported. The control must support this control pattern.  
+
+- Conditional support. The control may support this control pattern depending on the state of the control.  
+
+- Not supported. The control does not support this control pattern; custom controls may support this control pattern.  
+
 > [!NOTE]
 >  Some controls have conditional support for several control patterns depending on the functionality of the control. For example, the menu item control has conditional support for the <xref:System.Windows.Automation.InvokePattern>, <xref:System.Windows.Automation.ExpandCollapsePattern>, <xref:System.Windows.Automation.TogglePattern>, or <xref:System.Windows.Automation.SelectionItemPattern> control pattern, depending on its function in the menu control.  
-  
+
 <a name="control_mapping_clients"></a>   
 ## UI Automation Control Patterns for Clients  
-  
+
+
 |Control Type|Supported|Conditional Support|Not Supported|  
 |------------------|---------------|-------------------------|-------------------|  
 |Button|None|Invoke, Toggle, Expand Collapse|None|  
@@ -69,9 +70,9 @@ manager: "markl"
 |Tree|None|Scroll, Selection|None|  
 |Tree Item|Expand Collapse|Invoke, Scroll Item, Selection Item, Toggle|None|  
 |Window|Transform, Window|Dock|None|  
-  
+
 > [!NOTE]
 >  If a control type has no supported control patterns listed but has one or more conditionally-supported control patterns, then one of those conditional control patterns will be supported at all times.  
-  
+
 ## See Also  
  [UI Automation Overview](../../../docs/framework/ui-automation/ui-automation-overview.md)

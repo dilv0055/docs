@@ -5,16 +5,16 @@ ms.assetid: d9eff52d-4bde-4586-b56a-b0ec24611f8d
 ---
 # &lt;transport&gt; of &lt;netNamedPipeBinding&gt;
 Defines the transport security settings for a named pipe.  
-  
+
  \<system.ServiceModel>  
 \<bindings>  
 \<netNamedPipeBinding>  
 \<binding>  
 \<security>  
 \<transport>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <netNamedPipeBinding>  
    <binding>  
@@ -24,25 +24,27 @@ Defines the transport security settings for a named pipe.
    </binding>  
 </netNamedPipeBinding>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |protectionLevel|Defines protection level of the named pipe. Signing messages mitigates the risk of a third party tampering with the message while it is being transferred. Encryption provides data-level privacy during transport. Valid values include the following:<br /><br /> -   None: No protection.<br />-   Sign: Messages are signed.<br />-   EncryptAndSign: Messages are encrypted and signed.<br /><br /> The default value is EncryptAndSign.|  
-  
+
 ### Child Elements  
  None  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netnamedpipebinding.md)|Defines the security settings for a binding.|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.NamedPipeTransportSecurity>  
  <xref:System.ServiceModel.Configuration.NetNamedPipeSecurityElement.Transport%2A>  

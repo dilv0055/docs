@@ -5,7 +5,6 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
 ---
-
 # Implement the Circuit Breaker pattern
 
 As noted earlier, you should handle faults that might take a variable amount of time to recover from, as it might happen when you try to connect to a remote service or resource. Handling this type of fault can improve the stability and resiliency of an application.
@@ -146,10 +145,10 @@ Finally, another possibility for the `CircuitBreakerPolicy` is to use `Isolate` 
 ## Additional resources
 
 
--   **Circuit Breaker pattern**
-    [*https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker*](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker)
+- **Circuit Breaker pattern**
+  [*https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker*](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker)
 
 
->[!div class="step-by-step"]
-[Previous](implement-http-call-retries-exponential-backoff-polly.md)
-[Next](monitor-app-health.md)
+> [!div  class="step-by-step"]
+> [Previous](implement-http-call-retries-exponential-backoff-polly.md)
+> [Next](monitor-app-health.md)

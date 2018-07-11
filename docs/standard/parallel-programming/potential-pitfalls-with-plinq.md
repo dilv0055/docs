@@ -30,11 +30,11 @@ In many cases, PLINQ can provide significant performance improvements over seque
   
  In this case, it is best to parallelize only the outer data source (customers) unless one or more of the following conditions apply:  
   
--   The inner data source (cust.Orders) is known to be very long.  
+- The inner data source (cust.Orders) is known to be very long.  
   
--   You are performing an expensive computation on each order. (The operation shown in the example is not expensive.)  
+- You are performing an expensive computation on each order. (The operation shown in the example is not expensive.)  
   
--   The target system is known to have enough processors to handle the number of threads that will be produced by parallelizing the query on `cust.Orders`.  
+- The target system is known to have enough processors to handle the number of threads that will be produced by parallelizing the query on `cust.Orders`.  
   
  In all cases, the best way to determine the optimum query shape is to test and measure. For more information, see [How to: Measure PLINQ Query Performance](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md).  
   

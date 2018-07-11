@@ -19,29 +19,30 @@ ms.author: "mairaw"
 ---
 # CeeSectionRelocExtra Union
 Represents an address offset that is used by the [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface to relocate a section.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef union  {  
     USHORT highAdj;  
 } CeeSectionRelocExtra;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`highAdj`|The upper address adjustment for the section.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Unions](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)

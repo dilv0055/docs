@@ -15,7 +15,7 @@ The statement is not valid within a `Sub`, `Function`, property `Get`, or proper
   
 ## To correct this error  
   
--   Remove the statement from the procedure.  
+- Remove the statement from the procedure.  
   
 ## See Also  
  [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md)  

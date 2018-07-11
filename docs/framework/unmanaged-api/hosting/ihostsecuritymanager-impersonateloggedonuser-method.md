@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostSecurityManager::ImpersonateLoggedOnUser Method
 Requests that code be executed using the credentials of the current user identity.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT ImpersonateLoggedOnUser (  
     [in] HANDLE hToken  
 );  
 ```  
-  
+
 #### Parameters  
  `hToken`  
  [in] A token representing the credentials of the user to be impersonated.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`ImpersonateLoggedOnUser` returned successfully.|  
@@ -43,21 +44,21 @@ HRESULT ImpersonateLoggedOnUser (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  Call `LogonUser` or a related Win32 function to get a handle to the credentials of the current user identity.  
-  
+
  The `HANDLE` type is not COM-compliant, that is, its size is specific to an operating system, and it requires custom marshaling. Thus, this token is for use only within the process, between the CLR and the host.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [IHostSecurityContext Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)  
  [IHostSecurityManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritymanager-interface.md)  

@@ -11,24 +11,24 @@ This topic discusses how to download and use the JSON Web Token Handler in your 
   
 #### Downloading the JSON Web Token Handler by using the Package Manager GUI  
   
-1.  In Visual Studio, right-click your project in **Solution Explorer**, and then select **Manage NuGet Packages**.  
+1. In Visual Studio, right-click your project in **Solution Explorer**, and then select **Manage NuGet Packages**.  
   
-2.  In the **Manage NuGet Packages** window, click the search box and enter `JWT Token Handler` and press **Enter**.  
+2. In the **Manage NuGet Packages** window, click the search box and enter `JWT Token Handler` and press **Enter**.  
   
-3.  From the results pane, click the **Install** button for the first result.  
+3. From the results pane, click the **Install** button for the first result.  
   
-4.  The package will begin downloading. Before it is added to your project, the License Acceptance dialog will appear. If you agree to the license terms, click **I Accept**.  
+4. The package will begin downloading. Before it is added to your project, the License Acceptance dialog will appear. If you agree to the license terms, click **I Accept**.  
   
-5.  The latest JSON Web Token Handler assemblies will be downloaded and added to your project.  
+5. The latest JSON Web Token Handler assemblies will be downloaded and added to your project.  
   
 #### Downloading the JSON Web Token Handler by using the Package Manager Console  
   
-1.  In Visual Studio, click **Tools**, **Library Package Manager**, and then **Package Manager Console**.  
+1. In Visual Studio, click **Tools**, **Library Package Manager**, and then **Package Manager Console**.  
   
-2.  The **Package Manager Console** appears. Enter the following text and press **Enter**:  
+2. The **Package Manager Console** appears. Enter the following text and press **Enter**:  
   
-    ```powershell  
-    Install-Package System.IdentityModel.Tokens.Jwt  
-    ```  
+   ```powershell  
+   Install-Package System.IdentityModel.Tokens.Jwt  
+   ```  
   
-3.  The latest JSON Web Token Handler assemblies will be downloaded and added to your project.
+3. The latest JSON Web Token Handler assemblies will be downloaded and added to your project.

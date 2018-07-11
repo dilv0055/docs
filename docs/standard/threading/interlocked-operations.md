@@ -18,15 +18,15 @@ The <xref:System.Threading.Interlocked> class provides methods that synchronize 
   
  The <xref:System.Threading.Interlocked> class provides the following operations:  
   
--   In the .NET Framework version 2.0, the <xref:System.Threading.Interlocked.Add%2A> method adds an integer value to a variable and returns the new value of the variable.  
+- In the .NET Framework version 2.0, the <xref:System.Threading.Interlocked.Add%2A> method adds an integer value to a variable and returns the new value of the variable.  
   
--   In the .NET Framework version 2.0, the <xref:System.Threading.Interlocked.Read%2A> method reads a 64-bit integer value as an atomic operation. This is useful on 32-bit operating systems, where reading a 64-bit integer is not ordinarily an atomic operation.  
+- In the .NET Framework version 2.0, the <xref:System.Threading.Interlocked.Read%2A> method reads a 64-bit integer value as an atomic operation. This is useful on 32-bit operating systems, where reading a 64-bit integer is not ordinarily an atomic operation.  
   
--   The <xref:System.Threading.Interlocked.Increment%2A> and <xref:System.Threading.Interlocked.Decrement%2A> methods increment or decrement a variable and return the resulting value.  
+- The <xref:System.Threading.Interlocked.Increment%2A> and <xref:System.Threading.Interlocked.Decrement%2A> methods increment or decrement a variable and return the resulting value.  
   
--   The <xref:System.Threading.Interlocked.Exchange%2A> method performs an atomic exchange of the value in a specified variable, returning that value and replacing it with a new value. In the .NET Framework version 2.0, a generic overload of this method can be used to perform this exchange on a variable of any reference type. See <xref:System.Threading.Interlocked.Exchange%60%601%28%60%600%40%2C%60%600%29>.  
+- The <xref:System.Threading.Interlocked.Exchange%2A> method performs an atomic exchange of the value in a specified variable, returning that value and replacing it with a new value. In the .NET Framework version 2.0, a generic overload of this method can be used to perform this exchange on a variable of any reference type. See <xref:System.Threading.Interlocked.Exchange%60%601%28%60%600%40%2C%60%600%29>.  
   
--   The <xref:System.Threading.Interlocked.CompareExchange%2A> method also exchanges two values, but contingent on the result of a comparison. In the .NET Framework version 2.0, a generic overload of this method can be used to perform this exchange on a variable of any reference type. See <xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29>.  
+- The <xref:System.Threading.Interlocked.CompareExchange%2A> method also exchanges two values, but contingent on the result of a comparison. In the .NET Framework version 2.0, a generic overload of this method can be used to perform this exchange on a variable of any reference type. See <xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29>.  
   
  On modern processors, the methods of the <xref:System.Threading.Interlocked> class can often be implemented by a single instruction. Thus, they provide very high-performance synchronization and can be used to build higher-level synchronization mechanisms, like spin locks.  
   

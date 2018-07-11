@@ -10,22 +10,22 @@ A comma-separated value (CSV) file is a text file that is often used to store sp
   
 ### To create the data file  
   
-1.  Copy the following lines into a plain text file that is named spreadsheet1.csv. Save the file in your project folder.  
+1. Copy the following lines into a plain text file that is named spreadsheet1.csv. Save the file in your project folder.  
   
-    ```  
-    Adams,Terry,120  
-    Fakhouri,Fadi,116  
-    Feng,Hanying,117  
-    Garcia,Cesar,114  
-    Garcia,Debra,115  
-    Garcia,Hugo,118  
-    Mortensen,Sven,113  
-    O'Donnell,Claire,112  
-    Omelchenko,Svetlana,111  
-    Tucker,Lance,119  
-    Tucker,Michael,122  
-    Zabokritski,Eugene,121  
-    ```  
+   ```  
+   Adams,Terry,120  
+   Fakhouri,Fadi,116  
+   Feng,Hanying,117  
+   Garcia,Cesar,114  
+   Garcia,Debra,115  
+   Garcia,Hugo,118  
+   Mortensen,Sven,113  
+   O'Donnell,Claire,112  
+   Omelchenko,Svetlana,111  
+   Tucker,Lance,119  
+   Tucker,Michael,122  
+   Zabokritski,Eugene,121  
+   ```  
   
 ## Example  
   

@@ -7,9 +7,9 @@ ms.author: "ronpet"
 ---
 # AXL_AUTHENTICODE_SIGNER_INFO Structure
 Defines the Authenticode signer information.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {  
     DWORD cbSize;  
@@ -21,9 +21,10 @@ typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {
     PCCERT_CHAIN_CONTEXT pChainContext  
 } AXL_AUTHENTICODE_SIGNER_INFO, * PAXL_AUTHENTICODE_SIGNER_INFO;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`cbSize`|The size of this structure.|  
@@ -33,6 +34,6 @@ typedef struct _AXL_AUTHENTICODE_SIGNER_INFO {
 |`pwszDescription`|The description.|  
 |`pwszDescriptionUrl`|The URL of the description.|  
 |`pChainContext`|The chain context of the signer. See the [CERT_CONTEXT](http://msdn.microsoft.com/library/windows/desktop/aa377189.aspx) structure.|  
-  
+
 ## See Also  
  [Authenticode](../../../../docs/framework/unmanaged-api/authenticode/index.md)

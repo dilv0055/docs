@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostTaskManager::GetCurrentTask Method
 Gets an interface pointer to the task that is currently executing on the operating system thread from which this call is made.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetCurrentTask (  
     [out] IHostTask **pTask  
 );  
 ```  
-  
+
 #### Parameters  
  `pTask`  
  [out] A pointer to the address of an [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) instance that represents the currently executing task, or null, if no task is currently executing.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`GetCurrentTask` returned successfully.|  
@@ -44,19 +45,19 @@ HRESULT GetCurrentTask (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |HOST_E_INVALIDOPERATION|`GetCurrentTask` was called on an operating system thread outside the control of the host.|  
-  
+
 ## Remarks  
  The host can also set the `pTask` parameter to null to prevent a task that it did not initiate from entering the CLR.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  

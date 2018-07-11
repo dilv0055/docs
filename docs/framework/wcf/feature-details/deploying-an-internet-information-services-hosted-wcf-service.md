@@ -6,15 +6,15 @@ ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
 # Deploying an Internet Information Services-Hosted WCF Service
 Developing and deploying a Windows Communication Foundation (WCF) service that is hosted in Internet Information Services (IIS) consists of the following tasks:  
   
--   Ensure that IIS, ASP.NET, WCF, and the WCF activation component are correctly installed and registered.  
+- Ensure that IIS, ASP.NET, WCF, and the WCF activation component are correctly installed and registered.  
   
--   Create a new IIS application, or reuse an existing [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application.  
+- Create a new IIS application, or reuse an existing [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application.  
   
--   Create a .svc file for the WCF service.  
+- Create a .svc file for the WCF service.  
   
--   Deploy the service implementation to the IIS application.  
+- Deploy the service implementation to the IIS application.  
   
--   Configure the WCF service.  
+- Configure the WCF service.  
   
  For a detailed walkthrough of creating an IIS-hosted WCF service, see [How to: Host a WCF Service in IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md).  
   
@@ -23,11 +23,11 @@ Developing and deploying a Windows Communication Foundation (WCF) service that i
   
  The installation process for the [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] automatically registers WCF with IIS if IIS is already present on the machine. If IIS is installed after the [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)], an additional step is required to register WCF with IIS and [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]. You can do this as follows, depending on your operating system:  
   
--   [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)], Windows 7, and [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]: Use the [ServiceModel Registration Tool (ServiceModelReg.exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md) tool to register WCF with IIS: To use this tool, type **ServiceModelReg.exe /i /x** in the Visual Studio command prompt. You can open this command prompt by clicking the start button, selecting **All Programs**, **Microsoft Visual Studio 2012**, **Visual Studio Tools**, and **Visual Studio Command Prompt**  
+- [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)], Windows 7, and [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]: Use the [ServiceModel Registration Tool (ServiceModelReg.exe)](../../../../docs/framework/wcf/servicemodelreg-exe.md) tool to register WCF with IIS: To use this tool, type **ServiceModelReg.exe /i /x** in the Visual Studio command prompt. You can open this command prompt by clicking the start button, selecting **All Programs**, **Microsoft Visual Studio 2012**, **Visual Studio Tools**, and **Visual Studio Command Prompt**  
   
--   [!INCLUDE[wv](../../../../includes/wv-md.md)]: Install the Windows Communication Foundation Activation Components subcomponent of the [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]. To do this, in Control Panel, click **Add or Remove Programs** and then **Add\/Remove Windows Components**. This activates the **Windows Component Wizard**.  
+- [!INCLUDE[wv](../../../../includes/wv-md.md)]: Install the Windows Communication Foundation Activation Components subcomponent of the [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)]. To do this, in Control Panel, click **Add or Remove Programs** and then **Add\/Remove Windows Components**. This activates the **Windows Component Wizard**.  
   
--   Windows 7:  
+- Windows 7:  
   
  Finally you must verify that ASP.NET is configured to use the .NET Framework version 4. You do this by running the ASPNET_Regiis tool with the –i option. For more information, see [ASP.NET IIS Registration Tool](http://go.microsoft.com/fwlink/?LinkId=201186)  
   
@@ -56,29 +56,29 @@ new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
 ## Deploy the Service Implementation to the IIS Application  
  WCF services hosted in IIS use the same dynamic compilation model as [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)]. Just as with [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)], you can deploy the implementation code for IIS-hosted WCF services in several ways at various locations, as follows:  
   
--   As a precompiled .dll file located in the global assembly cache (GAC) or in the application’s \bin directory. Precompiled binaries are not updated until a new version of the class library is deployed.  
+- As a precompiled .dll file located in the global assembly cache (GAC) or in the application’s \bin directory. Precompiled binaries are not updated until a new version of the class library is deployed.  
   
--   As un-compiled source files located in the application’s \App_Code directory. Source files located in this directory are dynamically required when processing the application’s first request. Any changes to files in the \App_Code directory cause the entire application to be recycled and recompiled when the next request is received.  
+- As un-compiled source files located in the application’s \App_Code directory. Source files located in this directory are dynamically required when processing the application’s first request. Any changes to files in the \App_Code directory cause the entire application to be recycled and recompiled when the next request is received.  
   
--   As un-compiled code placed directly in the .svc file. Implementation code can also be located inline in the service’s .svc file, after the @ServiceHost directive. Any changes to inline code cause the application to be recycled and recompiled when the next request is received.  
+- As un-compiled code placed directly in the .svc file. Implementation code can also be located inline in the service’s .svc file, after the @"ServiceHost" directive. Any changes to inline code cause the application to be recycled and recompiled when the next request is received.  
   
  For more information about the [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] compilation model, see [ASP.NET Compilation Overview](http://go.microsoft.com/fwlink/?LinkId=94773).  
   
 ## Configure the WCF Service  
  IIS-hosted WCF services store their configuration in the applications Web.config file. IIS-hosted services use the same configuration elements and syntax as WCF services hosted outside of IIS. However, the following constraints are unique to the IIS hosting environment:  
   
--   Base addresses for IIS-hosted services.  
+- Base addresses for IIS-hosted services.  
   
--   Applications hosting WCF services outside of IIS can control the base address of the services they host by passing a set of base address URIs to the <xref:System.ServiceModel.ServiceHost> constructor or by providing a [\<host>](../../../../docs/framework/configure-apps/file-schema/wcf/host.md) element in the service’s configuration. Services hosted in IIS do not have the ability to control their base address; the base address of an IIS-hosted service is the address of its .svc file.  
+- Applications hosting WCF services outside of IIS can control the base address of the services they host by passing a set of base address URIs to the <xref:System.ServiceModel.ServiceHost> constructor or by providing a [\<host>](../../../../docs/framework/configure-apps/file-schema/wcf/host.md) element in the service’s configuration. Services hosted in IIS do not have the ability to control their base address; the base address of an IIS-hosted service is the address of its .svc file.  
   
 ### Endpoint Addresses for IIS-Hosted Services  
- When hosted in IIS, endpoint addresses are always considered to be relative to the address of the .svc file that represents the service. For example, if the base address of a WCF service is http://localhost/Application1/MyService.svc with the following endpoint configuration.  
+ When hosted in IIS, endpoint addresses are always considered to be relative to the address of the .svc file that represents the service. For example, if the base address of a WCF service is <http://localhost/Application1/MyService.svc> with the following endpoint configuration.  
   
 ```xml  
 <endpoint address="anotherEndpoint" .../>  
 ```  
   
- This provides an endpoint that can be reached at "http://localhost/Application1/MyService.svc/anotherEndpoint".  
+ This provides an endpoint that can be reached at "<http://localhost/Application1/MyService.svc/anotherEndpoint>".  
   
  Similarly, the endpoint configuration element that uses an empty string as the relative address provides an endpoint reachable at http://localhost/Application1/MyService.svc, which is the base address.  
   
@@ -86,7 +86,7 @@ new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
 <endpoint address="" ... />  
 ```  
   
- You must always use relative endpoint addresses for IIS-hosted service endpoints. Supplying a fully-qualified endpoint address (for example, http://localhost/MyService.svc) can lead to errors in the deployment of the service if the endpoint address does not point to the IIS-application that hosts the service exposing the endpoint. Using relative endpoint addresses for hosted services avoids these potential conflicts.  
+ You must always use relative endpoint addresses for IIS-hosted service endpoints. Supplying a fully-qualified endpoint address (for example, <http://localhost/MyService.svc>) can lead to errors in the deployment of the service if the endpoint address does not point to the IIS-application that hosts the service exposing the endpoint. Using relative endpoint addresses for hosted services avoids these potential conflicts.  
   
 ### Available Transports  
  WCF services hosted in IIS 5.1 and [!INCLUDE[iis601](../../../../includes/iis601-md.md)] are restricted to using HTTP-based communication. On these IIS platforms, configuring a hosted service to use a non-HTTP binding results in an error during service activation. For [!INCLUDE[iisver](../../../../includes/iisver-md.md)], the supported transports include HTTP, Net.TCP, Net.Pipe, Net.MSMQ, and msmq.formatname for backwards compatibility with existing MSMQ applications.  

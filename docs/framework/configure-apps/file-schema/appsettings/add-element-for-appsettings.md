@@ -10,7 +10,6 @@ ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # \<add> element for \<appSettings>
 
 Adds a custom application setting.
@@ -29,12 +28,14 @@ Adds a custom application setting.
 
 ## Attributes
 
+
 |           | Description |
 | --------- | ----------- |
 | **key**   | Required attribute.<br><br>Specifies the name of the key to add. |
 | **value** | Required attribute.<br><br>Specifies the value of the key to add. |
 
 ## Parent element
+
 
 |     | Description |
 | --- | ----------- |

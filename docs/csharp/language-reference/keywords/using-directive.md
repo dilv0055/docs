@@ -8,25 +8,25 @@ ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
 # using Directive (C# Reference)
 The `using` directive has three uses:  
   
--   To allow the use of types in a namespace so that you do not have to qualify the use of a type in that namespace:  
+- To allow the use of types in a namespace so that you do not have to qualify the use of a type in that namespace:  
   
-    ```csharp  
-    using System.Text;  
-    ```  
+  ```csharp  
+  using System.Text;  
+  ```  
   
--   To allow you to access static members of a type without having to qualify the access with the type name. 
+- To allow you to access static members of a type without having to qualify the access with the type name. 
   
-    ```csharp  
-    using static System.Math;  
-    ```  
+  ```csharp  
+  using static System.Math;  
+  ```  
      
-    For more information, see the [using static directive](using-static.md).
+  For more information, see the [using static directive](using-static.md).
 
--   To create an alias for a namespace or a type. This is called a *using alias directive*.  
+- To create an alias for a namespace or a type. This is called a *using alias directive*.  
   
-    ```csharp  
-    using Project = PC.MyCompany.Project;  
-    ```  
+  ```csharp  
+  using Project = PC.MyCompany.Project;  
+  ```  
   
  The `using` keyword is also used to create *using statements*, which help ensure that <xref:System.IDisposable> objects such as files and fonts are handled correctly. See [using Statement](../../../csharp/language-reference/keywords/using-statement.md) for more information.  
   

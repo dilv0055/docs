@@ -10,12 +10,13 @@ ms.assetid: 563b8854-ca39-4d97-8235-17eaa0f93c8d
 ---
 # Default Keyboard and Mouse Behavior in the DataGrid Control
 This topic describes how users can interact with the <xref:System.Windows.Controls.DataGrid> control by using the keyboard and mouse.  
-  
+
  Typical interactions with the <xref:System.Windows.Controls.DataGrid> include navigation, selection, and editing. Selection behavior is affected by the <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> and <xref:System.Windows.Controls.DataGrid.SelectionUnit%2A> properties. The default values that cause the behavior described in this topic are <xref:System.Windows.Controls.DataGridSelectionMode.Extended?displayProperty=nameWithType> and <xref:System.Windows.Controls.DataGridSelectionUnit.FullRow?displayProperty=nameWithType>. Changing these values might cause behavior that is different from that described. When a cell is in edit mode, the editing control might override the standard keyboard behavior of the <xref:System.Windows.Controls.DataGrid>.  
-  
+
 ## Default Keyboard Behavior  
  The following table lists the default keyboard behavior for the <xref:System.Windows.Controls.DataGrid>.  
-  
+
+
 |Key or key combination|Description|  
 |----------------------------|-----------------|  
 |DOWN ARROW|Moves the focus to the cell directly below the current cell. If the focus is in the last row, pressing the DOWN ARROW does nothing.|  
@@ -43,31 +44,32 @@ This topic describes how users can interact with the <xref:System.Windows.Contro
 |DELETE|Deletes the character after the cursor when editing a cell.|  
 |CTRL+ENTER|Commits any changes to the current cell without moving the focus.|  
 |CTRL+A|If <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, selects all rows in the <xref:System.Windows.Controls.DataGrid>.|  
-  
+
 ## Selection Keys  
  If the <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> property is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, the navigation behavior does not change, but navigating with the keyboard while pressing SHIFT (including CTRL+SHIFT) will modify a multi-row selection. Before navigation starts, the control marks the current row as an anchor row. When you navigate while pressing SHIFT, the selection includes all rows between the anchor row and the current row.  
-  
+
  The following selection keys modify multi-row selection.  
-  
--   SHIFT+DOWN ARROW  
-  
--   SHIFT+UP ARROW  
-  
--   SHIFT+PAGE DOWN  
-  
--   SHIFT+PAGE UP  
-  
--   CTRL+SHIFT+DOWN ARROW  
-  
--   CTRL+SHIFT+UP ARROW  
-  
--   CTRL+SHIFT+HOME  
-  
--   CTRL+SHIFT+END  
-  
+
+- SHIFT+DOWN ARROW  
+
+- SHIFT+UP ARROW  
+
+- SHIFT+PAGE DOWN  
+
+- SHIFT+PAGE UP  
+
+- CTRL+SHIFT+DOWN ARROW  
+
+- CTRL+SHIFT+UP ARROW  
+
+- CTRL+SHIFT+HOME  
+
+- CTRL+SHIFT+END  
+
 ## Default Mouse Behavior  
  The following table lists the default mouse behavior for the <xref:System.Windows.Controls.DataGrid>.  
-  
+
+
 |Mouse action|Description|  
 |------------------|-----------------|  
 |Click an unselected row|Makes the clicked row the current row, and the clicked cell the current cell.|  
@@ -80,16 +82,16 @@ This topic describes how users can interact with the <xref:System.Windows.Contro
 |SHIFT+click a row|If <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, modifies a contiguous multi-row selection.|  
 |Click a row group header|Expands or collapses the group.|  
 |Click the Select All button at the top left corner of the <xref:System.Windows.Controls.DataGrid>|If <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, selects all rows in the <xref:System.Windows.Controls.DataGrid>.|  
-  
+
 ## Mouse Selection  
  If the <xref:System.Windows.Controls.DataGrid.SelectionMode%2A> property is set to <xref:System.Windows.Controls.DataGridSelectionMode.Extended>, clicking a row while pressing CTRL or SHIFT will modify a multi-row selection.  
-  
+
  When you click a row while pressing CTRL, the row will change its selection state while all other rows retain their current selection state. Do this to select non-adjacent rows.  
-  
+
  When you click a row while pressing SHIFT, the selection includes all rows between the current row and an anchor row located at the position of the current row prior to the click. Subsequent clicks while pressing SHIFT change the current row, but not the anchor row. Do this to select a range of adjacent rows.  
-  
+
  CTRL+SHIFT can be combined to select non-adjacent ranges of adjacent rows. To do this, select the first range by using SHIFT+click as described earlier. After the first range of rows is selected, use CTRL+click to select the first row in the next range, and then click the last row in the next range while pressing CTRL+SHIFT.  
-  
+
 ## See Also  
  <xref:System.Windows.Controls.DataGrid>  
  <xref:System.Windows.Controls.DataGrid.SelectionMode%2A>

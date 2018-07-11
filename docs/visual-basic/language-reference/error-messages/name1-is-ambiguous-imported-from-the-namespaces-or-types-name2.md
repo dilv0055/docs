@@ -15,9 +15,9 @@ You have provided a name that is ambiguous and therefore conflicts with another 
   
 ## To correct this error  
   
-1.  Disambiguate the name by removing namespace imports.  
+1. Disambiguate the name by removing namespace imports.  
   
-2.  Fully qualify the name.  
+2. Fully qualify the name.  
   
 ## See Also  
  [Imports Statement (.NET Namespace and Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)  

@@ -1,5 +1,6 @@
 ### Building an Entity Framework edmx with Visual Studio 2013 can fail with error MSB4062 if using the EntityDeploySplit or EntityClean tasks
 
+
 |   |   |
 |---|---|
 |Details|MSBuild 12.0 tools (included in Visual Studio 2013) changed MSBuild file locations, causing older Entity Framework targets files to be invalid. The result is that <code>EntityDeploySplit</code> and <code>EntityClean</code> tasks fail because they are unable to find <code>Microsoft.Data.Entity.Build.Tasks.dll</code>. Note that this break is because of a toolset (MSBuild/VS) change, not because of a .NET Framework change. It will only occur when upgrading developer tools, not when merely upgrading the .NET Framework.|

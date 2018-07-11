@@ -37,6 +37,7 @@ Files and folders stored in the template aren't limited to formal .NET project t
 
 The *template.json* file is placed in a *.template.config* folder in the root directory of the template. The file provides configuration information to the template engine. The minimum configuration requires the members shown in the following table, which is sufficient to create a functional template.
 
+
 | Member            | Type          | Description |
 | ----------------- | ------------- | ----------- |
 | `$schema`         | URI           | The JSON schema for the *template.json* file. Editors that support JSON schemas enable JSON-editing features when the schema is specified. For example, [Visual Studio Code](https://code.visualstudio.com/) requires this member to enable IntelliSense. Use a value of `http://json.schemastore.org/template`. |
@@ -74,6 +75,7 @@ dotnet new -l
 Currently, a custom template is packed on Windows with [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) (not [dotnet pack](dotnet-pack.md)). For cross-platform packaging, consider using [NuGetizer 3000](https://github.com/NuGet/Home/wiki/NuGetizer-3000).
 
 The contents of the project folder, together with its *.template.config/template.json* file, are placed into a folder named *content*. Next to the *content* folder, add a [*nuspec* file](/nuget/create-packages/creating-a-package), which is an XML manifest file that describes a package's contents and drives the process of creating the NuGet package. Inside of a **\<packageTypes>** element in the *nuspec* file, include a **\<packageType>** element with a `name` attribute value of `Template`. Both the *content* folder and the *nuspec* file should reside in the same directory. The table shows the minimum *nuspec* file elements required to produce a template as a NuGet package.
+
 
 | Element            | Type   | Description |
 | ------------------ | ------ | ----------- |

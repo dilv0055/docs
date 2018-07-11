@@ -23,7 +23,7 @@ ms.assetid: 77de1659-af8a-492c-967e-e7ef60ccce66
 ---
 # Implicit and Explicit Conversions (Visual Basic)
 An *implicit conversion* does not require any special syntax in the source code. In the following example, Visual Basic implicitly converts the value of `k` to a single-precision floating-point value before assigning it to `q`.  
-  
+
 ```  
 Dim k As Integer  
 Dim q As Double  
@@ -31,21 +31,22 @@ Dim q As Double
 k = 432  
 q = k  
 ```  
-  
+
  An *explicit conversion* uses a type conversion keyword. Visual Basic provides several such keywords, which coerce an expression in parentheses to the desired data type. These keywords act like functions, but the compiler generates the code inline, so execution is slightly faster than with a function call.  
-  
+
  In the following extension of the preceding example, the `CInt` keyword converts the value of `q` back to an integer before assigning it to `k`.  
-  
+
 ```  
 ' q had been assigned the value 432 from k.  
 q = Math.Sqrt(q)  
 k = CInt(q)  
 ' k now has the value 21 (rounded square root of 432).  
 ```  
-  
+
 ## Conversion Keywords  
  The following table shows the available conversion keywords.  
-  
+
+
 |Type conversion keyword|Converts an expression to data type|Allowable data types of expression to be converted|  
 |---|---|---|  
 |`CBool`|[Boolean Data Type](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `String`, `Object`|  
@@ -65,26 +66,26 @@ k = CInt(q)
 |`CUInt`|[UInteger Data Type](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|  
 |`CULng`|[ULong Data Type](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|  
 |`CUShort`|[UShort Data Type](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|  
-  
+
 ## The CType Function  
  The [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) operates on two arguments. The first is the expression to be converted, and the second is the destination data type or object class. Note that the first argument must be an expression, not a type.  
-  
+
  `CType` is an *inline function*, meaning the compiled code makes the conversion, often without generating a function call. This improves performance.  
-  
+
  For a comparison of `CType` with the other type conversion keywords, see [DirectCast Operator](../../../../visual-basic/language-reference/operators/directcast-operator.md) and [TryCast Operator](../../../../visual-basic/language-reference/operators/trycast-operator.md).  
-  
+
 ### Elementary Types  
  The following example demonstrates the use of `CType`.  
-  
+
 ```  
 k = CType(q, Integer)  
 ' The following statement coerces w to the specific object class Label.  
 f = CType(w, Label)  
 ```  
-  
+
 ### Composite Types  
  You can use `CType` to convert values to composite data types as well as to elementary types. You can also use it to coerce an object class to the type of one of its interfaces, as in the following example.  
-  
+
 ```  
 ' Assume class cZone implements interface iZone.  
 Dim h As Object  
@@ -93,10 +94,10 @@ Dim cZ As cZone
 ' The following statement coerces a cZone object to its interface iZone.  
 h = CType(cZ, iZone)  
 ```  
-  
+
 ### Array Types  
  `CType` can also convert array data types, as in the following example.  
-  
+
 ```  
 Dim v() As classV  
 Dim obArray() As Object  
@@ -107,22 +108,22 @@ If TypeOf obArray Is classV()
     v = CType(obArray, classV())  
 End If  
 ```  
-  
+
  For more information and an example, see [Array Conversions](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md).  
-  
+
 ### Types Defining CType  
  You can define `CType` on a class or structure you have defined. This allows you to convert values to and from the type of your class or structure. For more information and an example, see [How to: Define a Conversion Operator](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
-  
+
 > [!NOTE]
 >  Values used with a conversion keyword must be valid for the destination data type, or an error occurs. For example, if you attempt to convert a `Long` to an `Integer`, the value of the `Long` must be within the valid range for the `Integer` data type.  
-  
+
 > [!CAUTION]
 >  Specifying `CType` to convert from one class type to another fails at run time if the source type does not derive from the destination type. Such a failure throws an <xref:System.InvalidCastException> exception.  
-  
+
  However, if one of the types is a structure or class you have defined, and if you have defined `CType` on that structure or class, a conversion can succeed if it satisfies the requirements of your `CType`. See [How to: Define a Conversion Operator](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
-  
+
  Performing an explicit conversion is also known as *casting* an expression to a given data type or object class.  
-  
+
 ## See Also  
  [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
  [Conversions Between Strings and Other Types](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)  

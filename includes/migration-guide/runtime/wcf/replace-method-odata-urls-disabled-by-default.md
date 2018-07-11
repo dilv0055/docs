@@ -1,5 +1,6 @@
 ### The Replace method in OData URLs is disabled by default
 
+
 |   |   |
 |---|---|
 |Details|Beginning in the .NET Framework 4.5, the Replace method in OData URLs is disabled by default. When OData Replace is disabled (now by default), any user requests including replace functions (which are uncommon) will fail.|

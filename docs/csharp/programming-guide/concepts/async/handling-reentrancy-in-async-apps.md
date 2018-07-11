@@ -8,17 +8,17 @@ When you include asynchronous code in your app, you should consider and possibly
   
  **In this topic**  
   
--   [Recognizing Reentrancy](#BKMK_RecognizingReentrancy)  
+- [Recognizing Reentrancy](#BKMK_RecognizingReentrancy)  
   
--   [Handling Reentrancy](#BKMK_HandlingReentrancy)  
+- [Handling Reentrancy](#BKMK_HandlingReentrancy)  
   
-    -   [Disable the Start Button](#BKMK_DisableTheStartButton)  
+  - [Disable the Start Button](#BKMK_DisableTheStartButton)  
   
-    -   [Cancel and Restart the Operation](#BKMK_CancelAndRestart)  
+  - [Cancel and Restart the Operation](#BKMK_CancelAndRestart)  
   
-    -   [Run Multiple Operations and Queue the Output](#BKMK_RunMultipleOperations)  
+  - [Run Multiple Operations and Queue the Output](#BKMK_RunMultipleOperations)  
   
--   [Reviewing and Running the Example App](#BKMD_SettingUpTheExample)  
+- [Reviewing and Running the Example App](#BKMD_SettingUpTheExample)  
   
 > [!NOTE]
 >  To run the example, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.  
@@ -83,17 +83,17 @@ TOTAL bytes returned:  890591
 ##  <a name="BKMK_HandlingReentrancy"></a> Handling Reentrancy  
  You can handle reentrancy in a variety of ways, depending on what you want your app to do. This topic presents the following examples:  
   
--   [Disable the Start Button](#BKMK_DisableTheStartButton)  
+- [Disable the Start Button](#BKMK_DisableTheStartButton)  
   
-     Disable the **Start** button while the operation is running so that the user can't interrupt it.  
+   Disable the **Start** button while the operation is running so that the user can't interrupt it.  
   
--   [Cancel and Restart the Operation](#BKMK_CancelAndRestart)  
+- [Cancel and Restart the Operation](#BKMK_CancelAndRestart)  
   
-     Cancel any operation that is still running when the user chooses the **Start** button again, and then let the most recently requested operation continue.  
+   Cancel any operation that is still running when the user chooses the **Start** button again, and then let the most recently requested operation continue.  
   
--   [Run Multiple Operations and Queue the Output](#BKMK_RunMultipleOperations)  
+- [Run Multiple Operations and Queue the Output](#BKMK_RunMultipleOperations)  
   
-     Allow all requested operations to run asynchronously, but coordinate the display of output so that the results from each operation appear together and in order.  
+   Allow all requested operations to run asynchronously, but coordinate the display of output so that the results from each operation appear together and in order.  
   
 ###  <a name="BKMK_DisableTheStartButton"></a> Disable the Start Button  
  You can block the **Start** button while an operation is running by disabling the button at the top of the `StartButton_Click` event handler. You can then reenable the button from within a  `finally` block when the operation finishes so that users can run the app again.  
@@ -134,41 +134,41 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
   
  To set up this scenario, make the following changes to the basic code that is provided in [Reviewing and Running the Example App](#BKMD_SettingUpTheExample). You also can download the finished app from [Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). The name of the project is CancelAndRestart.  
   
-1.  Declare a <xref:System.Threading.CancellationTokenSource> variable, `cts`, that’s in scope for all methods.  
+1. Declare a <xref:System.Threading.CancellationTokenSource> variable, `cts`, that’s in scope for all methods.  
   
-    ```csharp  
-    public partial class MainWindow : Window   // Or class MainPage  
-    {  
-        // *** Declare a System.Threading.CancellationTokenSource.  
-        CancellationTokenSource cts;  
-    ```  
+   ```csharp  
+   public partial class MainWindow : Window   // Or class MainPage  
+   {  
+       // *** Declare a System.Threading.CancellationTokenSource.  
+       CancellationTokenSource cts;  
+   ```  
   
-2.  In `StartButton_Click`, determine whether an operation is already underway. If the value of `cts` is null, no operation is already active. If the value isn't null, the operation that is already running is canceled.  
+2. In `StartButton_Click`, determine whether an operation is already underway. If the value of `cts` is null, no operation is already active. If the value isn't null, the operation that is already running is canceled.  
   
-    ```csharp  
-    // *** If a download process is already underway, cancel it.  
-    if (cts != null)  
-    {  
-        cts.Cancel();  
-    }  
-    ```  
+   ```csharp  
+   // *** If a download process is already underway, cancel it.  
+   if (cts != null)  
+   {  
+       cts.Cancel();  
+   }  
+   ```  
   
-3.  Set `cts` to a different value that represents the current process.  
+3. Set `cts` to a different value that represents the current process.  
   
-    ```csharp  
-    // *** Now set cts to a new value that you can use to cancel the current process  
-    // if the button is chosen again.  
-    CancellationTokenSource newCTS = new CancellationTokenSource();  
-    cts = newCTS;  
-    ```  
+   ```csharp  
+   // *** Now set cts to a new value that you can use to cancel the current process  
+   // if the button is chosen again.  
+   CancellationTokenSource newCTS = new CancellationTokenSource();  
+   cts = newCTS;  
+   ```  
   
-4.  At the end of `StartButton_Click`, the current process is complete, so set the value of `cts` back to null.  
+4. At the end of `StartButton_Click`, the current process is complete, so set the value of `cts` back to null.  
   
-    ```csharp  
-    // *** When the process is complete, signal that another process can begin.  
-    if (cts == newCTS)  
-        cts = null;  
-    ```  
+   ```csharp  
+   // *** When the process is complete, signal that another process can begin.  
+   if (cts == newCTS)  
+       cts = null;  
+   ```  
   
  The following code shows all the changes in `StartButton_Click`. The additions are marked with asterisks.  
   
@@ -211,11 +211,11 @@ private async void StartButton_Click(object sender, RoutedEventArgs e)
   
  In `AccessTheWebAsync`, make the following changes.  
   
--   Add a parameter to accept the cancellation token from `StartButton_Click`.  
+- Add a parameter to accept the cancellation token from `StartButton_Click`.  
   
--   Use the <xref:System.Net.Http.HttpClient.GetAsync%2A> method to download the websites because `GetAsync` accepts a <xref:System.Threading.CancellationToken> argument.  
+- Use the <xref:System.Net.Http.HttpClient.GetAsync%2A> method to download the websites because `GetAsync` accepts a <xref:System.Threading.CancellationToken> argument.  
   
--   Before calling `DisplayResults` to display the results for each downloaded website, check `ct` to verify that the current operation hasn’t been canceled.  
+- Before calling `DisplayResults` to display the results for each downloaded website, check `ct` to verify that the current operation hasn’t been canceled.  
   
  The following code shows these changes, which are marked with asterisks.  
   
@@ -481,52 +481,52 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
   
  The output shows the following patterns.  
   
--   A group can be started while a previous group is displaying its output, but the display of the previous group's output isn't interrupted.  
+- A group can be started while a previous group is displaying its output, but the display of the previous group's output isn't interrupted.  
   
-    ```  
-    #Starting group A.  
-    #Task assigned for group A. Download tasks are active.  
+  ```  
+  #Starting group A.  
+  #Task assigned for group A. Download tasks are active.  
   
-    A-1. msdn.microsoft.com/library/hh191443.aspx                87389  
-    A-2. msdn.microsoft.com/library/aa578028.aspx               207089  
-    A-3. msdn.microsoft.com/library/jj155761.aspx                30870  
-    A-4. msdn.microsoft.com/library/hh290140.aspx               119037  
-    A-5. msdn.microsoft.com/library/hh524395.aspx                71260  
+  A-1. msdn.microsoft.com/library/hh191443.aspx                87389  
+  A-2. msdn.microsoft.com/library/aa578028.aspx               207089  
+  A-3. msdn.microsoft.com/library/jj155761.aspx                30870  
+  A-4. msdn.microsoft.com/library/hh290140.aspx               119037  
+  A-5. msdn.microsoft.com/library/hh524395.aspx                71260  
   
-    #Starting group B.  
-    #Task assigned for group B. Download tasks are active.  
+  #Starting group B.  
+  #Task assigned for group B. Download tasks are active.  
   
-    A-6. msdn.microsoft.com/library/ms404677.aspx               199186  
-    A-7. msdn.microsoft.com                                            53078  
-    A-8. msdn.microsoft.com/library/ff730837.aspx               148010  
+  A-6. msdn.microsoft.com/library/ms404677.aspx               199186  
+  A-7. msdn.microsoft.com                                            53078  
+  A-8. msdn.microsoft.com/library/ff730837.aspx               148010  
   
-    TOTAL bytes returned:  915919  
+  TOTAL bytes returned:  915919  
   
-    B-1. msdn.microsoft.com/library/hh191443.aspx                87388  
-    B-2. msdn.microsoft.com/library/aa578028.aspx               207089  
-    B-3. msdn.microsoft.com/library/jj155761.aspx                30870  
+  B-1. msdn.microsoft.com/library/hh191443.aspx                87388  
+  B-2. msdn.microsoft.com/library/aa578028.aspx               207089  
+  B-3. msdn.microsoft.com/library/jj155761.aspx                30870  
   
-    #Group A is complete.  
+  #Group A is complete.  
   
-    B-4. msdn.microsoft.com/library/hh290140.aspx               119027  
-    B-5. msdn.microsoft.com/library/hh524395.aspx                71260  
-    B-6. msdn.microsoft.com/library/ms404677.aspx               199186  
-    B-7. msdn.microsoft.com                                            53078  
-    B-8. msdn.microsoft.com/library/ff730837.aspx               148010  
+  B-4. msdn.microsoft.com/library/hh290140.aspx               119027  
+  B-5. msdn.microsoft.com/library/hh524395.aspx                71260  
+  B-6. msdn.microsoft.com/library/ms404677.aspx               199186  
+  B-7. msdn.microsoft.com                                            53078  
+  B-8. msdn.microsoft.com/library/ff730837.aspx               148010  
   
-    TOTAL bytes returned:  915908  
-    ```  
+  TOTAL bytes returned:  915908  
+  ```  
   
--   The `pendingWork` task is null  at the start of `FinishOneGroupAsync` only for group A, which started first. Group A hasn’t yet completed an await expression when it reaches `FinishOneGroupAsync`. Therefore, control hasn't returned to `AccessTheWebAsync`, and the first assignment to `pendingWork` hasn't occurred.  
+- The `pendingWork` task is null  at the start of `FinishOneGroupAsync` only for group A, which started first. Group A hasn’t yet completed an await expression when it reaches `FinishOneGroupAsync`. Therefore, control hasn't returned to `AccessTheWebAsync`, and the first assignment to `pendingWork` hasn't occurred.  
   
--   The following two lines always appear together in the output. The code is never interrupted between starting a group's operation in `StartButton_Click` and assigning a task for the group to `pendingWork`.  
+- The following two lines always appear together in the output. The code is never interrupted between starting a group's operation in `StartButton_Click` and assigning a task for the group to `pendingWork`.  
   
-    ```  
-    #Starting group B.  
-    #Task assigned for group B. Download tasks are active.  
-    ```  
+  ```  
+  #Starting group B.  
+  #Task assigned for group B. Download tasks are active.  
+  ```  
   
-     After a group enters `StartButton_Click`, the operation doesn't complete an await expression until the operation enters `FinishOneGroupAsync`. Therefore, no other operation can gain control during that segment of code.  
+   After a group enters `StartButton_Click`, the operation doesn't complete an await expression until the operation enters `FinishOneGroupAsync`. Therefore, no other operation can gain control during that segment of code.  
   
 ##  <a name="BKMD_SettingUpTheExample"></a> Reviewing and Running the Example App  
  To better understand the example app, you can download it, build it yourself, or review the code at the end of this topic without implementing the app.  
@@ -536,62 +536,62 @@ private async Task FinishOneGroupAsync(List<string> urls, Task<byte[]>[] content
   
 ###  <a name="BKMK_DownloadingTheApp"></a> Downloading the App  
   
-1.  Download the compressed file from [Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).  
+1. Download the compressed file from [Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).  
   
-2.  Decompress the file that you downloaded, and then start Visual Studio.  
+2. Decompress the file that you downloaded, and then start Visual Studio.  
   
-3.  On the menu bar, choose **File**, **Open**, **Project/Solution**.  
+3. On the menu bar, choose **File**, **Open**, **Project/Solution**.  
   
-4.  Navigate to the folder that holds the decompressed sample code, and then open the solution (.sln) file.  
+4. Navigate to the folder that holds the decompressed sample code, and then open the solution (.sln) file.  
   
-5.  In **Solution Explorer**, open the shortcut menu for the project that you want to run, and then choose **Set as StartUpProject**.  
+5. In **Solution Explorer**, open the shortcut menu for the project that you want to run, and then choose **Set as StartUpProject**.  
   
-6.  Choose the CTRL+F5 keys to build and run the project.  
+6. Choose the CTRL+F5 keys to build and run the project.  
   
 ###  <a name="BKMK_BuildingTheApp"></a> Building the App  
  The following section provides the code to build the example as a WPF app.  
   
 ##### To build a WPF app  
   
-1.  Start Visual Studio.  
+1. Start Visual Studio.  
   
-2.  On the menu bar, choose **File**, **New**, **Project**.  
+2. On the menu bar, choose **File**, **New**, **Project**.  
   
-     The **New Project** dialog box opens.  
+    The **New Project** dialog box opens.  
   
-3.  In the **Installed Templates** pane, expand **Visual C#**, and then expand **Windows**.  
+3. In the **Installed Templates** pane, expand **Visual C#**, and then expand **Windows**.  
   
-4.  In the list of project types, choose **WPF Application**.  
+4. In the list of project types, choose **WPF Application**.  
   
-5.  Name the project `WebsiteDownloadWPF`, and then choose the **OK** button.  
+5. Name the project `WebsiteDownloadWPF`, and then choose the **OK** button.  
   
-     The new project appears in **Solution Explorer**.  
+    The new project appears in **Solution Explorer**.  
   
-6.  In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.  
+6. In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.  
   
-     If the tab isn’t visible, open the shortcut menu for MainWindow.xaml in **Solution Explorer**, and then choose **View Code**.  
+    If the tab isn’t visible, open the shortcut menu for MainWindow.xaml in **Solution Explorer**, and then choose **View Code**.  
   
-7.  In the **XAML** view of MainWindow.xaml, replace the code with the following code.  
+7. In the **XAML** view of MainWindow.xaml, replace the code with the following code.  
   
-    ```csharp  
-    <Window x:Class="WebsiteDownloadWPF.MainWindow"  
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
-        xmlns:local="using:WebsiteDownloadWPF"  
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
-        mc:Ignorable="d">  
+   ```csharp  
+   <Window x:Class="WebsiteDownloadWPF.MainWindow"  
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+       xmlns:local="using:WebsiteDownloadWPF"  
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+       mc:Ignorable="d">  
   
-        <Grid Width="517" Height="360">  
-            <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="-1,0,0,0" VerticalAlignment="Top" Click="StartButton_Click" Height="53" Background="#FFA89B9B" FontSize="36" Width="518"  />  
-            <TextBox x:Name="ResultsTextBox" HorizontalAlignment="Left" Margin="-1,53,0,-36" TextWrapping="Wrap" VerticalAlignment="Top" Height="343" FontSize="10" ScrollViewer.VerticalScrollBarVisibility="Visible" Width="518" FontFamily="Lucida Console" />  
-        </Grid>  
-    </Window>  
-    ```  
+       <Grid Width="517" Height="360">  
+           <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="-1,0,0,0" VerticalAlignment="Top" Click="StartButton_Click" Height="53" Background="#FFA89B9B" FontSize="36" Width="518"  />  
+           <TextBox x:Name="ResultsTextBox" HorizontalAlignment="Left" Margin="-1,53,0,-36" TextWrapping="Wrap" VerticalAlignment="Top" Height="343" FontSize="10" ScrollViewer.VerticalScrollBarVisibility="Visible" Width="518" FontFamily="Lucida Console" />  
+       </Grid>  
+   </Window>  
+   ```  
   
-     A simple window that contains a text box and a button appears in the **Design** view of MainWindow.xaml.  
+    A simple window that contains a text box and a button appears in the **Design** view of MainWindow.xaml.  
   
-8.  Add a reference for <xref:System.Net.Http>.  
+8. Add a reference for <xref:System.Net.Http>.  
   
 9. In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.cs, and then choose **View Code**.  
   

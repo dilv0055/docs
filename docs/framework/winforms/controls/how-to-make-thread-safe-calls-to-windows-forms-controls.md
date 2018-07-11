@@ -97,11 +97,11 @@ private:
   
 #### To make a thread-safe call to a Windows Forms control  
   
-1.  Query the control's <xref:System.Windows.Forms.Control.InvokeRequired%2A> property.  
+1. Query the control's <xref:System.Windows.Forms.Control.InvokeRequired%2A> property.  
   
-2.  If <xref:System.Windows.Forms.Control.InvokeRequired%2A> returns `true`, call <xref:System.Windows.Forms.Control.Invoke%2A> with a delegate that makes the actual call to the control.  
+2. If <xref:System.Windows.Forms.Control.InvokeRequired%2A> returns `true`, call <xref:System.Windows.Forms.Control.Invoke%2A> with a delegate that makes the actual call to the control.  
   
-3.  If <xref:System.Windows.Forms.Control.InvokeRequired%2A> returns `false`, call the control directly.  
+3. If <xref:System.Windows.Forms.Control.InvokeRequired%2A> returns `false`, call the control directly.  
   
  In the following code example, a thread-safe call is implemented in the `ThreadProcSafe` method, which is executed by the background thread. If the <xref:System.Windows.Forms.TextBox> control's <xref:System.Windows.Forms.Control.InvokeRequired%2A> returns `true`, the `ThreadProcSafe` method creates an instance of `StringArgReturningVoidDelegate` and passes that to the form's <xref:System.Windows.Forms.Control.Invoke%2A> method. This causes the `SetText` method to be called on the thread that created the <xref:System.Windows.Forms.TextBox> control, and in this thread context the <xref:System.Windows.Forms.Control.Text%2A> property is set directly.  
   
@@ -276,13 +276,13 @@ private:
   
 #### To make thread-safe calls by using BackgroundWorker  
   
-1.  Create a method to do the work that you want done in the background thread. Do not call controls created by the main thread in this method.  
+1. Create a method to do the work that you want done in the background thread. Do not call controls created by the main thread in this method.  
   
-2.  Create a method to report the results of your background work after it finishes. You can call controls created by the main thread in this method.  
+2. Create a method to report the results of your background work after it finishes. You can call controls created by the main thread in this method.  
   
-3.  Bind the method created in step 1 to the <xref:System.ComponentModel.BackgroundWorker.DoWork> event of an instance of <xref:System.ComponentModel.BackgroundWorker>, and bind the method created in step 2 to the same instance’s <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event.  
+3. Bind the method created in step 1 to the <xref:System.ComponentModel.BackgroundWorker.DoWork> event of an instance of <xref:System.ComponentModel.BackgroundWorker>, and bind the method created in step 2 to the same instance’s <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event.  
   
-4.  To start the background thread, call the <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> method of the <xref:System.ComponentModel.BackgroundWorker> instance.  
+4. To start the background thread, call the <xref:System.ComponentModel.BackgroundWorker.RunWorkerAsync%2A> method of the <xref:System.ComponentModel.BackgroundWorker> instance.  
   
  In the following code example, the <xref:System.ComponentModel.BackgroundWorker.DoWork> event handler uses <xref:System.Threading.Thread.Sleep%2A> to simulate work that takes some time. It does not call the form’s <xref:System.Windows.Forms.TextBox> control. The <xref:System.Windows.Forms.TextBox> control's <xref:System.Windows.Forms.Control.Text%2A> property is set directly in the <xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted> event handler.  
   

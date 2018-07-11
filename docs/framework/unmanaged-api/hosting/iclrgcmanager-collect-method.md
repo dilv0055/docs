@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # ICLRGCManager::Collect Method
 Forces a garbage collection for the specified generation.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT Collect (  
     [in] LONG Generation  
 );  
 ```  
-  
+
 #### Parameters  
  `Generation`  
  [in] The generation to collect. A value of -1 forces a collection of all generations.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`Collect` returned successfully.|  
@@ -43,19 +44,19 @@ HRESULT Collect (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  The `Collect` method forces the CLR's garbage collector to perform a collection regardless of its current state.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Automatic Memory Management](../../../../docs/standard/automatic-memory-management.md)  
  [Garbage Collection](../../../../docs/standard/garbage-collection/index.md)  

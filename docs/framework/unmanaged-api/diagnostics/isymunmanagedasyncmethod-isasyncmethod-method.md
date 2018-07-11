@@ -7,26 +7,27 @@ ms.author: "ronpet"
 ---
 # ISymUnmanagedAsyncMethod::IsAsyncMethod Method
 Checks if the method has async information or not.  
-  
+
  If this method returns `FALSE` then it is invalid to call any other methods in this interface. They will all return `E_UNEXPECTED` in this case.  
-  
+
 ## Syntax  
-  
+
 ```idl  
 HRESULT IsAsyncMethod(    [out, retval] BOOL* pRetVal);  
 ```  
-  
+
 #### Parameters  
-  
+
+
 |Parameter|Description|  
 |---------------|-----------------|  
 |`pRetVal`||  
-  
+
 ## Return Value  
  Returns `HRESULT`.  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [ISymUnmanagedAsyncMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethod-interface.md)

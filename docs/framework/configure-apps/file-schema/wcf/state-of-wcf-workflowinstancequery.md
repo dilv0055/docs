@@ -5,9 +5,9 @@ ms.assetid: 40f21055-766c-4be9-86c4-d1d899007098
 ---
 # &lt;state&gt; of WCF, &lt;workflowInstanceQuery&gt;
 Represents a collection of subscribed states from the tracked workflow instance when the tracking records are created.  
-  
+
  For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
-  
+
  \<system.serviceModel>  
 \<tracking>  
 \<trackingProfile>  
@@ -16,36 +16,39 @@ Represents a collection of subscribed states from the tracked workflow instance 
 \<workflowInstanceQuery>  
 \<states>  
 \<state>  
-  
+
 ## Syntax  
-  
+
 ```xml
 <tracking>   <trackingProfile name="Name">       <workflow>          <workflowInstanceQueries>             <workflowInstanceQuery>                <states>                   <state name="Name"/>                </states>            </workflowInstanceQuery>         </workflowInstanceQueries>       </workflow>   </trackingProfile></tracking>  
 ```
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |name|A string that specifies a subscribed state from the tracked workflow instance when the tracking record is created.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<states>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|A collection of subscribed states from the tracked workflow instance when the tracking records are created.|  
-  
+
 ## Remarks  
  The returned records are filtered by the states in this collection.  
-  
+
  Possible state values are described in the following table.  
-  
+
+
 |State|Description|  
 |-----------|-----------------|  
 |Aborted|The workflow instance is aborted.|  
@@ -61,10 +64,10 @@ Represents a collection of subscribed states from the tracked workflow instance 
 |Suspended|The workflow instance is suspended.|  
 |Terminated|The workflow instance is terminated.|  
 |Unsuspended|The workflow instance is unsuspended.|  
-  
+
 ## Example  
  The following configuration subscribes to workflow instance-level tracking records for the `Started` instance state using this query.  
-  
+
 ```xml  
 <workflowInstanceQueries>  
     <workflowInstanceQuery>  
@@ -74,7 +77,7 @@ Represents a collection of subscribed states from the tracked workflow instance 
     </workflowInstanceQuery>  
 </workflowInstanceQueries>  
 ```  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>       
  <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElement?displayProperty=nameWithType>       

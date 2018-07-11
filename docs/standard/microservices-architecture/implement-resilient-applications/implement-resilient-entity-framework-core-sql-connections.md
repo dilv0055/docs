@@ -79,15 +79,15 @@ The first DbContext is \_catalogContext and the second DbContext is within the \
 
 ## Additional resources
 
--   **EF Connection Resiliency** (Entity Framework Core)
-    [*https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency*](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)
+- **EF Connection Resiliency** (Entity Framework Core)
+  [*https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency*](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency)
 
--   **Connection Resiliency and Command Interception with the Entity Framework**
-    [*https://docs.microsoft.com/azure/architecture/patterns/category/resiliency*](https://docs.microsoft.com/azure/architecture/patterns/category/resiliency)
+- **Connection Resiliency and Command Interception with the Entity Framework**
+  [*https://docs.microsoft.com/azure/architecture/patterns/category/resiliency*](https://docs.microsoft.com/azure/architecture/patterns/category/resiliency)
 
--   **Cesar de la Torre. Using Resilient Entity Framework Core Sql Connections and Transactions**
-    <https://blogs.msdn.microsoft.com/cesardelatorre/2017/03/26/using-resilient-entity-framework-core-sql-connections-and-transactions-retries-with-exponential-backoff/>
+- **Cesar de la Torre. Using Resilient Entity Framework Core Sql Connections and Transactions**
+  <https://blogs.msdn.microsoft.com/cesardelatorre/2017/03/26/using-resilient-entity-framework-core-sql-connections-and-transactions-retries-with-exponential-backoff/>
 
->[!div class="step-by-step"]
-[Previous](implement-retries-exponential-backoff.md)
-[Next]explore-custom-http-call-retries-exponential-backoff.md)
+> [!div  class="step-by-step"]
+> [Previous](implement-retries-exponential-backoff.md)
+> [Next]explore-custom-http-call-retries-exponential-backoff.md)

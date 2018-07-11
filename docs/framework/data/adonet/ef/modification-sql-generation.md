@@ -13,11 +13,11 @@ This section discusses how to develop a modification SQL generation module for y
   
  A DbModificationCommandTree is an object model representation of a modification DML operation (an insert, an update, or a delete operation), inheriting from DbCommandTree. There are three implementations of DbModificationCommandTree:  
   
--   DbInsertCommandTree  
+- DbInsertCommandTree  
   
--   DbUpdateCommandTree  
+- DbUpdateCommandTree  
   
--   DbDeleteCommandTree  
+- DbDeleteCommandTree  
   
  DbModificationCommandTree and its implementations that are produced by the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] always represent a single row operation. This section describes these types with their constraints in the .NET Framework version 3.5.  
   
@@ -62,19 +62,19 @@ The elements of the list are specified as type DbModificationClause, which speci
 #### Predicate in DbUpdateCommandTree and DbDeleteCommandTree  
  Predicate specifies the predicate used to determine which members of the target collection should be updated or deleted. It is an expression tree built of the following subset of DbExpressions:  
   
--   DbComparisonExpression of kind Equals, with the right child being a DbPropertyExression as restricted below and the left child a DbConstantExpression.  
+- DbComparisonExpression of kind Equals, with the right child being a DbPropertyExression as restricted below and the left child a DbConstantExpression.  
   
--   DbConstantExpression  
+- DbConstantExpression  
   
--   DbIsNullExpression over a DbPropertyExpresison as restricted below  
+- DbIsNullExpression over a DbPropertyExpresison as restricted below  
   
--   DbPropertyExpression over a DbVariableReferenceExpression representing a reference to the Target of the corresponding DbModificationCommandTree.  
+- DbPropertyExpression over a DbVariableReferenceExpression representing a reference to the Target of the corresponding DbModificationCommandTree.  
   
--   DbAndExpression  
+- DbAndExpression  
   
--   DbNotExpression  
+- DbNotExpression  
   
--   DbOrExpression  
+- DbOrExpression  
   
 ## Modification SQL Generation in the Sample Provider  
  The [Entity Framework Sample Provider](http://go.microsoft.com/fwlink/?LinkId=180616) demonstrates the components of ADO.NET Data Providers that support the [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. It targets a SQL Server 2005 database and is implemented as a wrapper on top of System.Data.SqlClient ADO.NET 2.0 Data Provider.  
@@ -98,7 +98,7 @@ The elements of the list are specified as type DbModificationClause, which speci
 ## Generating an Insert SQL Command  
  For a given DbInsertCommandTree in the sample provider, the generated insert command follows one of the two insert templates below.  
   
- The first template has a command to perform the insert given the values in the list of SetClauses, and a SELECT statement to return the properties specified in the Returning property for the inserted row if the Returning property was not null. The predicate element "\@@ROWCOUNT > 0" is true if a row was inserted. The predicate element "keyMemberI =  keyValueI &#124; scope_identity()" takes the shape  "keyMemberI =  scope_identity()" only if keyMemeberI is a store-generated key, because scope_identity() returns the last identity value inserted into an identity (store-generated) column.  
+ The first template has a command to perform the insert given the values in the list of SetClauses, and a SELECT statement to return the properties specified in the Returning property for the inserted row if the Returning property was not null. The predicate element "\@@"ROWCOUNT" > 0" is true if a row was inserted. The predicate element "keyMemberI =  keyValueI &#124; scope_identity()" takes the shape  "keyMemberI =  scope_identity()" only if keyMemeberI is a store-generated key, because scope_identity() returns the last identity value inserted into an identity (store-generated) column.  
   
 ```  
 -- first insert Template  

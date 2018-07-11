@@ -4,7 +4,6 @@ description: This overview provides an understanding of the type you use to quer
 ms.date: 10/15/2017
 ms.custom: mvc
 ---
-
 # Work with a workspace
 
 The **Workspaces** layer is the starting point for doing code analysis and refactoring over entire solutions. Within this layer, the Workspace API assists you in organizing all the information about the projects in a solution into a single object model, offering you direct access to compiler layer object models like source text, syntax trees, semantic models, and compilations without needing to parse files, configure options, or manage inter-project dependencies. 

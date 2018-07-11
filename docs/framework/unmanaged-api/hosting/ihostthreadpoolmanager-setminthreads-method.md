@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostThreadPoolManager::SetMinThreads Method
 Sets the minimum number of idle threads that the host must maintain in anticipation of requests.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SetMinThreads (  
     [in] DWORD MinThreads  
 );  
 ```  
-  
+
 #### Parameters  
  `MinThreads`  
  [in] The new minimum number of threads that the host must maintain.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetMinThreads` returned successfully.|  
@@ -44,19 +45,19 @@ HRESULT SetMinThreads (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_NOTIMPL|The host does not provide an implementation of `SetMinThreads`.|  
-  
+
 ## Remarks  
  A host is not required to provide an implementation of `SetMinThreads`. In this case, it should return an HRESULT value of E_NOTIMPL.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  <xref:System.Threading.ThreadPool.SetMinThreads%2A>  
  <xref:System.Threading.ThreadPool>  

@@ -31,33 +31,33 @@ A service must be run from within the context of the Services Control Manager ra
   
 ### To debug a service  
   
-1.  Build your service in the Debug configuration.  
+1. Build your service in the Debug configuration.  
   
-2.  Install your service. For more information, see [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
+2. Install your service. For more information, see [How to: Install and Uninstall Services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   
-3.  Start your service, either from **Services Control Manager**, **Server Explorer**, or from code. For more information, see [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md).  
+3. Start your service, either from **Services Control Manager**, **Server Explorer**, or from code. For more information, see [How to: Start Services](../../../docs/framework/windows-services/how-to-start-services.md).  
   
-4.  Start Visual Studio with administrative credentials so you can attach to system processes.  
+4. Start Visual Studio with administrative credentials so you can attach to system processes.  
   
-5.  (Optional) On the Visual Studio menu bar, choose **Tools**, **Options**. In the **Options** dialog box, choose **Debugging**, **Symbols**, select the **Microsoft Symbol Servers** check box, and then choose the **OK** button.  
+5. (Optional) On the Visual Studio menu bar, choose **Tools**, **Options**. In the **Options** dialog box, choose **Debugging**, **Symbols**, select the **Microsoft Symbol Servers** check box, and then choose the **OK** button.  
   
-6.  On the menu bar, choose **Attach to Process** from the **Debug** or **Tools** menu. (Keyboard: Ctrl+Alt+P)  
+6. On the menu bar, choose **Attach to Process** from the **Debug** or **Tools** menu. (Keyboard: Ctrl+Alt+P)  
   
-     The **Processes** dialog box appears.  
+    The **Processes** dialog box appears.  
   
-7.  Select the **Show processes from all users** check box.  
+7. Select the **Show processes from all users** check box.  
   
-8.  In the **Available Processes** section, choose the process for your service, and then choose **Attach**.  
+8. In the **Available Processes** section, choose the process for your service, and then choose **Attach**.  
   
-    > [!TIP]
-    >  The process will have the same name as the executable file for your service.  
+   > [!TIP]
+   >  The process will have the same name as the executable file for your service.  
   
-     The **Attach to Process** dialog box appears.  
+    The **Attach to Process** dialog box appears.  
   
 9. Choose the appropriate options, and then choose **OK** to close the dialog box.  
   
-    > [!NOTE]
-    >  You are now in debug mode.  
+   > [!NOTE]
+   >  You are now in debug mode.  
   
 10. Set any breakpoints you want to use in your code.  
   
@@ -72,38 +72,38 @@ A service must be run from within the context of the Services Control Manager ra
   
 #### How to: Run a Windows Service as a console application  
   
-1.  Add a method to your service that runs the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> and <xref:System.ServiceProcess.ServiceBase.OnStop%2A> methods:  
+1. Add a method to your service that runs the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> and <xref:System.ServiceProcess.ServiceBase.OnStop%2A> methods:  
   
-    ```  
-    internal void TestStartupAndStop(string[] args)  
-    {  
-        this.OnStart(args);  
-        Console.ReadLine();  
-        this.OnStop();  
-    }  
-    ```  
+   ```  
+   internal void TestStartupAndStop(string[] args)  
+   {  
+       this.OnStart(args);  
+       Console.ReadLine();  
+       this.OnStop();  
+   }  
+   ```  
   
-2.  Rewrite the `Main` method as follows:  
+2. Rewrite the `Main` method as follows:  
   
-    ```  
-    static void Main(string[] args)  
-            {  
-                if (Environment.UserInteractive)  
-                {  
-                    MyNewService service1 = new MyNewService(args);  
-                    service1.TestStartupAndStop(args);  
-                }  
-                else  
-                {  
-                    // Put the body of your old Main method here.  
-                }  
-    ```  
+   ```  
+   static void Main(string[] args)  
+           {  
+               if (Environment.UserInteractive)  
+               {  
+                   MyNewService service1 = new MyNewService(args);  
+                   service1.TestStartupAndStop(args);  
+               }  
+               else  
+               {  
+                   // Put the body of your old Main method here.  
+               }  
+   ```  
   
-3.  In the **Application** tab of the project's properties, set the **Output type** to **Console Application**.  
+3. In the **Application** tab of the project's properties, set the **Output type** to **Console Application**.  
   
-4.  Choose **Start Debugging** (F5).  
+4. Choose **Start Debugging** (F5).  
   
-5.  To run the program as a Windows Service again, install it and start it as usual for a Windows Service. It's not necessary to reverse these changes.  
+5. To run the program as a Windows Service again, install it and start it as usual for a Windows Service. It's not necessary to reverse these changes.  
   
  In some cases, such as when you want to debug an issue that occurs only on system startup, you have to use the Windows debugger. Install [Debugging Tools for Windows](http://msdn.microsoft.com/windows/hardware/hh852365) and see [How to debug Windows Services](http://support.microsoft.com/kb/824344).  
   

@@ -20,9 +20,9 @@ ms.author: "mairaw"
 ---
 # IMetaDataImport::EnumInterfaceImpls Method
 Enumerates MethodDef tokens representing interface implementations.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT EnumInterfaceImpls (  
    [in, out]  HCORENUM       *phEnum,   
@@ -32,39 +32,40 @@ HRESULT EnumInterfaceImpls (
    [out]  ULONG*             pcImpls  
 );  
 ```  
-  
+
 #### Parameters  
  `phEnum`  
  [in, out] A pointer to the enumerator.  
-  
+
  `td`  
  [in] The token of the TypeDef whose MethodDef tokens representing interface implementations are to be enumerated.  
-  
+
  `rImpls`  
  [out] The array used to store the MethodDef tokens.  
-  
+
  `cMax`  
  [in] The maximum size of the `rImpls` array.  
-  
+
  `pcImpls`  
  [out] The actual number of tokens returned in `rImpls`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumInterfaceImpls` returned successfully.|  
 |`S_FALSE`|There are no MethodDef tokens to enumerate. In that case, `pcImpls` is set to zero.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

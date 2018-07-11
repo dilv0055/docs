@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # COR_TYPE_LAYOUT Structure
 Provides information about the layout of an object in memory.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct COR_TYPE_LAYOUT {  
     COR_TYPEID parentID;  
@@ -31,9 +31,10 @@ typedef struct COR_TYPE_LAYOUT {
     CorElementType type;  
 } COR_TYPE_LAYOUT;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`parentID`|The identifier of the parent type to this type. This will be the NULL type id (token1= 0, token2 = 0) if the type id corresponds to <xref:System.Object?displayProperty=nameWithType>.|  
@@ -41,19 +42,19 @@ typedef struct COR_TYPE_LAYOUT {
 |`numFields`|The number of fields included in objects of this type.|  
 |`boxOffset`|If this type is boxed, the beginning offset of an object's fields. This field is valid only for value types such as primitives and structures.|  
 |`type`|The CorElementType to which this type belongs.|  
-  
+
 ## Remarks  
  If `numFields` is greater than zero, you can call the [ICorDebugProcess5::GetTypeFields](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefields-method.md) method to obtain information about the fields in this type. If `type` is `ELEMENT_TYPE_STRING`, `ELEMENT_TYPE_ARRAY`, or `ELEMENT_TYPE_SZARRAY`, the size of objects of this type is variable, and you can pass the [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) structure to the [ICorDebugProcess5::GetArrayLayout](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-getarraylayout-method.md) method.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

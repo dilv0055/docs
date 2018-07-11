@@ -1,5 +1,6 @@
 ### DataGridCellsPanel.BringIndexIntoView throws ArgumentOutOfRangeException
 
+
 |   |   |
 |---|---|
 |Details|<xref:System.Windows.Controls.DataGrid.ScrollIntoView(System.Object)> will work asynchronously when column virtualization is enabled but the column widths have not yet been determined.  If columns are removed before the asynchronous work happens, an <xref:System.ArgumentOutOfRangeException?displayProperty=name> can occur.|

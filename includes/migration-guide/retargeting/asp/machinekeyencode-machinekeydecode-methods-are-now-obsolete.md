@@ -1,5 +1,6 @@
 ### MachineKey.Encode and MachineKey.Decode methods are now obsolete
 
+
 |   |   |
 |---|---|
 |Details|These methods are now obsolete. Compilation of code that calls these methods produces a compiler warning.|

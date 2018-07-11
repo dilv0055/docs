@@ -8,10 +8,11 @@ manager: "markl"
 ---
 # Understanding WebRequest Problems and Exceptions
 <xref:System.Net.WebRequest> and its derived classes (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, and <xref:System.Net.FileWebRequest>) throw exceptions to signal an abnormal condition. Sometimes the resolution of these problems is not obvious.  
-  
+
 ## Solutions  
  Examine the <xref:System.Net.WebException.Status%2A> property of the <xref:System.Net.WebException> to determine the problem. The following table shows several status values and some possible resolutions.  
-  
+
+
 |Status|Details|Solution|  
 |------------|-------------|--------------|  
 |<xref:System.Net.WebExceptionStatus.SendFailure><br /><br /> -or-<br /><br /> <xref:System.Net.WebExceptionStatus.ReceiveFailure>|There is a problem with the underlying socket. The connection may have been reset.|Reconnect and resend the request.<br /><br /> Make sure the latest service pack is installed.<br /><br /> Increase the value of the <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A?displayProperty=nameWithType> property.<br /><br /> Set <xref:System.Net.HttpWebRequest.KeepAlive%2A?displayProperty=nameWithType> to `false`.<br /><br /> Increase the number of maximum connections with the <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> property.<br /><br /> Check the proxy configuration.<br /><br /> If using SSL, make sure the server process has permission to access the Certificate store.<br /><br /> If sending a large amount of data, set <xref:System.Net.HttpWebRequest.AllowWriteStreamBuffering%2A> to `false`.|  
@@ -24,7 +25,7 @@ manager: "markl"
 |<xref:System.Net.WebExceptionStatus.MessageLengthLimitExceeded>|The limit set (<xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A>) on the message length was exceeded.|Increase the value of the <xref:System.Net.HttpWebRequest.MaximumResponseHeadersLength%2A> property.|  
 |<xref:System.Net.WebExceptionStatus.ProxyNameResolutionFailure>|The Domain Name Service could not resolve the proxy host name.|Configure the proxy correctly. See [http://support.microsoft.com/?id=318140](http://go.microsoft.com/fwlink/?LinkID=179655).<br /><br /> Force <xref:System.Net.HttpWebRequest> to use no proxy by setting the <xref:System.Net.HttpWebRequest.Proxy%2A> property to `null`.|  
 |<xref:System.Net.WebExceptionStatus.ServerProtocolViolation>|The response from the server is not a valid HTTP response. This problem occurs when the .NET Framework detects that the server response does not comply with HTTP 1.1 RFC. This problem may occur when the response contains incorrect headers or incorrect header delimiters.RFC 2616 defines HTTP 1.1 and the valid format for the response from the server. For more information, see [http://www.ietf.org](http://go.microsoft.com/fwlink/?LinkID=147388).|Get a network trace of the transaction and examine the headers in the response.<br /><br /> If your application requires the server response without parsing (this could be a security issue), set `useUnsafeHeaderParsing` to `true` in the configuration file. See [\<httpWebRequest> Element (Network Settings)](../../../docs/framework/configure-apps/file-schema/network/httpwebrequest-element-network-settings.md).|  
-  
+
 ## See Also  
  <xref:System.Net.HttpWebRequest>  
  <xref:System.Net.HttpWebResponse>  

@@ -94,15 +94,18 @@ Bugs may pertain to the tools used to develop and build your applications and th
   - Loose XAML application
   - Standalone installed applications
   - Standalone ClickOnce-deployed applications
+
 - The development tool, such as:
   - MSBuild
   - Expression Graphic Designer
   - Expression Interactive Designer
   - Visual Studio
+
 - The solution configuration, such as:
   - A solution
   - A single project
   - A solution with multiple dependent projects
+
 - Whether your application has language-specific or language-neutral resources. For example, did you specify the `UICulture` project property or localizable metadata for `Application`, `Page`, and `Resource` types?
 - Whether you used the neutral language setting in the AssemblyInfo.cs or AssemblyInfo.vb file.
 

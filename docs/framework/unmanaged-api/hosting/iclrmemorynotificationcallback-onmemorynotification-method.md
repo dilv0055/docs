@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # ICLRMemoryNotificationCallback::OnMemoryNotification Method
 Notifies the common language runtime (CLR) of the memory load on the computer.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT OnMemoryNotification (  
     [in] EMemoryAvailable eMemoryAvailable  
 );  
 ```  
-  
+
 #### Parameters  
  `eMemoryAvailable`  
  [in] One of the [EMemoryAvailable](../../../../docs/framework/unmanaged-api/hosting/ememoryavailable-enumeration.md) values, indicating the memory pressure the computer is currently experiencing.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`OnMemoryNotification` returned successfully.|  
@@ -43,22 +44,22 @@ HRESULT OnMemoryNotification (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  The CLR registers a callback to `OnMemoryNotification` by using a call to the [IHostMemoryManager::RegisterMemoryNotificationCallback](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md) method. The runtime uses the information returned in the callback to free additional memory when the host reports that memory resources are running low.  
-  
+
 > [!NOTE]
 >  Calls to `OnMemoryNotification` never block. They always return immediately.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)  
  [RegisterMemoryNotificationCallback Method](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-registermemorynotificationcallback-method.md)  

@@ -10,65 +10,65 @@ The following procedure describes how to migrate an ASP.NET Web Service to Windo
   
 #### To migrate ASP.NET Web service code to WCF  
   
-1.  Ensure that a comprehensive set of tests exist for the service.  
+1. Ensure that a comprehensive set of tests exist for the service.  
   
-2.  Generate the WSDL for the service and save a copy in the same folder as the service’s .asmx file.  
+2. Generate the WSDL for the service and save a copy in the same folder as the service’s .asmx file.  
   
-3.  Upgrade the ASP.NET Web service to use .NET 2.0. First deploy the .NET Framework 2.0 to the application in IIS, and then use Visual Studio 2005 to automate the code conversion process, as documented in [Step-By-Step Guide to Converting Web Projects from Visual Studio .NET 2002/2003 to Visual Studio 2005](http://go.microsoft.com/fwlink/?LinkId=96492). Run the set of tests.  
+3. Upgrade the ASP.NET Web service to use .NET 2.0. First deploy the .NET Framework 2.0 to the application in IIS, and then use Visual Studio 2005 to automate the code conversion process, as documented in [Step-By-Step Guide to Converting Web Projects from Visual Studio .NET 2002/2003 to Visual Studio 2005](http://go.microsoft.com/fwlink/?LinkId=96492). Run the set of tests.  
   
-4.  Provide explicit values for the `Namespace` and `Name` parameters of the <xref:System.Web.Services.WebService> attributes if they are not provided already. Do the same for the `MessageName` parameter of the <xref:System.Web.Services.WebMethodAttribute>. If explicit values are not already provided for the SOAPAction HTTP headers by which requests are routed to methods, then explicitly specify the default value of the `Action` parameter with a <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>.  
+4. Provide explicit values for the `Namespace` and `Name` parameters of the <xref:System.Web.Services.WebService> attributes if they are not provided already. Do the same for the `MessageName` parameter of the <xref:System.Web.Services.WebMethodAttribute>. If explicit values are not already provided for the SOAPAction HTTP headers by which requests are routed to methods, then explicitly specify the default value of the `Action` parameter with a <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>.  
   
-    ```  
-    [WebService(Namespace = "http://tempuri.org/", Name = "Adder")]  
-    public class Adder  
-    {  
-         [WebMethod(MessageName = "Add")]  
-         [SoapDocumentMethod(Action = "http://tempuri.org/Add")]  
-         public double Add(SumInput input)  
-         {  
-              double sum = 0.00;  
-              foreach (double inputValue in input.Input)  
-              {  
-                  sum += inputValue;  
-              }  
-          return sum;  
-         }  
-    }  
-    ```  
+   ```  
+   [WebService(Namespace = "http://tempuri.org/", Name = "Adder")]  
+   public class Adder  
+   {  
+        [WebMethod(MessageName = "Add")]  
+        [SoapDocumentMethod(Action = "http://tempuri.org/Add")]  
+        public double Add(SumInput input)  
+        {  
+             double sum = 0.00;  
+             foreach (double inputValue in input.Input)  
+             {  
+                 sum += inputValue;  
+             }  
+         return sum;  
+        }  
+   }  
+   ```  
   
-5.  Test the change.  
+5. Test the change.  
   
-6.  Move any substantive code in the bodies of the methods of the class to a separate class that the original class is made to use.  
+6. Move any substantive code in the bodies of the methods of the class to a separate class that the original class is made to use.  
   
-    ```  
-    [WebService(Namespace = "http://tempuri.org/", Name = "Adder")]  
-    public class Adder  
-    {  
-         [WebMethod(MessageName = "Add")]  
-         [SoapDocumentMethod(Action = "http://tempuri.org/Add")]  
-         public double Add(SumInput input)  
-         {  
-              return new ActualAdder().Add(input);  
-         }  
-    }  
+   ```  
+   [WebService(Namespace = "http://tempuri.org/", Name = "Adder")]  
+   public class Adder  
+   {  
+        [WebMethod(MessageName = "Add")]  
+        [SoapDocumentMethod(Action = "http://tempuri.org/Add")]  
+        public double Add(SumInput input)  
+        {  
+             return new ActualAdder().Add(input);  
+        }  
+   }  
   
-    internal class ActualAdder  
-    {  
-         internal double Add(SumInput input)  
-         {  
-              double sum = 0.00;  
-              foreach (double inputValue in input.Input)  
-              {  
-                  sum += inputValue;  
-              }  
-          return sum;  
-         }  
-    }  
-    ```  
+   internal class ActualAdder  
+   {  
+        internal double Add(SumInput input)  
+        {  
+             double sum = 0.00;  
+             foreach (double inputValue in input.Input)  
+             {  
+                 sum += inputValue;  
+             }  
+         return sum;  
+        }  
+   }  
+   ```  
   
-7.  Test the change.  
+7. Test the change.  
   
-8.  Add references to WCF assemblies System.ServiceModel and System.Runtime.Serialization to the ASP.NET Web service project.  
+8. Add references to WCF assemblies System.ServiceModel and System.Runtime.Serialization to the ASP.NET Web service project.  
   
 9. Run [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) to generate a WCF client class from the WSDL. Add the generated class module to the solution.  
   
@@ -130,17 +130,17 @@ The following procedure describes how to migrate an ASP.NET Web Service to Windo
   
 13. Configure the class, which is now a WCF service type, to require WCF ASP.NET compatibility mode if the ASP.NET Web service relied on any of the following:  
   
-    -   The <xref:System.Web.HttpContext> class.  
+    - The <xref:System.Web.HttpContext> class.  
   
-    -   The ASP.NET Profiles.  
+    - The ASP.NET Profiles.  
   
-    -   ACLs on .asmx files.  
+    - ACLs on .asmx files.  
   
-    -   IIS authentication options.  
+    - IIS authentication options.  
   
-    -   ASP.NET impersonation options.  
+    - ASP.NET impersonation options.  
   
-    -   ASP.NET globalization.  
+    - ASP.NET globalization.  
   
     ```  
     [System.ServiceModel.AspNetCompatibilityRequirements(  

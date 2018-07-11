@@ -5,7 +5,6 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/10/2018
 ---
-
 # Implement HTTP call retries with exponential backoff with HttpClientFactory and Polly policies
 
 The recommended approach for retries with exponential backoff is to take advantage of more advanced .NET libraries like the open-source [Polly library](https://github.com/App-vNext/Polly).
@@ -66,22 +65,22 @@ Policy
 
 ## Additional resources
 
--   **Retry pattern**
-    [*https://docs.microsoft.com/azure/architecture/patterns/retry*](https://docs.microsoft.com/azure/architecture/patterns/retry)
+- **Retry pattern**
+  [*https://docs.microsoft.com/azure/architecture/patterns/retry*](https://docs.microsoft.com/azure/architecture/patterns/retry)
 
--   **Polly and HttpClientFactory**
-    [*https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory*](https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory)
+- **Polly and HttpClientFactory**
+  [*https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory*](https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory)
 
--   **Polly (.NET resilience and transient-fault-handling library)**
+- **Polly (.NET resilience and transient-fault-handling library)**
 
-    [*https://github.com/App-vNext/Polly*](https://github.com/App-vNext/Polly)
+  [*https://github.com/App-vNext/Polly*](https://github.com/App-vNext/Polly)
 
--   **Marc Brooker. Jitter: Making Things Better With Randomness**
+- **Marc Brooker. Jitter: Making Things Better With Randomness**
 
-    [*https://brooker.co.za/blog/2015/03/21/backoff.html*](https://brooker.co.za/blog/2015/03/21/backoff.html)
+  [*https://brooker.co.za/blog/2015/03/21/backoff.html*](https://brooker.co.za/blog/2015/03/21/backoff.html)
 
 
 
->[!div class="step-by-step"]
-[Previous](explore-custom-http-call-retries-exponential-backoff.md)
-[Next](implement-circuit-breaker-pattern.md)
+> [!div  class="step-by-step"]
+> [Previous](explore-custom-http-call-retries-exponential-backoff.md)
+> [Next](implement-circuit-breaker-pattern.md)

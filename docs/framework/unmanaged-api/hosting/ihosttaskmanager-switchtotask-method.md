@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostTaskManager::SwitchToTask Method
 Notifies the host that it should switch out the current task.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SwitchToTask (  
     [in] DWORD option  
 );  
 ```  
-  
+
 #### Parameters  
  `option`  
  [in] One of the [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) enumeration values, indicating the action the host should take if the requested operation blocks.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SwitchToTask` returned successfully.|  
@@ -43,22 +44,22 @@ HRESULT SwitchToTask (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  The host can switch in another task as desired or needed.  
-  
+
 > [!NOTE]
 >  `SwitchToTask` does not specify which task the host should switch to; it specifies only the task that it should switch from.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  

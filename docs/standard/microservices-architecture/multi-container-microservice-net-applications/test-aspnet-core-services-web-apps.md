@@ -11,13 +11,13 @@ Controllers are a central part of any ASP.NET Core API service and ASP.NET MVC W
 
 You need to test how the controller behaves based on valid or invalid inputs, and test controller responses based on the result of the business operation it performs. However, you should have these types of tests your microservices:
 
--   Unit tests. These ensure that individual components of the application work as expected. Assertions test the component API.
+- Unit tests. These ensure that individual components of the application work as expected. Assertions test the component API.
 
--   Integration tests. These ensure that component interactions work as expected against external artifacts like databases. Assertions can test component API, UI, or the side effects of actions like database I/O, logging, etc.
+- Integration tests. These ensure that component interactions work as expected against external artifacts like databases. Assertions can test component API, UI, or the side effects of actions like database I/O, logging, etc.
 
--   Functional tests for each microservice. These ensure that the application works as expected from the user’s perspective.
+- Functional tests for each microservice. These ensure that the application works as expected from the user’s perspective.
 
--   Service tests. These ensure that end-to-end service use cases, including testing multiple services at the same time, are tested. For this type of testing, you need to prepare the environment first. In this case, it means starting the services (for example, by using docker-compose up).
+- Service tests. These ensure that end-to-end service use cases, including testing multiple services at the same time, are tested. For this type of testing, you need to prepare the environment first. In this case, it means starting the services (for example, by using docker-compose up).
 
 ### Implementing unit tests for ASP.NET Core Web APIs
 
@@ -90,26 +90,26 @@ public class PrimeWebDefaultRequestShould
 
 #### Additional resources
 
--   **Steve Smith. Testing controllers** (ASP.NET Core)
-    [*https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
+- **Steve Smith. Testing controllers** (ASP.NET Core)
+  [*https://docs.microsoft.com/aspnet/core/mvc/controllers/testing*](/aspnet/core/mvc/controllers/testing)
 
--   **Steve Smith. Integration testing** (ASP.NET Core)
-    [*https://docs.microsoft.com/aspnet/core/test/integration-tests*](/aspnet/core/test/integration-tests)
+- **Steve Smith. Integration testing** (ASP.NET Core)
+  [*https://docs.microsoft.com/aspnet/core/test/integration-tests*](/aspnet/core/test/integration-tests)
 
--   **Unit testing in .NET Core using dotnet test**
-    [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](../../../core/testing/unit-testing-with-dotnet-test.md)
+- **Unit testing in .NET Core using dotnet test**
+  [*https://docs.microsoft.com/dotnet/core/testing/unit-testing-with-dotnet-test*](../../../core/testing/unit-testing-with-dotnet-test.md)
 
--   **xUnit.net**. Official site.
-    [*https://xunit.github.io/*](https://xunit.github.io/)
+- **xUnit.net**. Official site.
+  [*https://xunit.github.io/*](https://xunit.github.io/)
 
--   **Unit Test Basics.**
-    [*https://msdn.microsoft.com/library/hh694602.aspx*](https://msdn.microsoft.com/library/hh694602.aspx)
+- **Unit Test Basics.**
+  [*https://msdn.microsoft.com/library/hh694602.aspx*](https://msdn.microsoft.com/library/hh694602.aspx)
 
--   **Moq**. GitHub repo.
-    [*https://github.com/moq/moq*](https://github.com/moq/moq)
+- **Moq**. GitHub repo.
+  [*https://github.com/moq/moq*](https://github.com/moq/moq)
 
--   **NUnit**. Official site.
-    [*https://www.nunit.org/*](https://www.nunit.org/)
+- **NUnit**. Official site.
+  [*https://www.nunit.org/*](https://www.nunit.org/)
 
 ### Implementing service tests on a multi-container application 
 
@@ -119,6 +119,6 @@ There are a few approaches you can use. In the docker-compose.yml file that you 
 
 Once the compose application is up and running, you can take advantage of breakpoints and exceptions if you are running Visual Studio. Or you can run the integration tests automatically in your CI pipeline in Visual Studio Team Services or any other CI/CD system that supports Docker containers.
 
->[!div class="step-by-step"]
-[Previous](subscribe-events.md)
-[Next](../microservice-ddd-cqrs-patterns/index.md)
+> [!div  class="step-by-step"]
+> [Previous](subscribe-events.md)
+> [Next](../microservice-ddd-cqrs-patterns/index.md)

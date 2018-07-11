@@ -19,27 +19,28 @@ ms.author: "mairaw"
 ---
 # CorParamAttr Enumeration
 Contains values that describe the metadata of a method parameter.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorParamAttr {  
-  
+
     pdIn                        =   0x0001,  
     pdOut                       =   0x0002,  
     pdOptional                  =   0x0010,  
-  
+
     pdReservedMask              =   0xf000,  
     pdHasDefault                =   0x1000,  
     pdHasFieldMarshal           =   0x2000,  
-  
+
     pdUnused                    =   0xcfe0  
-  
+
 } CorParamAttr;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`pdIn`|Specifies that the parameter is passed into the method call.|  
@@ -49,13 +50,13 @@ typedef enum CorParamAttr {
 |`pdHasDefault`|Specifies that the parameter has a default value.|  
 |`pdHasFieldMarshal`|Specifies that the parameter has marshaling information.|  
 |`pdUnused`|Unused.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

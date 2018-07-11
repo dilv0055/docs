@@ -10,7 +10,7 @@ The `out` keyword causes arguments to be passed by reference. It is like the [re
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#1)]  
 
-> [!NOTE] 
+> [!NOTE]
 > The `out` keyword can also be used with a generic type parameter to specify that the type parameter is covariant. For more information on the use of the `out` keyword in this context, see [out (Generic Modifier)](out-generic-modifier.md).
   
 Variables passed as `out` arguments do not have to be initialized before being passed in a method call. However, the called method is required to assign a value before the method returns.  
@@ -39,9 +39,9 @@ Properties are not variables and therefore cannot be passed as `out` parameters.
   
  You can't use the `in`, `ref`, and `out` keywords for the following kinds of methods:  
   
--   Async methods, which you define by using the [async](../../../csharp/language-reference/keywords/async.md) modifier.  
+- Async methods, which you define by using the [async](../../../csharp/language-reference/keywords/async.md) modifier.  
   
--   Iterator methods, which include a [yield return](../../../csharp/language-reference/keywords/yield.md) or `yield break` statement.  
+- Iterator methods, which include a [yield return](../../../csharp/language-reference/keywords/yield.md) or `yield break` statement.  
 
 ## Declaring `out` arguments   
 

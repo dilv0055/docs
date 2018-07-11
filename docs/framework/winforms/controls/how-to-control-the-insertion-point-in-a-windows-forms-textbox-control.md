@@ -18,42 +18,42 @@ When a Windows Forms <xref:System.Windows.Forms.TextBox> control first receives 
   
 ### To control the insertion point in a TextBox control  
   
-1.  Set the <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> property to an appropriate value. Zero places the insertion point immediately to the left of the first character.  
+1. Set the <xref:System.Windows.Forms.TextBoxBase.SelectionStart%2A> property to an appropriate value. Zero places the insertion point immediately to the left of the first character.  
   
-2.  (Optional) Set the <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> property to the length of the text you want to select.  
+2. (Optional) Set the <xref:System.Windows.Forms.TextBoxBase.SelectionLength%2A> property to the length of the text you want to select.  
   
-     The code below always returns the insertion point to 0. The `TextBox1_Enter` event handler must be bound to the control; for more information, see [Creating Event Handlers in Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md).  
+    The code below always returns the insertion point to 0. The `TextBox1_Enter` event handler must be bound to the control; for more information, see [Creating Event Handlers in Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md).  
   
-    ```vb  
-    Private Sub TextBox1_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox1.Enter  
-       TextBox1.SelectionStart = 0  
-       TextBox1.SelectionLength = 0  
-    End Sub  
-    ```  
+   ```vb  
+   Private Sub TextBox1_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox1.Enter  
+      TextBox1.SelectionStart = 0  
+      TextBox1.SelectionLength = 0  
+   End Sub  
+   ```  
   
-    ```csharp  
-    private void textBox1_Enter(Object sender, System.EventArgs e) {  
-       textBox1.SelectionStart = 0;  
-       textBox1.SelectionLength = 0;  
-    }  
-    ```  
+   ```csharp  
+   private void textBox1_Enter(Object sender, System.EventArgs e) {  
+      textBox1.SelectionStart = 0;  
+      textBox1.SelectionLength = 0;  
+   }  
+   ```  
   
-    ```cpp  
-    private:  
-       void textBox1_Enter(System::Object ^  sender,  
-          System::EventArgs ^  e)  
-       {  
-          textBox1->SelectionStart = 0;  
-          textBox1->SelectionLength = 0;  
-       }  
-    ```  
+   ```cpp  
+   private:  
+      void textBox1_Enter(System::Object ^  sender,  
+         System::EventArgs ^  e)  
+      {  
+         textBox1->SelectionStart = 0;  
+         textBox1->SelectionLength = 0;  
+      }  
+   ```  
   
 ## Making the Insertion Point Visible by Default  
  The <xref:System.Windows.Forms.TextBox> insertion point is visible by default in a new form only if the <xref:System.Windows.Forms.TextBox> control is first in the tab order. Otherwise, the insertion point appears only if you give the <xref:System.Windows.Forms.TextBox> the focus with either the keyboard or the mouse.  
   
 #### To make the text box insertion point visible by default on a new form  
   
--   Set the <xref:System.Windows.Forms.TextBox> control's <xref:System.Windows.Forms.Control.TabIndex%2A> property to `0`.  
+- Set the <xref:System.Windows.Forms.TextBox> control's <xref:System.Windows.Forms.Control.TabIndex%2A> property to `0`.  
   
 ## See Also  
  <xref:System.Windows.Forms.TextBox>  

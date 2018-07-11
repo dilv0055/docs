@@ -14,14 +14,14 @@ You can use [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] to create project
   
 ## To create a .NET Framework  3.0 or 3.5 project with Visual Studio 2010  
   
-1.  Open [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].  
+1. Open [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].  
   
-2.  Select **File**, **New**, **Project**.  
+2. Select **File**, **New**, **Project**.  
   
-3.  In the drop-down list at the top of the dialog box, select the desired version of the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
+3. In the drop-down list at the top of the dialog box, select the desired version of the [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
   
 ## To upgrade the targeted version of the .NET Framework  
   
-1.  Right-click the project in Solution Explorer, and select **Properties**.  
+1. Right-click the project in Solution Explorer, and select **Properties**.  
   
-2.  In the **Target Framework** drop-down list, select the desired version.
+2. In the **Target Framework** drop-down list, select the desired version.

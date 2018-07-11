@@ -1,5 +1,6 @@
 ### XML schema validation is stricter
 
+
 |   |   |
 |---|---|
 |Details|In the .NET Framework 4.5, XML schema validation is more strict. If you use xsd:anyURI to validate a URI such as a mailto protocol, validation fails if there are spaces in the URI. In previous versions of the .NET Framework, validation succeeded. The change affects only applications that target the .NET Framework 4.5.|

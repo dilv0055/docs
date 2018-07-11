@@ -1,5 +1,6 @@
 ### Workflow now throws original exception instead of NullReferenceException in some cases
 
+
 |   |   |
 |---|---|
 |Details|In the .NET Framework 4.6.2 and earlier versions, when the Execute method of a workflow activity throws an exception with a <code>null</code> value for the <xref:System.Exception.Message> property, the System.Activities Workflow runtime throws a <xref:System.NullReferenceException?displayProperty=name>, masking the original exception.In the .NET Framework 4.7, the previously masked exception is thrown.|

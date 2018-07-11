@@ -1,5 +1,6 @@
 ### CoerceIsSelectionBoxHighlighted
 
+
 |   |   |
 |---|---|
 |Details|Certain sequences of actions involving a <xref:System.Windows.Controls.ComboBox?displayProperty=name> and its data source can result in a <xref:System.NullReferenceException?displayProperty=name>.|

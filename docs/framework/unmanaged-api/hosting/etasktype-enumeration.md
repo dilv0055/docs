@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # ETaskType Enumeration
 Contains values that indicate the type of task that is represented by either an [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) or an [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) interface.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum ETaskType {  
     TT_DEBUGGERHELPER           = 0x1,  
@@ -37,9 +37,10 @@ typedef enum ETaskType {
     TT_UNKNOWN                  = 0x80000000  
 } ETaskType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`TT_ADUNLOAD`|The interface represents an application domain unloading task.|  
@@ -53,15 +54,15 @@ typedef enum ETaskType {
 |`TT_THREADPOOL_WORKER`|The interface represents a worker thread task.|  
 |`TT_UNKNOWN`|The task is unknown.|  
 |`TT_USER`|The interface represents a user task.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

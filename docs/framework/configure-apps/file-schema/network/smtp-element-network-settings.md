@@ -14,14 +14,14 @@ manager: "markl"
 ---
 # &lt;smtp&gt; Element (Network Settings)
 Configures the delivery format, delivery method, and from address for sending emails.  
-  
+
  \<configuration>  
 \<system.net>  
 \<mailSettings>  
 \<smtp>  
-  
+
 ## Syntax  
-  
+
 ```xml  
       <smtp  
         deliveryFormat="format"   
@@ -31,34 +31,37 @@ Configures the delivery format, delivery method, and from address for sending em
           <network> … </network>  
       </smtp>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`deliveryFormat`|Specifies the delivery format for outgoing emails. Acceptable values are SevenBit and International.|  
 |`deliveryMethod`|Specifies the delivery method for emails. Acceptable values are Network, PickupDirectoryFromIis, and SpecifiedPickupDirectory.|  
 |`from`|Specifies the from address for outgoing emails.|  
-  
+
 ### Child Elements  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`specifiedPickupDirectory`|Configures the local directory for a Simple Mail Transport Protocol (SMTP) server.|  
 |`network`|Configures the network options for an external SMTP server.|  
-  
+
 ### Parent Elements  
-  
+
+
 |**Element**|**Description**|  
 |-----------------|---------------------|  
 |[\<mailSettings> Element (Network Settings)](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Configures mail sending options.|  
-  
+
 ## Example  
  The following example specifies the appropriate SMTP parameters to send email using the default network credentials.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -74,7 +77,7 @@ Configures the delivery format, delivery method, and from address for sending em
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>  
  <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>  

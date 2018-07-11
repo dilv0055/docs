@@ -15,26 +15,26 @@ The .NET Framework provides implementations of many standard cryptographic algor
 ## Object Inheritance  
  The .NET Framework security system implements an extensible pattern of derived class inheritance. The hierarchy is as follows:  
   
--   Algorithm type class, such as <xref:System.Security.Cryptography.SymmetricAlgorithm>,  <xref:System.Security.Cryptography.AsymmetricAlgorithm> or <xref:System.Security.Cryptography.HashAlgorithm>. This level is abstract.  
+- Algorithm type class, such as <xref:System.Security.Cryptography.SymmetricAlgorithm>,  <xref:System.Security.Cryptography.AsymmetricAlgorithm> or <xref:System.Security.Cryptography.HashAlgorithm>. This level is abstract.  
   
--   Algorithm class that inherits from an algorithm type class; for example, <xref:System.Security.Cryptography.Aes>, <xref:System.Security.Cryptography.RC2>, or <xref:System.Security.Cryptography.ECDiffieHellman>. This level is abstract.  
+- Algorithm class that inherits from an algorithm type class; for example, <xref:System.Security.Cryptography.Aes>, <xref:System.Security.Cryptography.RC2>, or <xref:System.Security.Cryptography.ECDiffieHellman>. This level is abstract.  
   
--   Implementation of an algorithm class that inherits from an algorithm class; for example, <xref:System.Security.Cryptography.AesManaged>, <xref:System.Security.Cryptography.RC2CryptoServiceProvider>, or <xref:System.Security.Cryptography.ECDiffieHellmanCng>. This level is fully implemented.  
+- Implementation of an algorithm class that inherits from an algorithm class; for example, <xref:System.Security.Cryptography.AesManaged>, <xref:System.Security.Cryptography.RC2CryptoServiceProvider>, or <xref:System.Security.Cryptography.ECDiffieHellmanCng>. This level is fully implemented.  
   
  Using this pattern of derived classes, it is easy to add a new algorithm or a new implementation of an existing algorithm. For example, to create a new public-key algorithm, you would inherit from the <xref:System.Security.Cryptography.AsymmetricAlgorithm> class. To create a new implementation of a specific algorithm, you would create a non-abstract derived class of that algorithm.  
   
 ## How Algorithms Are Implemented in the .NET Framework  
  As an example of the different implementations available for an algorithm, consider symmetric algorithms. The base for all symmetric algorithms is <xref:System.Security.Cryptography.SymmetricAlgorithm>, which is inherited by the following algorithms:  
   
-1.  <xref:System.Security.Cryptography.Aes>  
+1. <xref:System.Security.Cryptography.Aes>  
   
-2.  <xref:System.Security.Cryptography.DES>  
+2. <xref:System.Security.Cryptography.DES>  
   
-3.  <xref:System.Security.Cryptography.RC2>  
+3. <xref:System.Security.Cryptography.RC2>  
   
-4.  <xref:System.Security.Cryptography.Rijndael>  
+4. <xref:System.Security.Cryptography.Rijndael>  
   
-5.  <xref:System.Security.Cryptography.TripleDES>  
+5. <xref:System.Security.Cryptography.TripleDES>  
   
  <xref:System.Security.Cryptography.Aes> is inherited by two classes: <xref:System.Security.Cryptography.AesCryptoServiceProvider> and <xref:System.Security.Cryptography.AesManaged>. The <xref:System.Security.Cryptography.AesCryptoServiceProvider> class is a wrapper around the Windows Cryptography API (CAPI) implementation of Aes, whereas the <xref:System.Security.Cryptography.AesManaged> class is written entirely in managed code. There is also a third type of implementation, Cryptography Next Generation (CNG), in addition to the managed and CAPI implementations. An example of a CNG algorithm is <xref:System.Security.Cryptography.ECDiffieHellmanCng>. CNG algorithms are available on Windows Vista and later.  
   
@@ -51,35 +51,35 @@ The .NET Framework provides implementations of many standard cryptographic algor
   
  Here is a list of recommended algorithms by application:  
   
--   Data privacy:  
+- Data privacy:  
   
-    -   <xref:System.Security.Cryptography.Aes>  
+  - <xref:System.Security.Cryptography.Aes>  
   
--   Data integrity:  
+- Data integrity:  
   
-    -   <xref:System.Security.Cryptography.HMACSHA256>  
+  - <xref:System.Security.Cryptography.HMACSHA256>  
   
-    -   <xref:System.Security.Cryptography.HMACSHA512>  
+  - <xref:System.Security.Cryptography.HMACSHA512>  
   
--   Digital signature:  
+- Digital signature:  
   
-    -   <xref:System.Security.Cryptography.ECDsa>  
+  - <xref:System.Security.Cryptography.ECDsa>  
   
-    -   <xref:System.Security.Cryptography.RSA>  
+  - <xref:System.Security.Cryptography.RSA>  
   
--   Key exchange:  
+- Key exchange:  
   
-    -   <xref:System.Security.Cryptography.ECDiffieHellman>  
+  - <xref:System.Security.Cryptography.ECDiffieHellman>  
   
-    -   <xref:System.Security.Cryptography.RSA>  
+  - <xref:System.Security.Cryptography.RSA>  
   
--   Random number generation:  
+- Random number generation:  
   
-    -   <xref:System.Security.Cryptography.RNGCryptoServiceProvider>  
+  - <xref:System.Security.Cryptography.RNGCryptoServiceProvider>  
   
--   Generating a key from a password:  
+- Generating a key from a password:  
   
-    -   <xref:System.Security.Cryptography.Rfc2898DeriveBytes>  
+  - <xref:System.Security.Cryptography.Rfc2898DeriveBytes>  
   
 ## See Also  
  [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)  

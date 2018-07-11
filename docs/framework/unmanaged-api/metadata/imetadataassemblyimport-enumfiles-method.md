@@ -20,9 +20,9 @@ ms.author: "mairaw"
 ---
 # IMetaDataAssemblyImport::EnumFiles Method
 Enumerates the files referenced in the current assembly manifest.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT EnumFiles (  
     [in, out] HCORENUM    *phEnum,   
@@ -31,35 +31,36 @@ HRESULT EnumFiles (
     [out] ULONG           *pcTokens  
 );  
 ```  
-  
+
 #### Parameters  
  `phEnum`  
  [in, out] A pointer to the enumerator. This must be a null value for the first call of this method.  
-  
+
  `rFiles`  
  [out] The array used to store the `mdFile` metadata tokens.  
-  
+
  `cMax`  
  [in] The maximum number of `mdFile` tokens that can be placed in `rFiles`.  
-  
+
  `pcTokens`  
  [out] The number of `mdFile` tokens actually placed in `rFiles`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumFiles` returned successfully.|  
 |`S_FALSE`|There are no tokens to enumerate. In this case, `pcTokens` is set to zero.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [IMetaDataAssemblyImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

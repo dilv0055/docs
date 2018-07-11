@@ -15,55 +15,58 @@ ms.author: "ronpet"
 ---
 # &lt;publisherPolicy&gt; Element
 Specifies whether the runtime applies publisher policy.  
-  
+
  \<configuration>  
 \<runtime>  
 \<assemblyBinding>  
 \<dependentAssembly>  
 \<publisherPolicy>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <publisherPolicy apply="yes|no"/>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`apply`|Specifies whether to apply publisher policy.|  
-  
+
 ## apply Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |`yes`|Applies publisher policy. This is the default setting.|  
 |`no`|Does not apply publisher policy.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`runtime`|Contains information about assembly binding and garbage collection.|  
-  
+
 ## Remarks  
  When a component vendor releases a new version of an assembly, the vendor can include a publisher policy so applications that use the old version now use the new version. To specify whether to apply publisher policy for a particular assembly, put the **\<publisherPolicy>** element in the **\<dependentAssembly>** element.  
-  
+
  The default setting for the **apply** attribute is **yes**. Setting the **apply** attribute to **no** overrides any previous **yes** settings for an assembly.  
-  
+
  Permission is required for an application to explicitly ignore publisher policy using the [\<publisherPolicy apply="no"/>](../../../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md) element in the application configuration file. The permission is granted by setting the <xref:System.Security.Permissions.SecurityPermissionFlag> flag on the <xref:System.Security.Permissions.SecurityPermission>. For more information, see [Assembly Binding Redirection Security Permission](../../../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md).  
-  
+
 ## Example  
  The following example turns off publisher policy for the assembly, `myAssembly`.  
-  
+
 ```xml  
 <configuration>  
    <runtime>  
@@ -78,7 +81,7 @@ Specifies whether the runtime applies publisher policy.
    </runtime>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  

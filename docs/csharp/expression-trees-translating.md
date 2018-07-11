@@ -4,7 +4,6 @@ description: Learn how to visit each node in an expression tree while building a
 ms.date: 06/20/2016
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
 ---
-
 # Translating Expression Trees
 
 [Previous -- Building Expressions](expression-trees-building.md)

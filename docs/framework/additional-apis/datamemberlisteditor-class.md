@@ -15,13 +15,12 @@ topic_type:
 author: "mairaw"
 ms.author: "mairaw"
 ---
-
 # DataMemberListEditor Class
 
 Provides a drop-down user interface for editing properties of data-bound objects (objects that have non-null `DataSource` property) by listing all properties of the `DataSource` object to select the value source from.  
-  
+
 ## Syntax
-  
+
 ```csharp  
 internal class DataMemberListEditor : UITypeEditor
 ```
@@ -30,15 +29,15 @@ internal class DataMemberListEditor : UITypeEditor
 > The `DataMemberListEditor` class is internal and not meant to be used directly in your code.
 > 
 > Microsoft does not support the use of this class in a production application under any circumstance.
-  
+
 ## Requirements
 
 **Namespace:** <xref:System.Windows.Forms.Design?displayProperty=nameWithType>  
-  
+
 **Assembly:** System.Design (in System.Design.dll)  
-  
+
 **.NET Framework versions:** Available since 2.0.  
-  
+
 ## See also
 
 <xref:System.Windows.Forms.Design?displayProperty=nameWithType>

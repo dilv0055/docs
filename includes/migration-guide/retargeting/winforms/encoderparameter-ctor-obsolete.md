@@ -1,5 +1,6 @@
 ### EncoderParameter ctor is obsolete
 
+
 |   |   |
 |---|---|
 |Details|The <xref:System.Drawing.Imaging.EncoderParameter.%23ctor(System.Drawing.Imaging.Encoder,System.Int32,System.Int32,System.Int32,System.Int32)> constructor is obsolete now and will introduce build warnings if used.|

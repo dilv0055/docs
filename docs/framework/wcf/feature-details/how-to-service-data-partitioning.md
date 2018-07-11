@@ -15,82 +15,82 @@ This topic outlines the basic steps required to partition messages across multip
   
 ### Implement Service Data Partitioning  
   
-1.  Create the basic Routing Service configuration by specifying the service endpoints exposed by the service. The following example defines two endpoints, which will be used to receive messages. It also defines the client endpoints, which are used to send messages to the regularCalc service instances.  
+1. Create the basic Routing Service configuration by specifying the service endpoints exposed by the service. The following example defines two endpoints, which will be used to receive messages. It also defines the client endpoints, which are used to send messages to the regularCalc service instances.  
   
-    ```xml  
-    <services>  
-      <service behaviorConfiguration="routingConfiguration"  
-               name="System.ServiceModel.Routing.RoutingService">  
-        <host>  
-          <baseAddresses>  
-            <add baseAddress="http://localhost/routingservice/router" />  
-          </baseAddresses>  
-        </host>  
-        <!--Set up the inbound endpoints for the Routing Service-->  
-        <!--create the endpoints for the calculator service-->  
-        <endpoint address="calculator1"  
-                  binding="wsHttpBinding"  
-                  name="calculator1Endpoint"  
-                  contract="System.ServiceModel.Routing.IRequestReplyRouter" />  
-        <endpoint address="calculator2"  
-                  binding="wsHttpBinding"  
-                  name="calculator2Endpoint"  
-                  contract="System.ServiceModel.Routing.IRequestReplyRouter" />  
-       </service>  
-    </services>  
-    <client>  
-    <!--set up the destination endpoints-->  
-        <endpoint name="CalcEndpoint1"  
-                  address="net.tcp://localhost:9090/servicemodelsamples/service/"  
-                  binding="netTcpBinding"  
-                  contract="*" />  
+   ```xml  
+   <services>  
+     <service behaviorConfiguration="routingConfiguration"  
+              name="System.ServiceModel.Routing.RoutingService">  
+       <host>  
+         <baseAddresses>  
+           <add baseAddress="http://localhost/routingservice/router" />  
+         </baseAddresses>  
+       </host>  
+       <!--Set up the inbound endpoints for the Routing Service-->  
+       <!--create the endpoints for the calculator service-->  
+       <endpoint address="calculator1"  
+                 binding="wsHttpBinding"  
+                 name="calculator1Endpoint"  
+                 contract="System.ServiceModel.Routing.IRequestReplyRouter" />  
+       <endpoint address="calculator2"  
+                 binding="wsHttpBinding"  
+                 name="calculator2Endpoint"  
+                 contract="System.ServiceModel.Routing.IRequestReplyRouter" />  
+      </service>  
+   </services>  
+   <client>  
+   <!--set up the destination endpoints-->  
+       <endpoint name="CalcEndpoint1"  
+                 address="net.tcp://localhost:9090/servicemodelsamples/service/"  
+                 binding="netTcpBinding"  
+                 contract="*" />  
   
-        <endpoint name="CalcEndpoint2"  
-                  address="net.tcp://localhost:8080/servicemodelsamples/service/"  
-                  binding="netTcpBinding"  
-                  contract="*" />  
-     </client>  
-    ```  
+       <endpoint name="CalcEndpoint2"  
+                 address="net.tcp://localhost:8080/servicemodelsamples/service/"  
+                 binding="netTcpBinding"  
+                 contract="*" />  
+    </client>  
+   ```  
   
-2.  Define the filters used to route messages to the destination endpoints.  For this example, the EndpointName filter is used to determine which service endpoint received the message. The following example defines the necessary routing section and filters.  
+2. Define the filters used to route messages to the destination endpoints.  For this example, the EndpointName filter is used to determine which service endpoint received the message. The following example defines the necessary routing section and filters.  
   
-    ```xml  
-    <filters>  
-      <!--define the different message filters-->  
-      <!--define endpoint name filters looking for messages that show up on the virtual endpoints-->  
-      <filter name="HighPriority" filterType="EndpointName"  
-              filterData="calculator1Endpoint"/>  
-      <filter name="NormalPriority" filterType="EndpointName"  
-              filterData="calculator2Endpoint"/>  
-    </filters>  
-    ```  
+   ```xml  
+   <filters>  
+     <!--define the different message filters-->  
+     <!--define endpoint name filters looking for messages that show up on the virtual endpoints-->  
+     <filter name="HighPriority" filterType="EndpointName"  
+             filterData="calculator1Endpoint"/>  
+     <filter name="NormalPriority" filterType="EndpointName"  
+             filterData="calculator2Endpoint"/>  
+   </filters>  
+   ```  
   
-3.  Define the filter table, which associates each filter with a client endpoint. In this example, the message will be routed based on the specific endpoint it was received over. Since the message can only match one of the two possible filters, there is no need for using filter priority to control to the order in which filters are evaluated.  
+3. Define the filter table, which associates each filter with a client endpoint. In this example, the message will be routed based on the specific endpoint it was received over. Since the message can only match one of the two possible filters, there is no need for using filter priority to control to the order in which filters are evaluated.  
   
-     The following defines the filter table and adds the filters defined earlier.  
+    The following defines the filter table and adds the filters defined earlier.  
   
-    ```xml  
-    <filterTables>  
-       <filterTable name="filterTable1">  
-         <!--add the filters to the message filter table-->  
-         <add filterName="HighPriority" endpointName="CalcEndpoint1"/>  
-         <add filterName="NormalPriority" endpointName="CalcEndpoint2"/>  
-       </filterTable>  
-    </filterTables>  
-    ```  
+   ```xml  
+   <filterTables>  
+      <filterTable name="filterTable1">  
+        <!--add the filters to the message filter table-->  
+        <add filterName="HighPriority" endpointName="CalcEndpoint1"/>  
+        <add filterName="NormalPriority" endpointName="CalcEndpoint2"/>  
+      </filterTable>  
+   </filterTables>  
+   ```  
   
-4.  To evaluate incoming messages against the filters contained in the table, you must associate the filter table with the service endpoints by using the routing behavior. The following example demonstrates associating "filterTable1" with the service endpoints:  
+4. To evaluate incoming messages against the filters contained in the table, you must associate the filter table with the service endpoints by using the routing behavior. The following example demonstrates associating "filterTable1" with the service endpoints:  
   
-    ```xml  
-    <behaviors>  
-      <!--default routing service behavior definition-->  
-      <serviceBehaviors>  
-        <behavior name="routingConfiguration">  
-          <routing filterTableName="filterTable1" />  
-        </behavior>  
-      </serviceBehaviors>  
-    </behaviors>  
-    ```  
+   ```xml  
+   <behaviors>  
+     <!--default routing service behavior definition-->  
+     <serviceBehaviors>  
+       <behavior name="routingConfiguration">  
+         <routing filterTableName="filterTable1" />  
+       </behavior>  
+     </serviceBehaviors>  
+   </behaviors>  
+   ```  
   
 ## Example  
  The following is a complete listing of the configuration file.  

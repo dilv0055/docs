@@ -8,19 +8,19 @@ The <xref:System.Activities.Statements.Interop> activity allows you to run a .NE
   
 ## To use this sample  
   
-1.  Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the SimpleInterop.sln solution file.  
+1. Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the SimpleInterop.sln solution file.  
   
-2.  To build the solution, press CTRL+SHIFT+B.  
+2. To build the solution, press CTRL+SHIFT+B.  
   
-3.  To run the solution, press CTRL+F5.  
+3. To run the solution, press CTRL+F5.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Migration\SimpleInterop`  
   
 ## See Also

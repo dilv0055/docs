@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # ASSEMBLYMETADATA Structure
 Contains information about the referenced assembly, including its version and its level of support for locales, processors, and operating systems.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct {  
     USHORT  usMajorVersion;  
@@ -36,9 +36,10 @@ typedef struct {
     ULONG   ulOS;  
 } ASSEMBLYMETADATA;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`usMajorVersion`|The major version number of the referenced assembly. This value cannot be zero. If all the bits of `usMajorVersion` are set, the major version is not specified.|  
@@ -51,16 +52,16 @@ typedef struct {
 |`ulProcessor`|The length of the `rdwProcessor` array.|  
 |`rOS`|An array of [OSINFO](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md) instances specifying the operating systems that are supported by the referenced assembly. A NULL value indicates operating-system independence.|  
 |`ulOS`|The length of the `rOS` array.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Structures](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
  [IMetaDataAssemblyEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)  

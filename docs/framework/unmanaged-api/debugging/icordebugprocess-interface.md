@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugProcess Interface1
 Represents a process that is executing managed code. This interface is a subclass of ICorDebugController.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[ClearCurrentException Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-clearcurrentexception-method.md)|Clears the current unmanaged exception on the given thread.|  
@@ -41,21 +42,21 @@ Represents a process that is executing managed code. This interface is a subclas
 |[SetThreadContext Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-setthreadcontext-method.md)|Sets the context for the given thread.|  
 |[ThreadForFiberCookie Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-threadforfibercookie-method.md)|Deprecated.|  
 |[WriteMemory Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-writememory-method.md)|Writes data to an area of memory in the process.|  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

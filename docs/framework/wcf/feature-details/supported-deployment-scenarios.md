@@ -9,9 +9,9 @@ The subset of Windows Communication Foundation (WCF) features supported for use 
 ## Minimum Permission Requirements  
  WCF supports a subset of features in applications running under either of the following standard named permission sets:  
   
--   Medium Trust permissions  
+- Medium Trust permissions  
   
--   Internet Zone permissions  
+- Internet Zone permissions  
   
  Attempting to use WCF in partially trusted applications with more restrictive permissions may result in security exceptions at runtime.  
   

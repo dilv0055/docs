@@ -1,5 +1,6 @@
 ### Accessibility improvements in Windows Forms controls for .NET 4.7.2
 
+
 |   |   |
 |---|---|
 |Details|Windows Forms Framework is improving how it works with accessibility technologies to better support Windows Forms customers. These include the following changes:<ul><li>Changes to improve display during High Contrast mode.</li><li>Changes to improve the keyboard navigation in the DataGridView and MenuStrip controls.</li><li>Changes to interaction with Narrator.</li></ul>|

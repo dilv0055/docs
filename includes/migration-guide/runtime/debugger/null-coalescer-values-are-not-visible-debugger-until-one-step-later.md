@@ -1,5 +1,6 @@
 ### Null coalescer values are not visible in debugger until one step later
 
+
 |   |   |
 |---|---|
 |Details|A bug in the .NET Framework 4.5 causes values set via a null coalescing operation to not be visible in the debugger immediately after the assignment operation is executed when running on the 64-bit version of the Framework.|

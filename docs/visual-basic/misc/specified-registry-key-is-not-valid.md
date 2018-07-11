@@ -8,7 +8,7 @@ A registry key specified with a path contains two or more consecutive backslashe
   
 ## To correct this error  
   
--   Examine the registry key being specified to determine where and why the extra backslashes are being inserted.  
+- Examine the registry key being specified to determine where and why the extra backslashes are being inserted.  
   
 ## See Also  
  [How to: Parse File Paths](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  

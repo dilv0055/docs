@@ -7,41 +7,43 @@ manager: "mbaldwin"
 ---
 # &lt;secureConversationAuthentication&gt; of &lt;serviceCredential&gt;
 Specifies the settings for a secure conversation service.  
-  
+
  \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
 \<behavior>  
 \<serviceCredentials>  
 \<secureConversationAuthentication>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <secureConversationAuthentication securityStateEncoderType="String" />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`securityStateEncoderType`|A string that specifies the type of <xref:System.ServiceModel.Security.SecurityStateEncoder> to be used.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<serviceCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Specifies the credential to be used in authenticating the service, and the client credential validation-related settings.|  
-  
+
 ## Remarks  
  Use this configuration element to specify a list of known claim types for the Security Context Token (SCT) cookies serialization, as well as an encoder to encode and secure cookies information. For more information on SCT, see <xref:System.ServiceModel.Security.SecureConversationServiceCredential>.  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.SecureConversationServiceElement>  
  <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.SecureConversationAuthentication%2A>  

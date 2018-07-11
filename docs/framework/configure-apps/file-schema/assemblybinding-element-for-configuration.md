@@ -11,7 +11,6 @@ author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
 ---
-
 # \<assemblyBinding> element for \<configuration>
 
 Specifies assembly binding policy at the configuration level.
@@ -29,17 +28,20 @@ Specifies assembly binding policy at the configuration level.
 
 ## Attribute
 
+
 |           | Description |
 | --------- | ----------- |
 | **xmlns** | Required attribute.<br><br>Specifies the XML namespace required for assembly binding. Use the string "urn:schemas-microsoft-com:asm.v1" as the value. |
 
 ## Parent element
 
+
 |     | Description |
 | --- | ----------- |
 | [**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) | The root element in every configuration file used by the common language runtime and .NET Framework applications. |
 
 ## Child element
+
 
 |     | Description |
 | --- | ----------- |

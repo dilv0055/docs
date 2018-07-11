@@ -9,7 +9,8 @@ ms.assetid: 6b0cbb88-6593-43b8-8a40-a61563bc0ce9
 ---
 # Input and Output Summary (Visual Basic)
 Visual Basic language keywords and run-time library members are organized by purpose and use.  
-  
+
+
 |Action|Language element|  
 |------------|----------------------|  
 |Access or create a file.|<xref:Microsoft.VisualBasic.FileSystem.FileOpen%2A>|  
@@ -24,7 +25,7 @@ Visual Basic language keywords and run-time library members are organized by pur
 |Set or get file attributes.|<xref:Microsoft.VisualBasic.FileSystem.FileAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.GetAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.SetAttr%2A>|  
 |Set read-write position in a file.|<xref:Microsoft.VisualBasic.FileSystem.Seek%2A>|  
 |Write to a file.|<xref:Microsoft.VisualBasic.FileSystem.FilePut%2A>, <xref:Microsoft.VisualBasic.FileSystem.FilePutObject%2A>, <xref:Microsoft.VisualBasic.FileSystem.Print%2A>, <xref:Microsoft.VisualBasic.FileSystem.Write%2A>, <xref:Microsoft.VisualBasic.FileSystem.WriteLine%2A>|  
-  
+
 ## See Also  
  [Keywords](../../../visual-basic/language-reference/keywords/index.md)  
  [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)

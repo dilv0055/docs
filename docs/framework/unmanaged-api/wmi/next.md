@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Retrieves the next property in an enumeration that begins with a call to [BeginEnumeration](beginenumeration.md).  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT Next (
    [in] int               vFunc, 
@@ -63,6 +63,7 @@ HRESULT Next (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | There has been a general failure. |
@@ -72,7 +73,7 @@ The following values returned by this function are defined in the *WbemCli.h* he
 | `WBEM_E_TRANSPORT_FAILURE` | 0x80041015 | The remote procedure call betweeen the current process and Windows Management failed. |
 | `WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
 | `WBEM_S_NO_MORE_DATA` | 0x40005 | There are no more properties in the enumeration. |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::Next](https://msdn.microsoft.com/library/aa391453(v=vs.85).aspx) method.
@@ -83,6 +84,7 @@ If the underlying type of the property is an object path, a date or time, or ano
 
 If `plFlavor` is not `null`, the `LONG` value receives information about the origin of the property, as follows:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | The property is a standard system property. |
@@ -91,10 +93,10 @@ If `plFlavor` is not `null`, the `LONG` value receives information about the ori
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

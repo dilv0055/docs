@@ -8,9 +8,9 @@ An operation was attempted requiring that a filename be supplied, but the suppli
   
 ## To correct this error  
   
--   Check the file path you supplied to ensure it is correct.  
+- Check the file path you supplied to ensure it is correct.  
   
--   Remove the extraneous character.  
+- Remove the extraneous character.  
   
 ## See Also  
  [How to: Parse File Paths](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  

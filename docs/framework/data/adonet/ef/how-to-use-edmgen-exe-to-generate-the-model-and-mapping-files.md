@@ -6,15 +6,15 @@ ms.assetid: 40db462d-2fd2-4cc1-ad86-d280403e63fa
 # How to: Use EdmGen.exe to Generate the Model and Mapping Files
 This topic shows how to use the EDM Generator (EdmGen.exe) tool to generate the following files based on the School database:  
   
--   A conceptual model (a .csdl file).  
+- A conceptual model (a .csdl file).  
   
--   A storage model (a .ssdl file).  
+- A storage model (a .ssdl file).  
   
--   Mapping between the conceptual and storage models (a .msl file).  
+- Mapping between the conceptual and storage models (a .msl file).  
   
--   Object-layer code in Visual Basic or C#.  
+- Object-layer code in Visual Basic or C#.  
   
--   View files.  
+- View files.  
   
  The EdmGen.exe tool uses /mode:FullGeneration to generate the files listed above. For more information about EdmGen.exe commands, see [EDM Generator (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md).  
   
@@ -25,27 +25,27 @@ This topic shows how to use the EDM Generator (EdmGen.exe) tool to generate the 
   
 ### To generate the School model for a Visual Basic project using EdmGen.exe  
   
-1.  Create the School database. For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).  
+1. Create the School database. For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).  
   
-2.  At the command prompt, execute the following command without line breaks:  
+2. At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
-    /c:"Data Source=%datasourceserver%; Initial Catalog=School; Integrated Security=SSPI"   
-    /project:School /entitycontainer:SchoolEntities /namespace:SchoolModel /language:VB  
-    ```  
+   ```  
+   "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
+   /c:"Data Source=%datasourceserver%; Initial Catalog=School; Integrated Security=SSPI"   
+   /project:School /entitycontainer:SchoolEntities /namespace:SchoolModel /language:VB  
+   ```  
   
 ### To generate the School model for a C# project using EdmGen.exe  
   
-1.  Create the School database. For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).  
+1. Create the School database. For more information, see [Creating the School Sample Database](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0).  
   
-2.  At the command prompt, execute the following command without line breaks:  
+2. At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
-    /c:"Data Source=%datasourceserver%; Initial Catalog=School; Integrated Security=SSPI"   
-    /project:School /entitycontainer:SchoolEntities /namespace:SchoolModel /language:CSharp  
-    ```  
+   ```  
+   "%windir%\Microsoft.NET\Framework\v4.0.30319\edmgen.exe" /mode:fullgeneration   
+   /c:"Data Source=%datasourceserver%; Initial Catalog=School; Integrated Security=SSPI"   
+   /project:School /entitycontainer:SchoolEntities /namespace:SchoolModel /language:CSharp  
+   ```  
   
 ## See Also  
  [Modeling and Mapping](../../../../../docs/framework/data/adonet/ef/modeling-and-mapping.md)  

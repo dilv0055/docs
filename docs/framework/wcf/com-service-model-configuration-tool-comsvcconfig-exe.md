@@ -8,34 +8,36 @@ ms.assetid: 7717c6c2-85fc-418b-a8ed-bad8e61cec5c
 ---
 # COM+ Service Model Configuration Tool (ComSvcConfig.exe)
 The COM+ Service Model Configuration command-line tool (ComSvcConfig.exe) enables you to configure COM+ interfaces to be exposed as Web services.  
-  
+
 ## Syntax  
-  
+
 ```  
 ComSvcConfig.exe /install | /uninstall | /list [/application:<ApplicationID | ApplicationName>] [/contract:<ClassID | ProgID | *,InterfaceID | InterfaceName | *>] [/hosting:<complus | was>] [/webSite:<WebsiteName>] [/webDirectory:<WebDirectoryName>] [/mex] [/id] [/nologo] [/verbose] [/help] [/partial]  
 ```  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  You must be an administrator on the local computer to use ComSvcConfig.exe.  
-  
+
  The tool can be found in the following location  
-  
+
  %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\  
-  
+
  For more information about ComSvcConfig.exe, see [How to: Use the COM+ Service Model Configuration Tool](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md).  
-  
+
  The following table describes the modes that can be used with ComSvcConfig.exe.  
-  
+
+
 |Option|Description|  
 |------------|-----------------|  
 |`install`|Installs a configuration for a COM+ interface for Service Model integration.<br /><br /> Short form `/i`.|  
 |`uninstall`|Uninstalls a configuration for a COM+ interface from Service Model integration.<br /><br /> Short form `/u`.|  
 |`list`|Lists information about COM+ applications and components that have interfaces that are configured for Service Model integration.<br /><br /> Short form `/l`.|  
-  
+
  The following table describes the flags that can be used with ComSvcConfig.exe.  
-  
+
+
 |Option|Description|  
 |------------|-----------------|  
 |`/application:` \<*ApplicationID* &#124; *ApplicationName*\>|Specifies the COM+ application to configure.<br /><br /> Short form `/a`.|  
@@ -49,44 +51,44 @@ ComSvcConfig.exe /install | /uninstall | /list [/application:<ApplicationID | Ap
 |`/verbose`|Outputs all warnings or informational text in addition to any errors encountered.<br /><br /> Short form `/v`.|  
 |`/help`|Displays the usage message.<br /><br /> Short form `/?`.|  
 |`/partial`|Generates a service configuration when the specified interface includes one or more method signatures that can be exposed. At service initialization time, compatible methods appear as operations on the service contract, and non-compatible methods are ignored and absent from the service contract.<br /><br /> If this flag is missing, the tool will not generate a service configuration when the specified interface includes one or more incompatible methods.|  
-  
+
 ## Examples  
-  
+
 ### Description  
  The following example adds the `IFinances` interface of the `ItemOrders.IFinancial` component (from the OnlineStore COM+ application) to the set of interfaces that are exposed as Web services, using the COM+ hosting mode. All warnings will be output in addition to any errors encountered.  
-  
+
 ### Code  
-  
+
 ```  
 ComSvcConfig.exe /install /application:OnlineStore /contract:ItemOrders.Financial,IFinances /hosting:complus /verbose  
 ```  
-  
+
 ### Description  
  The following example adds the `IStockLevels` interface of the `ItemInventory.Warehouse` component (from the OnlineWarehouse COM+ application) to the set of interfaces that are exposed as Web services, using the Web hosting mode. The Web service is Web hosted in the OnlineWarehouse virtual directory of IIS.  
-  
+
 ### Code  
-  
+
 ```  
 ComSvcConfig.exe /install /application:OnlineWarehouse /contract:ItemInventory.Warehouse,IStockLevels /hosting:was /webDirectory:root/OnlineWarehouse  
 ```  
-  
+
 ### Description  
  The following example removes the `IFinances` interface of the `ItemOrders.Financial` component (from the OnlineStore COM+ application) from the set of interfaces that are exposed as Web services.  
-  
+
 ### Code  
-  
+
 ```  
 ComSvcConfig.exe /uninstall /application:OnlineStore /interface:ItemOrders.Financial,IFinances /hosting:complus  
 ```  
-  
+
 ### Description  
  The following example lists currently exposed COM+ hosted interfaces, along with the corresponding address and binding details, for the OnlineStore COM+ application on the local machine.  
-  
+
 ### Code  
-  
+
 ```  
 ComSvcConfig.exe /list /application:OnlineStore /hosting:complus  
 ```  
-  
+
 ## See Also  
  [How to: Use the COM+ Service Model Configuration Tool](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)

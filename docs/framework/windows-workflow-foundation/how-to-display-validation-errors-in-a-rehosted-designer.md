@@ -10,30 +10,30 @@ This topic describes how to retrieve and publish validation errors in a rehosted
   
 ### Implement the IValidationErrorService Interface  
   
-1.  Here is a code sample for a simple implementation that will write out the validation errors to the debug log.  
+1. Here is a code sample for a simple implementation that will write out the validation errors to the debug log.  
   
-    ```  
-    using System.Activities.Presentation.Validation;  
-    using System.Collections.Generic;  
-    using System.Diagnostics;  
-    using System.Linq;  
+   ```  
+   using System.Activities.Presentation.Validation;  
+   using System.Collections.Generic;  
+   using System.Diagnostics;  
+   using System.Linq;  
   
-    namespace VariableFinderShell  
-    {  
-        class DebugValidationErrorService : IValidationErrorService  
-        {  
-            public void ShowValidationErrors(IList<ValidationErrorInfo> errors)  
-            {  
-                errors.ToList().ForEach(vei => Debug.WriteLine(string.Format("Error: {0} ", vei.Message)));  
-            }  
-        }  
-    }  
-    ```  
+   namespace VariableFinderShell  
+   {  
+       class DebugValidationErrorService : IValidationErrorService  
+       {  
+           public void ShowValidationErrors(IList<ValidationErrorInfo> errors)  
+           {  
+               errors.ToList().ForEach(vei => Debug.WriteLine(string.Format("Error: {0} ", vei.Message)));  
+           }  
+       }  
+   }  
+   ```  
   
 ### Publishing to the Editing Context  
   
-1.  Here is the code that will publish this to the editing context.  
+1. Here is the code that will publish this to the editing context.  
   
-    ```  
-    wd.Context.Services.Publish<IValidationErrorService>(new DebugValidationErrorService());  
-    ```
+   ```  
+   wd.Context.Services.Publish<IValidationErrorService>(new DebugValidationErrorService());  
+   ```

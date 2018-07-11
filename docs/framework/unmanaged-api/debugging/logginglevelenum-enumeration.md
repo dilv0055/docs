@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # LoggingLevelEnum Enumeration
 Indicates the severity level of a descriptive message that is written to the event log when a managed thread logs an event.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum LoggingLevelEnum {  
     LTraceLevel0 = 0,  
@@ -39,9 +39,10 @@ typedef enum LoggingLevelEnum {
     LPanicLevel = 100  
 } LoggingLevelEnum;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`LTraceLevel0`|The message is a trace level 0.|  
@@ -57,19 +58,19 @@ typedef enum LoggingLevelEnum {
 |`LWarningLevel`|The message is a warning level.|  
 |`LErrorLevel`|The message is an error level.|  
 |`LPanicLevel`|The message is a panic level.|  
-  
+
 ## Remarks  
  The common language runtime (CLR) calls the [ICorDebugManagedCallback::LogMessage](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logmessage-method.md) method to notify the debugger that a managed thread has logged an event. The CLR passes a value of the `LoggingLevelEnum` enumeration to indicate the severity level of the message that the managed thread wrote to the event log.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  <xref:System.Diagnostics.EventLog>  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

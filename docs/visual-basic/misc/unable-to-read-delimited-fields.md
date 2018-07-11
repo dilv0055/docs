@@ -10,7 +10,7 @@ The `TextFieldParser` cannot read from the file because a quotation mark (") has
   
 ## To correct this error  
   
--   Set `EscapeQuotes` to `False`.  
+- Set `EscapeQuotes` to `False`.  
   
 ## See Also  
  [TextFieldParser.SetDelimiters Method](http://msdn.microsoft.com/library/21fa40ec-5866-4d0e-9fd9-c708a190dcc9)  

@@ -3,7 +3,6 @@ title: "Using JSONP"
 ms.date: "03/30/2017"
 ms.assetid: f386718c-b4ba-4931-a610-40c27a46672a
 ---
-
 # Using JSONP
 
 JSON Padding (JSONP) is a mechanism that enables cross-site scripting support in Web browsers. JSONP is designed around the ability of Web browsers to load scripts from a site different from the one the current loaded document was retrieved from. The mechanism works by padding the JSON payload with a user-defined callback function name, as shown in the following example.

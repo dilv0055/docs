@@ -16,21 +16,21 @@ In the [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] running on Windows 8
 ## Mitigation  
  You can disable this change and revert to the previous behavior of clipping a WPF window when it extends beyond a single display. There are two ways to do this:  
   
--   By adding the `<EnableMultiMonitorDisplayClipping>` element to the `<appSettings>` section of your application configuration file, you can disable or enable this behavior on apps running on Windows 8 or later. For example, the following configuration section disables rendering without clipping:  
+- By adding the `<EnableMultiMonitorDisplayClipping>` element to the `<appSettings>` section of your application configuration file, you can disable or enable this behavior on apps running on Windows 8 or later. For example, the following configuration section disables rendering without clipping:  
   
-    ```xml  
-    <appSettings>  
-        <add key="EnableMultiMonitorDisplayClipping" value="true"/>  
-      </appSettings>  
-    ```  
+  ```xml  
+  <appSettings>  
+      <add key="EnableMultiMonitorDisplayClipping" value="true"/>  
+    </appSettings>  
+  ```  
   
-     The `<EnableMultiMonitorDisplayClipping>` configuration setting can have either of two values:  
+   The `<EnableMultiMonitorDisplayClipping>` configuration setting can have either of two values:  
   
-    -   `true`, to enable clipping of windows to monitor bounds during rendering.  
+  - `true`, to enable clipping of windows to monitor bounds during rendering.  
   
-    -   `false`, to disable clipping of windows to monitor bounds during rendering.  
+  - `false`, to disable clipping of windows to monitor bounds during rendering.  
   
--   By setting the <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> property to `true` at app startup.  
+- By setting the <xref:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping%2A> property to `true` at app startup.  
   
 ## See Also  
  [Runtime Changes](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)

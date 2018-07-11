@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorTokenType Enumeration
 Indicates the type of a metadata token.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorTokenType {  
-  
+
     mdtModule                       = 0x00000000,  
     mdtTypeRef                      = 0x01000000,  
     mdtTypeDef                      = 0x02000000,  
@@ -51,12 +51,13 @@ typedef enum CorTokenType {
     mdtString                       = 0x70000000,  
     mdtName                         = 0x71000000,  
     mdtBaseType                     = 0x72000000  
-  
+
 } CorTokenType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`mdtModule`|An `mdModule` token.|  
@@ -85,16 +86,16 @@ typedef enum CorTokenType {
 |`mdtString`|An `mdString` token.|  
 |`mdtName`|An `mdName` token.|  
 |`mdtBaseType`|Not used.|  
-  
+
 ## Remarks  
  Each value is equal to the value of the top byte in the corresponding metadata token.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugProcess5 Interface
 Extends the ICorDebugProcess interface to support access to the managed heap, to provide information about garbage collection of managed objects, and to determine whether a debugger loads images from the application local native image cache.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[EnableNGenPolicy Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-enablengenpolicy-method.md)|Sets a value that determines how an application loads native images while running under a managed debugger.|  
@@ -36,22 +37,22 @@ Extends the ICorDebugProcess interface to support access to the managed heap, to
 |[GetTypeForTypeID Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypefortypeid-method.md)|Gets a type object that provides information about an object based on its type identifiers.|  
 |[GetTypeID Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypeid-method.md)|Gets the type identifier for the object at a specified address.|  
 |[GetTypeLayout Method](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-gettypelayout-method.md)|Gets information about the layout of an object in memory based on its type identifier.|  
-  
+
 ## Remarks  
  This interface logically extends the ICorDebugProcess, ICorDebugProcess2, and [ICorDebugProcess3](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-interface.md) interfaces.  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either from another machine or from another process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [Debugging](../../../../docs/framework/unmanaged-api/debugging/index.md)

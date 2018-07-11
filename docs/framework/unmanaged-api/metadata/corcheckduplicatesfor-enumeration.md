@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorCheckDuplicatesFor Enumeration
 Specifies the metadata tokens that will be checked for duplicates.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorCheckDuplicatesFor {  
-  
+
     MDDupAll                    = 0xffffffff,  
     MDDupENC                    = MDDupAll,  
     MDNoDupChecks               = 0x00000000,  
@@ -50,18 +50,19 @@ typedef enum CorCheckDuplicatesFor {
     MDDupGenericParam           = 0x00080000,  
     MDDupMethodSpec             = 0x00100000,  
     MDDupGenericParamConstraint = 0x00200000,  
-  
+
     MDDupAssembly               = 0x10000000,  
-  
+
     MDDupDefault =   
         MDNoDupChecks | MDDupTypeRef | MDDupMemberRef |   
         MDDupSignature | MDDupTypeSpec | MDDupMethodSpec  
-  
+
 } CorCheckDuplicatesFor;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`MDDupAll`|Check all metadata tokens for duplicates.|  
@@ -91,13 +92,13 @@ typedef enum CorCheckDuplicatesFor {
 |`MDDupGenericParamConstraint`|Check for duplicates of `mdGenericParamConstraint` tokens.|  
 |`MDDupAssembly`|Check for duplicates of `mdAssembly` tokens.|  
 |`MDDupDefault`|Check for duplicates of `mdMemberRef`, `mdTypeRef`, `mdSignature`, `mdTypeSpec`, and `mdMethodSpec` tokens.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

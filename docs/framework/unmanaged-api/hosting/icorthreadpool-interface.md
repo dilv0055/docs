@@ -19,12 +19,13 @@ ms.author: "ronpet"
 ---
 # ICorThreadpool Interface
 Provides methods for accessing the thread pool.  
-  
+
 > [!NOTE]
 >  This interface is reserved for internal use only.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[CorRegisterWaitForSingleObject Method](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corregisterwaitforsingleobject-method.md)|Reserved for internal use only.|  
@@ -38,15 +39,15 @@ Provides methods for accessing the thread pool.
 |[CorSetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corsetmaxthreads-method.md)|Reserved for internal use only.|  
 |[CorGetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corgetmaxthreads-method.md)|Reserved for internal use only.|  
 |[CorGetAvailableThreads Method](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corgetavailablethreads-method.md)|Reserved for internal use only.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

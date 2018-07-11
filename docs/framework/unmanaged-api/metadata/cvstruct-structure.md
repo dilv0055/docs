@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CVStruct Structure
 Contains information that is used when installing a module or a composite image.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct {  
     short Major;  
@@ -30,24 +30,25 @@ typedef struct {
     short Build;  
 } CVStruct;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |Major|Major version build number.|  
 |Minor|Minor version build number.|  
 |Sub|Sub-build number.|  
 |Build|Build number.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Structures](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)

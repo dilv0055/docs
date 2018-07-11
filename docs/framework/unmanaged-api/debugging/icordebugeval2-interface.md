@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugEval2 Interface1
 Extends "ICorDebugEval" to provide support for generic types.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[CallParameterizedFunction Method](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md)|Sets up a call to the specified "ICorDebugFunction", which can be nested inside a type whose constructor takes type parameters, or can itself take type parameters.|  
@@ -31,20 +32,20 @@ Extends "ICorDebugEval" to provide support for generic types.
 |[NewParameterizedObjectNoConstructor Method](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md)|Instantiates a new parameterized type object of the specified class without attempting to call a constructor method|  
 |[NewStringWithLength Method](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newstringwithlength-method.md)|Creates a new string of the specified length with the specified contents.|  
 |[RudeAbort Method](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-rudeabort-method.md)|Aborts the computation that this `ICorDebugEval2` is currently performing.|  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # ICLRTaskManager::CreateTask Method
 Requests explicitly that the common language runtime (CLR) create a new task.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT CreateTask (  
     [out] ICLRTask **pTask  
 );  
 ```  
-  
+
 #### Parameters  
  `pTask`  
  [out] A pointer to the address of a newly created [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md), or null, if the task could not be created.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|The method returned successfully.|  
@@ -44,24 +45,24 @@ HRESULT CreateTask (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Not enough memory is available to allocate the requested resource.|  
-  
+
 ## Remarks  
  The CLR creates a new task automatically upon initialization, when user code creates a thread by using types in the <xref:System.Threading> namespace, or when the size of the thread pool is increased. It also creates tasks when unmanaged code makes a call to a managed function.  
-  
+
  `CreateTask` allows the host to make an explicit request that the CLR create a new task. For example, the host can invoke this method to preinitialize data structures.  
-  
+
 > [!IMPORTANT]
 >  The new task is returned in a suspended state and remains suspended until the host explicitly calls [IHostTask::Start](../../../../docs/framework/unmanaged-api/hosting/ihosttask-start-method.md).  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  

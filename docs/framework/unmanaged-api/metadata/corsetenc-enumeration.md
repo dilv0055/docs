@@ -19,27 +19,28 @@ ms.author: "mairaw"
 ---
 # CorSetENC Enumeration
 Contains values used to influence behavior during the generation of metadata.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorSetENC {  
-  
+
     MDSetENCOn                  = 0x00000001,  
     MDSetENCOff                 = 0x00000002,  
-  
+
     MDUpdateENC                 = 0x00000001,  
     MDUpdateFull                = 0x00000002,  
     MDUpdateExtension           = 0x00000003,  
     MDUpdateIncremental         = 0x00000004,  
     MDUpdateDelta               = 0x00000005,  
     MDUpdateMask                = 0x00000007  
-  
+
 } CorSetENC;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`MDSetENCOn`|Obsolete.|  
@@ -50,13 +51,13 @@ typedef enum CorSetENC {
 |`MDUpdateIncremental`|Indicates that compilation is incremental.|  
 |`MDUpdateDelta`|Indicates that only changed metadata should be saved.|  
 |`MDUpdateMask`|Includes `MDUpdateENC`, `MDUpdateFull` and `MDUpdateIncremental`.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

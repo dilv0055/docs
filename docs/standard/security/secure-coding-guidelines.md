@@ -75,10 +75,12 @@ The following approach is the most powerful and hence potentially dangerous (if 
 
 ## Related topics
 
-|Title|Description|
-|-----------|-----------------|
-|[Securing State Data](securing-state-data.md)|Describes how to protect private members.|
-|[Security and User Input](security-and-user-input.md)|Describes security concerns for applications that accept user input.|
-|[Security and Race Conditions](security-and-race-conditions.md)|Describes how to avoid race conditions in your code.|
-|[Security and On-the-Fly Code Generation](security-and-on-the-fly-code-generation.md)|Describes security concerns for applications that generate dynamic code.|
-|[Role-Based Security](role-based-security.md)|Describes .NET role-based security in detail and provides instructions for using it in your code.|
+
+|                                         Title                                         |                                            Description                                            |
+|---------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+|                     [Securing State Data](securing-state-data.md)                     |                             Describes how to protect private members.                             |
+|                 [Security and User Input](security-and-user-input.md)                 |               Describes security concerns for applications that accept user input.                |
+|            [Security and Race Conditions](security-and-race-conditions.md)            |                       Describes how to avoid race conditions in your code.                        |
+| [Security and On-the-Fly Code Generation](security-and-on-the-fly-code-generation.md) |             Describes security concerns for applications that generate dynamic code.              |
+|                     [Role-Based Security](role-based-security.md)                     | Describes .NET role-based security in detail and provides instructions for using it in your code. |
+

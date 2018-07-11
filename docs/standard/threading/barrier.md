@@ -33,13 +33,13 @@ A *barrier* is a user-defined synchronization primitive that enables multiple th
 ## Barrier Versus ContinueWhenAll  
  Barriers are especially useful when the threads are performing multiple phases in loops. If your code requires only one or two phases of work, consider whether to use <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> objects with any kind of implicit join, including:  
   
--   <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A>  
+- <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A>  
   
--   <xref:System.Threading.Tasks.Parallel.Invoke%2A>  
+- <xref:System.Threading.Tasks.Parallel.Invoke%2A>  
   
--   <xref:System.Threading.Tasks.Parallel.ForEach%2A>  
+- <xref:System.Threading.Tasks.Parallel.ForEach%2A>  
   
--   <xref:System.Threading.Tasks.Parallel.For%2A>  
+- <xref:System.Threading.Tasks.Parallel.For%2A>  
   
  For more information, see [Chaining Tasks by Using Continuation Tasks](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md).  
   

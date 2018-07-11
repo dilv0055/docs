@@ -20,25 +20,26 @@ ms.author: "ronpet"
 ---
 # ICLRAssemblyIdentityManager::IsStronglyNamed Method
 Gets a value that indicates whether the specified assembly is strongly named.  
-  
+
 ## Syntax  
-  
+
 ```  
 RESULT IsStronglyNamed (  
     [in]  LPCWSTR  pwzAssemblyIdentity,  
     [out] BOOL    *pbIsStronglyNamed  
 );  
 ```  
-  
+
 #### Parameters  
  `pwzAssemblyIdentity`  
  [in] The opaque canonical assembly identity data of the assembly to be evaluated.  
-  
+
  `pbIsStronglyNamed`  
  [out] `true`, if the assembly referenced by the `pwzAssemblyIdentity` parameter is strongly named; otherwise, `false`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|The method returned successfully.|  
@@ -47,15 +48,15 @@ RESULT IsStronglyNamed (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. If a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)

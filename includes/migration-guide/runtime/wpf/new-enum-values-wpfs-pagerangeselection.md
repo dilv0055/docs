@@ -1,5 +1,6 @@
 ### New enum values in WPF's PageRangeSelection
 
+
 |   |   |
 |---|---|
 |Details|Two new members (<xref:System.Windows.Controls.PageRangeSelection.CurrentPage?displayProperty=name> and <xref:System.Windows.Controls.PageRangeSelection.SelectedPages?displayProperty=name>) have been added to the <xref:System.Windows.Controls.PageRangeSelection?displayProperty=name> enum.|

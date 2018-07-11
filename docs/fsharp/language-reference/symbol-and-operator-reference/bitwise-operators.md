@@ -10,6 +10,7 @@ This topic describes bitwise operators that are available in the F# language.
 ## Summary of Bitwise Operators
 The following table describes the bitwise operators that are supported for unboxed integral types in the F# language.
 
+
 |Operator|Notes|
 |--------|-----|
 |`&&&`|Bitwise AND operator. Bits in the result have the value 1 if and only if the corresponding bits in both source operands are 1.|

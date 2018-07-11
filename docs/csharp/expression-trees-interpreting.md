@@ -4,7 +4,6 @@ description: Learn how to write code to examine the structure of an expression t
 ms.date: 06/20/2016
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
 ---
-
 # Interpreting Expressions
 
 [Previous -- Executing Expressions](expression-trees-execution.md)

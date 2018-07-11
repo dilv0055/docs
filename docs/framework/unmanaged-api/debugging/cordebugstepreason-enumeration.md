@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # CorDebugStepReason Enumeration
 Indicates the outcome of an individual step.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugStepReason {  
     STEP_NORMAL,  
@@ -33,9 +33,10 @@ typedef enum CorDebugStepReason {
     STEP_EXIT  
 } CorDebugStepReason;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`STEP_NORMAL`|Stepping completed normally, within the same function.|  
@@ -45,16 +46,16 @@ typedef enum CorDebugStepReason {
 |`STEP_EXCEPTION_HANDLER`|An exception was generated and control was passed to an exception handler.|  
 |`STEP_INTERCEPT`|Control was passed to an interceptor.|  
 |`STEP_EXIT`|The thread exited before the step was completed.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [StepComplete Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-stepcomplete-method.md)  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

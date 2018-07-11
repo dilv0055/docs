@@ -9,6 +9,7 @@ By using Caller Info attributes, you can obtain information about the caller to 
 
 To obtain this information, you use attributes that are applied to optional parameters, each of which has a default value. The following table lists the Caller Info attributes that are defined in the [System.Runtime.CompilerServices](/dotnet/api/system.runtime.compilerservices) namespace:
 
+
 |Attribute|Description|Type|
 |---------|-----------|----|
 |[CallerFilePath](/dotnet/api/system.runtime.compilerservices.callerfilepathattribute)|Full path of the source file that contains the caller. This is the file path at compile time.|`String`
@@ -53,6 +54,7 @@ You can use the [`CallerMemberName`](/dotnet/api/system.runtime.compilerservices
 * Implementing the [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) interface when binding data. This interface allows the property of an object to notify a bound control that the property has changed, so that the control can display the updated information. Without the [`CallerMemberName`](/dotnet/api/system.runtime.compilerservices.callermembernameattribute) attribute, you must specify the property name as a literal.
 
 The following chart shows the member names that are returned when you use the CallerMemberName attribute.
+
 
 |Calls occurs within|Member name result|
 |-------------------|------------------|

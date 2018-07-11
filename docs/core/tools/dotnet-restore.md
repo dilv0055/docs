@@ -15,20 +15,19 @@ ms.date: 05/29/2018
 
 ## Synopsis
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 ```
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--force] [--ignore-failed-sources] [--no-cache]
     [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
 dotnet restore [-h|--help]
 ```
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 ```
 dotnet restore [<ROOT>] [--configfile] [--disable-parallel] [--ignore-failed-sources] [--no-cache]
     [--no-dependencies] [--packages] [-r|--runtime] [-s|--source] [-v|--verbosity]
 dotnet restore [-h|--help]
 ```
----
-
+* * *
 ## Description
 
 The `dotnet restore` command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file. By default, the restoration of dependencies and tools are executed in parallel.
@@ -67,7 +66,7 @@ Optional path to the project file to restore.
 
 ## Options
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 
 `--configfile <FILE>`
 
@@ -113,7 +112,7 @@ Specifies a NuGet package source to use during the restore operation. This setti
 
 Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `--configfile <FILE>`
 
@@ -176,3 +175,4 @@ Restore the dependencies and tools for the project in the current directory usin
 Restore dependencies and tools for the project in the current directory and shows only minimal output:
 
 `dotnet restore --verbosity minimal`
+* * *

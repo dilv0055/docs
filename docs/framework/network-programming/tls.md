@@ -49,7 +49,7 @@ You can ask questions about this document in the GitHub issue [Transport Layer S
 
 ## Audit your code and make code changes
 
-For ASP.NET applications, inspect the `<system.web><httpRuntime targetFramework>` element of _web.config_ to verify you're using the intended version of the .NET Framework.
+For ASP.NET applications, inspect the `<system.web><httpRuntime targetFramework>` element of *web.config* to verify you're using the intended version of the .NET Framework.
 
 For Windows Forms and other applications, see [How to: Target a Version of the .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework).
 
@@ -120,6 +120,7 @@ We recommend you upgrade your app to .NET Framework 4.7 or later versions. If yo
 Set the [SchUseStrongCrypto](#schusestrongcrypto) and [SystemDefaultTlsVersions](#systemdefaulttlsversions) registry keys to 1. See [Configuring security via the Windows Registry](#configuring-security-via-the-windows-registry). The .NET Framework version 3.5 supports the `SchUseStrongCrypto` flag only when an explicit TLS value is passed.
 
 If you are running on .NET Framework 3.5, you need to install a hot patch so that TLS 1.2 can be specified by your program:
+
 
 | [KB3154518](https://support.microsoft.com/kb/3154518) | Reliability Rollup HR-1605 - Support for TLS System Default Versions included in the .NET Framework 3.5.1 on Windows 7 SP1 and Server 2008 R2 SP1 |
 | --- | --- |
@@ -201,7 +202,7 @@ For more info, see [Cumulative Update for Windows 10 Version 1511 and Windows Se
 
 For more information with .NET framework 3.5.1, see [Support for TLS System Default Versions included in .NET Framework 3.5.1 on Windows 7 SP1 and Server 2008 R2 SP1](https://support.microsoft.com/help/3154518/support-for-tls-system-default-versions-included-in-the--net-framework).
 
-The following _.REG_ file sets the registry keys and their variants to their most safe values:
+The following *.REG* file sets the registry keys and their variants to their most safe values:
 
 ```
 Windows Registry Editor Version 5.00
@@ -260,6 +261,7 @@ For your app to negotiate TLS 1.2, the OS and the .NET Framework version both ne
 
 To enable or re-enable TLS 1.2 and/or TLS 1.1 on a system that supports them, see [Transport Layer Security (TLS) registry settings](/windows-server/security/tls/tls-registry-settings).
 
+
 | **OS** | **TLS 1.2 support** |
 | --- | --- |
 | Windows 10</br>Windows Server 2016 | Supported, and enabled by default. |
@@ -274,6 +276,7 @@ For information about which TLS/SSL protocols are enabled by default on each ver
 **Requirements to support TLS 1.2 with .NET Framework 3.5**
 
 This table shows the OS update you'll need to support TLS 1.2 with .NET Framework 3.5. We recommend you apply all OS updates.
+
 
 | **OS** | **Minimum update needed to support TLS 1.2 with .NET Framework 3.5** |
 | --- | --- |

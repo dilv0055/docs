@@ -13,9 +13,9 @@ This topic describes how to call functions that are defined in the conceptual mo
   
 ### To call a function defined in the conceptual model  
   
-1.  Add a common language runtime (CLR) method to your application that maps to the function defined in the conceptual model. To map the method, you must apply an <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> to the method. Note that the <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> and <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parameters of the attribute are the namespace name of the conceptual model and the function name in the conceptual model respectively. Function name resolution for LINQ is case sensitive.  
+1. Add a common language runtime (CLR) method to your application that maps to the function defined in the conceptual model. To map the method, you must apply an <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> to the method. Note that the <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> and <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parameters of the attribute are the namespace name of the conceptual model and the function name in the conceptual model respectively. Function name resolution for LINQ is case sensitive.  
   
-2.  Call the function in a [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] query.  
+2. Call the function in a [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] query.  
   
 ## Example  
  The following example demonstrates how to call a function that is defined in the conceptual model from within a [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] query. The example uses the School model. For information about the School model, see [Creating the School Sample Database](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0) and [Generating the School .edmx File](http://msdn.microsoft.com/library/c48b3907-a8be-4fe6-884c-e95af1852758).  

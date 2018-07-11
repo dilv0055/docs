@@ -5,18 +5,19 @@ ms.assetid: 451192e0-e21a-44c9-b528-8cb984454b34
 ---
 # 4025 - OpenListenerChannelInstanceFailed
 ## Properties  
-  
+
+
 |||  
 |-|-|  
 |ID|4025|  
 |Keywords|ActivationServices|  
 |Level|Error|  
 |Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
-  
+
 ## Description  
  This event is emitted when the opening of listener channel instance has failed.  
-  
+
 ## Message  
  Error Code:%1  
-  
+
 ## Details

@@ -10,7 +10,6 @@ helpviewer_keywords:
   - "sessions [WCF]"
 ms.assetid: 143951b3-3aa0-4540-b4b7-d33e77e874a1
 ---
-
 # Reliable Sessions
 
 This section describes what a Windows Communication Foundation (WCF) reliable session is, what it's used for, how and when to use one, what binding configurations support it, and pointers on best practices. The following table summarizes details about the essential points and related topics in this section.

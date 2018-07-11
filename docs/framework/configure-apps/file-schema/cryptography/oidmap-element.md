@@ -14,42 +14,44 @@ manager: "markl"
 ---
 # &lt;oidMap&gt; Element
 Contains ASN.1 object identifier (OID) mappings to classes.  
-  
+
  \<configuration>  
 \<mscorlib>  
 \<cryptographySettings>  
 \<oidMap>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <oidMap>   
 </oidMap>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<oidEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)|Maps an ASN.1 OID to a friendly name.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`cryptographySettings`|Contains cryptography settings.|  
 |`mscorlib`|Contains the `cryptographySettings` element.|  
-  
+
 ## Example  
  The following example shows how to use the **\<oidMap>** element to contain a mapping of an OID for the RIPEMD-160 hash algorithm to an implementation of that hash algorithm.  
-  
+
 ```xml  
 <configuration>  
    <mscorlib>  
@@ -69,7 +71,7 @@ Contains ASN.1 object identifier (OID) mappings to classes.
    </mscorlib>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Cryptography Settings Schema](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  

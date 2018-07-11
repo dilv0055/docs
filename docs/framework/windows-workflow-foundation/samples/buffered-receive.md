@@ -11,11 +11,11 @@ This sample demonstrates how to set up and configure the buffered receive featur
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\BufferedReceive`  
   
 ## Discussion  
@@ -41,63 +41,63 @@ This sample demonstrates how to set up and configure the buffered receive featur
   
  This sample requires that the following Windows components are enabled:  
   
-1.  [!INCLUDE[iis60](../../../../includes/iis60-md.md)]  
+1. [!INCLUDE[iis60](../../../../includes/iis60-md.md)]  
   
-2.  [!INCLUDE[iis60](../../../../includes/iis60-md.md)] Management Compatibility, Metabase, and Configuration Compatibility  
+2. [!INCLUDE[iis60](../../../../includes/iis60-md.md)] Management Compatibility, Metabase, and Configuration Compatibility  
   
-3.  World Wide Web Services, Application Development Features, and ASP.NET  
+3. World Wide Web Services, Application Development Features, and ASP.NET  
   
-4.  Microsoft Message Queues (MSMQ) Server  
+4. Microsoft Message Queues (MSMQ) Server  
   
 #### To set up, and build the sample  
   
-1.  At a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt, register ASP.NET by typing `aspnet_regiis –I` and press ENTER.  
+1. At a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt, register ASP.NET by typing `aspnet_regiis –I` and press ENTER.  
   
-2.  Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] as an Administrator.  
+2. Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] as an Administrator.  
   
-3.  Open LoanService.sln.  
+3. Open LoanService.sln.  
   
-4.  When asked if you would like to create the virtual directories for the LoanService project, select **Yes**.  
+4. When asked if you would like to create the virtual directories for the LoanService project, select **Yes**.  
   
 #### To set up the service queues  
   
-1.  Press F5 to run the LoanClient application that creates the queues and activates the service defined in Service1.xamlx.  
+1. Press F5 to run the LoanClient application that creates the queues and activates the service defined in Service1.xamlx.  
   
-2.  Open the **Computer Management** console by running Compmgmt.msc from a command prompt.  
+2. Open the **Computer Management** console by running Compmgmt.msc from a command prompt.  
   
-3.  In the **Computer Management** console, expand **Service**, **Applications**, **Message Queuing**, **Private Queues**.  
+3. In the **Computer Management** console, expand **Service**, **Applications**, **Message Queuing**, **Private Queues**.  
   
-4.  Right-click the loanservice/service1.xamlx queue and select **Properties**.  
+4. Right-click the loanservice/service1.xamlx queue and select **Properties**.  
   
-5.  Select the **Security** tab, and add **Everyone Receives Message**, **Peek Message** and **Send Message** permissions.  
+5. Select the **Security** tab, and add **Everyone Receives Message**, **Peek Message** and **Send Message** permissions.  
   
-6.  Open the [!INCLUDE[iis60](../../../../includes/iis60-md.md)] Manager.  
+6. Open the [!INCLUDE[iis60](../../../../includes/iis60-md.md)] Manager.  
   
-7.  Browse to **Server**, **Sites**, **Default Web site**, **Private**, **LoanService** and select **Advanced Options**  
+7. Browse to **Server**, **Sites**, **Default Web site**, **Private**, **LoanService** and select **Advanced Options**  
   
-8.  Change the **Enabled Protocols** to be **http**, **net.msmq**.  
+8. Change the **Enabled Protocols** to be **http**, **net.msmq**.  
   
 #### To run the sample  
   
-1.  Browse to http://localhost/private/loanservice/service1.xamlx to ensure that the service is running.  
+1. Browse to <http://localhost/private/loanservice/service1.xamlx> to ensure that the service is running.  
   
-2.  Press F5 to run the LoanClient application. Once the workflow is complete, an out.txt file should be saved to C:\Inbox that contains the result of the message exchange.  
+2. Press F5 to run the LoanClient application. Once the workflow is complete, an out.txt file should be saved to C:\Inbox that contains the result of the message exchange.  
   
 #### To clean up  
   
-1.  Open the **Computer Management** console by running Compmgmt.msc from a command prompt.  
+1. Open the **Computer Management** console by running Compmgmt.msc from a command prompt.  
   
-2.  Expand **Service** and **Applications**, **Message Queuing**, **Private Queues**.  
+2. Expand **Service** and **Applications**, **Message Queuing**, **Private Queues**.  
   
-3.  Delete the loanservice/service1.xamlx queue.  
+3. Delete the loanservice/service1.xamlx queue.  
   
-4.  Remove the C:\Inbox directory.  
+4. Remove the C:\Inbox directory.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\BufferedReceive`

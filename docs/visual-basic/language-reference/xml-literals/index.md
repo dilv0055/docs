@@ -12,9 +12,10 @@ ms.assetid: 16b28c40-8768-423f-bd9c-22ff10de2b54
 ---
 # XML Literals (Visual Basic)
 The topics in this section document the syntax of XML literals in Visual Basic. The XML literal syntax enables you to incorporate XML directly in your code.  
-  
+
 ## In This Section  
-  
+
+
 |Topic|Description|  
 |-----------|-----------------|  
 |[XML Element Literal](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)|Describes the syntax for literals that represent <xref:System.Xml.Linq.XElement> objects.|  
@@ -22,6 +23,6 @@ The topics in this section document the syntax of XML literals in Visual Basic. 
 |[XML CDATA Literal](../../../visual-basic/language-reference/xml-literals/xml-cdata-literal.md)|Describes the syntax for literals that represent <xref:System.Xml.Linq.XCData> objects.|  
 |[XML Comment Literal](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)|Describes the syntax for literals that represent <xref:System.Xml.Linq.XComment> objects.|  
 |[XML Processing Instruction Literal](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md)|Describes the syntax for literals that represent <xref:System.Xml.Linq.XProcessingInstruction> objects.|  
-  
+
 ## See Also  
  [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)

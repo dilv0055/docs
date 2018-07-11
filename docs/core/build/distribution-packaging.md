@@ -5,7 +5,6 @@ author: bleroy
 ms.author: mairaw
 ms.date: 06/28/2017
 ---
-
 # .NET Core distribution packaging
 
 As .NET Core becomes available on more and more platforms, it's useful to learn how to package, name, and version it. This way, package maintainers can help ensure a consistent experience no matter where users choose to run .NET.
@@ -70,6 +69,7 @@ The remainder of the version is not included in the version name. This allows th
 
 The following tables shows the recommended packages.
 
+
 | Name                                    | Example                | Use case: Install ...           | Contains           | Dependencies                                   | Version            |
 |-----------------------------------------|------------------------|---------------------------------|--------------------|------------------------------------------------|--------------------|
 | dotnet-sdk-[major]                      | dotnet-sdk-2           | Latest sdk for runtime major    |                    | dotnet-sdk-[major].[latestminor]               | \<sdk version>     |
@@ -94,9 +94,10 @@ Package maintainers may decide to provide preview versions of the shared framewo
 
 #### Patch packages
 
-Since a patch version of a packages may cause a breaking change, a package maintainer may want to provide _patch packages_. These packages allows to install a specific patch version which is not automatically upgraded. Patch packages should only be used in rare circumstances as they will not be upgraded with (security) fixes.
+Since a patch version of a packages may cause a breaking change, a package maintainer may want to provide *patch packages*. These packages allows to install a specific patch version which is not automatically upgraded. Patch packages should only be used in rare circumstances as they will not be upgraded with (security) fixes.
 
 The following table shows the recommended packages and **patch packages**.
+
 
 | Name                                           | Example                  | Contains         | Dependencies                                              |
 |------------------------------------------------|--------------------------|------------------|-----------------------------------------------------------|
@@ -111,8 +112,8 @@ The following table shows the recommended packages and **patch packages**.
 | dotnet-host-fxr                                | dotnet-host-fxr          | (2)              | host:\<runtime version>+                                  |
 | dotnet-host                                    | dotnet-host              | (1),(8),(9),(10) |                                                           |
 
-An alternative to using patch packages is _pinning_ the packages to a specific version using the package manager. To avoid affecting other applications/users, such applications can be built and deployed in a container.
+An alternative to using patch packages is *pinning* the packages to a specific version using the package manager. To avoid affecting other applications/users, such applications can be built and deployed in a container.
 
 ## Building packages
 
-The https://github.com/dotnet/source-build repository provides instructions on how to build a source tarball of the .NET Core SDK and all its components. The output of the source-build repository matches the layout described in the first section of this article.
+The <https://github.com/dotnet/source-build> repository provides instructions on how to build a source tarball of the .NET Core SDK and all its components. The output of the source-build repository matches the layout described in the first section of this article.

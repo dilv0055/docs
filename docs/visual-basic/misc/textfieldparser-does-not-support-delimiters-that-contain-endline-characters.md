@@ -10,7 +10,7 @@ A delimiter that contains an endline character has been supplied, but the `TextF
   
 ## To correct this error  
   
--   Supply a correct delimiter.  
+- Supply a correct delimiter.  
   
 ## See Also  
  [TextFieldParser.Delimiters Property](http://msdn.microsoft.com/library/4eb18f4d-3011-40a9-b668-be93eed0444f)  

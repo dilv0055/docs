@@ -14,29 +14,29 @@ Custom activity designers are typically implemented so that their associated act
   
  This topic outlines two procedures.  
   
-1.  The first procedure describes how to create a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemPresenter> that provides the drop zone that receives other activities. This procedure is based on the [Custom Composite Designers - Workflow Item Presenter](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-item-presenter.md) sample.  
+1. The first procedure describes how to create a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemPresenter> that provides the drop zone that receives other activities. This procedure is based on the [Custom Composite Designers - Workflow Item Presenter](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-item-presenter.md) sample.  
   
-2.  The second procedure describes how to create a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemsPresenter> that provides the functionality needed to edit of a collection of contained elements. This procedure is based on the [Custom Composite Designers - Workflow Items Presenter](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-items-presenter.md) sample.  
+2. The second procedure describes how to create a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemsPresenter> that provides the functionality needed to edit of a collection of contained elements. This procedure is based on the [Custom Composite Designers - Workflow Items Presenter](../../../docs/framework/windows-workflow-foundation/samples/custom-composite-designers-workflow-items-presenter.md) sample.  
   
 ### To create a custom activity designer with a drop zone using WorkflowItemPresenter  
   
-1.  Start [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].  
+1. Start [!INCLUDE[vs2010](../../../includes/vs2010-md.md)].  
   
-2.  On the **File** menu, point to **New**, and then select **Project…**.  
+2. On the **File** menu, point to **New**, and then select **Project…**.  
   
-     The **New Project** dialog box opens.  
+    The **New Project** dialog box opens.  
   
-3.  In the **Installed Templates** pane, select **Windows** from your preferred language category.  
+3. In the **Installed Templates** pane, select **Windows** from your preferred language category.  
   
-4.  In the **Templates** pane, select **WPF Application**.  
+4. In the **Templates** pane, select **WPF Application**.  
   
-5.  In the **Name** box, enter `UsingWorkflowItemPresenter`.  
+5. In the **Name** box, enter `UsingWorkflowItemPresenter`.  
   
-6.  In the **Location** box, enter the directory in which you want to save your project, or click **Browse** to navigate to it.  
+6. In the **Location** box, enter the directory in which you want to save your project, or click **Browse** to navigate to it.  
   
-7.  In the **Solution** box, accept the default value.  
+7. In the **Solution** box, accept the default value.  
   
-8.  Click **OK**.  
+8. Click **OK**.  
   
 9. Right-click the MainWindows.xaml file in the **Solution Explorer**, select **Delete** and confirm **OK** in the **Microsoft Visual Studio** dialogue box.  
   
@@ -153,11 +153,11 @@ Custom activity designers are typically implemented so that their associated act
   
 16. Using the same procedure, add references to the following assemblies:  
   
-    1.  System.Data.DataSetExtensions.dll  
+    1. System.Data.DataSetExtensions.dll  
   
-    2.  System.Activities.Presentation.dll  
+    2. System.Activities.Presentation.dll  
   
-    3.  System.ServiceModel.Activities.dll  
+    3. System.ServiceModel.Activities.dll  
   
 17. Open the App.xaml file and change the value of the StartUpUri to "RehostingWFDesigner.xaml".  
   
@@ -243,98 +243,98 @@ Custom activity designers are typically implemented so that their associated act
   
 ### To create a custom activity designer using WorkflowItemsPresenter  
   
-1.  The procedure for the second custom activity designer is the parallels the first with a few modifications, the first of which is to name the second application `UsingWorkflowItemsPresenter`. Also this application does not define a new custom activity.  
+1. The procedure for the second custom activity designer is the parallels the first with a few modifications, the first of which is to name the second application `UsingWorkflowItemsPresenter`. Also this application does not define a new custom activity.  
   
-2.  Key differences are contained in the CustomParallelDesigner.xaml and RehostingWFDesigner.xaml.cs files. Here is the code from the CustomParallelDesigne.xaml file that defines the UI.  
+2. Key differences are contained in the CustomParallelDesigner.xaml and RehostingWFDesigner.xaml.cs files. Here is the code from the CustomParallelDesigne.xaml file that defines the UI.  
   
-    ```xml  
-    <sap:ActivityDesigner x:Class=" UsingWorkflowItemsPresenter.CustomParallelDesigner"  
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
-        xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"  
-        xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation">  
-        <sap:ActivityDesigner.Resources>  
-            <DataTemplate x:Key="Collapsed">  
-                <TextBlock>This is the Collapsed View</TextBlock>  
-            </DataTemplate>  
-            <DataTemplate x:Key="Expanded">  
-                <StackPanel>  
-                    <TextBlock HorizontalAlignment="Center">This is the</TextBlock>  
-                    <TextBlock HorizontalAlignment="Center">extended view</TextBlock>  
-                    <sap:WorkflowItemsPresenter HintText="Drop Activities Here"  
-                                        Items="{Binding Path=ModelItem.Branches}">  
-                        <sap:WorkflowItemsPresenter.SpacerTemplate>  
-                            <DataTemplate>  
-                                <Ellipse Width="10" Height="10" Fill="Black"/>  
-                            </DataTemplate>  
-                        </sap:WorkflowItemsPresenter.SpacerTemplate>  
-                        <sap:WorkflowItemsPresenter.ItemsPanel>  
-                            <ItemsPanelTemplate>  
-                                <StackPanel Orientation="Horizontal"/>  
-                            </ItemsPanelTemplate>  
-                        </sap:WorkflowItemsPresenter.ItemsPanel>  
-                    </sap:WorkflowItemsPresenter>  
-                </StackPanel>  
-            </DataTemplate>  
-            <Style x:Key="ExpandOrCollapsedStyle" TargetType="{x:Type ContentPresenter}">  
-                <Setter Property="ContentTemplate" Value="{DynamicResource Collapsed}"/>  
-                <Style.Triggers>  
-                    <DataTrigger Binding="{Binding Path=ShowExpanded}" Value="true">  
-                        <Setter Property="ContentTemplate" Value="{DynamicResource Expanded}"/>  
-                    </DataTrigger>  
-                </Style.Triggers>  
-            </Style>  
-        </sap:ActivityDesigner.Resources>  
-        <Grid>  
-            <ContentPresenter Style="{DynamicResource ExpandOrCollapsedStyle}" Content="{Binding}"/>  
-        </Grid>  
-    </sap:ActivityDesigner>  
-    ```  
+   ```xml  
+   <sap:ActivityDesigner x:Class=" UsingWorkflowItemsPresenter.CustomParallelDesigner"  
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"  
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+       xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"  
+       xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation">  
+       <sap:ActivityDesigner.Resources>  
+           <DataTemplate x:Key="Collapsed">  
+               <TextBlock>This is the Collapsed View</TextBlock>  
+           </DataTemplate>  
+           <DataTemplate x:Key="Expanded">  
+               <StackPanel>  
+                   <TextBlock HorizontalAlignment="Center">This is the</TextBlock>  
+                   <TextBlock HorizontalAlignment="Center">extended view</TextBlock>  
+                   <sap:WorkflowItemsPresenter HintText="Drop Activities Here"  
+                                       Items="{Binding Path=ModelItem.Branches}">  
+                       <sap:WorkflowItemsPresenter.SpacerTemplate>  
+                           <DataTemplate>  
+                               <Ellipse Width="10" Height="10" Fill="Black"/>  
+                           </DataTemplate>  
+                       </sap:WorkflowItemsPresenter.SpacerTemplate>  
+                       <sap:WorkflowItemsPresenter.ItemsPanel>  
+                           <ItemsPanelTemplate>  
+                               <StackPanel Orientation="Horizontal"/>  
+                           </ItemsPanelTemplate>  
+                       </sap:WorkflowItemsPresenter.ItemsPanel>  
+                   </sap:WorkflowItemsPresenter>  
+               </StackPanel>  
+           </DataTemplate>  
+           <Style x:Key="ExpandOrCollapsedStyle" TargetType="{x:Type ContentPresenter}">  
+               <Setter Property="ContentTemplate" Value="{DynamicResource Collapsed}"/>  
+               <Style.Triggers>  
+                   <DataTrigger Binding="{Binding Path=ShowExpanded}" Value="true">  
+                       <Setter Property="ContentTemplate" Value="{DynamicResource Expanded}"/>  
+                   </DataTrigger>  
+               </Style.Triggers>  
+           </Style>  
+       </sap:ActivityDesigner.Resources>  
+       <Grid>  
+           <ContentPresenter Style="{DynamicResource ExpandOrCollapsedStyle}" Content="{Binding}"/>  
+       </Grid>  
+   </sap:ActivityDesigner>  
+   ```  
   
-3.  Here is the code from the RehostingWFDesigner.xaml.cs file that provides the rehosting logic.  
+3. Here is the code from the RehostingWFDesigner.xaml.cs file that provides the rehosting logic.  
   
-    ```  
-    using System;  
-    using System.Activities.Core.Presentation;  
-    using System.Activities.Presentation;  
-    using System.Activities.Presentation.Metadata;  
-    using System.Activities.Statements;  
-    using System.ComponentModel;  
-    using System.Windows;  
+   ```  
+   using System;  
+   using System.Activities.Core.Presentation;  
+   using System.Activities.Presentation;  
+   using System.Activities.Presentation.Metadata;  
+   using System.Activities.Statements;  
+   using System.ComponentModel;  
+   using System.Windows;  
   
-    namespaceUsingWorkflowItemsPresenter  
-    {  
-        public partial class RehostingWfDesigner : Window  
-        {  
-            public RehostingWfDesigner()  
-            {  
-                InitializeComponent();  
-            }  
+   namespaceUsingWorkflowItemsPresenter  
+   {  
+       public partial class RehostingWfDesigner : Window  
+       {  
+           public RehostingWfDesigner()  
+           {  
+               InitializeComponent();  
+           }  
   
-            protected override void OnInitialized(EventArgs e)  
-            {  
-                base.OnInitialized(e);  
-                // register metadata  
-                (new DesignerMetadata()).Register();  
-                RegisterCustomMetadata();  
+           protected override void OnInitialized(EventArgs e)  
+           {  
+               base.OnInitialized(e);  
+               // register metadata  
+               (new DesignerMetadata()).Register();  
+               RegisterCustomMetadata();  
   
-                // create the workflow designer  
-                WorkflowDesigner wd = new WorkflowDesigner();  
-                wd.Load(new Sequence());  
-                DesignerBorder.Child = wd.View;  
-                PropertyBorder.Child = wd.PropertyInspectorView;  
+               // create the workflow designer  
+               WorkflowDesigner wd = new WorkflowDesigner();  
+               wd.Load(new Sequence());  
+               DesignerBorder.Child = wd.View;  
+               PropertyBorder.Child = wd.PropertyInspectorView;  
   
-            }  
+           }  
   
-            void RegisterCustomMetadata()  
-            {  
-                AttributeTableBuilder builder = new AttributeTableBuilder();  
-                builder.AddCustomAttributes(typeof(Parallel), new DesignerAttribute(typeof(CustomParallelDesigner)));  
-                MetadataStore.AddAttributeTable(builder.CreateTable());  
-            }  
-        }  
-    }  
-    ```  
+           void RegisterCustomMetadata()  
+           {  
+               AttributeTableBuilder builder = new AttributeTableBuilder();  
+               builder.AddCustomAttributes(typeof(Parallel), new DesignerAttribute(typeof(CustomParallelDesigner)));  
+               MetadataStore.AddAttributeTable(builder.CreateTable());  
+           }  
+       }  
+   }  
+   ```  
   
 ## See Also  
  <xref:System.Activities.Presentation.ActivityDesigner>  

@@ -1,5 +1,6 @@
 ### PreviewLostKeyboardFocus is called repeatedly if its handler shows a Windows Forms message box
 
+
 |   |   |
 |---|---|
 |Details|Beginning in the .NET Framework 4.5, calling <xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType> from a <xref:System.Windows.UIElement.PreviewLostKeyboardFocus> handler will cause the handler to re-fire when the message box is closed, potentially resulting in an infinite loop of message boxes.|

@@ -5,18 +5,19 @@ ms.assetid: 0fbff6f6-752a-4a4a-b5a3-3adb5e688527
 ---
 # 4821 - SynchronizationContextSetToNull
 ## Properties  
-  
+
+
 |||  
 |-|-|  
 |ID|4821|  
 |Keywords|Discovery|  
 |Level|Information|  
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
-  
+
 ## Description  
  This event is emitted when the SynchronizationContext has been set to null by the DiscoveryClientChannel before initiating the Find operation.  
-  
+
 ## Message  
  The SynchronizationContext has been set to null by DiscoveryClientChannel before initiating the Find operation.  
-  
+
 ## Details

@@ -6,19 +6,19 @@ ms.assetid: 4828a8f9-48c0-4128-9749-7fcd6bf19a06
 # Variance in Generic Interfaces (C#)
 .NET Framework 4 introduced variance support for several existing generic interfaces. Variance support enables implicit conversion of classes that implement these interfaces. The following interfaces are now variant:  
   
--   <xref:System.Collections.Generic.IEnumerable%601> (T is covariant)  
+- <xref:System.Collections.Generic.IEnumerable%601> (T is covariant)  
   
--   <xref:System.Collections.Generic.IEnumerator%601> (T is covariant)  
+- <xref:System.Collections.Generic.IEnumerator%601> (T is covariant)  
   
--   <xref:System.Linq.IQueryable%601> (T is covariant)  
+- <xref:System.Linq.IQueryable%601> (T is covariant)  
   
--   <xref:System.Linq.IGrouping%602> (`TKey` and `TElement` are covariant)  
+- <xref:System.Linq.IGrouping%602> (`TKey` and `TElement` are covariant)  
   
--   <xref:System.Collections.Generic.IComparer%601> (T is contravariant)  
+- <xref:System.Collections.Generic.IComparer%601> (T is contravariant)  
   
--   <xref:System.Collections.Generic.IEqualityComparer%601> (T is contravariant)  
+- <xref:System.Collections.Generic.IEqualityComparer%601> (T is contravariant)  
   
--   <xref:System.IComparable%601> (T is contravariant)  
+- <xref:System.IComparable%601> (T is contravariant)  
   
  Covariance permits a method to have a more derived return type than that defined by the generic type parameter of the interface. To illustrate the covariance feature, consider these generic interfaces: `IEnumerable<Object>` and `IEnumerable<String>`. The `IEnumerable<String>` interface does not inherit the `IEnumerable<Object>` interface. However, the `String` type does inherit the `Object` type, and in some cases you may want to assign objects of these interfaces to each other. This is shown in the following code example.  
   

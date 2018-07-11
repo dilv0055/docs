@@ -23,26 +23,26 @@ You can also create your own Docker image in cases where you want to use a diffe
 
 When you add the image name to your Dockerfile file, you can select the operating system and version depending on the tag you use, as in the following examples:
 
--   microsoft/**dotnet:2.1-runtime**
+- microsoft/**dotnet:2.1-runtime**
 
-        .NET Core 2.1 multi-architecture: Supports Linux and Windows Nano Server depending on the Docker host.
+      .NET Core 2.1 multi-architecture: Supports Linux and Windows Nano Server depending on the Docker host.
 
--   microsoft/**dotnet:2.1-aspnetcore-runtime**
+- microsoft/**dotnet:2.1-aspnetcore-runtime**
     
-        ASP.NET Core 2.1 multi-architecture: Supports Linux and Windows Nano Server depending on the Docker host.
-        The aspnetcore image has a few optimizations for ASP.NET Core. 
+      ASP.NET Core 2.1 multi-architecture: Supports Linux and Windows Nano Server depending on the Docker host.
+      The aspnetcore image has a few optimizations for ASP.NET Core. 
 
--   microsoft/**dotnet:2.1-aspnetcore-runtime-alpine** 
+- microsoft/**dotnet:2.1-aspnetcore-runtime-alpine** 
 
-        .NET Core 2.1 runtime-only on Linux Alpine distro
+      .NET Core 2.1 runtime-only on Linux Alpine distro
 
--   microsoft/**dotnet:2.1-aspnetcore-runtime-nanoserver-1803** 
+- microsoft/**dotnet:2.1-aspnetcore-runtime-nanoserver-1803** 
 
-        .NET Core 2.1 runtime-only on Windows Nano Server (Windows Server version 1803)
-
-
+      .NET Core 2.1 runtime-only on Windows Nano Server (Windows Server version 1803)
 
 
->[!div class="step-by-step"]
-[Previous](container-framework-choice-factors.md)
-[Next](official-net-docker-images.md)
+
+
+> [!div  class="step-by-step"]
+> [Previous](container-framework-choice-factors.md)
+> [Next](official-net-docker-images.md)

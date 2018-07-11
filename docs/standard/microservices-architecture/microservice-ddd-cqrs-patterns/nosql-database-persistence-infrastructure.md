@@ -271,7 +271,6 @@ services:
     environment:
       # Other settings
       - ConnectionString=${ESHOP_AZURE_COSMOSDB:-mongodb://nosql.data}
-
 ```
 
 The `ConnectionString` environment variable is resolved this way: If the `ESHOP_AZURE_COSMOSDB` global variable is defined in the `.env` file with the Azure Cosmos DB connection string, it will use it to access the Azure Cosmos DB database in the cloud. 
@@ -299,34 +298,34 @@ If the `ESHOP_AZURE_COSMOSDB` global variable is empty, meaning that it is comme
 
 #### Additional resources
 
--   **Modeling document data for NoSQL databases**
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data*](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
+- **Modeling document data for NoSQL databases**
+  [*https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data*](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
 
--   **Vaughn Vernon. The Ideal Domain-Driven Design Aggregate Store?**
-    [*https://vaughnvernon.co/?p=942*](https://vaughnvernon.co/?p=942)
+- **Vaughn Vernon. The Ideal Domain-Driven Design Aggregate Store?**
+  [*https://vaughnvernon.co/?p=942*](https://vaughnvernon.co/?p=942)
 
--   **Introduction to Azure Cosmos DB: API for MongoDB** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)
+- **Introduction to Azure Cosmos DB: API for MongoDB** 
+  [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)
 
--   **Azure Cosmos DB: Build a MongoDB API web app with .NET and the Azure portal** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet )
+- **Azure Cosmos DB: Build a MongoDB API web app with .NET and the Azure portal** 
+  [*https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet)
 
--   **Use the Azure Cosmos DB Emulator for local development and testing** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator*](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator)
+- **Use the Azure Cosmos DB Emulator for local development and testing** 
+  [*https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator*](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator)
 
--   **Connect a MongoDB application to Azure Cosmos DB** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account*](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)
+- **Connect a MongoDB application to Azure Cosmos DB** 
+  [*https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account*](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)
 
--   **The Cosmos DB Emulator Docker image (Windows Container)** 
-    [*https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/*](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/)
+- **The Cosmos DB Emulator Docker image (Windows Container)** 
+  [*https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/*](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/)
 
--   **The MongoDB Docker image (Linux and Windows Container)** 
-    [*https://hub.docker.com/r/_/mongo/*](https://hub.docker.com/r/_/mongo/)
+- **The MongoDB Docker image (Linux and Windows Container)** 
+  [*https://hub.docker.com/r/_/mongo/*](https://hub.docker.com/r/_/mongo/)
 
--   **Use MongoChef (Studio 3T) with an Azure Cosmos DB: API for MongoDB account** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef)
+- **Use MongoChef (Studio 3T) with an Azure Cosmos DB: API for MongoDB account** 
+  [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef)
 
 
->[!div class="step-by-step"]
-[Previous](infrastructure-persistence-layer-implemenation-entity-framework-core.md)
-[Next](microservice-application-layer-web-api-design.md)
+> [!div  class="step-by-step"]
+> [Previous](infrastructure-persistence-layer-implemenation-entity-framework-core.md)
+> [Next](microservice-application-layer-web-api-design.md)

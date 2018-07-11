@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # ICLRDebugManager::IsDebuggerAttached Method
 Gets a value that indicates whether a debugger is attached to the process.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT IsDebuggerAttached (  
     [out] BOOL *pbAttached  
 );  
 ```  
-  
+
 #### Parameters  
  `pbAttached`  
  [out] `true` if a debugger is attached to the process; otherwise, `false`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`IsDebuggerAttached` returned successfully.|  
@@ -43,19 +44,19 @@ HRESULT IsDebuggerAttached (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  `IsDebuggerAttached` allows the host to query the CLR to determine whether a debugger is attached to the process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
  [ICLRDebugManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)  

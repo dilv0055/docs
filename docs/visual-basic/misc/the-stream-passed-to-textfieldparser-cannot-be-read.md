@@ -10,7 +10,7 @@ The [TextFieldParser Object](../../visual-basic/language-reference/objects/textf
   
 ## To correct this error  
   
--   Check to make sure the file is a text file.  
+- Check to make sure the file is a text file.  
   
 ## See Also  
  [How to: Read From Text Files with Multiple Formats](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)  

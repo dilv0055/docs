@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugArrayValue Interface1
 A subclass of ICorDebugHeapValue that represents a single-dimensional or multi-dimensional array.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetBaseIndicies Method](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getbaseindicies-method.md)|Gets the base index of each dimension in the array.|  
@@ -32,21 +33,21 @@ A subclass of ICorDebugHeapValue that represents a single-dimensional or multi-d
 |[GetElementType Method](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getelementtype-method.md)|Gets the simple type of the elements in the array.|  
 |[GetRank Method](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getrank-method.md)|Gets the number of dimensions in the array.|  
 |[HasBaseIndicies Method](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-hasbaseindicies-method.md)|Determines whether the array has base indexes.|  
-  
+
 ## Remarks  
  `ICorDebugArrayValue` supports both single-dimensional and multi-dimensional arrays.  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

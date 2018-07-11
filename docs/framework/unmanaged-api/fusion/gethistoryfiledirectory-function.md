@@ -19,43 +19,44 @@ ms.author: "ronpet"
 ---
 # GetHistoryFileDirectory Function
 Retrieves the path of the application history directory.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetHistoryFileDirectory (  
     [in]      LPWSTR      wzDir,  
     [in,out]  LPCWSTR  *pdwsize,  
 );  
 ```  
-  
+
 #### Parameters  
  `wzDir`  
  [out] A buffer to hold the path to the application history directory.  
-  
+
  `pdwSize`  
  [in, out] The length of the buffer.  
-  
+
 ## Return Value  
  This method returns standard COM error codes, as defined in the WinError.h file in addition to the following values.  
-  
+
+
 |Return code|Description|  
 |-----------------|-----------------|  
 |S_OK|The method completed successfully.|  
 |E_INVALIDARG|`wzDir` or `pdwSize` is null, or the version string is incorrect.|  
-  
+
 ## Remarks  
  On successful completion, the `pdwSize` argument is set to the length of the path string.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Fusion.h  
-  
+
  **Library:** Fusion.dll and Mscorwks.dll. Use Fusion.dll instead of Mscorwks.dll to ensure that you target the correct version of the .NET Framework.  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
-  
+
 ## See Also  
  [CreateHistoryReader Function](../../../../docs/framework/unmanaged-api/fusion/createhistoryreader-function.md)  
  [NukeDownloadedCache Function](../../../../docs/framework/unmanaged-api/fusion/nukedownloadedcache-function.md)  

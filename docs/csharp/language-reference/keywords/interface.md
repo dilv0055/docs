@@ -17,13 +17,13 @@ An interface contains only the signatures of [methods](../../../csharp/programmi
   
  An interface can be a member of a namespace or a class and can contain signatures of the following members:  
   
--   [Methods](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+- [Methods](../../../csharp/programming-guide/classes-and-structs/methods.md)  
   
--   [Properties](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
+- [Properties](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
   
--   [Indexers](../../../csharp/programming-guide/indexers/using-indexers.md)  
+- [Indexers](../../../csharp/programming-guide/indexers/using-indexers.md)  
   
--   [Events](../../../csharp/language-reference/keywords/event.md)  
+- [Events](../../../csharp/language-reference/keywords/event.md)  
   
  An interface can inherit from one or more base interfaces.  
   

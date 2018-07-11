@@ -33,15 +33,15 @@ Enforces strict type semantics to restrict implicit type conversions.
   
 ### To set -optionstrict in the Visual Studio IDE  
   
-1.  Have a project selected in **Solution Explorer**. On the **Project** menu, click **Properties.**   
+1. Have a project selected in **Solution Explorer**. On the **Project** menu, click **Properties.**   
   
-2.  Click the **Compile** tab.  
+2. Click the **Compile** tab.  
   
-3.  Modify the value in the **Option Strict** box.  
+3. Modify the value in the **Option Strict** box.  
   
 ### To set -optionstrict programmatically  
   
--   See [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
+- See [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
   
 ## Example  
  The following code compiles `Test.vb` using strict type semantics.  

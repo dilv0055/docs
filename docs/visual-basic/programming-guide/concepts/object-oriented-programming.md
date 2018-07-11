@@ -5,49 +5,49 @@ ms.assetid: 49794de4-64c3-473c-b8ed-fe98835df69c
 ---
 # Object-Oriented Programming (Visual Basic)
 Visual Basic provides full support for object-oriented programming including encapsulation, inheritance, and polymorphism.  
-  
+
  *Encapsulation* means that a group of related properties, methods, and other members are treated as a single unit or object.  
-  
+
  *Inheritance* describes the ability to create new classes based on an existing class.  
-  
+
  *Polymorphism* means that you can have multiple classes that can be used interchangeably, even though each class implements the same properties or methods in different ways.  
-  
+
  This section describes the following concepts:  
-  
--   [Classes and objects](#classes-and-objects)  
-  
-    -   [Class members](#members)  
-  
-         [Properties and fields](#properties-and-fields)  
-  
-         [Methods](#methods)  
-  
-         [Constructors](#constructors)  
-  
-         [Destructors](#destructors)  
-  
-         [Events](#events)  
-  
-         [Nested classes](#nested-classes)  
-  
-    -   [Access modifiers and access levels](#access-modifiers-and-access-levels)  
-  
-    -   [Instantiating classes](#instantiating-classes)  
-  
-    -   [Shared classes and members](#shared-classes-and-members)  
-  
-    -   [Anonymous types](#anonymous-types)  
-  
--   [Inheritance](#inheritance)  
-  
-    -   [Overriding members](#overriding-members)  
-  
--   [Interfaces](#interfaces)  
-  
--   [Generics](#generics)  
-  
--   [Delegates](#delegates)  
-  
+
+- [Classes and objects](#classes-and-objects)  
+
+  - [Class members](#members)  
+
+     [Properties and fields](#properties-and-fields)  
+
+     [Methods](#methods)  
+
+     [Constructors](#constructors)  
+
+     [Destructors](#destructors)  
+
+     [Events](#events)  
+
+     [Nested classes](#nested-classes)  
+
+  - [Access modifiers and access levels](#access-modifiers-and-access-levels)  
+
+  - [Instantiating classes](#instantiating-classes)  
+
+  - [Shared classes and members](#shared-classes-and-members)  
+
+  - [Anonymous types](#anonymous-types)  
+
+- [Inheritance](#inheritance)  
+
+  - [Overriding members](#overriding-members)  
+
+- [Interfaces](#interfaces)  
+
+- [Generics](#generics)  
+
+- [Delegates](#delegates)  
+
 ## Classes and objects  
 The terms *class* and *object* are sometimes used interchangeably, but in fact, classes describe the *type* of objects, while objects are usable *instances* of classes. So, the act of creating an object is called *instantiation*. Using the blueprint analogy, a class is a blueprint, and an object is a building made from that blueprint.
 
@@ -120,17 +120,17 @@ End Class
 Most properties have methods or procedures to both set and get the property value. However, you can create read-only or write-only properties to restrict them from being modified or read. In Visual Basic you can use `ReadOnly` and `WriteOnly` keywords. However, auto-implemented properties cannot be read-only or write-only.
 
 For more information, see:
-  
--   [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)  
-  
--   [Get Statement](../../../visual-basic/language-reference/statements/get-statement.md)  
-  
--   [Set Statement](../../../visual-basic/language-reference/statements/set-statement.md)  
-  
--   [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)  
-  
--   [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
-  
+
+- [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md)  
+
+- [Get Statement](../../../visual-basic/language-reference/statements/get-statement.md)  
+
+- [Set Statement](../../../visual-basic/language-reference/statements/set-statement.md)  
+
+- [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)  
+
+- [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
+
 #### Methods  
  A *method* is an action that an object can perform.  
 
@@ -225,6 +225,7 @@ All classes and class members can specify what access level they provide to othe
 
 The following access modifiers are available:
 
+
 |Visual Basic Modifier|Definition|
 |---------------------------|----------------|
 |[Public](../../../visual-basic/language-reference/modifiers/public.md)|The type or member can be accessed by any other code in the same assembly or another assembly that references it.|
@@ -266,29 +267,29 @@ For more information, see:
 
 ###  <a name="Static"></a> Shared Classes and Members  
  A shared member of the class is a property, procedure, or field that is shared by all instances of a class.  
-  
+
  To define a shared member:  
-  
+
 ```vb  
 Class SampleClass  
     Public Shared SampleString As String = "Sample String"  
 End Class  
 ```  
-  
+
  To access the shared member, use the name of the class without creating an object of this class:  
-  
+
 ```vb  
 MsgBox(SampleClass.SampleString)  
 ```  
-  
+
  Shared modules in Visual Basic have shared members only and cannot be instantiated. Shared members also cannot access non-shared properties, fields or methods  
-  
+
  For more information, see:  
-  
--   [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
-  
--   [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)  
-  
+
+- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)  
+
+- [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md)  
+
 ### Anonymous types  
 Anonymous types enable you to create objects without writing a class definition for the data type. Instead, the compiler generates a class for you. The class has no usable name and contains the properties you specify in declaring the object.
 
@@ -344,6 +345,7 @@ For more information, see:
 By default, a derived class inherits all members from its base class. If you want to change the behavior of the inherited member, you need to override it. That is, you can define a new implementation of the method, property or event in the derived class.
 
 The following modifiers are used to control how properties and methods are overridden:
+
 
 |Visual Basic Modifier|Definition|
 |---------------------------|----------------|

@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Deletes the specified property and all of its qualifiers from a CIM class definition.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```  
 HRESULT Delete (
    [in] int               vFunc, 
@@ -47,6 +47,7 @@ HRESULT Delete (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | An unspecified error has occurred. |
@@ -65,10 +66,10 @@ This function wraps a call to the [IWbemClassObject::Delete](https://msdn.micros
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

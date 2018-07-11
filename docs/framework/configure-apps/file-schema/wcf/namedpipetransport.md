@@ -5,15 +5,15 @@ ms.assetid: 9fc3f42f-43e2-4ab1-8bc7-3c95a9220df1
 ---
 # &lt;namedPipeTransport&gt;
 Defines a transport that causes a channel to transfer messages using named pipes when it is included in a custom binding.  
-  
+
 \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
 \<binding>  
 \<namePipeTransport>  
-  
+
 ## Syntax  
-  
+
 ```xml
 <namedPipeTransport channelInitializationTimeout="TimeSpan"   
                     connectionBufferSize="Integer"   
@@ -31,15 +31,16 @@ Defines a transport that causes a channel to transfer messages using named pipes
                           maxOutboundConnectionsPerEndpopint="Integer" />  
 </namedPipeTransport>  
 ```  
-  
+
 ## Attributes and Elements  
 The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
 None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |ChannelInitializationTimeout|Gets or sets a <xref:System.TimeSpan> that determines the maximum time a channel can be in the initialization status before being disconnected.|  
@@ -54,18 +55,19 @@ None.
 |maxReceivedMessageSize|Gets and sets the maximum allowable message size, in bytes, that can be received.|  
 |transferMode|Gets or sets a value that indicates whether the messages are buffered or streamed with the connection-oriented transport.|  
 |[\<connectionPoolSettings> of \<namedPipeTransport>](../../../../../docs/framework/configure-apps/file-schema/wcf/connectionpoolsettings.md)|Specifies additional connection pool settings for a Named Pipe binding.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the custom binding.|  
-  
+
 ## Remarks  
 This transport uses URIs of the form "net.pipe://hostname/path". Other URI components are optional.  
-  
+
 The `namedPipeTransport` element is the starting point for creating a custom binding that implements the named pipes transport protocol. This transport is used for on-machine Windows Communication Foundation (WCF)-to-WCF communication.  
-  
+
 ## See Also  
 <xref:System.ServiceModel.Configuration.NamedPipeTransportElement>   
 <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>   

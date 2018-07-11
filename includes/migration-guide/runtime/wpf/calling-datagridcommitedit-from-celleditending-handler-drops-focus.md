@@ -1,5 +1,6 @@
 ### Calling DataGrid.CommitEdit from a CellEditEnding handler drops focus
 
+
 |   |   |
 |---|---|
 |Details|Calling <xref:System.Windows.Controls.DataGrid.CommitEdit> from one of the <xref:System.Windows.Controls.DataGrid?displayProperty=name>'s <xref:System.Windows.Controls.DataGrid.CellEditEnding?displayProperty=name> event handlers causes the <xref:System.Windows.Controls.DataGrid?displayProperty=name> to lose focus.|

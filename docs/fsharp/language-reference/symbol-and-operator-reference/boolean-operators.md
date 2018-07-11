@@ -11,6 +11,7 @@ This topic describes the support for Boolean operators in the F# language.
 ## Summary of Boolean Operators
 The following table summarizes the Boolean operators that are available in the F# language. The only type supported by these operators is the `bool` type.
 
+
 |Operator|Description|
 |--------|-----------|
 |`not`|Boolean negation|

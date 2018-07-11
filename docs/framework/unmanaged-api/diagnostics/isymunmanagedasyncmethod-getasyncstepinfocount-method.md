@@ -7,24 +7,25 @@ ms.author: "ronpet"
 ---
 # ISymUnmanagedAsyncMethod::GetAsyncStepInfoCount Method
 See [DefineAsyncStepInfo Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-defineasyncstepinfo-method.md).  
-  
+
 ## Syntax  
-  
+
 ```idl  
 HRESULT GetAsyncStepInfoCount(    [out, retval] ULONG32* pRetVal);  
 ```  
-  
+
 #### Parameters  
-  
+
+
 |Parameter|Description|  
 |---------------|-----------------|  
 |`pRetVal`||  
-  
+
 ## Return Value  
  Returns `HRESULT`.  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [ISymUnmanagedAsyncMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethod-interface.md)

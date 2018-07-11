@@ -141,7 +141,7 @@ install:
 Configure Visual Studio Team Services (VSTS) to build .NET Core projects using one of these approaches:
 
 1. Run the script from the [manual setup step](#manual-setup) using your commands.
-1. Create a build composed of several VSTS built-in build tasks that are configured to use .NET Core tools.
+2. Create a build composed of several VSTS built-in build tasks that are configured to use .NET Core tools.
 
 Both solutions are valid. Using a manual setup script, you control the version of the tools that you receive, since you download them as part of the build. The build is run from a script that you must create. This topic only covers the manual option. For more information on composing a build with VSTS build tasks, visit the VSTS [Continuous integration and deployment](https://docs.microsoft.com/vsts/build-release/index) topic.
 
@@ -151,15 +151,15 @@ To use a manual setup script in VSTS, create a new build definition and specify 
 
    ![Selecting an empty build definition](./media/using-ci-with-cli/screen1.png)
 
-1. After configuring the repository to build, you're directed to the build definitions. Select **Add build step**:
+2. After configuring the repository to build, you're directed to the build definitions. Select **Add build step**:
 
    ![Adding a build step](./media/using-ci-with-cli/screen2.png)
 
-1. You're presented with the **Task catalog**. The catalog contains tasks that you use in the build. Since you have a script, select the **Add** button for **PowerShell: Run a PowerShell script**.
+3. You're presented with the **Task catalog**. The catalog contains tasks that you use in the build. Since you have a script, select the **Add** button for **PowerShell: Run a PowerShell script**.
 
    ![Adding a PowerShell script step](./media/using-ci-with-cli/screen3.png)
 
-1. Configure the build step. Add the script from the repository that you're building:
+4. Configure the build step. Add the script from the repository that you're building:
 
    ![Specifying the PowerShell script to run](./media/using-ci-with-cli/screen4.png)
 

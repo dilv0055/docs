@@ -5,15 +5,15 @@ ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
 ---
 # &lt;localServiceSettings&gt; element
 Specifies the security settings of a local service for this binding.  
-  
+
  \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
 \<binding>  
 \<security>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <security>  
    <localServiceSettings detectReplays="Boolean"  
@@ -32,12 +32,13 @@ Specifies the security settings of a local service for this binding.
       timestampValidityDuration="TimeSpan" />  
 </security>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`detectReplays`|A Boolean value that specifies whether replay attacks against the channel are detected and dealt with automatically. The default is `false`.|  
@@ -54,32 +55,33 @@ Specifies the security settings of a local service for this binding.
 |`sessionKeyRenewalInterval`|A <xref:System.TimeSpan> that specifies the duration after which the initiator will renew the key for the security session. The default is "10:00:00".|  
 |`sessionKeyRolloverInterval`|A <xref:System.TimeSpan> that specifies the time interval a previous session key is valid on incoming messages during a key renewal. The default is "00:05:00".<br /><br /> During key renewal, the client and server must always send messages using the most current available key. Both parties will accept incoming messages secured with the previous session key until the rollover time expires.|  
 |`timestampValidityDuration`|A positive <xref:System.TimeSpan> that specifies the duration in which a time stamp is valid. The default is "00:15:00".|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Specifies the security options for a custom binding.|  
 |[\<secureConversationBootstrap>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Specifies the default values used for initiating a secure conversation service.|  
-  
+
 ## Remarks  
  The settings are local because they are not published as part of the security policy of the service and do not affect the client's binding.  
-  
+
  The following attributes of the `localServiceSecuritySettings` element can help mitigate a denial-of-service (DOS) security attack:  
-  
--   `maxCachedCookies`: controls the maximum number of time-bounded SecurityContextTokens that are cached by the server after doing SPNEGO or SSL negotiation.  
-  
--   `issuedCookieLifetime`: controls the lifetime of the SecurityContextTokens that are issued by the server following SPNEGO or SSL negotiation. The server caches the SecurityContextTokens for this period of time.  
-  
--   `maxPendingSessions`: controls the maximum number of secure conversations that are established at the server but for which no application messages have been processed. This quota prevents clients from establishing secure conversations at the service, thereby causing the service to maintain state for each client, but never using them.  
-  
--   `inactivityTimeout`: controls the maximum time that the service keeps a secure conversation alive without ever receiving an application message on it. This quota prevents clients from establishing secure conversations at the service, thereby causing the service to maintain state for each client, but never using them.  
-  
+
+- `maxCachedCookies`: controls the maximum number of time-bounded SecurityContextTokens that are cached by the server after doing SPNEGO or SSL negotiation.  
+
+- `issuedCookieLifetime`: controls the lifetime of the SecurityContextTokens that are issued by the server following SPNEGO or SSL negotiation. The server caches the SecurityContextTokens for this period of time.  
+
+- `maxPendingSessions`: controls the maximum number of secure conversations that are established at the server but for which no application messages have been processed. This quota prevents clients from establishing secure conversations at the service, thereby causing the service to maintain state for each client, but never using them.  
+
+- `inactivityTimeout`: controls the maximum time that the service keeps a secure conversation alive without ever receiving an application message on it. This quota prevents clients from establishing secure conversations at the service, thereby causing the service to maintain state for each client, but never using them.  
+
  In a secure conversation session, note that both `inactivityTimeout` and the `receiveTimeout` attributes on the binding affect session timeout. The shorter of the two determines when timeouts occur.  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>  
  <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalServiceSettings%2A>  

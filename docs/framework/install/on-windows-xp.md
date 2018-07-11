@@ -6,7 +6,6 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
 ---
-
 # Install the .NET Framework on Windows XP and Windows Server 2003
 
 > [!NOTE]

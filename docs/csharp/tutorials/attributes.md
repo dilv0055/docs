@@ -5,12 +5,11 @@ author: mgroves
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
 ---
-
 # Using Attributes in C# #
 
 Attributes provide a way of associating information with code in a declarative way. They can also provide a reusable element that can be applied to a variety of targets.
 
-Consider the `[Obsolete]` attribute. It can be applied to classes, structs, methods, constructors, and more. It _declares_ that the element is obsolete. It's then up to the C#
+Consider the `[Obsolete]` attribute. It can be applied to classes, structs, methods, constructors, and more. It *declares* that the element is obsolete. It's then up to the C#
 compiler to look for this attribute, and do some action in response.
 
 In this tutorial, you'll be introduced to how to add attributes to your code, how to create and use your own attributes, and how to use some
@@ -147,14 +146,14 @@ and provides an action filter framework to perform cross-cutting concerns on MVC
 Here are a few notable attributes built into the .NET Core base class libraries:
 
 * `[Obsolete]`. This one was used in the above examples, and it lives in the `System` namespace. It is useful to provide declarative documentation about a changing code base. A message can be provided in the form of a string,
-and another boolean parameter can be used to escalate from a compiler warning to a compiler error.
+  and another boolean parameter can be used to escalate from a compiler warning to a compiler error.
 
 * `[Conditional]`. This attribute is in the `System.Diagnostics` namespace. This attribute can be applied to methods (or attribute classes). You must pass a string to the constructor.
-If that string matches a `#define` directive, then any calls to that method (but not the method itself) will be removed by the C# compiler. Typically this is used for debugging (diagnostics) purposes.
+  If that string matches a `#define` directive, then any calls to that method (but not the method itself) will be removed by the C# compiler. Typically this is used for debugging (diagnostics) purposes.
 
 * `[CallerMemberName]`. This attribute can be used on parameters, and lives in the `System.Runtime.CompilerServices` namespace. This is an attribute that is used to inject the name
-of the method that is calling another method. This is typically used as a way to eliminate 'magic strings' when implementing INotifyPropertyChanged in various UI frameworks. As an
-example:
+  of the method that is calling another method. This is typically used as a way to eliminate 'magic strings' when implementing INotifyPropertyChanged in various UI frameworks. As an
+  example:
 
 [!code-csharp[Using CallerMemberName when implementing INotifyPropertyChanged](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
 

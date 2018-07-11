@@ -17,31 +17,31 @@ You display a dialog box in the same way you display any other form in an applic
   
 ### To display a dialog box  
   
-1.  Navigate to the event handler with which you want to open the dialog box. This can happen when a menu command is selected, when a button is clicked, or when any other event occurs.  
+1. Navigate to the event handler with which you want to open the dialog box. This can happen when a menu command is selected, when a button is clicked, or when any other event occurs.  
   
-2.  In the event handler, add code to open the dialog box. In this example, a button-click event is used to show the dialog box:  
+2. In the event handler, add code to open the dialog box. In this example, a button-click event is used to show the dialog box:  
   
-    ```vb  
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
-       Dim dlg1 as new Form()  
-       dlg1.ShowDialog()  
-    End Sub  
-    ```  
+   ```vb  
+   Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
+      Dim dlg1 as new Form()  
+      dlg1.ShowDialog()  
+   End Sub  
+   ```  
   
-    ```csharp  
-    private void button1_Click(object sender, System.EventArgs e)   
-    {  
-       Form dlg1 = new Form();  
-       dlg1.ShowDialog();  
-    }  
-    ```  
+   ```csharp  
+   private void button1_Click(object sender, System.EventArgs e)   
+   {  
+      Form dlg1 = new Form();  
+      dlg1.ShowDialog();  
+   }  
+   ```  
   
-    ```cpp  
-    private:   
-      void button1_Click(System::Object ^ sender,  
-        System::EventArgs ^ e)  
-      {  
-        Form ^ dlg1 = gcnew Form();  
-        dlg1->ShowDialog();  
-      }  
-    ```
+   ```cpp  
+   private:   
+     void button1_Click(System::Object ^ sender,  
+       System::EventArgs ^ e)  
+     {  
+       Form ^ dlg1 = gcnew Form();  
+       dlg1->ShowDialog();  
+     }  
+   ```

@@ -18,25 +18,25 @@ The following procedure creates a C# version of the traditional "Hello World!" p
   
 ### To create and run a console application  
   
-1.  Start Visual Studio.  
+1. Start Visual Studio.  
   
-2.  On the menu bar, choose **File**, **New**, **Project**.  
+2. On the menu bar, choose **File**, **New**, **Project**.  
   
-     The **New Project** dialog box opens.  
+    The **New Project** dialog box opens.  
   
-3.  Expand **Installed**, expand **Templates**, expand **Visual C#**, and then choose **Console Application**.  
+3. Expand **Installed**, expand **Templates**, expand **Visual C#**, and then choose **Console Application**.  
   
-4.  In the **Name** box, specify a name for your project, and then choose the **OK** button.  
+4. In the **Name** box, specify a name for your project, and then choose the **OK** button.  
   
-     The new project appears in **Solution Explorer**.  
+    The new project appears in **Solution Explorer**.  
   
-5.  If Program.cs isn't open in the **Code Editor**, open the shortcut menu for **Program.cs** in **Solution Explorer**, and then choose **View Code**.  
+5. If Program.cs isn't open in the **Code Editor**, open the shortcut menu for **Program.cs** in **Solution Explorer**, and then choose **View Code**.  
   
-6.  Replace the contents of Program.cs with the following code.  
+6. Replace the contents of Program.cs with the following code.  
   
-     [!code-csharp[csProgGuide#21](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_1.cs)]  
+    [!code-csharp[csProgGuide#21](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_1.cs)]  
   
-7.  Choose the F5 key to run the project. A Command Prompt window appears that contains the line `Hello World!`  
+7. Choose the F5 key to run the project. A Command Prompt window appears that contains the line `Hello World!`  
   
  Next, the important parts of this program are examined.  
   
@@ -54,21 +54,21 @@ The following procedure creates a C# version of the traditional "Hello World!" p
   
  The `Main` method is a [static](../../../csharp/language-reference/keywords/static.md) method that resides inside a class or a struct. In the previous "Hello World!" example, it resides in a class named `Hello`. You can declare the `Main` method in one of the following ways:  
   
--   It can return `void`.  
+- It can return `void`.  
   
-     [!code-csharp[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_4.cs)]  
+   [!code-csharp[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_4.cs)]  
   
--   It can also return an integer.  
+- It can also return an integer.  
   
-     [!code-csharp[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_5.cs)]  
+   [!code-csharp[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_5.cs)]  
   
--   With either of the return types, it can take arguments.  
+- With either of the return types, it can take arguments.  
   
-     [!code-csharp[csProgGuideMain#19](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_6.cs)]  
+   [!code-csharp[csProgGuideMain#19](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_6.cs)]  
   
-     -or-  
+   -or-  
   
-     [!code-csharp[csProgGuideMain#18](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_7.cs)]  
+   [!code-csharp[csProgGuideMain#18](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/hello-world-your-first-program_7.cs)]  
   
  The parameter of the `Main` method, `args`, is a `string` array that contains the command-line arguments used to invoke the program. Unlike in C++, the array does not include the name of the executable (exe) file.  
   
@@ -90,33 +90,33 @@ The following procedure creates a C# version of the traditional "Hello World!" p
   
 #### To compile and run from a command prompt  
   
-1.  Paste the code from the preceding procedure into any text editor, and then save the file as a text file. Name the file `Hello.cs`. C# source code files use the extension `.cs`.  
+1. Paste the code from the preceding procedure into any text editor, and then save the file as a text file. Name the file `Hello.cs`. C# source code files use the extension `.cs`.  
   
-2.  Perform one of the following steps to open a command-prompt window:  
+2. Perform one of the following steps to open a command-prompt window:  
   
-    -   In Windows 10, on the **Start** menu, search for `Developer Command Prompt`, and then tap or choose **Developer Command Prompt for VS 2017**.  
+   - In Windows 10, on the **Start** menu, search for `Developer Command Prompt`, and then tap or choose **Developer Command Prompt for VS 2017**.  
   
-         A Developer Command Prompt window appears.  
+      A Developer Command Prompt window appears.  
   
-    -   In Windows 7, open the **Start** menu, expand the folder for the current version of Visual Studio, open the shortcut menu for **Visual Studio Tools**, and then choose **Developer Command Prompt for VS 2017**.  
+   - In Windows 7, open the **Start** menu, expand the folder for the current version of Visual Studio, open the shortcut menu for **Visual Studio Tools**, and then choose **Developer Command Prompt for VS 2017**.  
   
-         A Developer Command Prompt window appears.  
+      A Developer Command Prompt window appears.  
   
-    -   Enable command-line builds from a standard Command Prompt window.  
+   - Enable command-line builds from a standard Command Prompt window.  
   
-         See [How to: Set Environment Variables for the Visual Studio Command Line](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).  
+      See [How to: Set Environment Variables for the Visual Studio Command Line](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).  
   
-3.  In the command-prompt window, navigate to the folder that contains your `Hello.cs` file.  
+3. In the command-prompt window, navigate to the folder that contains your `Hello.cs` file.  
   
-4.  Enter the following command to compile `Hello.cs`.  
+4. Enter the following command to compile `Hello.cs`.  
   
-     `csc Hello.cs`  
+    `csc Hello.cs`  
   
-     If your program has no compilation errors, an executable file that is named `Hello.exe` is created.  
+    If your program has no compilation errors, an executable file that is named `Hello.exe` is created.  
   
-5.  In the command-prompt window, enter the following command to run the program:  
+5. In the command-prompt window, enter the following command to run the program:  
   
-     `Hello`  
+    `Hello`  
   
  For more information about the C# compiler and its options, see [C# Compiler Options](../../../csharp/language-reference/compiler-options/index.md).
   

@@ -272,7 +272,7 @@ Note that the `<RuntimeFrameworkVersion>` value in the migrated project is deter
 
 > [!NOTE]
 > This will break the way that `dotnet pack --version-suffix $suffix` determines the 
-dependency version of a project reference.
+> dependency version of a project reference.
 
 
 #### type: build
@@ -351,7 +351,7 @@ For more information, see [Self-contained deployments (SCD)](../deploying/index.
 
 > [!NOTE]
 > `imports` on tools are not supported in csproj. Tools that need imports will not work with
-the new `Microsoft.NET.Sdk`.
+> the new `Microsoft.NET.Sdk`.
 
 ## buildOptions
 

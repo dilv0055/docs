@@ -35,22 +35,22 @@ However, we encourage you to use the following references to learn more about co
 
 ## Additional resources
 
--   **Composite UI using ASP.NET (Particular’s Workshop)**
-    [*http://go.particular.net/workshop-composite-ui-demo*](http://go.particular.net/workshop-composite-ui-demo)
+- **Composite UI using ASP.NET (Particular’s Workshop)**
+  [*http://go.particular.net/workshop-composite-ui-demo*](http://go.particular.net/workshop-composite-ui-demo)
 
--   **Ruben Oostinga. The Monolithic Frontend in the Microservices Architecture**
-    [*http://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/*](http://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/)
+- **Ruben Oostinga. The Monolithic Frontend in the Microservices Architecture**
+  [*http://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/*](http://blog.xebia.com/the-monolithic-frontend-in-the-microservices-architecture/)
 
--   **Mauro Servienti. The secret of better UI composition**
-    [*https://particular.net/blog/secret-of-better-ui-composition*](https://particular.net/blog/secret-of-better-ui-composition)
+- **Mauro Servienti. The secret of better UI composition**
+  [*https://particular.net/blog/secret-of-better-ui-composition*](https://particular.net/blog/secret-of-better-ui-composition)
 
--   **Viktor Farcic. Including Front-End Web Components Into Microservices**
-    [*https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/*](https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/)
+- **Viktor Farcic. Including Front-End Web Components Into Microservices**
+  [*https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/*](https://technologyconversations.com/2015/08/09/including-front-end-web-components-into-microservices/)
 
--   **Managing Frontend in the Microservices Architecture**\
-    [*https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html*](https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html)
+- **Managing Frontend in the Microservices Architecture**\
+  [*https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html*](https://allegro.tech/2016/03/Managing-Frontend-in-the-microservices-architecture.html)
 
 
->[!div class="step-by-step"]
-[Previous](microservices-addressability-service-registry.md)
-[Next](resilient-high-availability-microservices.md)
+> [!div  class="step-by-step"]
+> [Previous](microservices-addressability-service-registry.md)
+> [Next](resilient-high-availability-microservices.md)

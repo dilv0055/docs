@@ -5,7 +5,6 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/18/2017
 ---
-
 # Deploying .NET Core apps with command-line interface (CLI) tools
 
 You can deploy a .NET Core application either as a *framework-dependent deployment*, which includes your application binaries but depends on the presence of .NET Core on the target system, or as a *self-contained deployment*, which includes both your application and the .NET Core binaries. For an overview, see [.NET Core Application Deployment](index.md).
@@ -27,25 +26,25 @@ Deploying a framework-dependent deployment with no third-party dependencies simp
 
    Create a directory for your project and make it your current directory.
 
-1. Create the project.
+2. Create the project.
 
    From the command line, type [dotnet new console](../tools/dotnet-new.md) to create a new C# console project in that directory.
 
-1. Add the application's source code.
+3. Add the application's source code.
 
    Open the *Program.cs* file in your editor and replace the auto-generated code with the following code. It prompts the user to enter text and displays the individual words entered by the user. It uses the regular expression `\w+` to separate the words in the input text.
 
    [!code-csharp[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
 
-1. Update the project's dependencies and tools.
- 
+4. Update the project's dependencies and tools.
+
    Run the [dotnet restore](../tools/dotnet-restore.md) ([see note](#dotnet-restore-note)) command to restore the dependencies specified in your project.
 
-1. Create a Debug build of your app.
+5. Create a Debug build of your app.
 
    Use the [dotnet build](../tools/dotnet-build.md) command to build your application or the [dotnet run](../tools/dotnet-run.md) command to build and run it.
 
-1. Deploy your app.
+6. Deploy your app.
 
    After you've debugged and tested the program, create the deployment by using the following command:
 
@@ -58,7 +57,7 @@ Deploying a framework-dependent deployment with no third-party dependencies simp
 
    You can deploy the complete set of application files in any way you like. For example, you can package them in a Zip file, use a simple `copy` command, or deploy them with any installation package of your choice.
 
-1. Run your app
+7. Run your app
 
    Once installed, users can execute your application by using the `dotnet` command and providing the application filename, such as `dotnet fdd.dll`.
 
@@ -76,7 +75,7 @@ Deploying a framework-dependent deployment with one or more third-party dependen
       </ItemGroup>
       ```
 
-1. If you haven't already, download the NuGet package containing the third-party dependency. To download the package, execute the `dotnet restore` ([see note](#dotnet-restore-note)) command after adding the dependency. Because the dependency is resolved out of the local NuGet cache at publish time, it must be available on your system.
+2. If you haven't already, download the NuGet package containing the third-party dependency. To download the package, execute the `dotnet restore` ([see note](#dotnet-restore-note)) command after adding the dependency. Because the dependency is resolved out of the local NuGet cache at publish time, it must be available on your system.
 
 Note that a framework-dependent deployment with third-party dependencies is only as portable as its third-party dependencies. For example, if a third-party library only supports macOS, the app isn't portable to Windows systems. This happens if the third-party dependency itself depends on native code. A good example of this is [Kestrel server](/aspnet/core/fundamentals/servers/kestrel), which requires a native dependency on [libuv](https://github.com/libuv/libuv). When an FDD is created for an application with this kind of third-party dependency, the published output contains a folder for each [Runtime Identifier (RID)](../rid-catalog.md) that the native dependency supports (and that exists in its NuGet package).
 
@@ -88,17 +87,17 @@ Deploying a self-contained deployment without third-party dependencies involves 
 
    Create a directory for your project, and make it your current directory.
 
-1. Create the project.
+2. Create the project.
 
    From the command line, type [dotnet new console](../tools/dotnet-new.md) to create a new C# console project in that directory.
 
-1. Add the application's source code.
+3. Add the application's source code.
 
    Open the *Program.cs* file in your editor and replace the auto-generated code with the following code. It prompts the user to enter text and displays the individual words entered by the user. It uses the regular expression `\w+` to separate the words in the input text.
 
    [!code-csharp[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
 
-1. Define the platforms that your app will target.
+4. Define the platforms that your app will target.
 
    Create a `<RuntimeIdentifiers>` tag in the `<PropertyGroup>` section of your *csproj* file that defines the platforms your app targets and specify the runtime identifier (RID) for each platform that you target. Note that you also need to add a semicolon to separate the RIDs. See [Runtime IDentifier catalog](../rid-catalog.md) for a list of runtime identifiers. 
 
@@ -112,15 +111,15 @@ Deploying a self-contained deployment without third-party dependencies involves 
 
    Note that the `<RuntimeIdentifiers>` element can appear in any `<PropertyGroup>` in your *csproj* file. A complete sample *csproj* file appears later in this section.
 
-1. Update the project's dependencies and tools.
+5. Update the project's dependencies and tools.
 
    Run the [dotnet restore](../tools/dotnet-restore.md) ([see note](#dotnet-restore-note)) command to restore the dependencies specified in your project.
 
-1. Create a Debug build of your app.
+6. Create a Debug build of your app.
 
    From the command line, use the [dotnet build](../tools/dotnet-build.md) command.
 
-1. After you've debugged and tested the program, create the files to be deployed with your app for each platform that it targets.
+7. After you've debugged and tested the program, create the files to be deployed with your app for each platform that it targets.
 
    Use the `dotnet publish` command for both target platforms as follows:
 
@@ -159,7 +158,7 @@ Deploying a self-contained deployment with one or more third-party dependencies 
       </ItemGroup>
     ```
 
-1. If you haven't already, download the NuGet package containing the third-party dependency to your system. To make the dependency available to your app, execute the `dotnet restore` ([see note](#dotnet-restore-note)) command after adding the dependency. Because the dependency is resolved out of the local NuGet cache at publish time, it must be available on your system.
+2. If you haven't already, download the NuGet package containing the third-party dependency to your system. To make the dependency available to your app, execute the `dotnet restore` ([see note](#dotnet-restore-note)) command after adding the dependency. Because the dependency is resolved out of the local NuGet cache at publish time, it must be available on your system.
 
 The following is the complete *csproj* file for this project:
 

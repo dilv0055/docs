@@ -1,5 +1,6 @@
 ### GridViews with AllowCustomPaging set to true may fire the PageIndexChanging event when leaving the final page of the view
 
+
 |   |   |
 |---|---|
 |Details|A bug in the .NET Framework 4.5 causes <xref:System.Web.UI.WebControls.GridView.PageIndexChanging?displayProperty=name> to sometimes not fire for <xref:System.Web.UI.WebControls.GridView?displayProperty=name>s that have enabled <xref:System.Web.UI.WebControls.GridView.AllowCustomPaging?displayProperty=name>.|

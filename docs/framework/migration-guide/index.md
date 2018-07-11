@@ -17,13 +17,13 @@ If you created your app using an earlier version of the .NET Framework, you can 
 ## Migration resources  
  Review the following documents before you migrate your app from earlier versions of the .NET Framework to version 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, or 4.7.2:  
   
--   See [Versions and Dependencies](../../../docs/framework/migration-guide/versions-and-dependencies.md) to understand the CLR version underlying each version of the .NET Framework and to review guidelines for targeting your apps successfully.  
+- See [Versions and Dependencies](../../../docs/framework/migration-guide/versions-and-dependencies.md) to understand the CLR version underlying each version of the .NET Framework and to review guidelines for targeting your apps successfully.  
   
--   Review [Application Compatibility](../../../docs/framework/migration-guide/application-compatibility.md) to find out about runtime and retargeting changes that might affect your app and how to handle them.  
+- Review [Application Compatibility](../../../docs/framework/migration-guide/application-compatibility.md) to find out about runtime and retargeting changes that might affect your app and how to handle them.  
   
--   Review [What's Obsolete in the Class Library](../../../docs/framework/whats-new/whats-obsolete.md) to determine any types or members in your code that have been made obsolete, and the recommended alternatives.  
+- Review [What's Obsolete in the Class Library](../../../docs/framework/whats-new/whats-obsolete.md) to determine any types or members in your code that have been made obsolete, and the recommended alternatives.  
   
--   See [What's New](../../../docs/framework/whats-new/index.md) for descriptions of new features that you may want to add to your app.  
+- See [What's New](../../../docs/framework/whats-new/index.md) for descriptions of new features that you may want to add to your app.  
   
 ## See Also  
  [Application Compatibility](../../../docs/framework/migration-guide/application-compatibility.md)  

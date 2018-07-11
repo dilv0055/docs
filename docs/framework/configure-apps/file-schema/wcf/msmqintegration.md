@@ -5,15 +5,15 @@ ms.assetid: ab677405-1ffe-457a-803f-00c1770e51e2
 ---
 # &lt;msmqIntegration&gt;
 Specifies a MSMQ transport for custom binding.  
-  
+
  \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
 \<binding>  
 \<msmqIntegration>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <msmqIntegration>  
         customDeadLetterQueue="Uri"  
@@ -35,15 +35,16 @@ Specifies a MSMQ transport for custom binding.
     </msmqTransportSecurity>  
 </msmqIntegration>  
 ```  
-  
+
 ## Type  
  `Type`  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |customDeadLetterQueue|A URI that indicates the location of the per-application dead letter queue, where messages that have expired or failed to be delivered to the application are transferred.<br /><br /> For messages that require ExactlyOnce assurances (that is, `exactlyOnce` is set to `true`), this attribute defaults to the system-wide transactional dead-letter queue in MSMQ.<br /><br /> For messages that require no assurances (that is, `exactlyOnce` is set to `false`), this attribute defaults to `null`.<br /><br /> The value must use the net.msmq scheme. The default is `null`.<br /><br /> If `d``eadLetterQueue` is set to `None` or `System`, then this attribute must be set to `null`. If this attribute is not `null`, then `deadLetterQueue` must be set to `Custom`.|  
@@ -61,19 +62,21 @@ Specifies a MSMQ transport for custom binding.
 |timeToLive|A <xref:System.TimeSpan> that specifies how long the messages are valid before they expired and are put in the dead-letter queue. The default is 1.00:00:00, which means 1 day.<br /><br /> This attribute is set to ensure that time-sensitive messages do not become stale before they are processed by the receiving applications. A message in a queue that is not consumed by the receiving application within the time interval specified is said to be expired. Expired messages are sent to special queue called the dead letter queue. The location of the dead letter queue is set with the `customDeadLetterQueue` attribute or to the appropriate default, based on assurances.|  
 |useMsmqTracing|A Boolean value that specifies whether messages processed by this binding should be traced. The default is `false`.<br /><br /> When tracing is enabled, report messages are created and sent to the report queue each time the message leaves or arrives at a Message Queuing computer.|  
 |useSourceJournal|A Boolean value that specifies whether copies of messages processed by this binding should be stored in the source journal queue. The default is `false`.<br /><br /> Queued applications that want to keep a record of messages that have left the computer's outgoing queue can copy the messages to a journal queue. Once a message leaves the outgoing queue and an acknowledgment is received that the message was received on the destination computer, a copy of the message is kept in the sending computer's system journal queue.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |msmqTransportSecurity|Specifies transport security settings for this binding. This element is of type <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the custom binding.|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.MsmqIntegrationElement>  
  <xref:System.ServiceModel.Channels.TransportBindingElement>  

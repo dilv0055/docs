@@ -27,7 +27,7 @@ The following code example uses a `try`/`catch` block to catch a possible except
 
 The common language runtime catches exceptions that are not caught by a catch block. Depending on how the runtime is configured, a debug dialog box appears, or the program stops executing and a dialog box with exception information appears, or an error is printed out to STDERR.
 
-> [!NOTE] 
+> [!NOTE]
 > Almost any line of code can cause an exception, particularly exceptions that are thrown by the common language runtime itself, such as <xref:System.OutOfMemoryException>. Most applications don't have to deal with these exceptions, but you should be aware of this possibility when writing libraries to be used by others. For suggestions on when to set code in a Try block, see [Best Practices for Exceptions](best-practices-for-exceptions.md).
 
 ## See Also  

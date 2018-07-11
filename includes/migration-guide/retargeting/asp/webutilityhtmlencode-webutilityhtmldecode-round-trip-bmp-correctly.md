@@ -1,5 +1,6 @@
 ### WebUtility.HtmlEncode and WebUtility.HtmlDecode round-trip BMP correctly
 
+
 |   |   |
 |---|---|
 |Details|For applications that target the .NET Framework 4.5, characters that are outside the Basic Multilingual Plane (BMP) round-trip correctly when they are passed to the <xref:System.Net.WebUtility.HtmlDecode(System.String)> methods.|

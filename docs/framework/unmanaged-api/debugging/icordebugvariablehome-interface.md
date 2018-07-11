@@ -21,9 +21,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugVariableHome Interface
 Represents a local variable or argument of a function.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetArgumentIndex Method](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getargumentindex-method.md)|Gets the index of a function argument.|  
@@ -33,24 +34,24 @@ Represents a local variable or argument of a function.
 |[GetOffset Method](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getoffset-method.md)|Gets the offset from the base register for a variable.|  
 |[GetRegister Method](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getregister-method.md)|Gets the register that contains a variable with a location type of `VLT_REGISTER`, and the base register for a variable with a location type of `VLT_REGISTER_RELATIVE`.|  
 |[GetSlotIndex Method](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getslotindex-method.md)|Gets the managed slot-index of a local variable.|  
-  
+
 ## Example  
  The following code fragment uses the [ICorDebugCode4](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-interface.md) object named `pCode4`.  
-  
+
 ```cpp  
 ICorDebugCode4 *pCode4 = NULL;  
 pCode->QueryInterface(IID_ICorDebugCode4, &pCode4);  
-  
+
 ICorDebugVariableEnum *pVarLocEnum = NULL;  
 pCode4->EnumerateVariableHomes(&pVarLocEnum);  
-  
+
 // retrieve local variables and arguments  
 ULONG celt = 0;  
 pVarLocEnum->GetCount(&celt);  
 ICorDebugVariableHome **homes = new ICorDebugVariableHome *[celt];  
 ULONG celtFetched = 0;  
 pVarLocEnum->Next(celt, homes, &celtFetched);  
-  
+
 for (int i = 0; i < celtFetched; i++)  
 {  
     VariableLocationType locType = VLT_INVALID;  
@@ -75,16 +76,16 @@ for (int i = 0; i < celtFetched; i++)
     }  
 }  
 ```  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
  [ICorDebugVariableHomeEnum Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md)

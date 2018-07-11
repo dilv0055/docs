@@ -19,27 +19,28 @@ ms.author: "mairaw"
 ---
 # CorUnmanagedCallingConvention Enumeration
 Specifies the calling conventions for unmanaged code.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorUnmanagedCallingConvention {  
-  
+
     IMAGE_CEE_UNMANAGED_CALLCONV_C         = 0x1,  
     IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL   = 0x2,  
     IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL  = 0x3,  
     IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL  = 0x4,  
-  
+
     IMAGE_CEE_CS_CALLCONV_C                = 0x1,  
     IMAGE_CEE_CS_CALLCONV_STDCALL          = 0x2,  
     IMAGE_CEE_CS_CALLCONV_THISCALL         = 0x3,  
     IMAGE_CEE_CS_CALLCONV_FASTCALL         = 0x4  
-  
+
 } CorUnmanagedCallingConvention;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`IMAGE_CEE_UNMANAGED_CALLCONV_C`|The C language calling convention.|  
@@ -50,16 +51,16 @@ typedef enum CorUnmanagedCallingConvention {
 |`IMAGE_CEE_CS_CALLCONV_STDCALL`|Not used.|  
 |`IMAGE_CEE_CS_CALLCONV_THISCALL`|Not used.|  
 |`IMAGE_CEE_CS_CALLCONV_FASTCALL`|Not used.|  
-  
+
 ## Remarks  
  The CLR does not support the "fast" calling convention in the .NET Framework version 1.0.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

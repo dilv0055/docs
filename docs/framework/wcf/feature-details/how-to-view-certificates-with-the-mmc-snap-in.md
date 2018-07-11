@@ -10,21 +10,21 @@ A common type of credential is the X.509 certificate. When creating secure servi
   
 ### To view certificates in the MMC snap-in  
   
-1.  Open a Command Prompt window.  
+1. Open a Command Prompt window.  
   
-2.  Type `mmc` and press the ENTER key. Note that to view certificates in the local machine store, you must be in the Administrator role.  
+2. Type `mmc` and press the ENTER key. Note that to view certificates in the local machine store, you must be in the Administrator role.  
   
-3.  On the **File** menu, click **Add/Remove Snap In**.  
+3. On the **File** menu, click **Add/Remove Snap In**.  
   
-4.  Click **Add**.  
+4. Click **Add**.  
   
-5.  In the **Add Standalone Snap-in** dialog box, select **Certificates**.  
+5. In the **Add Standalone Snap-in** dialog box, select **Certificates**.  
   
-6.  Click **Add**.  
+6. Click **Add**.  
   
-7.  In the **Certificates snap-in** dialog box, select **Computer account** and click **Next**. Optionally, you can select **My User account** or **Service account**. If you are not an administrator of the computer, you can manage certificates only for your user account.  
+7. In the **Certificates snap-in** dialog box, select **Computer account** and click **Next**. Optionally, you can select **My User account** or **Service account**. If you are not an administrator of the computer, you can manage certificates only for your user account.  
   
-8.  In the **Select Computer** dialog box, click **Finish**.  
+8. In the **Select Computer** dialog box, click **Finish**.  
   
 9. In the **Add Standalone Snap-in** dialog box, click **Close**.  
   
@@ -41,13 +41,13 @@ A common type of credential is the X.509 certificate. When creating secure servi
   
 #### To view certificates with Internet Explorer  
   
-1.  In Internet Explorer, click **Tools**, then click **Internet Options** to display the **Internet Options** dialog box.  
+1. In Internet Explorer, click **Tools**, then click **Internet Options** to display the **Internet Options** dialog box.  
   
-2.  Click the **Content** tab.  
+2. Click the **Content** tab.  
   
-3.  Under **Certificates**, click **Certificates**.  
+3. Under **Certificates**, click **Certificates**.  
   
-4.  To view details of any certificate, select the certificate and click **View**.  
+4. To view details of any certificate, select the certificate and click **View**.  
   
 ## See Also  
  [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  

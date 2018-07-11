@@ -57,7 +57,7 @@ FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 ## Compiling the Code  
  This example requires:  
   
--   References to the **System.Net** namespace.  
+- References to the **System.Net** namespace.  
   
 ## See Also  
  [Security in Network Programming](../../../docs/framework/network-programming/security-in-network-programming.md)  

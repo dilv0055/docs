@@ -49,14 +49,15 @@ The key point is the open number of actions to be executed when a domain event o
 
 On the other hand, if you use domain events, you can create a fine-grained and decoupled implementation by segregating responsibilities using this approach:
 
-1.  Send a command (for example, CreateOrder).
-2.  Receive the command in a command handler.
-    -   Execute a single aggregate’s transaction.
-    -   (Optional) Raise domain events for side effects (for example, OrderStartedDomainEvent).
-1.  Handle domain events (within the current process) that will execute an open number of side effects in multiple aggregates or application actions. For example:
-    -   Verify or create buyer and payment method.
-    -   Create and send a related integration event to the event bus to propagate states across microservices or trigger external actions like sending an email to the buyer.
-    -   Handle other side effects.
+1. Send a command (for example, CreateOrder).
+2. Receive the command in a command handler.
+   - Execute a single aggregate’s transaction.
+   - (Optional) Raise domain events for side effects (for example, OrderStartedDomainEvent).
+
+3. Handle domain events (within the current process) that will execute an open number of side effects in multiple aggregates or application actions. For example:
+   - Verify or create buyer and payment method.
+   - Create and send a related integration event to the event bus to propagate states across microservices or trigger external actions like sending an email to the buyer.
+   - Handle other side effects.
 
 As shown in Figure 9-15, starting from the same domain event, you can handle multiple actions related to other aggregates in the domain or additional application actions you need to perform across microservices connecting with integration events and the event bus.
 
@@ -325,40 +326,40 @@ As stated, use domain events to explicitly implement side effects of changes wit
 
 ## Additional resources
 
--   **Greg Young. What is a Domain Event?**
-    [*http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
+- **Greg Young. What is a Domain Event?**
+  [*http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/*](http://codebetter.com/gregyoung/2010/04/11/what-is-a-domain-event/)
 
--   **Jan Stenberg. Domain Events and Eventual Consistency**
-    [*https://www.infoq.com/news/2015/09/domain-events-consistency*](https://www.infoq.com/news/2015/09/domain-events-consistency)
+- **Jan Stenberg. Domain Events and Eventual Consistency**
+  [*https://www.infoq.com/news/2015/09/domain-events-consistency*](https://www.infoq.com/news/2015/09/domain-events-consistency)
 
--   **Jimmy Bogard. A better domain events pattern**
-    [*https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/*](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
+- **Jimmy Bogard. A better domain events pattern**
+  [*https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/*](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
 
--   **Vaughn Vernon. Effective Aggregate Design Part II: Making Aggregates Work Together**
-    [*http://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf*](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
+- **Vaughn Vernon. Effective Aggregate Design Part II: Making Aggregates Work Together**
+  [*http://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf*](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)
 
--   **Jimmy Bogard. Strengthening your domain: Domain Events**
-    *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *
+- **Jimmy Bogard. Strengthening your domain: Domain Events**
+  *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *
 
--   **Tony Truong. Domain Events Pattern Example**
-    [*https://www.tonytruong.net/domain-events-pattern-example/*](https://www.tonytruong.net/domain-events-pattern-example/)
+- **Tony Truong. Domain Events Pattern Example**
+  [*https://www.tonytruong.net/domain-events-pattern-example/*](https://www.tonytruong.net/domain-events-pattern-example/)
 
--   **Udi Dahan. How to create fully encapsulated Domain Models**
-    [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
+- **Udi Dahan. How to create fully encapsulated Domain Models**
+  [*http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/*](http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/)
 
--   **Udi Dahan. Domain Events – Take 2**
-    [*http://udidahan.com/2008/08/25/domain-events-take-2/*](http://udidahan.com/2008/08/25/domain-events-take-2/%20)
+- **Udi Dahan. Domain Events – Take 2**
+  [*http://udidahan.com/2008/08/25/domain-events-take-2/*](http://udidahan.com/2008/08/25/domain-events-take-2/%20)
 
--   **Udi Dahan. Domain Events – Salvation**
-    [*http://udidahan.com/2009/06/14/domain-events-salvation/*](http://udidahan.com/2009/06/14/domain-events-salvation/)
+- **Udi Dahan. Domain Events – Salvation**
+  [*http://udidahan.com/2009/06/14/domain-events-salvation/*](http://udidahan.com/2009/06/14/domain-events-salvation/)
 
--   **Jan Kronquist. Don't publish Domain Events, return them!**
-    [*https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
+- **Jan Kronquist. Don't publish Domain Events, return them!**
+  [*https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/*](https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/)
 
--   **Cesar de la Torre. Domain Events vs. Integration Events in DDD and microservices architectures**
-    [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)
+- **Cesar de la Torre. Domain Events vs. Integration Events in DDD and microservices architectures**
+  [*https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/*](https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/)
 
 
->[!div class="step-by-step"]
-[Previous](client-side-validation.md)
-[Next](infrastructure-persistence-layer-design.md)
+> [!div  class="step-by-step"]
+> [Previous](client-side-validation.md)
+> [Next](infrastructure-persistence-layer-design.md)

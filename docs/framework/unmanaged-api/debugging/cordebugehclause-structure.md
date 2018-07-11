@@ -17,11 +17,11 @@ ms.author: "ronpet"
 ---
 # CorDebugEHClause Structure
 [Supported in the .NET Framework 4.5.2 and later versions]  
-  
+
  Represents an exception handling (EH) clause for a given piece of intermediate language (IL) code.  
-  
+
 ## Syntax  
-  
+
 ```cpp
 typedef struct _CorDebugEHClause {  
    ULONG32 Flags;  
@@ -33,9 +33,10 @@ typedef struct _CorDebugEHClause {
    ULONG32 FilterOffset;  
 } CorDebugEHClause;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`Flags`|A bit field that describes the exception information in the EH clause. For more information, see the Remarks section.|  
@@ -45,30 +46,31 @@ typedef struct _CorDebugEHClause {
 |`HandlerLength`|The size of the handler code in bytes.|  
 |`ClassToken`|The metadata token for a type-based exception handler.|  
 |`FilterOffset`|The offset, in bytes, from the start of the method body for a filter-based exception handler.|  
-  
+
 ## Remarks  
  An array of `CoreDebugEHClause` values is returned by the [GetEHClauses](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md) method.  
-  
+
  The EH clause information is defined by the CLI specification. For more information, see [Standard ECMA-355: Common Language Infrastructure (CLI), 6th Edition](http://www.ecma-international.org/publications/standards/Ecma-335.htm).  
-  
+
  The `flags` field can contain the following flags. Note that they are not defined in CorDebug.idl or CorDebug.h.  
-  
+
+
 |Flag|Value|Description|  
 |----------|-----------|-----------------|  
 |`COR_ILEXCEPTION_CLAUSE_EXCEPTION`|0x00000000|A typed exception clause.|  
 |`COR_ILEXCEPTION_CLAUSE_FILTER`|0x00000001|An exception filter and handler clause.|  
 |`COR_ILEXCEPTION_CLAUSE_FINALLY`|0x00000002|A `finally` clause.|  
 |`COR_ILEXCEPTION_CLAUSE_FAULT`|0x00000004|A fault clause (a `finally` clause that is called only when an exception is thrown).|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
-  
+
 ## See Also  
  [GetEHClauses Method](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md)  
  [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)

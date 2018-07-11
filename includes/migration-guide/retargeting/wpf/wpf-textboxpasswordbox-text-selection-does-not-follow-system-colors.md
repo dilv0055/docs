@@ -1,5 +1,6 @@
 ### WPF TextBox/PasswordBox Text Selection Does Not Follow System Colors
 
+
 |   |   |
 |---|---|
 |Details|In .NET Framework 4.7.1 and earlier versions, WPF <code>System.Windows.Controls.TextBox</code> and <code>System.Windows.Controls.PasswordBox</code> could only render a text selection in the Adorner layer. In some system themes this would occlude text, making it hard to read.  In .NET Framework 4.7.2 and later, developers have an option of enabling a non-Adorner-based selection rendering scheme that alleviates this issue.|

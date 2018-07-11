@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICLRDataTarget Interface
 Provides methods for interaction with a target item of the common language runtime (CLR).  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetCurrentThreadID Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-getcurrentthreadid-method.md)|Gets the operating system identifier for the current thread.|  
@@ -35,19 +36,19 @@ Provides methods for interaction with a target item of the common language runti
 |[SetThreadContext Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-setthreadcontext-method.md)|Sets the current context of the specified thread in the target process.|  
 |[SetTLSValue Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-settlsvalue-method.md)|Sets a value in the thread local storage (TLS) of the specified thread in the target process.|  
 |[WriteVirtual Method](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-writevirtual-method.md)|Writes data from the specified buffer to the specified virtual memory address.|  
-  
+
 ## Remarks  
  The API client (that is, the debugger) must implement this interface as appropriate for the particular target item. For example, a live process would have an implementation different from that of a memory dump.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** ClrData.idl, ClrData.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRDataTarget2 Interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

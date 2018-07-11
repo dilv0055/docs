@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugThread2 Interface1
 Serves as a logical extension to the ICorDebugThread interface.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetActiveFunctions Method](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md)|Gets an array of COR_ACTIVE_FUNCTION instances that contain data about the active functions in a thread's frames.|  
@@ -29,20 +30,20 @@ Serves as a logical extension to the ICorDebugThread interface.
 |[GetTaskID Method](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-gettaskid-method.md)|Gets a task identifier for this `ICorDebugThread2`.|  
 |[GetVolatileOSThreadID Method](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getvolatileosthreadid-method.md)|Gets the operating system thread identifier for this `ICorDebugThread2`.|  
 |[InterceptCurrentException Method](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-interceptcurrentexception-method.md)|Allows a debugger to intercept the current exception on a thread.|  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

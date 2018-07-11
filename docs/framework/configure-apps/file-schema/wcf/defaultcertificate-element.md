@@ -5,7 +5,7 @@ ms.assetid: f1ddf364-9a00-45d3-b989-ff381c154ce6
 ---
 # &lt;defaultCertificate&gt; Element
 Specifies an X.509 certificate to be used when a service or STS does not provide one via a negotiation protocol.  
-  
+
  \<system.ServiceModel>  
 \<behaviors>  
 endpointBehaviors section  
@@ -13,67 +13,73 @@ endpointBehaviors section
 \<clientCredentials>  
 \<serviceCertificate>  
 \<defaultCertificate>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <defaultCertificate findValue="String"   
 storeLocation=" CurrentUser/LocalMachine"  
 storeName="AddressBook/AuthRoot/CertificateAuthority/Disallowed/My/Root/TrustedPeople/TrustedPublisher"   
 x509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/FindByIssuerName/FindByIssuerDistinguishedName/FindBySerialiNumber/FindByTimeValid/FindByTimeNotYetValid/FindByTimeExpired/FindByTemplateName/FindByApplicationPolicy/FindByCertificatePolicy/FindByExtension/FindByKeyUsage/FindBySubjectKeyIdentifier" />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |findValue|String. The value to search for.|  
 |x509FindType|Enumeration. One of the certificate fields to search.|  
 |storeLocation|Enumeration. One of the two system store locations to search.|  
 |storeName|Enumeration. One of the system stores to search.|  
-  
+
 ## findValue Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |String|The value depends on the field (specified by the X509FindType attribute) being searched. For example, if searching for a thumbprint, the value must be a string of hexadecimal numbers.|  
-  
+
 ## x509FindType Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |Enumeration|Values include: FindByThumbprint, FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName, FindByApplicationPolicy, FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
-  
+
 ## storeLocation Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |Enumeration|CurrentUser or LocalMachine.|  
-  
+
 ## storeName Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |Enumeration|Values include: AddressBook, AuthRoot, CertificateAuthority, Disallowed, My, Root, TrustedPeople, and TrustedPublisher.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Specifies a certificate to use when authenticating a service to the client.|  
-  
+
 ## Remarks  
  For bindings that use certificate-based message security, certificate specified by this configuration element is used to encrypt messages to the service and is expected to be used by the service for signing replies to the client. It stores a single certificate to be used when no certificate is specified by a service.  
-  
+
 ## Example  
- The following example specifies a certificate to use for endpoints whose URI begins with http://www.contoso.com and a certificate to use for all other endpoints that do not perform certificate negotiation.  
-  
+ The following example specifies a certificate to use for endpoints whose URI begins with <http://www.contoso.com> and a certificate to use for all other endpoints that do not perform certificate negotiation.  
+
 ```xml  
 <serviceCertificate>  
   <defaultCertificate findValue="www.contoso.com"   
@@ -89,7 +95,7 @@ x509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
    trustedStoreLocation="LocalMachine" />  
 </serviceCertificate>  
 ```  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.X509DefaultServiceCertificateElement>  
  <xref:System.ServiceModel.Security.X509CertificateRecipientClientCredential>  

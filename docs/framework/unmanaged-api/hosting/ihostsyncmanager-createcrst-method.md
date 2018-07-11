@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostSyncManager::CreateCrst Method
 Creates a critical section object for synchronization.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT CreateCrst (  
     [out] IHostCrst** ppCrst  
 );  
 ```  
-  
+
 #### Parameters  
  `ppCrst`  
  [out] A pointer to the address of an [IHostCrst](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md) instance implemented by the host, or null if the critical section could not be created.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`CreateCrst` returned successfully.|  
@@ -44,19 +45,19 @@ HRESULT CreateCrst (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Not enough memory was available to create the requested critical section.|  
-  
+
 ## Remarks  
  Critical section objects provide synchronization similar to that provided by a mutex object, except that critical sections can be used only by the threads of a single process. `CreateCrst` mirrors the Win32 `InitializeCriticalSection` function.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
  [IHostCrst Interface](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md)  

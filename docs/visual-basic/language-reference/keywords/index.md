@@ -13,13 +13,14 @@ ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
 ---
 # Keywords (Visual Basic)
 The following tables list all Visual Basic language keywords.  
-  
+
 ## Reserved Keywords  
  The following keywords are *reserved*, which means that you cannot use them as names for programming elements such as variables or procedures. You can bypass this restriction by enclosing the name in brackets (`[]`). For more information, see "Escaped Names" in [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
-  
+
 > [!NOTE]
 >  We do not recommend that you use escaped names, because it can make your code hard to read, and it can lead to subtle errors that can be difficult to find.  
-  
+
+
 |||||  
 |---|---|---|---|  
 |[AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)|[AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)|[Alias](../../../visual-basic/language-reference/statements/alias-clause.md)|[And](../../../visual-basic/language-reference/operators/and-operator.md)|  
@@ -69,13 +70,14 @@ The following tables list all Visual Basic language keywords.
 |[\\](../../../visual-basic/language-reference/operators/integer-division-operator.md)|[\\=](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)|[^](../../../visual-basic/language-reference/operators/exponentiation-operator.md)|[^=](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)|  
 |[+](../../../visual-basic/language-reference/operators/addition-operator.md)|[+=](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)|[-](../../../visual-basic/language-reference/operators/subtraction-operator.md)|[-=](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)|  
 |[>> Operator](../../../visual-basic/language-reference/operators/right-shift-operator.md)|[>>= Operator](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)|[<<](../../../visual-basic/language-reference/operators/left-shift-operator.md)|[<\<=](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)|  
-  
+
 > [!NOTE]
 >  `EndIf`, `GoSub`, `Variant`, and `Wend` are retained as reserved keywords, although they are no longer used in Visual Basic. The meaning of the `Let` keyword has changed. `Let` is now used in LINQ queries. For more information, see [Let Clause](../../../visual-basic/language-reference/queries/let-clause.md).  
-  
+
 ## Unreserved Keywords  
  The following keywords are not reserved, which means you can use them as names for your programming elements. However, doing this is not recommended, because it can make your code hard to read and can lead to subtle errors that can be difficult to find.  
-  
+
+
 |||||  
 |---|---|---|---|  
 |[Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md)|[Ansi](../../../visual-basic/language-reference/modifiers/ansi.md)|[Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)|[Async](../../../visual-basic/language-reference/modifiers/async.md)|  
@@ -88,9 +90,10 @@ The following tables list all Visual Basic language keywords.
 |[Take](../../../visual-basic/language-reference/queries/take-clause.md)|[Take While](../../../visual-basic/language-reference/queries/take-while-clause.md)|[Text](../../../visual-basic/language-reference/statements/option-compare-statement.md)|[Unicode](../../../visual-basic/language-reference/modifiers/unicode.md)|  
 |[Until](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[Where](../../../visual-basic/language-reference/queries/where-clause.md)|[Yield](../../../visual-basic/language-reference/statements/yield-statement.md)|[#ExternalSource](../../../visual-basic/language-reference/directives/externalsource-directive.md)|  
 |[#Region](../../../visual-basic/language-reference/directives/region-directive.md)||||  
-  
+
 ## Related Topics  
-  
+
+
 |Title|Description|  
 |-----------|-----------------|  
 |[Arrays Summary](../../../visual-basic/language-reference/keywords/arrays-summary.md)|Lists language elements that are used to create, define, and use arrays.|  
@@ -110,6 +113,6 @@ The following tables list all Visual Basic language keywords.
 |[Operators Summary](../../../visual-basic/language-reference/keywords/operators-summary.md)|Lists assignment and comparison expressions and other operators.|  
 |[Registry Summary](../../../visual-basic/language-reference/keywords/registry-summary.md)|Lists functions that are used to read, save, and delete program settings.|  
 |[String Manipulation Summary](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)|Lists functions that are used to manipulate strings.|  
-  
+
 ## See Also  
  [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)

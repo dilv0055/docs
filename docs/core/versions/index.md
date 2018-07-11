@@ -64,6 +64,7 @@ The format is readable and clearly shows what you're downloading, what version i
 
 All web site descriptions and UI strings in the installers are kept consistent, accurate, and simple. The following table shows some examples:
 
+
 | Installer | Window Title                          | Other content in installer | What is installed                               |
 | :--       | :--                                   | :--                        | :--                                             |
 | SDK       | .NET Core 2.0 SDK (x64) Installer     | .NET Core 2.0.4 SDK        | .NET Core 2.0.4 Tools + .NET Core 2.0.4 Runtime |
@@ -71,12 +72,14 @@ All web site descriptions and UI strings in the installers are kept consistent, 
 
 Preview releases differ only slightly:
 
+
 | Installer | Window Title                                    | Other content in installer        | What is installed                                                   |
 | :--       | :--                                             | :--                               | :--                                                                 |
 | SDK       | .NET Core 2.0 Preview 1 SDK (x64) Installer     | .NET Core 2.0.0 Preview 1 SDK     | .NET Core 2.0.0 Preview 1 Tools + .NET Core 2.0.0 Preview 1 Runtime |
 | Runtime   | .NET Core 2.0 Preview 1 Runtime (x64) Installer | .NET Core 2.0.0 Preview 1 Runtime | .NET Core 2.0.0 Preview 1 Runtime                                   |
 
 It may happen that an SDK release contains more than one version of the runtime. When that happens, the installer UX looks like the following (only the SDK version is shown and the installed Runtime versions are shown on a summary page at the end of the installation process on Windows and Mac):
+
 
 | Installer | Window Title                      | Other content in installer                                   | What is installed                                                         |
 | :--       | :--                               | :--                                                          | :--                                                                       |

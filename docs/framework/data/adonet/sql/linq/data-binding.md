@@ -28,13 +28,13 @@ ms.assetid: cbec8b02-a1e8-4ae8-a83b-bb5190413ac5
 ## IListSource Implementation  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] implements <xref:System.ComponentModel.IListSource> in two locations:  
   
--   The data source is a <xref:System.Data.Linq.Table%601>: [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] browses the table to fill a `DataBindingList` collection that keeps a reference on the table.  
+- The data source is a <xref:System.Data.Linq.Table%601>: [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] browses the table to fill a `DataBindingList` collection that keeps a reference on the table.  
   
--   The data source is an <xref:System.Linq.IQueryable%601>. There are two scenarios:  
+- The data source is an <xref:System.Linq.IQueryable%601>. There are two scenarios:  
   
-    -   If [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] finds the underlying <xref:System.Data.Linq.Table%601> from the <xref:System.Linq.IQueryable%601>, the source allows for edition and the situation is the same as in the first bullet point.  
+  - If [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] finds the underlying <xref:System.Data.Linq.Table%601> from the <xref:System.Linq.IQueryable%601>, the source allows for edition and the situation is the same as in the first bullet point.  
   
-    -   If [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] cannot find the underlying <xref:System.Data.Linq.Table%601>, the source does not allow for edition (for example, `groupby`). [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] browses the query to fill a generic `SortableBindingList`, which is a simple <xref:System.ComponentModel.BindingList%601> that implements the sorting feature for T entities for a given property.  
+  - If [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] cannot find the underlying <xref:System.Data.Linq.Table%601>, the source does not allow for edition (for example, `groupby`). [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] browses the query to fill a generic `SortableBindingList`, which is a simple <xref:System.ComponentModel.BindingList%601> that implements the sorting feature for T entities for a given property.  
   
 ## Specialized Collections  
  For many features described earlier in this document, <xref:System.ComponentModel.BindingList%601> has been specialized to some different classes. These classes are generic `SortableBindingList` and generic `DataBindingList`. Both are declared as internal.  
@@ -59,11 +59,11 @@ ms.assetid: cbec8b02-a1e8-4ae8-a83b-bb5190413ac5
   
  On the `EntitySet` side, you now have to declare sorting support:  
   
--   <xref:System.ComponentModel.IBindingList.SupportsSorting%2A> returns `true`.  
+- <xref:System.ComponentModel.IBindingList.SupportsSorting%2A> returns `true`.  
   
--   <xref:System.ComponentModel.IBindingList.ApplySort%2A> calls `entities.ApplySort()` and then `OnListChanged()`.  
+- <xref:System.ComponentModel.IBindingList.ApplySort%2A> calls `entities.ApplySort()` and then `OnListChanged()`.  
   
--   <xref:System.ComponentModel.IBindingList.SortDirection%2A> and <xref:System.ComponentModel.IBindingList.SortProperty%2A> properties expose the current sorting definition, which is stored in local members.  
+- <xref:System.ComponentModel.IBindingList.SortDirection%2A> and <xref:System.ComponentModel.IBindingList.SortProperty%2A> properties expose the current sorting definition, which is stored in local members.  
   
  When you use a System.Windows.Forms.BindingSource and bind an EntitySet\<TEntity> to the System.Windows.Forms.BindingSource.DataSource, you must call EntitySet\<Tentity>.GetNewBindingList to update BindingSource.List.  
   
@@ -79,26 +79,26 @@ ms.assetid: cbec8b02-a1e8-4ae8-a83b-bb5190413ac5
   
  <xref:System.ComponentModel.ICancelAddNew> is implemented in all [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] databound collections (generic `SortableBindingList` and generic `EntitySet`). In both implementations the code performs as follows:  
   
--   Lets items be inserted and then removed from the collection.  
+- Lets items be inserted and then removed from the collection.  
   
--   Does not track changes as long as the UI does not commit the edition.  
+- Does not track changes as long as the UI does not commit the edition.  
   
--   Does not track changes as long as the edition is canceled (<xref:System.ComponentModel.ICancelAddNew.CancelNew%2A>).  
+- Does not track changes as long as the edition is canceled (<xref:System.ComponentModel.ICancelAddNew.CancelNew%2A>).  
   
--   Allows tracking when the edition is committed (<xref:System.ComponentModel.ICancelAddNew.EndNew%2A>).  
+- Allows tracking when the edition is committed (<xref:System.ComponentModel.ICancelAddNew.EndNew%2A>).  
   
--   Lets the collection behave normally if the new item does not come from <xref:System.ComponentModel.IBindingList.AddNew%2A>.  
+- Lets the collection behave normally if the new item does not come from <xref:System.ComponentModel.IBindingList.AddNew%2A>.  
   
 ## Troubleshooting  
  This section calls out several items that might help troubleshoot your [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] data binding applications.  
   
--   You must use properties; using only fields is not sufficient. Windows Forms require this usage.  
+- You must use properties; using only fields is not sufficient. Windows Forms require this usage.  
   
--   By default, `image`, `varbinary`, and `timestamp` database types map to byte array. Because `ToString()` is not supported in this scenario, these objects cannot be displayed.  
+- By default, `image`, `varbinary`, and `timestamp` database types map to byte array. Because `ToString()` is not supported in this scenario, these objects cannot be displayed.  
   
--   A class member mapped to a primary key has a setter, but [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] does not support object identity change. Therefore, the primary/unique key that is used in mapping cannot be updated in the database. A change in the grid causes an exception when you call <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.  
+- A class member mapped to a primary key has a setter, but [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] does not support object identity change. Therefore, the primary/unique key that is used in mapping cannot be updated in the database. A change in the grid causes an exception when you call <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.  
   
--   If an entity is bound in two separate grids (for example, one master and another detail), a `Delete` in the master grid is not propagated to the detail grid.  
+- If an entity is bound in two separate grids (for example, one master and another detail), a `Delete` in the master grid is not propagated to the detail grid.  
   
 ## See Also  
  [Background Information](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)

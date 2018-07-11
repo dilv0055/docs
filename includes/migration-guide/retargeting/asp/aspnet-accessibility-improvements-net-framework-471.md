@@ -1,5 +1,6 @@
 ### ASP.NET Accessibility Improvements in .NET Framework 4.7.1
 
+
 |   |   |
 |---|---|
 |Details|Starting with the .NET Framework 4.7.1, ASP.NET has improved how ASP.NET Web Controls work with accessibility technology in Visual Studio to better support ASP.NET customers.  These include the following changes:<ul><li>Changes to implement missing UI accessibility patterns in controls, like the Add Field dialog in the Details View wizard, or the Configure ListView dialog of the ListView wizard.</li><li>Changes to improve the display in High Contrast mode, like the Data Pager Fields Editor.</li><li>Changes to improve the keyboard navigation experiences for controls, like the Fields dialog in the Edit Pager Fields wizard of the DataPager control, the Configure ObjectContext dialog, or the Configure Data Selction dialog of the Configure Data Source wizard.</li></ul>|

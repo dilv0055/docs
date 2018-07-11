@@ -6,22 +6,22 @@ ms.assetid: 1dfa02df-15b1-4e97-9c8e-f5f2772711b0
 # Discovery Proxy Sample
 This sample shows how to create an implementation of a Discovery proxy to store information about existing services and how clients can query that proxy for information. This sample consists of three projects:  
   
--   **Service**: A simple Windows Communication Foundation (WCF) calculator service that registers itself with the discovery proxy.  
+- **Service**: A simple Windows Communication Foundation (WCF) calculator service that registers itself with the discovery proxy.  
   
--   **Discovery Proxy**: The implementation of a discovery proxy service.  
+- **Discovery Proxy**: The implementation of a discovery proxy service.  
   
--   **Client**: A WCF client application that calls the discovery proxy to search for services.  
+- **Client**: A WCF client application that calls the discovery proxy to search for services.  
   
 ## Demonstrates  
  Discovery proxy implementation  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryProxy`  
   
 ## DiscoveryProxy  
@@ -39,14 +39,14 @@ This sample shows how to create an implementation of a Discovery proxy to store 
   
 #### To use this sample  
   
-1.  Load the project solution in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] and build the project.  
+1. Load the project solution in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] and build the project.  
   
-2.  First run the Discovery Proxy application, generated in [solution base directory]\DiscoveryProxy\bin\debug. The Discovery Proxy must run first because TCP announcement endpoints must be up for the service to send its announcements.  
+2. First run the Discovery Proxy application, generated in [solution base directory]\DiscoveryProxy\bin\debug. The Discovery Proxy must run first because TCP announcement endpoints must be up for the service to send its announcements.  
   
-3.  Second, run the service application generated in [solution base directory]\Service\bin\debug. At start-up, the service sends an announcement to the announcement endpoint of the discovery proxy and is registered in the proxy’s cache.  
+3. Second, run the service application generated in [solution base directory]\Service\bin\debug. At start-up, the service sends an announcement to the announcement endpoint of the discovery proxy and is registered in the proxy’s cache.  
   
-4.  Next, run the client application, generated in [solution base directory]\Client\bin\debug. The client queries the proxy, gets the service address and then connects to the service.  
+4. Next, run the client application, generated in [solution base directory]\Client\bin\debug. The client queries the proxy, gets the service address and then connects to the service.  
   
-5.  Lastly, terminate the client, service and then the proxy. The proxy must be running for it to receive the service's offline announcement.  
+5. Lastly, terminate the client, service and then the proxy. The proxy must be running for it to receive the service's offline announcement.  
   
 ## See Also

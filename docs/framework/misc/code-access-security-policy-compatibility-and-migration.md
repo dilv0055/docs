@@ -15,23 +15,23 @@ ms.author: "mairaw"
   
  You can avoid the warnings and errors by either:  
   
--   [Migrating](#migration) to the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] replacements for the obsolete calls.  
+- [Migrating](#migration) to the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] replacements for the obsolete calls.  
   
-     \- or -  
+   \- or -  
   
--   Using the [<NetFx40_LegacySecurityPolicy> configuration element](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) to opt into the legacy CAS policy behavior.  
+- Using the [<NetFx40_LegacySecurityPolicy> configuration element](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) to opt into the legacy CAS policy behavior.  
   
  This topic contains the following sections:  
   
--   [Explicit Use](#explicit_use)  
+- [Explicit Use](#explicit_use)  
   
--   [Implicit Use](#implicit_use)  
+- [Implicit Use](#implicit_use)  
   
--   [Errors and Warnings](#errors_and_warnings)  
+- [Errors and Warnings](#errors_and_warnings)  
   
--   [Migration: Replacement for Obsolete Calls](#migration)  
+- [Migration: Replacement for Obsolete Calls](#migration)  
   
--   [Compatibility: Using the CAS Policy Legacy Option](#compatibility)  
+- [Compatibility: Using the CAS Policy Legacy Option](#compatibility)  
   
 <a name="explicit_use"></a>   
 ## Explicit Use  
@@ -39,25 +39,25 @@ ms.author: "mairaw"
   
  Examples of these are:  
   
--   <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType>  
   
--   <xref:System.Security.HostSecurityManager.DomainPolicy%2A?displayProperty=nameWithType>  
+- <xref:System.Security.HostSecurityManager.DomainPolicy%2A?displayProperty=nameWithType>  
   
--   <xref:System.Security.Policy.PolicyLevel.CreateAppDomainLevel%2A?displayProperty=nameWithType>  
+- <xref:System.Security.Policy.PolicyLevel.CreateAppDomainLevel%2A?displayProperty=nameWithType>  
   
--   <xref:System.Security.SecurityManager.LoadPolicyLevelFromString%2A?displayProperty=nameWithType>  
+- <xref:System.Security.SecurityManager.LoadPolicyLevelFromString%2A?displayProperty=nameWithType>  
   
--   <xref:System.Security.SecurityManager.LoadPolicyLevelFromFile%2A?displayProperty=nameWithType>  
+- <xref:System.Security.SecurityManager.LoadPolicyLevelFromFile%2A?displayProperty=nameWithType>  
   
--   <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType>  
+- <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType>  
   
--   <xref:System.Security.SecurityManager.ResolveSystemPolicy%2A?displayProperty=nameWithType>  
+- <xref:System.Security.SecurityManager.ResolveSystemPolicy%2A?displayProperty=nameWithType>  
   
--   <xref:System.Security.SecurityManager.ResolvePolicyGroups%2A?displayProperty=nameWithType>  
+- <xref:System.Security.SecurityManager.ResolvePolicyGroups%2A?displayProperty=nameWithType>  
   
--   <xref:System.Security.SecurityManager.PolicyHierarchy%2A?displayProperty=nameWithType>  
+- <xref:System.Security.SecurityManager.PolicyHierarchy%2A?displayProperty=nameWithType>  
   
--   <xref:System.Security.SecurityManager.SavePolicy%2A?displayProperty=nameWithType>  
+- <xref:System.Security.SecurityManager.SavePolicy%2A?displayProperty=nameWithType>  
   
 <a name="implicit_use"></a>   
 ## Implicit Use  
@@ -65,23 +65,23 @@ ms.author: "mairaw"
   
  Here are some examples. The obsolete overloads are those that take <xref:System.Security.Policy.Evidence> as a parameter:  
   
--   <xref:System.Activator.CreateInstanceFrom%2A?displayProperty=nameWithType>  
+- <xref:System.Activator.CreateInstanceFrom%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.CreateInstanceFrom%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomain.CreateInstanceFrom%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.CreateInstanceAndUnwrap%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomain.CreateInstanceAndUnwrap%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.ExecuteAssemblyByName%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomain.ExecuteAssemblyByName%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>  
   
--   <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  
+- <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  
   
--   <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
+- <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
   
--   <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  
+- <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  
   
 <a name="errors_and_warnings"></a>   
 ## Errors and Warnings  
@@ -101,13 +101,13 @@ ms.author: "mairaw"
 ### Determining an Assembly’s Trust Level  
  CAS policy is often used to determine an assembly’s or application domain’s permission grant set or trust level. The [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] exposes the following useful properties that do not need to resolve security policy:  
   
--   <xref:System.Reflection.Assembly.PermissionSet%2A?displayProperty=nameWithType>  
+- <xref:System.Reflection.Assembly.PermissionSet%2A?displayProperty=nameWithType>  
   
--   <xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType>  
+- <xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.PermissionSet%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomain.PermissionSet%2A?displayProperty=nameWithType>  
   
--   <xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType>  
   
 ### Application Domain Sandboxing  
  The <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> method is typically used for sandboxing the assemblies in an application domain. The [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] exposes members that do not have to use <xref:System.Security.Policy.PolicyLevel> for this purpose. For more information, see [How to: Run Partially Trusted Code in a Sandbox](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).  

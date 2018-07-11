@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Determines whether the current class or instance derives from a specified parent class.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```
 HRESULT InheritsFrom (
    [in] int               vFunc, 
@@ -47,22 +47,23 @@ HRESULT InheritsFrom (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_S_NO_ERROR` | 0 | The current object inherits from `wszAncestor`.  |
 | `WBEM_S_FALSE` | 1 | The current object does not inherit from `wszAncestor`. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `wszAncestor` is `null`. |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::InheritsFrom](https://msdn.microsoft.com/library/aa391452(v=vs.85).aspx) method.
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

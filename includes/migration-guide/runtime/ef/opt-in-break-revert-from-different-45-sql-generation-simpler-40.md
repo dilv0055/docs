@@ -1,5 +1,6 @@
 ### Opt-in break to revert from different 4.5 SQL generation to simpler 4.0 SQL generation
 
+
 |   |   |
 |---|---|
 |Details|Queries that produce JOIN statements and contain a call to a limiting operation without first using OrderBy now produce simpler SQL. After upgrading to .NET Framework 4.5, these queries produced more complicated SQL than previous versions.|

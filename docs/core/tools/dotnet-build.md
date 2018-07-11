@@ -15,20 +15,19 @@ ms.date: 05/25/2018
 
 ## Synopsis
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 ```
 dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--no-dependencies] [--no-incremental]
     [--no-restore] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
 dotnet build [-h|--help]
 ```
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 ```
 dotnet build [<PROJECT>] [-c|--configuration] [-f|--framework] [--no-dependencies] [--no-incremental] [-o|--output]
     [-r|--runtime] [-v|--verbosity] [--version-suffix]
 dotnet build [-h|--help]
 ```
----
-
+* * *
 ## Description
 
 The `dotnet build` command builds the project and its dependencies into a set of binaries. The binaries include the project's code in Intermediate Language (IL) files with a *.dll* extension and symbol files used for debugging with a *.pdb* extension. A dependencies JSON file (*\*.deps.json*) is produced that lists the dependencies of the application. A *\*.runtimeconfig.json* file is produced, which specifies the shared runtime and its version for the application.
@@ -61,7 +60,7 @@ The project file to build. If a project file is not specified, MSBuild searches 
 
 ## Options
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 
 `-c|--configuration {Debug|Release}`
 
@@ -107,7 +106,7 @@ Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal
 
 Defines the version suffix for an asterisk (`*`) in the version field of the project file. The format follows NuGet's version guidelines.
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `-c|--configuration {Debug|Release}`
 
@@ -145,8 +144,7 @@ Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal
 
 Defines the version suffix for an asterisk (`*`) in the version field of the project file. The format follows NuGet's version guidelines.
 
----
-
+* * *
 ## Examples
 
 Build a project and its dependencies:

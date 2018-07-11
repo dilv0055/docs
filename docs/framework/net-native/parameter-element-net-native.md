@@ -7,9 +7,9 @@ ms.author: "ronpet"
 ---
 # &lt;Parameter&gt; Element (.NET Native)
 Applies reflection policy to the type of the argument passed to a method.  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <Parameter Name="parameter_name"  
            Activate="policy_type"  
@@ -23,12 +23,13 @@ Applies reflection policy to the type of the argument passed to a method.
            MarshalDelegate="policy_type"  
            MarshalStructure="policy_type" />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Attribute type|Description|  
 |---------------|--------------------|-----------------|  
 |`Name`|General|Required attribute. The parameter name. For example, for the method signature `String.CompareTo(Object value)`, the value of the `Name` attribute is "value".|  
@@ -42,31 +43,34 @@ Applies reflection policy to the type of the argument passed to a method.
 |`MarshalObject`|Interop|Optional attribute. Controls policy for marshaling reference types to WinRT and COM.|  
 |`MarshalDelegate`|Interop|Optional attribute. Controls policy for marshaling delegate types as function pointers to native code.|  
 |`MarshalStructure`|Interop|Optional attribute. Controls policy for marshaling value types to native code.|  
-  
+
 ## Name attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |*parameter_name*|The name of the method parameter to which policy is applied. For example, for the method signature `String.CompareTo(Object value)`, the value of the `Name` attribute is "value".|  
-  
+
 ## All other attributes  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |*policy_setting*|The setting to apply to this policy type. Possible values are `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, and `Required All`. For more information, see [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Applies runtime reflection policy to a constructor or method.|  
-  
+
 ## Remarks  
  The `<Parameter>` element is a child of the [\<Method>](../../../docs/framework/net-native/method-element-net-native.md) element and is used to apply policy to a particular method parameter. The specific method parameter is specified by name rather than by type. At least one attribute that represents a policy type, such as `Activate` or `Dynamic`, must be present.  
-  
+
 ## See Also  
  [\<Method> Element](../../../docs/framework/net-native/method-element-net-native.md)  
  [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  

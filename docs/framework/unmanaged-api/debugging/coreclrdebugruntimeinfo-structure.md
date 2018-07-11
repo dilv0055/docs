@@ -21,26 +21,27 @@ ms.author: "ronpet"
 ---
 # CoreClrDebugRuntimeInfo Structure
 Represents a common language runtime (CLR) instance that is loaded in a process on a remote machine.  
-  
+
 ## Syntax  
-  
+
 ```  
 struct  CoreClrDebugRuntimeInfo {  
     DWORD m_dwInternalID;  
 };  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`m_dwInternalID`|Runtime identifier that is assigned by the remote debugging proxy running on the target machine.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CoreClrRemoteDebuggingInterfaces.h  
-  
+
  **Library:** mscordbi_macx86.dll  
-  
+
  **.NET Framework Versions:** 3.5 SP1

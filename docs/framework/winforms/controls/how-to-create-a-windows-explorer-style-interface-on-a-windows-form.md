@@ -19,29 +19,29 @@ Windows Explorer is a common user-interface choice for applications because of i
   
 ### To create a Windows Explorer-style Windows Form  
   
-1.  Create a new Windows Application project. For details, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa).  
+1. Create a new Windows Application project. For details, see [How to: Create a Windows Application Project](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa).  
   
-2.  From the **Toolbox**:  
+2. From the **Toolbox**:  
   
-    1.  Drag a <xref:System.Windows.Forms.SplitContainer> control onto your form.  
+   1. Drag a <xref:System.Windows.Forms.SplitContainer> control onto your form.  
   
-    2.  Drag a <xref:System.Windows.Forms.TreeView> control into **SplitterPanel1** (the panel of the <xref:System.Windows.Forms.SplitContainer> control marked **Panel1**).  
+   2. Drag a <xref:System.Windows.Forms.TreeView> control into **SplitterPanel1** (the panel of the <xref:System.Windows.Forms.SplitContainer> control marked **Panel1**).  
   
-    3.  Drag a <xref:System.Windows.Forms.ListView> control into **SplitterPanel2** (the panel of the <xref:System.Windows.Forms.SplitContainer> control marked **Panel2**).  
+   3. Drag a <xref:System.Windows.Forms.ListView> control into **SplitterPanel2** (the panel of the <xref:System.Windows.Forms.SplitContainer> control marked **Panel2**).  
   
-3.  Select all three controls by pressing the CTRL key and clicking them in turn. When you select the <xref:System.Windows.Forms.SplitContainer> control, click the splitter bar, rather than the panels.  
+3. Select all three controls by pressing the CTRL key and clicking them in turn. When you select the <xref:System.Windows.Forms.SplitContainer> control, click the splitter bar, rather than the panels.  
   
-    > [!NOTE]
-    >  Do not use the **Select All** command on the **Edit** menu. If you do so, the property needed in the next step will not appear in the **Properties** window.  
+   > [!NOTE]
+   >  Do not use the **Select All** command on the **Edit** menu. If you do so, the property needed in the next step will not appear in the **Properties** window.  
   
-4.  In the **Properties** window, set the <xref:System.Windows.Forms.SplitContainer.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>.  
+4. In the **Properties** window, set the <xref:System.Windows.Forms.SplitContainer.Dock%2A> property to <xref:System.Windows.Forms.DockStyle.Fill>.  
   
-5.  Press F5 to run the application.  
+5. Press F5 to run the application.  
   
-     The form displays a two-part user interface, similar to that of the Windows Explorer.  
+    The form displays a two-part user interface, similar to that of the Windows Explorer.  
   
-    > [!NOTE]
-    >  When you drag the splitter, the panels resize themselves.  
+   > [!NOTE]
+   >  When you drag the splitter, the panels resize themselves.  
   
 ## See Also  
  <xref:System.Windows.Forms.SplitContainer>  

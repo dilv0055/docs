@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # USER_THREAD Structure
 Provides information to a debugger about a thread. For more information, see the [INotifySource2::SetNotifyFilter](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) method.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct tagUSER_THREAD  
 {  
@@ -30,18 +30,19 @@ typedef struct tagUSER_THREAD
     DWORD   dwTid;  
 } USER_THREAD;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`pSidBuffer`|Address of thread buffer.|  
 |`dwSidLen`|Length of thread buffer, in bytes.|  
 |`dwTid`|Thread ID.|  
-  
+
 ## Requirements  
  **Header:** ProtocolNotify2.idl  
-  
+
 ## See Also  
  [SetNotifyFilter Method](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)  
  [Diagnostics Symbol Store Structures](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

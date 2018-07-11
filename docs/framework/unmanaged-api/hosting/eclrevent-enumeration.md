@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # EClrEvent Enumeration
 Describes the common language runtime (CLR) events for which the host can register callbacks.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     Event_ClrDisabled,  
@@ -30,32 +30,33 @@ typedef enum {
     Event_StackOverflow  
 } EClrEvent;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`Event_ClrDisabled`|Specifies a fatal CLR error.|  
 |`Event_DomainUnload`|Specifies the unloading of a particular <xref:System.AppDomain>.|  
 |`Event_MDAFired`|Specifies that a Managed Debugging Assistant (MDA) message has been generated.|  
 |`Event_StackOverflow`|Specifies that a stack overflow error has occurred.|  
-  
+
 ## Remarks  
  The host can register callbacks for any of the event types described by `EClrEvent` by calling methods of the [ICLROnEventManager](../../../../docs/framework/unmanaged-api/hosting/iclroneventmanager-interface.md) interface. The host gets a pointer to this interface by calling the [ICLRControl::GetCLRManager](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-getclrmanager-method.md) method.  
-  
+
  The `Event_CLRDisabled` and `Event_DomainUnload` events can be raised more than once and from different threads to signal an unload or the disabling of the CLR.  
-  
+
  The `Event_MDAFired` event raises the creation of an [MDAInfo](../../../../docs/framework/unmanaged-api/hosting/mdainfo-structure.md) instance that contains the details of the MDA message. For more information about MDAs, see [Diagnosing Errors with Managed Debugging Assistants](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md).  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [IActionOnCLREvent Interface](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md)  
  [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  

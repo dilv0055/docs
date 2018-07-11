@@ -13,79 +13,79 @@ ms.assetid: b98cb1d6-956a-4e50-add6-67e4f2587346
   
 ### To generate C# classes that support data binding  
   
--   At the command prompt, execute the following command without line breaks:  
+- At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /dataservicecollection /version:2.0 /language:CSharp /out:Northwind.cs /uri:http://localhost:12345/Northwind.svc  
-    ```  
+  ```  
+  "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /dataservicecollection /version:2.0 /language:CSharp /out:Northwind.cs /uri:http://localhost:12345/Northwind.svc  
+  ```  
   
-    > [!NOTE]
-    >  You must replace the value supplied to the `/uri:` parameter with the URI of your instance of the Northwind sample data service.  
+  > [!NOTE]
+  >  You must replace the value supplied to the `/uri:` parameter with the URI of your instance of the Northwind sample data service.  
   
 ### To generate Visual Basic classes that support data binding  
   
--   At the command prompt, execute the following command without line breaks:  
+- At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /dataservicecollection /version:2.0 /language:VB /out:Northwind.vb /uri:http://localhost:12345/Northwind.svc  
-    ```  
+  ```  
+  "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /dataservicecollection /version:2.0 /language:VB /out:Northwind.vb /uri:http://localhost:12345/Northwind.svc  
+  ```  
   
-    > [!NOTE]
-    >  You must replace value supplied to the `/uri:` parameter with the URI of your instance of the Northwind sample data service.  
+  > [!NOTE]
+  >  You must replace value supplied to the `/uri:` parameter with the URI of your instance of the Northwind sample data service.  
   
 ### To generate C# classes based on the service URI  
   
--   At the command prompt, execute the following command without line breaks:  
+- At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /language:CSharp /out:northwind.cs /uri:http://localhost:12345/Northwind.svc  
-    ```  
+  ```  
+  "%windir%\Microsoft.NET\Framework\v3.5\DataSvcUtil.exe" /language:CSharp /out:northwind.cs /uri:http://localhost:12345/Northwind.svc  
+  ```  
   
-    > [!NOTE]
-    >  You must replace the value supplied to the `/uri:` parameter with the URI of your instance of the Northwind sample data service.  
+  > [!NOTE]
+  >  You must replace the value supplied to the `/uri:` parameter with the URI of your instance of the Northwind sample data service.  
   
 ### To generate Visual Basic classes based on the service URI  
   
--   At the command prompt, execute the following command without line breaks:  
+- At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /out:Northwind.vb /uri:http://localhost:12345/Northwind.svc  
-    ```  
+  ```  
+  "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /out:Northwind.vb /uri:http://localhost:12345/Northwind.svc  
+  ```  
   
-    > [!NOTE]
-    >  You must replace value supplied to the `/uri:` parameter with the URI of your instance of the Northwind sample data service.  
+  > [!NOTE]
+  >  You must replace value supplied to the `/uri:` parameter with the URI of your instance of the Northwind sample data service.  
   
 ### To generate C# classes based on the conceptual model file (CSDL)  
   
--   At the command prompt, execute the following command without line breaks:  
+- At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:CSharp /in:Northwind.csdl /out:Northwind.cs  
-    ```  
+  ```  
+  "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:CSharp /in:Northwind.csdl /out:Northwind.cs  
+  ```  
   
 ### To generate Visual Basic classes based on the conceptual model file (CSDL)  
   
--   At the command prompt, execute the following command without line breaks:  
+- At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /in:Northwind.csdl /out:Northwind.vb  
-    ```  
+  ```  
+  "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /in:Northwind.csdl /out:Northwind.vb  
+  ```  
   
 ### To generate C# classes based on the .edmx file  
   
--   At the command prompt, execute the following command without line breaks:  
+- At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:CSharp /in:Northwind.edmx /out:c:\northwind.cs   
-    ```  
+  ```  
+  "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:CSharp /in:Northwind.edmx /out:c:\northwind.cs   
+  ```  
   
 ### To generate Visual Basic classes based on the .edmx file  
   
--   At the command prompt, execute the following command without line breaks:  
+- At the command prompt, execute the following command without line breaks:  
   
-    ```  
-    "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /in:Northwind.edmx /out:c:\northwind.vb   
-    ```  
+  ```  
+  "%windir%\Microsoft.NET\Framework\v3.5\datasvcutil.exe" /language:VB /in:Northwind.edmx /out:c:\northwind.vb   
+  ```  
   
 ## See Also  
  [Generating the Data Service Client Library](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md)  

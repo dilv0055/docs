@@ -12,34 +12,35 @@ ms.assetid: 81d067ed-297c-4dad-90de-1bcac15336ec
 ---
 # ToolStrip Control Overview (Windows Forms)
 The Windows Forms <xref:System.Windows.Forms.ToolStrip> control and its associated classes provide a common framework for combining user interface elements into toolbars, status bars, and menus. <xref:System.Windows.Forms.ToolStrip> controls offer a rich design-time experience that includes in-place activation and editing, custom layout, and rafting, which is the ability of toolbars to share horizontal or vertical space.  
-  
+
  Although <xref:System.Windows.Forms.ToolStrip> replaces and adds functionality to the control in previous versions, <xref:System.Windows.Forms.ToolBar> is retained for both backward compatibility and future use if desired.  
-  
+
 ## Features of the ToolStrip Controls  
  Use the <xref:System.Windows.Forms.ToolStrip> control to:  
-  
--   Present a common user interface across containers.  
-  
--   Create easily customized, commonly employed toolbars that support advanced user interface and layout features, such as docking, rafting, buttons with text and images, drop-down buttons and controls, overflow buttons, and run-time reordering of <xref:System.Windows.Forms.ToolStrip> items.  
-  
--   Support overflow and run-time item reordering. The overflow feature moves items to a drop-down menu when there is not enough room to display them in a <xref:System.Windows.Forms.ToolStrip>.  
-  
--   Support the typical appearance and behavior of the operating system through a common rendering model.  
-  
--   Handle events consistently for all containers and contained items, in the same way you handle events for other controls.  
-  
--   Drag items from one <xref:System.Windows.Forms.ToolStrip> to another or within a <xref:System.Windows.Forms.ToolStrip>.  
-  
--   Create drop-down controls and user interface type editors with advanced layouts in a <xref:System.Windows.Forms.ToolStripDropDown>.  
-  
+
+- Present a common user interface across containers.  
+
+- Create easily customized, commonly employed toolbars that support advanced user interface and layout features, such as docking, rafting, buttons with text and images, drop-down buttons and controls, overflow buttons, and run-time reordering of <xref:System.Windows.Forms.ToolStrip> items.  
+
+- Support overflow and run-time item reordering. The overflow feature moves items to a drop-down menu when there is not enough room to display them in a <xref:System.Windows.Forms.ToolStrip>.  
+
+- Support the typical appearance and behavior of the operating system through a common rendering model.  
+
+- Handle events consistently for all containers and contained items, in the same way you handle events for other controls.  
+
+- Drag items from one <xref:System.Windows.Forms.ToolStrip> to another or within a <xref:System.Windows.Forms.ToolStrip>.  
+
+- Create drop-down controls and user interface type editors with advanced layouts in a <xref:System.Windows.Forms.ToolStripDropDown>.  
+
  Use the <xref:System.Windows.Forms.ToolStripControlHost> class to use other controls on a <xref:System.Windows.Forms.ToolStrip> and gain <xref:System.Windows.Forms.ToolStrip> functionality for them.  
-  
+
  You can extend the functionality and modify the appearance and behavior by using the <xref:System.Windows.Forms.ToolStripRenderer>, <xref:System.Windows.Forms.ToolStripProfessionalRenderer>, and <xref:System.Windows.Forms.ToolStripManager> along with the <xref:System.Windows.Forms.ToolStripRenderMode> and <xref:System.Windows.Forms.ToolStripManagerRenderMode> enumerations.  
-  
+
  The <xref:System.Windows.Forms.ToolStrip> control is highly configurable and extensible, and it provides many properties, methods, and events to customize appearance and behavior. Below are some noteworthy members:  
-  
+
 ### Important ToolStrip Members  
-  
+
+
 |Name|Description|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.ToolStrip.Dock%2A>|Gets or sets which edge of the parent container a <xref:System.Windows.Forms.ToolStrip> is docked to.|  
@@ -51,11 +52,12 @@ The Windows Forms <xref:System.Windows.Forms.ToolStrip> control and its associat
 |<xref:System.Windows.Forms.ToolStrip.Renderer%2A>|Gets or sets a <xref:System.Windows.Forms.ToolStripRenderer> used to customize the appearance and behavior (look and feel) of a <xref:System.Windows.Forms.ToolStrip>.|  
 |<xref:System.Windows.Forms.ToolStrip.RenderMode%2A>|Gets or sets the painting styles to be applied to the <xref:System.Windows.Forms.ToolStrip>.|  
 |<xref:System.Windows.Forms.ToolStrip.RendererChanged>|Raised when the <xref:System.Windows.Forms.ToolStrip.Renderer%2A> property changes.|  
-  
+
  The <xref:System.Windows.Forms.ToolStrip> control's flexibility is achieved through the use of a number of companion classes. Below are some of the most noteworthy:  
-  
+
 ### Important ToolStrip Companion Classes  
-  
+
+
 |Name|Description|  
 |----------|-----------------|  
 |<xref:System.Windows.Forms.MenuStrip>|Replaces and adds functionality to the <xref:System.Windows.Forms.MainMenu> class.|  
@@ -70,9 +72,9 @@ The Windows Forms <xref:System.Windows.Forms.ToolStrip> control and its associat
 |<xref:System.Windows.Forms.ToolStripRenderMode>|Specifies the painting style (custom, Windows XP, or Microsoft Office Professional) applied to one <xref:System.Windows.Forms.ToolStrip> object contained in a form.|  
 |<xref:System.Windows.Forms.ToolStripControlHost>|Hosts other controls that are not specifically <xref:System.Windows.Forms.ToolStrip> controls but for which you want <xref:System.Windows.Forms.ToolStrip> functionality.|  
 |<xref:System.Windows.Forms.ToolStripItemPlacement>|Specifies whether a <xref:System.Windows.Forms.ToolStripItem> is to be laid out on the main <xref:System.Windows.Forms.ToolStrip>, on the overflow <xref:System.Windows.Forms.ToolStrip>, or neither.|  
-  
+
  For more information, see [ToolStrip Technology Summary](../../../../docs/framework/winforms/controls/toolstrip-technology-summary.md) and [ToolStrip Control Architecture](../../../../docs/framework/winforms/controls/toolstrip-control-architecture.md).  
-  
+
 ## See Also  
  <xref:System.Windows.Forms.ToolStrip>  
  <xref:System.Windows.Forms.MenuStrip>  

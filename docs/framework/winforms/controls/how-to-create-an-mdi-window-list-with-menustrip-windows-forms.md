@@ -16,44 +16,44 @@ Use the multiple-document interface (MDI) to create applications that can open s
   
 ### To create an MDI Window list on a MenuStrip  
   
-1.  Create a form and set its <xref:System.Windows.Forms.Form.IsMdiContainer%2A> property to `true`.  
+1. Create a form and set its <xref:System.Windows.Forms.Form.IsMdiContainer%2A> property to `true`.  
   
-2.  Add a <xref:System.Windows.Forms.MenuStrip> to the form.  
+2. Add a <xref:System.Windows.Forms.MenuStrip> to the form.  
   
-3.  Add two top-level menu items to the <xref:System.Windows.Forms.MenuStrip> and set their <xref:System.Windows.Forms.Control.Text%2A> properties to `&File` and `&Window`.  
+3. Add two top-level menu items to the <xref:System.Windows.Forms.MenuStrip> and set their <xref:System.Windows.Forms.Control.Text%2A> properties to `&File` and `&Window`.  
   
-4.  Add a submenu item to the `&File` menu item and set its <xref:System.Windows.Forms.ToolStripItem.Text%2A> property to `&Open`.  
+4. Add a submenu item to the `&File` menu item and set its <xref:System.Windows.Forms.ToolStripItem.Text%2A> property to `&Open`.  
   
-5.  Set the <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> property of the <xref:System.Windows.Forms.MenuStrip> to the `&Window`<xref:System.Windows.Forms.ToolStripMenuItem>.  
+5. Set the <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> property of the <xref:System.Windows.Forms.MenuStrip> to the `&Window`<xref:System.Windows.Forms.ToolStripMenuItem>.  
   
-6.  Add a form to the project and add the control you want to it, such as another <xref:System.Windows.Forms.MenuStrip>.  
+6. Add a form to the project and add the control you want to it, such as another <xref:System.Windows.Forms.MenuStrip>.  
   
-7.  Create an event handler for the <xref:System.Windows.Forms.Control.Click> event of the `&New`<xref:System.Windows.Forms.ToolStripMenuItem>.  
+7. Create an event handler for the <xref:System.Windows.Forms.Control.Click> event of the `&New`<xref:System.Windows.Forms.ToolStripMenuItem>.  
   
-8.  Within the event handler, insert code similar to the following to create and display new instances of `Form2` as MDI children of `Form1`.  
+8. Within the event handler, insert code similar to the following to create and display new instances of `Form2` as MDI children of `Form1`.  
   
-    ```vb  
-    Private Sub openToolStripMenuItem_Click(ByVal sender As _  
-    System.Object, ByVal e As System.EventArgs) Handles _  
-    openToolStripMenuItem.Click  
-        Dim NewMDIChild As New Form2()  
-        'Set the parent form of the child window.  
-            NewMDIChild.MdiParent = Me  
-        'Display the new form.  
-            NewMDIChild.Show()  
-    End Sub  
-    ```  
+   ```vb  
+   Private Sub openToolStripMenuItem_Click(ByVal sender As _  
+   System.Object, ByVal e As System.EventArgs) Handles _  
+   openToolStripMenuItem.Click  
+       Dim NewMDIChild As New Form2()  
+       'Set the parent form of the child window.  
+           NewMDIChild.MdiParent = Me  
+       'Display the new form.  
+           NewMDIChild.Show()  
+   End Sub  
+   ```  
   
-    ```csharp  
-    private void newToolStripMenuItem_Click(object sender, EventArgs e)  
-    {  
-        Form2 newMDIChild = new Form2();  
-        // Set the parent form of the child window.  
-            newMDIChild.MdiParent = this;  
-        // Display the new form.  
-            newMDIChild.Show();  
-    }  
-    ```  
+   ```csharp  
+   private void newToolStripMenuItem_Click(object sender, EventArgs e)  
+   {  
+       Form2 newMDIChild = new Form2();  
+       // Set the parent form of the child window.  
+           newMDIChild.MdiParent = this;  
+       // Display the new form.  
+           newMDIChild.Show();  
+   }  
+   ```  
   
 9. Place code like the following in the `&New`<xref:System.Windows.Forms.ToolStripMenuItem> to register the event handler.  
   
@@ -69,11 +69,11 @@ Use the multiple-document interface (MDI) to create applications that can open s
 ## Compiling the Code  
  This example requires:  
   
--   Two <xref:System.Windows.Forms.Form> controls named `Form1` and `Form2`.  
+- Two <xref:System.Windows.Forms.Form> controls named `Form1` and `Form2`.  
   
--   A <xref:System.Windows.Forms.MenuStrip> control on `Form1` named `menuStrip1`, and a <xref:System.Windows.Forms.MenuStrip> control on `Form2` named `menuStrip2`.  
+- A <xref:System.Windows.Forms.MenuStrip> control on `Form1` named `menuStrip1`, and a <xref:System.Windows.Forms.MenuStrip> control on `Form2` named `menuStrip2`.  
   
--   References to the <xref:System?displayProperty=nameWithType> and <xref:System.Windows.Forms?displayProperty=nameWithType> assemblies.  
+- References to the <xref:System?displayProperty=nameWithType> and <xref:System.Windows.Forms?displayProperty=nameWithType> assemblies.  
   
 ## See Also  
  [How to: Create MDI Parent Forms](../../../../docs/framework/winforms/advanced/how-to-create-mdi-parent-forms.md)  

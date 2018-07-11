@@ -11,11 +11,11 @@ This topic shows how to define the connection string that is used when connectin
   
 ### To define the Entity Framework connection string  
   
--   Open the project's application configuration file (app.config) and add the following connection string:  
+- Open the project's application configuration file (app.config) and add the following connection string:  
   
   
   
-     If your project does not have an application configuration file, you can add one by selecting **Add New Item** from the **Project** menu, selecting the **General** category, selecting **Application Configuration File**, and then clicking **Add**.  
+   If your project does not have an application configuration file, you can add one by selecting **Add New Item** from the **Project** menu, selecting the **General** category, selecting **Application Configuration File**, and then clicking **Add**.  
   
 ## See Also  
  [Quickstart](http://msdn.microsoft.com/library/0bc534be-789f-4819-b9f6-76e51d961675)  

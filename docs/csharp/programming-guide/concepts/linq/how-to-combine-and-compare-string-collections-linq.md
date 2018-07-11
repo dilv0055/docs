@@ -8,35 +8,35 @@ This example shows how to merge files that contain lines of text and then sort t
   
 ### To set up the project and the text files  
   
-1.  Copy these names into a text file that is named names1.txt and save it in your project folder:  
+1. Copy these names into a text file that is named names1.txt and save it in your project folder:  
   
-    ```  
-    Bankov, Peter  
-    Holm, Michael  
-    Garcia, Hugo  
-    Potra, Cristina  
-    Noriega, Fabricio  
-    Aw, Kam Foo  
-    Beebe, Ann  
-    Toyoshima, Tim  
-    Guy, Wey Yuan  
-    Garcia, Debra  
-    ```  
+   ```  
+   Bankov, Peter  
+   Holm, Michael  
+   Garcia, Hugo  
+   Potra, Cristina  
+   Noriega, Fabricio  
+   Aw, Kam Foo  
+   Beebe, Ann  
+   Toyoshima, Tim  
+   Guy, Wey Yuan  
+   Garcia, Debra  
+   ```  
   
-2.  Copy these names into a text file that is named names2.txt and save it in your project folder. Note that the two files have some names in common.  
+2. Copy these names into a text file that is named names2.txt and save it in your project folder. Note that the two files have some names in common.  
   
-    ```  
-    Liu, Jinghao  
-    Bankov, Peter  
-    Holm, Michael  
-    Garcia, Hugo  
-    Beebe, Ann  
-    Gilchrist, Beth  
-    Myrcha, Jacek  
-    Giakoumakis, Leo  
-    McLin, Nkenge  
-    El Yassir, Mehdi  
-    ```  
+   ```  
+   Liu, Jinghao  
+   Bankov, Peter  
+   Holm, Michael  
+   Garcia, Hugo  
+   Beebe, Ann  
+   Gilchrist, Beth  
+   Myrcha, Jacek  
+   Giakoumakis, Leo  
+   McLin, Nkenge  
+   El Yassir, Mehdi  
+   ```  
   
 ## Example  
   

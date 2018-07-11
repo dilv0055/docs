@@ -17,56 +17,56 @@ An important feature of the Windows Forms <xref:System.Windows.Forms.MonthCalend
   
 ### To select a range of dates  
   
-1.  Create <xref:System.DateTime> objects that represent the first and last dates in a range.  
+1. Create <xref:System.DateTime> objects that represent the first and last dates in a range.  
   
-    ```vb  
-    Dim projectStart As Date = New DateTime(2001, 2, 13)  
-    Dim projectEnd As Date = New DateTime(2001, 2, 28)  
-    ```  
+   ```vb  
+   Dim projectStart As Date = New DateTime(2001, 2, 13)  
+   Dim projectEnd As Date = New DateTime(2001, 2, 28)  
+   ```  
   
-    ```csharp  
-    DateTime projectStart = new DateTime(2001, 2, 13);  
-    DateTime projectEnd = new DateTime(2001, 2, 28);  
-    ```  
+   ```csharp  
+   DateTime projectStart = new DateTime(2001, 2, 13);  
+   DateTime projectEnd = new DateTime(2001, 2, 28);  
+   ```  
   
-    ```cpp  
-    DateTime projectStart = DateTime(2001, 2, 13);  
-    DateTime projectEnd = DateTime(2001, 2, 28);  
-    ```  
+   ```cpp  
+   DateTime projectStart = DateTime(2001, 2, 13);  
+   DateTime projectEnd = DateTime(2001, 2, 28);  
+   ```  
   
-2.  Set the <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A> property.  
+2. Set the <xref:System.Windows.Forms.MonthCalendar.SelectionRange%2A> property.  
   
-    ```vb  
-    MonthCalendar1.SelectionRange = New SelectionRange(projectStart, projectEnd)  
-    ```  
+   ```vb  
+   MonthCalendar1.SelectionRange = New SelectionRange(projectStart, projectEnd)  
+   ```  
   
-    ```csharp  
-    monthCalendar1.SelectionRange = new SelectionRange(projectStart, projectEnd);  
-    ```  
+   ```csharp  
+   monthCalendar1.SelectionRange = new SelectionRange(projectStart, projectEnd);  
+   ```  
   
-    ```cpp  
-    monthCalendar1->SelectionRange = gcnew  
-       SelectionRange(projectStart, projectEnd);  
-    ```  
+   ```cpp  
+   monthCalendar1->SelectionRange = gcnew  
+      SelectionRange(projectStart, projectEnd);  
+   ```  
   
-     –or–  
+    –or–  
   
-     Set the <xref:System.Windows.Forms.MonthCalendar.SelectionStart%2A> and <xref:System.Windows.Forms.MonthCalendar.SelectionEnd%2A> properties.  
+    Set the <xref:System.Windows.Forms.MonthCalendar.SelectionStart%2A> and <xref:System.Windows.Forms.MonthCalendar.SelectionEnd%2A> properties.  
   
-    ```vb  
-    MonthCalendar1.SelectionStart = projectStart  
-    MonthCalendar1.SelectionEnd = projectEnd  
-    ```  
+   ```vb  
+   MonthCalendar1.SelectionStart = projectStart  
+   MonthCalendar1.SelectionEnd = projectEnd  
+   ```  
   
-    ```csharp  
-    monthCalendar1.SelectionStart = projectStart;  
-    monthCalendar1.SelectionEnd = projectEnd;  
-    ```  
+   ```csharp  
+   monthCalendar1.SelectionStart = projectStart;  
+   monthCalendar1.SelectionEnd = projectEnd;  
+   ```  
   
-    ```cpp  
-    monthCalendar1->SelectionStart = projectStart;  
-    monthCalendar1->SelectionEnd = projectEnd;  
-    ```  
+   ```cpp  
+   monthCalendar1->SelectionStart = projectStart;  
+   monthCalendar1->SelectionEnd = projectEnd;  
+   ```  
   
 ## See Also  
  [MonthCalendar Control](../../../../docs/framework/winforms/controls/monthcalendar-control-windows-forms.md)  

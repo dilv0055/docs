@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostIoCompletionManager::SetMinThreads Method
 Sets the minimum number of threads that the host should allot to I/O completion.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SetMinThreads (  
     [in] DWORD dwMinIoCompletionThreads  
 );  
 ```  
-  
+
 #### Parameters  
  `dwMinIoCompletionThreads`  
  [in] The minimum number of I/O completion threads that the host should create.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetMinThreads` returned successfully.|  
@@ -44,19 +45,19 @@ HRESULT SetMinThreads (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_NOTIMPL|The host does not provide an implementation of `SetMinThreads`.|  
-  
+
 ## Remarks  
  A host might want exclusive control over the number of threads that can be allotted to process I/O requests, for reasons such as implementation, performance, or scalability. For this reason, the host is not required to implement `SetMinThreads`. In this case, the host should return E_NOTIMPL from this method.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
  [SetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setmaxthreads-method.md)  

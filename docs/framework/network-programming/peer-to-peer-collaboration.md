@@ -9,28 +9,28 @@ manager: "markl"
 # Peer-to-Peer Collaboration
 Peer-to-peer networking is the utilization of the relatively powerful computers (personal computers) that exist at the edge of the Internet for more than just client-based computing tasks. The modern personal computer (PC) has a very fast processor, vast memory, and a large hard disk, none of which are being fully utilized when performing common computing tasks such as email and Web browsing. The modern PC can easily act as both a client and server (a peer) for many types of applications.  
   
--   The Peer-to-Peer Collaboration Infrastructure is a simplified implementation of the Microsoft Windows Peer-to-Peer Infrastructure that leverages the People Near Me service in Windows Vista and later platforms. It is best used for peer-enabled applications within a subnet for which the People Near Me service operates, although it can service internet endpoints or contacts as well. It incorporates the common Contact Manager that is used by Live Messenger and other Live-aware applications to determine contact endpoints, availability, and presence.  
+- The Peer-to-Peer Collaboration Infrastructure is a simplified implementation of the Microsoft Windows Peer-to-Peer Infrastructure that leverages the People Near Me service in Windows Vista and later platforms. It is best used for peer-enabled applications within a subnet for which the People Near Me service operates, although it can service internet endpoints or contacts as well. It incorporates the common Contact Manager that is used by Live Messenger and other Live-aware applications to determine contact endpoints, availability, and presence.  
   
 -  
   
 ## Collaboration Applications  
  A typical peer-to-peer collaboration application is comprised of the following steps:  
   
--   Peer determines the identity of a peer who is interested in hosting a collaboration session  
+- Peer determines the identity of a peer who is interested in hosting a collaboration session  
   
--   A request to host a session is sent, somehow, and the host peer agrees to manage collaboration activity.  
+- A request to host a session is sent, somehow, and the host peer agrees to manage collaboration activity.  
   
--   The host invites contacts on the subnet (including the requestor) to a session.  
+- The host invites contacts on the subnet (including the requestor) to a session.  
   
--   All peers who want to collaborate may add the host to their contact managers.  
+- All peers who want to collaborate may add the host to their contact managers.  
   
--   Most peers will send invitation responses, whether accepted or declined, back to the host peer in a timely fashion.  
+- Most peers will send invitation responses, whether accepted or declined, back to the host peer in a timely fashion.  
   
--   All peers who want to collaborate will subscribe to the host peer.  
+- All peers who want to collaborate will subscribe to the host peer.  
   
--   While the peers are performing their initial collaboration activity, the host peer may add remote peers to its contact manager. It also processes all invitation responses to determine who has accepted, who has declined, and who has not answered.  It may cancel invitations to those who have not answered, or perform some other activity.  
+- While the peers are performing their initial collaboration activity, the host peer may add remote peers to its contact manager. It also processes all invitation responses to determine who has accepted, who has declined, and who has not answered.  It may cancel invitations to those who have not answered, or perform some other activity.  
   
--   At this point, the host peer can start a collaboration session with all invited peers, or register an application with the collaboration infrastructure.  P2P applications use the Peer-to-Peer Collaboration Infrastructure and the <xref:System.Net.PeerToPeer.Collaboration> namespace to coordinate communications for games, bulletin boards, conferencing, and other serverless presence applications.  
+- At this point, the host peer can start a collaboration session with all invited peers, or register an application with the collaboration infrastructure.  P2P applications use the Peer-to-Peer Collaboration Infrastructure and the <xref:System.Net.PeerToPeer.Collaboration> namespace to coordinate communications for games, bulletin boards, conferencing, and other serverless presence applications.  
   
 -  
   

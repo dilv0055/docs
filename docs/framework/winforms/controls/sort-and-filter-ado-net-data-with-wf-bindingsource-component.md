@@ -22,18 +22,18 @@ You can expose the sorting and filtering capability of <xref:System.Windows.Form
   
 ### To filter data with the BindingSource  
   
--   Set the <xref:System.Windows.Forms.BindingSource.Filter%2A> property to expression that you want.  
+- Set the <xref:System.Windows.Forms.BindingSource.Filter%2A> property to expression that you want.  
   
-     In the following code example, the expression is a column name followed by value that you want for the column.  
+   In the following code example, the expression is a column name followed by value that you want for the column.  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#11)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#11)]  
   
 ### To sort data with the BindingSource  
   
-1.  Set the <xref:System.Windows.Forms.BindingSource.Sort%2A> property to the column name that you want followed by `ASC` or `DESC` to indicate the ascending or descending order.  
+1. Set the <xref:System.Windows.Forms.BindingSource.Sort%2A> property to the column name that you want followed by `ASC` or `DESC` to indicate the ascending or descending order.  
   
-2.  Separate multiple columns with a comma.  
+2. Separate multiple columns with a comma.  
   
  [!code-csharp[System.Windows.Forms.DataConnectorFilterAndSort#12](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/CS/form1.cs#12)]
  [!code-vb[System.Windows.Forms.DataConnectorFilterAndSort#12](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnectorFilterAndSort/VB/form1.vb#12)]  

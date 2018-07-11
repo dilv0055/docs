@@ -16,50 +16,52 @@ manager: "markl"
 ---
 # &lt;filter&gt; Element for &lt;add&gt; for &lt;sharedListeners&gt;
 Adds a filter to a listener in the `sharedListeners` collection.  
-  
+
  \<configuration>  
 \<system.diagnostics>  
 \<sharedListeners> Element  
 \<add>  
 \<filter>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <filter type="System.Diagnostics.EventTypeFilter"   
   initializeData="Warning" />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |**type**|Required attribute.<br /><br /> Specifies the type of the filter. You can use only the full name of the type (in the format of the <xref:System.Type.FullName%2A?displayProperty=nameWithType> property), or you can use the fully qualified type name including the assembly information (in the format of the <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType> property). For information on creating a fully qualified type name, see [Specifying Fully Qualified Type Names](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
 |**initializeData**|Optional attribute.<br /><br /> The string passed to the constructor for the specified class.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`system.diagnostics`|Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.|  
 |`sharedListeners`|A collection of listeners that any source or trace element can reference.|  
 |`add`|Adds a listener to the **sharedListeners** collection.|  
-  
+
 ## Remarks  
  If a listener is defined in an `<add>` element of the `<sharedListeners>` element, the filter for that listener should be defined in a `<filter>` element that is a child of the `<add>` element.  
-  
+
  This element can be used in the machine configuration file (Machine.config) and the application configuration file.  
-  
+
 ## Example  
  The following example shows how to use the `<filter>` element to add a filter to the trace listener `console` in the `sharedListeners` collection.  
-  
+
 ```xml  
 <configuration>  
   <system.diagnostics>  
@@ -81,7 +83,7 @@ Adds a filter to a listener in the `sharedListeners` collection.
   </system.diagnostics>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Diagnostics.TraceFilter>  
  <xref:System.Diagnostics.TraceListener>  

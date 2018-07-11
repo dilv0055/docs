@@ -14,45 +14,47 @@ ms.author: "ronpet"
 ---
 # &lt;dependentAssembly&gt; Element
 Encapsulates binding policy and assembly location for each assembly. Use one `dependentAssembly` element for each assembly.  
-  
+
  \<configuration>  
 \<runtime>  
 \<assemblyBinding>  
 \<dependentAssembly>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <dependentAssembly>   
 </dependentAssembly>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`assemblyIdentity`|Contains identifying information about the assembly. This element must be included in each `dependentAssembly` element.|  
 |`codeBase`|Specifies where the runtime can find a shared assembly if it is not installed on the computer.|  
 |`bindingRedirect`|Redirects one assembly version to another.|  
 |`publisherPolicy`|Specifies whether the runtime applies publisher policy for this assembly.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`assemblyBinding`|Contains information about assembly version redirection and the locations of assemblies.|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`runtime`|Contains information about assembly binding and garbage collection.|  
-  
+
 ## Example  
  The following example shows how to encapsulate assembly information for two assemblies.  
-  
+
 ```xml  
 <configuration>  
    <runtime>  
@@ -73,7 +75,7 @@ Encapsulates binding policy and assembly location for each assembly. Use one `de
    </runtime>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  [Runtime Settings Schema](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  

@@ -20,10 +20,12 @@ FindPrivateKey<storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbprin
 
 The following tables describe the arguments and the options that can be used with the Find Private Key tool (FindPrivateKey.exe).
 
+
 |Argument|Description|
 |--------------|-----------------|
 |`storeName`|Name of the certificate store.|
 |`storeLocation`|The location of the certificate store.|
+
 
 |Option|Description|
 |------------|-----------------|

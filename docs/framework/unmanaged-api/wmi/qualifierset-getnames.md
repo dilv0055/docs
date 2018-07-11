@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Retrieves the names of all the qualifiers or of certain qualifiers that are available from the current object or property. 
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT QualifierSet_GetNames (
    [in] int                  vFunc, 
@@ -44,6 +44,7 @@ HRESULT QualifierSet_GetNames (
 `lFlags`   
 [in] One of the following flags or values that specifies which names to include in the enumeration.
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |  | 0 | Return the names of all qualifiers. |
@@ -57,12 +58,13 @@ HRESULT QualifierSet_GetNames (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | A parameter is not valid. |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Not enough memory is available to begin a new enumeration. |
 |`WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemQualifierSet::GetNames](https://msdn.microsoft.com/library/aa391868(v=vs.85).aspx) method.
@@ -73,10 +75,10 @@ It is not an error for a given object to have zero qualifiers, so the number of 
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

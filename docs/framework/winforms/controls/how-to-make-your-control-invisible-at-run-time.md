@@ -17,21 +17,21 @@ There are times when you might want to create a user control that is invisible a
   
 ### To make your control invisible at run time  
   
-1.  Set the <xref:System.Windows.Forms.Control.Visible%2A> property to `false`.  
+1. Set the <xref:System.Windows.Forms.Control.Visible%2A> property to `false`.  
   
-    ```vb  
-    ' To set the Visible property from within your object's own code.  
-    Me.Visible = False  
-    ' To set the Visible property from another object.  
-    myControl1.Visible = False  
-    ```  
+   ```vb  
+   ' To set the Visible property from within your object's own code.  
+   Me.Visible = False  
+   ' To set the Visible property from another object.  
+   myControl1.Visible = False  
+   ```  
   
-    ```csharp  
-    // To set the Visible property from within your object's own code.  
-    this.Visible = false;  
-    // To set the Visible property from another object.  
-    myControl1.Visible = false;  
-    ```  
+   ```csharp  
+   // To set the Visible property from within your object's own code.  
+   this.Visible = false;  
+   // To set the Visible property from another object.  
+   myControl1.Visible = false;  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.Control.Visible%2A>  

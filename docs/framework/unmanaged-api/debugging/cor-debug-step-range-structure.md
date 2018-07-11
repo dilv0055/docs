@@ -19,34 +19,35 @@ ms.author: "ronpet"
 ---
 # COR_DEBUG_STEP_RANGE Structure
 Contains the offset information for a range of code.  
-  
+
  This structure is used by the [ICorDebugStepper::StepRange](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md) method.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct {  
     ULONG32 startOffset;  
     ULONG32 endOffset;  
 } COR_DEBUG_STEP_RANGE;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`startOffset`|The offset of the beginning of the range.|  
 |`endOffset`|The offset of the end of the range.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [StepRange Method](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)  
  [Debugging Structures](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)  

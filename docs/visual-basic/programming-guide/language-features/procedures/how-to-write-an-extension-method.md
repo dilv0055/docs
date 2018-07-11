@@ -12,28 +12,28 @@ Extension methods enable you to add methods to an existing class. The extension 
   
 ### To define an extension method  
   
-1.  Open a new or existing Visual Basic application in Visual Studio.  
+1. Open a new or existing Visual Basic application in Visual Studio.  
   
-2.  At the top of the file in which you want to define an extension method, include the following import statement:  
+2. At the top of the file in which you want to define an extension method, include the following import statement:  
   
-    ```  
-    Imports System.Runtime.CompilerServices  
-    ```  
+   ```  
+   Imports System.Runtime.CompilerServices  
+   ```  
   
-3.  Within a module in your new or existing application, begin the method definition with the extension attribute:  
+3. Within a module in your new or existing application, begin the method definition with the extension attribute:  
   
-    ```  
-    <Extension()>  
-    ```  
+   ```  
+   <Extension()>  
+   ```  
   
-4.  Declare your method in the ordinary way, except that the type of the first parameter must be the data type you want to extend.  
+4. Declare your method in the ordinary way, except that the type of the first parameter must be the data type you want to extend.  
   
-    ```  
-    <Extension()>   
-    Public Sub subName (ByVal para1 As ExtendedType, <other parameters>)  
-         ' < Body of the method >  
-    End Sub  
-    ```  
+   ```  
+   <Extension()>   
+   Public Sub subName (ByVal para1 As ExtendedType, <other parameters>)  
+        ' < Body of the method >  
+   End Sub  
+   ```  
   
 ## Example  
  The following example declares an extension method in module `StringExtensions`. A second module, `Module1`, imports `StringExtensions` and calls the method. The extension method must be in scope when it is called. Extension method `PrintAndPunctuate` extends the <xref:System.String> class with a method that displays the string instance followed by a string of punctuation symbols sent in as a parameter.  

@@ -1,5 +1,6 @@
 ### ADO.NET now attempts to automatically reconnect broken SQL connections
 
+
 |   |   |
 |---|---|
 |Details|Beginning in the .NET Framework 4.5.1, the .NET Framework will attempt to automatically reconnect broken SQL connections. Although this will typically make apps more reliable, there are edge cases in which an app needs to know that the connection was lost so that it can take some action upon reconnection.|

@@ -8,11 +8,11 @@ A *navigation property* is an optional property on an [entity type](../../../../
   
  A navigation property definition includes the following:  
   
--   A name. (Required)  
+- A name. (Required)  
   
--   The association that it navigates. (Required)  
+- The association that it navigates. (Required)  
   
--   The ends of the association that it navigates. (Required)  
+- The ends of the association that it navigates. (Required)  
   
  Note that navigation properties are optional on both entity types at the ends of an association. If you define a navigation property on one entity type at the end of an association, you do not have to define a navigation property on the entity type at the other end of the association.  
   

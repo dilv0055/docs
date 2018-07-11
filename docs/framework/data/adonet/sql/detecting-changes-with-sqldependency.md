@@ -15,17 +15,17 @@ A <xref:System.Data.SqlClient.SqlDependency> object can be associated with a <xr
 ### Example  
  The following steps illustrate how to declare a dependency, execute a command, and receive a notification when the result set changes:  
   
-1.  Initiate a `SqlDependency` connection to the server.  
+1. Initiate a `SqlDependency` connection to the server.  
   
-2.  Create <xref:System.Data.SqlClient.SqlConnection> and <xref:System.Data.SqlClient.SqlCommand> objects to connect to the server and define a Transact-SQL statement.  
+2. Create <xref:System.Data.SqlClient.SqlConnection> and <xref:System.Data.SqlClient.SqlCommand> objects to connect to the server and define a Transact-SQL statement.  
   
-3.  Create a new `SqlDependency` object, or use an existing one, and bind it to the `SqlCommand` object. Internally, this creates a <xref:System.Data.Sql.SqlNotificationRequest> object and binds it to the command object as needed. This notification request contains an internal identifier that uniquely identifies this `SqlDependency` object. It also starts the client listener if it is not already active.  
+3. Create a new `SqlDependency` object, or use an existing one, and bind it to the `SqlCommand` object. Internally, this creates a <xref:System.Data.Sql.SqlNotificationRequest> object and binds it to the command object as needed. This notification request contains an internal identifier that uniquely identifies this `SqlDependency` object. It also starts the client listener if it is not already active.  
   
-4.  Subscribe an event handler to the `OnChange` event of the `SqlDependency` object.  
+4. Subscribe an event handler to the `OnChange` event of the `SqlDependency` object.  
   
-5.  Execute the command using any of the `Execute` methods of the `SqlCommand` object. Because the command is bound to the notification object, the server recognizes that it must generate a notification, and the queue information will point to the dependencies queue.  
+5. Execute the command using any of the `Execute` methods of the `SqlCommand` object. Because the command is bound to the notification object, the server recognizes that it must generate a notification, and the queue information will point to the dependencies queue.  
   
-6.  Stop the `SqlDependency` connection to the server.  
+6. Stop the `SqlDependency` connection to the server.  
   
  If any user subsequently changes the underlying data, Microsoft SQL Server detects that there is a notification pending for such a change, and posts a notification that is processed and forwarded to the client through the underlying `SqlConnection` that was created by calling `SqlDependency.Start`. The client listener receives the invalidation message. The client listener then locates the associated `SqlDependency` object and fires the `OnChange` event.  
   

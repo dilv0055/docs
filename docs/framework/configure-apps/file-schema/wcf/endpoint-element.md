@@ -5,13 +5,13 @@ ms.assetid: 2fc8fedc-78d0-4e87-8142-fbfd26c15a4e
 ---
 # &lt;endpoint&gt; element
 Specifies binding, contract, and address properties for a service endpoint, which is used to expose services.  
-  
+
  \<system.ServiceModel>  
 \<service>  
 \<endpoint>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <endpoint address="String"  
    behaviorConfiguration="String"  
@@ -24,12 +24,13 @@ Specifies binding, contract, and address properties for a service endpoint, whic
    listenUri="Uri"  
 </endpoint>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |address|A string that contains the address of the endpoint. The address can be specified as an absolute or relative address. If a relative address is provided, the host is expected to provide a base address appropriate for the transport scheme used in the binding. If an address is not configured, the base address is assumed to be the address for that endpoint.<br /><br /> The default is an empty string.|  
@@ -45,23 +46,25 @@ Specifies binding, contract, and address properties for a service endpoint, whic
 |listenUriMode|Specifies how the transport treats the `ListenUri` provided for the service to listen on. Valid values are<br /><br /> -   Explicit<br />-   Unique<br /><br /> The default value is Explicit.|  
 |listenUri|A string that specifies the URI at which the service endpoint listens. The default is an empty string.|  
 |name|Optional attribute. A string that specifies the name the service endpoint. The default value is the concatenation of the binding name and the contract description name. Services may have multiple endpoints, so the endpoint’s `name` attribute is distinct from the name of the service.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|A collection of address headers.|  
 |[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|An identity that enables the authentication of an endpoint by other endpoints exchanging messages with it.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<service>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|A configuration section that defines a list of endpoints that a client can connect to.|  
-  
+
 ## Example  
  This is an example of a service endpoint configuration.  
-  
+
 ```xml  
 <endpoint   
     address="/HelloWorld/"  
@@ -75,7 +78,7 @@ Specifies binding, contract, and address properties for a service endpoint, whic
     </Headers>  
 </endpoint>  
 ```  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.ServiceEndpointElement>  
  <xref:System.ServiceModel.EndpointAddress>  

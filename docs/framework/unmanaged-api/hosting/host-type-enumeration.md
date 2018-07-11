@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # HOST_TYPE Enumeration
 Contains values that specify the type of host that is launching an application.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     HOST_TYPE_DEFAULT     = 0x0,  
@@ -29,23 +29,24 @@ typedef enum {
     HOST_TYPE_CORFLAG     = 0x2  
 } HOST_TYPE;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`HOST_TYPE_APPLAUNCH`|Launch the application from AppLaunch.exe.<br /><br /> Use this value for partially-trusted applications.|  
 |`HOST_TYPE_CORFLAG`|Launch the application directly. That is, launch the application from its own .exe file.<br /><br /> Use this value for fully-trusted applications.|  
 |`HOST_TYPE_DEFAULT`|Same as HOST_TYPE_APPLAUNCH.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

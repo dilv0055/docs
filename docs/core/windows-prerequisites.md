@@ -44,11 +44,11 @@ The following articles have a complete list of .NET Core supported operating sys
 
 > [!NOTE]
 > **For Windows 8.1 and earlier versions, or Windows Server 2012 R2 and earlier versions:**
->
+> 
 > Make sure that your Windows installation is up-to-date and includes [KB2999226](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows), which can be installed through Windows Update. If you don't have this update installed, you'll see an error like the following when you launch a .NET Core application: `The program can't start because api-ms-win-crt-runtime-1-1-0.dll is missing from your computer. Try reinstalling the program to fix this problem.`
->
+> 
 > **For Windows 7 or Windows Server 2008 R2:**
->
+> 
 > In addition to KB2999226, make sure you also have [KB2533623](https://support.microsoft.com/en-us/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot) installed. If you don't have this update installed, you'll see an error similar to the following when you launch a .NET Core application: `The library hostfxr.dll was found, but loading it from C:\<path_to_app>\hostfxr.dll failed`.
 
 ## Prerequisites with Visual Studio 2017
@@ -57,20 +57,20 @@ You can use any editor to develop .NET Core applications using the .NET Core SDK
 
 You can read more about the changes in Visual Studio 2017 in the [release notes](/visualstudio/releasenotes/vs2017-relnotes).
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 
 To develop .NET Core 2.x apps in Visual Studio 2017:
 
- 1. [Download and install Visual Studio 2017 version 15.3.0 or higher](/visualstudio/install/install-visual-studio) with the **.NET Core cross-platform development** workload (in the **Other Toolsets** section) selected.
+1. [Download and install Visual Studio 2017 version 15.3.0 or higher](/visualstudio/install/install-visual-studio) with the **.NET Core cross-platform development** workload (in the **Other Toolsets** section) selected.
 
 ![Screenshot of Visual Studio 2017 installation with the ".NET Core cross-platform development" workload selected](./media/windows-prerequisites/vs-15-3-workloads.jpg)
 
 After the **.NET Core cross-platform development** toolset is installed, Visual Studio 2017 uses .NET Core 1.x by default. Install the .NET Core 2.x SDK to get .NET Core 2.x support in Visual Studio 2017.
 
- 2. Install the [.NET Core 2.x SDK](https://www.microsoft.com/net/download/core).
- 3. Retarget existing or new .NET Core 1.x projects to .NET Core 2.x using the following instructions:
-    * On the **Project** menu, Choose **Properties**.
-    * In the **Target framework** selection menu, set the value to **.NET Core 2.0**.
+1. Install the [.NET Core 2.x SDK](https://www.microsoft.com/net/download/core).
+2. Retarget existing or new .NET Core 1.x projects to .NET Core 2.x using the following instructions:
+   * On the **Project** menu, Choose **Properties**.
+   * In the **Target framework** selection menu, set the value to **.NET Core 2.0**.
 
 ![Screenshot of Visual Studio 2017 Application Project Property with the ".NET Core 2.0" Target framework menu item selected](./media/windows-prerequisites/Targeting-dotnetCore2.png)
 
@@ -80,7 +80,7 @@ Once the .NET Core 2.x SDK is installed, Visual Studio 2017 uses the .NET Core S
 * Retarget .NET Core 1.x projects to .NET Core 2.x, build, and run.
 * Create new .NET Core 2.x projects.
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 To develop .NET Core 1.x apps in Visual Studio, [download and install Visual Studio 2017 RTM (version 15.0.26228.4) or higher](/visualstudio/install/install-visual-studio) with the **".NET Core cross-platform development"** workload (in the **Other Toolsets** section) selected.
 
@@ -88,15 +88,14 @@ To develop .NET Core 1.x apps in Visual Studio, [download and install Visual Stu
 
 > [!IMPORTANT]
 > It's possible to use Visual Studio 2015 for .NET Core 1.x development, but it's not recommended for the following reasons:
-  > * The .NET Core tooling is a preview version, which is not supported.
-  > * The projects are project.json-based, which is deprecated.
->
+> * The .NET Core tooling is a preview version, which is not supported.
+> * The projects are project.json-based, which is deprecated.
+> 
 > For more information about the project format changes, see [High-level overview of changes](./tools/cli-msbuild-architecture.md).
----
-
+* * *
 > [!TIP]
 > To verify your Visual Studio 2017 version:
->
+> 
 > * On the **Help** menu, choose **About Microsoft Visual Studio**.
 > * In the **About Microsoft Visual Studio** dialog, verify the version number.
 >   * For .NET Core 2.1 RC apps, Visual Studio 2017 version 15.7 or higher.

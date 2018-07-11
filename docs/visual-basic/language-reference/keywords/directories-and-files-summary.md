@@ -9,9 +9,10 @@ ms.assetid: 588b75fd-a09b-4381-822d-19868990c170
 ---
 # Directories and Files Summary (Visual Basic)
 Visual Basic language keywords and run-time library members are organized by purpose and use.  
-  
+
  Using the `My` feature gives you greater productivity and performance in file I/O operations than using these members. For more information, see <xref:Microsoft.VisualBasic.FileIO.FileSystem>.  
-  
+
+
 |**Action**|**Language element**|  
 |----------------|--------------------------|  
 |Change a directory or folder.|<xref:Microsoft.VisualBasic.FileSystem.ChDir%2A>|  
@@ -26,7 +27,7 @@ Visual Basic language keywords and run-time library members are organized by pur
 |Return a file's length.|<xref:Microsoft.VisualBasic.FileSystem.FileLen%2A>|  
 |Return a file's name or volume label.|<xref:Microsoft.VisualBasic.FileSystem.Dir%2A>|  
 |Set attribute information for a file.|<xref:Microsoft.VisualBasic.FileSystem.SetAttr%2A>|  
-  
+
 ## See Also  
  [Keywords](../../../visual-basic/language-reference/keywords/index.md)  
  [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)  

@@ -10,7 +10,8 @@ ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
 ---
 # Value Types Table (C# Reference)
 The following table lists the C# value types by category.  
-  
+
+
 |Value type|Category|Type Suffix|  
 |----------------|--------------|-----------------|  
 |[bool](../../../csharp/language-reference/keywords/bool.md)|Boolean||  
@@ -28,7 +29,7 @@ The following table lists the C# value types by category.
 |[uint](../../../csharp/language-reference/keywords/uint.md)|Unsigned, numeric, integral|U or u|  
 |[ulong](../../../csharp/language-reference/keywords/ulong.md)|Unsigned, numeric, integral|UL or ul|  
 |[ushort](../../../csharp/language-reference/keywords/ushort.md)|Unsigned, numeric, integral||  
-  
+
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  
  [C# Programming Guide](../../../csharp/programming-guide/index.md)  

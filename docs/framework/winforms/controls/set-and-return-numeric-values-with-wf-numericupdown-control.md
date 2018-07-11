@@ -17,71 +17,71 @@ The numeric value of the Windows Forms <xref:System.Windows.Forms.NumericUpDown>
   
 ### To set the numeric value  
   
-1.  Assign a value to the <xref:System.Windows.Forms.NumericUpDown.Value%2A> property in code or in the Properties window.  
+1. Assign a value to the <xref:System.Windows.Forms.NumericUpDown.Value%2A> property in code or in the Properties window.  
   
-    ```vb  
-    NumericUpDown1.Value = 55  
-    ```  
+   ```vb  
+   NumericUpDown1.Value = 55  
+   ```  
   
-    ```csharp  
-    numericUpDown1.Value = 55;  
-    ```  
+   ```csharp  
+   numericUpDown1.Value = 55;  
+   ```  
   
-    ```cpp  
-    numericUpDown1->Value = 55;  
-    ```  
+   ```cpp  
+   numericUpDown1->Value = 55;  
+   ```  
   
-     -or-  
+    -or-  
   
-2.  Call the <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> or <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> method to increase or decrease the value by the amount specified in the <xref:System.Windows.Forms.NumericUpDown.Increment%2A> property.  
+2. Call the <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> or <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> method to increase or decrease the value by the amount specified in the <xref:System.Windows.Forms.NumericUpDown.Increment%2A> property.  
   
-    ```vb  
-    NumericUpDown1.UpButton()  
-    ```  
+   ```vb  
+   NumericUpDown1.UpButton()  
+   ```  
   
-    ```csharp  
-    numericUpDown1.UpButton();  
-    ```  
+   ```csharp  
+   numericUpDown1.UpButton();  
+   ```  
   
-    ```cpp  
-    numericUpDown1->UpButton();  
-    ```  
+   ```cpp  
+   numericUpDown1->UpButton();  
+   ```  
   
 ### To return the numeric value  
   
--   Access the <xref:System.Windows.Forms.NumericUpDown.Value%2A> property in code.  
+- Access the <xref:System.Windows.Forms.NumericUpDown.Value%2A> property in code.  
   
-    ```vb  
-    If NumericUpDown1.Value >= 65 Then  
-       MessageBox.Show("Age is: " & NumericUpDown1.Value.ToString)  
-    Else  
-       MessageBox.Show("The customer is ineligible for a senior citizen discount.")  
-    End If  
-    ```  
+  ```vb  
+  If NumericUpDown1.Value >= 65 Then  
+     MessageBox.Show("Age is: " & NumericUpDown1.Value.ToString)  
+  Else  
+     MessageBox.Show("The customer is ineligible for a senior citizen discount.")  
+  End If  
+  ```  
   
-    ```csharp  
-    if(numericUpDown1.Value >= 65)  
-    {  
-       MessageBox.Show("Age is: " + numericUpDown1.Value.ToString());  
-    }  
-    else  
-    {  
-       MessageBox.Show("The customer is ineligible for a senior citizen discount.");  
-    }  
-    ```  
+  ```csharp  
+  if(numericUpDown1.Value >= 65)  
+  {  
+     MessageBox.Show("Age is: " + numericUpDown1.Value.ToString());  
+  }  
+  else  
+  {  
+     MessageBox.Show("The customer is ineligible for a senior citizen discount.");  
+  }  
+  ```  
   
-    ```cpp  
-    if(numericUpDown1->Value >= 65)  
-    {  
-       MessageBox::Show(String::Concat("Age is: ",  
-          numericUpDown1->Value.ToString()));  
-    }  
-    else  
-    {  
-       MessageBox::Show  
-          ("The customer is ineligible for a senior citizen discount.");  
-    }  
-    ```  
+  ```cpp  
+  if(numericUpDown1->Value >= 65)  
+  {  
+     MessageBox::Show(String::Concat("Age is: ",  
+        numericUpDown1->Value.ToString()));  
+  }  
+  else  
+  {  
+     MessageBox::Show  
+        ("The customer is ineligible for a senior citizen discount.");  
+  }  
+  ```  
   
 ## See Also  
  <xref:System.Windows.Forms.NumericUpDown>  

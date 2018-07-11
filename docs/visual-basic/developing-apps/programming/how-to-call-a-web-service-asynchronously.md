@@ -18,46 +18,46 @@ This example attaches a handler to a Web service's asynchronous handler event, s
   
 ### To call a Web service asynchronously  
   
-1.  Reference the DemoTemperatureService Web service at http://www.xmethods.net. The address is  
+1. Reference the DemoTemperatureService Web service at http://www.xmethods.net. The address is  
   
-    ```  
-    http://www.xmethods.net/sd/2001/DemoTemperatureService.wsdl  
-    ```  
+   ```  
+   http://www.xmethods.net/sd/2001/DemoTemperatureService.wsdl  
+   ```  
   
-2.  Add an event handler for the `getTempCompleted` event:  
+2. Add an event handler for the `getTempCompleted` event:  
   
-    ```  
-    Private Sub getTempCompletedHandler(ByVal sender As Object,   
-        ByVal e As net.xmethods.www.getTempCompletedEventArgs)  
+   ```  
+   Private Sub getTempCompletedHandler(ByVal sender As Object,   
+       ByVal e As net.xmethods.www.getTempCompletedEventArgs)  
   
-        MsgBox("Temperature: " & e.Result)  
-    End Sub  
-    ```  
+       MsgBox("Temperature: " & e.Result)  
+   End Sub  
+   ```  
   
-    > [!NOTE]
-    >  You cannot use the `Handles` statement to associate an event handler with the `My.WebServices` object's events.  
+   > [!NOTE]
+   >  You cannot use the `Handles` statement to associate an event handler with the `My.WebServices` object's events.  
   
-3.  Add a field to track if the event handler has been added to the `getTempCompleted` event:  
+3. Add a field to track if the event handler has been added to the `getTempCompleted` event:  
   
-    ```  
-    Private handlerAttached As Boolean = False  
-    ```  
+   ```  
+   Private handlerAttached As Boolean = False  
+   ```  
   
-4.  Add a method to add the event handler to the `getTempCompleted` event, if necessary, and to call the `getTempAsynch` method:  
+4. Add a method to add the event handler to the `getTempCompleted` event, if necessary, and to call the `getTempAsynch` method:  
   
-    ```  
-    Sub CallGetTempAsync(ByVal zipCode As Integer)  
-        If Not handlerAttached Then  
-            AddHandler My.WebServices.  
-                TemperatureService.getTempCompleted,   
-                AddressOf Me.TS_getTempCompleted  
-            handlerAttached = True  
-        End If  
-        My.WebServices.TemperatureService.getTempAsync(zipCode)  
-    End Sub  
-    ```  
+   ```  
+   Sub CallGetTempAsync(ByVal zipCode As Integer)  
+       If Not handlerAttached Then  
+           AddHandler My.WebServices.  
+               TemperatureService.getTempCompleted,   
+               AddressOf Me.TS_getTempCompleted  
+           handlerAttached = True  
+       End If  
+       My.WebServices.TemperatureService.getTempAsync(zipCode)  
+   End Sub  
+   ```  
   
-     To call the `getTemp` Web method asynchronously, call the `CallGetTempAsync` method. When the Web method finishes, its return value is passed to the `getTempCompletedHandler` event handler.  
+    To call the `getTemp` Web method asynchronously, call the `CallGetTempAsync` method. When the Web method finishes, its return value is passed to the `getTempCompletedHandler` event handler.  
   
 ## See Also  
  [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  

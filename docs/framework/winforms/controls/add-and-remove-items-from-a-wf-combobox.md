@@ -20,115 +20,115 @@ Items can be added to a Windows Forms combo box, list box, or checked list box i
   
 ### To add items  
   
-1.  Add the string or object to the list by using the `Add` method of the `ObjectCollection` class. The collection is referenced using the `Items` property:  
+1. Add the string or object to the list by using the `Add` method of the `ObjectCollection` class. The collection is referenced using the `Items` property:  
   
-    ```vb  
-    ComboBox1.Items.Add("Tokyo")  
-    ```  
+   ```vb  
+   ComboBox1.Items.Add("Tokyo")  
+   ```  
   
-    ```csharp  
-    comboBox1.Items.Add("Tokyo");  
-    ```  
+   ```csharp  
+   comboBox1.Items.Add("Tokyo");  
+   ```  
   
-    ```cpp  
-    comboBox1->Items->Add("Tokyo");  
-    ```  
+   ```cpp  
+   comboBox1->Items->Add("Tokyo");  
+   ```  
   
-     - or -  
+   - or -  
   
-2.  Insert the string or object at the desired point in the list with the `Insert` method:  
+2. Insert the string or object at the desired point in the list with the `Insert` method:  
   
-    ```vb  
-    CheckedListBox1.Items.Insert(0, "Copenhagen")  
-    ```  
+   ```vb  
+   CheckedListBox1.Items.Insert(0, "Copenhagen")  
+   ```  
   
-    ```csharp  
-    checkedListBox1.Items.Insert(0, "Copenhagen");  
-    ```  
+   ```csharp  
+   checkedListBox1.Items.Insert(0, "Copenhagen");  
+   ```  
   
-    ```cpp  
-    checkedListBox1->Items->Insert(0, "Copenhagen");  
-    ```  
+   ```cpp  
+   checkedListBox1->Items->Insert(0, "Copenhagen");  
+   ```  
   
-     - or -  
+   - or -  
   
-3.  Assign an entire array to the `Items` collection:  
+3. Assign an entire array to the `Items` collection:  
   
-    ```vb  
-    Dim ItemObject(9) As System.Object  
-    Dim i As Integer  
-       For i = 0 To 9  
-       ItemObject(i) = "Item" & i  
-    Next i  
-    ListBox1.Items.AddRange(ItemObject)  
-    ```  
+   ```vb  
+   Dim ItemObject(9) As System.Object  
+   Dim i As Integer  
+      For i = 0 To 9  
+      ItemObject(i) = "Item" & i  
+   Next i  
+   ListBox1.Items.AddRange(ItemObject)  
+   ```  
   
-    ```csharp  
-    System.Object[] ItemObject = new System.Object[10];  
-    for (int i = 0; i <= 9; i++)  
-    {  
-       ItemObject[i] = "Item" + i;  
-    }  
-    listBox1.Items.AddRange(ItemObject);  
-    ```  
+   ```csharp  
+   System.Object[] ItemObject = new System.Object[10];  
+   for (int i = 0; i <= 9; i++)  
+   {  
+      ItemObject[i] = "Item" + i;  
+   }  
+   listBox1.Items.AddRange(ItemObject);  
+   ```  
   
-    ```cpp  
-    Array<System::Object^>^ ItemObject = gcnew Array<System::Object^>(10);  
-    for (int i = 0; i <= 9; i++)  
-    {  
-       ItemObject[i] = String::Concat("Item", i.ToString());  
-    }  
-    listBox1->Items->AddRange(ItemObject);  
-    ```  
+   ```cpp  
+   Array<System::Object^>^ ItemObject = gcnew Array<System::Object^>(10);  
+   for (int i = 0; i <= 9; i++)  
+   {  
+      ItemObject[i] = String::Concat("Item", i.ToString());  
+   }  
+   listBox1->Items->AddRange(ItemObject);  
+   ```  
   
 ### To remove an item  
   
-1.  Call the `Remove` or `RemoveAt` method to delete items.  
+1. Call the `Remove` or `RemoveAt` method to delete items.  
   
-     `Remove` has one argument that specifies the item to remove.`RemoveAt` removes the item with the specified index number.  
+    `Remove` has one argument that specifies the item to remove.`RemoveAt` removes the item with the specified index number.  
   
-    ```vb  
-    ' To remove item with index 0:  
-    ComboBox1.Items.RemoveAt(0)  
-    ' To remove currently selected item:  
-    ComboBox1.Items.Remove(ComboBox1.SelectedItem)  
-    ' To remove "Tokyo" item:  
-    ComboBox1.Items.Remove("Tokyo")  
-    ```  
+   ```vb  
+   ' To remove item with index 0:  
+   ComboBox1.Items.RemoveAt(0)  
+   ' To remove currently selected item:  
+   ComboBox1.Items.Remove(ComboBox1.SelectedItem)  
+   ' To remove "Tokyo" item:  
+   ComboBox1.Items.Remove("Tokyo")  
+   ```  
   
-    ```csharp  
-    // To remove item with index 0:  
-    comboBox1.Items.RemoveAt(0);  
-    // To remove currently selected item:  
-    comboBox1.Items.Remove(comboBox1.SelectedItem);  
-    // To remove "Tokyo" item:  
-    comboBox1.Items.Remove("Tokyo");  
-    ```  
+   ```csharp  
+   // To remove item with index 0:  
+   comboBox1.Items.RemoveAt(0);  
+   // To remove currently selected item:  
+   comboBox1.Items.Remove(comboBox1.SelectedItem);  
+   // To remove "Tokyo" item:  
+   comboBox1.Items.Remove("Tokyo");  
+   ```  
   
-    ```cpp  
-    // To remove item with index 0:  
-    comboBox1->Items->RemoveAt(0);  
-    // To remove currently selected item:  
-    comboBox1->Items->Remove(comboBox1->SelectedItem);  
-    // To remove "Tokyo" item:  
-    comboBox1->Items->Remove("Tokyo");  
-    ```  
+   ```cpp  
+   // To remove item with index 0:  
+   comboBox1->Items->RemoveAt(0);  
+   // To remove currently selected item:  
+   comboBox1->Items->Remove(comboBox1->SelectedItem);  
+   // To remove "Tokyo" item:  
+   comboBox1->Items->Remove("Tokyo");  
+   ```  
   
 ### To remove all items  
   
-1.  Call the `Clear` method to remove all items from the collection:  
+1. Call the `Clear` method to remove all items from the collection:  
   
-    ```vb  
-    ListBox1.Items.Clear()  
-    ```  
+   ```vb  
+   ListBox1.Items.Clear()  
+   ```  
   
-    ```csharp  
-    listBox1.Items.Clear();  
-    ```  
+   ```csharp  
+   listBox1.Items.Clear();  
+   ```  
   
-    ```cpp  
-    listBox1->Items->Clear();  
-    ```  
+   ```cpp  
+   listBox1->Items->Clear();  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.ComboBox>  

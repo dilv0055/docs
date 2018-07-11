@@ -29,7 +29,7 @@ The recommended process for porting follows the following series of steps.  Each
 
    Because porting to .NET Core is such a big change to your codebase, it's highly recommended to get your tests ported so that you can run tests as you port code over.  MSTest, xUnit, and NUnit all support .NET Core 1.0 today.
    
-6. Execute your plan for porting!
+5. Execute your plan for porting!
 
 ## Tools to help
 

@@ -26,11 +26,11 @@ To sign an assembly with a strong name, you must have a public/private key pair.
   
 ### To create a key pair  
   
-1.  At the command prompt, type the following command:  
+1. At the command prompt, type the following command:  
   
-     **sn –k** \<*file name*>  
+    **sn –k** \<*file name*>  
   
-     In this command, *file name* is the name of the output file containing the key pair.  
+    In this command, *file name* is the name of the output file containing the key pair.  
   
  The following example creates a key pair called `sgKey.snk`.  
   

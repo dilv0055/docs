@@ -5,14 +5,14 @@ ms.assetid: 03d79db9-571d-4534-acef-d05e5467b257
 ---
 # &lt;add&gt; of &lt;transportConfigurationType&gt;
 This element is a key/value pair, which identifies the type of a particular transport.  
-  
+
  \<system.ServiceModel>  
 \<ServiceHostingEnvironment>  
 \<transportConfigurationTypes>  
 \<add>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <serviceHostingEnvironment>   
    <transportConfigurationTypes>  
@@ -21,28 +21,30 @@ This element is a key/value pair, which identifies the type of a particular tran
    </transportConfigurationTypes>  
 </serviceHostingEnvironment>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |name|Required String attribute.<br /><br /> Contains a user-defined key that uniquely identifies the transport type.|  
 |transportConfigurationType|A string that contains the type that implements the specific transport.|  
-  
+
 ### Child Elements  
  None  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<transportConfigurationTypes>](../../../../../docs/framework/configure-apps/file-schema/wcf/transportconfigurationtypes.md)|A collection of types that implement the specific transport.|  
-  
+
 ## Example  
-  
+
 ```xml  
 <serviceHostingEnvironment>   
    <transportConfigurationTypes>  
@@ -51,7 +53,7 @@ This element is a key/value pair, which identifies the type of a particular tran
    </transportConfigurationTypes>  
 </serviceHostingEnvironment>  
 ```  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.TransportConfigurationTypeElement>  
  <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>  

@@ -29,15 +29,16 @@ The compiler considers the following inputs for the purpose of determinism:
 - The precise version of the compiler used, and its referenced assemblies.
 - The current directory path.
 - The binary contents of all files explicitly passed to the compiler either directly or indirectly, including: 
-    - Source files
-    - Referenced assemblies
-    - Referenced modules
-    - Resources
-    - The strong name key file
-    - @ response files
-    - Analyzers
-    - Rulesets
-    - Additional files that may be used by analyzers
+  - Source files
+  - Referenced assemblies
+  - Referenced modules
+  - Resources
+  - The strong name key file
+  - @ response files
+  - Analyzers
+  - Rulesets
+  - Additional files that may be used by analyzers
+
 - The current culture (for the language in which diagnostics and exception messages are produced).
 - The default encoding (or the current code page) if the encoding is not specified.
 - The existence, non-existence, and contents of files on the compiler's search paths (specified, for example, by `/lib` or `/recurse`).

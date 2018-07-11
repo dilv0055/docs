@@ -5,15 +5,15 @@ ms.assetid: 4680ace5-f4e1-4fcb-b9d8-a4a4af5cd7ae
 ---
 # &lt;localClientSettings&gt; element
 Specifies the security settings of a local client for this binding.  
-  
+
  \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
 \<binding>  
 \<security>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <security>  
    <localClientSettings cacheCookies="Boolean"  
@@ -29,12 +29,13 @@ Specifies the security settings of a local client for this binding.
       timestampValidityDuration="TimeSpan" />  
 </security>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`cacheCookies`|A Boolean value that specifies whether cookie caching is enabled. The default is `false`.|  
@@ -48,20 +49,21 @@ Specifies the security settings of a local client for this binding.
 |`sessionKeyRenewalInterval`|A <xref:System.TimeSpan> that specifies the duration after which the initiator will renew the key for the security session. The default is "10:00:00".|  
 |`sessionKeyRolloverInterval`|A <xref:System.TimeSpan> that specifies the time interval a previous session key is valid on incoming messages during a key renewal. The default is "00:05:00".<br /><br /> During key renewal, the client and server must always send messages using the most current available key. Both parties will accept incoming messages secured with the previous session key until the rollover time expires.|  
 |`timestampValidityDuration`|A positive <xref:System.TimeSpan> that specifies the duration in which a time stamp is valid. The default is "00:15:00".|  
-  
+
 ### Child Elements  
  None  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Specifies the security options for a custom binding.|  
 |[\<secureConversationBootstrap>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Specifies the default values used for initiating a secure conversation service.|  
-  
+
 ## Remarks  
  The settings are local in the sense that they are not settings derived from the security policy of the service.  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>  
  <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalClientSettings%2A>  

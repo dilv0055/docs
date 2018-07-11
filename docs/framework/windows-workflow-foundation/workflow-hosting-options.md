@@ -14,9 +14,9 @@ Most of the Windows Workflow Foundation (WF) samples use workflows that are host
   
 > [!WARNING]
 >  [!INCLUDE[iisver](../../../includes/iisver-md.md)] recycles application pools periodically for various reasons. When an application pool is recycled, IIS stops accepting messages to the old pool, and instantiates a new application pool to accept new requests. If a workflow continues working after sending a response, [!INCLUDE[iisver](../../../includes/iisver-md.md)] will not be aware of the work being done, and may recycle the hosting application pool. If this happens, the workflow will abort, and tracking services will record a [1004 - WorkflowInstanceAborted](../../../docs/framework/windows-workflow-foundation/1004-workflowinstanceaborted.md) message with an empty Reason field.  
->   
+> 
 >  If persistence is used, the host must explicitly restart aborted instances from the last persistence point.  
->   
+> 
 >  If AppFabric is used, the workflow management service will eventually resume the workflow from the last successful persistence point if persistence is used. If no persistence is used, and the workflow performs operations outside a Request/Response pattern, data will be lost when the workflow aborts.  
   
 ## Hosting a workflow in a custom Windows Service  

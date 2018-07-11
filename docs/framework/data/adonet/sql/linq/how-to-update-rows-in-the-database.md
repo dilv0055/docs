@@ -11,18 +11,18 @@ You can update rows in a database by modifying member values of the objects asso
   
 > [!NOTE]
 >  You can override [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] default methods for `Insert`, `Update`, and `Delete` database operations. For more information, see [Customizing Insert, Update, and Delete Operations](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md).  
->   
+> 
 >  Developers using Visual Studio can use the [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] to develop stored procedures for the same purpose.  
   
  The following steps assume that a valid <xref:System.Data.Linq.DataContext> connects you to the Northwind database. For more information, see [How to: Connect to a Database](../../../../../../docs/framework/data/adonet/sql/linq/how-to-connect-to-a-database.md).  
   
 ### To update a row in the database  
   
-1.  Query the database for the row to be updated.  
+1. Query the database for the row to be updated.  
   
-2.  Make desired changes to member values in the resulting [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] object.  
+2. Make desired changes to member values in the resulting [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] object.  
   
-3.  Submit the changes to the database.  
+3. Submit the changes to the database.  
   
 ## Example  
  The following example queries the database for order #11000, and then changes the values of `ShipName` and `ShipVia` in the resulting `Order` object. Finally, the changes to these member values are submitted to the database as changes in the `ShipName` and `ShipVia` columns.  

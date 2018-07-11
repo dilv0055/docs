@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # ModuleBindInfo Structure
 Provides detailed information about the referenced module and the assembly that contains it.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct _ModuleBindInfo {  
     DWORD    dwAppDomainId;  
@@ -29,27 +29,28 @@ typedef struct _ModuleBindInfo {
     LPCWSTR  lpModuleName  
 } ModuleBindInfo;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`dwAppDomainId`|A unique identifier for the `IStream` that is returned by a call to the [IHostAssemblyStore::ProvideModule](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-providemodule-method.md) method from which the referenced module is to be loaded.|  
 |`lpAssemblyIdentity`|A unique identifier for the assembly that contains the referenced module.|  
 |`lpModuleName`|The name of the referenced module.|  
-  
+
 ## Remarks  
  `ModuleBindInfo` is passed as a parameter to `IHostAssemblyStore::ProvideModule`. The host supplies the unique identifier `dwAppDomainId` to the common language runtime (CLR). After a call to the [IHostAssemblyStore::ProvideAssembly](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) method returns, the runtime uses the identifier to determine whether the contents of the `IStream` have been mapped. If so, the runtime loads the existing copy rather than remapping the stream. The runtime also uses this identifier as a lookup key for streams that are returned from calls to the `IHostAssemblyStore::ProvideAssembly` method. Therefore, the identifier must be unique for module requests as well as for assembly requests.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.idl  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Structures](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
  [AssemblyBindInfo Structure](../../../../docs/framework/unmanaged-api/hosting/assemblybindinfo-structure.md)  

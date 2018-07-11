@@ -15,25 +15,24 @@ ms.date: 05/29/2018
 
 ## Synopsis
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 ```
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
     [-l|--logger] [--no-build] [--no-restore] [-o|--output] [-r|--results-directory] [-s|--settings] [-t|--list-tests] [-v|--verbosity]
 dotnet test [-h|--help]
 ```
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 ```
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
     [-l|--logger] [--no-build] [--no-restore] [-o|--output] [-r|--results-directory] [-s|--settings] [-t|--list-tests] [-v|--verbosity]
 dotnet test [-h|--help]
 ```
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 ```
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [-d|--diag] [-f|--framework] [--filter] [-l|--logger] [--no-build] [-o|--output] [-s|--settings] [-t|--list-tests]  [-v|--verbosity]
 dotnet test [-h|--help]
 ```
----
-
+* * *
 ## Description
 
 The `dotnet test` command is used to execute unit tests in a given project. The `dotnet test` command launches the test runner console application specified for a project. The test runner executes the tests defined for a unit test framework (for example, MSTest, NUnit, or xUnit) and reports the success or failure of each test. The test runner and the unit test library are packaged as NuGet packages and are restored as ordinary dependencies for the project.
@@ -50,7 +49,7 @@ Path to the test project. If not specified, it defaults to current directory.
 
 ## Options
 
-# [.NET Core 2.1](#tab/netcore21)
+#### [.NET Core 2.1](#tab/netcore21/)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
@@ -116,7 +115,7 @@ List all of the discovered tests in the current project.
 
 Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.
 
-# [.NET Core 2.0](#tab/netcore20)
+#### [.NET Core 2.0](#tab/netcore20/)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
@@ -178,7 +177,7 @@ List all of the discovered tests in the current project.
 
 Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
@@ -228,8 +227,7 @@ List all of the discovered tests in the current project.
 
 Sets the verbosity level of the command. Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.
 
----
-
+* * *
 ## Examples
 
 Run the tests in the project in the current directory:
@@ -248,12 +246,14 @@ Run the tests in the `test1` project:
 
 `<property>` is an attribute of the `Test Case`. The following are the properties supported by popular unit test frameworks:
 
+
 | Test Framework | Supported properties                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
 | MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Traits</li></ul>                                   |
 
 The `<operator>` describes the relationship between the property and the value:
+
 
 | Operator | Function        |
 | :------: | --------------- |
@@ -267,9 +267,10 @@ An expression without an `<operator>` is automatically considered as a `contains
 
 Expressions can be joined with conditional operators:
 
+
 | Operator            | Function |
 | ------------------- | -------- |
-| <code>&#124;</code> | OR       |
+| <code>&#124;</code> | OR       |
 | `&`                 | AND      |
 
 You can enclose expressions in parenthesis when using conditional operators (for example, `(Name~TestMethod1) | (Name~TestMethod2)`).

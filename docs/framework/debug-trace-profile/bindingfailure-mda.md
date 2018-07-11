@@ -21,34 +21,34 @@ The `bindingFailure` managed debugging assistant (MDA) is activated when an asse
 ## Cause  
  A binding failure occurs when the runtime is unable to load an assembly. A binding failure might be the result of one of the following situations:  
   
--   The common language runtime (CLR) cannot find the requested assembly. There are many reasons this can occur, such as the assembly not being installed or the application not being correctly configured to find the assembly.  
+- The common language runtime (CLR) cannot find the requested assembly. There are many reasons this can occur, such as the assembly not being installed or the application not being correctly configured to find the assembly.  
   
--   A common problem scenario is passing a type to another application domain, which requires the CLR to load the assembly containing that type in the other application domain. It may not be possible for the runtime to load the assembly if the other application domain is configured differently from the original application domain. For example, the two application domains might have different <xref:System.AppDomain.BaseDirectory%2A> property values.  
+- A common problem scenario is passing a type to another application domain, which requires the CLR to load the assembly containing that type in the other application domain. It may not be possible for the runtime to load the assembly if the other application domain is configured differently from the original application domain. For example, the two application domains might have different <xref:System.AppDomain.BaseDirectory%2A> property values.  
   
--   The requested assembly is corrupted or is not an assembly.  
+- The requested assembly is corrupted or is not an assembly.  
   
--   The code attempting to load the assembly does not have the correct code access security permissions to load assemblies.  
+- The code attempting to load the assembly does not have the correct code access security permissions to load assemblies.  
   
--   The user credentials do not provide the required permissions to read the file.  
+- The user credentials do not provide the required permissions to read the file.  
   
 ## Resolution  
  The first step is to determine why the CLR could not bind to the requested assembly. There are many reasons why the runtime might not have found or been able load the requested assembly, such as the scenarios listed in the Cause section. The following actions are recommended to eliminate the cause of the binding failure:  
   
--   Determine the cause by using the data provided by the `bindingFailure` MDA:  
+- Determine the cause by using the data provided by the `bindingFailure` MDA:  
   
-    -   Run the [Fuslogvw.exe (Assembly Binding Log Viewer)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) to read the error logs produced by the assembly binder.  
+  - Run the [Fuslogvw.exe (Assembly Binding Log Viewer)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) to read the error logs produced by the assembly binder.  
   
-    -   Determine if the assembly is at the location requested. In the case of the <xref:System.Reflection.Assembly.LoadFrom%2A> and <xref:System.Reflection.Assembly.LoadFile%2A> methods, the requested location can be easily determined. In the case of the <xref:System.Reflection.Assembly.Load%2A> method, which binds using the assembly identity, you must look for assemblies that match that identity in the application domain's <xref:System.AppDomain.BaseDirectory%2A> property probe path and the global assembly cache.  
+  - Determine if the assembly is at the location requested. In the case of the <xref:System.Reflection.Assembly.LoadFrom%2A> and <xref:System.Reflection.Assembly.LoadFile%2A> methods, the requested location can be easily determined. In the case of the <xref:System.Reflection.Assembly.Load%2A> method, which binds using the assembly identity, you must look for assemblies that match that identity in the application domain's <xref:System.AppDomain.BaseDirectory%2A> property probe path and the global assembly cache.  
   
--   Resolve the cause based on the preceding determination. Possible resolution options are the following:  
+- Resolve the cause based on the preceding determination. Possible resolution options are the following:  
   
-    -   Install the requested assembly in the global assembly cache and call the. <xref:System.Reflection.Assembly.Load%2A> method to load the assembly by identity.  
+  - Install the requested assembly in the global assembly cache and call the. <xref:System.Reflection.Assembly.Load%2A> method to load the assembly by identity.  
   
-    -   Copy the requested assembly into the application directory and call the <xref:System.Reflection.Assembly.Load%2A> method to load the assembly by identity.  
+  - Copy the requested assembly into the application directory and call the <xref:System.Reflection.Assembly.Load%2A> method to load the assembly by identity.  
   
-    -   Reconfigure the application domain in which the binding failure occurred to include the assembly path by either changing the <xref:System.AppDomain.BaseDirectory%2A> property or adding private probing paths.  
+  - Reconfigure the application domain in which the binding failure occurred to include the assembly path by either changing the <xref:System.AppDomain.BaseDirectory%2A> property or adding private probing paths.  
   
-    -   Change the access control list for the file to allow the logged-on user to read the file.  
+  - Change the access control list for the file to allow the logged-on user to read the file.  
   
 ## Effect on the Runtime  
  This MDA has no effect on the CLR. It only reports data about binding failures.  

@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # CorRuntimeHost Coclass
 Provides interfaces for managing applications that are being executed by the common language runtime.  
-  
+
 ## Syntax  
-  
+
 ```  
 coclass CorRuntimeHost {  
     [default] interface ICorRuntimeHost;  
@@ -31,9 +31,10 @@ coclass CorRuntimeHost {
     interface IDebuggerInfo;  
 };  
 ```  
-  
+
 ## Interfaces  
-  
+
+
 |Interface|Description|  
 |---------------|-----------------|  
 |[ICorConfiguration Interface](../../../../docs/framework/unmanaged-api/hosting/icorconfiguration-interface.md)|Provides methods for configuring the common language runtime (CLR).|  
@@ -41,15 +42,15 @@ coclass CorRuntimeHost {
 |[IDebuggerInfo Interface](../../../../docs/framework/unmanaged-api/hosting/idebuggerinfo-interface.md)|Provides methods for obtaining information about the state of the debugging services.|  
 |[IGCHost Interface](../../../../docs/framework/unmanaged-api/hosting/igchost-interface.md)|Provides methods for obtaining information about the garbage collection system and for controlling some aspects of garbage collection.|  
 |"IValidator"|Provides methods for validation of portable executable images and detailed reporting of validation errors.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.idl  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Coclasses](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)

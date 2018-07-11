@@ -42,11 +42,11 @@ Having SQL Server running as a container is not just useful for a demo where you
 
 #### Additional resources
 
--   **Run the SQL Server Docker image on Linux, Mac, or Windows**
-    [*https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker*](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker)
+- **Run the SQL Server Docker image on Linux, Mac, or Windows**
+  [*https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker*](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-docker)
 
--   **Connect and query SQL Server on Linux with sqlcmd**
-    [*https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd*](https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd)
+- **Connect and query SQL Server on Linux with sqlcmd**
+  [*https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd*](https://docs.microsoft.com/sql/linux/sql-server-linux-connect-and-query-sqlcmd)
 
 ### Seeding with test data on Web application startup
 
@@ -194,6 +194,6 @@ Finally, in the docker-compose.override.yml file, the basket.api microservice fo
 ```
 
 
->[!div class="step-by-step"]
-[Previous](multi-container-applications-docker-compose.md)
-[Next](integration-event-based-microservice-communications.md)
+> [!div  class="step-by-step"]
+> [Previous](multi-container-applications-docker-compose.md)
+> [Next](integration-event-based-microservice-communications.md)

@@ -18,46 +18,46 @@ A Windows Forms <xref:System.Windows.Forms.CheckBox> control is used to give use
   
 ### To set options with CheckBox controls  
   
-1.  Examine the value of the <xref:System.Windows.Forms.CheckBox.Checked%2A> property to determine its state, and use that value to set an option.  
+1. Examine the value of the <xref:System.Windows.Forms.CheckBox.Checked%2A> property to determine its state, and use that value to set an option.  
   
-     In the code sample below, when the <xref:System.Windows.Forms.CheckBox> control's <xref:System.Windows.Forms.CheckBox.CheckedChanged> event is raised, the form's <xref:System.Windows.Forms.Control.AllowDrop%2A> property is set to `false` if the check box is checked. This is useful for situations where you want to restrict user interaction.  
+    In the code sample below, when the <xref:System.Windows.Forms.CheckBox> control's <xref:System.Windows.Forms.CheckBox.CheckedChanged> event is raised, the form's <xref:System.Windows.Forms.Control.AllowDrop%2A> property is set to `false` if the check box is checked. This is useful for situations where you want to restrict user interaction.  
   
-    ```vb  
-    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, _  
-       ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged  
-       ' Determine the CheckState of the check box.  
-       If CheckBox1.CheckState = CheckState.Checked Then  
-          ' If checked, do not allow items to be dragged onto the form.  
-          Me.AllowDrop = False  
-       End If  
-    End Sub  
-    ```  
+   ```vb  
+   Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, _  
+      ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged  
+      ' Determine the CheckState of the check box.  
+      If CheckBox1.CheckState = CheckState.Checked Then  
+         ' If checked, do not allow items to be dragged onto the form.  
+         Me.AllowDrop = False  
+      End If  
+   End Sub  
+   ```  
   
-    ```csharp  
-    private void checkBox1_CheckedChanged(object sender, System.EventArgs e)  
-    {  
-       // Determine the CheckState of the check box.  
-       if (checkBox1.CheckState == CheckState.Checked)   
-       {  
-          // If checked, do not allow items to be dragged onto the form.  
-          this.AllowDrop = false;  
-       }  
-    }  
-    ```  
+   ```csharp  
+   private void checkBox1_CheckedChanged(object sender, System.EventArgs e)  
+   {  
+      // Determine the CheckState of the check box.  
+      if (checkBox1.CheckState == CheckState.Checked)   
+      {  
+         // If checked, do not allow items to be dragged onto the form.  
+         this.AllowDrop = false;  
+      }  
+   }  
+   ```  
   
-    ```cpp  
-    private:  
-       void checkBox1_CheckedChanged(System::Object ^ sender,  
-          System::EventArgs ^ e)  
-       {  
-          // Determine the CheckState of the check box.  
-          if (checkBox1->CheckState == CheckState::Checked)   
-          {  
-             // If checked, do not allow items to be dragged onto the form.  
-             this->AllowDrop = false;  
-          }  
-       }  
-    ```  
+   ```cpp  
+   private:  
+      void checkBox1_CheckedChanged(System::Object ^ sender,  
+         System::EventArgs ^ e)  
+      {  
+         // Determine the CheckState of the check box.  
+         if (checkBox1->CheckState == CheckState::Checked)   
+         {  
+            // If checked, do not allow items to be dragged onto the form.  
+            this->AllowDrop = false;  
+         }  
+      }  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.CheckBox>  

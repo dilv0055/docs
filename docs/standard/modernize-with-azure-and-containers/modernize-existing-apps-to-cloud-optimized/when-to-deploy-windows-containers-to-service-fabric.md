@@ -11,16 +11,16 @@ Applications that are based on Windows Containers will quickly need to use platf
 
 Many organizations are lifting and shifting existing monolithic applications to containers for two reasons:
 
--   Cost reductions, either due to consolidation and removal of existing hardware, or from running applications at a higher density.
+- Cost reductions, either due to consolidation and removal of existing hardware, or from running applications at a higher density.
 
--   A consistent deployment contract between development and operations.
+- A consistent deployment contract between development and operations.
 
 Pursuing cost reductions is understandable, and it's likely that all organizations are chasing that goal. Consistent deployment is harder to evaluate, but it's equally as important. A consistent deployment contract says that developers are free to choose to use the technology that suits them, and the operations team gets a single way to deploy and manage applications. This agreement alleviates the pain of having operations deal with the complexity of many different technologies, or forcing developers to work only with certain technologies. Essentially, each application is containerized in a self-contained deployment image.
 
 Some organizations will continue modernizing by adding microservices (Cloud-Native applications) but many other organizations will stop here (Cloud-Optimized applications). As shown in Figure 4-8, these organizations won't move to microservices architectures because they might not need to. In any case, they already get the benefits that using containers plus Service Fabric provides-a complete management experience that includes deployment, upgrades, versioning, rollbacks, and health monitoring.
 
 > ![Lift and shift an application to Service Fabric](./media/image8.png)
->
+> 
 > **Figure 4-8.** Lift and shift an application to Service Fabric
 
 A key approach to Service Fabric is to reuse existing code and lift and shift. Therefore, you can migrate your current .NET Framework applications, by using Windows Containers, and deploy them to Service Fabric. It will be easier to keep going modernizing, eventually, by adding new microservices.
@@ -29,6 +29,6 @@ When comparing Service Fabric to other orchestrators, it's important to highligh
 
 The ultimate goal of Service Fabric is to reduce the complexities of building applications by using a microservices approach. You eventually want a microservices for certain types of applications to avoid costly redesigns. You can start small, scale when needed, deprecate services, add new services, and evolve your application with customer use. There are many other problems that are yet to be solved to make microservices more approachable for most developers. If you currently are just lifting and shifting an application with Windows Containers, but you are thinking about adding microservices based on containers in the future, that is the Service Fabric sweet spot.
 
->[!div class="step-by-step"]
-[Previous](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md)
-[Next](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)
+> [!div  class="step-by-step"]
+> [Previous](when-to-deploy-windows-containers-to-azure-vms-iaas-cloud.md)
+> [Next](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)

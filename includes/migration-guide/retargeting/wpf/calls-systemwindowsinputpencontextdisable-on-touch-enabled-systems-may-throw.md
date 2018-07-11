@@ -1,5 +1,6 @@
 ### Calls to System.Windows.Input.PenContext.Disable on touch-enabled systems may throw an ArgumentException
 
+
 |   |   |
 |---|---|
 |Details|Under some circumstances, calls to the internal <strong>System.Windows.Intput.PenContext.Disable</strong> method on touch-enabled systems may throw an unhandled <code>T:System.ArgumentException</code> because of reentrancy.|

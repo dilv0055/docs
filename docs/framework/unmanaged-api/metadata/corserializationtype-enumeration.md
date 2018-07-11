@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorSerializationType Enumeration
 Specifies how an object is serialized by the common language runtime.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorSerializationType {  
-  
+
     SERIALIZATION_TYPE_UNDEFINED     = 0,  
     SERIALIZATION_TYPE_BOOLEAN       = ELEMENT_TYPE_BOOLEAN,  
     SERIALIZATION_TYPE_CHAR          = ELEMENT_TYPE_CHAR,  
@@ -45,12 +45,13 @@ typedef enum CorSerializationType {
     SERIALIZATION_TYPE_FIELD         = 0x53,  
     SERIALIZATION_TYPE_PROPERTY      = 0x54,  
     SERIALIZATION_TYPE_ENUM          = 0x55  
-  
+
 } CorSerializationType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`SERIALIZATION_TYPE_UNDEFINED`|Serialization of the object is undefined.|  
@@ -73,13 +74,13 @@ typedef enum CorSerializationType {
 |`SERIALIZATION_TYPE_FIELD`|Object is serialized as a field.|  
 |`SERIALIZATION_TYPE_PROPERTY`|Object is serialized as a property.|  
 |`SERIALIZATION_TYPE_ENUM`|Object is serialized as an enumeration.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

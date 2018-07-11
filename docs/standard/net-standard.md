@@ -120,6 +120,7 @@ Profile-based PCLs packaged as `netstandard` are easier to consume than typicall
 
 You can see the set of PCL profiles that are compatible with the .NET Standard: 
 
+
 | PCL Profile | .NET Standard | PCL Platforms
 |:-----------:|:-------------:|------------------------------------------------------------------------------
 | Profile7    | 1.1           | .NET Framework 4.5, Windows 8

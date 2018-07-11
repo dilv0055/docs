@@ -12,21 +12,23 @@ ms.assetid: 9cb31d63-f148-4d25-b079-816e73f988c7
 ---
 # DataGrid Styles and Templates
 This topic describes the styles and templates for the <xref:System.Windows.Controls.DataGrid> control. You can modify the default <xref:System.Windows.Controls.ControlTemplate> to give the control a unique appearance. For more information, see [Customizing the Appearance of an Existing Control by Creating a ControlTemplate](../../../../docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md).  
-  
+
 ## DataGrid Parts  
  The following table lists the named parts for the <xref:System.Windows.Controls.DataGrid> control.  
-  
+
+
 |Part|Type|Description|  
 |-|-|-|  
 |PART_ColumnHeadersPresenter|<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>|The row that contains the column headers.|  
-  
+
  When you create a <xref:System.Windows.Controls.ControlTemplate> for a <xref:System.Windows.Controls.DataGrid>, your template might contain an <xref:System.Windows.Controls.ItemsPresenter> within a <xref:System.Windows.Controls.ScrollViewer>. (The <xref:System.Windows.Controls.ItemsPresenter> displays each item in the <xref:System.Windows.Controls.DataGrid>; the <xref:System.Windows.Controls.ScrollViewer> enables scrolling within the control).  If the <xref:System.Windows.Controls.ItemsPresenter> is not the direct child of the <xref:System.Windows.Controls.ScrollViewer>, you must give the <xref:System.Windows.Controls.ItemsPresenter> the name, `ItemsPresenter`.  
-  
+
  The default template for the <xref:System.Windows.Controls.DataGrid> contains a <xref:System.Windows.Controls.ScrollViewer> control. For more information about the parts defined by the <xref:System.Windows.Controls.ScrollViewer>, see [ScrollViewer Styles and Templates](../../../../docs/framework/wpf/controls/scrollviewer-styles-and-templates.md).  
-  
+
 ## DataGrid States  
  The following table lists the visual states for the <xref:System.Windows.Controls.DataGrid> control.  
-  
+
+
 |VisualState Name|VisualStateGroup Name|Description|  
 |-|-|-|  
 |Normal|CommonStates|The default state.|  
@@ -34,13 +36,14 @@ This topic describes the styles and templates for the <xref:System.Windows.Contr
 |InvalidFocused|ValidationStates|The control is not valid and has focus.|  
 |InvalidUnfocused|ValidationStates|The control is not valid and does not have focus.|  
 |Valid|ValidationStates|The control is valid.|  
-  
+
 ## DataGridCell Parts  
  The <xref:System.Windows.Controls.DataGridCell> element does not have any named parts.  
-  
+
 ## DataGridCell States  
  The following table lists the visual states for the <xref:System.Windows.Controls.DataGridCell> element.  
-  
+
+
 |VisualState Name|VisualStateGroup Name|Description|  
 |-|-|-|  
 |Normal|CommonStates|The default state.|  
@@ -56,13 +59,14 @@ This topic describes the styles and templates for the <xref:System.Windows.Contr
 |InvalidFocused|ValidationStates|The cell is not valid and has focus.|  
 |InvalidUnfocused|ValidationStates|The cell is not valid and does not have focus.|  
 |Valid|ValidationStates|The cell is valid.|  
-  
+
 ## DataGridRow Parts  
  The <xref:System.Windows.Controls.DataGridRow> element does not have any named parts.  
-  
+
 ## DataGridRow States  
  The following table lists the visual states for the <xref:System.Windows.Controls.DataGridRow> element.  
-  
+
+
 |VisualState Name|VisualStateGroup Name|Description|  
 |-|-|-|  
 |Normal|CommonStates|The default state.|  
@@ -79,18 +83,20 @@ This topic describes the styles and templates for the <xref:System.Windows.Contr
 |InvalidFocused|ValidationStates|The control is not valid and has focus.|  
 |InvalidUnfocused|ValidationStates|The control is not valid and does not have focus.|  
 |Valid|ValidationStates|The control is valid.|  
-  
+
 ## DataGridRowHeader Parts  
  The following table lists the named parts for the <xref:System.Windows.Controls.Primitives.DataGridRowHeader> element.  
-  
+
+
 |Part|Type|Description|  
 |-|-|-|  
 |PART_TopHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|The element that is used to resize the row header from the top.|  
 |PART_BottomHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|The element that is used to resize the row header from the bottom.|  
-  
+
 ## DataGridRowHeader States  
  The following table lists the visual states for the <xref:System.Windows.Controls.Primitives.DataGridRowHeader> element.  
-  
+
+
 |VisualState Name|VisualStateGroup Name|Description|  
 |-|-|-|  
 |Normal|CommonStates|The default state.|  
@@ -112,34 +118,38 @@ This topic describes the styles and templates for the <xref:System.Windows.Contr
 |InvalidFocused|ValidationStates|The control is not valid and has focus.|  
 |InvalidUnfocused|ValidationStates|The control is not valid and does not have focus.|  
 |Valid|ValidationStates|The control is valid.|  
-  
+
 ## DataGridColumnHeadersPresenter Parts  
  The following table lists the named parts for the <xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> element.  
-  
+
+
 |Part|Type|Description|  
 |-|-|-|  
 |PART_FillerColumnHeader|<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>|The placeholder for column headers.|  
-  
+
 ## DataGridColumnHeadersPresenter States  
  The following table lists the visual states for the <xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter> element.  
-  
+
+
 |VisualState Name|VisualStateGroup Name|Description|  
 |-|-|-|  
 |InvalidFocused|ValidationStates|The cell is not valid and has focus.|  
 |InvalidUnfocused|ValidationStates|The cell is not valid and does not have focus.|  
 |Valid|ValidationStates|The cell is valid.|  
-  
+
 ## DataGridColumnHeader Parts  
  The following table lists the named parts for the <xref:System.Windows.Controls.Primitives.DataGridColumnHeader> element.  
-  
+
+
 |Part|Type|Description|  
 |-|-|-|  
 |PART_LeftHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|The element that is used to resize the column header from the left.|  
 |PART_RightHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|The element that is used to resize the column header from the right.|  
-  
+
 ## DataGridColumnHeader States  
  The following table lists the visual states for the <xref:System.Windows.Controls.Primitives.DataGridColumnHeader> element.  
-  
+
+
 |VisualState Name|VisualStateGroup Name|Description|  
 |-|-|-|  
 |Normal|CommonStates|The default state.|  
@@ -151,18 +161,18 @@ This topic describes the styles and templates for the <xref:System.Windows.Contr
 |InvalidFocused|ValidationStates|The control is not valid and has focus.|  
 |InvalidUnfocused|ValidationStates|The control is not valid and does not have focus.|  
 |Valid|ValidationStates|The control is valid.|  
-  
+
 ## DataGrid ControlTemplate Example  
  The following example shows how to define a <xref:System.Windows.Controls.ControlTemplate> for the <xref:System.Windows.Controls.DataGrid> control and its associated types.  
-  
+
  [!code-xaml[ControlTemplateExamples#DataGrid](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/datagrid.xaml#datagrid)]  
-  
+
  The preceding example uses one or more of the following resources.  
-  
+
  [!code-xaml[ControlTemplateExamples#Resources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/shared.xaml#resources)]  
-  
+
  For the complete sample, see [Styling with ControlTemplates Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Styles%20&%20Templates/IntroToStylingAndTemplating).  
-  
+
 ## See Also  
  <xref:System.Windows.FrameworkElement.Style%2A>  
  <xref:System.Windows.Controls.ControlTemplate>  

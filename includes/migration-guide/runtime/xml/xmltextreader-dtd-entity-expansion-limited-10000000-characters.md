@@ -1,5 +1,6 @@
 ### XmlTextReader DTD entity expansion is limited to 10,000,000 characters
 
+
 |   |   |
 |---|---|
 |Details|DTD entity expansion is now limited to 10,000,000 characters. Loading XML files without DTD entity expansion or with limited DTD entity expansion is unaffected. Files with DTD entities that expand to more than 10,000,000 characters fail to load, and now throw an exception.|

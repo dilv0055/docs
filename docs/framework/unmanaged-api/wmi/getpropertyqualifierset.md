@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Retrieves the qualifier set for a particular property.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetPropertyQualifierSet (
    [in] int                 vFunc, 
@@ -51,6 +51,7 @@ HRESULT GetPropertyQualifierSet (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | There has been a general failure. |
@@ -59,7 +60,7 @@ The following values returned by this function are defined in the *WbemCli.h* he
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | A parameter is `null`. |
 | `WBEM_E_SYSTEM_PROPERTY` | 0x80041030 | The function attempts to get qualifiers of a system property. |
 |`WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::GetPropertyQualifierSet](https://msdn.microsoft.com/library/aa391450(v=vs.85).aspx) method. 
@@ -72,10 +73,10 @@ Because system properties have no qualifiers, the function returns `WBEM_E_SYSTE
 
 ## Requirements  
 **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

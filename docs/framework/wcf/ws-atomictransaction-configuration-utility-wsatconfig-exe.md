@@ -5,27 +5,28 @@ ms.assetid: 1c56cf98-3963-46d5-a4e1-482deae58c58
 ---
 # WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 The WS-AtomicTransaction Configuration Utility is used to configure basic WS-AtomicTransaction support settings.  
-  
+
 ## Syntax  
-  
+
 ```  
 wsatConfig [Options]  
 ```  
-  
+
 ## Remarks  
  This command line tool can be used to configure basic WS-AT settings in a local machine only. If you have to configure settings on both local and remote machines, you should use the MMC snap-in as described in [Configuring WS-Atomic Transaction Support](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md).  
-  
+
  The command line tool can be found in the Windows SDK installation location, specifically,  
-  
+
  %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\wsatConfig.exe  
-  
+
  If you are running [!INCLUDE[wxp](../../../includes/wxp-md.md)] or [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], you must download an update before running WsatConfig.exe. For more information about this update, see [Update for Commerce Server 2007 (KB912817)](http://go.microsoft.com/fwlink/?LinkId=95340) and [Availability of Windows XP COM+ Hotfix Rollup Package 13](http://go.microsoft.com/fwlink/?LinkId=95341).  
-  
+
  The following table shows the options that can be used with WS-AtomicTransaction Configuration Utility (wsatConfig.exe).  
-  
+
 > [!NOTE]
 >  When you set an SSL certificate for a selected port, you overwrite the original SSL certificate associated with that port if one exists.  
-  
+
+
 |Options|Description|  
 |-------------|-----------------|  
 |-accounts:\<account,>|Specifies a comma-separated list of accounts that can participate in WS-AtomicTransaction. The validity of these accounts is not checked.|  
@@ -42,7 +43,7 @@ wsatConfig [Options]
 |-restart|Restarts MSDTC to activate changes immediately. If this is not specified, the changes take effect when MSDTC is restarted.|  
 |-show|Displays the current WS-AtomicTransaction protocol settings.|  
 |-virtualServer:\<virtualServer>|Specifies the DTC resource cluster name.|  
-  
+
 ## See Also  
  [Using WS-AtomicTransaction](../../../docs/framework/wcf/feature-details/using-ws-atomictransaction.md)  
  [Configuring WS-Atomic Transaction Support](../../../docs/framework/wcf/feature-details/configuring-ws-atomic-transaction-support.md)

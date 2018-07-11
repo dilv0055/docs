@@ -92,9 +92,9 @@ Windows Communication Foundation (WCF) Test Client (WcfTestClient.exe) is a GUI 
   
 > [!CAUTION]
 >  If you have modified the client configuration file and select to reuse it in the future, you can find the file in the following location:  
->   
+> 
 >  \Documents and Settings\\[User Account]\My Documents\Test Client Projects.  
->   
+> 
 >  Any updated credential information stored to the client configuration file is protected by the Access Control List (ACL) of this folder.  
   
 ### Adding, Removing and Refreshing Services  
@@ -130,34 +130,34 @@ Windows Communication Foundation (WCF) Test Client (WcfTestClient.exe) is a GUI 
 ## Features supported by WCF Test Client  
  The following is a list of features supported by WCF Test Client:  
   
--   Service Invocation: Request/Response and One-way message.  
+- Service Invocation: Request/Response and One-way message.  
   
--   Bindings: all bindings supported by Svcutil.exe.  
+- Bindings: all bindings supported by Svcutil.exe.  
   
--   Controlling Session.  
+- Controlling Session.  
   
--   Message Contract.  
+- Message Contract.  
   
--   XML serialization.  
+- XML serialization.  
   
  The following is a list of features not supported by WCF Test Client:  
   
--   Types: <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>, <xref:System.Xml.XmlElement>, <xref:System.Xml.XmlAttribute>, <xref:System.Xml.XmlNode>, types that implement the <xref:System.Xml.Serialization.IXmlSerializable> interface, including the related <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> attribute, and the <xref:System.Xml.Linq.XDocument> and <xref:System.Xml.Linq.XElement> types and the ADO.NET <xref:System.Data.DataTable> type.  
+- Types: <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message>, <xref:System.Xml.XmlElement>, <xref:System.Xml.XmlAttribute>, <xref:System.Xml.XmlNode>, types that implement the <xref:System.Xml.Serialization.IXmlSerializable> interface, including the related <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> attribute, and the <xref:System.Xml.Linq.XDocument> and <xref:System.Xml.Linq.XElement> types and the ADO.NET <xref:System.Data.DataTable> type.  
   
--   Duplex contract.  
+- Duplex contract.  
   
--   Transaction.  
+- Transaction.  
   
--   Security: [!INCLUDE[infocard](../../../includes/infocard-md.md)] , Certificate, and Username/Password.  
+- Security: [!INCLUDE[infocard](../../../includes/infocard-md.md)] , Certificate, and Username/Password.  
   
--   Bindings: WSFederationbinding, any Context bindings and Https binding, WebHttpbinding (Json response message support).  
+- Bindings: WSFederationbinding, any Context bindings and Https binding, WebHttpbinding (Json response message support).  
   
 ## Closing WCF Test Client  
  You can close WCF Test Client in the following ways:  
   
--   On the **File** menu, click **Exit**. Alternatively, in the WCF Test Client main window, click **Close**. Both of these actions also shut down WCF Service Auto Host and stop the Visual Studio debugging process if WCF Test Client was launched by Visual Studio.  
+- On the **File** menu, click **Exit**. Alternatively, in the WCF Test Client main window, click **Close**. Both of these actions also shut down WCF Service Auto Host and stop the Visual Studio debugging process if WCF Test Client was launched by Visual Studio.  
   
--   Right-click the **WCF Service Host** icon in the notification area, and then click **Exit.** This shuts down both WCF Service Auto Host and WCF Test Client and stops the Visual Studio debugging process.  
+- Right-click the **WCF Service Host** icon in the notification area, and then click **Exit.** This shuts down both WCF Service Auto Host and WCF Test Client and stops the Visual Studio debugging process.  
   
 ## See Also  
  [WCF Service Host (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)

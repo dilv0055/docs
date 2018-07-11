@@ -5,15 +5,16 @@ ms.assetid: 6fc035e5-7639-48b8-bc7f-b093dd31b039
 ---
 # Aggregation Operations (C#)
 An aggregation operation computes a single value from a collection of values. An example of an aggregation operation is calculating the average daily temperature from a month's worth of daily temperature values.  
-  
+
  The following illustration shows the results of two different aggregation operations on a sequence of numbers. The first operation sums the numbers. The second operation returns the maximum value in the sequence.  
-  
+
  ![LINQ Aggregation Operations](../../../../csharp/programming-guide/concepts/linq/media/linq_aggregation.png "LINQ_Aggregation")  
-  
+
  The standard query operator methods that perform aggregation operations are listed in the following section.  
-  
+
 ## Methods  
-  
+
+
 |Method Name|Description|C# Query Expression Syntax|More Information|  
 |-----------------|-----------------|---------------------------------|----------------------|  
 |Aggregate|Performs a custom aggregation operation on the values of a collection.|Not applicable.|<xref:System.Linq.Enumerable.Aggregate%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Aggregate%2A?displayProperty=nameWithType>|  
@@ -23,7 +24,7 @@ An aggregation operation computes a single value from a collection of values. An
 |Max|Determines the maximum value in a collection.|Not applicable.|<xref:System.Linq.Enumerable.Max%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Max%2A?displayProperty=nameWithType>|  
 |Min|Determines the minimum value in a collection.|Not applicable.|<xref:System.Linq.Enumerable.Min%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Min%2A?displayProperty=nameWithType>|  
 |Sum|Calculates the sum of the values in a collection.|Not applicable.|<xref:System.Linq.Enumerable.Sum%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Sum%2A?displayProperty=nameWithType>|  
-  
+
 ## See Also  
  <xref:System.Linq>  
  [Standard Query Operators Overview (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  

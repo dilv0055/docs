@@ -18,31 +18,31 @@ Windows 8 introduces a new type of application called Windows Store applications
 ### Supported Bindings  
  The following WCF bindings are supported in Windows Store Applications:  
   
-1.  <xref:System.ServiceModel.BasicHttpBinding>  
+1. <xref:System.ServiceModel.BasicHttpBinding>  
   
-2.  <xref:System.ServiceModel.NetTcpBinding>  
+2. <xref:System.ServiceModel.NetTcpBinding>  
   
-3.  <xref:System.ServiceModel.NetHttpBinding>  
+3. <xref:System.ServiceModel.NetHttpBinding>  
   
-4.  <xref:System.ServiceModel.Channels.CustomBinding>
+4. <xref:System.ServiceModel.Channels.CustomBinding>
   
  The following binding elements are supported in Windows Store Applications  
   
-1.  <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>  
+1. <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>  
   
-2.  <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+2. <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
   
-3.  <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>  
+3. <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>  
   
-4.  <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
+4. <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
   
-5.  <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
+5. <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
   
-6.  <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
+6. <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
   
-7.  <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+7. <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
   
-8.  <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
+8. <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
   
 9. <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
   
@@ -91,11 +91,11 @@ public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfCli
 ### Serialization  
  The following serializers are supported in Windows Store applications:  
   
-1.  DataContractSerializer  
+1. DataContractSerializer  
   
-2.  DataContractJsonSerializer  
+2. DataContractJsonSerializer  
   
-3.  XmlSerializer  
+3. XmlSerializer  
   
 > [!WARNING]
 >  XmlDictionaryWriter.Write(DateTime) now writes the DateTime object as a string.  
@@ -103,31 +103,31 @@ public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfCli
 ### Security  
  The following security modes are supported in Windows Store applications  
   
-1.  <xref:System.ServiceModel.SecurityMode.None>  
+1. <xref:System.ServiceModel.SecurityMode.None>  
   
-2.  <xref:System.ServiceModel.SecurityMode.Transport>  
+2. <xref:System.ServiceModel.SecurityMode.Transport>  
   
-3.  <!--zz <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredentials> --> `System.ServiceModel.SecurityMode.TransportWithMessageCredentials`
+3. <!--zz <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredentials> --> `System.ServiceModel.SecurityMode.TransportWithMessageCredentials`
   
-4.  <!--zz <xref:System.ServiceModel.SecurityMode.TransportCredentialOnly>  --> `System.ServiceModel.SecurityMode.TransportCredentialOnly`
+4. <!--zz <xref:System.ServiceModel.SecurityMode.TransportCredentialOnly>  --> `System.ServiceModel.SecurityMode.TransportCredentialOnly`
   
  The following client credential types are supported in Windows Store applications  
   
-1.  None  
+1. None  
   
-2.  Basic  
+2. Basic  
   
-3.  Digest  
+3. Digest  
   
-4.  Negotiate  
+4. Negotiate  
   
-5.  NTLM  
+5. NTLM  
   
-6.  Windows  
+6. Windows  
   
-7.  Username (Message Security)  
+7. Username (Message Security)  
   
-8.  Windows (Transport Security)  
+8. Windows (Transport Security)  
   
  In order for Windows Store applications to access and send default Windows credentials, you must enable this functionality within the Package.appmanifest file. Open this file and select the Capabilities tab and select "Default Windows Credentials". This allows the application to connect to intranet resources that require domain credentials.  
   
@@ -137,11 +137,11 @@ public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfCli
 ### Misc  
  The use of the following classes is supported for Windows Store Applications:  
   
-1.  <xref:System.ServiceModel.ChannelFactory>  
+1. <xref:System.ServiceModel.ChannelFactory>  
   
-2.  <!--zz <xref:System.ServiceModel.DuplexChannelFactory> --> `System.ServiceModel.DuplexChannelFactory`
+2. <!--zz <xref:System.ServiceModel.DuplexChannelFactory> --> `System.ServiceModel.DuplexChannelFactory`
   
-3.  <xref:System.ServiceModel.CallbackBehaviorAttribute>  
+3. <xref:System.ServiceModel.CallbackBehaviorAttribute>  
   
 ### Defining Service Contracts  
  We recommend only defining asynchronous service operations using the task-based async pattern. This ensures Windows Store applications remain responsive while calling a service operation.  

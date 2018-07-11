@@ -13,15 +13,15 @@ This sample shows how to use the ADO.NET Entity Framework with Windows Workflow 
   
  The following activities are included in this sample:  
   
--   `EntitySQLQuery`: The `EntitySQLQuery` activity allows you to retrieve objects from the database based on an Entity SQL query string. Entity SQL is a store independent language that is similar to SQL and it allows you to specify queries based on the conceptual model and the entities that are a part of the model or domain. For more information about Entity SQL Language, see [Entity SQL Language](http://go.microsoft.com/fwlink/?LinkId=165646).  
+- `EntitySQLQuery`: The `EntitySQLQuery` activity allows you to retrieve objects from the database based on an Entity SQL query string. Entity SQL is a store independent language that is similar to SQL and it allows you to specify queries based on the conceptual model and the entities that are a part of the model or domain. For more information about Entity SQL Language, see [Entity SQL Language](http://go.microsoft.com/fwlink/?LinkId=165646).  
   
--   `EntityLinqQuery`: This activity allows you to retrieve objects from the database based on a LINQ query or predicate.  
+- `EntityLinqQuery`: This activity allows you to retrieve objects from the database based on a LINQ query or predicate.  
   
--   `EntityAdd`: The `EntityAdd` activity allows you to add an entity or a collection of entities to the database.  
+- `EntityAdd`: The `EntityAdd` activity allows you to add an entity or a collection of entities to the database.  
   
--   `EntityDelete`: The `EntityDelete` activity allows you to delete an entity or a collection of entities from the database.  
+- `EntityDelete`: The `EntityDelete` activity allows you to delete an entity or a collection of entities from the database.  
   
--   `ObjectContextScope`: The previously mentioned activities can only be used within a containing `ObjectContextScope` activity instance. The `ObjectContextScope` activity sets up the connection to the database. It requires a connection string (that is either passed in or retrieved using a configuration file setting). The `ObjectContextScope` activity makes it easy to perform a group of related operations on entities. Because this scope maintains an active connection, it is a No Persist scope. In addition, when the `ObjectContextScope` activity exits, any changes that are made to objects retrieved using Entity Activities within that scope automatically get persisted back to the database, and no explicit or subsequent action is required to save objects back to the database.  
+- `ObjectContextScope`: The previously mentioned activities can only be used within a containing `ObjectContextScope` activity instance. The `ObjectContextScope` activity sets up the connection to the database. It requires a connection string (that is either passed in or retrieved using a configuration file setting). The `ObjectContextScope` activity makes it easy to perform a group of related operations on entities. Because this scope maintains an active connection, it is a No Persist scope. In addition, when the `ObjectContextScope` activity exits, any changes that are made to objects retrieved using Entity Activities within that scope automatically get persisted back to the database, and no explicit or subsequent action is required to save objects back to the database.  
   
 ## Using the entity activities  
  The following code snippets demonstrate how to use the entity activities presented in this sample.  
@@ -217,35 +217,35 @@ return new ObjectContextScope
   
 #### To set up the Northwind database  
   
-1.  Open a command prompt.  
+1. Open a command prompt.  
   
-2.  In the new command prompt window, navigate to the EntityActivities\CS folder.  
+2. In the new command prompt window, navigate to the EntityActivities\CS folder.  
   
-3.  Type `setup.cmd` and press ENTER.  
+3. Type `setup.cmd` and press ENTER.  
   
 #### To run the sample  
   
-1.  Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the EntityActivities.sln solution file.  
+1. Using [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], open the EntityActivities.sln solution file.  
   
-2.  To build the solution, press CTRL+SHIFT+B.  
+2. To build the solution, press CTRL+SHIFT+B.  
   
-3.  To run the solution, press CTRL+F5.  
+3. To run the solution, press CTRL+F5.  
   
  After running this sample, you may want to remove the `Northwind` database.  
   
 #### To uninstall the Northwind database  
   
-1.  Open a command prompt.  
+1. Open a command prompt.  
   
-2.  In the new command prompt window, navigate to the EntityActivities\CS folder.  
+2. In the new command prompt window, navigate to the EntityActivities\CS folder.  
   
-3.  Type `cleanup.cmd` and press ENTER.  
+3. Type `cleanup.cmd` and press ENTER.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\EntityActivities`

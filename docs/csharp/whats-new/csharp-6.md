@@ -4,38 +4,49 @@ description: Learn the new features in C# Version 6
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
 ---
-
 # What's New in C# 6
 
 The 6.0 release of C# contained many features that improve
 productivity for developers. Features in this release include:
 
 * [Read-only Auto-properties](#read-only-auto-properties):
-    - You can create read-only auto-properties that can be set only in constructors.
+  - You can create read-only auto-properties that can be set only in constructors.
+
 * [Auto-Property Initializers](#auto-property-initializers):
-    - You can write initialization expressions to set the initial value of an auto-property.
+  - You can write initialization expressions to set the initial value of an auto-property.
+
 * [Expression-bodied function members](#expression-bodied-function-members):
-    - You can author one-line methods using lambda expressions.
+  - You can author one-line methods using lambda expressions.
+
 * [using static](#using-static):
-    - You can import all the methods of a single class into the current namespace.
+  - You can import all the methods of a single class into the current namespace.
+
 * [Null - conditional operators](#null-conditional-operators):
-    - You can concisely and safely access members of an object while still checking for null with the null conditional operator.
+  - You can concisely and safely access members of an object while still checking for null with the null conditional operator.
+
 * [String Interpolation](#string-interpolation):
-    - You can write string formatting expressions using inline expressions instead of positional arguments.
+  - You can write string formatting expressions using inline expressions instead of positional arguments.
+
 * [Exception filters](#exception-filters):
-    - You can catch expressions based on properties of the exception or other program state. 
+  - You can catch expressions based on properties of the exception or other program state. 
+
 * [nameof Expressions](#nameof-expressions):
-    - You can let the compiler generate string representations of symbols.
+  - You can let the compiler generate string representations of symbols.
+
 * [await in catch and finally blocks](#await-in-catch-and-finally-blocks):
-    - You can use `await` expressions in locations that previously disallowed them.
+  - You can use `await` expressions in locations that previously disallowed them.
+
 * [index initializers](#index-initializers):
-    - You can author initialization expressions for associative containers as well as sequence containers.
+  - You can author initialization expressions for associative containers as well as sequence containers.
+
 * [Extension methods for collection initializers](#extension-add-methods-in-collection-initializers):
-    - Collection initializers can rely on accessible extension methods, in addition to member methods.
+  - Collection initializers can rely on accessible extension methods, in addition to member methods.
+
 * [Improved overload resolution](#improved-overload-resolution):
-    - Some constructs that previously generated ambiguous method calls now resolve correctly.
+  - Some constructs that previously generated ambiguous method calls now resolve correctly.
+
 * [`deterministic` compiler option](#deterministic-compiler-output):
-    - The deterministic compiler option ensures that subsequent compilations of the same source generate the same binary output.
+  - The deterministic compiler option ensures that subsequent compilations of the same source generate the same binary output.
 
 The overall effect of these features is that you write more concise code
 that is also more readable. The syntax contains less ceremony for many
@@ -69,7 +80,7 @@ immutable types. The closest you could get to immutable types
 in earlier versions of C# was to declare private setters:
 
 [!code-csharp[ClassicReadOnlyAutoProperty](../../../samples/snippets/csharp/new-in-6/oldcode.cs#ClassicReadOnlyAutoProperty)]
- 
+
 Using this syntax, the compiler doesn't ensure that the type really is immutable. It only
 enforces that the `FirstName` and `LastName` properties are not modified from any
 code outside the class.
@@ -111,7 +122,7 @@ field. Consider this class for a student that contains the name and a
 list of the student's grades:
 
 [!code-csharp[Construction](../../../samples/snippets/csharp/new-in-6/oldcode.cs#Construction)]
- 
+
 As this class grows, you may include other constructors. Each constructor
 needs to initialize this field, or you'll introduce errors.
 
@@ -563,7 +574,7 @@ In earlier versions of C#, calling that method using the method group
 syntax would fail:
 
 [!code-csharp[MethodGroup](../../../samples/snippets/csharp/new-in-6/overloads.cs#MethodGroup)]
- 
+
 The earlier compiler could not distinguish correctly between `Task.Run(Action)`
 and `Task.Run(Func<Task>())`. In previous versions, you'd need to use
 a lambda expression as an argument:

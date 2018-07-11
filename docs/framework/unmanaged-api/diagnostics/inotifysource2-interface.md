@@ -19,16 +19,17 @@ ms.author: "mairaw"
 ---
 # INotifySource2 Interface
 Declares a method for setting notification filters.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[SetNotifyFilter Method](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)|Assigns a notification filter for use with this source.|  
-  
+
 ## Requirements  
  **Header:** ProtocolNotify2.idl  
-  
+
 ## See Also  
  [INotifyConnection2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)  
  [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  

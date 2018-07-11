@@ -16,13 +16,13 @@ The Visual Basic Power Packs Line and Shape controls are a set of three graphica
   
  Although it is also possible to draw lines and shapes by using graphics methods, there are several advantages to using the Line and Shape controls:  
   
--   Graphics methods can be called only at run time. Line and Shape controls can be added to a form at design time. This enables you to see what they look like and to position them exactly; they can also be added at run time.  
+- Graphics methods can be called only at run time. Line and Shape controls can be added to a form at design time. This enables you to see what they look like and to position them exactly; they can also be added at run time.  
   
--   Line and Shape controls are selectable at run time, providing events such as <xref:Microsoft.VisualBasic.PowerPacks.Shape.Click> and <xref:Microsoft.VisualBasic.PowerPacks.Shape.OnDoubleClick%2A>. The outputs of graphics methods are not selectable and do not provide events.  
+- Line and Shape controls are selectable at run time, providing events such as <xref:Microsoft.VisualBasic.PowerPacks.Shape.Click> and <xref:Microsoft.VisualBasic.PowerPacks.Shape.OnDoubleClick%2A>. The outputs of graphics methods are not selectable and do not provide events.  
   
--   Line and Shape controls provide <xref:Microsoft.VisualBasic.PowerPacks.Shape.BringToFront%2A> and <xref:Microsoft.VisualBasic.PowerPacks.Shape.SendToBack%2A> methods that enable you to control their z-order at design time and at run time. The z-order of graphics methods can be controlled only by changing their order of execution at run time.  
+- Line and Shape controls provide <xref:Microsoft.VisualBasic.PowerPacks.Shape.BringToFront%2A> and <xref:Microsoft.VisualBasic.PowerPacks.Shape.SendToBack%2A> methods that enable you to control their z-order at design time and at run time. The z-order of graphics methods can be controlled only by changing their order of execution at run time.  
   
--   Line and Shape controls are windowless controls; they have no window handles and therefore use less system resources.  
+- Line and Shape controls are windowless controls; they have no window handles and therefore use less system resources.  
   
 ### Object Model  
  Line and Shape controls derive from a base <xref:Microsoft.VisualBasic.PowerPacks.Shape> class that defines their shared properties, methods, and events.  

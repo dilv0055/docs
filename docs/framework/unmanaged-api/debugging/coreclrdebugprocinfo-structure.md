@@ -21,9 +21,9 @@ ms.author: "ronpet"
 ---
 # CoreClrDebugProcInfo Structure
 Represents a process that is running on a remote machine.  
-  
+
 ## Syntax  
-  
+
 ```  
 struct  CoreClrDebugProcInfo {  
     DWORD m_dwPID;  
@@ -31,20 +31,21 @@ struct  CoreClrDebugProcInfo {
     WCHAR m_wszName[256];  
 };  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`m_dwPID`|OS-assigned process identifier.|  
 |`m_dwInternalID`|Process identifier that is assigned by the remote debugging proxy running on the target machine. This identifier recycles less often than the OS identifier.|  
 |`m_wszName`|Command-line of the process. This member may be truncated.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CoreClrRemoteDebuggingInterfaces.h  
-  
+
  **Library:** mscordbi_macx86.dll  
-  
+
  **.NET Framework Versions:** 3.5 SP1

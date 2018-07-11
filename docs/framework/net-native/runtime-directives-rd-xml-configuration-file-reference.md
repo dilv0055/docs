@@ -143,43 +143,43 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
 ### Specifying policy for assemblies, namespaces, and types  
  The [Application](../../../docs/framework/net-native/application-element-net-native.md), [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md), [AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md), [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md), [Subtypes](../../../docs/framework/net-native/subtypes-element-net-native.md), and [Type](../../../docs/framework/net-native/type-element-net-native.md) elements support the following policy types:  
   
--   `Activate`. Controls runtime access to constructors, to enable activation of instances.  
+- `Activate`. Controls runtime access to constructors, to enable activation of instances.  
   
--   `Browse`. Controls querying for information about program elements but does not enable any runtime access.  
+- `Browse`. Controls querying for information about program elements but does not enable any runtime access.  
   
--   `Dynamic`. Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming.  
+- `Dynamic`. Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming.  
   
--   `Serialize`. Controls runtime access to constructors, fields, and properties, to enable type instances to be serialized and serialized by third-party libraries such as the Newtonsoft JSON serializer.  
+- `Serialize`. Controls runtime access to constructors, fields, and properties, to enable type instances to be serialized and serialized by third-party libraries such as the Newtonsoft JSON serializer.  
   
--   `DataContractSerializer`. Controls policy for serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.  
+- `DataContractSerializer`. Controls policy for serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.  
   
--   `DataContractJsonSerializer`. Controls policy for JSON serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.  
+- `DataContractJsonSerializer`. Controls policy for JSON serialization that uses the <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> class.  
   
--   `XmlSerializer`. Controls policy for XML serialization that uses the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> class.  
+- `XmlSerializer`. Controls policy for XML serialization that uses the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> class.  
   
--   `MarshalObject`. Controls policy for marshaling reference types to WinRT and COM.  
+- `MarshalObject`. Controls policy for marshaling reference types to WinRT and COM.  
   
--   `MarshalDelegate`. Controls policy for marshaling delegate types as function pointers to native code.  
+- `MarshalDelegate`. Controls policy for marshaling delegate types as function pointers to native code.  
   
--   `MarshalStructure` . Controls policy for marshaling structures to native code.  
+- `MarshalStructure` . Controls policy for marshaling structures to native code.  
   
  The settings associated with these policy types are:  
   
--   `All`. Enable the policy for all types and members that the tool chain does not remove.  
+- `All`. Enable the policy for all types and members that the tool chain does not remove.  
   
--   `Auto`. Use the default behavior. (Not specifying a policy is equivalent to setting that policy to `Auto` unless that policy is overridden, for example by a parent element.)  
+- `Auto`. Use the default behavior. (Not specifying a policy is equivalent to setting that policy to `Auto` unless that policy is overridden, for example by a parent element.)  
   
--   `Excluded`. Disable the policy for the program element.  
+- `Excluded`. Disable the policy for the program element.  
   
--   `Public`. Enable the policy for public types or members unless the tool chain determines that the member is unnecessary and therefore removes it. (In the latter case, you must use `Required Public` to ensure that the member is kept and has reflection capabilities.)  
+- `Public`. Enable the policy for public types or members unless the tool chain determines that the member is unnecessary and therefore removes it. (In the latter case, you must use `Required Public` to ensure that the member is kept and has reflection capabilities.)  
   
--   `PublicAndInternal`. Enable the policy for public and internal types or members if the tool chain doesn't remove them.  
+- `PublicAndInternal`. Enable the policy for public and internal types or members if the tool chain doesn't remove them.  
   
--   `Required Public`. Require the tool chain to keep public types and members whether or not they are used, and enable the policy for them.  
+- `Required Public`. Require the tool chain to keep public types and members whether or not they are used, and enable the policy for them.  
   
--   `Required PublicAndInternal`. Require the tool chain to keep both public and internal types and members whether or not they are used, and enable the policy for them.  
+- `Required PublicAndInternal`. Require the tool chain to keep both public and internal types and members whether or not they are used, and enable the policy for them.  
   
--   `Required All`. Require the tool chain to keep all types and members whether or not they are used, and enable the policy for them.  
+- `Required All`. Require the tool chain to keep all types and members whether or not they are used, and enable the policy for them.  
   
  For example, the following runtime directives file defines policy for all types and members in the assembly DataClasses.dll. It enables reflection for serialization of all public properties, enables browsing for all types and type members, enables activation for all types (because of the `Dynamic` attribute), and enables reflection for all public types and members.  
   
@@ -199,27 +199,27 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
 ### Specifying policy for members  
  The [Property](../../../docs/framework/net-native/property-element-net-native.md) and [Field](../../../docs/framework/net-native/field-element-net-native.md) elements support the following policy types:  
   
--   `Browse` - Controls querying for information about this member but does not enable any runtime access.  
+- `Browse` - Controls querying for information about this member but does not enable any runtime access.  
   
--   `Dynamic` - Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming. Also controls querying for information about the containing type.  
+- `Dynamic` - Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming. Also controls querying for information about the containing type.  
   
--   `Serialize` - Controls runtime access to the member to enable type instances to be serialized and deserialized by libraries such as the Newtonsoft JSON serializer. This policy can be applied to constructors, fields, and properties.  
+- `Serialize` - Controls runtime access to the member to enable type instances to be serialized and deserialized by libraries such as the Newtonsoft JSON serializer. This policy can be applied to constructors, fields, and properties.  
   
  The [Method](../../../docs/framework/net-native/method-element-net-native.md) and [Event](../../../docs/framework/net-native/event-element-net-native.md) elements support the following policy types:  
   
--   `Browse` - Controls querying for information about this member but doesn’t enable any runtime access.  
+- `Browse` - Controls querying for information about this member but doesn’t enable any runtime access.  
   
--   `Dynamic` - Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming. Also controls querying for information about the containing type.  
+- `Dynamic` - Controls runtime access to all type members, including constructors, methods, fields, properties, and events, to enable dynamic programming. Also controls querying for information about the containing type.  
   
  The settings associated with these policy types are:  
   
--   `Auto` - Use the default behavior. (Not specifying a policy is equivalent to setting that policy to `Auto` unless something overrides it.)  
+- `Auto` - Use the default behavior. (Not specifying a policy is equivalent to setting that policy to `Auto` unless something overrides it.)  
   
--   `Excluded` - Never include metadata for the member.  
+- `Excluded` - Never include metadata for the member.  
   
--   `Included` - Enable the policy if the parent type is present in the output.  
+- `Included` - Enable the policy if the parent type is present in the output.  
   
--   `Required` - Require the tool chain to keep this member even if appears to be unused, and enable policy for it.  
+- `Required` - Require the tool chain to keep this member even if appears to be unused, and enable policy for it.  
   
 ## Runtime directives file semantics  
  Policy can be defined simultaneously for both higher-level and lower-level elements. For example, policy can be defined for an assembly, and for some of the types contained in that assembly. If a particular lower-level element is not represented, it inherits the policy of its parent. For example, if an `Assembly` element is present but `Type` elements are not, the policy specified in the `Assembly` element applies to each type in the assembly. Multiple elements can also apply policy to the same program element. For example, separate [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) elements might define the same policy element for the same assembly differently. The following sections explain how the policy for a particular type is resolved in those cases.  
@@ -231,13 +231,13 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
 ### If two directives apply policy to the same program element  
  If two elements in different runtime directives files try to set the same policy type for the same program element (such as an assembly or type) to different values, the conflict is resolved as follows:  
   
-1.  If the `Excluded` element is present, it has precedence.  
+1. If the `Excluded` element is present, it has precedence.  
   
-2.  `Required` has precedence over not `Required`.  
+2. `Required` has precedence over not `Required`.  
   
-3.  `All` has precedence over `PublicAndInternal`, which has precedence over `Public`.  
+3. `All` has precedence over `PublicAndInternal`, which has precedence over `Public`.  
   
-4.  Any explicit setting has precedence over `Auto`.  
+4. Any explicit setting has precedence over `Auto`.  
   
  For example, if a single project includes the following two runtime directives files, the serialization policy for DataClasses.dll is set to both `Required Public` and `All`. In this case, the serialization policy would be resolved as `Required All`.  
   
@@ -309,99 +309,99 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
 #### The effect of Browse policy  
  Applying the `Browse` policy to a type involves the following policy changes:  
   
--   The base type of the type is marked with the `Browse` policy.  
+- The base type of the type is marked with the `Browse` policy.  
   
--   If the type is an instantiated generic, the uninstantiated version of the type is marked with the `Browse` policy.  
+- If the type is an instantiated generic, the uninstantiated version of the type is marked with the `Browse` policy.  
   
--   If the type is a delegate, the `Invoke` method on the type is marked with the `Dynamic` policy.  
+- If the type is a delegate, the `Invoke` method on the type is marked with the `Dynamic` policy.  
   
--   Each interface of the type is marked with the `Browse` policy.  
+- Each interface of the type is marked with the `Browse` policy.  
   
--   The type of each attribute applied to the type is marked with the `Browse` policy.  
+- The type of each attribute applied to the type is marked with the `Browse` policy.  
   
--   If the type is generic, each constraint type is marked with the `Browse` policy.  
+- If the type is generic, each constraint type is marked with the `Browse` policy.  
   
--   If the type is generic, the types over which the type is instantiated are marked with the `Browse` policy.  
+- If the type is generic, the types over which the type is instantiated are marked with the `Browse` policy.  
   
  Applying the `Browse` policy to a method involves the following policy changes:  
   
--   Each parameter type of the method is marked with the `Browse` policy.  
+- Each parameter type of the method is marked with the `Browse` policy.  
   
--   The return type of the method is marked with the `Browse` policy.  
+- The return type of the method is marked with the `Browse` policy.  
   
--   The containing type of the method is marked with the `Browse` policy.  
+- The containing type of the method is marked with the `Browse` policy.  
   
--   If the method is an instantiated generic method, the uninstantiated generic method is marked with the `Browse` policy.  
+- If the method is an instantiated generic method, the uninstantiated generic method is marked with the `Browse` policy.  
   
--   The type of each attribute applied to the method is marked with the `Browse` policy.  
+- The type of each attribute applied to the method is marked with the `Browse` policy.  
   
--   If the method is generic, each constraint type is marked with the `Browse` policy.  
+- If the method is generic, each constraint type is marked with the `Browse` policy.  
   
--   If the method is generic, the types over which the method is instantiated are marked with the `Browse` policy.  
+- If the method is generic, the types over which the method is instantiated are marked with the `Browse` policy.  
   
  Applying the `Browse` policy to a field involves the following policy changes:  
   
--   The type of each attribute applied to the field is marked with the `Browse` policy.  
+- The type of each attribute applied to the field is marked with the `Browse` policy.  
   
--   The type of the field is marked with the `Browse` policy.  
+- The type of the field is marked with the `Browse` policy.  
   
--   The type to which the field belongs is marked with the `Browse` policy.  
+- The type to which the field belongs is marked with the `Browse` policy.  
   
 #### The effect of Dynamic policy  
  Applying the `Dynamic` policy to a type involves the following policy changes:  
   
--   The base type of the type is marked with the `Dynamic` policy.  
+- The base type of the type is marked with the `Dynamic` policy.  
   
--   If the type is an instantiated generic, the uninstantiated version of the type is marked with the `Dynamic` policy.  
+- If the type is an instantiated generic, the uninstantiated version of the type is marked with the `Dynamic` policy.  
   
--   If the type is a delegate type, the `Invoke` method on the type is marked with the `Dynamic` policy.  
+- If the type is a delegate type, the `Invoke` method on the type is marked with the `Dynamic` policy.  
   
--   Each interface of the type is marked with the `Browse` policy.  
+- Each interface of the type is marked with the `Browse` policy.  
   
--   The type of each attribute applied to the type is marked with the `Browse` policy.  
+- The type of each attribute applied to the type is marked with the `Browse` policy.  
   
--   If the type is generic, each constraint type is marked with the `Browse` policy.  
+- If the type is generic, each constraint type is marked with the `Browse` policy.  
   
--   If the type is generic, the types over which the type is instantiated are marked with the `Browse` policy.  
+- If the type is generic, the types over which the type is instantiated are marked with the `Browse` policy.  
   
  Applying the `Dynamic` policy to a method involves the following policy changes:  
   
--   Each parameter type of the method is marked with the `Browse` policy.  
+- Each parameter type of the method is marked with the `Browse` policy.  
   
--   The return type of the method is marked with the `Dynamic` policy.  
+- The return type of the method is marked with the `Dynamic` policy.  
   
--   The containing type of the method is marked with the `Dynamic` policy.  
+- The containing type of the method is marked with the `Dynamic` policy.  
   
--   If the method is an instantiated generic method, the uninstantiated generic method is marked with the `Browse` policy.  
+- If the method is an instantiated generic method, the uninstantiated generic method is marked with the `Browse` policy.  
   
--   The type of each attribute applied to the method is marked with the `Browse` policy.  
+- The type of each attribute applied to the method is marked with the `Browse` policy.  
   
--   If the method is generic, each constraint type is marked with the `Browse` policy.  
+- If the method is generic, each constraint type is marked with the `Browse` policy.  
   
--   If the method is generic, the types over which the method is instantiated are marked with the `Browse` policy.  
+- If the method is generic, the types over which the method is instantiated are marked with the `Browse` policy.  
   
--   The method can be invoked by `MethodInfo.Invoke`, and delegate creation becomes possible by <xref:System.Reflection.MethodInfo.CreateDelegate%2A?displayProperty=nameWithType>.  
+- The method can be invoked by `MethodInfo.Invoke`, and delegate creation becomes possible by <xref:System.Reflection.MethodInfo.CreateDelegate%2A?displayProperty=nameWithType>.  
   
  Applying the `Dynamic` policy to a field involves the following policy changes:  
   
--   The type of each attribute applied to the field is marked with the `Browse` policy.  
+- The type of each attribute applied to the field is marked with the `Browse` policy.  
   
--   The type of the field is marked with the `Dynamic` policy.  
+- The type of the field is marked with the `Dynamic` policy.  
   
--   The type to which the field belongs is marked with the `Dynamic` policy.  
+- The type to which the field belongs is marked with the `Dynamic` policy.  
   
 #### The effect of Activation policy  
  Applying the Activation policy to a type involves the following policy changes:  
   
--   If the type is an instantiated generic, the uninstantiated version of the type is marked with the `Browse` policy.  
+- If the type is an instantiated generic, the uninstantiated version of the type is marked with the `Browse` policy.  
   
--   If the type is a delegate type, the `Invoke` method on the type is marked with the `Dynamic` policy.  
+- If the type is a delegate type, the `Invoke` method on the type is marked with the `Dynamic` policy.  
   
--   Constructors of the type are marked with the `Activation` policy.  
+- Constructors of the type are marked with the `Activation` policy.  
   
  Applying the `Activation` policy to a method involves the following policy change:  
   
--   The constructor can be invoked by the <xref:System.Reflection.ConstructorInfo.Invoke%2A?displayProperty=nameWithType> and <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> methods. For methods, the `Activation` policy affects constructors only.  
+- The constructor can be invoked by the <xref:System.Reflection.ConstructorInfo.Invoke%2A?displayProperty=nameWithType> and <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> methods. For methods, the `Activation` policy affects constructors only.  
   
  Applying the `Activation` policy to a field has no effect.  
   
@@ -410,39 +410,39 @@ A runtime directives (.rd.xml) file is an XML configuration file that specifies 
   
  Applying the `Serialize` policy to a type involves the following policy changes:  
   
--   The base type of the type is marked with the `Serialize` policy.  
+- The base type of the type is marked with the `Serialize` policy.  
   
--   If the type is an instantiated generic, the uninstantiated version of the type is marked with the `Browse` policy.  
+- If the type is an instantiated generic, the uninstantiated version of the type is marked with the `Browse` policy.  
   
--   If the type is a delegate type, the `Invoke` method on the type is marked with the `Dynamic` policy.  
+- If the type is a delegate type, the `Invoke` method on the type is marked with the `Dynamic` policy.  
   
--   If the type is an enumeration, an array of the type is marked with the `Serialize` policy.  
+- If the type is an enumeration, an array of the type is marked with the `Serialize` policy.  
   
--   If the type implements <xref:System.Collections.Generic.IEnumerable%601>, `T` is marked with the `Serialize` policy.  
+- If the type implements <xref:System.Collections.Generic.IEnumerable%601>, `T` is marked with the `Serialize` policy.  
   
--   If the type is <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, or <xref:System.Collections.Generic.IReadOnlyList%601>, then `T[]` and <xref:System.Collections.Generic.List%601> marked with the `Serialize` policy., but no members of the interface type are marked with the `Serialize` policy.  
+- If the type is <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.Generic.IList%601>, <xref:System.Collections.Generic.ICollection%601>, <xref:System.Collections.Generic.IReadOnlyCollection%601>, or <xref:System.Collections.Generic.IReadOnlyList%601>, then `T[]` and <xref:System.Collections.Generic.List%601> marked with the `Serialize` policy., but no members of the interface type are marked with the `Serialize` policy.  
   
--   If the type is <xref:System.Collections.Generic.List%601>, no members of the type are marked with the `Serialize` policy.  
+- If the type is <xref:System.Collections.Generic.List%601>, no members of the type are marked with the `Serialize` policy.  
   
--   If the type is <xref:System.Collections.Generic.IDictionary%602>, <xref:System.Collections.Generic.Dictionary%602> is marked with the `Serialize` policy. but no members of the type are marked with the `Serialize` policy.  
+- If the type is <xref:System.Collections.Generic.IDictionary%602>, <xref:System.Collections.Generic.Dictionary%602> is marked with the `Serialize` policy. but no members of the type are marked with the `Serialize` policy.  
   
--   If the type is <xref:System.Collections.Generic.Dictionary%602>, no members of the type are marked with the `Serialize` policy.  
+- If the type is <xref:System.Collections.Generic.Dictionary%602>, no members of the type are marked with the `Serialize` policy.  
   
--   If the type implements <xref:System.Collections.Generic.IDictionary%602>, `TKey` and `TValue` are marked with the `Serialize` policy.  
+- If the type implements <xref:System.Collections.Generic.IDictionary%602>, `TKey` and `TValue` are marked with the `Serialize` policy.  
   
--   Each constructor, each property accessor, and each field is marked with the `Serialize` policy.  
+- Each constructor, each property accessor, and each field is marked with the `Serialize` policy.  
   
  Applying the `Serialize` policy to a method involves the following policy changes:  
   
--   The containing type is marked with the `Serialize` policy.  
+- The containing type is marked with the `Serialize` policy.  
   
--   The return type of the method is marked with the `Serialize` policy.  
+- The return type of the method is marked with the `Serialize` policy.  
   
  Applying the `Serialize` policy to a field involves the following policy changes:  
   
--   The containing type is marked with the `Serialize` policy.  
+- The containing type is marked with the `Serialize` policy.  
   
--   The type of the field is marked with the `Serialize` policy.  
+- The type of the field is marked with the `Serialize` policy.  
   
 #### The effect of XmlSerializer, DataContractSerializer, and DataContractJsonSerialier policies  
  Unlike the `Serialize` policy, which is intended for reflection-based serializers, the `XmlSerializer`, `DataContractSerializer`, and `DataContractJsonSerializer` policies are used to enable a set of serializers that are known to the [!INCLUDE[net_native](../../../includes/net-native-md.md)] tool chain. These serializers are not implemented by using reflection, but the set of types that can be serialized at run time is determined in a similar manner as types that are reflectable.  

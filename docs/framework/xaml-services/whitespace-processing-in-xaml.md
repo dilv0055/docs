@@ -19,15 +19,15 @@ The language rules for XAML state that significant whitespace must be processed 
 ## Whitespace Normalization  
  By default the following whitespace normalization occurs when a [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] processor processes a [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] file:  
   
-1.  Linefeed characters between East Asian characters are removed. See the "East Asian Characters" section later in this topic for a definition of this term.  
+1. Linefeed characters between East Asian characters are removed. See the "East Asian Characters" section later in this topic for a definition of this term.  
   
-2.  All whitespace characters (space, linefeed, tab) are converted into spaces.  
+2. All whitespace characters (space, linefeed, tab) are converted into spaces.  
   
-3.  All consecutive spaces are deleted and replaced by one space.  
+3. All consecutive spaces are deleted and replaced by one space.  
   
-4.  A space immediately following the start tag is deleted.  
+4. A space immediately following the start tag is deleted.  
   
-5.  A space immediately before the end tag is deleted.  
+5. A space immediately before the end tag is deleted.  
   
  "Default" corresponds to the state denoted by the default value of the [xml:space](../../../docs/framework/xaml-services/xml-space-handling-in-xaml.md) attribute.  
   
@@ -35,13 +35,13 @@ The language rules for XAML state that significant whitespace must be processed 
 ## Whitespace in Inner Text, and String Primitives  
  The previous normalization rules apply to inner text that is found within XAML  elements. After normalization, a XAML  processor converts any inner text into an appropriate type as follows:  
   
--   If the type of the property is not a collection but is not directly an <xref:System.Object> type, the XAML  processor attempts to convert to that type by using its type converter. A failed conversion here causes a compile-time error.  
+- If the type of the property is not a collection but is not directly an <xref:System.Object> type, the XAML  processor attempts to convert to that type by using its type converter. A failed conversion here causes a compile-time error.  
   
--   If the type of the property is a collection and the inner text is contiguous (no intervening element tags), the inner text is parsed as a single <xref:System.String>. If the collection type cannot accept <xref:System.String>, this also causes a compile-time error.  
+- If the type of the property is a collection and the inner text is contiguous (no intervening element tags), the inner text is parsed as a single <xref:System.String>. If the collection type cannot accept <xref:System.String>, this also causes a compile-time error.  
   
--   If the type of the property is <xref:System.Object>, the inner text is parsed as a single <xref:System.String>. If there are intervening element tags, this causes a compile-time error because the <xref:System.Object> type implies a single object (<xref:System.String> or otherwise).  
+- If the type of the property is <xref:System.Object>, the inner text is parsed as a single <xref:System.String>. If there are intervening element tags, this causes a compile-time error because the <xref:System.Object> type implies a single object (<xref:System.String> or otherwise).  
   
--   If the type of the property is a collection, and the inner text is not contiguous, the first substring is converted into a <xref:System.String> and added as a collection item, the intervening element is added as a collection item, and finally the trailing substring (if any) is added to the collection as a third <xref:System.String> item.  
+- If the type of the property is a collection, and the inner text is not contiguous, the first substring is converted into a <xref:System.String> and added as a collection item, the intervening element is added as a collection item, and finally the trailing substring (if any) is added to the collection as a third <xref:System.String> item.  
   
 <a name="preserving_whitespace"></a>   
 ## Preserving Whitespace  

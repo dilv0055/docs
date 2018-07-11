@@ -1,5 +1,6 @@
 ### WPF layout rounding of margins has changed
 
+
 |   |   |
 |---|---|
 |Details|The way in which margins are rounded and borders and the background inside of them has changed. As a result of this change:<ul><li>The width or height of elements may grow or shrink by at most one pixel.</li><li>The placement of an object can move by at most one pixel.</li><li>Centered elements can be vertically or horizontally off center by at most one pixel.</li></ul>By default, this new layout is enabled only for apps that target the .NET Framework 4.6.|

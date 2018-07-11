@@ -27,15 +27,15 @@ The garbage collector cannot collect an object in use by an application while th
 ## Short and Long Weak References  
  You can create a short weak reference or a long weak reference:  
   
--   Short  
+- Short  
   
-     The target of a short weak reference becomes `null` when the object is reclaimed by garbage collection. The weak reference is itself a managed object, and is subject to garbage collection just like any other managed object.  A short weak reference is the default constructor for <xref:System.WeakReference>.  
+   The target of a short weak reference becomes `null` when the object is reclaimed by garbage collection. The weak reference is itself a managed object, and is subject to garbage collection just like any other managed object.  A short weak reference is the default constructor for <xref:System.WeakReference>.  
   
--   Long  
+- Long  
   
-     A long weak reference is retained after the object's <xref:System.Object.Finalize%2A> method has been called. This allows the object to be recreated, but the state of the object remains unpredictable. To use a long reference, specify `true` in the <xref:System.WeakReference> constructor.  
+   A long weak reference is retained after the object's <xref:System.Object.Finalize%2A> method has been called. This allows the object to be recreated, but the state of the object remains unpredictable. To use a long reference, specify `true` in the <xref:System.WeakReference> constructor.  
   
-     If the object's type does not have a <xref:System.Object.Finalize%2A> method, the short weak reference functionality applies and the weak reference is valid only until the target is collected, which can occur anytime after the finalizer is run.  
+   If the object's type does not have a <xref:System.Object.Finalize%2A> method, the short weak reference functionality applies and the weak reference is valid only until the target is collected, which can occur anytime after the finalizer is run.  
   
  To establish a strong reference and use the object again, cast the <xref:System.WeakReference.Target%2A> property of a <xref:System.WeakReference> to the type of the object. If the <xref:System.WeakReference.Target%2A> property returns `null`, the object was collected; otherwise, you can continue to use the object because the application has regained a strong reference to it.  
   

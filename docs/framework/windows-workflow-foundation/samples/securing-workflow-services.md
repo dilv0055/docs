@@ -6,11 +6,11 @@ ms.assetid: 53f84ad5-1ed1-4114-8d0d-b12e8a021c6e
 # Securing Workflow Services
 The Secured Workflow Service sample shows the following procedures:  
   
--   Creating a basic workflow service using the <xref:System.ServiceModel.Activities.Receive> and <xref:System.ServiceModel.Activities.SendReply> activities.  
+- Creating a basic workflow service using the <xref:System.ServiceModel.Activities.Receive> and <xref:System.ServiceModel.Activities.SendReply> activities.  
   
--   Using Windows Communication Foundation (WCF) configuration to define secure endpoints for use by the workflow service.  
+- Using Windows Communication Foundation (WCF) configuration to define secure endpoints for use by the workflow service.  
   
--   Creating claims inside a custom policy and using the <xref:System.ServiceModel.ServiceAuthorizationManager> to validate claims.  
+- Creating claims inside a custom policy and using the <xref:System.ServiceModel.ServiceAuthorizationManager> to validate claims.  
   
 ## Demonstrates  
  Using WCF security to secure communication between client and Workflow service, Claims based authorization  
@@ -24,25 +24,25 @@ The Secured Workflow Service sample shows the following procedures:
   
 #### To run this sample  
   
-1.  Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] with administrator privileges.  
+1. Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] with administrator privileges.  
   
-2.  Load SecuringWorkflowServices.sln in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+2. Load SecuringWorkflowServices.sln in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-3.  Press CTRL+SHIFT+B to compile the solution.  
+3. Press CTRL+SHIFT+B to compile the solution.  
   
-4.  Set the Service project as the start-up project for the solution.  
+4. Set the Service project as the start-up project for the solution.  
   
-5.  Press CTRL+F5 to start the service without debugging.  
+5. Press CTRL+F5 to start the service without debugging.  
   
-6.  Set the Client project as the start-up project for the solution.  
+6. Set the Client project as the start-up project for the solution.  
   
-7.  Press CTRL+F5 to start the client without debugging.  
+7. Press CTRL+F5 to start the client without debugging.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\SecuringWorkflowServices`

@@ -1,5 +1,6 @@
 ### DbParameter.Precision and DbParameter.Scale are now public virtual members
 
+
 |   |   |
 |---|---|
 |Details|<xref:System.Data.Common.DbParameter.Precision> and <xref:System.Data.Common.DbParameter.Scale> are implemented as public virtual properties. They replace the corresponding explicit interface implementations, <xref:System.Data.Common.DbParameter.System%23Data%23IDbDataParameter%23Precision> and <xref:System.Data.Common.DbParameter.System%23Data%23IDbDataParameter%23Scale>.|

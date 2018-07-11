@@ -1,5 +1,6 @@
 ### CspParameters.ParentWindowHandle now expects HWND value
 
+
 |   |   |
 |---|---|
 |Details|The <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle> value, introduced in .NET Framework 2.0, allows an application to register a parent window handle value such that any UI required to access the key (such as a PIN prompt or consent dialog) opens as a modal child to the specified window.Starting with apps that target the .NET Framework 4.7, a Windows Forms application can set the <xref:System.Security.Cryptography.CspParameters.ParentWindowHandle> property with code like the following:<pre><code class="lang-csharp">cspParameters.ParentWindowHandle = form.Handle;&#13;&#10;</code></pre>In previous versions of the .NET Framework, the value was expected to be an <xref:System.IntPtr?displayProperty=name> representing a location in memory where the [HWND](https://msdn.microsoft.com/library/windows/desktop/aa383751.aspx#HWND) value resided. Setting the property to form.Handle on Windows 7 and earlier versions had no effect, but on Windows 8 and later versions, it results in a &quot;<xref:System.Security.Cryptography.CryptographicException?displayProperty=name>: The parameter is incorrect.&quot;|

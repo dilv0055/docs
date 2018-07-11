@@ -20,17 +20,17 @@ This sample demonstrates how to pass delegates to an unmanaged function expectin
   
  The Callback sample uses the following unmanaged functions, shown with their original function declaration:  
   
--   **TestCallBack** exported from PinvokeLib.dll.  
+- **TestCallBack** exported from PinvokeLib.dll.  
   
-    ```  
-    void TestCallBack(FPTR pf, int value);  
-    ```  
+  ```  
+  void TestCallBack(FPTR pf, int value);  
+  ```  
   
--   **TestCallBack2** exported from PinvokeLib.dll.  
+- **TestCallBack2** exported from PinvokeLib.dll.  
   
-    ```  
-    void TestCallBack2(FPTR2 pf2, char* value);  
-    ```  
+  ```  
+  void TestCallBack2(FPTR2 pf2, char* value);  
+  ```  
   
  [PinvokeLib.dll](https://msdn.microsoft.com/library/5d1438d7-9946-489d-8ede-6c694a08f614(v=vs.100)) is a custom unmanaged library that contains an implementation for the previously listed functions.  
   

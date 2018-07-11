@@ -23,7 +23,7 @@ The **dotnet-svcutil** tool is an alternative option to the [**WCF Web Service R
 
 ## Getting started
 
-The following example walks you through the steps required to add a web service reference to a .NET Core console project and invoke the service. You will create a .NET Core console application named _HelloSvcutil_ and will add a reference to a web service that implements the following contract:
+The following example walks you through the steps required to add a web service reference to a .NET Core console project and invoke the service. You will create a .NET Core console application named *HelloSvcutil* and will add a reference to a web service that implements the following contract:
 
 ```csharp
 [ServiceContract]
@@ -38,7 +38,7 @@ For this example, the web service will be assumed to be hosted at the following 
 
 From a Windows, macOS, or Linux command window perform the following steps:
 
-1. Create a directory named _HelloSvcutil_ for your project and make it your current directory, as in the following example:
+1. Create a directory named *HelloSvcutil* for your project and make it your current directory, as in the following example:
 
 ```console
 mkdir HelloSvcutil
@@ -59,18 +59,18 @@ dotnet new console
 </ItemGroup>
 ```
 
-4. Restore the _dotnet-svcutil_ package using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:
+4. Restore the *dotnet-svcutil* package using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:
 
 ```console
 dotnet restore
 ```
 
-5. Run _dotnet_ with the _svcutil_ command to generate the web service reference file as follows:
+5. Run *dotnet* with the *svcutil* command to generate the web service reference file as follows:
 
 ```console
 dotnet svcutil http://contoso.com/SayHello.svc
 ```
-The generated file is saved as _HelloSvcutil/ServiceReference1/Reference.cs_. The _dotnet_svcutil_ tool also adds to the project the appropriate WCF packages required by the proxy code as package references.
+The generated file is saved as *HelloSvcutil/ServiceReference1/Reference.cs*. The *dotnet_svcutil* tool also adds to the project the appropriate WCF packages required by the proxy code as package references.
 
 6. Restore the WCF packages using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:
 

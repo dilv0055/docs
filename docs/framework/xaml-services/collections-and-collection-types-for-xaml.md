@@ -13,11 +13,11 @@ This topic describes how to define properties of types that are intended to supp
   
  In .NET Framework XAML Services, the concept of XAML collection support is more clearly defined in terms of .NET Framework backing types. Specifically, the XAML support for collections is based on several .NET Framework concepts and APIs that are used for lists and dictionaries in general .NET Framework programming.  
   
-1.  The <xref:System.Collections.IList> interface indicates a list collection.  
+1. The <xref:System.Collections.IList> interface indicates a list collection.  
   
-2.  The <xref:System.Collections.IDictionary> interface indicates a dicionary collection.  
+2. The <xref:System.Collections.IDictionary> interface indicates a dicionary collection.  
   
-3.  <xref:System.Array> represents an array, and an array supports <xref:System.Collections.IList> methods.  
+3. <xref:System.Array> represents an array, and an array supports <xref:System.Collections.IList> methods.  
   
  In each of these collection concepts, a .NET Framework XAML Services XAML processor expects to call the `Add` method on a specific instance of the collection property's type. Or, in a serialization scenario, a XAML processor produces discrete XAML-type instances for each item found in the list, dictionary or array based on each collection's specific concept of "Items". These are : <xref:System.Collections.IList.Item%2A>; <xref:System.Collections.IDictionary.Item%2A>; the explicit <xref:System.Array.System%23Collections%23IList%23Item%2A> for <xref:System.Array>.  
   
@@ -32,8 +32,8 @@ This topic describes how to define properties of types that are intended to supp
 ## XAML Type System Support and Collections  
  Beyond the basic mechanics of parsing XAML and populating or serializing collection properties, the XAML type system as implemented in .NET Framework XAML Services includes several design features that pertain to collections in XAML.  
   
-1.  <xref:System.Xaml.XamlType.IsCollection%2A> returns true if the XAML type is backed by a type that provides XAML collection support.  
+1. <xref:System.Xaml.XamlType.IsCollection%2A> returns true if the XAML type is backed by a type that provides XAML collection support.  
   
-2.  <xref:System.Xaml.XamlType.IsDictionary%2A> and <xref:System.Xaml.XamlType.IsArray%2A> can further identify which collection mode the XAML type supports. For custom XAML processors that are based on .NET Framework XAML Services and the XAML type system but not based on existing <xref:System.Xaml.XamlWriter> implementations, knowing which collection mode is used might be necessary in order to know which method to invoke for collection processing.  
+2. <xref:System.Xaml.XamlType.IsDictionary%2A> and <xref:System.Xaml.XamlType.IsArray%2A> can further identify which collection mode the XAML type supports. For custom XAML processors that are based on .NET Framework XAML Services and the XAML type system but not based on existing <xref:System.Xaml.XamlWriter> implementations, knowing which collection mode is used might be necessary in order to know which method to invoke for collection processing.  
   
-3.  Each of the previous property values are potentially influenced by overrides of <xref:System.Xaml.XamlType.LookupCollectionKind%2A> on a XAML type.
+3. Each of the previous property values are potentially influenced by overrides of <xref:System.Xaml.XamlType.LookupCollectionKind%2A> on a XAML type.

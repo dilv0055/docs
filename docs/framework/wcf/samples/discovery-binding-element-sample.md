@@ -6,19 +6,19 @@ ms.assetid: af513015-85bf-417b-8729-1bdff77ff6d6
 # Discovery Binding Element Sample
 This sample demonstrates how to use the discovery client binding element to discover a service. This feature enables developers to add a discovery client channel to their existing client channel stack, making the programming model very intuitive. When the associated channel is opened, the address of the service is resolved using discovery. This sample consists of the following projects:  
   
--   **CalculatorService**: A discoverable WCF service.  
+- **CalculatorService**: A discoverable WCF service.  
   
--   **CalculatorClient**: A WCF client application that uses the discovery client channel to search for and call the CalculatorService.  
+- **CalculatorClient**: A WCF client application that uses the discovery client channel to search for and call the CalculatorService.  
   
--   **DynamicCalculatorClient**: A WCF client application that uses a dynamic endpoint to search for and call the CalculatorService.  
+- **DynamicCalculatorClient**: A WCF client application that uses a dynamic endpoint to search for and call the CalculatorService.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryBindingElement`  
   
 ## CalculatorService  
@@ -106,12 +106,12 @@ CalculatorServiceClient client = new CalculatorServiceClient(CreateCustomBinding
   
 #### To use this sample  
   
-1.  Open the solution in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
+1. Open the solution in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
   
-2.  Build the solution.  
+2. Build the solution.  
   
-3.  Run the service application and each of the client applications.  
+3. Run the service application and each of the client applications.  
   
-4.  Observe that the client was able to find the service without knowing its address.  
+4. Observe that the client was able to find the service without knowing its address.  
   
 ## See Also

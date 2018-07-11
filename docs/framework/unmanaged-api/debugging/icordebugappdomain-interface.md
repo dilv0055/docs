@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugAppDomain Interface1
 Provides methods for debugging application domains. This interface is a subclass of ICorDebugController.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[Attach Method](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain-attach-method.md)|Attaches the debugger to the application domain.|  
@@ -34,20 +35,20 @@ Provides methods for debugging application domains. This interface is a subclass
 |[GetObject Method](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain-getobject-method.md)|Gets an interface pointer to the common language runtime (CLR) application domain.|  
 |[GetProcess Method](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain-getprocess-method.md)|Gets the process containing the application domain.|  
 |[IsAttached Method](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain-isattached-method.md)|Determines whether the debugger is attached to the application domain.|  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

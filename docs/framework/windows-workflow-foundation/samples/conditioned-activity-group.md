@@ -10,23 +10,23 @@ The sample demonstrates a travel booking application. The <xref:System.Workflow.
   
 ### To build the sample  
   
-1.  Open the solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1. Open the solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Build the solution by pressing CTRL+SHIFT+B.  
+2. Build the solution by pressing CTRL+SHIFT+B.  
   
-3.  Run the solution without debugging by pressing CTRL+F5.  
+3. Run the solution without debugging by pressing CTRL+F5.  
   
 ### To run the sample  
   
--   In the SDK Command Prompt window, run the .exe file in the SimpleCAG\bin\debug folder (or the SimpleCAG\bin folder for the Visual Basic version of the sample), which is located below the main folder for the sample.  
+- In the SDK Command Prompt window, run the .exe file in the SimpleCAG\bin\debug folder (or the SimpleCAG\bin folder for the Visual Basic version of the sample), which is located below the main folder for the sample.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your computer. Check for the following (default) directory before continuing:  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory:  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Rules\SimpleCAG`  
   
 ## See Also  

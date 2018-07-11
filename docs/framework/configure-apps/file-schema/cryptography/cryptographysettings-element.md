@@ -14,41 +14,43 @@ manager: "markl"
 ---
 # &lt;cryptographySettings&gt; Element
 Contains cryptography settings.  
-  
+
  \<configuration>  
 \<mscorlib>  
 \<cryptographySettings>  
-  
+
 ## Syntax  
-  
+
 ```xml  
       <cryptographySettings>   
 </cryptographySettings>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<cryptoNameMapping>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|Contains mappings of classes to friendly names.|  
 |[\<oidMap>](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|Contains ASN.1 object identifier (OID) mappings to classes.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`mscorlib`|Contains the `cryptographySettings` element.|  
-  
+
 ## Example  
  The following example shows how use the **\<cryptographySettings>** element to contain cryptography name mappings and OID mappings. This example configures the runtime so that <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> returns a `MyHashClass` object and the `MyCryptoClass` class maps to the object identifier 1.3.36.2.1.  
-  
+
 ```xml  
 <configuration>  
    <mscorlib>  
@@ -72,7 +74,7 @@ Contains cryptography settings.
    </mscorlib>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  [Configuration File Schema](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Cryptography Settings Schema](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  

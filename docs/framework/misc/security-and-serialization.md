@@ -22,24 +22,24 @@ Because serialization can allow other code to see or modify object instance data
   
  The <xref:System.Runtime.Serialization.ISerializable> interface is intended for use only by the serialization infrastructure. However, if unprotected, it can potentially release sensitive information. If you provide custom serialization by implementing **ISerializable**, make sure you take the following precautions:  
   
--   The <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> method should be explicitly secured either by demanding the **SecurityPermission** with **SerializationFormatter** permission specified or by making sure that no sensitive information is released with the method output. For example:  
+- The <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> method should be explicitly secured either by demanding the **SecurityPermission** with **SerializationFormatter** permission specified or by making sure that no sensitive information is released with the method output. For example:  
   
-    ```vb  
-    Public Overrides<SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter := True)>  _  
-    Sub GetObjectData(info As SerializationInfo, context As StreamingContext)  
-    End Sub  
-    ```  
+  ```vb  
+  Public Overrides<SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter := True)>  _  
+  Sub GetObjectData(info As SerializationInfo, context As StreamingContext)  
+  End Sub  
+  ```  
   
-    ```csharp  
-    [SecurityPermissionAttribute(SecurityAction.Demand,SerializationFormatter   
-    =true)]  
-    public override void GetObjectData(SerializationInfo info,   
-    StreamingContext context)  
-    {  
-    }  
-    ```  
+  ```csharp  
+  [SecurityPermissionAttribute(SecurityAction.Demand,SerializationFormatter   
+  =true)]  
+  public override void GetObjectData(SerializationInfo info,   
+  StreamingContext context)  
+  {  
+  }  
+  ```  
   
--   The special constructor used for serialization should also perform thorough input validation and should be either protected or private to help protect against misuse by malicious code. It should enforce the same security checks and permissions required to obtain an instance of such a class by any other means, such as explicitly creating the class or indirectly creating it through some kind of factory.  
+- The special constructor used for serialization should also perform thorough input validation and should be either protected or private to help protect against misuse by malicious code. It should enforce the same security checks and permissions required to obtain an instance of such a class by any other means, such as explicitly creating the class or indirectly creating it through some kind of factory.  
   
 ## See Also  
  [Secure Coding Guidelines](../../../docs/standard/security/secure-coding-guidelines.md)

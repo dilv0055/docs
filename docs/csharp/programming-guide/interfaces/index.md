@@ -40,15 +40,15 @@ An interface contains definitions for a group of related functionalities that a 
 ## Interfaces Summary  
  An interface has the following properties:  
   
--   An interface is like an abstract base class. Any class or struct that implements the interface must implement all its members.  
+- An interface is like an abstract base class. Any class or struct that implements the interface must implement all its members.  
   
--   An interface can't be instantiated directly. Its members are implemented by any class or struct that implements the interface.  
+- An interface can't be instantiated directly. Its members are implemented by any class or struct that implements the interface.  
   
--   Interfaces can contain events, indexers, methods, and properties.  
+- Interfaces can contain events, indexers, methods, and properties.  
   
--   Interfaces contain no implementation of methods.  
+- Interfaces contain no implementation of methods.  
   
--   A class or struct can implement multiple interfaces. A class can inherit a base class and also implement one or more interfaces.  
+- A class or struct can implement multiple interfaces. A class can inherit a base class and also implement one or more interfaces.  
   
 ## In This Section  
  [Explicit Interface Implementation](../../../csharp/programming-guide/interfaces/explicit-interface-implementation.md)  
@@ -62,27 +62,27 @@ An interface contains definitions for a group of related functionalities that a 
   
 ##  <a name="BKMK_RelatedSections"></a> Related Sections  
   
--   [Interface Properties](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
+- [Interface Properties](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
   
--   [Indexers in Interfaces](../../../csharp/programming-guide/indexers/indexers-in-interfaces.md)  
+- [Indexers in Interfaces](../../../csharp/programming-guide/indexers/indexers-in-interfaces.md)  
   
--   [How to:  Implement Interface Events](../../../csharp/programming-guide/events/how-to-implement-interface-events.md)  
+- [How to:  Implement Interface Events](../../../csharp/programming-guide/events/how-to-implement-interface-events.md)  
   
--   [Classes and Structs](../../../csharp/programming-guide/classes-and-structs/index.md)  
+- [Classes and Structs](../../../csharp/programming-guide/classes-and-structs/index.md)  
   
--   [Inheritance](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
+- [Inheritance](../../../csharp/programming-guide/classes-and-structs/inheritance.md)  
   
--   [Methods](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+- [Methods](../../../csharp/programming-guide/classes-and-structs/methods.md)  
   
--   [Polymorphism](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)  
+- [Polymorphism](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)  
   
--   [Abstract and Sealed Classes and Class Members](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
+- [Abstract and Sealed Classes and Class Members](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
   
--   [Properties](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+- [Properties](../../../csharp/programming-guide/classes-and-structs/properties.md)  
   
--   [Events](../../../csharp/programming-guide/events/index.md)  
+- [Events](../../../csharp/programming-guide/events/index.md)  
   
--   [Indexers](../../../csharp/programming-guide/indexers/index.md)  
+- [Indexers](../../../csharp/programming-guide/indexers/index.md)  
   
 ## Featured Book Chapter  
  [Interfaces](http://msdn.microsoft.com/library/orm-9780596521066-01-13.aspx) in [Learning C# 3.0: Master the Fundamentals of C# 3.0](http://msdn.microsoft.com/library/orm-9780596521066-01.aspx)  

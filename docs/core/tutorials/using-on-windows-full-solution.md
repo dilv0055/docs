@@ -27,7 +27,7 @@ Follow the instructions on [our prerequisites page](../windows-prerequisites.md)
 
 5. Rename the `Class1.cs` file to `Thing.cs`. Accept the rename of the class. Add a method: `public int Get(int number) => Newtonsoft.Json.JsonConvert.DeserializeObject<int>($"{number}");`
 
-7. On the **Build** menu, choose **Build Solution**.
+6. On the **Build** menu, choose **Build Solution**.
 
    The solution should build without error.
 
@@ -60,12 +60,12 @@ Follow the instructions on [our prerequisites page](../windows-prerequisites.md)
 
 3. In the **Reference Manager** dialog, check **Library** under the **Projects**, **Solution** node, and then click **OK**
 
-6. Open the context menu for the **App** node and choose **Set as StartUp Project**. This ensures that hitting F5 or CTRL+F5 will start the console app.
+4. Open the context menu for the **App** node and choose **Set as StartUp Project**. This ensures that hitting F5 or CTRL+F5 will start the console app.
 
-7. Open the `Program.cs` file, add a `using Library;` directive to the top of the file, and then add `Console.WriteLine($"The answer is {new Thing().Get(42)}.");` to the `Main` method.
+5. Open the `Program.cs` file, add a `using Library;` directive to the top of the file, and then add `Console.WriteLine($"The answer is {new Thing().Get(42)}.");` to the `Main` method.
 
-8. Set a breakpoint after the line that you just added.
+6. Set a breakpoint after the line that you just added.
 
-9. Press F5 to run the application..
+7. Press F5 to run the application..
 
    The application should build without error, and should hit the breakpoint. You should also be able to check that the application output "The answer is 42.".

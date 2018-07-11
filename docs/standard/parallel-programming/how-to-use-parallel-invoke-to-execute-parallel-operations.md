@@ -28,7 +28,7 @@ This example shows how to parallelize operations by using <xref:System.Threading
   
 ## Compiling the Code  
   
--   Copy and paste the entire example into a Microsoft Visual Studio 2010 project and press F5.  
+- Copy and paste the entire example into a Microsoft Visual Studio 2010 project and press F5.  
   
 ## See Also  
  [Parallel Programming](../../../docs/standard/parallel-programming/index.md)  

@@ -5,18 +5,19 @@ ms.assetid: d6b1d6a7-a067-40d9-842a-ef451cebe03b
 ---
 # 57402 - TraceCodeEventLogVerbose
 ## Properties  
-  
+
+
 |||  
 |-|-|  
 |ID|57402|  
 |Keywords|Infrastructure|  
 |Level|Verbose|  
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
-  
+
 ## Description  
  This event is emitted on TraceCodeEventLogVerbose.  
-  
+
 ## Message  
  Wrote to the EventLog.  
-  
+
 ## Details

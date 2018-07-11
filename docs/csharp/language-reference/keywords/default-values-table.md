@@ -28,6 +28,7 @@ int myInt = 0;
 
 Remember that using uninitialized variables in C# is not allowed.
 
+
 |Value type|Default value|
 |----------------|-------------------|
 |[bool](bool.md)|`false`|

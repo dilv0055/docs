@@ -19,11 +19,11 @@ ms.author: "ronpet"
 ---
 # ConnectServerWmi function
 Creates a connection through DCOM to a WMI namespace on a specified computer.  
-  
+
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT ConnectServerWmi (
    [in] BSTR               strNetworkResource,
@@ -44,16 +44,17 @@ HRESULT ConnectServerWmi (
 [in] Pointer to a valid `BSTR` that contains the object path of the correct WMI namespace. See the [Remarks](#remarks) section for more information.
 
 `strUser`
-[in] A pointer to a valid `BSTR` that contains the user name. A `null` value indicates the current security context. If the user is from a different domain than the current one, `strUser` can also contain the domain and user name separated by a backslash. `strUser` can also be in user principal name (UPN) format, suhc as *userName@domainName*. See the [Remarks](#remarks) section for more information.
+[in] A pointer to a valid `BSTR` that contains the user name. A `null` value indicates the current security context. If the user is from a different domain than the current one, `strUser` can also contain the domain and user name separated by a backslash. `strUser` can also be in user principal name (UPN) format, suhc as *userName@"domainName"*. See the [Remarks](#remarks) section for more information.
 
 `strPassword`
 [in] A pointer to a valid `BSTR` that contains the password. A `null` indicates the current security context. An empty string ("") indicates a valid zero-length password.
 
 `strLocale`
 [in] A pointer to a valid `BSTR` that indicates the correct locale for information retrieval. For Microsoft locale identifiers, the format of the string is "MS\_*xxx*", where *xxx* is a string in hexadecimal form that indicates the locale identifier (LCID). If an invalid locale is specified, the method returns `WBEM_E_INVALID_PARAMETER` except on Windows 7, where the default locale of the server is used instead. If `null1, the current locale is used. 
- 
+
 `lSecurityFlags`
 [in] Flags to pass to the `ConnectServerWmi` method. A value of zero (0) for this parameter results in the call to `ConnectServerWmi` returning only after a connection to the server is established. This could result in an application not responding indefinitely if the server is broken. The other valid values are:
+
 
 | Constant  | Value  | Description  |
 |---------|---------|---------|
@@ -62,6 +63,7 @@ HRESULT ConnectServerWmi (
 
 `strAuthority`
 [in] The domain name of the user. It can have the following values:
+
 
 | Value | Description |
 |---------|---------|
@@ -85,13 +87,14 @@ HRESULT ConnectServerWmi (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | There has been a general failure. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | A parameter is not valid. |
 | `WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Not enough memory is available to complete the operation. |
 | `WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemLocator::ConnectServer](https://msdn.microsoft.com/libraryaa391769%28v=vs.85%29.aspx) method.
@@ -103,10 +106,10 @@ This function wraps a call to the [IWbemLocator::ConnectServer](https://msdn.mic
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

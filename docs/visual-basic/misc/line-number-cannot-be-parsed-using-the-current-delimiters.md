@@ -10,7 +10,7 @@ The specified line cannot be parsed because it uses delimiters other than those 
   
 ## To correct this error  
   
--   Adjust `Delimiters` so the line can be parsed correctly, or insert exception-handling code in order to handle the line.  
+- Adjust `Delimiters` so the line can be parsed correctly, or insert exception-handling code in order to handle the line.  
   
 ## See Also  
  [How to: Read From Text Files with Multiple Formats](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)  

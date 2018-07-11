@@ -20,25 +20,26 @@ ms.author: "ronpet"
 ---
 # IHostSemaphore::Wait Method
 Causes the current [IHostSemaphore](../../../../docs/framework/unmanaged-api/hosting/ihostsemaphore-interface.md) instance to wait until it is owned or the specified amount of time elapses.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT Wait (  
     [in] DWORD dwMilliseconds,  
     [in] DWORD option  
 );  
 ```  
-  
+
 #### Parameters  
  `dwMilliseconds`  
  [in] The number of milliseconds to wait before returning, if the current `IHostSemaphore` instance is not owned.  
-  
+
  `option`  
  [in] One of the [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) values, specifying what action the host should take if this operation blocks.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`Wait` returned successfully.|  
@@ -48,16 +49,16 @@ HRESULT Wait (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |HOST_E_DEADLOCK|The host detected a deadlock during the wait interval, and chose the current `IHostSemaphore` instance as a deadlock victim.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
  [IHostAutoEvent Interface](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)  

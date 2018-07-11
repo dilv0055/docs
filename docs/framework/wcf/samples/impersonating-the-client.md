@@ -96,27 +96,27 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
  When you run the sample, the operation requests and responses are displayed in both the service and client console windows. Press ENTER in each console window to shut down the service and client.  
   
 > [!NOTE]
->  The service must either run under an administrative account or the account it runs under must be granted rights to register the http://localhost:8000/ServiceModelSamples URI with the HTTP layer. Such rights can be granted by setting up a [Namespace Reservation](http://go.microsoft.com/fwlink/?LinkId=95012) using the [Httpcfg.exe tool](http://go.microsoft.com/fwlink/?LinkId=95010).  
+>  The service must either run under an administrative account or the account it runs under must be granted rights to register the <http://localhost:8000/ServiceModelSamples> URI with the HTTP layer. Such rights can be granted by setting up a [Namespace Reservation](http://go.microsoft.com/fwlink/?LinkId=95012) using the [Httpcfg.exe tool](http://go.microsoft.com/fwlink/?LinkId=95010).  
   
 > [!NOTE]
 >  On computers running [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], impersonation is supported only if the Host.exe application has the Impersonation privilege. (By default, only administrators have this permission.) To add this privilege to an account the service is running as, go to **Administrative Tools**, open **Local Security Policy**, open **Local Policies**, click **User Rights Assignment**, and select **Impersonate a Client after Authentication** and double-click **Properties** to add a user or group.  
   
 ### To set up, build, and run the sample  
   
-1.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-4.  To demonstrate that the service impersonates the caller, run the client under a different account than the one the service is running under. To do so, at the command prompt, type:  
+4. To demonstrate that the service impersonates the caller, run the client under a different account than the one the service is running under. To do so, at the command prompt, type:  
   
-    ```  
-    runas /user:<machine-name>\<user-name> client.exe  
-    ```  
+   ```  
+   runas /user:<machine-name>\<user-name> client.exe  
+   ```  
   
-     You are then prompted for a password. Enter the password for the account you previously specified.  
+    You are then prompted for a password. Enter the password for the account you previously specified.  
   
-5.  When you run the client, note the identity before and after running it with different credentials.  
+5. When you run the client, note the identity before and after running it with different credentials.  
   
 ## See Also

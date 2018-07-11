@@ -4,7 +4,6 @@ description: Learn to create asp.net core services that run in Docker containers
 ms.date: 06/08/2017
 ms.assetid: 87e93838-a363-4813-b859-7356023d98ed
 ---
-
 # Microservices hosted in Docker
 
 This tutorial details the tasks necessary to build and deploy

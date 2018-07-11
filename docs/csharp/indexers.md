@@ -4,7 +4,6 @@ description: Learn about C# indexers and how they implement indexed properties, 
 ms.date: 06/20/2016
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
 ---
-
 # Indexers
 
 *Indexers* are similar to properties. In many ways indexers build

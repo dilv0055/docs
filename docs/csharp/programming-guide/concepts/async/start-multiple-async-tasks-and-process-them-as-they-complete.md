@@ -14,19 +14,19 @@ By using <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithTy
 ## Downloading the Example  
  You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.  
   
-1.  Decompress the file that you downloaded, and then start Visual Studio.  
+1. Decompress the file that you downloaded, and then start Visual Studio.  
   
-2.  On the menu bar, choose **File**, **Open**, **Project/Solution**.  
+2. On the menu bar, choose **File**, **Open**, **Project/Solution**.  
   
-3.  In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningCS.  
+3. In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningCS.  
   
-4.  In **Solution Explorer**, open the shortcut menu for the **ProcessTasksAsTheyFinish** project, and then choose **Set as StartUp Project**.  
+4. In **Solution Explorer**, open the shortcut menu for the **ProcessTasksAsTheyFinish** project, and then choose **Set as StartUp Project**.  
   
-5.  Choose the F5 key to run the project.  
+5. Choose the F5 key to run the project.  
   
-     Choose the Ctrl+F5 keys to run the project without debugging it.  
+    Choose the Ctrl+F5 keys to run the project without debugging it.  
   
-6.  Run the project several times to verify that the downloaded lengths don't always appear in the same order.  
+6. Run the project several times to verify that the downloaded lengths don't always appear in the same order.  
   
  If you don't want to download the project, you can review the MainWindow.xaml.cs file at the end of this topic.  
   
@@ -44,32 +44,32 @@ IEnumerable<Task<int>> downloadTasksQuery =
   
  In the MainWindow.xaml.cs file of the  project, make the following changes to the `AccessTheWebAsync` method.  
   
--   Execute the query by applying <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> instead of <xref:System.Linq.Enumerable.ToArray%2A>.  
+- Execute the query by applying <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> instead of <xref:System.Linq.Enumerable.ToArray%2A>.  
   
-    ```csharp  
-    List<Task<int>> downloadTasks = downloadTasksQuery.ToList();  
-    ```  
+  ```csharp  
+  List<Task<int>> downloadTasks = downloadTasksQuery.ToList();  
+  ```  
   
--   Add a while loop that performs the following steps for each task in the collection.  
+- Add a while loop that performs the following steps for each task in the collection.  
   
-    1.  Awaits a call to `WhenAny` to identify the first task in the collection to finish its download.  
+  1. Awaits a call to `WhenAny` to identify the first task in the collection to finish its download.  
   
-        ```csharp  
-        Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);  
-        ```  
+     ```csharp  
+     Task<int> firstFinishedTask = await Task.WhenAny(downloadTasks);  
+     ```  
   
-    2.  Removes that task from the collection.  
+  2. Removes that task from the collection.  
   
-        ```csharp  
-        downloadTasks.Remove(firstFinishedTask);  
-        ```  
+     ```csharp  
+     downloadTasks.Remove(firstFinishedTask);  
+     ```  
   
-    3.  Awaits `firstFinishedTask`, which is returned by a call to `ProcessURLAsync`. The `firstFinishedTask` variable is a <xref:System.Threading.Tasks.Task%601> where `TReturn` is an integer. The task is already complete, but you await it to retrieve the length of the downloaded website, as the following example shows.  
+  3. Awaits `firstFinishedTask`, which is returned by a call to `ProcessURLAsync`. The `firstFinishedTask` variable is a <xref:System.Threading.Tasks.Task%601> where `TReturn` is an integer. The task is already complete, but you await it to retrieve the length of the downloaded website, as the following example shows.  
   
-        ```csharp  
-        int length = await firstFinishedTask;  
-        resultsTextBox.Text += String.Format("\r\nLength of the download:  {0}", length);  
-        ```  
+     ```csharp  
+     int length = await firstFinishedTask;  
+     resultsTextBox.Text += String.Format("\r\nLength of the download:  {0}", length);  
+     ```  
   
  You should run the project several times to verify that the downloaded lengths don't always appear in the same order.  
   

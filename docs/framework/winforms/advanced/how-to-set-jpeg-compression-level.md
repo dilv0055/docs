@@ -117,11 +117,11 @@ End Function
 ## Compiling the Code  
  This example requires:  
   
--   A Windows Forms application.  
+- A Windows Forms application.  
   
--   A <xref:System.Windows.Forms.PaintEventArgs>, which is a parameter of <xref:System.Windows.Forms.PaintEventHandler>.  
+- A <xref:System.Windows.Forms.PaintEventArgs>, which is a parameter of <xref:System.Windows.Forms.PaintEventHandler>.  
   
--   An image file that is named `TestPhoto.jpg` and located at **c:\\**.  
+- An image file that is named `TestPhoto.jpg` and located at **c:\\**.  
   
 ## See Also  
  [How to: Determine the Parameters Supported by an Encoder](../../../../docs/framework/winforms/advanced/how-to-determine-the-parameters-supported-by-an-encoder.md)  

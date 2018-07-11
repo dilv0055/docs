@@ -8,44 +8,44 @@ This topic explains how to export custom WSDL information. To do this we will de
   
 ### To export custom WSDL information  
   
-1.  Implement the <xref:System.ServiceModel.Description.IWsdlExportExtension> interface. This interface can be implemented on a class that implements any of the following interfaces: <xref:System.ServiceModel.Description.IOperationBehavior>, <xref:System.ServiceModel.Description.IContractBehavior>, or <xref:System.ServiceModel.Description.IEndpointBehavior>. It can also be implemented on a class derived from <xref:System.ServiceModel.Channels.BindingElement>. This sample implements <xref:System.ServiceModel.Description.IWsdlExportExtension> on an attribute class that implements <xref:System.ServiceModel.Description.IContractBehavior>.  
+1. Implement the <xref:System.ServiceModel.Description.IWsdlExportExtension> interface. This interface can be implemented on a class that implements any of the following interfaces: <xref:System.ServiceModel.Description.IOperationBehavior>, <xref:System.ServiceModel.Description.IContractBehavior>, or <xref:System.ServiceModel.Description.IEndpointBehavior>. It can also be implemented on a class derived from <xref:System.ServiceModel.Channels.BindingElement>. This sample implements <xref:System.ServiceModel.Description.IWsdlExportExtension> on an attribute class that implements <xref:System.ServiceModel.Description.IContractBehavior>.  
   
-2.  <xref:System.ServiceModel.Description.IWsdlExportExtension> defines two methods <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> and <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>. These methods allow you to modify or add (or both modify and add) additional information into the <xref:System.ServiceModel.Description.WsdlContractConversionContext>. This sample, in the <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> method, retrieves a collection of <xref:System.ServiceModel.Description.OperationDescription> objects and then iterates through the collection checking for a `WsdlDocumentationAttribute`. If one is found, the text associated with the attribute is extracted, a summary element is generated, and the summary element is added into the `DocumentationElement` of the operation.  
+2. <xref:System.ServiceModel.Description.IWsdlExportExtension> defines two methods <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportEndpoint%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlEndpointConversionContext%29> and <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>. These methods allow you to modify or add (or both modify and add) additional information into the <xref:System.ServiceModel.Description.WsdlContractConversionContext>. This sample, in the <xref:System.ServiceModel.Description.IWsdlExportExtension.ExportContract%28System.ServiceModel.Description.WsdlExporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> method, retrieves a collection of <xref:System.ServiceModel.Description.OperationDescription> objects and then iterates through the collection checking for a `WsdlDocumentationAttribute`. If one is found, the text associated with the attribute is extracted, a summary element is generated, and the summary element is added into the `DocumentationElement` of the operation.  
   
-    ```  
-            public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  
-    {  
-                Console.WriteLine("Inside ExportContract");  
-    if (context.Contract != null)  
-    {  
-                    // Set the document element; if this is not done first, there is no XmlElement in the   
-                    // DocumentElement property.  
-                    context.WsdlPortType.Documentation = string.Empty;   
-                    // Contract comments.  
-                    XmlDocument owner = context.WsdlPortType.DocumentationElement.OwnerDocument;  
-                    XmlElement summaryElement = Formatter.CreateSummaryElement(owner, this.Text);   
-                    context.WsdlPortType.DocumentationElement.AppendChild(summaryElement);  
+   ```  
+           public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  
+   {  
+               Console.WriteLine("Inside ExportContract");  
+   if (context.Contract != null)  
+   {  
+                   // Set the document element; if this is not done first, there is no XmlElement in the   
+                   // DocumentElement property.  
+                   context.WsdlPortType.Documentation = string.Empty;   
+                   // Contract comments.  
+                   XmlDocument owner = context.WsdlPortType.DocumentationElement.OwnerDocument;  
+                   XmlElement summaryElement = Formatter.CreateSummaryElement(owner, this.Text);   
+                   context.WsdlPortType.DocumentationElement.AppendChild(summaryElement);  
   
-                    foreach (OperationDescription op in context.Contract.Operations)  
-                    {  
-                        Operation operation = context.GetOperation(op);  
-                        object[] opAttrs = op.SyncMethod.GetCustomAttributes(typeof(WsdlDocumentationAttribute), false);  
-                        if (opAttrs.Length == 1)  
-                        {  
-                            string opComment = ((WsdlDocumentationAttribute)opAttrs[0]).Text;  
+                   foreach (OperationDescription op in context.Contract.Operations)  
+                   {  
+                       Operation operation = context.GetOperation(op);  
+                       object[] opAttrs = op.SyncMethod.GetCustomAttributes(typeof(WsdlDocumentationAttribute), false);  
+                       if (opAttrs.Length == 1)  
+                       {  
+                           string opComment = ((WsdlDocumentationAttribute)opAttrs[0]).Text;  
   
-                            // This.Text returns the string for the operation-level attributes.  
-                            // Set the doc element; if this is not done first, there is no XmlElement in the   
-                            // DocumentElement property.  
-                            operation.Documentation = String.Empty;  
+                           // This.Text returns the string for the operation-level attributes.  
+                           // Set the doc element; if this is not done first, there is no XmlElement in the   
+                           // DocumentElement property.  
+                           operation.Documentation = String.Empty;  
   
-                            XmlDocument opOwner = operation.DocumentationElement.OwnerDocument;  
-                            XmlElement newSummaryElement = Formatter.CreateSummaryElement(opOwner, opComment);  
-                            operation.DocumentationElement.AppendChild(newSummaryElement);  
-                        }  
-                    }  
-                }  
-    ```  
+                           XmlDocument opOwner = operation.DocumentationElement.OwnerDocument;  
+                           XmlElement newSummaryElement = Formatter.CreateSummaryElement(opOwner, opComment);  
+                           operation.DocumentationElement.AppendChild(newSummaryElement);  
+                       }  
+                   }  
+               }  
+   ```  
   
 ## Example  
  The following code example shows the full implementation of the `WsdlDocumentationAttribute` class.  

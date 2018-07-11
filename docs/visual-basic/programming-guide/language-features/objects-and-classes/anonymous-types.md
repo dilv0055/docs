@@ -47,22 +47,22 @@ Visual Basic supports anonymous types, which enable you to create objects withou
 ## Key Properties  
  Key properties differ from non-key properties in several fundamental ways:  
   
--   Only the values of key properties are compared in order to determine whether two instances are equal.  
+- Only the values of key properties are compared in order to determine whether two instances are equal.  
   
--   The values of key properties are read-only and cannot be changed.  
+- The values of key properties are read-only and cannot be changed.  
   
--   Only key property values are included in the compiler-generated hash code algorithm for an anonymous type.  
+- Only key property values are included in the compiler-generated hash code algorithm for an anonymous type.  
   
 ### Equality  
  Instances of anonymous types can be equal only if they are instances of the same anonymous type. The compiler treats two instances as instances of the same type if they meet the following conditions:  
   
--   They are declared in the same assembly.  
+- They are declared in the same assembly.  
   
--   Their properties have the same names, the same inferred types, and are declared in the same order. Name comparisons are not case-sensitive.  
+- Their properties have the same names, the same inferred types, and are declared in the same order. Name comparisons are not case-sensitive.  
   
--   The same properties in each are marked as key properties.  
+- The same properties in each are marked as key properties.  
   
--   At least one property in each declaration is a key property.  
+- At least one property in each declaration is a key property.  
   
  An instance of an anonymous types that has no key properties is equal only to itself.  
   
@@ -80,13 +80,13 @@ Visual Basic supports anonymous types, which enable you to create objects withou
 ## Anonymous Types from Query Expressions  
  Query expressions do not always require the creation of anonymous types. When possible, they use an existing type to hold the column data. This occurs when the query returns either whole records from the data source, or only one field from each record. In the following code examples, `customers` is a collection of objects of a `Customer` class. The class has many properties, and you can include one or more of them in the query result, in any order. In the first two examples, no anonymous types are required because the queries select elements of named types:  
   
--   `custs1` contains a collection of strings, because `cust.Name` is a string.  
+- `custs1` contains a collection of strings, because `cust.Name` is a string.  
   
-     [!code-vb[VbVbalrAnonymousTypes#30](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-types_9.vb)]  
+   [!code-vb[VbVbalrAnonymousTypes#30](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-types_9.vb)]  
   
--   `custs2` contains a collection of `Customer` objects, because each element of `customers` is a `Customer` object, and the whole element is selected by the query.  
+- `custs2` contains a collection of `Customer` objects, because each element of `customers` is a `Customer` object, and the whole element is selected by the query.  
   
-     [!code-vb[VbVbalrAnonymousTypes#31](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-types_10.vb)]  
+   [!code-vb[VbVbalrAnonymousTypes#31](../../../../visual-basic/language-reference/modifiers/codesnippet/VisualBasic/anonymous-types_10.vb)]  
   
  However, appropriate named types are not always available. You might want to select customer names and addresses for one purpose, customer ID numbers and locations for another, and customer names, addresses, and order histories for a third. Anonymous types enable you to select any combination of properties, in any order, without first declaring a new named type to hold the result. Instead, the compiler creates an anonymous type for each compilation of properties. The following query selects only the customer's name and ID number from each `Customer` object in `customers`. Therefore, the compiler creates an anonymous type that contains only those two properties.  
   

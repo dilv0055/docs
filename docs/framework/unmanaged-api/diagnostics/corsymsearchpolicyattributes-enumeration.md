@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorSymSearchPolicyAttributes Enumeration
 Specifies the policy to be used when doing a search for a symbol reader. These constants are used by the [ISymUnmanagedBinder2::GetReaderForFile2](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) and [ISymUnmanagedBinder3::GetReaderFromCallback](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md) methods.  
-  
+
 > [!IMPORTANT]
 >  It is a security risk to open a program database (PDB) file from an untrusted source.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorSymSearchPolicyAttributes  
 {  
@@ -34,18 +34,19 @@ typedef enum CorSymSearchPolicyAttributes
     AllowReferencePathAccess = 0x8  
 } CorSymSearchPolicyAttributes;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`AllowRegistryAccess`|Queries the registry for symbol search paths.|  
 |`AllowSymbolServerAccess`|Accesses a symbol server.|  
 |`AllowOriginalPathAccess`|Searches the path specified in the Debug directory.|  
 |`AllowReferencePathAccess`|Searches for the PDB in the place where the .exe file is.|  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [Diagnostics Symbol Store Enumerations](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)

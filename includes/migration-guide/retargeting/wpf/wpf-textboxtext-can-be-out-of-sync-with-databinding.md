@@ -1,5 +1,6 @@
 ### WPF TextBox.Text can be out-of-sync with databinding
 
+
 |   |   |
 |---|---|
 |Details|In some cases, the <xref:System.Windows.Controls.TextBox.Text> property reflects a previous value of the databound property value if the property is modified during a databinding write operation.|

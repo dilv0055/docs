@@ -19,31 +19,31 @@ Accessing specific items in a Windows Forms combo box, list box, or checked list
   
 ### To access a specific item  
   
-1.  Query the `Items` collection using the index of the specific item:  
+1. Query the `Items` collection using the index of the specific item:  
   
-    ```vb  
-    Private Function GetItemText(i As Integer) As String  
-       ' Return the text of the item using the index:  
-       Return ComboBox1.Items(i).ToString  
-    End Function  
-    ```  
+   ```vb  
+   Private Function GetItemText(i As Integer) As String  
+      ' Return the text of the item using the index:  
+      Return ComboBox1.Items(i).ToString  
+   End Function  
+   ```  
   
-    ```csharp  
-    private string GetItemText(int i)  
-    {  
-       // Return the text of the item using the index:  
-       return (comboBox1.Items[i].ToString());  
-    }  
-    ```  
+   ```csharp  
+   private string GetItemText(int i)  
+   {  
+      // Return the text of the item using the index:  
+      return (comboBox1.Items[i].ToString());  
+   }  
+   ```  
   
-    ```cpp  
-    private:  
-       String^ GetItemText(int i)  
-       {  
-          // Return the text of the item using the index:  
-          return (comboBox1->Items->Item[i]->ToString());  
-       }  
-    ```  
+   ```cpp  
+   private:  
+      String^ GetItemText(int i)  
+      {  
+         // Return the text of the item using the index:  
+         return (comboBox1->Items->Item[i]->ToString());  
+      }  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.ComboBox>  

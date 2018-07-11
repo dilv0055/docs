@@ -114,15 +114,15 @@ End Sub
 ### Generic Delegates That Have Variant Type Parameters in the .NET Framework  
  .NET Framework 4 introduced variance support for generic type parameters in several existing generic delegates:  
   
--   `Action` delegates from the <xref:System> namespace, for example, <xref:System.Action%601> and <xref:System.Action%602>  
+- `Action` delegates from the <xref:System> namespace, for example, <xref:System.Action%601> and <xref:System.Action%602>  
   
--   `Func` delegates from the <xref:System> namespace, for example, <xref:System.Func%601> and <xref:System.Func%602>  
+- `Func` delegates from the <xref:System> namespace, for example, <xref:System.Func%601> and <xref:System.Func%602>  
   
--   The <xref:System.Predicate%601> delegate  
+- The <xref:System.Predicate%601> delegate  
   
--   The <xref:System.Comparison%601> delegate  
+- The <xref:System.Comparison%601> delegate  
   
--   The <xref:System.Converter%602> delegate  
+- The <xref:System.Converter%602> delegate  
   
  For more information and examples, see [Using Variance for Func and Action Generic Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   

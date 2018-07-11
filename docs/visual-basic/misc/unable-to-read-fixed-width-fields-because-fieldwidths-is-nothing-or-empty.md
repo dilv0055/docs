@@ -10,7 +10,7 @@ The `TextFieldParser` is unable to read fixed-width fields because the `FieldWid
   
 ## To correct this error  
   
--   Set `FieldWidths` to a valid value.  
+- Set `FieldWidths` to a valid value.  
   
 ## See Also  
  [TextFieldParser.SetFieldWidths Method](http://msdn.microsoft.com/library/958fed9f-e0f3-4fc5-83b4-386156bdf036)  

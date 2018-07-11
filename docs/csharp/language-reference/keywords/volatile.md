@@ -15,17 +15,17 @@ The `volatile` keyword indicates that a field might be modified by multiple thre
   
  The `volatile` keyword can be applied to fields of these types:  
   
--   Reference types.  
+- Reference types.  
   
--   Pointer types (in an unsafe context). Note that although the pointer itself can be volatile, the object that it points to cannot. In other words, you cannot declare a "pointer to volatile."  
+- Pointer types (in an unsafe context). Note that although the pointer itself can be volatile, the object that it points to cannot. In other words, you cannot declare a "pointer to volatile."  
   
--   Types such as sbyte, byte, short, ushort, int, uint, char, float, and bool.  
+- Types such as sbyte, byte, short, ushort, int, uint, char, float, and bool.  
   
--   An enum type with one of the following base types: byte, sbyte, short, ushort, int, or uint.  
+- An enum type with one of the following base types: byte, sbyte, short, ushort, int, or uint.  
   
--   Generic type parameters known to be reference types.  
+- Generic type parameters known to be reference types.  
   
--   <xref:System.IntPtr> and <xref:System.UIntPtr>.  
+- <xref:System.IntPtr> and <xref:System.UIntPtr>.  
   
  The volatile keyword can only be applied to fields of a class or struct. Local variables cannot be declared `volatile`.  
   

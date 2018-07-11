@@ -6,14 +6,14 @@ ms.assetid: 903c7e9a-f48d-4a07-a8a8-5450d2646efa
 # How to: Compare the Contents of Two Folders (LINQ) (Visual Basic)
 This example demonstrates three ways to compare two file listings:  
   
--   By querying for a Boolean value that specifies whether the two file lists are identical.  
+- By querying for a Boolean value that specifies whether the two file lists are identical.  
   
--   By querying for the intersection to retrieve the files that are in both folders.  
+- By querying for the intersection to retrieve the files that are in both folders.  
   
--   By querying for the set difference to retrieve the files that are in one folder but not the other.  
+- By querying for the set difference to retrieve the files that are in one folder but not the other.  
   
-    > [!NOTE]
-    >  The techniques shown here can be adapted to compare sequences of objects of any type.  
+  > [!NOTE]
+  >  The techniques shown here can be adapted to compare sequences of objects of any type.  
   
  The `FileComparer` class shown here demonstrates how to use a custom comparer class together with the Standard Query Operators. The class is not intended for use in real-world scenarios. It just uses the name and length in bytes of each file to determine whether the contents of each folder are identical or not. In a real-world scenario, you should modify this comparer to perform a more rigorous equality check.  
   

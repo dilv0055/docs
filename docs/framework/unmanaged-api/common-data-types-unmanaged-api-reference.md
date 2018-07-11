@@ -7,7 +7,8 @@ ms.author: "ronpet"
 ---
 # Common Data Types (Unmanaged API Reference)
 This topic lists simple data types used by the unmanaged APIs for the .NET Framework that are defined by C/C++ `typedef` statements. These data types are typically aliases for C/C++ primitive data types. Typically, the values of these data types are opaque; that is, they are returned by a particular function or method so that they can be passed to other functions or methods without modification.  
-  
+
+
 |Data type|Definition|Defined in|Description|  
 |---------------|----------------|----------------|-----------------|  
 |AppDomainID|`typedef UINT_PTR AppDomainID;`|corprof.h|The identifier of an application domain.|  
@@ -29,6 +30,6 @@ This topic lists simple data types used by the unmanaged APIs for the .NET Frame
 |ReJITID|`typedef UINT_PTR ReJITID;`|corprof.h|The identifier of a jitted function.|  
 |TASKID|`typedef UINT64 TASKID;`|cordebug.h, mscoree.h|The identifier of an [ICLRTask](../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance.|  
 |ThreadID|`typedef UINT_PTR ThreadID;`|corprof.h|The identifier of a managed thread.|  
-  
+
 ## See Also  
  [Unmanaged API Reference](../../../docs/framework/unmanaged-api/index.md)

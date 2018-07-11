@@ -4,7 +4,6 @@ description: Learn why you can't use an implicitly-typed variable declaration to
 ms.date: 06/20/2016
 ms.assetid: a3851da9-e018-4389-9922-233db7d0f841
 ---
-
 # Implicitly typed lambda expressions
 
 I'm not using `var` to declare this expression tree. You can't use

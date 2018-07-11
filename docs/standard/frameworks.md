@@ -23,6 +23,7 @@ For package-based target frameworks (for example, .NET Standard and .NET Core), 
 
 The following table defines the most common target frameworks, how they're referenced, and which version of the [.NET Standard](~/docs/standard/net-standard.md) they implement. These target framework versions are the latest stable versions. Pre-release versions aren't shown. A Target Framework Moniker (TFM) is a standardized token format for specifying the target framework of a .NET app or library.
 
+
 | Target Framework      | Latest <br/> Stable Version | Target Framework Moniker (TFM) | Implemented <br/> .NET Standard Version |
 | :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |
 | .NET Standard         | 2.0                         | netstandard2.0                 | N/A                                     |
@@ -32,6 +33,7 @@ The following table defines the most common target frameworks, how they're refer
 ## Supported target framework versions
 
 A target framework is typically referenced by a TFM. The following table shows the target frameworks supported by the .NET Core SDK and the NuGet client. Equivalents are shown within brackets. For example, `win81` is an equivalent TFM to `netcore451`.
+
 
 | Target Framework           | TFM |
 | -------------------------- | --- |
@@ -111,6 +113,7 @@ The complete list of preprocessor symbols for .NET Core target frameworks is:
 ## Deprecated target frameworks
 
 The following target frameworks are deprecated. Packages targeting these target frameworks should migrate to the indicated replacements.
+
 
 | Deprecated TFM                                                                             | Replacement |
 | ------------------------------------------------------------------------------------------ | ----------- |

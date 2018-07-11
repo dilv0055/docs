@@ -29,16 +29,16 @@ End Module
   
 ## To correct this error  
   
--   Assign the initial value for `Prop1` to a local variable. Assign that variable to both `Prop1` and `Prop2`, as shown in the following code.  
+- Assign the initial value for `Prop1` to a local variable. Assign that variable to both `Prop1` and `Prop2`, as shown in the following code.  
   
-    ```  
-    Sub Main()  
+  ```  
+  Sub Main()  
   
-        Dim temp = 2  
-        ExpressionExample(Function() New With {.Prop1 = temp, .Prop2 = temp})  
+      Dim temp = 2  
+      ExpressionExample(Function() New With {.Prop1 = temp, .Prop2 = temp})  
   
-    End Sub  
-    ```  
+  End Sub  
+  ```  
   
 ## See also
 

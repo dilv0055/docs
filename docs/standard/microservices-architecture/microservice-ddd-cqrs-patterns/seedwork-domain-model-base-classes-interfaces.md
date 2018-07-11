@@ -133,10 +133,10 @@ public interface IRepository<T> where T : IAggregateRoot
 
 ## Additional resources
 
--   **Martin Fowler. Separated Interface.**
-    [*https://www.martinfowler.com/eaaCatalog/separatedInterface.html*](https://www.martinfowler.com/eaaCatalog/separatedInterface.html)
+- **Martin Fowler. Separated Interface.**
+  [*https://www.martinfowler.com/eaaCatalog/separatedInterface.html*](https://www.martinfowler.com/eaaCatalog/separatedInterface.html)
 
 
->[!div class="step-by-step"]
-[Previous](net-core-microservice-domain-model.md)
-[Next](implement-value-objects.md)
+> [!div  class="step-by-step"]
+> [Previous](net-core-microservice-domain-model.md)
+> [Next](implement-value-objects.md)

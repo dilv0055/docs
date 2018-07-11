@@ -8,283 +8,283 @@ To access identity information inside a workflow service, you must implement the
   
 ### Implement IReceiveMessageCallback  
   
-1.  Create an empty [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] solution.  
+1. Create an empty [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] solution.  
   
-2.  Add a new console application called `Service` to the solution.  
+2. Add a new console application called `Service` to the solution.  
   
-3.  Add references to the following assemblies:  
+3. Add references to the following assemblies:  
   
-    1.  System.Runtime.Serialization  
+   1. System.Runtime.Serialization  
   
-    2.  System.ServiceModel  
+   2. System.ServiceModel  
   
-    3.  System.ServiceModel.Activities  
+   3. System.ServiceModel.Activities  
   
-4.  Add a new class called `AccessIdentityCallback` and implement <xref:System.ServiceModel.Activities.IReceiveMessageCallback> as shown in the following example.  
+4. Add a new class called `AccessIdentityCallback` and implement <xref:System.ServiceModel.Activities.IReceiveMessageCallback> as shown in the following example.  
   
-    ```csharp  
-    class AccessIdentityCallback : IReceiveMessageCallback  
-    {  
-       public void OnReceiveMessage(System.ServiceModel.OperationContext operationContext, System.Activities.ExecutionProperties activityExecutionProperties)  
-       {  
-          try  
-          {  
-             Console.WriteLine("Received a message from a workflow with the following identity");  
-             Console.WriteLine("Windows Identity Name: {0}", operationContext.ServiceSecurityContext.WindowsIdentity.Name);  
-             Console.WriteLine("Windows Identity User: {0}", operationContext.ServiceSecurityContext.WindowsIdentity.User);  
-             Console.WriteLine("Windows Identity IsAuthenticated: {0}", operationContext.ServiceSecurityContext.WindowsIdentity.IsAuthenticated);  
-          }            
-          catch (Exception ex)  
-          {  
-             Console.WriteLine("An exception occurred: " + ex.Message);  
-          }  
-        }  
-    }  
-    ```  
+   ```csharp  
+   class AccessIdentityCallback : IReceiveMessageCallback  
+   {  
+      public void OnReceiveMessage(System.ServiceModel.OperationContext operationContext, System.Activities.ExecutionProperties activityExecutionProperties)  
+      {  
+         try  
+         {  
+            Console.WriteLine("Received a message from a workflow with the following identity");  
+            Console.WriteLine("Windows Identity Name: {0}", operationContext.ServiceSecurityContext.WindowsIdentity.Name);  
+            Console.WriteLine("Windows Identity User: {0}", operationContext.ServiceSecurityContext.WindowsIdentity.User);  
+            Console.WriteLine("Windows Identity IsAuthenticated: {0}", operationContext.ServiceSecurityContext.WindowsIdentity.IsAuthenticated);  
+         }            
+         catch (Exception ex)  
+         {  
+            Console.WriteLine("An exception occurred: " + ex.Message);  
+         }  
+       }  
+   }  
+   ```  
   
-     This code uses the <xref:System.ServiceModel.OperationContext> passed into the method to access identity information.  
+    This code uses the <xref:System.ServiceModel.OperationContext> passed into the method to access identity information.  
   
 ### Implement a Native activity to add the IReceiveMessageCallback implementation to the NativeActivityContext  
   
-1.  Add a new class derived from <xref:System.Activities.NativeActivity> called `AccessIdentityScope`.  
+1. Add a new class derived from <xref:System.Activities.NativeActivity> called `AccessIdentityScope`.  
   
-2.  Add local variables to keep track of child activities, variables, current activity index, and a <xref:System.Activities.CompletionCallback> callback.  
+2. Add local variables to keep track of child activities, variables, current activity index, and a <xref:System.Activities.CompletionCallback> callback.  
   
-    ```  
-    public sealed class AccessIdentityScope : NativeActivity  
-    {  
-        Collection<Activity> children;  
-        Collection<Variable> variables;  
-        Variable<int> currentIndex;  
-        CompletionCallback onChildComplete;  
-    }  
-    ```  
+   ```  
+   public sealed class AccessIdentityScope : NativeActivity  
+   {  
+       Collection<Activity> children;  
+       Collection<Variable> variables;  
+       Variable<int> currentIndex;  
+       CompletionCallback onChildComplete;  
+   }  
+   ```  
   
-3.  Implement the constructor  
+3. Implement the constructor  
   
-    ```  
-    public AccessIdentityScope() : base()  
-    {  
-        this.children = new Collection<Activity>();  
-        this.variables = new Collection<Variable>();  
-        this.currentIndex = new Variable<int>();  
-    }  
-    ```  
+   ```  
+   public AccessIdentityScope() : base()  
+   {  
+       this.children = new Collection<Activity>();  
+       this.variables = new Collection<Variable>();  
+       this.currentIndex = new Variable<int>();  
+   }  
+   ```  
   
-4.  Implement the `Activities` and `Variables` properties.  
+4. Implement the `Activities` and `Variables` properties.  
   
-    ```  
-    public Collection<Activity> Activities  
-    {  
-         get { return this.children; }  
-    }  
+   ```  
+   public Collection<Activity> Activities  
+   {  
+        get { return this.children; }  
+   }  
   
-    public Collection<Variable> Variables  
-    {  
-        get { return this.variables; }  
-    }  
-    ```  
+   public Collection<Variable> Variables  
+   {  
+       get { return this.variables; }  
+   }  
+   ```  
   
-5.  Override <xref:System.Activities.NativeActivity.CacheMetadata%2A>  
+5. Override <xref:System.Activities.NativeActivity.CacheMetadata%2A>  
   
-    ```  
-    protected override void CacheMetadata(NativeActivityMetadata metadata)  
-    {  
-        //call base.CacheMetadata to add the Activities and Variables to this activity's metadata  
-        base.CacheMetadata(metadata);  
-        //add the private implementation variable: currentIndex   
-        metadata.AddImplementationVariable(this.currentIndex);  
-    }  
-    ```  
+   ```  
+   protected override void CacheMetadata(NativeActivityMetadata metadata)  
+   {  
+       //call base.CacheMetadata to add the Activities and Variables to this activity's metadata  
+       base.CacheMetadata(metadata);  
+       //add the private implementation variable: currentIndex   
+       metadata.AddImplementationVariable(this.currentIndex);  
+   }  
+   ```  
   
-6.  Override <xref:System.Activities.NativeActivity.Execute%2A>  
+6. Override <xref:System.Activities.NativeActivity.Execute%2A>  
   
-    ```  
-    protected override void Execute(NativeActivityContext context)  
-    {  
-       // Add the IReceiveMessageCallback implementation as an Execution property   
-       context.Properties.Add("AccessIdentityCallback", new AccessIdentityCallback());  
-       InternalExecute(context, null);  
-    }  
+   ```  
+   protected override void Execute(NativeActivityContext context)  
+   {  
+      // Add the IReceiveMessageCallback implementation as an Execution property   
+      context.Properties.Add("AccessIdentityCallback", new AccessIdentityCallback());  
+      InternalExecute(context, null);  
+   }  
   
-    void InternalExecute(NativeActivityContext context, ActivityInstance instance)  
-    {  
-       //grab the index of the current Activity  
-       int currentActivityIndex = this.currentIndex.Get(context);  
-       if (currentActivityIndex == Activities.Count)  
-       {  
-          //if the currentActivityIndex is equal to the count of MySequence's Activities  
-          //MySequence is complete  
-          return;  
-       }  
+   void InternalExecute(NativeActivityContext context, ActivityInstance instance)  
+   {  
+      //grab the index of the current Activity  
+      int currentActivityIndex = this.currentIndex.Get(context);  
+      if (currentActivityIndex == Activities.Count)  
+      {  
+         //if the currentActivityIndex is equal to the count of MySequence's Activities  
+         //MySequence is complete  
+         return;  
+      }  
   
-       if (this.onChildComplete == null)  
-       {  
-          //on completion of the current child, have the runtime call back on this method  
-          this.onChildComplete = new CompletionCallback(InternalExecute);  
-       }  
+      if (this.onChildComplete == null)  
+      {  
+         //on completion of the current child, have the runtime call back on this method  
+         this.onChildComplete = new CompletionCallback(InternalExecute);  
+      }  
   
-       //grab the next Activity in MySequence.Activities and schedule it  
-       Activity nextChild = Activities[currentActivityIndex];  
-       context.ScheduleActivity(nextChild, this.onChildComplete);  
+      //grab the next Activity in MySequence.Activities and schedule it  
+      Activity nextChild = Activities[currentActivityIndex];  
+      context.ScheduleActivity(nextChild, this.onChildComplete);  
   
-       //increment the currentIndex  
-       this.currentIndex.Set(context, ++currentActivityIndex);  
-    }  
-    ```  
+      //increment the currentIndex  
+      this.currentIndex.Set(context, ++currentActivityIndex);  
+   }  
+   ```  
   
 ### Implement the workflow service  
   
-1.  Open the existing `Program` class.  
+1. Open the existing `Program` class.  
   
-2.  Define the following constants:  
+2. Define the following constants:  
   
-    ```  
-    class Program  
-    {  
-       const string addr = "http://localhost:8080/Service";  
-       static XName contract = XName.Get("IService", "http://tempuri.org");  
+   ```  
+   class Program  
+   {  
+      const string addr = "http://localhost:8080/Service";  
+      static XName contract = XName.Get("IService", "http://tempuri.org");  
+   }  
+   ```  
+  
+3. Add a static method called `GetWorkflowService` that creates the workflow service.  
+  
+   ```  
+   static Activity GetServiceWorkflow()  
+   {  
+      Variable<string> echoString = new Variable<string>();  
+  
+      // Create the Receive activity  
+      Receive echoRequest = new Receive  
+      {  
+         CanCreateInstance = true,  
+         ServiceContractName = contract,  
+         OperationName = "Echo",  
+         Content = new ReceiveParametersContent()  
+         {  
+            Parameters = { { "echoString", new OutArgument<string>(echoString) } }  
+         }  
+      };  
+  
+      return new AccessIdentityScope  
+      {  
+         Variables = { echoString },  
+         Activities =  
+         {  
+            echoRequest,  
+            new WriteLine { Text = new InArgument<string>( (e) => "Received: " + echoString.Get(e) ) },  
+            new SendReply  
+            {  
+               Request = echoRequest,  
+               Content = new SendParametersContent()  
+               {  
+                  Parameters = { { "result", new InArgument<string>(echoString) } }   
+               }  
+            }  
+         }  
+      };  
     }  
-    ```  
+   ```  
   
-3.  Add a static method called `GetWorkflowService` that creates the workflow service.  
+4. In the existing `Main` method, host the workflow service.  
   
-    ```  
-    static Activity GetServiceWorkflow()  
-    {  
-       Variable<string> echoString = new Variable<string>();  
+   ```  
+   static void Main(string[] args)  
+   {  
+      string addr = "http://localhost:8080/Service";  
   
-       // Create the Receive activity  
-       Receive echoRequest = new Receive  
-       {  
-          CanCreateInstance = true,  
-          ServiceContractName = contract,  
-          OperationName = "Echo",  
-          Content = new ReceiveParametersContent()  
-          {  
-             Parameters = { { "echoString", new OutArgument<string>(echoString) } }  
-          }  
-       };  
+      using (WorkflowServiceHost host = new WorkflowServiceHost(GetServiceWorkflow()))  
+      {  
+         WSHttpBinding binding = new WSHttpBinding(SecurityMode.Message);  
+         host.AddServiceEndpoint(contract, binding, addr);  
   
-       return new AccessIdentityScope  
-       {  
-          Variables = { echoString },  
-          Activities =  
-          {  
-             echoRequest,  
-             new WriteLine { Text = new InArgument<string>( (e) => "Received: " + echoString.Get(e) ) },  
-             new SendReply  
-             {  
-                Request = echoRequest,  
-                Content = new SendParametersContent()  
-                {  
-                   Parameters = { { "result", new InArgument<string>(echoString) } }   
-                }  
-             }  
-          }  
-       };  
-     }  
-    ```  
-  
-4.  In the existing `Main` method, host the workflow service.  
-  
-    ```  
-    static void Main(string[] args)  
-    {  
-       string addr = "http://localhost:8080/Service";  
-  
-       using (WorkflowServiceHost host = new WorkflowServiceHost(GetServiceWorkflow()))  
-       {  
-          WSHttpBinding binding = new WSHttpBinding(SecurityMode.Message);  
-          host.AddServiceEndpoint(contract, binding, addr);  
-  
-          host.Open();  
-          Console.WriteLine("Service waiting at: " + addr);  
-          Console.WriteLine("Press [ENTER] to exit");  
-          Console.ReadLine();  
-          host.Close();  
-       }  
-    }  
-    ```  
+         host.Open();  
+         Console.WriteLine("Service waiting at: " + addr);  
+         Console.WriteLine("Press [ENTER] to exit");  
+         Console.ReadLine();  
+         host.Close();  
+      }  
+   }  
+   ```  
   
 ### Implement a workflow client  
   
-1.  Create a new console application project called `Client`.  
+1. Create a new console application project called `Client`.  
   
-2.  Add references to the following assemblies:  
+2. Add references to the following assemblies:  
   
-    1.  System.Activities  
+   1. System.Activities  
   
-    2.  System.ServiceModel  
+   2. System.ServiceModel  
   
-    3.  System.ServiceModel.Activities  
+   3. System.ServiceModel.Activities  
   
-3.  Open the generated Program.cs file and add a static method called `GetClientWorkflow` to create the client workflow.  
+3. Open the generated Program.cs file and add a static method called `GetClientWorkflow` to create the client workflow.  
   
-    ```  
-    static Activity GetClientWorkflow()  
-    {  
-       Variable<string> echoString = new Variable<string>();  
+   ```  
+   static Activity GetClientWorkflow()  
+   {  
+      Variable<string> echoString = new Variable<string>();  
   
-       Endpoint clientEndpoint = new Endpoint  
-       {  
-          Binding = new WSHttpBinding(SecurityMode.Message),  
-          AddressUri = new Uri("http://localhost:8080/Service")  
-       };  
+      Endpoint clientEndpoint = new Endpoint  
+      {  
+         Binding = new WSHttpBinding(SecurityMode.Message),  
+         AddressUri = new Uri("http://localhost:8080/Service")  
+      };  
   
-       Send echoRequest = new Send  
-       {  
-          Endpoint = clientEndpoint,  
-          ServiceContractName = XName.Get("IService", "http://tempuri.org"),  
-          OperationName = "Echo",  
-          Content = new SendParametersContent()  
-          {  
-             Parameters = { { "echoString", new InArgument<string>("Hello, World") } }   
-          }  
-       };  
+      Send echoRequest = new Send  
+      {  
+         Endpoint = clientEndpoint,  
+         ServiceContractName = XName.Get("IService", "http://tempuri.org"),  
+         OperationName = "Echo",  
+         Content = new SendParametersContent()  
+         {  
+            Parameters = { { "echoString", new InArgument<string>("Hello, World") } }   
+         }  
+      };  
   
-       return new Sequence  
-       {  
-          Variables = { echoString },  
-          Activities =  
-          {                      
-             new CorrelationScope  
-             {  
-                Body = new Sequence  
-                {  
-                   Activities =   
-                   {  
-                      echoRequest,  
-                      new ReceiveReply  
-                      {  
-                         Request = echoRequest,  
-                         Content = new ReceiveParametersContent  
-                         {  
-                            Parameters = { { "result", new OutArgument<string>(echoString) } }  
-                         }  
-                      }  
-                   }  
-                }  
-             },                      
-             new WriteLine { Text = new InArgument<string>( (e) => "Received Text: " + echoString.Get(e) ) },                      
-             }  
-          };  
-       }  
-    }  
-    ```  
+      return new Sequence  
+      {  
+         Variables = { echoString },  
+         Activities =  
+         {                      
+            new CorrelationScope  
+            {  
+               Body = new Sequence  
+               {  
+                  Activities =   
+                  {  
+                     echoRequest,  
+                     new ReceiveReply  
+                     {  
+                        Request = echoRequest,  
+                        Content = new ReceiveParametersContent  
+                        {  
+                           Parameters = { { "result", new OutArgument<string>(echoString) } }  
+                        }  
+                     }  
+                  }  
+               }  
+            },                      
+            new WriteLine { Text = new InArgument<string>( (e) => "Received Text: " + echoString.Get(e) ) },                      
+            }  
+         };  
+      }  
+   }  
+   ```  
   
-4.  Add the following hosting code to the `Main()` method.  
+4. Add the following hosting code to the `Main()` method.  
   
-    ```  
-    static void Main(string[] args)  
-    {  
-       Activity workflow = GetClientWorkflow();  
-       WorkflowInvoker.Invoke(workflow);  
-       WorkflowInvoker.Invoke(workflow);  
-       Console.WriteLine("Press [ENTER] to exit");  
-       Console.ReadLine();  
-    }  
-    ```  
+   ```  
+   static void Main(string[] args)  
+   {  
+      Activity workflow = GetClientWorkflow();  
+      WorkflowInvoker.Invoke(workflow);  
+      WorkflowInvoker.Invoke(workflow);  
+      Console.WriteLine("Press [ENTER] to exit");  
+      Console.ReadLine();  
+   }  
+   ```  
   
 ## Example  
  Here is a complete listing of the source code used in this topic.  

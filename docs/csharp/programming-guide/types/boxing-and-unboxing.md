@@ -57,9 +57,9 @@ Boxing Conversion
 ## Unboxing  
  Unboxing is an explicit conversion from the type `object` to a [value type](../../../csharp/language-reference/keywords/value-types.md) or from an interface type to a value type that implements the interface. An unboxing operation consists of:  
   
--   Checking the object instance to make sure that it is a boxed value of the given value type.  
+- Checking the object instance to make sure that it is a boxed value of the given value type.  
   
--   Copying the value from the instance into the value-type variable.  
+- Copying the value from the instance into the value-type variable.  
   
  The following statements demonstrate both boxing and unboxing operations:  
   
@@ -103,9 +103,9 @@ int j = (int) o;
 ## Related Sections  
  For more information:  
   
--   [Reference Types](../../../csharp/language-reference/keywords/reference-types.md)  
+- [Reference Types](../../../csharp/language-reference/keywords/reference-types.md)  
   
--   [Value Types](../../../csharp/language-reference/keywords/value-types.md)  
+- [Value Types](../../../csharp/language-reference/keywords/value-types.md)  
   
 ## See Also  
  [C# Programming Guide](../../../csharp/programming-guide/index.md)

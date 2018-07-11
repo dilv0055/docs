@@ -5,18 +5,19 @@ ms.assetid: 66ae93c8-00d3-4d6e-88ae-6da694285220
 ---
 # 3331 - SecurityNegotiationStop
 ## Properties  
-  
+
+
 |||  
 |-|-|  
 |ID|3331|  
 |Keywords|Security|  
 |Level|Verbose|  
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
-  
+
 ## Description  
  This event is emitted when the security negotiation completed.  
-  
+
 ## Message  
  Security negotiation completed.  
-  
+
 ## Details

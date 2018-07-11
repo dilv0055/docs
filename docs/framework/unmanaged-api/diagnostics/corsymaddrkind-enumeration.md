@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorSymAddrKind Enumeration
 Indicates the type of memory address.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorSymAddrKind  
 {  
@@ -37,9 +37,10 @@ typedef enum CorSymAddrKind
     ADDR_NATIVE_ISECTOFFSET = 10  
 } CorSymAddrKind;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`ADDR_IL_OFFSET`|Indicates a Microsoft intermediate language (MSIL) local variable or parameter index.|  
@@ -52,9 +53,9 @@ typedef enum CorSymAddrKind
 |`ADDR_NATIVE_STKREG`|Indicates that the first address is a register, the second is an offset, and the third is the high portion of the register.|  
 |`ADDR_BITFIELD`|Indicates that the first address is the start of a field and the second address is the field length.|  
 |`ADDR_NATIVE_ISECTOFFSET`|Indicates that the first address is the section and the second address is an offset.|  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [Diagnostics Symbol Store Enumerations](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)

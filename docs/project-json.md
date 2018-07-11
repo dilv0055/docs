@@ -10,7 +10,6 @@ ms.prod: .net
 ms.devlang: dotnet
 ms.assetid: e282c43b-593e-40a6-af91-de0babcd7b72
 ---
-
 # project.json and Visual Studio 2015 with .NET Core
 
 On March 7, 2017, the .NET Core and ASP.NET Core documentation was updated for the release of Visual Studio 2017. The previous version of the documentation used Visual Studio 2015 and pre-release tooling based on the *project.json* file.

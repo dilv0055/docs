@@ -4,7 +4,6 @@ description: This overview provides an understanding of the type you use to unde
 ms.date: 10/15/2017
 ms.custom: mvc
 ---
-
 # Work with semantics
 
 [Syntax trees](work-with-syntax.md) represent the lexical and syntactic structure of source code. Although this information alone is enough to describe all the declarations and logic in the source, it is not enough information to identify what is being referenced. A name

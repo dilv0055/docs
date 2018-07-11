@@ -31,7 +31,7 @@ response.Close()
 ## Compiling the Code  
  This example requires:  
   
--   References to the <xref:System.IO> and <xref:System.Net> namespaces.  
+- References to the <xref:System.IO> and <xref:System.Net> namespaces.  
   
 ## See Also  
  [Requesting Data](../../../docs/framework/network-programming/requesting-data.md)

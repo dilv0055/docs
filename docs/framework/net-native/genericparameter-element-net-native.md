@@ -7,9 +7,9 @@ ms.author: "ronpet"
 ---
 # &lt;GenericParameter&gt; Element (.NET Native)
 Applies policy to the parameter type of a generic type or method.  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <GenericParameter Name="generic_parameter_name"  
                   Activate="policy_type"  
@@ -23,12 +23,13 @@ Applies policy to the parameter type of a generic type or method.
                   MarshalDelegate="policy_type"  
                   MarshalStructure="policy_type"  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Attribute type|Description|  
 |---------------|--------------------|-----------------|  
 |`Name`|General|Required attribute. The name of the generic parameter. For example, for the generic delegate <xref:System.Func%603>, the value of the `Name` attribute is "TResult" to apply runtime policy to the delegate's return value.|  
@@ -42,34 +43,37 @@ Applies policy to the parameter type of a generic type or method.
 |`MarshalObject`|Interop|Optional attribute. Controls policy for marshaling reference types to Windows Runtime and COM.|  
 |`MarshalDelegate`|Interop|Optional attribute. Controls policy for marshaling delegate types as function pointers to native code.|  
 |`MarshalStructure`|Interop|Optional attribute. Controls policy for marshaling value types to native code.|  
-  
+
 ## Name attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |*generic_parameter_name*|Required attribute. The name of the generic type parameter. For example, for the generic delegate <xref:System.Func%603>, a *generic_parameter_name* value of "TResult" applies runtime policy to the delegate's return value.|  
-  
+
 ## All other attributes  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |*policy_setting*|The setting to apply to this policy type. Possible values are `All`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, and `Required All`. For more information, see [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<Method>](../../../docs/framework/net-native/method-element-net-native.md)|Applies runtime reflection policy to a constructor or method.|  
 |[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Applies runtime reflection policy to a particular type, such as a class or structure.|  
-  
+
 ## Remarks  
  The `<GenericParameter>` element is a child of either the [\<Method>](../../../docs/framework/net-native/method-element-net-native.md) or [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) element and is used to apply policy to a particular generic type parameter, which is specified by its name in the generic type or method signature.  
-  
+
  The `<GenericParameter>` element is most useful when used with serializers. The following example uses the `<GenericParameter>` element to apply policy to the type `T` in calls to the NewtonSoft JSON serializer's [JsonConvert.DeserializeObject\<T>(String)](http://james.newtonking.com/json/help/index.html?topic=html/T_Newtonsoft_Json_JsonConvert.htm) method overloads.  
-  
+
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
    <Type Name="Newtonsoft.Json.JsonConvert" >  
@@ -79,7 +83,7 @@ Applies policy to the parameter type of a generic type or method.
    </Type>  
 </Directives>  
 ```  
-  
+
 ## See Also  
  [\<Method> Element](../../../docs/framework/net-native/method-element-net-native.md)  
  [\<Type> Element](../../../docs/framework/net-native/type-element-net-native.md)  

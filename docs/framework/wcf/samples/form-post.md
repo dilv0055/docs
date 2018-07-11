@@ -8,9 +8,9 @@ This sample demonstrates how to extend the WCF REST programming model to support
   
 ## Demonstrates  
   
--   Extending support for incoming request formats.  
+- Extending support for incoming request formats.  
   
--   Integrating T4 templates.  
+- Integrating T4 templates.  
   
 ## Discussion  
  This sample consists of two projects. One project is the HtmlFormProcessing library that includes a custom request formatter that can deserialize HTML form posts into [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] types. The second project is a console application that extends the Basic Resource Service sample to use the custom request formatter of the HtmlFormProcessing library.  
@@ -25,27 +25,27 @@ This sample demonstrates how to extend the WCF REST programming model to support
   
 #### To run the sample  
   
-1.  Open the solution for the Form Post Sample. When launching [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], you must run as an administrator to execute the sample successfully. Do this by right-clicking the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] icon and choosing "Run as Administrator" from the context menu.  
+1. Open the solution for the Form Post Sample. When launching [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], you must run as an administrator to execute the sample successfully. Do this by right-clicking the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] icon and choosing "Run as Administrator" from the context menu.  
   
-2.  Press CTRL+SHIFT+B to build the solution and then press CTRL+F5 to run the console application FormPost project.  
+2. Press CTRL+SHIFT+B to build the solution and then press CTRL+F5 to run the console application FormPost project.  
   
-3.  The console window appears and provides the URI of the running service and the URI of the HTML help page for the running service.  
+3. The console window appears and provides the URI of the running service and the URI of the HTML help page for the running service.  
   
-4.  As the sample runs, the client writes the status of the current activity, whether it be adding a customer, updating a customer, deleting a customer or getting a list of current customers from the service to the console window.  
+4. As the sample runs, the client writes the status of the current activity, whether it be adding a customer, updating a customer, deleting a customer or getting a list of current customers from the service to the console window.  
   
-5.  You are then prompted to browse to the URI of the customer form. Open a browser and browse to the given URI. Type in a name and address for the customer and click the **Submit** button.  
+5. You are then prompted to browse to the URI of the customer form. Open a browser and browse to the given URI. Type in a name and address for the customer and click the **Submit** button.  
   
-6.  Press any key for the console window to continue running the sample.  
+6. Press any key for the console window to continue running the sample.  
   
-7.  As the sample completes, notice that the customer you created using the browser is included in the final list of customers.  
+7. As the sample completes, notice that the customer you created using the browser is included in the final list of customers.  
   
-8.  Press any key to terminate the sample.  
+8. Press any key to terminate the sample.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Web\FormPost`

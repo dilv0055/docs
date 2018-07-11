@@ -10,9 +10,10 @@ ms.author: "mairaw"
 ---
 # Common I/O Tasks
 The <xref:System.IO> namespace provides several classes that allow for various actions, such as reading and writing, to be performed on files, directories, and streams. For more information, see [File and Stream I/O](../../../docs/standard/io/index.md).  
-  
+
 ## Common File Tasks  
-  
+
+
 |To do this...|See the example in this topic...|  
 |-------------------|--------------------------------------|  
 |Create a text file|<xref:System.IO.File.CreateText%2A?displayProperty=nameWithType> method<br /><br /> <xref:System.IO.FileInfo.CreateText%2A?displayProperty=nameWithType> method<br /><br /> <xref:System.IO.File.Create%2A?displayProperty=nameWithType> method<br /><br /> <xref:System.IO.FileInfo.Create%2A?displayProperty=nameWithType> method|  
@@ -32,9 +33,10 @@ The <xref:System.IO> namespace provides several classes that allow for various a
 |Retrieve the fully qualified path of a file|<xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> method|  
 |Retrieve the file name and extension from a path|<xref:System.IO.Path.GetFileName%2A?displayProperty=nameWithType> method|  
 |Change the extension of a file|<xref:System.IO.Path.ChangeExtension%2A?displayProperty=nameWithType> method|  
-  
+
 ## Common Directory Tasks  
-  
+
+
 |To do this...|See the example in this topic...|  
 |-------------------|--------------------------------------|  
 |Access a file in a special folder such as My Documents|[How to: Write Text to a File](../../../docs/standard/io/how-to-write-text-to-a-file.md)|  
@@ -46,7 +48,7 @@ The <xref:System.IO> namespace provides several classes that allow for various a
 |See the files and subdirectories in a directory|[How to: Enumerate Directories and Files](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)|  
 |Find the size of a directory|<xref:System.IO.Directory?displayProperty=nameWithType> class|  
 |Determine whether a directory exists|<xref:System.IO.Directory.Exists%2A?displayProperty=nameWithType> method|  
-  
+
 ## See Also  
  [File and Stream I/O](../../../docs/standard/io/index.md)  
  [Composing Streams](../../../docs/standard/io/composing-streams.md)  

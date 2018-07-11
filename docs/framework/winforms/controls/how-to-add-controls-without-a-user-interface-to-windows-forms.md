@@ -23,11 +23,11 @@ A nonvisual control (or component) provides functionality to your application. U
   
 ### To add a component to a Windows Form  
   
-1.  Open the form. For details, see [How to: Display Windows Forms in the Designer](http://msdn.microsoft.com/library/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5).  
+1. Open the form. For details, see [How to: Display Windows Forms in the Designer](http://msdn.microsoft.com/library/bf3f1e5b-ea07-4529-85c6-6af3ded0cec5).  
   
-2.  In the **Toolbox**, click a component and drag it to your form.  
+2. In the **Toolbox**, click a component and drag it to your form.  
   
-     Your component appears in the component tray.  
+    Your component appears in the component tray.  
   
  Furthermore, components can be added to a form at run time. This is a common scenario, especially because components do not have a visual expression, unlike controls that have a user interface. In the example below, a <xref:System.Windows.Forms.Timer> component is added at run time. (Note that Visual Studio contains a number of different timers; in this case, use a Windows Forms <xref:System.Windows.Forms.Timer> component. For more information about the different timers in Visual Studio, see [Introduction to Server-Based Timers](http://msdn.microsoft.com/library/adc0bc0a-a519-4812-bafc-fb9d1a5801fc).)  
   
@@ -36,42 +36,42 @@ A nonvisual control (or component) provides functionality to your application. U
   
 #### To add a component to a Windows Form programmatically  
   
-1.  Create an instance of the <xref:System.Windows.Forms.Timer> class in code.  
+1. Create an instance of the <xref:System.Windows.Forms.Timer> class in code.  
   
-2.  Set the `Interval` property to determine the time between ticks of the timer.  
+2. Set the `Interval` property to determine the time between ticks of the timer.  
   
-3.  Configure any other necessary properties for your component.  
+3. Configure any other necessary properties for your component.  
   
-     The following code shows the creation of a <xref:System.Windows.Forms.Timer> with its `Interval` property set.  
+    The following code shows the creation of a <xref:System.Windows.Forms.Timer> with its `Interval` property set.  
   
-    ```vb  
-    Public Sub CreateTimer()  
-       Dim timerKeepTrack As New System.Windows.Forms.Timer  
-       timerKeepTrack.Interval = 1000  
-    End Sub  
-    ```  
+   ```vb  
+   Public Sub CreateTimer()  
+      Dim timerKeepTrack As New System.Windows.Forms.Timer  
+      timerKeepTrack.Interval = 1000  
+   End Sub  
+   ```  
   
-    ```csharp  
-    public void createTimer()  
-    {  
-       System.Windows.Forms.Timer timerKeepTrack = new  
-           System.Windows.Forms.Timer();  
-       timerKeepTrack.Interval = 1000;  
-    }  
-    ```  
+   ```csharp  
+   public void createTimer()  
+   {  
+      System.Windows.Forms.Timer timerKeepTrack = new  
+          System.Windows.Forms.Timer();  
+      timerKeepTrack.Interval = 1000;  
+   }  
+   ```  
   
-    ```cpp  
-    public:  
-       void createTimer()  
-       {  
-          System::Windows::Forms::Timer^ timerKeepTrack = gcnew  
-             System::Windows::Forms::Timer();  
-          timerKeepTrack->Interval = 1000;  
-       }  
-    ```  
+   ```cpp  
+   public:  
+      void createTimer()  
+      {  
+         System::Windows::Forms::Timer^ timerKeepTrack = gcnew  
+            System::Windows::Forms::Timer();  
+         timerKeepTrack->Interval = 1000;  
+      }  
+   ```  
   
-    > [!IMPORTANT]
-    >  You might expose your local computer to a security risk through the network by referencing a malicious UserControl. This would only be a concern in the case of a malicious person creating a damaging custom control, followed by you mistakenly adding it to your project.  
+   > [!IMPORTANT]
+   >  You might expose your local computer to a security risk through the network by referencing a malicious UserControl. This would only be a concern in the case of a malicious person creating a damaging custom control, followed by you mistakenly adding it to your project.  
   
 ## See Also  
  [Windows Forms Controls](../../../../docs/framework/winforms/controls/index.md)  

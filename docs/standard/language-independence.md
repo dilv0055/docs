@@ -23,36 +23,36 @@ In this article:
 
 * [CLS compliance rules](#cls-compliance-rules)
 
-    * [Types and type member signatures](#types-and-type-member-signatures)
+  * [Types and type member signatures](#types-and-type-member-signatures)
 
-    * [Naming conventions](#naming-conventions)
-    
-    * [Type conversion](#type-conversion)
-    
-    * [Arrays](#arrays)
-    
-    * [Interfaces](#interfaces)
-    
-    * [Enumerations](#enumerations)
-    
-    * [Type members in general](#type-members-in-general)
-    
-    * [Member accessibility](#member-accessibility)
-    
-    * [Generic types and members](#generic-types-and-members)
-    
-    * [Constructors](#constructors)
-    
-    * [Properties](#properties)
-    
-    * [Events](#events)
-    
-    * [Overloads](#overloads)
-    
-    * [Exceptions](#exceptions)
-    
-    * [Attributes](#attributes)
-    
+  * [Naming conventions](#naming-conventions)
+
+  * [Type conversion](#type-conversion)
+
+  * [Arrays](#arrays)
+
+  * [Interfaces](#interfaces)
+
+  * [Enumerations](#enumerations)
+
+  * [Type members in general](#type-members-in-general)
+
+  * [Member accessibility](#member-accessibility)
+
+  * [Generic types and members](#generic-types-and-members)
+
+  * [Constructors](#constructors)
+
+  * [Properties](#properties)
+
+  * [Events](#events)
+
+  * [Overloads](#overloads)
+
+  * [Exceptions](#exceptions)
+
+  * [Attributes](#attributes)
+
 * [CLSCompliantAttribute attribute](#the-clscompliantattribute-attribute)
 
 * [Cross-Language Interoperability](#cross-language-interoperability)
@@ -145,6 +145,7 @@ A library's public interface consists of the following:
 * Parameters and return types of public methods of public classes, and parameters and return types of methods accessible to derived classes. 
 
 The rules for CLS compliance are listed in the following table. The text of the rules is taken verbatim from the [ECMA-335 Standard: Common Language Infrastructure](https://www.ecma-international.org/publications/standards/Ecma-335.htm), which is Copyright 2012 by Ecma International. More detailed information about these rules is found in the following sections. 
+
 
 Category | See | Rule | Rule Number
 -------- | --- | ---- | -----------
@@ -310,6 +311,7 @@ All types that appear in member signatures, including a method's return type or 
 The .NET [common type system](common-type-system.md) includes a number of built-in types that are supported directly by the common language runtime and are specially encoded in an assembly's metadata. Of these intrinsic types, the types listed in the following table are CLS-compliant. 
 
 
+
 CLS-compliant type | Description
 ------------------ | -----------
 [Byte](xref:System.Byte) | 8-bit unsigned integer 
@@ -323,8 +325,9 @@ CLS-compliant type | Description
 [Decimal](xref:System.Decimal) | Non-floating-point decimal number
 [IntPtr](xref:System.IntPtr) | Pointer or handle of a platform-defined size
 [String](xref:System.String) | Collection of zero, one, or more Char objects 
- 
+
 The intrinsic types listed in the following table are not CLS-Compliant.
+
 
 
 Non-compliant type | Description | CLS-compliant alternative
@@ -334,10 +337,10 @@ Non-compliant type | Description | CLS-compliant alternative
 [UInt32](xref:System.UInt32) | 32-bit unsigned integer | [Int64](xref:System.Int64)
 [UInt64](xref:System.UInt64) | 64-bit unsigned integer | [Int64](xref:System.Int64) (may overflow), [BigInteger](xref:System.Numerics.BigInteger), or [Double](xref:System.Double)
 [UIntPtr](xref:System.UIntPtr) | Unsigned pointer or handle | [IntPtr](xref:System.IntPtr)
- 
+
  The .NET Framework Class Library or any other class library may include other types that aren't CLS-compliant; for example: 
- 
- * Boxed value types. The following C# example creates a class that has a public property of type `int`* named `Value`. Because an `int`* is a boxed value type, the compiler flags it as non-CLS-compliant.
+
+* Boxed value types. The following C# example creates a class that has a public property of type `int`* named `Value`. Because an `int`* is a boxed value type, the compiler flags it as non-CLS-compliant.
 
   ```csharp
   using System;
@@ -1302,11 +1305,11 @@ CLS-compliant enumerations must follow these rules:
 * An enumeration includes literal static fields whose types match the type of the enumeration itself. For example, if you define a `State` enumeration with values of `State.On` and `State.Off`, `State.On` and `State.Off` are both literal static fields whose type is `State`. 
 
 * There are two kinds of enumerations: 
-    
-    * An enumeration that represents a set of mutually exclusive, named integer values. This type of enumeration is indicated by the absence of the [System.FlagsAttribute](xref:System.FlagsAttribute) custom attribute.
-    
-    * An enumeration that represents a set of bit flags that can combine to generate an unnamed value. This type of enumeration is indicated by the presence of the [System.FlagsAttribute](xref:System.FlagsAttribute) custom attribute.
-    
+
+  * An enumeration that represents a set of mutually exclusive, named integer values. This type of enumeration is indicated by the absence of the [System.FlagsAttribute](xref:System.FlagsAttribute) custom attribute.
+
+  * An enumeration that represents a set of bit flags that can combine to generate an unnamed value. This type of enumeration is indicated by the presence of the [System.FlagsAttribute](xref:System.FlagsAttribute) custom attribute.
+
  For more information, see the documentation for the [Enum](xref:System.Enum) structure. 
 
 * The value of an enumeration is not limited to the range of its specified values. In other words, the range of values in an enumeration is the range of its underlying value. You can use the `Enum.IsDefined` method to determine whether a specified value is a member of an enumeration. 
@@ -2045,7 +2048,7 @@ Constructors in CLS-compliant classes and structures must follow these rules:
     '       Public Sub New()
     '                  ~~~
     ````
-    
+
 * An object constructor cannot be called except to create an object. In addition, an object cannot be initialized twice. For example, this means that `Object.MemberwiseClone` must not call constructors.  
 
 ### Properties
@@ -2347,7 +2350,7 @@ The Common Language Specification imposes the following requirements on overload
 * Generic methods can be overloaded based on the number of their generic parameters. 
 
 > [!NOTE]
->The `op_Explicit` and `op_Implicit` operators are exceptions to the rule that return value is not considered part of a method signature for overload resolution. These two operators can be overloaded based on both their parameters and their return value. 
+> The `op_Explicit` and `op_Implicit` operators are exceptions to the rule that return value is not considered part of a method signature for overload resolution. These two operators can be overloaded based on both their parameters and their return value. 
 
 ### Exceptions
 

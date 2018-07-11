@@ -19,28 +19,28 @@ ms.author: "ronpet"
 ---
 # CorDebugRegister Enumeration
 Specifies the registers associated with a given processor architecture.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugRegister {  
-  
+
     REGISTER_INSTRUCTION_POINTER = 0,  
     REGISTER_STACK_POINTER,  
     REGISTER_FRAME_POINTER,  
-  
+
     REGISTER_X86_EIP = 0,  
     REGISTER_X86_ESP,  
     REGISTER_X86_EBP,  
-  
+
     REGISTER_X86_EAX,  
     REGISTER_X86_ECX,  
     REGISTER_X86_EDX,  
     REGISTER_X86_EBX,  
-  
+
     REGISTER_X86_ESI,  
     REGISTER_X86_EDI,  
-  
+
     REGISTER_X86_FPSTACK_0,  
     REGISTER_X86_FPSTACK_1,  
     REGISTER_X86_FPSTACK_2,  
@@ -49,7 +49,7 @@ typedef enum CorDebugRegister {
     REGISTER_X86_FPSTACK_5,  
     REGISTER_X86_FPSTACK_6,  
     REGISTER_X86_FPSTACK_7,  
-  
+
     REGISTER_AMD64_RIP = 0,  
     REGISTER_AMD64_RSP,  
     REGISTER_AMD64_RBP,  
@@ -67,7 +67,7 @@ typedef enum CorDebugRegister {
     REGISTER_AMD64_R13,  
     REGISTER_AMD64_R14,  
     REGISTER_AMD64_R15,  
-  
+
     REGISTER_AMD64_XMM0,  
     REGISTER_AMD64_XMM1,  
     REGISTER_AMD64_XMM2,  
@@ -84,7 +84,7 @@ typedef enum CorDebugRegister {
     REGISTER_AMD64_XMM13,  
     REGISTER_AMD64_XMM14,  
     REGISTER_AMD64_XMM15,  
-  
+
     REGISTER_IA64_BSP = REGISTER_FRAME_POINTER,  
     REGISTER_IA64_R0  = REGISTER_IA64_BSP + 1,  
     REGISTER_IA64_F0  = REGISTER_IA64_R0  + 128,  
@@ -104,12 +104,13 @@ typedef enum CorDebugRegister {
     REGISTER_ARM_R11,  
     REGISTER_ARM_R12,  
     REGISTER_ARM_LR,  
-  
+
 } CorDebugRegister;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`REGISTER_INSTRUCTION_POINTER`|An instruction pointer register on any processor.|  
@@ -184,24 +185,24 @@ typedef enum CorDebugRegister {
 |`REGISTER_ARM_R11`|The frame pointer on the ARM processor.|  
 |`REGISTER_ARM_R12`|Register R12 on the ARM processor.|  
 |`REGISTER_ARM_LR`|The link register (R14) on the ARM processor.|  
-  
+
 ## Remarks  
  There are 128 general-purpose data registers and 128 floating-point data registers on the IA-64 processor, but only values `REGISTER_IA64_R0` and `REGISTER_IA64_F0` are provided. The other values can be determined as follows:  
-  
--   Add the register number to `REGISTER_IA64_R0` for values `REGISTER_IA64_R1` through `REGISTER_IA64_R127`, which correspond to the #1 data register through the #127 data register on the IA-64 processor.  
-  
--   Add the register number to `REGISTER_IA64_F0` for values `REGISTER_IA64_F1` through `REGISTER_IA64_F127`, which correspond to the #1 FP data register through the #127 FP data register on the IA-64 processor.  
-  
+
+- Add the register number to `REGISTER_IA64_R0` for values `REGISTER_IA64_R1` through `REGISTER_IA64_R127`, which correspond to the #1 data register through the #127 data register on the IA-64 processor.  
+
+- Add the register number to `REGISTER_IA64_F0` for values `REGISTER_IA64_F1` through `REGISTER_IA64_F127`, which correspond to the #1 FP data register through the #127 FP data register on the IA-64 processor.  
+
  For example, if you need to specify the #83 data register on the IA-64 processor, use `REGISTER_IA64_R0` + 83.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

@@ -17,38 +17,38 @@ You can declare generic type parameters in interfaces as covariant or contravari
   
  You can declare a generic type parameter covariant by using the `out` keyword. The covariant type must satisfy the following conditions:  
   
--   The type is used only as a return type of interface methods and not used as a type of method arguments. This is illustrated in the following example, in which the type `R` is declared covariant.  
+- The type is used only as a return type of interface methods and not used as a type of method arguments. This is illustrated in the following example, in which the type `R` is declared covariant.  
   
-    ```csharp  
-    interface ICovariant<out R>  
-    {  
-        R GetSomething();  
-        // The following statement generates a compiler error.  
-        // void SetSometing(R sampleArg);  
+  ```csharp  
+  interface ICovariant<out R>  
+  {  
+      R GetSomething();  
+      // The following statement generates a compiler error.  
+      // void SetSometing(R sampleArg);  
   
-    }  
-    ```  
+  }  
+  ```  
   
-     There is one exception to this rule. If you have a contravariant generic delegate as a method parameter, you can use the type as a generic type parameter for the delegate. This is illustrated by the type `R` in the following example. For more information, see [Variance in Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
+   There is one exception to this rule. If you have a contravariant generic delegate as a method parameter, you can use the type as a generic type parameter for the delegate. This is illustrated by the type `R` in the following example. For more information, see [Variance in Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   
-    ```csharp  
-    interface ICovariant<out R>  
-    {  
-        void DoSomething(Action<R> callback);  
-    }  
-    ```  
+  ```csharp  
+  interface ICovariant<out R>  
+  {  
+      void DoSomething(Action<R> callback);  
+  }  
+  ```  
   
--   The type is not used as a generic constraint for the interface methods. This is illustrated in the following code.  
+- The type is not used as a generic constraint for the interface methods. This is illustrated in the following code.  
   
-    ```csharp  
-    interface ICovariant<out R>  
-    {  
-        // The following statement generates a compiler error  
-        // because you can use only contravariant or invariant types  
-        // in generic contstraints.  
-        // void DoSomething<T>() where T : R;  
-    }  
-    ```  
+  ```csharp  
+  interface ICovariant<out R>  
+  {  
+      // The following statement generates a compiler error  
+      // because you can use only contravariant or invariant types  
+      // in generic contstraints.  
+      // void DoSomething<T>() where T : R;  
+  }  
+  ```  
   
  You can declare a generic type parameter contravariant by using the `in` keyword. The contravariant type can be used only as a type of method arguments and not as a return type of interface methods. The contravariant type can also be used for generic constraints. The following code shows how to declare a contravariant interface and use a generic constraint for one of its methods.  
   

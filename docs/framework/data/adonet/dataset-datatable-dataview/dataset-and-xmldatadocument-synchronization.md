@@ -13,71 +13,71 @@ The ADO.NET <xref:System.Data.DataSet> provides you with a relational representa
   
  There are several ways that you can synchronize a **DataSet** with an **XmlDataDocument**. You can:  
   
--   Populate a **DataSet** with schema (that is, a relational structure) and data and then synchronize it with a new **XmlDataDocument**. This provides a hierarchical view of existing relational data. For example:  
+- Populate a **DataSet** with schema (that is, a relational structure) and data and then synchronize it with a new **XmlDataDocument**. This provides a hierarchical view of existing relational data. For example:  
   
-    ```vb  
-    Dim dataSet As DataSet = New DataSet  
+  ```vb  
+  Dim dataSet As DataSet = New DataSet  
   
-    ' Add code here to populate the DataSet with schema and data.  
+  ' Add code here to populate the DataSet with schema and data.  
   
-    Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)  
-    ```  
+  Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)  
+  ```  
   
-    ```csharp  
-    DataSet dataSet = new DataSet();  
+  ```csharp  
+  DataSet dataSet = new DataSet();  
   
-    // Add code here to populate the DataSet with schema and data.  
+  // Add code here to populate the DataSet with schema and data.  
   
-    XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);  
-    ```  
+  XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);  
+  ```  
   
--   Populate a **DataSet** with schema only (such as a strongly typed **DataSet**), synchronize it with an **XmlDataDocument**, and then load the **XmlDataDocument** from an XML document. This provides a relational view of existing hierarchical data. The table names and column names in your **DataSet** schema must match the names of the XML elements that you want them synchronized with. This matching is case-sensitive.  
+- Populate a **DataSet** with schema only (such as a strongly typed **DataSet**), synchronize it with an **XmlDataDocument**, and then load the **XmlDataDocument** from an XML document. This provides a relational view of existing hierarchical data. The table names and column names in your **DataSet** schema must match the names of the XML elements that you want them synchronized with. This matching is case-sensitive.  
   
-     Note that the schema of the **DataSet** only needs to match the XML elements that you want to expose in your relational view. This way, you can have a very large XML document and a very small relational "window" on that document. The **XmlDataDocument** preserves the entire XML document even though the **DataSet** only exposes a small portion of it. (For a detailed example of this, see [Synchronizing a DataSet with an XmlDataDocument](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md).)  
+   Note that the schema of the **DataSet** only needs to match the XML elements that you want to expose in your relational view. This way, you can have a very large XML document and a very small relational "window" on that document. The **XmlDataDocument** preserves the entire XML document even though the **DataSet** only exposes a small portion of it. (For a detailed example of this, see [Synchronizing a DataSet with an XmlDataDocument](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/synchronizing-a-dataset-with-an-xmldatadocument.md).)  
   
-     The following code example shows the steps for creating a **DataSet** and populating its schema, then synchronizing it with an **XmlDataDocument**. Note that the **DataSet** schema only needs to match the elements from the **XmlDataDocument** that you want to expose using the **DataSet**.  
+   The following code example shows the steps for creating a **DataSet** and populating its schema, then synchronizing it with an **XmlDataDocument**. Note that the **DataSet** schema only needs to match the elements from the **XmlDataDocument** that you want to expose using the **DataSet**.  
   
-    ```vb  
-    Dim dataSet As DataSet = New DataSet  
+  ```vb  
+  Dim dataSet As DataSet = New DataSet  
   
-    ' Add code here to populate the DataSet with schema, but not data.  
+  ' Add code here to populate the DataSet with schema, but not data.  
   
-    Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)  
-    xmlDoc.Load("XMLDocument.xml")  
-    ```  
+  Dim xmlDoc As XmlDataDocument = New XmlDataDocument(dataSet)  
+  xmlDoc.Load("XMLDocument.xml")  
+  ```  
   
-    ```csharp  
-    DataSet dataSet = new DataSet();  
+  ```csharp  
+  DataSet dataSet = new DataSet();  
   
-    // Add code here to populate the DataSet with schema, but not data.  
+  // Add code here to populate the DataSet with schema, but not data.  
   
-    XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);  
-    xmlDoc.Load("XMLDocument.xml");  
-    ```  
+  XmlDataDocument xmlDoc = new XmlDataDocument(dataSet);  
+  xmlDoc.Load("XMLDocument.xml");  
+  ```  
   
-     You cannot load an **XmlDataDocument** if it is synchronized with a **DataSet** that contains data. An exception will be thrown.  
+   You cannot load an **XmlDataDocument** if it is synchronized with a **DataSet** that contains data. An exception will be thrown.  
   
--   Create a new **XmlDataDocument** and load it from an XML document, and then access the relational view of the data using the **DataSet** property of the **XmlDataDocument**. You need to set the schema of the **DataSet** before you can view any of the data in the **XmlDataDocument** using the **DataSet**. Again, the table names and column names in your **DataSet** schema must match the names of the XML elements that you want them synchronized with. This matching is case-sensitive.  
+- Create a new **XmlDataDocument** and load it from an XML document, and then access the relational view of the data using the **DataSet** property of the **XmlDataDocument**. You need to set the schema of the **DataSet** before you can view any of the data in the **XmlDataDocument** using the **DataSet**. Again, the table names and column names in your **DataSet** schema must match the names of the XML elements that you want them synchronized with. This matching is case-sensitive.  
   
-     The following code example shows how to access the relational view of the data in an **XmlDataDocument**.  
+   The following code example shows how to access the relational view of the data in an **XmlDataDocument**.  
   
-    ```vb  
-    Dim xmlDoc As XmlDataDocument = New XmlDataDocument  
-    Dim dataSet As DataSet = xmlDoc.DataSet  
+  ```vb  
+  Dim xmlDoc As XmlDataDocument = New XmlDataDocument  
+  Dim dataSet As DataSet = xmlDoc.DataSet  
   
-    ' Add code here to create the schema of the DataSet to view the data.  
+  ' Add code here to create the schema of the DataSet to view the data.  
   
-    xmlDoc.Load("XMLDocument.xml")  
-    ```  
+  xmlDoc.Load("XMLDocument.xml")  
+  ```  
   
-    ```csharp  
-    XmlDataDocument xmlDoc = new XmlDataDocument();  
-    DataSet dataSet = xmlDoc.DataSet;  
+  ```csharp  
+  XmlDataDocument xmlDoc = new XmlDataDocument();  
+  DataSet dataSet = xmlDoc.DataSet;  
   
-    // Add code here to create the schema of the DataSet to view the data.  
+  // Add code here to create the schema of the DataSet to view the data.  
   
-    xmlDoc.Load("XMLDocument.xml");  
-    ```  
+  xmlDoc.Load("XMLDocument.xml");  
+  ```  
   
  Another advantage of synchronizing an **XmlDataDocument** with a **DataSet** is that the fidelity of an XML document is preserved. If the **DataSet** is populated from an XML document using **ReadXml**, when the data is written back as an XML document using **WriteXml** it may differ dramatically from the original XML document. This is because the **DataSet** does not maintain formatting, such as white space, or hierarchical information, such as element order, from the XML document. The **DataSet** also does not contain elements from the XML document that were ignored because they did not match the schema of the **Dataset**. Synchronizing an **XmlDataDocument** with a **DataSet** allows the formatting and hierarchical element structure of the original XML document to be maintained in the **XmlDataDocument**, while the **DataSet** contains only data and schema information appropriate to the **DataSet**.  
   

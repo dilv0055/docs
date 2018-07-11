@@ -12,49 +12,49 @@ The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component enables
   
 ### To print a form to the default printer  
   
-1.  In the **Toolbox**, click the **Visual Basic PowerPacks** tab and then drag the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component onto the form.  
+1. In the **Toolbox**, click the **Visual Basic PowerPacks** tab and then drag the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component onto the form.  
   
-     The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component is added to the component tray.  
+    The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component is added to the component tray.  
   
-2.  In the **Properties** window, set the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property to <xref:System.Drawing.Printing.PrintAction.PrintToPrinter>.  
+2. In the **Properties** window, set the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property to <xref:System.Drawing.Printing.PrintAction.PrintToPrinter>.  
   
-3.  Add the following code in the appropriate event handler (for example, in the `Click` event handler for a **Print**`Button`).  
+3. Add the following code in the appropriate event handler (for example, in the `Click` event handler for a **Print**`Button`).  
   
-    ```  
-    PrintForm1.Print()  
-    ```  
+   ```  
+   PrintForm1.Print()  
+   ```  
   
 ### To display a form in a print preview window  
   
-1.  In the **Toolbox**, click the **Visual Basic PowerPacks** tab and then drag the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component onto the form.  
+1. In the **Toolbox**, click the **Visual Basic PowerPacks** tab and then drag the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component onto the form.  
   
-     The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component is added to the component tray.  
+    The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component is added to the component tray.  
   
-2.  In the **Properties** window, set the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property to <xref:System.Drawing.Printing.PrintAction.PrintToPreview>.  
+2. In the **Properties** window, set the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property to <xref:System.Drawing.Printing.PrintAction.PrintToPreview>.  
   
-3.  Add the following code in the appropriate event handler (for example, in the `Click` event handler for a **Print**`Button`).  
+3. Add the following code in the appropriate event handler (for example, in the `Click` event handler for a **Print**`Button`).  
   
-    ```  
-    PrintForm1.Print()  
-    ```  
+   ```  
+   PrintForm1.Print()  
+   ```  
   
 ### To print a form to a file  
   
-1.  In the **Toolbox**, click the **Visual Basic PowerPacks** tab and then drag the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component onto the form.  
+1. In the **Toolbox**, click the **Visual Basic PowerPacks** tab and then drag the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component onto the form.  
   
-     The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component is added to the component tray.  
+    The <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> component is added to the component tray.  
   
-2.  In the **Properties** window, set the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property to <xref:System.Drawing.Printing.PrintAction.PrintToFile>.  
+2. In the **Properties** window, set the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A> property to <xref:System.Drawing.Printing.PrintAction.PrintToFile>.  
   
-3.  Optionally, select the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintFileName%2A> property and type the full path and file name for the destination file.  
+3. Optionally, select the <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintFileName%2A> property and type the full path and file name for the destination file.  
   
-     If you skip this step, the user will be prompted for a file name at run time.  
+    If you skip this step, the user will be prompted for a file name at run time.  
   
-4.  Add the following code in the appropriate event handler (for example, in the `Click` event handler for a **Print**`Button`).  
+4. Add the following code in the appropriate event handler (for example, in the `Click` event handler for a **Print**`Button`).  
   
-    ```  
-    PrintForm1.Print()  
-    ```  
+   ```  
+   PrintForm1.Print()  
+   ```  
   
 ## See Also  
  <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintAction%2A>  

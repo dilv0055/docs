@@ -7,34 +7,35 @@ manager: "mbaldwin"
 ---
 # PeerTransportSecuritySettings
 PeerTransportSecuritySettings  
-  
+
 ## Syntax  
-  
+
 ```  
 class PeerTransportSecuritySettings  
 {  
   string CredentialType;  
 };  
 ```  
-  
+
 ## Methods  
  The PeerTransportSecuritySettings class does not define any methods.  
-  
+
 ## Properties  
  The PeerTransportSecuritySettings class has the following property:  
-  
+
 ### CredentialType  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  The transport credential type of the peer security element.  
-  
+
 ## Requirements  
-  
+
+
 |MOF|Declared in Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Namespace|Defined in root\ServiceModel|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.PeerTransportSecuritySettings>

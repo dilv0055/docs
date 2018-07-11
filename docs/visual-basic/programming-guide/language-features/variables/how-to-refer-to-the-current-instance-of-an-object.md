@@ -16,14 +16,14 @@ The *current instance* of an object is the instance in which the code is current
   
 ### To refer to the current instance  
   
--   Use the `Me` keyword where you would normally use the name of an object variable.  
+- Use the `Me` keyword where you would normally use the name of an object variable.  
   
-    ```  
-    Me.ForeColor = System.Drawing.Color.Crimson  
-    Me.Close()  
-    ```  
+  ```  
+  Me.ForeColor = System.Drawing.Color.Crimson  
+  Me.Close()  
+  ```  
   
-     Although `Me` behaves like an object variable, you cannot declare it or assign anything to it. `Me` always refers to the current instance.  
+   Although `Me` behaves like an object variable, you cannot declare it or assign anything to it. `Me` always refers to the current instance.  
   
 ## See Also  
  [Object Variables](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)  

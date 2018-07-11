@@ -24,9 +24,9 @@ When you bind Windows Forms controls to a data source and the data source return
 ## Compiling the Code  
  This example requires:  
   
--   References to the System, System.Data, System.Drawing and System.Windows.Forms assemblies.  
+- References to the System, System.Data, System.Drawing and System.Windows.Forms assemblies.  
   
- For information about building this example from the command line for Visual Basic or Visual C#, see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). You can also build this example in Visual Studio by pasting the code into a new project.  Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ For information about building this example from the command line for Visual Basic or Visual C#, see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). You can also build this example in Visual Studio by pasting the code into a new project.  Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228(v=vs.110)).  
   
 ## See Also  
  [BindingSource Component](../../../../docs/framework/winforms/controls/bindingsource-component.md)  

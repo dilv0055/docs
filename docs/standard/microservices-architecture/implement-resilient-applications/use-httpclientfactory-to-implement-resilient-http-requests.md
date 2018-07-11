@@ -148,16 +148,16 @@ Until this point, the code shown is just performing regular Http requests, but t
 
 ## Additional resources
 
--   **Using HttpClientFactory in .NET Core 2.1**
-    [*https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1*](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1)
+- **Using HttpClientFactory in .NET Core 2.1**
+  [*https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1*](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1)
 
 
--   **HttpClientFactory GitHub repo**
+- **HttpClientFactory GitHub repo**
 
-    [*https://github.com/aspnet/HttpClientFactory*](https://github.com/aspnet/HttpClientFactory)
+  [*https://github.com/aspnet/HttpClientFactory*](https://github.com/aspnet/HttpClientFactory)
 
 
 
->[!div class="step-by-step"]
-[Previous] (explore-custom-http-call-retries-exponential-backoff.md)
-[Next] (implement-http-call-retries-exponential-backoff-polly.md)
+> [!div  class="step-by-step"]
+> [Previous](explore-custom-http-call-retries-exponential-backoff.md)
+> [Next](implement-http-call-retries-exponential-backoff-polly.md)

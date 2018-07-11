@@ -18,27 +18,27 @@ When creating a time-based cache policy, you can customize caching behavior by s
   
 ### To create a time-based cache policy that uses a cache synchronization date  
   
--   Create a time-based cache policy that uses a cache synchronization date by passing a <xref:System.DateTime> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.  
+- Create a time-based cache policy that uses a cache synchronization date by passing a <xref:System.DateTime> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.  
   
-    ```csharp  
-    public static HttpRequestCachePolicy CreateLastSyncPolicy(DateTime when)  
-    {  
-        HttpRequestCachePolicy policy =   
-            new HttpRequestCachePolicy(when);  
-        Console.WriteLine("When: {0}", when);  
-        Console.WriteLine(policy.ToString());  
-        return policy;  
-    }  
-    ```  
+  ```csharp  
+  public static HttpRequestCachePolicy CreateLastSyncPolicy(DateTime when)  
+  {  
+      HttpRequestCachePolicy policy =   
+          new HttpRequestCachePolicy(when);  
+      Console.WriteLine("When: {0}", when);  
+      Console.WriteLine(policy.ToString());  
+      return policy;  
+  }  
+  ```  
   
-    ```vb  
-    Public Shared Function CreateLastSyncPolicy([when] As DateTime) As HttpRequestCachePolicy  
-        Dim policy As New HttpRequestCachePolicy([when])  
-        Console.WriteLine("When: {0}", [when])  
-        Console.WriteLine(policy.ToString())  
-        Return policy  
-    End Function  
-    ```  
+  ```vb  
+  Public Shared Function CreateLastSyncPolicy([when] As DateTime) As HttpRequestCachePolicy  
+      Dim policy As New HttpRequestCachePolicy([when])  
+      Console.WriteLine("When: {0}", [when])  
+      Console.WriteLine(policy.ToString())  
+      Return policy  
+  End Function  
+  ```  
   
  The output is similar to the following:  
   
@@ -49,25 +49,25 @@ Level:Default CacheSyncDate:1/14/2004 8:07:30 AM
   
 ### To create a time-based cache policy that is based on minimum freshness  
   
--   Create a time-based cache policy that is based on minimum freshness by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> as the `cacheAgeControl` parameter value and passing a <xref:System.TimeSpan> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.  
+- Create a time-based cache policy that is based on minimum freshness by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> as the `cacheAgeControl` parameter value and passing a <xref:System.TimeSpan> object to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor.  
   
-    ```csharp  
-    public static HttpRequestCachePolicy CreateMinFreshPolicy(TimeSpan span)  
-    {  
-        HttpRequestCachePolicy policy =   
-            new HttpRequestCachePolicy(HttpCacheAgeControl.MinFresh, span);  
-        Console.WriteLine(policy.ToString());  
-        return policy;  
-    }  
-    ```  
+  ```csharp  
+  public static HttpRequestCachePolicy CreateMinFreshPolicy(TimeSpan span)  
+  {  
+      HttpRequestCachePolicy policy =   
+          new HttpRequestCachePolicy(HttpCacheAgeControl.MinFresh, span);  
+      Console.WriteLine(policy.ToString());  
+      return policy;  
+  }  
+  ```  
   
-    ```vb  
-    Public Shared Function CreateMinFreshPolicy(span As TimeSpan) As HttpRequestCachePolicy  
-        Dim policy As New HttpRequestCachePolicy(HttpCacheAgeControl.MinFresh, span)  
-        Console.WriteLine(policy.ToString())  
-        Return policy  
-    End Function  
-    ```  
+  ```vb  
+  Public Shared Function CreateMinFreshPolicy(span As TimeSpan) As HttpRequestCachePolicy  
+      Dim policy As New HttpRequestCachePolicy(HttpCacheAgeControl.MinFresh, span)  
+      Console.WriteLine(policy.ToString())  
+      Return policy  
+  End Function  
+  ```  
   
  For the following invocation:  
   
@@ -81,25 +81,25 @@ Level:Default MinFresh:3600
   
 ### To create a time-based cache policy that is based on minimum freshness and maximum age  
   
--   Create a time-based cache policy that is based on minimum freshness and maximum age by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> as the `cacheAgeControl` parameter value and passing two <xref:System.TimeSpan> objects to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor, one to specify the maximum age for resources and a second to specify the minimum freshness permitted for an object returned from the cache.  
+- Create a time-based cache policy that is based on minimum freshness and maximum age by specifying <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> as the `cacheAgeControl` parameter value and passing two <xref:System.TimeSpan> objects to the <xref:System.Net.Cache.HttpRequestCachePolicy> constructor, one to specify the maximum age for resources and a second to specify the minimum freshness permitted for an object returned from the cache.  
   
-    ```csharp  
-    public static HttpRequestCachePolicy CreateFreshAndAgePolicy(TimeSpan freshMinimum, TimeSpan ageMaximum)  
-    {  
-        HttpRequestCachePolicy policy =   
-        new HttpRequestCachePolicy(HttpCacheAgeControl.MaxAgeAndMinFresh, ageMaximum, freshMinimum);  
-        Console.WriteLine(policy.ToString());  
-        return policy;  
-    }  
-    ```  
+  ```csharp  
+  public static HttpRequestCachePolicy CreateFreshAndAgePolicy(TimeSpan freshMinimum, TimeSpan ageMaximum)  
+  {  
+      HttpRequestCachePolicy policy =   
+      new HttpRequestCachePolicy(HttpCacheAgeControl.MaxAgeAndMinFresh, ageMaximum, freshMinimum);  
+      Console.WriteLine(policy.ToString());  
+      return policy;  
+  }  
+  ```  
   
-    ```vb  
-    Public Shared Function CreateFreshAndAgePolicy(freshMinimum As TimeSpan, ageMaximum As TimeSpan) As HttpRequestCachePolicy  
-        Dim policy As New HttpRequestCachePolicy(HttpCacheAgeControl.MaxAgeAndMinFresh, ageMaximum, freshMinimum)  
-        Console.WriteLine(policy.ToString())  
-        Return policy  
-    End Function  
-    ```  
+  ```vb  
+  Public Shared Function CreateFreshAndAgePolicy(freshMinimum As TimeSpan, ageMaximum As TimeSpan) As HttpRequestCachePolicy  
+      Dim policy As New HttpRequestCachePolicy(HttpCacheAgeControl.MaxAgeAndMinFresh, ageMaximum, freshMinimum)  
+      Console.WriteLine(policy.ToString())  
+      Return policy  
+  End Function  
+  ```  
   
  For the following invocation:  
   

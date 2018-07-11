@@ -32,7 +32,7 @@ If you wish to use the downloaded sample with file system distribution, do the f
 Use an existing project that you've confirmed compiles and runs, or create a new console app project in a folder on your hard drive. This tutorial assumes that the name of the project folder is *GarciaSoftware.ConsoleTemplate.CSharp* stored at *Documents\Templates* in the user's profile. The tutorial project template name is in the format *\<Company Name>.\<Template Type>.\<Programming Language>*, but you're free to name your project and template anything you wish.
 
 1. Add a folder to the root of the project named *.template.config*.
-1. Inside the *.template.config* folder, create a *template.json* file to configure your template. For more information and member definitions for the *template.json* file, see the [Custom templates for dotnet new](../tools/custom-templates.md#templatejson) topic and the [*template.json* schema at the JSON Schema Store](http://json.schemastore.org/template).
+2. Inside the *.template.config* folder, create a *template.json* file to configure your template. For more information and member definitions for the *template.json* file, see the [Custom templates for dotnet new](../tools/custom-templates.md#templatejson) topic and the [*template.json* schema at the JSON Schema Store](http://json.schemastore.org/template).
 
 ```json
 {
@@ -55,12 +55,13 @@ The template is finished. At this point, you have two options for template distr
 ### Pack the template into a NuGet package
 
 1. Create a folder for the NuGet package. For the tutorial, the folder name *GarciaSoftware.ConsoleTemplate.CSharp* is used, and the folder is created inside a *Documents\NuGetTemplates* folder in the user's profile. Create a folder named *content* inside of the new template folder to hold the project files.
-1. Copy the contents of your project folder, together with its *.template.config/template.json* file, into the *content* folder you created.
-1. Next to the *content* folder, add a [*nuspec* file](/nuget/create-packages/creating-a-package). The nuspec file is an XML manifest file that describes a package's contents and drives the process of creating the NuGet package.
-   
+2. Copy the contents of your project folder, together with its *.template.config/template.json* file, into the *content* folder you created.
+3. Next to the *content* folder, add a [*nuspec* file](/nuget/create-packages/creating-a-package). The nuspec file is an XML manifest file that describes a package's contents and drives the process of creating the NuGet package.
+
    ![Directory structure showing the layout of the NuGet package](./media/create-custom-template/nugetdirectorylayout.png)
 
-1. Inside of a **\<packageTypes>** element in the *nuspec* file, include a **\<packageType>** element with a `name` attribute value of `Template`. Both the *content* folder and the *nuspec* file should reside in the same directory. The table shows the minimum *nuspec* file elements required to produce a template as a NuGet package.
+4. Inside of a **\<packageTypes>** element in the *nuspec* file, include a **\<packageType>** element with a `name` attribute value of `Template`. Both the *content* folder and the *nuspec* file should reside in the same directory. The table shows the minimum *nuspec* file elements required to produce a template as a NuGet package.
+
 
    | Element            | Type   | Description |
    | ------------------ | ------ | ----------- |
@@ -91,7 +92,7 @@ The template is finished. At this point, you have two options for template distr
    </package>
    ```
 
-1. [Create the package](/nuget/create-packages/creating-a-package#creating-the-package) using the `nuget pack <PATH_TO_NUSPEC_FILE>` command. The following command assumes that the folder that holds the NuGet assets is at *C:\Users\\\<USER>\Documents\Templates\GarciaSoftware.ConsoleTemplate.CSharp*. But wherever you place the folder on your system, the `nuget pack` command accepts the path to the *nuspec* file:
+5. [Create the package](/nuget/create-packages/creating-a-package#creating-the-package) using the `nuget pack <PATH_TO_NUSPEC_FILE>` command. The following command assumes that the folder that holds the NuGet assets is at *C:\Users\\\<USER>\Documents\Templates\GarciaSoftware.ConsoleTemplate.CSharp*. But wherever you place the folder on your system, the `nuget pack` command accepts the path to the *nuspec* file:
 
    ```console
    nuget pack C:\Users\<USER>\Documents\NuGetTemplates\GarciaSoftware.ConsoleTemplate.CSharp\GarciaSoftware.ConsoleTemplate.CSharp.nuspec

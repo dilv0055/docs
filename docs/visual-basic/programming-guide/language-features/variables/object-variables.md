@@ -11,11 +11,11 @@ ms.assetid: 6169a196-2b13-4ba5-a205-154bc1b87844
 # Object Variables in Visual Basic
 In addition to storing values directly, a variable can refer to an object. You assign an object to a variable for the same reasons you assign any value to a variable:  
   
--   A variable name is often shorter and easier to remember than the full path of methods and properties necessary to access the object itself.  
+- A variable name is often shorter and easier to remember than the full path of methods and properties necessary to access the object itself.  
   
--   Using a variable that refers to an object is more efficient than repeatedly accessing the object itself through the necessary methods or properties.  
+- Using a variable that refers to an object is more efficient than repeatedly accessing the object itself through the necessary methods or properties.  
   
--   You can change a variable to refer to other objects while your code is running.  
+- You can change a variable to refer to other objects while your code is running.  
   
 ## Making Code Shorter  
  You can use object variables to shorten the code you have to type. The following example uses the full path of methods and properties to access a <xref:System.Windows.Forms.Control> object.  

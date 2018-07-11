@@ -21,22 +21,22 @@ To generate classes from schemas that are usable with Windows Communication Foun
   
 #### To import a schema  
   
-1.  Create an instance of the <xref:System.Runtime.Serialization.XsdDataContractImporter>.  
+1. Create an instance of the <xref:System.Runtime.Serialization.XsdDataContractImporter>.  
   
-2.  Optional. Pass a `CodeCompileUnit` in the constructor. The types generated during schema import are added to this `CodeCompileUnit` instance instead of starting with a blank `CodeCompileUnit`.  
+2. Optional. Pass a `CodeCompileUnit` in the constructor. The types generated during schema import are added to this `CodeCompileUnit` instance instead of starting with a blank `CodeCompileUnit`.  
   
-3.  Optional. Call one of the <xref:System.Runtime.Serialization.XsdDataContractImporter.CanImport%2A> methods. The method determines whether the given schema is a valid data contract schema and can be imported. The `CanImport` method has the same overloads as `Import` (the next step).  
+3. Optional. Call one of the <xref:System.Runtime.Serialization.XsdDataContractImporter.CanImport%2A> methods. The method determines whether the given schema is a valid data contract schema and can be imported. The `CanImport` method has the same overloads as `Import` (the next step).  
   
-4.  Call one of the overloaded `Import` methods, for example, the <xref:System.Runtime.Serialization.XsdDataContractImporter.Import%28System.Xml.Schema.XmlSchemaSet%29> method.  
+4. Call one of the overloaded `Import` methods, for example, the <xref:System.Runtime.Serialization.XsdDataContractImporter.Import%28System.Xml.Schema.XmlSchemaSet%29> method.  
   
-     The simplest overload takes an `XmlSchemaSet` and imports all types, including anonymous types, found in that schema set. Other overloads allow you to specify the XSD type or a list of types to import (in the form of an <xref:System.Xml.XmlQualifiedName> or a collection of `XmlQualifiedName` objects). In this case, only the specified types are imported. An overload takes an <xref:System.Xml.Schema.XmlSchemaElement> that imports a particular element out of the `XmlSchemaSet`, as well as its associated type (whether it is anonymous or not). This overload returns an `XmlQualifiedName`, which represents the data contract name of the type generated for this element.  
+    The simplest overload takes an `XmlSchemaSet` and imports all types, including anonymous types, found in that schema set. Other overloads allow you to specify the XSD type or a list of types to import (in the form of an <xref:System.Xml.XmlQualifiedName> or a collection of `XmlQualifiedName` objects). In this case, only the specified types are imported. An overload takes an <xref:System.Xml.Schema.XmlSchemaElement> that imports a particular element out of the `XmlSchemaSet`, as well as its associated type (whether it is anonymous or not). This overload returns an `XmlQualifiedName`, which represents the data contract name of the type generated for this element.  
   
-     Multiple calls of the `Import` method result in multiple items being added to the same `CodeCompileUnit`. A type is not generated into the `CodeCompileUnit` if it already exists there. Call `Import` multiple times on the same `XsdDataContractImporter` instead of using multiple `XsdDataContractImporter` objects. This is the recommended way to avoid duplicate types being generated.  
+    Multiple calls of the `Import` method result in multiple items being added to the same `CodeCompileUnit`. A type is not generated into the `CodeCompileUnit` if it already exists there. Call `Import` multiple times on the same `XsdDataContractImporter` instead of using multiple `XsdDataContractImporter` objects. This is the recommended way to avoid duplicate types being generated.  
   
-    > [!NOTE]
-    >  If there is a failure during import, the `CodeCompileUnit` will be in an unpredictable state. Using a `CodeCompileUnit` resulting from a failed import could expose you to security vulnerabilities.  
+   > [!NOTE]
+   >  If there is a failure during import, the `CodeCompileUnit` will be in an unpredictable state. Using a `CodeCompileUnit` resulting from a failed import could expose you to security vulnerabilities.  
   
-5.  Access the `CodeCompileUnit` through the <xref:System.Runtime.Serialization.XsdDataContractImporter.CodeCompileUnit%2A> property.  
+5. Access the `CodeCompileUnit` through the <xref:System.Runtime.Serialization.XsdDataContractImporter.CodeCompileUnit%2A> property.  
   
 ### Import Options: Customizing the Generated Types  
  You can set the <xref:System.Runtime.Serialization.XsdDataContractImporter.Options%2A> property of the <xref:System.Runtime.Serialization.XsdDataContractImporter> to an instance of the <xref:System.Runtime.Serialization.ImportOptions> class to control various aspects of the import process. A number of options directly influence the types that are generated.  
@@ -60,7 +60,7 @@ To generate classes from schemas that are usable with Windows Communication Foun
   
  [!code-xml[c_SchemaImportExport#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/common/source.config#10)]  
   
- The following example uses the `Namespaces` property to map the "http://schemas.contoso.com/carSchema" namespace to "Contoso.Cars".  
+ The following example uses the `Namespaces` property to map the "<http://schemas.contoso.com/carSchema>" namespace to "Contoso.Cars".  
   
  [!code-csharp[c_SchemaImportExport#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_schemaimportexport/cs/source.cs#8)]
  [!code-vb[c_SchemaImportExport#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_schemaimportexport/vb/source.vb#8)]  
@@ -142,13 +142,13 @@ To generate classes from schemas that are usable with Windows Communication Foun
   
 ##### Design Considerations  
   
--   It may be difficult to work with the weakly typed XML representation directly. Consider using an alternative serialization engine, such as the <xref:System.Xml.Serialization.XmlSerializer>, to work with schema not compatible with data contracts in a strongly typed way. For more information, see [Using the XmlSerializer Class](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
+- It may be difficult to work with the weakly typed XML representation directly. Consider using an alternative serialization engine, such as the <xref:System.Xml.Serialization.XmlSerializer>, to work with schema not compatible with data contracts in a strongly typed way. For more information, see [Using the XmlSerializer Class](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md).  
   
--   Some schema constructs cannot be imported by the <xref:System.Runtime.Serialization.XsdDataContractImporter> even when the <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> property is set to `true`. Again, consider using the <xref:System.Xml.Serialization.XmlSerializer> for such cases.  
+- Some schema constructs cannot be imported by the <xref:System.Runtime.Serialization.XsdDataContractImporter> even when the <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> property is set to `true`. Again, consider using the <xref:System.Xml.Serialization.XmlSerializer> for such cases.  
   
--   The exact schema constructs that are supported both when <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> is `true` or `false` are described in [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
+- The exact schema constructs that are supported both when <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> is `true` or `false` are described in [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).  
   
--   Schema for generated <xref:System.Xml.Serialization.IXmlSerializable> types do not retain fidelity when imported and exported. That is, exporting the schema from the generated types and importing as classes does not return the original schema.  
+- Schema for generated <xref:System.Xml.Serialization.IXmlSerializable> types do not retain fidelity when imported and exported. That is, exporting the schema from the generated types and importing as classes does not return the original schema.  
   
  It is possible to combine the <xref:System.Runtime.Serialization.ImportOptions.ImportXmlType%2A> option with the <xref:System.ServiceModel.Description.ServiceContractGenerator.ReferencedTypes%2A> option previously described. For types that have to be generated as <xref:System.Xml.Serialization.IXmlSerializable> implementations, the structural check is skipped when using the <xref:System.ServiceModel.Description.ServiceContractGenerator.ReferencedTypes%2A> feature.  
   
@@ -169,9 +169,9 @@ To generate classes from schemas that are usable with Windows Communication Foun
 #### Import Options: Advanced Options  
  The following are advanced import options:  
   
--   <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> property. Specify the <xref:System.CodeDom.Compiler.CodeDomProvider> to use to generate the code for the generated classes. The import mechanism attempts to avoid features that the <xref:System.CodeDom.Compiler.CodeDomProvider> does not support. If the <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> is not set, the full set of [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] features is used with no restrictions.  
+- <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> property. Specify the <xref:System.CodeDom.Compiler.CodeDomProvider> to use to generate the code for the generated classes. The import mechanism attempts to avoid features that the <xref:System.CodeDom.Compiler.CodeDomProvider> does not support. If the <xref:System.Runtime.Serialization.ImportOptions.CodeProvider%2A> is not set, the full set of [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] features is used with no restrictions.  
   
--   <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> property. An <xref:System.Runtime.Serialization.IDataContractSurrogate> implementation can be specified with this property. The <xref:System.Runtime.Serialization.IDataContractSurrogate> customizes the import process. For more information, see [Data Contract Surrogates](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). By default, no surrogate is used.  
+- <xref:System.Runtime.Serialization.ImportOptions.DataContractSurrogate%2A> property. An <xref:System.Runtime.Serialization.IDataContractSurrogate> implementation can be specified with this property. The <xref:System.Runtime.Serialization.IDataContractSurrogate> customizes the import process. For more information, see [Data Contract Surrogates](../../../../docs/framework/wcf/extending/data-contract-surrogates.md). By default, no surrogate is used.  
   
 ## See Also  
  <xref:System.Runtime.Serialization.DataContractSerializer>  

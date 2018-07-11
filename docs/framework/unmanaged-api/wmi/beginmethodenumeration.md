@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Begins an enumeration of the methods available for the object.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ``` 
 HRESULT BeginMethodEnumeration (
    [in] int               vFunc, 
@@ -43,6 +43,7 @@ HRESULT BeginMethodEnumeration (
 `lEnumFlags`  
 [in] Zero (0) for all methods, or a flag that specifies the scope of the enumeration. The following flags are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Limit the enumeration to methods that are defined in the class itself. |
@@ -52,11 +53,12 @@ Constant  |Value  |Description  |
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `lEnnumFlags` is non-zero and is not one of the specified flags. |
 |`WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::BeginMethodEnumeration](https://msdn.microsoft.com/library/aa391435(v=vs.85).aspx) method.
@@ -65,10 +67,10 @@ This method call is only supported if the current object is a class definition. 
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

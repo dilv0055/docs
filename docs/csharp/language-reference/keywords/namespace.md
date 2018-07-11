@@ -17,17 +17,17 @@ The `namespace` keyword is used to declare a scope that contains a set of relate
 ## Remarks  
  Within a namespace, you can declare one or more of the following types:  
   
--   another namespace  
+- another namespace  
   
--   [class](../../../csharp/language-reference/keywords/class.md)  
+- [class](../../../csharp/language-reference/keywords/class.md)  
   
--   [interface](../../../csharp/language-reference/keywords/interface.md)  
+- [interface](../../../csharp/language-reference/keywords/interface.md)  
   
--   [struct](../../../csharp/language-reference/keywords/struct.md)  
+- [struct](../../../csharp/language-reference/keywords/struct.md)  
   
--   [enum](../../../csharp/language-reference/keywords/enum.md)  
+- [enum](../../../csharp/language-reference/keywords/enum.md)  
   
--   [delegate](../../../csharp/language-reference/keywords/delegate.md)  
+- [delegate](../../../csharp/language-reference/keywords/delegate.md)  
   
  Whether or not you explicitly declare a namespace in a C# source file, the compiler adds a default namespace. This unnamed namespace, sometimes referred to as the global namespace, is present in every file. Any identifier in the global namespace is available for use in a named namespace.  
   
@@ -45,11 +45,11 @@ The `namespace` keyword is used to declare a scope that contains a set of relate
 ## For More Information  
  For more information about using namespaces, see the following topics:  
   
--   [Namespaces](../../../csharp/programming-guide/namespaces/index.md)  
+- [Namespaces](../../../csharp/programming-guide/namespaces/index.md)  
   
--   [Using Namespaces](../../../csharp/programming-guide/namespaces/using-namespaces.md)  
+- [Using Namespaces](../../../csharp/programming-guide/namespaces/using-namespaces.md)  
   
--   [How to: Use the Global Namespace Alias](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)  
+- [How to: Use the Global Namespace Alias](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)  
   
 ## C# Language Specification  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

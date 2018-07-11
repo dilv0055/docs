@@ -5,10 +5,11 @@ ms.assetid: 9628b74f-1585-436a-b385-8b02ed0cdd63
 ---
 # Date and Time Canonical Functions
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] includes date and time canonical functions.  
-  
+
 ## Remarks  
  The following table shows the date and time [!INCLUDE[esql](../../../../../../includes/esql-md.md)] canonical functions. `datetime` is a <xref:System.DateTime> value.  
-  
+
+
 |Function|Description|  
 |--------------|-----------------|  
 |`AddNanoseconds(` `expression`, `number``)`|Adds the specified `number` of nanoseconds to the `expression`.<br /><br /> **Arguments**<br /><br /> `expression`: `DateTime`, `DateTimeOffset`, or `Time`.<br /><br /> `number`: `Int32`.<br /><br /> **Return Value**<br /><br /> The type of `expression`.|  
@@ -45,10 +46,10 @@ ms.assetid: 9628b74f-1585-436a-b385-8b02ed0cdd63
 |`Second(` `expression` `)`|Returns the seconds portion of `expression` as an `Int32` between 0 and 59.<br /><br /> **Arguments**<br /><br /> A `DateTime, Time` and `DateTimeOffset`.<br /><br /> **Return Value**<br /><br /> An `Int32`.<br /><br /> **Example**<br /><br /> `-- The following example returns 5`<br /><br /> `Second(cast('22:35:5' as DateTime))`|  
 |`TruncateTime(` `expression` `)`|Returns the `expression`, with the time values truncated.<br /><br /> **Arguments**<br /><br /> A `DateTime` or `DateTimeOffset`.<br /><br /> **Return Value**<br /><br /> The type of `expression`.|  
 |`Year(` `expression` `)`|Returns the year portion of `expression` as an `Int32``YYYY`.<br /><br /> **Arguments**<br /><br /> A `DateTime` and `DateTimeOffset`.<br /><br /> **Return Value**<br /><br /> An `Int32`.<br /><br /> **Example**<br /><br /> `-- The following example returns 1998.`<br /><br /> `Year(cast('03/12/1998' as DateTime))`|  
-  
+
  These functions will return `null` if given `null` input.  
-  
+
  Equivalent functionality is available in the Microsoft SQL Client Managed Provider. For more information, see [SqlClient for Entity Framework Functions](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).  
-  
+
 ## See Also  
  [Canonical Functions](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)

@@ -30,6 +30,7 @@ ildasm [options] [PEfilename] [options]
 
 The following options are available for *.exe*, *.dll*, *.obj*, *.lib*, and *.winmd* files.
 
+
 | Option | Description |
 | ------ | ----------- |
 |**/out=** `filename`|Creates an output file with the specified `filename`, rather than displaying the results in a graphical user interface.|
@@ -40,22 +41,24 @@ The following options are available for *.exe*, *.dll*, *.obj*, *.lib*, and *.wi
 
 The following additional options are available for *.exe*, *.dll*, and *.winmd* files.
 
-| Option | Description |
-| ------ | ----------- |
-|**/bytes**|Shows actual bytes, in hexadecimal format, as instruction comments.|
-|**/caverbal**|Produces custom attribute blobs in verbal form. The default is binary form.|
-|**/linenum**|Includes references to original source lines.|
-|**/nobar**|Suppresses the disassembly progress indicator pop-up window.|
-|**/noca**|Suppresses the output of custom attributes.|
-|**/project**|Displays metadata the way it appears to managed code, instead of the way it appears in the native [!INCLUDE[wrt](../../../includes/wrt-md.md)]. If `PEfilename` is not a Windows metadata (*.winmd*) file, this option has no effect. See [.NET Framework Support for Windows Store Apps and Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
-|**/pubonly**|Disassembles only public types and members. Equivalent to **/visibility:PUB**.|
-|**/quoteallnames**|Includes all names in single quotes.|
-|**/raweh**|Shows exception handling clauses in raw form.|
-|**/source**|Shows original source lines as comments.|
-|**/tokens**|Shows metadata tokens of classes and members.|
-|**/visibility:** `vis`[+`vis`...]|Disassembles only types or members with the specified visibility. The following are valid values for `vis`:<br /><br /> **PUB** — Public<br /><br /> **PRI** — Private<br /><br /> **FAM** — Family<br /><br /> **ASM** — Assembly<br /><br /> **FAA** — Family and Assembly<br /><br /> **FOA** — Family or Assembly<br /><br /> **PSC** — Private Scope<br /><br /> For definitions of these visibility modifiers, see <xref:System.Reflection.MethodAttributes> and <xref:System.Reflection.TypeAttributes>.|
+
+|              Option               |                                                                                                                                                                                                                                                   Description                                                                                                                                                                                                                                                   |
+|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|            **/bytes**             |                                                                                                                                                                                                                       Shows actual bytes, in hexadecimal format, as instruction comments.                                                                                                                                                                                                                       |
+|           **/caverbal**           |                                                                                                                                                                                                                   Produces custom attribute blobs in verbal form. The default is binary form.                                                                                                                                                                                                                   |
+|           **/linenum**            |                                                                                                                                                                                                                                  Includes references to original source lines.                                                                                                                                                                                                                                  |
+|            **/nobar**             |                                                                                                                                                                                                                          Suppresses the disassembly progress indicator pop-up window.                                                                                                                                                                                                                           |
+|             **/noca**             |                                                                                                                                                                                                                                   Suppresses the output of custom attributes.                                                                                                                                                                                                                                   |
+|           **/project**            |                                                   Displays metadata the way it appears to managed code, instead of the way it appears in the native [!INCLUDE[wrt](../../../includes/wrt-md.md)]. If `PEfilename` is not a Windows metadata (*.winmd*) file, this option has no effect. See [.NET Framework Support for Windows Store Apps and Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).                                                   |
+|           **/pubonly**            |                                                                                                                                                                                                                 Disassembles only public types and members. Equivalent to **/visibility:PUB**.                                                                                                                                                                                                                  |
+|        **/quoteallnames**         |                                                                                                                                                                                                                                      Includes all names in single quotes.                                                                                                                                                                                                                                       |
+|            **/raweh**             |                                                                                                                                                                                                                                  Shows exception handling clauses in raw form.                                                                                                                                                                                                                                  |
+|            **/source**            |                                                                                                                                                                                                                                    Shows original source lines as comments.                                                                                                                                                                                                                                     |
+|            **/tokens**            |                                                                                                                                                                                                                                  Shows metadata tokens of classes and members.                                                                                                                                                                                                                                  |
+| **/visibility:** `vis`[+`vis`...] | Disassembles only types or members with the specified visibility. The following are valid values for `vis`:<br /><br /> **PUB** — Public<br /><br /> **PRI** — Private<br /><br /> **FAM** — Family<br /><br /> **ASM** — Assembly<br /><br /> **FAA** — Family and Assembly<br /><br /> **FOA** — Family or Assembly<br /><br /> **PSC** — Private Scope<br /><br /> For definitions of these visibility modifiers, see <xref:System.Reflection.MethodAttributes> and <xref:System.Reflection.TypeAttributes>. |
 
 The following options are valid for *.exe*, *.dll*, and *.winmd* files for file or console output only.
+
 
 | Option | Description |
 | ------ | ----------- |
@@ -72,11 +75,13 @@ The following options are valid for *.exe*, *.dll*, and *.winmd* files for file 
 
 The following options are valid for *.exe*, *.dll*, *.obj*, *.lib*, and *.winmd* files for file or console output only.
 
+
 | Option | Description |
 | ------ | ----------- |
 |**/metadata**[=`specifier`]|Shows metadata, where `specifier` is:<br /><br /> **MDHEADER** — Show the metadata header information and sizes.<br /><br /> **HEX** — Show information in hex as well as in words.<br /><br /> **CSV** — Show the record counts and heap sizes.<br /><br /> **UNREX** — Show unresolved externals.<br /><br /> **SCHEMA** — Show the metadata header and schema information.<br /><br /> **RAW** — Show the raw metadata tables.<br /><br /> **HEAPS** — Show the raw heaps.<br /><br /> **VALIDATE** — Validate the consistency of the metadata.<br /><br /> You can specify **/metadata** multiple times, with different values for `specifier`.|
 
 The following options are valid for *.lib* files for file or console output only.
+
 
 | Option | Description |
 | ------ | ----------- |

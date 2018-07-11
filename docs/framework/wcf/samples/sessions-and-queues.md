@@ -11,11 +11,11 @@ This sample demonstrates how to send and receive a set of related messages in qu
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Session`  
   
  In queued communication, the client communicates to the service using a queue. More precisely, the client sends messages to a queue. The service receives messages from the queue. The service and client therefore, do not have to be running at the same time to communicate using a queue.  
@@ -201,66 +201,66 @@ Purchase Order: 7c86fef0-2306-4c51-80e6-bcabcc1a6e5e
   
 ### To set up, build, and run the sample  
   
-1.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  To build the C#, C++, or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. To build the C#, C++, or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
  By default with the <xref:System.ServiceModel.NetMsmqBinding>, transport security is enabled. There are two relevant properties for MSMQ transport security namely, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> and <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` By default, the authentication mode is set to `Windows` and the protection level is set to `Sign`. For MSMQ to provide the authentication and signing feature, it must be part of a domain and the active directory integration option for MSMQ must be installed. If you run this sample on a computer that does not satisfy these criteria you receive an error.  
   
 ### To run the sample on a computer joined to a workgroup or without active directory integration  
   
-1.  If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration.  
+1. If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration.  
   
-    ```xml  
-    <system.serviceModel>  
-      <services>  
-        <service name="Microsoft.ServiceModel.Samples.OrderTakerService"  
-                 behaviorConfiguration="OrderTakerServiceBehavior">  
-          <host>  
-            <baseAddresses>  
-              <add baseAddress=  
-             "http://localhost:8000/ServiceModelSamples/service"/>  
-            </baseAddresses>  
-          </host>  
-          <!-- Define NetMsmqEndpoint -->  
-          <endpoint  
-              address=  
-            "net.msmq://localhost/private/ServiceModelSamplesSession"  
-              binding="netMsmqBinding"  
-              bindingConfiguration="Binding1"  
-           contract="Microsoft.ServiceModel.Samples.IOrderTaker" />  
-          <!-- The mex endpoint is exposed at-->      
-          <!--http://localhost:8000/ServiceModelSamples/service/mex. -->  
-          <endpoint address="mex"  
-                    binding="mexHttpBinding"  
-                    contract="IMetadataExchange" />  
-        </service>  
-      </services>  
+   ```xml  
+   <system.serviceModel>  
+     <services>  
+       <service name="Microsoft.ServiceModel.Samples.OrderTakerService"  
+                behaviorConfiguration="OrderTakerServiceBehavior">  
+         <host>  
+           <baseAddresses>  
+             <add baseAddress=  
+            "http://localhost:8000/ServiceModelSamples/service"/>  
+           </baseAddresses>  
+         </host>  
+         <!-- Define NetMsmqEndpoint -->  
+         <endpoint  
+             address=  
+           "net.msmq://localhost/private/ServiceModelSamplesSession"  
+             binding="netMsmqBinding"  
+             bindingConfiguration="Binding1"  
+          contract="Microsoft.ServiceModel.Samples.IOrderTaker" />  
+         <!-- The mex endpoint is exposed at-->      
+         <!--http://localhost:8000/ServiceModelSamples/service/mex. -->  
+         <endpoint address="mex"  
+                   binding="mexHttpBinding"  
+                   contract="IMetadataExchange" />  
+       </service>  
+     </services>  
   
-      <bindings>  
-        <netMsmqBinding>  
-          <binding name="Binding1">  
-            <security mode="None" />  
-          </binding>  
-        </netMsmqBinding>  
-      </bindings>  
+     <bindings>  
+       <netMsmqBinding>  
+         <binding name="Binding1">  
+           <security mode="None" />  
+         </binding>  
+       </netMsmqBinding>  
+     </bindings>  
   
-        <behaviors>  
-          <serviceBehaviors>  
-            <behavior name="OrderTakerServiceBehavior">  
-              <serviceMetadata httpGetEnabled="True"/>  
-            </behavior>  
-          </serviceBehaviors>  
-        </behaviors>  
+       <behaviors>  
+         <serviceBehaviors>  
+           <behavior name="OrderTakerServiceBehavior">  
+             <serviceMetadata httpGetEnabled="True"/>  
+           </behavior>  
+         </serviceBehaviors>  
+       </behaviors>  
   
-      </system.serviceModel>  
-    ```  
+     </system.serviceModel>  
+   ```  
   
-2.  Ensure that you change the configuration on both the server and the client before you run the sample.  
+2. Ensure that you change the configuration on both the server and the client before you run the sample.  
   
-    > [!NOTE]
-    >  Setting security mode to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, and `Message` security to `None`.  
+   > [!NOTE]
+   >  Setting security mode to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, and `Message` security to `None`.  
   
 ## See Also

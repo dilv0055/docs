@@ -12,13 +12,14 @@ ms.assetid: 8bf4f047-22d6-48d6-aec5-93b98ad5b8e8
 ---
 # Logging Information from the Application (Visual Basic)
 This section contains topics that cover how to log information from your application using the `My.Application.Log` or `My.Log` object, and how to extend the application's logging capabilities.  
-  
+
  The `Log` object provides methods for writing information to the application's log listeners, and the `Log` object's advanced `TraceSource` property provides detailed configuration information. The `Log` object is configured by the application's configuration file.  
-  
+
  The `My.Log` object is available only for ASP.NET applications. For client applications, use `My.Application.Log`. For more information, see <xref:Microsoft.VisualBasic.Logging.Log>.  
-  
+
 ## Tasks  
-  
+
+
 |To|See|  
 |--------|---------|  
 |Write event information to the application's logs.|[How to: Write Log Messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
@@ -30,7 +31,7 @@ This section contains topics that cover how to log information from your applica
 |Determine where `My.Application.Log` writes information.|[Walkthrough: Determining Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
 |Create a custom log listener for `My.Application.Log`.|[Walkthrough: Creating Custom Log Listeners](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)|  
 |Filter the output of the `My.Application.Log` logs.|[Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)|  
-  
+
 ## See Also  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  
  [Working with Application Logs](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)  

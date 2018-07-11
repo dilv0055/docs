@@ -7,9 +7,10 @@ ms.assetid: c995caf9-8d0e-4fb8-ae02-e9e6087d7651
 ---
 # Properties (Visual Basic)
 This page lists the properties that are members of Visual Basic modules. Other properties that are members of specific Visual Basic objects are listed in [Objects](../../visual-basic/language-reference/objects/index.md).  
-  
+
 ## Visual Basic Properties  
-  
+
+
 |||  
 |---|---|  
 |<xref:Microsoft.VisualBasic.DateAndTime.DateString%2A>|Returns or sets a `String` value representing the current date according to your system.|  
@@ -22,7 +23,7 @@ This page lists the properties that are members of Visual Basic modules. Other p
 |<xref:Microsoft.VisualBasic.DateAndTime.Timer%2A>|Returns a `Double` value representing the number of seconds elapsed since midnight.|  
 |<xref:Microsoft.VisualBasic.DateAndTime.TimeString%2A>|Returns or sets a `String` value representing the current time of day according to your system.|  
 |<xref:Microsoft.VisualBasic.DateAndTime.Today%2A>|Returns or sets a `Date` value containing the current date according to your system.|  
-  
+
 ## See Also  
  [Visual Basic Language Reference](../../visual-basic/language-reference/index.md)  
  [Visual Basic](../../visual-basic/index.md)

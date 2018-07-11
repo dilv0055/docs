@@ -3,7 +3,6 @@ title: "&lt;filter&gt;"
 ms.date: "03/30/2017"
 ms.assetid: 3266700b-904b-44e4-93a7-e06a1a445100
 ---
-
 # &lt;filter&gt;
 
 Defines a routing filter, which determines the type of Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> to be used when evaluating incoming messages, as well any supporting data or parameters required by the filter.
@@ -32,6 +31,7 @@ The following sections describe attributes, child elements, and parent elements.
 
 ### Attributes
 
+
 | Attribute  | Description |
 | ---------- | ----------- |
 | customType | A string containing the fully qualified type name of the custom type to be used as a filter. If `filterType` is set to `custom`, this attribute contains the fully qualified type name of the class to create.  `filterData` may also contain values to be used during evaluation of the custom type filter. |
@@ -44,6 +44,7 @@ The following sections describe attributes, child elements, and parent elements.
 None.
 
 ### Parent elements
+
 
 | Element | Description |
 | ------- | ----------- |

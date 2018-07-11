@@ -61,13 +61,13 @@ TrackingProfile profile = new TrackingProfile()
   
  The `implementationVisibility` flag applies to following tracking record types:  
   
--   ActivityStateRecord  
+- ActivityStateRecord  
   
--   FaultPropagationRecord  
+- FaultPropagationRecord  
   
--   CancelRequestedRecord  
+- CancelRequestedRecord  
   
--   ActivityScheduledRecord  
+- ActivityScheduledRecord  
   
 > [!NOTE]
 >  CustomTrackingRecords emitted from activity implementation are not filtered out by the implementationVisibility setting.  
@@ -101,201 +101,201 @@ TrackingProfile sampleTrackingProfile = new TrackingProfile()
 ### Tracking Profile Query Types  
  Tracking profiles are structured as declarative subscriptions for tracking records that allow you to query the workflow runtime for specific tracking records. There are several query types that allow you subscribe to different classes of <xref:System.Activities.Tracking.TrackingRecord> objects. Tracking profiles can be specified in configuration or through code. Here are the most common query types:  
   
--   <xref:System.Activities.Tracking.WorkflowInstanceQuery> - Use this to track workflow instance life cycle changes like the previously-demonstrated `Started` and `Completed`. The <xref:System.Activities.Tracking.WorkflowInstanceQuery> is used to subscribe to the following <xref:System.Activities.Tracking.TrackingRecord> objects:  
+- <xref:System.Activities.Tracking.WorkflowInstanceQuery> - Use this to track workflow instance life cycle changes like the previously-demonstrated `Started` and `Completed`. The <xref:System.Activities.Tracking.WorkflowInstanceQuery> is used to subscribe to the following <xref:System.Activities.Tracking.TrackingRecord> objects:  
   
-    -   <xref:System.Activities.Tracking.WorkflowInstanceRecord>  
+  - <xref:System.Activities.Tracking.WorkflowInstanceRecord>  
   
-    -   <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>  
+  - <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>  
   
-    -   <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>  
+  - <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>  
   
-    -   <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>  
+  - <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>  
   
-    -   <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>  
+  - <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>  
   
-     The states that can be subscribed to are specified in the <xref:System.Activities.Tracking.WorkflowInstanceStates> class.  
+   The states that can be subscribed to are specified in the <xref:System.Activities.Tracking.WorkflowInstanceStates> class.  
   
-     The configuration or code used to subscribe to workflow instance-level tracking records for the `Started` instance state using the <xref:System.Activities.Tracking.WorkflowInstanceQuery> is shown in the following example.  
+   The configuration or code used to subscribe to workflow instance-level tracking records for the `Started` instance state using the <xref:System.Activities.Tracking.WorkflowInstanceQuery> is shown in the following example.  
   
-    ```xml  
-    <workflowInstanceQueries>  
-        <workflowInstanceQuery>  
-          <states>  
-            <state name="Started"/>  
-          </states>  
-        </workflowInstanceQuery>  
-    </workflowInstanceQueries>  
-    ```  
-  
-    ```  
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()  
-    {  
-        Name = "Sample Tracking Profile",  
-        Queries =   
-        {  
-            new WorkflowInstanceQuery()  
-            {  
-                States = { WorkflowInstanceStates.Started}                                                                     
-            }  
-        }  
-    };  
-    ```  
-  
--   <xref:System.Activities.Tracking.ActivityStateQuery> - Use this to track life cycle changes of the activities that make up a workflow instance. For example, you may want to keep track of every time the "Send E-Mail" activity completes within a workflow instance. This query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.ActivityStateRecord> objects. The available states to subscribe to are specified in <xref:System.Activities.Tracking.ActivityStates>.  
-  
-     The configuration and code used to subscribe activity state tracking records that use the <xref:System.Activities.Tracking.ActivityStateQuery> for the `SendEmailActivity` activity is shown in the following example.  
-  
-    ```xml  
-    <activityStateQueries>  
-      <activityStateQuery activityName="SendEmailActivity">  
+  ```xml  
+  <workflowInstanceQueries>  
+      <workflowInstanceQuery>  
         <states>  
-          <state name="Closed"/>  
+          <state name="Started"/>  
         </states>  
-      </activityStateQuery>  
-    </activityStateQueries>  
-    ```  
+      </workflowInstanceQuery>  
+  </workflowInstanceQueries>  
+  ```  
   
-    ```  
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()  
-    {  
-        Name = "Sample Tracking Profile",  
-        Queries =  
-        {  
-            new ActivityStateQuery()  
-            {                              
-                ActivityName = "SendEmailActivity",  
-                States = { ActivityStates.Closed }  
-            }  
-        }  
-    };  
-    ```  
+  ```  
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()  
+  {  
+      Name = "Sample Tracking Profile",  
+      Queries =   
+      {  
+          new WorkflowInstanceQuery()  
+          {  
+              States = { WorkflowInstanceStates.Started}                                                                     
+          }  
+      }  
+  };  
+  ```  
   
-    > [!NOTE]
-    >  If multiple activityStateQuery elements have the same name, only the states in the last element are used in the tracking profile.  
+- <xref:System.Activities.Tracking.ActivityStateQuery> - Use this to track life cycle changes of the activities that make up a workflow instance. For example, you may want to keep track of every time the "Send E-Mail" activity completes within a workflow instance. This query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.ActivityStateRecord> objects. The available states to subscribe to are specified in <xref:System.Activities.Tracking.ActivityStates>.  
   
--   <xref:System.Activities.Tracking.ActivityScheduledQuery> - This query allows you to track an activity scheduled for execution by a parent activity. The query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.ActivityScheduledRecord> objects.  
+   The configuration and code used to subscribe activity state tracking records that use the <xref:System.Activities.Tracking.ActivityStateQuery> for the `SendEmailActivity` activity is shown in the following example.  
   
-     The configuration and code used to subscribe to records related to the `SendEmailActivity` child activity being scheduled using the <xref:System.Activities.Tracking.ActivityScheduledQuery> is shown in the following example.  
+  ```xml  
+  <activityStateQueries>  
+    <activityStateQuery activityName="SendEmailActivity">  
+      <states>  
+        <state name="Closed"/>  
+      </states>  
+    </activityStateQuery>  
+  </activityStateQueries>  
+  ```  
   
-    ```xml  
-    <activityScheduledQueries>  
-      <activityScheduledQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />  
-     </activityScheduledQueries>  
-    ```  
+  ```  
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()  
+  {  
+      Name = "Sample Tracking Profile",  
+      Queries =  
+      {  
+          new ActivityStateQuery()  
+          {                              
+              ActivityName = "SendEmailActivity",  
+              States = { ActivityStates.Closed }  
+          }  
+      }  
+  };  
+  ```  
   
-    ```  
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()  
-    {  
-        Name = "Sample Tracking Profile",  
-        Queries =   
-        {  
-            new ActivityScheduledQuery()  
-            {  
-                ActivityName = "ProcessNotificationsActivity",  
-                ChildActivityName = "SendEmailActivity"  
-            }  
-        }  
-    };  
-    ```  
+  > [!NOTE]
+  >  If multiple activityStateQuery elements have the same name, only the states in the last element are used in the tracking profile.  
   
--   <xref:System.Activities.Tracking.FaultPropagationQuery> - Use this to track the handling of faults that occur within an activity. The query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.FaultPropagationRecord> objects.  
+- <xref:System.Activities.Tracking.ActivityScheduledQuery> - This query allows you to track an activity scheduled for execution by a parent activity. The query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.ActivityScheduledRecord> objects.  
   
-     The configuration and code used to subscribe to records related to fault propagation using <xref:System.Activities.Tracking.FaultPropagationQuery> is shown in the following example.  
+   The configuration and code used to subscribe to records related to the `SendEmailActivity` child activity being scheduled using the <xref:System.Activities.Tracking.ActivityScheduledQuery> is shown in the following example.  
   
-    ```xml  
-    <faultPropagationQueries>  
-      <faultPropagationQuery faultSourceActivityName="SendEmailActivity" faultHandlerActivityName="NotificationsFaultHandler" />  
-    </faultPropagationQueries>  
-    ```  
+  ```xml  
+  <activityScheduledQueries>  
+    <activityScheduledQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />  
+   </activityScheduledQueries>  
+  ```  
   
-    ```  
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()  
-    {  
-        Name = "Sample Tracking Profile",  
-        Queries =  
-        {  
-            new FaultPropagationQuery()  
-            {  
-                FaultSourceActivityName = "SendEmailActivity",  
-                FaultHandlerActivityName = "NotificationsFaultHandler"  
-            }  
-        }  
-    };  
-    ```  
+  ```  
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()  
+  {  
+      Name = "Sample Tracking Profile",  
+      Queries =   
+      {  
+          new ActivityScheduledQuery()  
+          {  
+              ActivityName = "ProcessNotificationsActivity",  
+              ChildActivityName = "SendEmailActivity"  
+          }  
+      }  
+  };  
+  ```  
   
--   <xref:System.Activities.Tracking.CancelRequestedQuery> - Use this to track requests to cancel a child activity by the parent activity. The query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.CancelRequestedRecord> objects.  
+- <xref:System.Activities.Tracking.FaultPropagationQuery> - Use this to track the handling of faults that occur within an activity. The query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.FaultPropagationRecord> objects.  
   
-     The configuration and code used to subscribe to records related to activity cancellation using <xref:System.Activities.Tracking.CancelRequestedQuery> is shown in the following example.  
+   The configuration and code used to subscribe to records related to fault propagation using <xref:System.Activities.Tracking.FaultPropagationQuery> is shown in the following example.  
   
-    ```xml  
-    <cancelRequestedQueries>  
-      <cancelRequestedQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />  
-    </cancelRequestedQueries>  
-    ```  
+  ```xml  
+  <faultPropagationQueries>  
+    <faultPropagationQuery faultSourceActivityName="SendEmailActivity" faultHandlerActivityName="NotificationsFaultHandler" />  
+  </faultPropagationQueries>  
+  ```  
   
-    ```  
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()  
-    {  
-        Name = "Sample Tracking Profile",  
-        Queries =   
-        {  
-            new CancelRequestedQuery()  
-            {  
-                ActivityName = "ProcessNotificationsActivity",  
-                ChildActivityName = "SendEmailActivity"  
-            }  
-        }  
-    };  
-    ```  
+  ```  
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()  
+  {  
+      Name = "Sample Tracking Profile",  
+      Queries =  
+      {  
+          new FaultPropagationQuery()  
+          {  
+              FaultSourceActivityName = "SendEmailActivity",  
+              FaultHandlerActivityName = "NotificationsFaultHandler"  
+          }  
+      }  
+  };  
+  ```  
   
--   <xref:System.Activities.Tracking.CustomTrackingQuery> - Use this to track events that you define in your code activities. The query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.CustomTrackingRecord> objects.  
+- <xref:System.Activities.Tracking.CancelRequestedQuery> - Use this to track requests to cancel a child activity by the parent activity. The query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.CancelRequestedRecord> objects.  
   
-     The configuration and code used to subscribe to records related to custom tracking records using <xref:System.Activities.Tracking.CustomTrackingQuery> is shown in the following example.  
+   The configuration and code used to subscribe to records related to activity cancellation using <xref:System.Activities.Tracking.CancelRequestedQuery> is shown in the following example.  
   
-    ```xml  
-    <customTrackingQueries>  
-      <customTrackingQuery name="EmailAddress" activityName="SendEmailActivity" />  
-    </customTrackingQueries>  
-    ```  
+  ```xml  
+  <cancelRequestedQueries>  
+    <cancelRequestedQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />  
+  </cancelRequestedQueries>  
+  ```  
   
-    ```  
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()  
-    {  
-        Name = "Sample Tracking Profile",  
-        Queries =   
-        {  
-            new CustomTrackingQuery()   
-            {  
-                Name = "EmailAddress",  
-                ActivityName = "SendEmailActivity"  
-            }  
-        }  
-    };  
-    ```  
+  ```  
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()  
+  {  
+      Name = "Sample Tracking Profile",  
+      Queries =   
+      {  
+          new CancelRequestedQuery()  
+          {  
+              ActivityName = "ProcessNotificationsActivity",  
+              ChildActivityName = "SendEmailActivity"  
+          }  
+      }  
+  };  
+  ```  
   
--   <xref:System.Activities.Tracking.BookmarkResumptionQuery> - Use this to track resumption of a bookmark within a workflow instance. This query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.BookmarkResumptionRecord> objects.  
+- <xref:System.Activities.Tracking.CustomTrackingQuery> - Use this to track events that you define in your code activities. The query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.CustomTrackingRecord> objects.  
   
-     The configuration and code used to subscribe to records related to bookmark resumption using <xref:System.Activities.Tracking.BookmarkResumptionQuery> is shown in the following example.  
+   The configuration and code used to subscribe to records related to custom tracking records using <xref:System.Activities.Tracking.CustomTrackingQuery> is shown in the following example.  
   
-    ```xml  
-    <bookmarkResumptionQueries>  
-      <bookmarkResumptionQuery name="SentEmailBookmark" />  
-    </bookmarkResumptionQueries>  
-    ```  
+  ```xml  
+  <customTrackingQueries>  
+    <customTrackingQuery name="EmailAddress" activityName="SendEmailActivity" />  
+  </customTrackingQueries>  
+  ```  
   
-    ```  
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()  
-    {  
-        Name = "Sample Tracking Profile",  
-        Queries =   
-        {  
-            new BookmarkResumptionQuery()  
-            {  
-                Name = "sentEmailBookmark"  
-            }  
-        }  
-    };  
-    ```  
+  ```  
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()  
+  {  
+      Name = "Sample Tracking Profile",  
+      Queries =   
+      {  
+          new CustomTrackingQuery()   
+          {  
+              Name = "EmailAddress",  
+              ActivityName = "SendEmailActivity"  
+          }  
+      }  
+  };  
+  ```  
+  
+- <xref:System.Activities.Tracking.BookmarkResumptionQuery> - Use this to track resumption of a bookmark within a workflow instance. This query is necessary for a <xref:System.Activities.Tracking.TrackingParticipant> to subscribe to <xref:System.Activities.Tracking.BookmarkResumptionRecord> objects.  
+  
+   The configuration and code used to subscribe to records related to bookmark resumption using <xref:System.Activities.Tracking.BookmarkResumptionQuery> is shown in the following example.  
+  
+  ```xml  
+  <bookmarkResumptionQueries>  
+    <bookmarkResumptionQuery name="SentEmailBookmark" />  
+  </bookmarkResumptionQueries>  
+  ```  
+  
+  ```  
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()  
+  {  
+      Name = "Sample Tracking Profile",  
+      Queries =   
+      {  
+          new BookmarkResumptionQuery()  
+          {  
+              Name = "sentEmailBookmark"  
+          }  
+      }  
+  };  
+  ```  
   
 ### Annotations  
  Annotations allow you to arbitrarily tag tracking records with a value that can be configured after build time. For example, you might want several tracking records across several workflows to be tagged with "Mail Server" == "Mail Server1". This makes it easy to find all records with this tag when querying tracking records later.  
@@ -339,7 +339,7 @@ TrackingProfile sampleTrackingProfile = new TrackingProfile()
   
  Here are some of the common examples of tracking profiles.  
   
--   A tracking profile to obtain workflow instance records and faults.  
+- A tracking profile to obtain workflow instance records and faults.  
   
 ```xml  
 <trackingProfile name="Instance and Fault Records">  
@@ -362,7 +362,7 @@ TrackingProfile sampleTrackingProfile = new TrackingProfile()
 </trackingProfile>  
 ```  
   
-1.  A tracking profile to obtain all custom tracking records.  
+1. A tracking profile to obtain all custom tracking records.  
   
 ```xml  
 <trackingProfile name="Instance_And_Custom_Records">  

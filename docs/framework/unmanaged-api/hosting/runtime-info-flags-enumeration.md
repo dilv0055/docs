@@ -19,12 +19,12 @@ ms.author: "ronpet"
 ---
 # RUNTIME_INFO_FLAGS Enumeration
 Contains values that indicate what information about the common language runtime (CLR) should be returned.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
-  
+
     RUNTIME_INFO_UPGRADE_VERSION             = 0x01,  
     RUNTIME_INFO_REQUEST_IA64                = 0x02,  
     RUNTIME_INFO_REQUEST_AMD64               = 0x04,  
@@ -33,12 +33,13 @@ typedef enum {
     RUNTIME_INFO_DONT_RETURN_VERSION         = 0x20,  
     RUNTIME_INFO_DONT_SHOW_ERROR_DIALOG      = 0x40,  
     RUNTIME_INFO_IGNORE_ERROR_MODE           = 0x1000  
-  
+
 } RUNTIME_INFO_FLAGS;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`RUNTIME_INFO_DONT_RETURN_DIRECTORY`|Indicates that directory information should not be included.|  
@@ -49,24 +50,24 @@ typedef enum {
 |`RUNTIME_INFO_REQUEST_IA64`|Indicates a request for information about an IA-64-compatible version of the runtime.|  
 |`RUNTIME_INFO_REQUEST_X86`|Indicates a request for information about an x86-compatible version of the runtime.|  
 |`RUNTIME_INFO_UPGRADE_VERSION`|Indicates that version upgrade information should be included.|  
-  
+
 ## Remarks  
  The following platform architecture flags can be specified only one at a time and cannot be combined:  
-  
--   RUNTIME_INFO_REQUEST_IA64  
-  
--   RUNTIME_INFO_REQUEST_AMD64  
-  
--   RUNTIME_INFO_REQUEST_X86  
-  
+
+- RUNTIME_INFO_REQUEST_IA64  
+
+- RUNTIME_INFO_REQUEST_AMD64  
+
+- RUNTIME_INFO_REQUEST_X86  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

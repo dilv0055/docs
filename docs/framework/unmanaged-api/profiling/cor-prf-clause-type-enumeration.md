@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # COR_PRF_CLAUSE_TYPE Enumeration
 Indicates the type of exception clause that the code has just entered or left.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     COR_PRF_CLAUSE_NONE = 0,  
@@ -30,24 +30,25 @@ typedef enum {
     COR_PRF_CLAUSE_FINALLY = 3,  
 } COR_PRF_CLAUSE_TYPE;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_CLAUSE_NONE`|The exception clause is not valid.|  
 |`COR_PRF_CLAUSE_FILTER`|The exception clause is a filter expression.|  
 |`COR_PRF_CLAUSE_CATCH`|The exception clause is a `catch` statement.|  
 |`COR_PRF_CLAUSE_FINALLY`|The exception clause is a `finally` statement.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorProf.idl, CorProf.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

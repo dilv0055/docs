@@ -15,41 +15,41 @@ You can configure how values are displayed in the Windows Forms <xref:System.Win
   
 ### To format the numeric value  
   
--   Display a decimal value by setting the <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> property to an integer and setting the <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> property to `true` or `false`.  
+- Display a decimal value by setting the <xref:System.Windows.Forms.NumericUpDown.DecimalPlaces%2A> property to an integer and setting the <xref:System.Windows.Forms.NumericUpDown.ThousandsSeparator%2A> property to `true` or `false`.  
   
-    ```vb  
-    NumericUpDown1.DecimalPlaces = 2  
-    NumericUpDown1.ThousandsSeparator = True  
-    ```  
+  ```vb  
+  NumericUpDown1.DecimalPlaces = 2  
+  NumericUpDown1.ThousandsSeparator = True  
+  ```  
   
-    ```csharp  
-    numericUpDown1.DecimalPlaces = 2;  
-    numericUpDown1.ThousandsSeparator = true;  
-    ```  
+  ```csharp  
+  numericUpDown1.DecimalPlaces = 2;  
+  numericUpDown1.ThousandsSeparator = true;  
+  ```  
   
-    ```cpp  
-    numericUpDown1->DecimalPlaces = 2;  
-    numericUpDown1->ThousandsSeparator = true;  
-    ```  
+  ```cpp  
+  numericUpDown1->DecimalPlaces = 2;  
+  numericUpDown1->ThousandsSeparator = true;  
+  ```  
   
-     -or-  
+   -or-  
   
--   Display a hexadecimal value by setting the <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> property to `true`.  
+- Display a hexadecimal value by setting the <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> property to `true`.  
   
-    ```vb  
-    NumericUpDown1.Hexadecimal = True  
-    ```  
+  ```vb  
+  NumericUpDown1.Hexadecimal = True  
+  ```  
   
-    ```csharp  
-    numericUpDown1.Hexadecimal = true;  
-    ```  
+  ```csharp  
+  numericUpDown1.Hexadecimal = true;  
+  ```  
   
-    ```cpp  
-    numericUpDown1->Hexadecimal = true;  
-    ```  
+  ```cpp  
+  numericUpDown1->Hexadecimal = true;  
+  ```  
   
-    > [!NOTE]
-    >  Even if the value is displayed on the form as hexadecimal, any tests you perform on the <xref:System.Windows.Forms.NumericUpDown.Value%2A> property will be testing its decimal value.  
+  > [!NOTE]
+  >  Even if the value is displayed on the form as hexadecimal, any tests you perform on the <xref:System.Windows.Forms.NumericUpDown.Value%2A> property will be testing its decimal value.  
   
 ## See Also  
  <xref:System.Windows.Forms.NumericUpDown>  

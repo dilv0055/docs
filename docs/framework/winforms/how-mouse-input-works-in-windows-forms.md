@@ -8,13 +8,14 @@ ms.assetid: 48fc5240-75a6-44bf-9fce-6aa21b49705a
 ---
 # How Mouse Input Works in Windows Forms
 Receiving and handling mouse input is an important part of every Windows application. You can handle mouse events to perform an action in your application, or use mouse location information to perform hit testing or other actions. In addition, you can change the way the controls in your application handle mouse input. This topic describes these mouse events in detail, and how to obtain and change system settings for the mouse. For more information about the data provided with the mouse events and the order in which the mouse click events are raised, see [Mouse Events in Windows Forms](../../../docs/framework/winforms/mouse-events-in-windows-forms.md).  
-  
+
 ## Mouse Location and Hit-Testing  
  When the user moves the mouse, the operating system moves the mouse pointer. The mouse pointer contains a single pixel, called the hot spot, which the operating system tracks and recognizes as the position of the pointer. When the user moves the mouse or presses a mouse button, the <xref:System.Windows.Forms.Control> that contains the <xref:System.Windows.Forms.Cursor.HotSpot%2A> raises the appropriate mouse event. You can obtain the current mouse position with the <xref:System.Windows.Forms.MouseEventArgs.Location%2A> property of the <xref:System.Windows.Forms.MouseEventArgs> when handling a mouse event or by using the <xref:System.Windows.Forms.Cursor.Position%2A> property of the <xref:System.Windows.Forms.Cursor> class. You can subsequently use mouse location information to perform hit-testing, and then perform an action based on the location of the mouse. Hit-testing capability is built in to several controls in Windows Forms such as the <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.MonthCalendar> and <xref:System.Windows.Forms.DataGridView> controls. Used with the appropriate mouse event, <xref:System.Windows.Forms.Control.MouseHover> for example, hit-testing is very useful for determining when your application should perform a specific action.  
-  
+
 ## Mouse Events  
  The primary way to respond to mouse input is to handle mouse events. The following table shows the mouse events and describes when they are raised.  
-  
+
+
 |Mouse Event|Description|  
 |-----------------|-----------------|  
 |<xref:System.Windows.Forms.Control.Click>|This event occurs when the mouse button is released, typically before the <xref:System.Windows.Forms.Control.MouseUp> event. The handler for this event receives an argument of type <xref:System.EventArgs>. Handle this event when you only need to determine when a click occurs.|  
@@ -28,10 +29,11 @@ Receiving and handling mouse input is an important part of every Windows applica
 |<xref:System.Windows.Forms.Control.MouseMove>|This event occurs when the mouse pointer moves while it is over a control. The handler for this event receives an argument of type <xref:System.Windows.Forms.MouseEventArgs>.|  
 |<xref:System.Windows.Forms.Control.MouseUp>|This event occurs when the mouse pointer is over the control and the user releases a mouse button. The handler for this event receives an argument of type <xref:System.Windows.Forms.MouseEventArgs>.|  
 |<xref:System.Windows.Forms.Control.MouseWheel>|This event occurs when the user rotates the mouse wheel while the control has focus. The handler for this event receives an argument of type <xref:System.Windows.Forms.MouseEventArgs>. You can use the <xref:System.Windows.Forms.MouseEventArgs.Delta%2A> property of <xref:System.Windows.Forms.MouseEventArgs> to determine how far the mouse has scrolled.|  
-  
+
 ## Changing Mouse Input and Detecting System Settings  
  You can detect and change the way a control handles mouse input by deriving from the control and using the <xref:System.Windows.Forms.Control.GetStyle%2A> and <xref:System.Windows.Forms.Control.SetStyle%2A> methods. The <xref:System.Windows.Forms.Control.SetStyle%2A> method takes a bitwise combination of <xref:System.Windows.Forms.ControlStyles> values to determine whether the control will have standard click or double-click behavior or if the control will handle its own mouse processing. In addition, the <xref:System.Windows.Forms.SystemInformation> class includes properties that describe the capabilities of the mouse and specify how the mouse interacts with the operating system. The following table summarizes these properties.  
-  
+
+
 |Property|Description|  
 |--------------|-----------------|  
 |<xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A>|Gets the dimensions, in pixels, of the area in which the user must click twice for the operating system to consider the two clicks a double-click.|  
@@ -45,7 +47,7 @@ Receiving and handling mouse input is an important part of every Windows applica
 |<xref:System.Windows.Forms.SystemInformation.MouseWheelPresent%2A>|Gets a value indicating whether a mouse with a mouse wheel is installed.|  
 |<xref:System.Windows.Forms.SystemInformation.MouseWheelScrollDelta%2A>|Gets the amount of the delta value of the increment of a single mouse wheel rotation.|  
 |<xref:System.Windows.Forms.SystemInformation.MouseWheelScrollLines%2A>|Gets the number of lines to scroll when the mouse wheel is rotated.|  
-  
+
 ## See Also  
  [Mouse Input in a Windows Forms Application](../../../docs/framework/winforms/mouse-input-in-a-windows-forms-application.md)  
  [Mouse Capture in Windows Forms](../../../docs/framework/winforms/mouse-capture-in-windows-forms.md)  

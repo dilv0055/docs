@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # PublicKeyBlob Structure
 Represents, in binary format, the public key of a public/private key pair.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct {  
     unsigned int SigAlgId;  
@@ -30,28 +30,29 @@ typedef struct {
     BYTE PublicKey[1]  
 } PublicKeyBlob;   
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`SigAlgId`|The identifier for the signature algorithm (of type `ALG_ID`, as defined in WinCrypt.h) of the public key.|  
 |`HashAlgId`|The identifier for the hash algorithm (of type `ALG_ID`, as defined in WinCrypt.h) of the public key.|  
 |`cbPublicKey`|The length of the key in bytes.|  
 |`PublicKey`|A variable-length byte array that contains the key value in the format returned by the CryptoAPI.|  
-  
+
 ## Remarks  
  The `PublicKeyBlob` structure is used by [StrongNameGetPublicKey](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md), [StrongNameSignatureGeneration](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md), and other strong name functions to represent the public key of a public/private key pair.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** StrongName.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [StrongNameGetPublicKey Function](../../../../docs/framework/unmanaged-api/strong-naming/strongnamegetpublickey-function.md)  
  [StrongNameSignatureGeneration Function](../../../../docs/framework/unmanaged-api/strong-naming/strongnamesignaturegeneration-function.md)  

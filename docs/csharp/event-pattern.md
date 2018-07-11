@@ -4,7 +4,6 @@ description: Learn about .NET event patterns and how to create standard event so
 ms.date: 06/20/2016
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
 ---
-
 # Standard .NET event patterns
 
 [Previous](events-overview.md)

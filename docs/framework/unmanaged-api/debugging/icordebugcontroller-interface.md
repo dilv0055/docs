@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugController Interface1
 Represents a scope, either a <xref:System.Diagnostics.Process> or an <xref:System.AppDomain>, in which code execution context can be controlled.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |`ICorDebugController::CanCommitChanges`|This method is obsolete.|  
@@ -34,21 +35,21 @@ Represents a scope, either a <xref:System.Diagnostics.Process> or an <xref:Syste
 |[SetAllThreadsDebugState Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md)|Sets the debug state of all managed threads in the process.|  
 |[Stop Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md)|Performs a cooperative stop on all threads that are running managed code in the process.|  
 |[Terminate Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-terminate-method.md)|Terminates the process with the specified exit code.|  
-  
+
 ## Remarks  
  If `ICorDebugController` is controlling a process, the scope includes all threads of the process. If `ICorDebugController` is controlling an application domain, the scope includes only the threads of that particular application domain.  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

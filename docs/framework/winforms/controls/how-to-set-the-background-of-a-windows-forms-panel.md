@@ -17,49 +17,49 @@ A Windows Forms <xref:System.Windows.Forms.Panel> control can display both a bac
   
 ### To set the background programmatically  
   
-1.  Set the panel's <xref:System.Windows.Forms.Control.BackColor%2A> property to a value of type <xref:System.Drawing.Color?displayProperty=nameWithType>.  
+1. Set the panel's <xref:System.Windows.Forms.Control.BackColor%2A> property to a value of type <xref:System.Drawing.Color?displayProperty=nameWithType>.  
   
-    ```vb  
-    Panel1.BackColor = Color.AliceBlue  
-    ```  
+   ```vb  
+   Panel1.BackColor = Color.AliceBlue  
+   ```  
   
-    ```csharp  
-    panel1.BackColor = Color.AliceBlue;  
-    ```  
+   ```csharp  
+   panel1.BackColor = Color.AliceBlue;  
+   ```  
   
-    ```cpp  
-    panel1->BackColor = Color::AliceBlue;  
-    ```  
+   ```cpp  
+   panel1->BackColor = Color::AliceBlue;  
+   ```  
   
-2.  Set the panel's <xref:System.Windows.Forms.Control.BackgroundImage%2A> property using the <xref:System.Drawing.Image.FromFile%2A> method of the <xref:System.Drawing.Image?displayProperty=nameWithType> class.  
+2. Set the panel's <xref:System.Windows.Forms.Control.BackgroundImage%2A> property using the <xref:System.Drawing.Image.FromFile%2A> method of the <xref:System.Drawing.Image?displayProperty=nameWithType> class.  
   
-    ```vb  
-    ' You should replace the bolded image   
-    ' in the sample below with an image of your own choosing.  
-    Panel1.BackgroundImage = Image.FromFile _  
-        (System.Environment.GetFolderPath _  
-        (System.Environment.SpecialFolder.Personal) _  
-        & "\Image.gif")  
-    ```  
+   ```vb  
+   ' You should replace the bolded image   
+   ' in the sample below with an image of your own choosing.  
+   Panel1.BackgroundImage = Image.FromFile _  
+       (System.Environment.GetFolderPath _  
+       (System.Environment.SpecialFolder.Personal) _  
+       & "\Image.gif")  
+   ```  
   
-    ```csharp  
-    // You should replace the bolded image   
-    // in the sample below with an image of your own choosing.  
-    // Note the escape character used (@) when specifying the path.  
-    panel1.BackgroundImage = Image.FromFile  
-       (System.Environment.GetFolderPath  
-       (System.Environment.SpecialFolder.Personal)  
-       + @"\Image.gif");  
-    ```  
+   ```csharp  
+   // You should replace the bolded image   
+   // in the sample below with an image of your own choosing.  
+   // Note the escape character used (@) when specifying the path.  
+   panel1.BackgroundImage = Image.FromFile  
+      (System.Environment.GetFolderPath  
+      (System.Environment.SpecialFolder.Personal)  
+      + @"\Image.gif");  
+   ```  
   
-    ```cpp  
-    // You should replace the bolded image   
-    // in the sample below with an image of your own choosing.  
-    panel1->BackgroundImage = Image::FromFile(String::Concat(  
-       System::Environment::GetFolderPath  
-       (System::Environment::SpecialFolder::Personal),  
-       "\\Image.gif"));  
-    ```  
+   ```cpp  
+   // You should replace the bolded image   
+   // in the sample below with an image of your own choosing.  
+   panel1->BackgroundImage = Image::FromFile(String::Concat(  
+      System::Environment::GetFolderPath  
+      (System::Environment::SpecialFolder::Personal),  
+      "\\Image.gif"));  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.Control.BackColor%2A>  

@@ -23,70 +23,70 @@ The <xref:System.Diagnostics.Debug?displayProperty=nameWithType> and <xref:Syste
   
 ### To create and use a trace listener by using a configuration file  
   
-1.  Declare your trace listener in your application configuration file. If the listener you are creating requires any other objects, declare them as well. The following example shows how to create a listener called `myListener` that writes to the text file `TextWriterOutput.log`.  
+1. Declare your trace listener in your application configuration file. If the listener you are creating requires any other objects, declare them as well. The following example shows how to create a listener called `myListener` that writes to the text file `TextWriterOutput.log`.  
   
-    ```xml  
-    <configuration>  
-      <system.diagnostics>  
-        <trace autoflush="false" indentsize="4">  
-          <listeners>  
-            <add name="myListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="TextWriterOutput.log" />  
-            <remove name="Default" />  
-          </listeners>  
-        </trace>  
-      </system.diagnostics>  
-    </configuration>  
-    ```  
+   ```xml  
+   <configuration>  
+     <system.diagnostics>  
+       <trace autoflush="false" indentsize="4">  
+         <listeners>  
+           <add name="myListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="TextWriterOutput.log" />  
+           <remove name="Default" />  
+         </listeners>  
+       </trace>  
+     </system.diagnostics>  
+   </configuration>  
+   ```  
   
-2.  Use the <xref:System.Diagnostics.Trace> class in your code to write a message to the trace listeners.  
+2. Use the <xref:System.Diagnostics.Trace> class in your code to write a message to the trace listeners.  
   
-    ```vb  
-    Trace.TraceInformation("Test message.")  
-    ' You must close or flush the trace to empty the output buffer.  
-    Trace.Flush()  
-    ```  
+   ```vb  
+   Trace.TraceInformation("Test message.")  
+   ' You must close or flush the trace to empty the output buffer.  
+   Trace.Flush()  
+   ```  
   
-    ```csharp  
-    Trace.TraceInformation("Test message.");  
-    // You must close or flush the trace to empty the output buffer.  
-    Trace.Flush();  
-    ```  
+   ```csharp  
+   Trace.TraceInformation("Test message.");  
+   // You must close or flush the trace to empty the output buffer.  
+   Trace.Flush();  
+   ```  
   
 ### To create and use a trace listener in code  
   
--   Add the trace listener to the <xref:System.Diagnostics.Trace.Listeners%2A> collection and send trace information to the listeners.  
+- Add the trace listener to the <xref:System.Diagnostics.Trace.Listeners%2A> collection and send trace information to the listeners.  
   
-    ```vb  
-    Trace.Listeners.Add(New TextWriterTraceListener("TextWriterOutput.log", "myListener"))  
-    Trace.TraceInformation("Test message.")  
-    ' You must close or flush the trace to empty the output buffer.  
-    Trace.Flush()  
-    ```  
+  ```vb  
+  Trace.Listeners.Add(New TextWriterTraceListener("TextWriterOutput.log", "myListener"))  
+  Trace.TraceInformation("Test message.")  
+  ' You must close or flush the trace to empty the output buffer.  
+  Trace.Flush()  
+  ```  
   
-    ```csharp  
-    Trace.Listeners.Add(new TextWriterTraceListener("TextWriterOutput.log", "myListener"));  
-    Trace.TraceInformation("Test message.");  
-    // You must close or flush the trace to empty the output buffer.  
-    Trace.Flush();  
-    ```  
+  ```csharp  
+  Trace.Listeners.Add(new TextWriterTraceListener("TextWriterOutput.log", "myListener"));  
+  Trace.TraceInformation("Test message.");  
+  // You must close or flush the trace to empty the output buffer.  
+  Trace.Flush();  
+  ```  
   
-     - or -  
+  - or -  
   
--   If you do not want your listener to receive trace output, do not add it to the <xref:System.Diagnostics.Trace.Listeners%2A> collection. You can emit output through a listener independent of the <xref:System.Diagnostics.Trace.Listeners%2A> collection by calling the listener's own output methods. The following example shows how to write a line to a listener that is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection.  
+- If you do not want your listener to receive trace output, do not add it to the <xref:System.Diagnostics.Trace.Listeners%2A> collection. You can emit output through a listener independent of the <xref:System.Diagnostics.Trace.Listeners%2A> collection by calling the listener's own output methods. The following example shows how to write a line to a listener that is not in the <xref:System.Diagnostics.Trace.Listeners%2A> collection.  
   
-    ```vb  
-    Dim myListener As New TextWriterTraceListener("TextWriterOutput.log", "myListener")  
-    myListener.WriteLine("Test message.")  
-    ' You must close or flush the trace listener to empty the output buffer.  
-    myListener.Flush()  
-    ```  
+  ```vb  
+  Dim myListener As New TextWriterTraceListener("TextWriterOutput.log", "myListener")  
+  myListener.WriteLine("Test message.")  
+  ' You must close or flush the trace listener to empty the output buffer.  
+  myListener.Flush()  
+  ```  
   
-    ```csharp  
-    TextWriterTraceListener myListener = new TextWriterTraceListener("TextWriterOutput.log", "myListener");  
-    myListener.WriteLine("Test message.");  
-    // You must close or flush the trace listener to empty the output buffer.  
-    myListener.Flush();  
-    ```  
+  ```csharp  
+  TextWriterTraceListener myListener = new TextWriterTraceListener("TextWriterOutput.log", "myListener");  
+  myListener.WriteLine("Test message.");  
+  // You must close or flush the trace listener to empty the output buffer.  
+  myListener.Flush();  
+  ```  
   
 ## See Also  
  [Trace Listeners](../../../docs/framework/debug-trace-profile/trace-listeners.md)  

@@ -1,5 +1,6 @@
 ### OperationContext.Current may return null when called in a using clause
 
+
 |   |   |
 |---|---|
 |Details|<xref:System.ServiceModel.OperationContext.Current?displayProperty=nameWithType> may return <code>null</code> and a <xref:System.NullReferenceException> may result if all of the following conditions are true:<ul><li>You retrieve the value of the <xref:System.ServiceModel.OperationContext.Current?displayProperty=nameWithType> property in a method that returns a <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601>.</li><li>You instantiate the <xref:System.ServiceModel.OperationContextScope> object in a <code>using</code> clause.</li><li>You retrieve the value of the <xref:System.ServiceModel.OperationContext.Current?displayProperty=nameWithType> property within the <code>using statement</code>. For example:</li></ul><pre><code class="lang-csharp">using (new OperationContextScope(OperationContext.Current))&#13;&#10;{&#13;&#10;OperationContext context = OperationContext.Current;      // OperationContext.Current is null.&#13;&#10;// ...&#13;&#10;}&#13;&#10;</code></pre>|

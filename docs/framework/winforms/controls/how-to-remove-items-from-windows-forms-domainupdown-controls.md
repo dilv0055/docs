@@ -15,38 +15,38 @@ You can remove items from the Windows Forms <xref:System.Windows.Forms.DomainUpD
   
 ### To remove an item  
   
--   Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class to remove an item by name.  
+- Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Remove%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class to remove an item by name.  
   
-    ```vb  
-    DomainUpDown1.Items.Remove("noodles")  
-    ```  
+  ```vb  
+  DomainUpDown1.Items.Remove("noodles")  
+  ```  
   
-    ```csharp  
-    domainUpDown1.Items.Remove("noodles");  
-    ```  
+  ```csharp  
+  domainUpDown1.Items.Remove("noodles");  
+  ```  
   
-    ```cpp  
-    domainUpDown1->Items->Remove("noodles");  
-    ```  
+  ```cpp  
+  domainUpDown1->Items->Remove("noodles");  
+  ```  
   
-     -or-  
+   -or-  
   
--   Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> method to remove an item by its position.  
+- Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> method to remove an item by its position.  
   
-    ```vb  
-    ' Removes the first item in the list.  
-    DomainUpDown1.Items.RemoveAt(0)  
-    ```  
+  ```vb  
+  ' Removes the first item in the list.  
+  DomainUpDown1.Items.RemoveAt(0)  
+  ```  
   
-    ```csharp  
-    // Removes the first item in the list.  
-    domainUpDown1.Items.RemoveAt(0);  
-    ```  
+  ```csharp  
+  // Removes the first item in the list.  
+  domainUpDown1.Items.RemoveAt(0);  
+  ```  
   
-    ```cpp  
-    // Removes the first item in the list.  
-    domainUpDown1->Items->RemoveAt(0);  
-    ```  
+  ```cpp  
+  // Removes the first item in the list.  
+  domainUpDown1->Items->RemoveAt(0);  
+  ```  
   
 ## See Also  
  <xref:System.Windows.Forms.DomainUpDown>  

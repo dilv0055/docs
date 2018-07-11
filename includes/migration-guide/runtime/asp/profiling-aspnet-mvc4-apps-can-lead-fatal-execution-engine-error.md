@@ -1,5 +1,6 @@
 ### Profiling ASP.Net MVC4 apps can lead to Fatal Execution Engine Error
 
+
 |   |   |
 |---|---|
 |Details|Profilers using NGEN /Profile assemblies may crash profiled ASP.NET MVC4 applications on startup with a 'Fatal Execution Engine Exception'|

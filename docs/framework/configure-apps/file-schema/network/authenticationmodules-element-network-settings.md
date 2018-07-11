@@ -14,47 +14,49 @@ manager: "markl"
 ---
 # &lt;authenticationModules&gt; Element (Network Settings)
 Specifies modules used to authenticate network requests.  
-  
+
  \<configuration>  
 \<system.net>  
 \<authenticationModules>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <authenticationModules>   
 </authenticationModules>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |**Element**|**Description**|  
 |-----------------|---------------------|  
 |[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-authenticationmodules-network-settings.md)|Adds an authentication module to the application.|  
 |[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-authenticationmodules-network-settings.md)|Clears all authentication modules from the application.|  
 |[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-authenticationmodules-network-settings.md)|Removes an authentication module from the application.|  
-  
+
 ### Parent Elements  
-  
+
+
 |**Element**|**Description**|  
 |-----------------|---------------------|  
 |[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contains settings that specify how the .NET Framework connects to the network.|  
-  
+
 ## Remarks  
  The `authenticationModule` element specifies the authentication modules that conduct the authentication process with a server. An authentication module must implement the <xref:System.Net.IAuthenticationModule> interface.  
-  
+
 ## Configuration Files  
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
-  
+
 ## Example  
  The following example enables an authentication module. You should replace the values for Version and PublicKeyToken with the correct values for the specified module.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -65,7 +67,7 @@ Specifies modules used to authenticate network requests.
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.IAuthenticationModule>  
  <xref:System.Net.AuthenticationManager>  

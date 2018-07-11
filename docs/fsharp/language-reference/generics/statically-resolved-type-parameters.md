@@ -21,6 +21,7 @@ Statically resolved type parameters are primarily useful in conjunction with mem
 
 The following table summarizes the similarities and differences between the two kinds of type parameters.
 
+
 |Feature|Generic|Statically resolved|
 |-------|-------|-------------------|
 |Syntax|`'T`, `'U`|`^T`, `^U`|

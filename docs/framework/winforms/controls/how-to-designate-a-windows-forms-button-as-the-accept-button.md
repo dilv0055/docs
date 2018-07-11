@@ -20,28 +20,28 @@ On any Windows Form, you can designate a <xref:System.Windows.Forms.Button> cont
   
 ### To designate the accept button  
   
-1.  Set the form's <xref:System.Windows.Forms.Form.AcceptButton%2A> property to the appropriate <xref:System.Windows.Forms.Button> control.  
+1. Set the form's <xref:System.Windows.Forms.Form.AcceptButton%2A> property to the appropriate <xref:System.Windows.Forms.Button> control.  
   
-    ```vb  
-    Private Sub SetDefault(ByVal myDefaultBtn As Button)  
-      Me.AcceptButton = myDefaultBtn   
-    End Sub  
-    ```  
+   ```vb  
+   Private Sub SetDefault(ByVal myDefaultBtn As Button)  
+     Me.AcceptButton = myDefaultBtn   
+   End Sub  
+   ```  
   
-    ```csharp  
-    private void SetDefault(Button myDefaultBtn)  
-    {  
-       this.AcceptButton = myDefaultBtn;  
-    }  
-    ```  
+   ```csharp  
+   private void SetDefault(Button myDefaultBtn)  
+   {  
+      this.AcceptButton = myDefaultBtn;  
+   }  
+   ```  
   
-    ```cpp  
-    private:  
-       void SetDefault(Button ^ myDefaultBtn)  
-       {  
-          this->AcceptButton = myDefaultBtn;  
-       }  
-    ```  
+   ```cpp  
+   private:  
+      void SetDefault(Button ^ myDefaultBtn)  
+      {  
+         this->AcceptButton = myDefaultBtn;  
+      }  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.Form.AcceptButton%2A>  

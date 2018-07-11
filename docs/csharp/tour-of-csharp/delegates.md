@@ -4,7 +4,6 @@ description: Learn late binding with C# delegates
 ms.date: 08/10/2016
 ms.assetid: 3cc27357-3ac2-43a1-aad0-86a77b88f884
 ---
-
 # Delegates
 
 A ***delegate type*** represents references to methods with a particular parameter list and return type. Delegates make it possible to treat methods as entities that can be assigned to variables and passed as parameters. Delegates are similar to the concept of function pointers found in some other languages, but unlike function pointers, delegates are object-oriented and type-safe.
@@ -23,6 +22,6 @@ Delegates can also be created using anonymous functions, which are "inline metho
 
 An interesting and useful property of a delegate is that it does not know or care about the class of the method it references; all that matters is that the referenced method has the same parameters and return type as the delegate.
 
->[!div class="step-by-step"]
-[Previous](enums.md)
-[Next](attributes.md)
+> [!div  class="step-by-step"]
+> [Previous](enums.md)
+> [Next](attributes.md)

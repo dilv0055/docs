@@ -39,17 +39,17 @@ public static System.Collections.IEnumerable SomeNumbers()
   
  **In this topic**  
   
--   [Simple Iterator](#BKMK_SimpleIterator)  
+- [Simple Iterator](#BKMK_SimpleIterator)  
   
--   [Creating a Collection Class](#BKMK_CollectionClass)  
+- [Creating a Collection Class](#BKMK_CollectionClass)  
   
--   [Using Iterators with a Generic List](#BKMK_GenericList)  
+- [Using Iterators with a Generic List](#BKMK_GenericList)  
   
--   [Syntax Information](#BKMK_SyntaxInformation)  
+- [Syntax Information](#BKMK_SyntaxInformation)  
   
--   [Technical Implementation](#BKMK_Technical)  
+- [Technical Implementation](#BKMK_Technical)  
   
--   [Use of Iterators](#BKMK_UseOfIterators)  
+- [Use of Iterators](#BKMK_UseOfIterators)  
   
 > [!NOTE]
 >  For all examples in this topic except the Simple Iterator example, include [using](../../../csharp/language-reference/keywords/using-directive.md) directives for the `System.Collections` and `System.Collections.Generic` namespaces.  
@@ -353,11 +353,11 @@ public class Stack<T> : IEnumerable<T>
 ##  <a name="BKMK_UseOfIterators"></a> Use of Iterators  
  Iterators enable you to maintain the simplicity of a `foreach` loop when you need to use complex code to populate a list sequence. This can be useful when you want to do the following:  
   
--   Modify the list sequence after the first `foreach` loop iteration.  
+- Modify the list sequence after the first `foreach` loop iteration.  
   
--   Avoid fully loading a large list before the first iteration of a `foreach` loop. An example is a paged fetch to load a batch of table rows. Another example is the <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> method, which implements iterators within the .NET Framework.  
+- Avoid fully loading a large list before the first iteration of a `foreach` loop. An example is a paged fetch to load a batch of table rows. Another example is the <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> method, which implements iterators within the .NET Framework.  
   
--   Encapsulate building the list in the iterator. In the iterator method, you can build the list and then yield each result in a loop.  
+- Encapsulate building the list in the iterator. In the iterator method, you can build the list and then yield each result in a loop.  
   
 ## See Also  
  <xref:System.Collections.Generic>  

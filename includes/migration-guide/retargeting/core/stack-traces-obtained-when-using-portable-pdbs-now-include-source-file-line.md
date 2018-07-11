@@ -1,5 +1,6 @@
 ### Stack traces obtained when using portable PDBs now include source file and line information if requested
 
+
 |   |   |
 |---|---|
 |Details|Starting with .NET Framework 4.7.2, stack traces obtained when using portable PDBs include source file and line information when requested. In versions prior to .NET Framework 4.7.2, source file and line information would be unavailable when using portable PDBs even if explicitly requested.|

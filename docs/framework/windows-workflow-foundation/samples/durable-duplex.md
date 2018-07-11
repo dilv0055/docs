@@ -90,89 +90,89 @@ This sample demonstrates how to set up and configure durable duplex message exch
 ## System Requirements  
  This sample requires the following components.  
   
-1.  Internet Information Services.  
+1. Internet Information Services.  
   
-2.  Internet Information Services -> IIS 6.0 Management Compatibility -> IIS Metabase and IIS 6.0 configuration compatibility.  
+2. Internet Information Services -> IIS 6.0 Management Compatibility -> IIS Metabase and IIS 6.0 configuration compatibility.  
   
-3.  World Wide Web Services -> Application Development Features -> ASP.NET.  
+3. World Wide Web Services -> Application Development Features -> ASP.NET.  
   
-4.  Microsoft Message Queues (MSMQ) Server.  
+4. Microsoft Message Queues (MSMQ) Server.  
   
 #### To use this sample  
   
-1.  Set up the persistence database and the results directory.  
+1. Set up the persistence database and the results directory.  
   
-    1.  Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.  
+   1. Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.  
   
-    2.  Navigate to the folder for this sample and run Setup.cmd.  
+   2. Navigate to the folder for this sample and run Setup.cmd.  
   
-2.  Set up the virtual application.  
+2. Set up the virtual application.  
   
-    1.  From a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt, register ASP.NET by running the following command.  
+   1. From a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt, register ASP.NET by running the following command.  
   
-        ```  
-        aspnet_regiis -i  
-        ```  
+      ```  
+      aspnet_regiis -i  
+      ```  
   
-    2.  Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] with administrator permissions by right-clicking [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] and selecting **Run as administrator**.  
+   2. Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] with administrator permissions by right-clicking [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] and selecting **Run as administrator**.  
   
-    3.  Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the DurableDuplex.sln file.  
+   3. Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the DurableDuplex.sln file.  
   
-3.  Set up the service queues.  
+3. Set up the service queues.  
   
-    1.  To run the DurableDuplex client, press F5.  
+   1. To run the DurableDuplex client, press F5.  
   
-    2.  Open the **Computer Management** console by running `Compmgmt.msc` from a command prompt.  
+   2. Open the **Computer Management** console by running `Compmgmt.msc` from a command prompt.  
   
-    3.  Expand **Service and Applications**, **Message Queuing**. **Private Queues**.  
+   3. Expand **Service and Applications**, **Message Queuing**. **Private Queues**.  
   
-    4.  Right-click the durableduplex/service1.xamlx and durableduplex/service2.xamlx queues and select **Properties**.  
+   4. Right-click the durableduplex/service1.xamlx and durableduplex/service2.xamlx queues and select **Properties**.  
   
-    5.  Select the **Security** tab and allow **Everyone Receive Message**, **Peek Message** and **Send Message** permissions for both queues.  
+   5. Select the **Security** tab and allow **Everyone Receive Message**, **Peek Message** and **Send Message** permissions for both queues.  
   
-    6.  Open Internet Information Services (IIS) Manager.  
+   6. Open Internet Information Services (IIS) Manager.  
   
-    7.  Browse to **Server**, **Sites**, **Default Web site**, **private**, **Durable Duplex** and select **Advanced Options**.  
+   7. Browse to **Server**, **Sites**, **Default Web site**, **private**, **Durable Duplex** and select **Advanced Options**.  
   
-    8.  Change the **Enabled Protocols** to **http,net.msmq**.  
+   8. Change the **Enabled Protocols** to **http,net.msmq**.  
   
-4.  Run the sample.  
+4. Run the sample.  
   
-    1.  Browse to http://localhost/private/durableduplex/service1.xamlx and http://localhost/private/durableduplex/service2.xamlx to ensure that both services are running.  
+   1. Browse to <http://localhost/private/durableduplex/service1.xamlx> and <http://localhost/private/durableduplex/service2.xamlx> to ensure that both services are running.  
   
-    2.  Press F5 to run DurableDuplexClient.  
+   2. Press F5 to run DurableDuplexClient.  
   
-         When the durable duplex message exchange completes a result.xml file is saved to the C:\Inbox folder and contains the result of the message exchange.  
+       When the durable duplex message exchange completes a result.xml file is saved to the C:\Inbox folder and contains the result of the message exchange.  
   
 #### To cleanup (Optional)  
   
-1.  Run Cleanup.cmd.  
+1. Run Cleanup.cmd.  
   
-    1.  Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.  
+   1. Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.  
   
-    2.  Navigate to the folder for this sample and run Cleanup.cmd.  
+   2. Navigate to the folder for this sample and run Cleanup.cmd.  
   
-2.  Remove the virtual application for the services.  
+2. Remove the virtual application for the services.  
   
-    1.  Open the Internet Information Services (IIS) Manager by running `Inetmgr.exe` from a command prompt.  
+   1. Open the Internet Information Services (IIS) Manager by running `Inetmgr.exe` from a command prompt.  
   
-    2.  Browse to the default Web site and remove the **private** virtual directory.  
+   2. Browse to the default Web site and remove the **private** virtual directory.  
   
-3.  Remove the queues set up for this sample.  
+3. Remove the queues set up for this sample.  
   
-    1.  Open the Computer Management console by running `Compmgmt.msc` from a command prompt.  
+   1. Open the Computer Management console by running `Compmgmt.msc` from a command prompt.  
   
-    2.  Expand **Service and Applications**, **Message Queuing**, **Private Queues**.  
+   2. Expand **Service and Applications**, **Message Queuing**, **Private Queues**.  
   
-    3.  Delete the durableduplex/service1.xamlx and durableduplex/service2.xamlx queues.  
+   3. Delete the durableduplex/service1.xamlx and durableduplex/service2.xamlx queues.  
   
-4.  Remove the C:\Inbox directory.  
+4. Remove the C:\Inbox directory.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\DurableDuplex`

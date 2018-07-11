@@ -12,7 +12,7 @@ Streaming support between SQL Server and an application (new in [!INCLUDE[net_v4
   
 > [!WARNING]
 >  Asynchronous calls are not supported if an application also uses the `Context Connection` connection string keyword.  
->   
+> 
 >  The members added to support streaming are used to retrieve data from queries and to pass parameters to queries and stored procedures. The streaming feature addresses basic OLTP and data migration scenarios and is applicable to on premise and off premise data migrations.environments.  
   
 ## Streaming Support from SQL Server  
@@ -20,25 +20,25 @@ Streaming support between SQL Server and an application (new in [!INCLUDE[net_v4
   
  The following members were added to <xref:System.Data.SqlClient.SqlDataReader> to enable streaming support from SQL Server:  
   
-1.  <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>  
+1. <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>  
   
-2.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValue%2A?displayProperty=nameWithType>  
+2. <xref:System.Data.SqlClient.SqlDataReader.GetFieldValue%2A?displayProperty=nameWithType>  
   
-3.  <xref:System.Data.SqlClient.SqlDataReader.GetFieldValueAsync%2A>  
+3. <xref:System.Data.SqlClient.SqlDataReader.GetFieldValueAsync%2A>  
   
-4.  <xref:System.Data.SqlClient.SqlDataReader.GetStream%2A>  
+4. <xref:System.Data.SqlClient.SqlDataReader.GetStream%2A>  
   
-5.  <xref:System.Data.SqlClient.SqlDataReader.GetTextReader%2A>  
+5. <xref:System.Data.SqlClient.SqlDataReader.GetTextReader%2A>  
   
-6.  <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>  
+6. <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>  
   
  The following members were added to <xref:System.Data.Common.DbDataReader> to enable streaming support from SQL Server:  
   
-1.  <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>  
+1. <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>  
   
-2.  <xref:System.Data.Common.DbDataReader.GetStream%2A>  
+2. <xref:System.Data.Common.DbDataReader.GetStream%2A>  
   
-3.  <xref:System.Data.Common.DbDataReader.GetTextReader%2A>  
+3. <xref:System.Data.Common.DbDataReader.GetTextReader%2A>  
   
 ## Streaming Support to SQL Server  
  Streaming support to SQL Server introduces new functionality in the <xref:System.Data.SqlClient.SqlParameter> class so it can accept and react to <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, and <xref:System.IO.TextReader> objects. <xref:System.Data.SqlClient.SqlParameter> is used to pass parameters to queries and stored procedures.  
@@ -47,19 +47,19 @@ Streaming support between SQL Server and an application (new in [!INCLUDE[net_v4
   
  The following <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> types will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.IO.Stream>:  
   
--   **Binary**  
+- **Binary**  
   
--   **VarBinary**  
+- **VarBinary**  
   
  The following <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> types will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.IO.TextReader>:  
   
--   **Char**  
+- **Char**  
   
--   **NChar**  
+- **NChar**  
   
--   **NVarChar**  
+- **NVarChar**  
   
--   **Xml**  
+- **Xml**  
   
  The **Xml**<xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> type will accept a <xref:System.Data.SqlClient.SqlParameter.Value%2A> of <xref:System.Xml.XmlReader>.  
   
@@ -89,15 +89,15 @@ GO
   
  The sample shows how to do the following:  
   
--   Avoid blocking a user-interface thread by providing an asynchronous way to retrieve large files.  
+- Avoid blocking a user-interface thread by providing an asynchronous way to retrieve large files.  
   
--   Transfer a large text file from SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+- Transfer a large text file from SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
--   Transfer a large XML file from SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+- Transfer a large XML file from SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
--   Retrieve data from SQL Server.  
+- Retrieve data from SQL Server.  
   
--   Transfer large files (BLOBs) from one SQL Server database to another without running out of memory.  
+- Transfer large files (BLOBs) from one SQL Server database to another without running out of memory.  
   
 ```  
 using System;  
@@ -312,17 +312,17 @@ GO
   
  The sample shows how to do the following:  
   
--   Transferring a large BLOB to SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+- Transferring a large BLOB to SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
--   Transferring a large text file to SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+- Transferring a large text file to SQL Server in [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
--   Using the new asynchronous feature to transfer a large BLOB.  
+- Using the new asynchronous feature to transfer a large BLOB.  
   
--   Using the new asynchronous feature and the await keyword to transfer a large BLOB.  
+- Using the new asynchronous feature and the await keyword to transfer a large BLOB.  
   
--   Cancelling the transfer of a large BLOB..  
+- Cancelling the transfer of a large BLOB..  
   
--   Streaming from one SQL Server to another using the new asynchronous feature.  
+- Streaming from one SQL Server to another using the new asynchronous feature.  
   
 ```  
 using System;  

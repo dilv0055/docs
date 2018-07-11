@@ -24,13 +24,12 @@ Dock this tool window at a convenient location inside Visual Studio, such as the
 
 Create a new project using the **File** > **New Project** command. You can create either a VB or C# project. When Visual Studio opens the main code file for this project, the visualizer displays the syntax tree for it. You can open any existing C# / VB file in this Visual Studio instance, and the visualizer displays that file's syntax tree. If you have multiple code files open inside Visual Studio, the visualizer displays the syntax tree for the currently active code file, (the code file that has keyboard focus.)
 
-# [C#](#tab/csharp)
+#### [C#](#tab/csharp/)
 ![Visualizing a C# syntax tree](media/syntax-visualizer/visualize-csharp.png)
-# [Visual Basic](#tab/visual-basic)
+#### [Visual Basic](#tab/visual-basic/)
 ![Visualizing a VB syntax tree](media/syntax-visualizer/visualize-visual-basic.png)
 
----
-
+* * *
 As shown in the preceding images, the visualizer tool window displays the syntax tree at the top and a property grid at the bottom. The property grid displays the properties of the item that is currently selected in the tree, including the .NET *Type* and the *Kind* (SyntaxKind) of the item.
 
 Syntax trees comprise three types of items – *nodes*, *tokens*, and *trivia*. You can read more about these types in the [Work with syntax](work-with-syntax.md) article. Items of each type are represented using a different color. Click on the ‘Legend’ button for an overview of the colors used.
@@ -46,24 +45,23 @@ The visualizer highlights the item in the tree whose span best matches the span 
 The visualizer refreshes the tree to match modifications in the active code file. Add a call to `Console.WriteLine()` inside `Main()`. As you type, the visualizer refreshes the tree.
 
 Pause typing once you have typed `Console.`. The tree has some items colored in pink. At this point, there are errors (also referred to as ‘Diagnostics’) in the typed code. These errors are attached to nodes, tokens, and trivia in the syntax tree. The visualizer shows you which items have errors attached to them highlighting the background in pink. You can inspect the errors on any item colored pink by hovering over the item. The visualizer only displays syntactic errors (those errors related to the syntax of the typed code); it doesn't display any semantic errors.
- 
+
 ## Syntax Graphs
 
 Right click on any item in the tree and click on **View Directed Syntax Graph**. 
 
-# [C#](#tab/csharp)
+#### [C#](#tab/csharp/)
 
 The visualizer displays a graphical representation of the subtree rooted at the selected item. Try these steps for the **MethodDeclaration** node corresponding to the `Main()` method in the C# example. The visualizer displays a syntax graph that looks as follows:
 
 ![Viewing a C# syntax graph](media/syntax-visualizer/csharp-syntax-graph.png)
-# [Visual Basic](#tab/visual-basic)
+#### [Visual Basic](#tab/visual-basic/)
 
 Try the same for the **SubBlock** node corresponding to the `Main()` method in the preceding VB example. The visualizer displays a syntax graph that looks as follows:
 
 ![Viewing a VB syntax graph](media/syntax-visualizer/visual-basic-syntax-graph.png)
 
----
-
+* * *
 The syntax graph viewer has an option to display a legend its coloring scheme. You can also hover over individual items in the syntax graph with the mouse to view the properties corresponding to that item.
 
 You can view syntax graphs for different items in the tree repeatedly and the graphs will always be displayed in the same window inside Visual Studio. You can dock this window at a convenient location inside Visual Studio so that you don’t have to switch between tabs to view a new syntax graph. The bottom, below code editor windows, is often convenient.

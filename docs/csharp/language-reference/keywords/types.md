@@ -9,11 +9,11 @@ ms.assetid: 16b984df-f417-4e02-b1e6-4589d4a614ea
 # Types (C# Reference)
 The C# typing system contains the following categories:  
   
--   [Value types](../../../csharp/language-reference/keywords/value-types.md)  
+- [Value types](../../../csharp/language-reference/keywords/value-types.md)  
   
--   [Reference types](../../../csharp/language-reference/keywords/reference-types.md)  
+- [Reference types](../../../csharp/language-reference/keywords/reference-types.md)  
   
--   [Pointer types](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
+- [Pointer types](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
   
  Variables that are value types store data, and those that are reference types store references to the actual data. Reference types are also referred to as objects. Pointer types can be used only in [unsafe](../../../csharp/language-reference/keywords/unsafe.md) mode.  
   

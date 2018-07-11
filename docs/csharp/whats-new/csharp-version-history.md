@@ -4,7 +4,6 @@ description: What did the language look like in its earliest versions, and how h
 author: erikdietrich
 ms.date: 09/20/2017
 ---
-
 # The history of C# #
 
 What did the language look like in its earliest incarnations? And how has it evolved in the years since?
@@ -151,4 +150,4 @@ All of these features offer cool new capabilities for developers and the opportu
 
 But C# is being put to ever broader use. .NET Core now targets any operating system and has its eyes firmly on the cloud and on portability.  These new capabilities certainly occupy the language designers' thoughts and time, in addition to coming up with new features.
 
-_Article_ [_originally published on the NDepend blog_](https://blog.ndepend.com/c-versions-look-language-history/)_, courtesy of Erik Dietrich and Patrick Smacchia._
+*Article* [*originally published on the NDepend blog*](https://blog.ndepend.com/c-versions-look-language-history/)*, courtesy of Erik Dietrich and Patrick Smacchia.*

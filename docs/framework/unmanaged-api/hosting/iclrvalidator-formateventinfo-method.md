@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # ICLRValidator::FormatEventInfo Method
 Gets a detailed message about the specified validation error.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT FormatEventInfo (  
     [in] HRESULT            hVECode,  
@@ -32,25 +32,26 @@ HRESULT FormatEventInfo (
     [in] SAFEARRAY(VARIANT) psa  
 );  
 ```  
-  
+
 #### Parameters  
  `hVECode`  
  [in] The HRESULT value that was passed to the validation error handler.  
-  
+
  `Context`  
  [in] A `VEContext` instance that contains context information about the validation errors.  
-  
+
  `msg`  
  [in, out] The friendly error message.  
-  
+
  `ulMaxLength`  
  [in] The maximum length of the error message.  
-  
+
  `psa`  
  [in] A safe array of additional parameters to be used in the message.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`FormatEventInfo` returned successfully.|  
@@ -59,16 +60,16 @@ HRESULT FormatEventInfo (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** IValidator.idl, IValidator.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRErrorReportingManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)  
  [ICLRValidator Interface](../../../../docs/framework/unmanaged-api/hosting/iclrvalidator-interface.md)

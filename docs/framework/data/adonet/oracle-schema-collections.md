@@ -5,45 +5,46 @@ ms.assetid: 89a75de8-dee8-45e2-a97f-254d7e62e7e1
 ---
 # Oracle Schema Collections
 The Microsoft .NET Framework Data Provider for Oracle supports the following specific schema collections in addition to the common schema collections:  
-  
--   Columns  
-  
--   Indexes  
-  
--   IndexColumns  
-  
--   Procedures  
-  
--   Sequences  
-  
--   Synonyms  
-  
--   Tables  
-  
--   Users  
-  
--   Views  
-  
--   Functions  
-  
--   Packages  
-  
--   PackageBodies  
-  
--   Arguments  
-  
--   UniqueKeys  
-  
--   PrimaryKeys  
-  
--   ForeignKeys  
-  
--   ForeignKeyColumns  
-  
--   ProcedureParameters  
-  
+
+- Columns  
+
+- Indexes  
+
+- IndexColumns  
+
+- Procedures  
+
+- Sequences  
+
+- Synonyms  
+
+- Tables  
+
+- Users  
+
+- Views  
+
+- Functions  
+
+- Packages  
+
+- PackageBodies  
+
+- Arguments  
+
+- UniqueKeys  
+
+- PrimaryKeys  
+
+- ForeignKeys  
+
+- ForeignKeyColumns  
+
+- ProcedureParameters  
+
 ## Columns  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the table, view or cluster.|  
@@ -55,9 +56,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |PRECISION|Decimal|Decimal precision for NUMBER datatype; binary precision for FLOAT datatype, null for all other datatypes.|  
 |SCALE|Decimal|Digits to right of decimal point in a number.|  
 |NULLABLE|String|Specifies whether a column allows NULLs. Value is N if there is a NOT NULL constraint on the column or if the column is part of a PRIMARY KEY.|  
-  
+
 ## Indexes  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the index|  
@@ -111,9 +113,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |DOMIDX_OPSTATUS|String|Reflects the status of an operation that was performed on a domain index: NULL: the specified index is not a domain index. VALID: the operation performed without errors. FAILED: the operation failed with an error.|  
 |FUNCIDX_STATUS|String|Indicates the status of a function-based index: NULL: this is not a function-based index, ENABLED: the function-based index is enabled, DISABLED: the function-based index is disabled.|  
 |JOIN_INDEX|String|Indicates whether this is a join index or not.|  
-  
+
 ## IndexColumns  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |INDEX_OWNER|String|Owner of the index.|  
@@ -125,9 +128,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |COLUMN_LENGTH|Decimal|Indexed length of the column.|  
 |CHAR_LENGTH|Decimal|Maximum codepoint length of the column.|  
 |DESCEND|String|Whether the column is sorted in descending order.|  
-  
+
 ## Procedures  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the object.|  
@@ -142,9 +146,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |GENERATED|String|Was the name of this object system generated? (Y &#124; N).|  
 |SECONDARY|String|Whether this is a secondary object created by the ODCIIndexCreate method of the Oracle9i Data Cartridge (Y &#124; N).|  
 |CREATED|DateTime|The date the object was created.|  
-  
+
 ## Sequences  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |SEQUENCE_OWNER|String|Name of the owner of the sequence.|  
@@ -156,9 +161,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |ORDER_FLAG|String|Are sequence numbers generated in order.|  
 |CACHE_SIZE|Decimal|Number of sequence numbers to cache.|  
 |LAST_NUMBER|Decimal|Last sequence number written to disk. If a sequence uses caching, the number written to disk is the last number placed in the sequence cache. This number is likely to be greater than the last sequence number that was used.|  
-  
+
 ## Synonyms  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the synonym.|  
@@ -166,25 +172,28 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |TABLE_OWNER|String|Owner of the object referenced by the synonym.|  
 |TABLE_NAME|String|Name of the object referenced by the synonym.|  
 |DB_LINK|String|Name of the database link referenced, if any.|  
-  
+
 ## Tables  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the table.|  
 |TABLE_NAME|String|Name of the table.|  
 |TYPE|String|Type of table.|  
-  
+
 ## Users  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |NAME|String|Name of the user.|  
 |ID|Decimal|ID number of the user.|  
 |CREATEDATE|DateTime|User creation date.|  
-  
+
 ## Views  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the view.|  
@@ -198,9 +207,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |VIEW_TYPE_OWNER|String|Owner of the type of the view if the view is a typed view.|  
 |VIEW_TYPE|String|Type of the view if the view is a typed view.|  
 |SUPERVIEW_NAME|String|Name of the superview.|  
-  
+
 ## Functions  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the object.|  
@@ -216,9 +226,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |TEMPORARY|String|Whether the object is temporary (the current session can see only data that it placed in this object itself).|  
 |GENERATED|String|Was the name of this object system generated? (Y &#124; N).|  
 |SECONDARY|String|Whether this is a secondary object created by the ODCIIndexCreate method of the Oracle9i Data Cartridge (Y &#124; N).|  
-  
+
 ## Packages  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the object.|  
@@ -233,9 +244,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |GENERATED|String|Was the name of this object system generated? (Y &#124; N).|  
 |SECONDARY|String|Whether this is a secondary object created by the ODCIIndexCreate method of the Oracle9i Data Cartridge (Y &#124; N).|  
 |CREATED|DateTime|The date the object was created.|  
-  
+
 ## PackageBodies  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the object.|  
@@ -250,9 +262,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |GENERATED|String|Was the name of this object system generated? (Y &#124; N).|  
 |SECONDARY|String|Whether this is a secondary object created by the ODCIIndexCreate method of the Oracle9i Data Cartridge (Y &#124; N).|  
 |CREATED|DateTime|The date the object was created.|  
-  
+
 ## Arguments  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Name of the owner of the object.|  
@@ -268,9 +281,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |DATA_PRECISION|Decimal|Length in decimal digits (NUMBER) or binary digits (FLOAT).|  
 |DATA_SCALE|Decimal|Digits to right of decimal point in a number.|  
 |DATA_TYPE|String|Data type of the argument.|  
-  
+
 ## UniqueKeys  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the constraint definition.|  
@@ -289,9 +303,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |LAST_CHANGE|DateTime|When the constraint was last enabled or disabled|  
 |INDEX_OWNER|String|Name of the user owning the index|  
 |INDEX_NAME|String|Name of the index|  
-  
+
 ## PrimaryKeys  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the constraint definition.|  
@@ -310,9 +325,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |LAST_CHANGE|DateTime|When the constraint was last enabled or disabled.|  
 |INDEX_OWNER|String|Name of the user owning the index.|  
 |INDEX_NAME|String|Name of the index.|  
-  
+
 ## ForeignKeys  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |PRIMARY_KEY_CONSTRAINT_NAME|String|Name of the constraint definition.|  
@@ -332,9 +348,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |LAST_CHANGE|DateTime|When the constraint was last enabled or disabled.|  
 |INDEX_OWNER|String|Name of the user owning the index.|  
 |INDEX_NAME|String|Name of the index.|  
-  
+
 ## ForeignKeyColumns  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the constraint definition.|  
@@ -342,9 +359,10 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |TABLE_NAME|String|Name of the table with constraint definition.|  
 |COLUMN_NAME|String|Name of the column or attribute of the object type column specified in the constraint definition.|  
 |POSITION|Decimal|Original position of column or attribute in the definition of the object.|  
-  
+
 ## ProcedureParameters  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |OWNER|String|Owner of the object.|  
@@ -372,6 +390,6 @@ The Microsoft .NET Framework Data Provider for Oracle supports the following spe
 |PLS_TYPE|String|For numeric arguments, the name of the PL/SQL type of the argument. Null otherwise.|  
 |CHAR_LENGTH|Decimal|Character limit for string data types.|  
 |CHAR_USED|String|Indicates whether the byte limit (B) or char limit (C) is official for the string.|  
-  
+
 ## See Also  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

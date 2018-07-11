@@ -10,7 +10,6 @@ ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
 author: "rpetrusha"
 ms.author: "ronpet"
 ---
-
 # Overview of the .NET Framework
 
 The .NET Framework is a technology that supports building and running the next generation of apps and XML Web services. The .NET Framework is designed to fulfill the following objectives:

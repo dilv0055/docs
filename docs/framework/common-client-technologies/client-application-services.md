@@ -21,11 +21,11 @@ ms.assetid: 1487d8df-089e-4f21-abfb-a791a652b58e
 # Client Application Services
 Client application services make it easy for you to create Windows-based applications that use the [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] login, roles, and profile application services included in the Microsoft ASP.NET 2.0 AJAX Extensions. These services enable multiple Web and Windows-based applications to share user information and user-management functionality from a single server. For example, you can use these services to perform the following tasks:  
   
--   Authenticate a user. You can use the authentication service to verify a user's identity.  
+- Authenticate a user. You can use the authentication service to verify a user's identity.  
   
--   Determine the role or roles of an authenticated user. You can use the roles service to change the user interface of your application depending on the user's role. For example, you can provide additional features for users who are in an administrator role.  
+- Determine the role or roles of an authenticated user. You can use the roles service to change the user interface of your application depending on the user's role. For example, you can provide additional features for users who are in an administrator role.  
   
--   Store and access per-user application settings located on the server. You can use the Web settings service (also known as the profile service) to share settings across multiple applications and locations.  
+- Store and access per-user application settings located on the server. You can use the Web settings service (also known as the profile service) to share settings across multiple applications and locations.  
   
  Client application services take advantage of the Web services extensibility model through client service providers that you can specify in your application configuration files. These service providers include offline functionality that uses a local cache for authentication, roles, and settings data when a network connection is unavailable.  
   

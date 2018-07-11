@@ -19,12 +19,14 @@ The following web sites provide guidance and can help you find answers to common
 
 ### On the web
 
+
 |Term|Definition|
 |----------|----------------|
 |[Visual Basic .NET Language Design](https://github.com/dotnet/vblang)|Official repository on GitHub for Visual Basic .NET language design.|
 |[Microsoft Visual Basic Team Blog](https://blogs.msdn.microsoft.com/vbteam/)|Provides access to the Visual Basic team blog.|
 
 ### Code samples
+
 
 |Term|Definition|
 |----------|----------------|
@@ -33,11 +35,13 @@ The following web sites provide guidance and can help you find answers to common
 
 ### Forums
 
+
 |Term|Definition|
 |----------|----------------|
 |[Visual Basic Forums](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=vbgeneral)|Discusses general Visual Basic issues.|
 
 ### Videos and webcasts
+
 
 |Term|Definition|
 |----------|----------------|
@@ -45,12 +49,14 @@ The following web sites provide guidance and can help you find answers to common
 
 ### Support
 
+
 |Term|Definition|
 |----------|----------------|
 |[Microsoft Support](https://support.microsoft.com)|Provides access to Knowledge Base (KB) articles, downloads and updates, support webcasts, and other services.|
 |[Visual Studio Questions](https://developercommunity.visualstudio.com)|Enables you to file bugs or provide suggestions to Microsoft about .NET and Visual Studio. You can also report a bug by selecting **Help** > **Send Feedback** > **Report a Problem** in Visual Studio.|
 
 ## Third-party resources
+
 
 |Term|Definition|
 |----------|----------------|

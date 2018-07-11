@@ -8,7 +8,6 @@ helpviewer_keywords:
   - "default keyword [C#]"
 ms.assetid: 14c48aaa-7d35-4058-a1a4-f53353050579
 ---
-
 # default (C# Reference)
 
 The `default` keyword can be used in the `switch` statement or in a default value expression:

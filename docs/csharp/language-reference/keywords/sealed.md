@@ -52,9 +52,9 @@ sealed class B : A {}
 ## Remarks  
  To determine whether to seal a class, method, or property, you should generally consider the following two points:  
   
--   The potential benefits that deriving classes might gain through the ability to customize your class.  
+- The potential benefits that deriving classes might gain through the ability to customize your class.  
   
--   The potential that deriving classes could modify your classes in such a way that they would no longer work correctly or as expected.  
+- The potential that deriving classes could modify your classes in such a way that they would no longer work correctly or as expected.  
   
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  

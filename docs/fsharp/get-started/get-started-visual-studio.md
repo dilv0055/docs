@@ -15,11 +15,11 @@ One of the most basic projects in Visual Studio is the Console Application.  Her
 
 1. On the **File** menu, point to **New**, and then choose **Project**.
 
-2.  In the New Project dialog, under **Templates**, you should see **Visual F#**.  Choose this to show the F# templates.
+2. In the New Project dialog, under **Templates**, you should see **Visual F#**.  Choose this to show the F# templates.
 
 3. Select either **.NET Core Console app** or **Console app**.
 
-3. Choose the **Okay** button to create the F# project!  You should now see an F# project in the Solution Explorer.
+4. Choose the **Okay** button to create the F# project!  You should now see an F# project in the Solution Explorer.
 
 ## Writing your code
 

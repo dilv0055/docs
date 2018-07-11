@@ -11,14 +11,14 @@ Peer Channel is by design a broadcast mesh. Its basic flooding model involves di
   
  Hop count may be added to a message by adding `PeerHopCount` as an attribute to the applicable property or field in the implementation of the message class. You can set this to a specific value before sending the message to the mesh. In this manner, you can use hop count to limit distribution of messages throughout the mesh when necessary, potentially avoiding unnecessary message duplication. This is useful in cases where the mesh contains a high amount of redundant data, or for sending a message to immediate neighbors, or neighbors within a few hops.  
   
--   For code snippets and related information, see the [Peer Channel blog](http://go.microsoft.com/fwlink/?LinkID=114531) (http://go.microsoft.com/fwlink/?LinkID=114531).  
+- For code snippets and related information, see the [Peer Channel blog](http://go.microsoft.com/fwlink/?LinkID=114531) (<http://go.microsoft.com/fwlink/?LinkID=114531>).  
   
 ## Message Propagation Filter  
  `MessagePropagationFilter` can be used for customized control of message flooding, especially when the content of the message or other specific scenarios determine propagation. The filter makes propagation decisions for every message that passes through the node. This is true for messages that originated elsewhere in the mesh that your node has received as well as messages created by your application. The filter has access to both the message and its origination, so decisions about forwarding or dropping the message can be based on the full information available.  
   
  <xref:System.ServiceModel.PeerMessagePropagationFilter> is a base abstract class with a single function, <xref:System.ServiceModel.PeerMessagePropagationFilter.ShouldMessagePropagate%2A>. The first argument of the method call passes in a full copy of the message. Any changes made to the message do not affect the actual message. The last argument of the method call identifies the origin of the message (`PeerMessageOrigination.Local` or `PeerMessageOrigination.Remote`). Concrete implementations of this method must return a constant from the <xref:System.ServiceModel.PeerMessagePropagation> enumeration indicating that the message is to be forwarded to the local application (`Local`), forwarded to remote clients (`Remote`), both (`LocalAndRemote`), or neither (`None`). This filter can be applied by accessing the corresponding `PeerNode` object and specifying an instance of the derived propagation filter class in the `PeerNode.MessagePropagationFilter` property. Ensure that the propagation filter is attached before opening the Peer Channel.  
   
--   For code snippets and related information, see the [Peer Channel blog](http://go.microsoft.com/fwlink/?LinkID=114532) (http://go.microsoft.com/fwlink/?LinkID=114532).  
+- For code snippets and related information, see the [Peer Channel blog](http://go.microsoft.com/fwlink/?LinkID=114532) (<http://go.microsoft.com/fwlink/?LinkID=114532>).  
   
 ## Contacting an Individual Node in the Mesh  
  An individual node in a mesh can be contacted by setting up a local filter, or by setting up a direct connection.  
@@ -30,33 +30,33 @@ Peer Channel is by design a broadcast mesh. Its basic flooding model involves di
 ## Choosing an Approach for Limiting Message Distribution  
  When you discover a scenario in which you need to limit message distribution, ask yourself the following questions:  
   
--   **Who** needs to receive the message? Just one neighbor node? A node somewhere else in the mesh? Half the mesh?  
+- **Who** needs to receive the message? Just one neighbor node? A node somewhere else in the mesh? Half the mesh?  
   
--   **How often** will this message be sent?  
+- **How often** will this message be sent?  
   
--   What kind of **bandwidth** will this message use?  
+- What kind of **bandwidth** will this message use?  
   
  The answers to these questions can help you determine whether to use Hop Count, a Message Propagation Filter, a local filter, or a direct connection. Consider the following general guidelines:  
   
--   **Who**  
+- **Who**  
   
-    -   *Individual node*:  Local filter or direct connection.  
+  - *Individual node*:  Local filter or direct connection.  
   
-    -   *Neighbors within a certain vicinity*:  PeerHopCount.  
+  - *Neighbors within a certain vicinity*:  PeerHopCount.  
   
-    -   *Complex subset of the mesh*:  MessagePropagationFilter.  
+  - *Complex subset of the mesh*:  MessagePropagationFilter.  
   
--   **How often**  
+- **How often**  
   
-    -   *Very frequent*:  Direct connection, PeerHopCount, MessagePropagationFilter.  
+  - *Very frequent*:  Direct connection, PeerHopCount, MessagePropagationFilter.  
   
-    -   *Occasional*:  Local filter.  
+  - *Occasional*:  Local filter.  
   
--   **Bandwidth use**  
+- **Bandwidth use**  
   
-    -   *High*:  Direct connection, less advisable to use MessagePropagationFilter or local filter.  
+  - *High*:  Direct connection, less advisable to use MessagePropagationFilter or local filter.  
   
-    -   *Low*:  Any, direct connection probably not needed.  
+  - *Low*:  Any, direct connection probably not needed.  
   
 ## See Also  
  [Building a Peer Channel Application](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)

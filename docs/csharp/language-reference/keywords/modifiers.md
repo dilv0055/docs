@@ -8,7 +8,8 @@ ms.assetid: c96691dd-b357-49ec-b5ae-03ca214fadfb
 ---
 # Modifiers (C# Reference)
 Modifiers are used to modify declarations of types and type members. This section introduces the C# modifiers.  
-  
+
+
 |Modifier|Purpose|  
 |--------------|-------------|  
 |[Access Modifiers](../../../csharp/language-reference/keywords/access-modifiers.md)<br /><br /> -   [public](../../../csharp/language-reference/keywords/public.md)<br />-   [private](../../../csharp/language-reference/keywords/private.md)<br />-   [internal](../../../csharp/language-reference/keywords/internal.md)<br />-   [protected](../../../csharp/language-reference/keywords/protected.md)|Specifies the declared accessibility of types and type members.|  
@@ -26,7 +27,7 @@ Modifiers are used to modify declarations of types and type members. This sectio
 |[unsafe](../../../csharp/language-reference/keywords/unsafe.md)|Declares an unsafe context.|  
 |[virtual](../../../csharp/language-reference/keywords/virtual.md)|Declares a method or an accessor whose implementation can be changed by an overriding member in a derived class.|  
 |[volatile](../../../csharp/language-reference/keywords/volatile.md)|Indicates that a field can be modified in the program by something such as the operating system, the hardware, or a concurrently executing thread.|  
-  
+
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  
  [C# Programming Guide](../../../csharp/programming-guide/index.md)  

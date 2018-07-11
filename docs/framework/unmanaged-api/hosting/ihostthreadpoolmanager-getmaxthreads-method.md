@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostThreadPoolManager::GetMaxThreads Method
 Gets the maximum number of threads that the host maintains concurrently in the thread pool.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetMaxThreads (  
     [out] DWORD *pdwMaxWorkerThreads  
 );  
 ```  
-  
+
 #### Parameters  
  `pdwMaxWorkerThreads`  
  [out] A pointer to the maximum number of threads that the host maintains in the thread pool.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`GetMaxThreads` returned successfully.|  
@@ -44,21 +45,21 @@ HRESULT GetMaxThreads (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_NOTIMPL|The host does not provide an implementation of `GetMaxThreads`.|  
-  
+
 ## Remarks  
  The CLR calls `GetMaxThreads` to determine the total number of threads in the thread pool. The [GetAvailableThreads](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getavailablethreads-method.md) method gets the number of threads that are not currently processing work items. All requests above the returned value of the `pdwMaxWorkerThreads` parameter remain queued until threads become available.  
-  
+
  If the host does not provide an implementation of `GetMaxThreads`, it should return an HRESULT value of E_NOTIMPL.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  <xref:System.Threading.ThreadPool.GetMaxThreads%2A>  
  <xref:System.Threading.ThreadPool>  

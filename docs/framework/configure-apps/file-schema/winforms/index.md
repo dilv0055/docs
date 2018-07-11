@@ -30,11 +30,13 @@ None.
 
 ### Child elements
 
+
 Element  |Description |
 ---------|---------|
 [`<add>`](../../../../../docs/framework/configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md) | Adds a configuration setting key with a specified value |
 
 ### Parent elements
+
 
 Element  |Description |
 ---------|---------|

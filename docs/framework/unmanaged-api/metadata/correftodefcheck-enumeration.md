@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorRefToDefCheck Enumeration
 Specifies flags to control which referenced items are converted to their definitions in order to optimize the code.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorRefToDefCheck {  
     MDRefToDefDefault           = 0x00000003,  
@@ -31,9 +31,10 @@ typedef enum CorRefToDefCheck {
     MDMemberRefToDef            = 0x00000002  
 } CorRefToDefCheck;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`MDRefToDefDefault`|Specifies that type references and member references should be converted to definitions. This is the default value (`MDTypeRefToDef` &#124; `MDMemberRefToDef`).|  
@@ -41,13 +42,13 @@ typedef enum CorRefToDefCheck {
 |`MDRefToDefNone`|Specifies that no referenced items should be converted to definitions.|  
 |`MDTypeRefToDef`|Specifies that only type references should be converted to type definitions.|  
 |`MDMemberRefToDef`|Specifies that only member references should be converted to definitions. That is, member references should be converted to either method definitions or field definitions.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -22,7 +22,7 @@ The main pillars of [Cloud-Native](https://www.gartner.com/doc/3181919/architect
 Figure 4-4 shows the main characteristics of the Cloud-Native model.  
 
 > ![Cloud-Native characteristics are Microservices, containers, cloud-resilient, orchestrators and serverles](./media/image4.png)
->
+> 
 > **Figure 4-4.** Cloud-Native characteristics
 
 In addition, you can extend basic modern web apps and cloud-native apps by adding other services, like artificial intelligence (AI), machine learning (ML), and IoT. You might use any of these services to extend any of the possible Cloud-Optimized approaches.
@@ -62,6 +62,6 @@ As a final note, even at the risk of being repetitive about this concept, you sh
 In any case, the rest of this present guidance focuses most of all on "no microservices-based apps" because this guidance is mainly targeting the modernization of existing apps that usually have monolithic or N-Tier architectures.
 
 
->[!div class="step-by-step"]
-[Previous](microsoft-technologies-in-cloud-optimized-applications.md)
-[Next](deploy-existing-net-apps-as-windows-containers.md)
+> [!div  class="step-by-step"]
+> [Previous](microsoft-technologies-in-cloud-optimized-applications.md)
+> [Next](deploy-existing-net-apps-as-windows-containers.md)

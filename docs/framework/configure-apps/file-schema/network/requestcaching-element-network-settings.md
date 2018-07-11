@@ -14,13 +14,13 @@ manager: "markl"
 ---
 # &lt;requestCaching&gt; Element (Network Settings)
 Controls the caching mechanism for network requests.  
-  
+
  \<configuration>  
 \<system.net>  
 \<requestCaching>  
-  
+
 ## Syntax  
-  
+
 ```xml  
       <requestCaching>  
         isPrivateCache ="true|false"  
@@ -31,21 +31,23 @@ Controls the caching mechanism for network requests.
           <defaultFtpCachePolicy> … </defaultFtpCachePolicy>  
       </requestCaching>
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`isPrivateCache`|Specifies whether the cache provides isolation between the information of different users. The default value is `true`. This value should be `false` for middle tier applications.|  
 |`disableAllCaching`|Specifies that caching is disabled for all Web responses, and cannot be overridden programmatically.|  
 |`defaultPolicyLevel`|One of the values in the <xref:System.Net.Cache.RequestCacheLevel> enumeration. The default value is `BypassCache`.|  
 |`unspecifiedMaximumAge`|Specifies the default time after which content is marked as expired.|  
-  
+
 ## policyLevel Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |`Default`|Returns the cached resource if the resource is fresh, the content length is accurate, and the expiration, modification, and content length attributes are present.|  
@@ -56,23 +58,25 @@ Controls the caching mechanism for network requests.
 |`Reload`|Downloads the resource from the server, stores it in the cache, and returns the resource to the caller.|  
 |`NoCacheNoStore`|If a cached resource exists, it is deleted. The resource is downloaded from the server and is returned to the caller.|  
 |`Revalidate`|Satisfies a request by using the cached copy of the resource if the timestamp is the same as the timestamp of the resource on the server; otherwise, the resource is downloaded from the server, presented to the caller, and is stored in the cache,|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](../../../../../docs/framework/configure-apps/file-schema/network/defaulthttpcachepolicy-element-network-settings.md)|Optional element.<br /><br /> Describes whether HTTP caching is active and describes the default caching policy.|  
 |[\<defaultFtpCachePolicy> Element (Network Settings)](../../../../../docs/framework/configure-apps/file-schema/network/defaultftpcachepolicy-element-network-settings.md)|Optional element.<br /><br /> Describes whether FTP caching is active and describes the default caching policy.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contains settings that specify how the .NET Framework connects to the network.|  
-  
+
 ## Example  
  The following example shows how to disable all caching.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -82,7 +86,7 @@ Controls the caching mechanism for network requests.
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.Cache?displayProperty=nameWithType>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

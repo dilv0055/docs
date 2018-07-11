@@ -34,15 +34,15 @@ This topic shows how to create a time zone with adjustment rules. To create a ti
 
 1. For each adjustment (that is, for each transition away from and back to standard time over a particular time interval), do the following:
 
-    1. Define the starting transition time for the time zone adjustment.
+   1. Define the starting transition time for the time zone adjustment.
 
-       You must call the <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A?displayProperty=nameWithType> method and pass it a <xref:System.DateTime> value that defines the time of the transition, an integer value that defines the month of the transition, an integer value that defines the week on which the transition occurs, and a <xref:System.DayOfWeek> value that defines the day of the week on which the transition occurs. This method call instantiates a <xref:System.TimeZoneInfo.TransitionTime> object.
+      You must call the <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A?displayProperty=nameWithType> method and pass it a <xref:System.DateTime> value that defines the time of the transition, an integer value that defines the month of the transition, an integer value that defines the week on which the transition occurs, and a <xref:System.DayOfWeek> value that defines the day of the week on which the transition occurs. This method call instantiates a <xref:System.TimeZoneInfo.TransitionTime> object.
 
-    2. Define the ending transition time for the time zone adjustment. This requires another call to the <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A?displayProperty=nameWithType> method. This method call instantiates a second <xref:System.TimeZoneInfo.TransitionTime> object.
+   2. Define the ending transition time for the time zone adjustment. This requires another call to the <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A?displayProperty=nameWithType> method. This method call instantiates a second <xref:System.TimeZoneInfo.TransitionTime> object.
 
-    3. Call the <xref:System.TimeZoneInfo.AdjustmentRule.CreateAdjustmentRule%2A> method and pass it the effective start and end dates of the adjustment, a <xref:System.TimeSpan> object that defines the amount of time in the transition, and the two <xref:System.TimeZoneInfo.TransitionTime> objects that define when the transitions to and from daylight saving time occur. This method call instantiates a <xref:System.TimeZoneInfo.AdjustmentRule> object.
+   3. Call the <xref:System.TimeZoneInfo.AdjustmentRule.CreateAdjustmentRule%2A> method and pass it the effective start and end dates of the adjustment, a <xref:System.TimeSpan> object that defines the amount of time in the transition, and the two <xref:System.TimeZoneInfo.TransitionTime> objects that define when the transitions to and from daylight saving time occur. This method call instantiates a <xref:System.TimeZoneInfo.AdjustmentRule> object.
 
-    4. Assign the <xref:System.TimeZoneInfo.AdjustmentRule> object to an array of <xref:System.TimeZoneInfo.AdjustmentRule> objects.
+   4. Assign the <xref:System.TimeZoneInfo.AdjustmentRule> object to an array of <xref:System.TimeZoneInfo.AdjustmentRule> objects.
 
 2. Define the time zone's display name. The display name follows a fairly standard format in which the time zone's offset from Coordinated Universal Time (UTC) is enclosed in parentheses and is followed by a string that identifies the time zone, one or more of the cities in the time zone, or one or more of the countries or regions in the time zone.
 

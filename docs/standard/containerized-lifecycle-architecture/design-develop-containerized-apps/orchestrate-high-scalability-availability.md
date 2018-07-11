@@ -23,17 +23,18 @@ To go beyond the management of individual containers or very simple composed app
 
 From an architecture and development point of view, if you are building large, enterprise, microservices-based, applications, it is important to understand the following platforms and products that support advanced scenarios:
 
--   **Clusters and orchestrators** When you need to scale-out applications across many Docker hosts, such as with a large microservices-based application, it is critical to be able to manage all of those hosts as a single cluster by abstracting the complexity of the underlying platform. That is what the container clusters and orchestrators provide. Examples of orchestrators are Docker Swarm, Mesosphere DC/OS, Kubernetes (the first three available through Azure Container Service), and Azure Service Fabric.
+- **Clusters and orchestrators** When you need to scale-out applications across many Docker hosts, such as with a large microservices-based application, it is critical to be able to manage all of those hosts as a single cluster by abstracting the complexity of the underlying platform. That is what the container clusters and orchestrators provide. Examples of orchestrators are Docker Swarm, Mesosphere DC/OS, Kubernetes (the first three available through Azure Container Service), and Azure Service Fabric.
 
--   **Schedulers** *Scheduling* means to have the capability for an administrator to launch containers in a cluster so that they also provide a user interface. A cluster scheduler has several responsibilities: to use the cluster's resources efficiently, to set the constraints provided by the user, to efficiently load-balance containers across nodes or hosts, and to be robust against errors while providing high availability.
+- **Schedulers** *Scheduling* means to have the capability for an administrator to launch containers in a cluster so that they also provide a user interface. A cluster scheduler has several responsibilities: to use the cluster's resources efficiently, to set the constraints provided by the user, to efficiently load-balance containers across nodes or hosts, and to be robust against errors while providing high availability.
 
 The concepts of a cluster and a scheduler are closely related, so the products provided by different vendors often provide both sets of capabilities. Table 4-1 lists the most important platform and software choices you have for clusters and schedulers. These clusters are generally offered in public clouds like Azure.
 
 Table 4-1: Software platforms for container clustering, orchestration, and scheduling
 
+
 | Platform | Description |
 |---|---|
-| Docker Swarm<br/> ![http://rancher.com/wp-content/themes/rancher-2016/assets/images/swarm.png?v=2016-07-10-am](./media/image7.png) | Docker Swarm gives you the ability to cluster and schedule Docker containers. By using Swarm, you can turn a pool of Docker hosts into a single, virtual Docker host. Clients can make API requests to Swarm in the same way that they do to hosts, meaning that Swarm makes it easy for applications to scale to multiple hosts. <br /><br /> Docker Swarm is a product from Docker, the company. <br /><br /> Docker v1.12 or later can run native and built-in Swarm Mode. |
+| Docker Swarm<br/> ![http://rancher.com/wp-content/themes/rancher-2016/assets/images/swarm.png?v=2016-07-10-am](./media/image7.png) | Docker Swarm gives you the ability to cluster and schedule Docker containers. By using Swarm, you can turn a pool of Docker hosts into a single, virtual Docker host. Clients can make API requests to Swarm in the same way that they do to hosts, meaning that Swarm makes it easy for applications to scale to multiple hosts. <br /><br /> Docker Swarm is a product from Docker, the company. <br /><br /> Docker v1.12 or later can run native and built-in Swarm Mode. |
 | Mesosphere DC/OS<br/>![https://mesosphere.com/wp-content/uploads/2016/04/logo-horizontal-styled.png](./media/image8.png) |  Mesosphere Enterprise DC/OS (based on Apache Mesos) is a production-ready platform for running containers and distributed applications. <br /><br /> DC/OS works by abstracting a collection of the resources available in the cluster and making those resources available to components built on top of it. Marathon is usually used as a scheduler integrated with DC/OS. |
 | Google Kubernetes<br />![https://pbs.twimg.com/media/Bt\_pEfqCAAAiVyz.png](./media/image9.png) | Kubernetes is an open-source product that provides functionality that ranges from cluster infrastructure and container scheduling to orchestrating capabilities. With it, you can automate deployment, scaling, and operations of application containers across clusters of hosts. <br /><br /> Kubernetes provides a container-centric infrastructure that groups application containers into logical units for easy management and discovery. |
 | Azure Service Fabric<br />![https://azure.microsoft.com/svghandler/service-fabric?width=600&height=315](./media/image10.png) | [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) is a Microsoft microservices platform for building applications. It is an [orchestrator](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) of services and creates clusters of machines. By default, Service Fabric deploys and activates services as processes, but Service Fabric can deploy services in Docker container images. More important, you can mix services in processes with services in containers in the same application. <br /><br /> As of May 2017, the feature of Service Fabric that supports deploying services as Docker containers is in preview state. <br /><br /> You can develop Service Fabric services in many ways, from using the [Service Fabric programming models](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework) to deploying [guest executables](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-existing-app) as well as containers. Service Fabric supports prescriptive application models like [stateful services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) and [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
@@ -82,20 +83,20 @@ Container Service is currently available for Standard A, D, DS, G, and GS series
 
 Following are locations where you can find additional information:
 
--   Introduction to Docker container hosting solutions with Container Service:  
-    https://docs.microsoft.com/azure/container-service/kubernetes/container-service-intro-kubernetes>
+- Introduction to Docker container hosting solutions with Container Service:  
+  https://docs.microsoft.com/azure/container-service/kubernetes/container-service-intro-kubernetes>
 
--   Docker Swarm overview:  
-    <https://docs.docker.com/swarm/overview/>
+- Docker Swarm overview:  
+  <https://docs.docker.com/swarm/overview/>
 
--   Swarm mode overview:  
-    <https://docs.docker.com/engine/swarm/>
+- Swarm mode overview:  
+  <https://docs.docker.com/engine/swarm/>
 
--   Mesosphere DC/OS Overview:    
-    <https://docs.mesosphere.com/1.7/overview/>
+- Mesosphere DC/OS Overview:    
+  <https://docs.mesosphere.com/1.7/overview/>
 
--   Kubernetes (the official site):  
-    <https://kubernetes.io/>
+- Kubernetes (the official site):  
+  <https://kubernetes.io/>
 
 ## Using Service Fabric
 
@@ -105,9 +106,9 @@ The aim of Service Fabric is to solve the difficult problems of building and run
 
 Service Fabric provides two broad areas to help you build applications that use a microservices approach:
 
--   A platform that provides system services to deploy, scale, upgrade, detect, and restart failed services, discover service location, manage state, and monitor health. These system services in effect provide many of the characteristics of microservices described previously.
+- A platform that provides system services to deploy, scale, upgrade, detect, and restart failed services, discover service location, manage state, and monitor health. These system services in effect provide many of the characteristics of microservices described previously.
 
--   Programming APIs, or frameworks, to help you build applications as microservices: [reliable actors and reliable services](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework). Of course, you can choose any code to build your microservice, but these APIs make the job more straightforward, and they integrate with the platform at a deeper level. This way you can get health and diagnostics information, or you can take advantage of reliable state management.
+- Programming APIs, or frameworks, to help you build applications as microservices: [reliable actors and reliable services](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework). Of course, you can choose any code to build your microservice, but these APIs make the job more straightforward, and they integrate with the platform at a deeper level. This way you can get health and diagnostics information, or you can take advantage of reliable state management.
 
 Service Fabric is agnostic with respect to how you build your service, and you can use any technology. However, it provides built-in programming APIs that make it easier to build microservices.
 
@@ -123,7 +124,7 @@ Service Fabric clusters based on Linux and Windows hosts can run Docker Linux co
 
 Service Fabric is a good example of a platform with which you can define a different logical architecture (business microservices or Bounded Contexts) than the physical implementation. For example, if you implement [Stateful Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction) in [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview), which are introduced in the next section, "[Stateless versus stateful microservices](#stateless-versus-stateful-microservices)," you have a business microservice concept with multiple physical services.
 
-As shown in Figure 4-10, and thinking from a logical/business microservice perspective, when implementing a Service Fabric Stateful Reliable Service, you usually will need to implement two tiers of services. The first is the back-end stateful reliable service, which handles multiple partitions. The second is the front-end service, or Gateway service, in charge of routing and data aggregation across multiple partitions or stateful service instances. That Gateway service also handles client-side communication with retry loops accessing the back-end service used in conjunction with the Service Fabric [reverse proxy](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy).
+As shown in Figure 4-10, and thinking from a logical/business microservice perspective, when implementing a Service Fabric Stateful Reliable Service, you usually will need to implement two tiers of services. The first is the back-end stateful reliable service, which handles multiple partitions. The second is the front-end service, or Gateway service, in charge of routing and data aggregation across multiple partitions or stateful service instances. That Gateway service also handles client-side communication with retry loops accessing the back-end service used in conjunction with the Service Fabric [reverse proxy](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy).
 
 ![](./media/image14.png)
 
@@ -174,6 +175,6 @@ Other microservice frameworks that allow stateful services, that support the Act
 Note that Docker containers are themselves stateless. If you want to implement a stateful service, you need one of the additional prescriptive and higher-level frameworks noted earlier. However, as of this writing, stateful services in Service Fabric are not supported as containers, only as plain microservices. Reliable services support in containers will be available in upcoming versions of Service Fabric.
 
 
->[!div class="step-by-step"]
-[Previous](soa-applications.md)
-[Next](docker-apps-development-environment.md)
+> [!div  class="step-by-step"]
+> [Previous](soa-applications.md)
+> [Next](docker-apps-development-environment.md)

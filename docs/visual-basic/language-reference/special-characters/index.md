@@ -4,7 +4,6 @@ ms.date: 10/31/2017
 author: "rpetrusha"
 ms.author: "ronpet"
 ---
-
 # Special Characters (Visual Basic Reference)
 
 Special characters are predefined, contextual characters that modifies the program element to which they are prepended. Visual Basic supports the following special character: 
@@ -13,4 +12,4 @@ Special characters are predefined, contextual characters that modifies the progr
 
 ## See Also  
 [Visual Basic Reference](../../../csharp/language-reference/index.md)   
- 
+

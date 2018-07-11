@@ -28,15 +28,15 @@ The <xref:System.Threading.ThreadPool> class provides your application with a po
 ## When Not to Use Thread Pool Threads  
  There are several scenarios in which it is appropriate to create and manage your own threads instead of using thread pool threads:  
   
--   You require a foreground thread.  
+- You require a foreground thread.  
   
--   You require a thread to have a particular priority.  
+- You require a thread to have a particular priority.  
   
--   You have tasks that cause the thread to block for long periods of time. The thread pool has a maximum number of threads, so a large number of blocked thread pool threads might prevent tasks from starting.  
+- You have tasks that cause the thread to block for long periods of time. The thread pool has a maximum number of threads, so a large number of blocked thread pool threads might prevent tasks from starting.  
   
--   You need to place threads into a single-threaded apartment. All <xref:System.Threading.ThreadPool> threads are in the multithreaded apartment.  
+- You need to place threads into a single-threaded apartment. All <xref:System.Threading.ThreadPool> threads are in the multithreaded apartment.  
   
--   You need to have a stable identity associated with the thread, or to dedicate a thread to a task.  
+- You need to have a stable identity associated with the thread, or to dedicate a thread to a task.  
   
 ## Thread Pool Characteristics  
  Thread pool threads are background threads. See [Foreground and Background Threads](../../../docs/standard/threading/foreground-and-background-threads.md). Each thread uses the default stack size, runs at the default priority, and is in the multithreaded apartment.  
@@ -46,11 +46,11 @@ The <xref:System.Threading.ThreadPool> class provides your application with a po
 ### Exceptions in Thread Pool Threads  
  Unhandled exceptions on thread pool threads terminate the process. There are three exceptions to this rule:  
   
--   A <xref:System.Threading.ThreadAbortException> is thrown in a thread pool thread, because <xref:System.Threading.Thread.Abort%2A> was called.  
+- A <xref:System.Threading.ThreadAbortException> is thrown in a thread pool thread, because <xref:System.Threading.Thread.Abort%2A> was called.  
   
--   An <xref:System.AppDomainUnloadedException> is thrown in a thread pool thread, because the application domain is being unloaded.  
+- An <xref:System.AppDomainUnloadedException> is thrown in a thread pool thread, because the application domain is being unloaded.  
   
--   The common language runtime or a host process terminates the thread.  
+- The common language runtime or a host process terminates the thread.  
   
  For more information, see [Exceptions in Managed Threads](../../../docs/standard/threading/exceptions-in-managed-threads.md).  
   
@@ -85,13 +85,13 @@ The <xref:System.Threading.ThreadPool> class provides your application with a po
 ## ThreadPool Examples  
  The code examples in this section demonstrate the thread pool by using the <xref:System.Threading.Tasks.Task> class, the <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> method, and the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A?displayProperty=nameWithType> method.  
   
--   [Executing Asynchronous Tasks with the Task Parallel Library](#TaskParallelLibrary)  
+- [Executing Asynchronous Tasks with the Task Parallel Library](#TaskParallelLibrary)  
   
--   [Executing Code Asynchronously with QueueUserWorkItem](#ExecuteCodeWithQUWI)  
+- [Executing Code Asynchronously with QueueUserWorkItem](#ExecuteCodeWithQUWI)  
   
--   [Supplying Task Data for QueueUserWorkItem](#TaskDataForQUWI)  
+- [Supplying Task Data for QueueUserWorkItem](#TaskDataForQUWI)  
   
--   [Using RegisterWaitForSingleObject](#RegisterWaitForSingleObject)  
+- [Using RegisterWaitForSingleObject](#RegisterWaitForSingleObject)  
   
 <a name="TaskParallelLibrary"></a>   
 ### Executing Asynchronous Tasks with the Task Parallel Library  
@@ -120,13 +120,13 @@ The <xref:System.Threading.ThreadPool> class provides your application with a po
 ### Using RegisterWaitForSingleObject  
  The following example demonstrates several threading features.  
   
--   Queuing a task for execution by <xref:System.Threading.ThreadPool> threads, with the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> method.  
+- Queuing a task for execution by <xref:System.Threading.ThreadPool> threads, with the <xref:System.Threading.ThreadPool.RegisterWaitForSingleObject%2A> method.  
   
--   Signaling a task to execute, with <xref:System.Threading.AutoResetEvent>. See [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md).  
+- Signaling a task to execute, with <xref:System.Threading.AutoResetEvent>. See [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md).  
   
--   Handling both time-outs and signals with a <xref:System.Threading.WaitOrTimerCallback> delegate.  
+- Handling both time-outs and signals with a <xref:System.Threading.WaitOrTimerCallback> delegate.  
   
--   Canceling a queued task with <xref:System.Threading.RegisteredWaitHandle>.  
+- Canceling a queued task with <xref:System.Threading.RegisteredWaitHandle>.  
   
  [!code-cpp[Conceptual.ThreadPool#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.threadpool/cpp/source3.cpp#3)]
  [!code-csharp[Conceptual.ThreadPool#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.threadpool/cs/source3.cs#3)]

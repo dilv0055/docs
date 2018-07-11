@@ -1,5 +1,6 @@
 ### System.Activities is now APTCA
 
+
 |   |   |
 |---|---|
 |Details|The assembly is marked with the <xref:System.Security.AllowPartiallyTrustedCallersAttribute?displayProperty=name> attribute.|

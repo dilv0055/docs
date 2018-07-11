@@ -19,50 +19,50 @@ ms.assetid: 20388c6a-94f9-4d96-be18-8c200491247f
   
 ### To set a master/detail relationship programmatically  
   
-1.  Create two new <xref:System.Windows.Forms.DataGrid> controls and set their properties.  
+1. Create two new <xref:System.Windows.Forms.DataGrid> controls and set their properties.  
   
-2.  Add tables to the dataset.  
+2. Add tables to the dataset.  
   
-3.  Declare a variable of type <xref:System.Data.DataRelation> to represent the relation you want to create.  
+3. Declare a variable of type <xref:System.Data.DataRelation> to represent the relation you want to create.  
   
-4.  Instantiate the relationship by specifying a name for the relationship and specifying the table, column, and item that will tie the two tables.  
+4. Instantiate the relationship by specifying a name for the relationship and specifying the table, column, and item that will tie the two tables.  
   
-5.  Add the relationship to the <xref:System.Data.DataSet> object's <xref:System.Data.DataSet.Relations%2A> collection.  
+5. Add the relationship to the <xref:System.Data.DataSet> object's <xref:System.Data.DataSet.Relations%2A> collection.  
   
-6.  Use the <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> method of the <xref:System.Windows.Forms.DataGrid> to bind each of the grids to the <xref:System.Data.DataSet>.  
+6. Use the <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> method of the <xref:System.Windows.Forms.DataGrid> to bind each of the grids to the <xref:System.Data.DataSet>.  
   
-     The following example shows how to set a master/detail relationship between the Customers and Orders tables in a previously generated <xref:System.Data.DataSet> (`ds`).  
+    The following example shows how to set a master/detail relationship between the Customers and Orders tables in a previously generated <xref:System.Data.DataSet> (`ds`).  
   
-    ```vb  
-    Dim myDataRelation As DataRelation  
-    myDataRelation = New DataRelation _  
-       ("CustOrd", ds.Tables("Customers").Columns("CustomerID"), _  
-       ds.Tables("Orders").Columns("CustomerID"))  
-    ' Add the relation to the DataSet.  
-    ds.Relations.Add(myDataRelation)  
-    GridOrders.SetDataBinding(ds, "Customers")  
-    GridDetails.SetDataBinding(ds, "Customers.CustOrd")  
-    ```  
+   ```vb  
+   Dim myDataRelation As DataRelation  
+   myDataRelation = New DataRelation _  
+      ("CustOrd", ds.Tables("Customers").Columns("CustomerID"), _  
+      ds.Tables("Orders").Columns("CustomerID"))  
+   ' Add the relation to the DataSet.  
+   ds.Relations.Add(myDataRelation)  
+   GridOrders.SetDataBinding(ds, "Customers")  
+   GridDetails.SetDataBinding(ds, "Customers.CustOrd")  
+   ```  
   
-    ```csharp  
-    DataRelation myDataRelation;  
-    myDataRelation = new DataRelation("CustOrd", ds.Tables["Customers"].Columns["CustomerID"], ds.Tables["Orders"].Columns["CustomerID"]);  
-    // Add the relation to the DataSet.  
-    ds.Relations.Add(myDataRelation);  
-    GridOrders.SetDataBinding(ds,"Customers");  
-    GridDetails.SetDataBinding(ds,"Customers.CustOrd");  
-    ```  
+   ```csharp  
+   DataRelation myDataRelation;  
+   myDataRelation = new DataRelation("CustOrd", ds.Tables["Customers"].Columns["CustomerID"], ds.Tables["Orders"].Columns["CustomerID"]);  
+   // Add the relation to the DataSet.  
+   ds.Relations.Add(myDataRelation);  
+   GridOrders.SetDataBinding(ds,"Customers");  
+   GridDetails.SetDataBinding(ds,"Customers.CustOrd");  
+   ```  
   
-    ```cpp  
-    DataRelation^ myDataRelation;  
-    myDataRelation = gcnew DataRelation("CustOrd",  
-       ds->Tables["Customers"]->Columns["CustomerID"],  
-       ds->Tables["Orders"]->Columns["CustomerID"]);  
-    // Add the relation to the DataSet.  
-    ds->Relations->Add(myDataRelation);  
-    GridOrders->SetDataBinding(ds, "Customers");  
-    GridDetails->SetDataBinding(ds, "Customers.CustOrd");  
-    ```  
+   ```cpp  
+   DataRelation^ myDataRelation;  
+   myDataRelation = gcnew DataRelation("CustOrd",  
+      ds->Tables["Customers"]->Columns["CustomerID"],  
+      ds->Tables["Orders"]->Columns["CustomerID"]);  
+   // Add the relation to the DataSet.  
+   ds->Relations->Add(myDataRelation);  
+   GridOrders->SetDataBinding(ds, "Customers");  
+   GridDetails->SetDataBinding(ds, "Customers.CustOrd");  
+   ```  
   
 ## See Also  
  [DataGrid Control](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)  

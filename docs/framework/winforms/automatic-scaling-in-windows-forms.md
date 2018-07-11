@@ -73,19 +73,19 @@ Windows Forms now uses the following logic to automatically scale forms and thei
 
 4. <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A> is also automatically invoked in the following situations:
 
-    - In response to the <xref:System.Windows.Forms.Control.OnFontChanged%2A> event if the scaling mode is <xref:System.Windows.Forms.AutoScaleMode.Font>.
+   - In response to the <xref:System.Windows.Forms.Control.OnFontChanged%2A> event if the scaling mode is <xref:System.Windows.Forms.AutoScaleMode.Font>.
   
-    - When the layout of the container control resumes and a change is detected in the <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A> or <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> properties.
+   - When the layout of the container control resumes and a change is detected in the <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A> or <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> properties.
   
-    - As implied above, when a parent <xref:System.Windows.Forms.ContainerControl> is being scaled. Each container control is responsible for scaling its children using its own scaling factors and not the one from its parent container.
+   - As implied above, when a parent <xref:System.Windows.Forms.ContainerControl> is being scaled. Each container control is responsible for scaling its children using its own scaling factors and not the one from its parent container.
 
 5. Child controls can modify their scaling behavior through several means:
 
-    - The <xref:System.Windows.Forms.Control.ScaleChildren%2A> property can be overridden to determine if their child controls should be scaled or not.
+   - The <xref:System.Windows.Forms.Control.ScaleChildren%2A> property can be overridden to determine if their child controls should be scaled or not.
 
-    - The <xref:System.Windows.Forms.Control.GetScaledBounds%2A> method can be overridden to adjust the bounds that the control is scaled to, but not the scaling logic.
+   - The <xref:System.Windows.Forms.Control.GetScaledBounds%2A> method can be overridden to adjust the bounds that the control is scaled to, but not the scaling logic.
 
-    - The <xref:System.Windows.Forms.Control.ScaleControl%2A> method can be overridden to change the scaling logic for the current control.
+   - The <xref:System.Windows.Forms.Control.ScaleControl%2A> method can be overridden to change the scaling logic for the current control.
 
 ## See also
  <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A>  

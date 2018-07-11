@@ -18,6 +18,7 @@ where *expression* is a valid expression.
 
 Support for expression body definitions was introduced for methods and property get accessors in C# 6 and was expanded in C# 7.0. Expression body definitions can be used with the type members listed in the following table: 
 
+
 |Member  |Supported as of... |
 |---------|---------|
 |[Method](#methods)  |C# 6 |
@@ -36,7 +37,7 @@ The following example defines a `Person` class that overrides the <xref:System.O
 [!code-csharp[expression-bodied-methods](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-methods.cs)]  
 
 For more information, see [Methods (C# Programming Guide)](../classes-and-structs/methods.md).
- 
+
 ## Constructors
 
 An expression body definition for a constructor typically consists of a single assignment expression or a method call that handles the constructor's arguments or initializes instance state. 

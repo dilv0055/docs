@@ -10,7 +10,8 @@ ms.assetid: ae2c79a7-2d62-4fbe-8585-14360d11f987
 ---
 # Conversion Summary (Visual Basic)
 Visual Basic language keywords and run-time library members are organized by purpose and use.  
-  
+
+
 |Action|Language element|  
 |------------|----------------------|  
 |Convert ANSI value to string.|<xref:Microsoft.VisualBasic.Strings.Chr%2A>, <xref:Microsoft.VisualBasic.Strings.ChrW%2A>|  
@@ -24,7 +25,7 @@ Visual Basic language keywords and run-time library members are organized by pur
 |Convert string to ASCII value.|<xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>|  
 |Convert string to number.|<xref:Microsoft.VisualBasic.Conversion.Val%2A>|  
 |Convert time to serial number.|<xref:Microsoft.VisualBasic.DateAndTime.TimeSerial%2A>, <xref:Microsoft.VisualBasic.DateAndTime.TimeValue%2A>|  
-  
+
 ## See Also  
  [Keywords](../../../visual-basic/language-reference/keywords/index.md)  
  [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)

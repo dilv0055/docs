@@ -8,11 +8,12 @@ ms.assetid: 399a47b4-bfea-434b-8e83-f76b5063d79d
 ---
 # Windows Communication Foundation Tools
 Microsoft Windows Communication Foundation (WCF) tools are designed to make it easier for you to create, deploy, and manage WCF applications. This section contains detailed information about the tools. Please note that the tools are not supported.  
-  
+
  You can run all the tools from the command line.  
-  
+
  The following table lists these tools and provides a brief description.  
-  
+
+
 |Tool|Description|  
 |----------|-----------------|  
 |[ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)|Generates service model code from metadata documents and metadata documents from service model code.|  
@@ -27,5 +28,5 @@ Microsoft Windows Communication Foundation (WCF) tools are designed to make it e
 |[WCF Service Host (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)|Hosts WCF services contained in libraries (*.dll) files|  
 |[WCF Test Client (WcfTestClient.exe)](../../../docs/framework/wcf/wcf-test-client-wcftestclient-exe.md)|A GUI tool that allows you to input parameters of arbitrary types, submit that input to the service, and view the response the service sends back.|  
 |[Contract-First Tool](../../../docs/framework/wcf/contract-first-tool.md)|A Visual Studio build task that creates code classes from XSD data contracts.|  
-  
+
  All the preceding tools except ServiceModelReg.exe, WsatConfig.exe and ComSvcConfig.exe ship with the Windows SDK, and can be found under the C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin folder.  The specific 3 tools can be found under C:\Windows\Microsoft.NET\Framework\v3.0\Windows Communication Foundation.

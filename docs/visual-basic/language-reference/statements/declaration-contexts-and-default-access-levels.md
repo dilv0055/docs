@@ -12,20 +12,21 @@ ms.assetid: bf63b96e-e825-4745-88c8-5dae222728db
 ---
 # Declaration Contexts and Default Access Levels (Visual Basic)
 This topic describes which Visual Basic types can be declared within which other types, and what their access levels default to if not specified.  
-  
+
 ## Declaration Context Levels  
  The *declaration context* of a programming element is the region of code in which it is declared. This is often another programming element, which is then called the *containing element*.  
-  
+
  The levels for declaration contexts are the following:  
-  
--   *Namespace level* — within a source file or namespace but not within a class, structure, module, or interface  
-  
--   *Module level* — within a class, structure, module, or interface but not within a procedure or block  
-  
--   *Procedure level* — within a procedure or block (such as `If` or `For`)  
-  
+
+- *Namespace level* — within a source file or namespace but not within a class, structure, module, or interface  
+
+- *Module level* — within a class, structure, module, or interface but not within a procedure or block  
+
+- *Procedure level* — within a procedure or block (such as `If` or `For`)  
+
  The following table shows the default access levels for various declared programming elements, depending on their declaration contexts.  
-  
+
+
 |Declared element|Namespace level|Module level|Procedure level|  
 |----------------------|---------------------|------------------|---------------------|  
 |Variable ([Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md))|Not allowed|`Private` (`Public` in `Structure`, not allowed in `Interface`)|`Public`|  
@@ -42,9 +43,9 @@ This topic describes which Visual Basic types can be declared within which other
 |Default property ([Default](../../../visual-basic/language-reference/modifiers/default.md))|Not allowed|`Public` (not allowed in `Module`)|Not allowed|  
 |Event ([Event Statement](../../../visual-basic/language-reference/statements/event-statement.md))|Not allowed|`Public`|Not allowed|  
 |Delegate ([Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md))|`Friend`|`Public`|Not allowed|  
-  
+
  For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
-  
+
 ## See Also  
  [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
  [Private](../../../visual-basic/language-reference/modifiers/private.md)  

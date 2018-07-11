@@ -14,22 +14,22 @@ This sample demonstrates how the messaging activities, <xref:System.ServiceModel
   
 ### To run the sample  
   
-1.  Open the OperationScope.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1. Open the OperationScope.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Set multiple start-up projects by right-clicking the solution in Solution Explorer and selecting **Set Startup Projects**. Add Scenario and Scenario_Client (in that order) as multiple start-up projects.  
+2. Set multiple start-up projects by right-clicking the solution in Solution Explorer and selecting **Set Startup Projects**. Add Scenario and Scenario_Client (in that order) as multiple start-up projects.  
   
-3.  Press CTRL+SHIFT+B to build the solution.  
+3. Press CTRL+SHIFT+B to build the solution.  
   
-    > [!WARNING]
-    >  This step is required to view the BankService.xaml workflow due to the custom activity `OperationScope`.  
+   > [!WARNING]
+   >  This step is required to view the BankService.xaml workflow due to the custom activity `OperationScope`.  
   
-4.  Press CTRL+F5 to run the application. The Scenario_Client console prompts you for inputs and the corresponding output is seen in the Scenario console.  
+4. Press CTRL+F5 to run the application. The Scenario_Client console prompts you for inputs and the corresponding output is seen in the Scenario console.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\OperationScope`

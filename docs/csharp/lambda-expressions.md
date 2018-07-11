@@ -6,7 +6,6 @@ author: rpetrusha
 ms.date: 11/22/2016
 ms.assetid: b6a0539a-8ce5-4da7-adcf-44be345a2714
 ---
-
 # Lambda expressions #
 
 A *lambda expression* is a block of code (an expression or a statement block) that is treated as an object. It can be passed as an argument to methods, and it can also be returned by method calls. Lambda expressions are used extensively for:

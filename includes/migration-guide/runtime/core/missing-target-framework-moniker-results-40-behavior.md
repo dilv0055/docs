@@ -1,5 +1,6 @@
 ### Missing Target Framework Moniker results in 4.0 behavior
 
+
 |   |   |
 |---|---|
 |Details|Applications without a <xref:System.Runtime.Versioning.TargetFrameworkAttribute?displayProperty=name> applied at the assembly level will automatically run using the semantics (quirks) of the .NET Framework 4.0. To ensure high quality, it is recommended that all binaries be explicitly attributed with a <xref:System.Runtime.Versioning.TargetFrameworkAttribute?displayProperty=name> indicating the version of the .NET Framework they were built with. Note that using a target framework moniker in a project file will cause MSBuild to automatically apply a <xref:System.Runtime.Versioning.TargetFrameworkAttribute?displayProperty=name>.|

@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # IIdentityAuthority Interface
 Manages identity keys for code objects.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |`IIdentityAuthority::AreDefinitionsEqual`|Gets a value that indicates whether the two specified [IDefinitionIdentity](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) instances are equal.|  
@@ -42,13 +43,13 @@ Manages identity keys for code objects.
 |`IIdentityAuthority::ReferenceToTextBuffer`|Fills the specified wide character buffer with a string version of the specified `IReferenceIdentity`.|  
 |`IIdentityAuthority::TextToDefinition`|Gets an interface pointer to an `IDefinitionIdentity` instance generated from the specified formatted string.|  
 |`IIdentityAuthority::TextToReference`|Gets an interface pointer to an `IReferenceIdentity` instance generated from the specified formatted string.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Isolation.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Fusion Interfaces](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)

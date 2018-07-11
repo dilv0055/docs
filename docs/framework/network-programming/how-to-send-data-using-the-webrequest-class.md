@@ -17,98 +17,98 @@ The following procedure describes the steps used to send data to a server. This 
   
 ### To send data to a host server  
   
-1.  Create a <xref:System.Net.WebRequest> instance by calling <xref:System.Net.WebRequest.Create%2A> with the URI of the resource that accepts data, for example, a script or ASP.NET page.  
+1. Create a <xref:System.Net.WebRequest> instance by calling <xref:System.Net.WebRequest.Create%2A> with the URI of the resource that accepts data, for example, a script or ASP.NET page.  
   
-    ```csharp  
-    WebRequest request = WebRequest.Create("http://www.contoso.com/");  
-    ```  
+   ```csharp  
+   WebRequest request = WebRequest.Create("http://www.contoso.com/");  
+   ```  
   
-    ```vb  
-    Dim request as WebRequest = WebRequest.Create("http://www.contoso.com/")  
-    ```  
+   ```vb  
+   Dim request as WebRequest = WebRequest.Create("http://www.contoso.com/")  
+   ```  
   
-    > [!NOTE]
-    >  The .NET Framework provides protocol-specific classes derived from **WebRequest** and **WebResponse** for URIs that begin with "http:", "https:'', "ftp:", and "file:". To access resources using other protocols, you must implement protocol-specific classes that derive from **WebRequest** and **WebResponse**. For more information, see [Programming Pluggable Protocols](../../../docs/framework/network-programming/programming-pluggable-protocols.md) .  
+   > [!NOTE]
+   >  The .NET Framework provides protocol-specific classes derived from **WebRequest** and **WebResponse** for URIs that begin with "http:", "https:'', "ftp:", and "file:". To access resources using other protocols, you must implement protocol-specific classes that derive from **WebRequest** and **WebResponse**. For more information, see [Programming Pluggable Protocols](../../../docs/framework/network-programming/programming-pluggable-protocols.md) .  
   
-2.  Set any property values that you need in the **WebRequest**. For example, to enable authentication, set the **Credentials** property to an instance of the <xref:System.Net.NetworkCredential> class.  
+2. Set any property values that you need in the **WebRequest**. For example, to enable authentication, set the **Credentials** property to an instance of the <xref:System.Net.NetworkCredential> class.  
   
-    ```csharp  
-    request.Credentials = CredentialCache.DefaultCredentials;  
-    ```  
+   ```csharp  
+   request.Credentials = CredentialCache.DefaultCredentials;  
+   ```  
   
-    ```vb  
-    request.Credentials = CredentialCache.DefaultCredentials  
-    ```  
+   ```vb  
+   request.Credentials = CredentialCache.DefaultCredentials  
+   ```  
   
-     In most cases, the **WebRequest** instance itself is sufficient to send data. However, if you need to set protocol-specific properties, you must cast the **WebRequest** to the protocol-specific type. For example, to access the HTTP-specific properties of <xref:System.Net.HttpWebRequest>, cast the **WebRequest** to an **HttpWebRequest** reference. The following code example shows how to set the HTTP-specific <xref:System.Net.HttpWebRequest.UserAgent%2A> property.  
+    In most cases, the **WebRequest** instance itself is sufficient to send data. However, if you need to set protocol-specific properties, you must cast the **WebRequest** to the protocol-specific type. For example, to access the HTTP-specific properties of <xref:System.Net.HttpWebRequest>, cast the **WebRequest** to an **HttpWebRequest** reference. The following code example shows how to set the HTTP-specific <xref:System.Net.HttpWebRequest.UserAgent%2A> property.  
   
-    ```csharp  
-    ((HttpWebRequest)request).UserAgent = ".NET Framework Example Client";  
-    ```  
+   ```csharp  
+   ((HttpWebRequest)request).UserAgent = ".NET Framework Example Client";  
+   ```  
   
-    ```vb  
-    Ctype(request,HttpWebRequest).UserAgent = ".NET Framework Example Client"  
-    ```  
+   ```vb  
+   Ctype(request,HttpWebRequest).UserAgent = ".NET Framework Example Client"  
+   ```  
   
-3.  Specify a protocol method that permits data to be sent with a request, such as the HTTP **POST** method.  
+3. Specify a protocol method that permits data to be sent with a request, such as the HTTP **POST** method.  
   
-    ```csharp  
-    request.Method = "POST";  
-    ```  
+   ```csharp  
+   request.Method = "POST";  
+   ```  
   
-    ```vb  
-    request.Method = "POST"  
-    ```  
+   ```vb  
+   request.Method = "POST"  
+   ```  
   
-4.  Set the **ContentLength** property.  
+4. Set the **ContentLength** property.  
   
-    ```csharp  
-    request.ContentLength = byteArray.Length;  
-    ```  
+   ```csharp  
+   request.ContentLength = byteArray.Length;  
+   ```  
   
-    ```vb  
-    request.ContentLength = byteArray.Length  
-    ```  
+   ```vb  
+   request.ContentLength = byteArray.Length  
+   ```  
   
-5.  Set the **ContentType** property to an appropriate value.  
+5. Set the **ContentType** property to an appropriate value.  
   
-    ```csharp  
-    request.ContentType = "application/x-www-form-urlencoded";  
-    ```  
+   ```csharp  
+   request.ContentType = "application/x-www-form-urlencoded";  
+   ```  
   
-    ```vb  
-    request.ContentType = "application/x-www-form-urlencoded"  
-    ```  
+   ```vb  
+   request.ContentType = "application/x-www-form-urlencoded"  
+   ```  
   
-6.  Get the stream that holds request data by calling the <xref:System.Net.WebRequest.GetRequestStream%2A> method.  
+6. Get the stream that holds request data by calling the <xref:System.Net.WebRequest.GetRequestStream%2A> method.  
   
-    ```csharp  
-    Stream dataStream = request.GetRequestStream ();  
-    ```  
+   ```csharp  
+   Stream dataStream = request.GetRequestStream ();  
+   ```  
   
-    ```vb  
-    Stream dataStream = request.GetRequestStream ()  
-    ```  
+   ```vb  
+   Stream dataStream = request.GetRequestStream ()  
+   ```  
   
-7.  Write the data to the <xref:System.IO.Stream> object returned by this method.  
+7. Write the data to the <xref:System.IO.Stream> object returned by this method.  
   
-    ```csharp  
-    dataStream.Write (byteArray, 0, byteArray.Length);  
-    ```  
+   ```csharp  
+   dataStream.Write (byteArray, 0, byteArray.Length);  
+   ```  
   
-    ```vb  
-    dataStream.Write (byteArray, 0, byteArray.Length)  
-    ```  
+   ```vb  
+   dataStream.Write (byteArray, 0, byteArray.Length)  
+   ```  
   
-8.  Close the request stream by calling the **Stream.Close** method.  
+8. Close the request stream by calling the **Stream.Close** method.  
   
-    ```csharp  
-    dataStream.Close ();  
-    ```  
+   ```csharp  
+   dataStream.Close ();  
+   ```  
   
-    ```vb  
-    dataStream.Close ()  
-    ```  
+   ```vb  
+   dataStream.Close ()  
+   ```  
   
 9. Send the request to the server by calling <xref:System.Net.WebRequest.GetResponse%2A>. This method returns an object containing the server's response. The returned <xref:System.Net.WebResponse> object's type is determined by the scheme of the request's URI.  
   
@@ -120,8 +120,8 @@ The following procedure describes the steps used to send data to a server. This 
     Dim response As WebResponse = request.GetResponse()  
     ```  
   
-    > [!NOTE]
-    >  After you are finished with a <xref:System.Net.WebResponse> object, you must close it by calling the <xref:System.Net.WebResponse.Close%2A> method. Alternatively, if you have gotten the response stream from the response object, you can close the stream by calling the <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> method. If you do not close the response or the stream, your application can run out of connections to the server and become unable to process additional requests.  
+   > [!NOTE]
+   >  After you are finished with a <xref:System.Net.WebResponse> object, you must close it by calling the <xref:System.Net.WebResponse.Close%2A> method. Alternatively, if you have gotten the response stream from the response object, you can close the stream by calling the <xref:System.IO.Stream.Close%2A?displayProperty=nameWithType> method. If you do not close the response or the stream, your application can run out of connections to the server and become unable to process additional requests.  
   
 10. You can access the properties of the **WebResponse** or cast the **WebResponse** to a protocol-specific instance to read protocol-specific properties. For example, to access the HTTP-specific properties of <xref:System.Net.HttpWebResponse>, cast the **WebResponse** to an **HttpWebResponse** reference.  
   

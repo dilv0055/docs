@@ -26,11 +26,11 @@ A single-file assembly, which is the simplest type of assembly, contains type in
   
 ### To create an assembly with an .exe extension  
   
-1.  At the command prompt, type the following command:  
+1. At the command prompt, type the following command:  
   
-     \<*compiler command*> \<*module name*>  
+    \<*compiler command*> \<*module name*>  
   
-     In this command, *compiler command* is the compiler command for the language used in your code module, and *module name* is the name of the code module to compile into the assembly.  
+    In this command, *compiler command* is the compiler command for the language used in your code module, and *module name* is the name of the code module to compile into the assembly.  
   
  The following example creates an assembly named `myCode.exe` from a code module called `myCode`.  
   
@@ -44,11 +44,11 @@ vbc myCode.vb
   
 #### To create an assembly with an .exe extension and specify the output file name  
   
-1.  At the command prompt, type the following command:  
+1. At the command prompt, type the following command:  
   
-     \<*compiler command*> **/out:**\<*file name*> \<*module name*>  
+    \<*compiler command*> **/out:**\<*file name*> \<*module name*>  
   
-     In this command, *compiler command* is the compiler command for the language used in your code module, *file name* is the output file name, and *module name* is the name of the code module to compile into the assembly.  
+    In this command, *compiler command* is the compiler command for the language used in your code module, *file name* is the output file name, and *module name* is the name of the code module to compile into the assembly.  
   
  The following example creates an assembly named `myAssembly.exe` from a code module called `myCode`.  
   
@@ -65,11 +65,11 @@ vbc -out:myAssembly.exe myCode.vb
   
 #### To create a library assembly  
   
-1.  At the command prompt, type the following command:  
+1. At the command prompt, type the following command:  
   
-     \<*compiler command*> **-t:library** \<*module name*>  
+    \<*compiler command*> **-t:library** \<*module name*>  
   
-     In this command, *compiler command* is the compiler command for the language used in your code module, and *module name* is the name of the code module to compile into the assembly. You can also use other compiler options, such as the **-out:** option.  
+    In this command, *compiler command* is the compiler command for the language used in your code module, and *module name* is the name of the code module to compile into the assembly. You can also use other compiler options, such as the **-out:** option.  
   
  The following example creates a library assembly named `myCodeAssembly.dll` from a code module called `myCode`.  
   

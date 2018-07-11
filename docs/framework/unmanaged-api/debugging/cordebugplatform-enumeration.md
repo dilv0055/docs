@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # CorDebugPlatform Enumeration
 Provides target platform values that are used by the [ICorDebugDataTarget::GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) method.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugPlatform  
 {  
@@ -34,9 +34,10 @@ typedef enum CorDebugPlatform
     CORDB_PLATFORM_MAC_AMD64       // MacOS on Intel x64  
 } CorDebugPlatform;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |CORDB_PLATFORM_WINDOWS_X86|The target platform is Windows running on Intel x86 hardware.|  
@@ -46,17 +47,17 @@ typedef enum CorDebugPlatform
 |CORDB_PLATFORM_MAC_X86|The target platform is the Macintosh operating system running on Intel x86 hardware.|  
 |CORDB_PLATFORM_WINDOWS_ARM|The target platform is the Macintosh operating system running on Windows ARM hardware.|  
 |CORDB_PLATFORM_MAC_AMD64|The target platform is the Macintosh operating system running on AMD64 hardware.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
-  
+
  The `CORDB_PLATFORM_WINDOWS_ARM` and `CORDB_PLATFORM_MAC_AMD64` members are available in the .NET Framework 4.5.2 and later versions.  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

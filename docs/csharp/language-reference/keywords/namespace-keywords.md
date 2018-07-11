@@ -8,17 +8,17 @@ ms.assetid: 091a66eb-b10d-4f54-9102-5ac0d4bdb84b
 # Namespace Keywords (C# Reference)
 This section describes the keywords and operators that are associated with using namespaces:  
   
--   [namespace](../../../csharp/language-reference/keywords/namespace.md)  
+- [namespace](../../../csharp/language-reference/keywords/namespace.md)  
   
--   [using](../../../csharp/language-reference/keywords/using.md)  
+- [using](../../../csharp/language-reference/keywords/using.md)  
  
--   [using static](using-static.md)
+- [using static](using-static.md)
   
--   [. Operator](../../../csharp/language-reference/operators/member-access-operator.md)  
+- [. Operator](../../../csharp/language-reference/operators/member-access-operator.md)  
   
--   [:: Operator](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
+- [:: Operator](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
   
--   [extern alias](../../../csharp/language-reference/keywords/extern-alias.md)  
+- [extern alias](../../../csharp/language-reference/keywords/extern-alias.md)  
   
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  

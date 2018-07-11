@@ -15,18 +15,19 @@ ms.author: "ronpet"
 [Supported in the .NET Framework 4.7.2 and later versions]  
 
  A subclass of [ICorProfilerCallback8](icorprofilercallback8-interface.md) that provides a callback method used by the common language runtime to notify the profiler that a dynamic method has been garbage collected and subsequently unloaded.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[DynamicMethodUnloaded Method](ICorProfilerCallback9-dynamicmethodunloaded-method.md)|Notifies the profiler that a dynamic method has been garbage collected and subsequently unloaded.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../get-started/system-requirements.md).  
-  
+
  **Header:** CorProf.idl, CorProf.h  
-  
+
 **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
 
 ## See Also  

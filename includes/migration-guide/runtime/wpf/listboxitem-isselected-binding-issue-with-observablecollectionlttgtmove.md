@@ -1,5 +1,6 @@
 ### ListBoxItem IsSelected binding issue with ObservableCollection&lt;T&gt;.Move
 
+
 |   |   |
 |---|---|
 |Details|Calling <xref:System.Collections.ObjectModel.ObservableCollection%601.Move(System.Int32,System.Int32)> or <xref:System.Collections.ObjectModel.ObservableCollection%601.MoveItem(System.Int32,System.Int32)> on a collection bound to a <xref:System.Windows.Controls.ListBox?displayProperty=name> with items selected can lead to erratic behavior with future selection or unselection of <xref:System.Windows.Controls.ListBox?displayProperty=name> items.|

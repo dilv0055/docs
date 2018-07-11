@@ -13,9 +13,9 @@ In this document, we will dive a little bit deeper into all three ways of doing 
 
 There are a few of reasons why you would want to call into native code:
 
-*   Operating Systems come with a large volume of APIs that are not present in the managed class libraries. A prime example for this would be access to hardware or operating system management functions.
-*   Communicating with other components that have or can produce C-style ABIs (native ABIs). This covers, for example, Java code that is exposed via [Java Native Interface (JNI)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) or any other managed language that could produce a native component.
-*   On Windows, most of the software that gets installed, such as Microsoft Office suite, registers COM components that represent their programs and allow developers to automate them or use them. This also requires native interoperability.
+* Operating Systems come with a large volume of APIs that are not present in the managed class libraries. A prime example for this would be access to hardware or operating system management functions.
+* Communicating with other components that have or can produce C-style ABIs (native ABIs). This covers, for example, Java code that is exposed via [Java Native Interface (JNI)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) or any other managed language that could produce a native component.
+* On Windows, most of the software that gets installed, such as Microsoft Office suite, registers COM components that represent their programs and allow developers to automate them or use them. This also requires native interoperability.
 
 Of course, the list above does not cover all of the potential situations and scenarios in which the developer would want/like/need to interface with native components. .NET class library, for instance, uses the native interoperability support to implement a fair number of its APIs, like console support and manipulation, file system access and others. However, it is important to note that there is an option, should one need it.
 
@@ -47,9 +47,9 @@ public class Program {
 
 The example above is pretty simple, but it does show off what is needed to invoke unmanaged functions from managed code. Let’s step through the example:
 
-*   Line #1 shows the using statement for the `System.Runtime.InteropServices` which is the namespace that holds all of the items we need.
-*   Line #5 introduces the `DllImport` attribute. This attribute is crucial, as it tells the runtime that it should load the unmanaged DLL. This is the DLL into which we wish to invoke.
-*   Line #6 is the crux of the P/Invoke work. It defines a managed method that has the **exact same signature** as the unmanaged one. The declaration has a new keyword that you can notice, `extern`, which tells the runtime this is an external method, and that when you invoke it, the runtime should find it in the DLL specified in `DllImport` attribute.
+* Line #1 shows the using statement for the `System.Runtime.InteropServices` which is the namespace that holds all of the items we need.
+* Line #5 introduces the `DllImport` attribute. This attribute is crucial, as it tells the runtime that it should load the unmanaged DLL. This is the DLL into which we wish to invoke.
+* Line #6 is the crux of the P/Invoke work. It defines a managed method that has the **exact same signature** as the unmanaged one. The declaration has a new keyword that you can notice, `extern`, which tells the runtime this is an external method, and that when you invoke it, the runtime should find it in the DLL specified in `DllImport` attribute.
 
 The rest of the example is just invoking the method as you would any other managed method.
 
@@ -139,10 +139,10 @@ The first parameter is a callback. The said callback has the following signature
 
 With this in mind, let’s walk through the example:
 
-*   Line #8 in the example defines a delegate that matches the signature of the callback from unmanaged code. Notice how the LPARAM and HWND types are represented using `IntPtr` in the managed code.
-*   Lines #10 and #11 introduce the `EnumWindows` function from the user32.dll library.
-*   Lines #13 - 16 implement the delegate. For this simple example, we just want to output the handle to the console.
-*   Finally, in line #19 we invoke the external method and pass in the delegate.
+* Line #8 in the example defines a delegate that matches the signature of the callback from unmanaged code. Notice how the LPARAM and HWND types are represented using `IntPtr` in the managed code.
+* Lines #10 and #11 introduce the `EnumWindows` function from the user32.dll library.
+* Lines #13 - 16 implement the delegate. For this simple example, we just want to output the handle to the console.
+* Finally, in line #19 we invoke the external method and pass in the delegate.
 
 The Linux and macOS examples are shown below. For them, we use the `ftw` function that can be found in `libc`, the C library. This function is used to traverse directory hierarchies and it takes a pointer to a function as one of its parameters. The said function has the following signature: `int (*fn) (const char *fpath, const struct stat *sb, int typeflag)`.
 
@@ -248,7 +248,7 @@ namespace PInvokeSamples {
 }
 ```
 
-Both of the above examples depend on parameters, and in both cases, the parameters are given as managed types. Runtime does the "right thing" and processes these into its equivalents on the other side. Since this process is really important to writing quality native interop code, let’s take a look at what happens when the runtime _marshals_ the types.
+Both of the above examples depend on parameters, and in both cases, the parameters are given as managed types. Runtime does the "right thing" and processes these into its equivalents on the other side. Since this process is really important to writing quality native interop code, let’s take a look at what happens when the runtime *marshals* the types.
 
 ## Type marshalling
 
@@ -328,6 +328,6 @@ The `StatClass` class represents a structure that is returned by the `stat` syst
 
 ## More resources
 
-*   [PInvoke.net wiki](https://www.pinvoke.net/) an excellent Wiki with information on common Win32 APIs and how to call them.
-*   [P/Invoke on MSDN](https://msdn.microsoft.com/library/zbz07712.aspx)
-*   [Mono documentation on P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)
+* [PInvoke.net wiki](https://www.pinvoke.net/) an excellent Wiki with information on common Win32 APIs and how to call them.
+* [P/Invoke on MSDN](https://msdn.microsoft.com/library/zbz07712.aspx)
+* [Mono documentation on P/Invoke](https://www.mono-project.com/docs/advanced/pinvoke/)

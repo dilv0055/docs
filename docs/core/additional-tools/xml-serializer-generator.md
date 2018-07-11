@@ -11,7 +11,7 @@ ms.custom: mvc
 
 This tutorial teaches you how to use the Microsoft XML Serializer Generator in a C# .NET Core application. During the course of this tutorial, you learn:
 
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * How to create a .NET Core app
 > * How to add a reference to the Microsoft.XmlSerializer.Generator package
 > * How to edit your MyApp.csproj to add dependencies
@@ -115,7 +115,7 @@ If everything succeeds, an assembly named *MyApp.XmlSerializers.dll* is generate
 
 
 Congratulations! You have just:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * Created a .NET Core app.
 > * Added a reference to the Microsoft.XmlSerializer.Generator package.
 > * Edited your MyApp.csproj to add dependencies.

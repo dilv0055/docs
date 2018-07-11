@@ -7,9 +7,10 @@ ms.assetid: d1fb027c-872b-4ccc-afc8-2380e3f65d4a
 ---
 # Operators Listed by Functionality (Visual Basic)
 See one of the categories listed below, or open this portion of the Help table of contents to see an alphabetical list of Visual Basic operators.  
-  
+
 ## Categories of Operators  
-  
+
+
 |Operators|Description|  
 |---------------|-----------------|  
 |[Arithmetic Operators](../../../visual-basic/language-reference/operators/arithmetic-operators.md)|These operators perform mathematical calculations.|  
@@ -19,7 +20,7 @@ See one of the categories listed below, or open this portion of the Help table o
 |[Logical/Bitwise Operators](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)|These operators perform logical operations.|  
 |[Bit Shift Operators](../../../visual-basic/language-reference/operators/bit-shift-operators.md)|These operators perform arithmetic shifts on bit patterns.|  
 |[Miscellaneous Operators](../../../visual-basic/language-reference/operators/miscellaneous-operators.md)|These operators perform miscellaneous operations.|  
-  
+
 ## See Also  
  [Operators and Expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
  [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)

@@ -8,10 +8,11 @@ ms.assetid: ad3567a6-313b-4708-9e15-f487a831f049
 ---
 # Properties on Windows Forms Controls That Support Accessibility Guidelines
 Controls on the standard toolbox for Windows Forms support many of the accessibility guidelines, including exposing the keyboard focus and exposing the screen elements.  
-  
+
 ## Planning Ahead for Accessibility  
  The controls' properties can be used to support other accessibility guidelines as shown in the following table. Additionally, you should use menus to provide access to program features.  
-  
+
+
 |Control Property|Considerations for Accessibility|  
 |----------------------|--------------------------------------|  
 |AccessibleDescription|The description is reported to accessibility aids such as screen readers. Accessibility aids are specialized programs and devices that help people with disabilities use computers more effectively.|  
@@ -23,6 +24,6 @@ Controls on the standard toolbox for Windows Forms support many of the accessibi
 |Forecolor|If this property is set to the default, then the user's color preferences will be used on the form.|  
 |Backcolor|If this property is set to the default, then the user's color preferences will be used on the form.|  
 |BackgroundImage|Leave this property blank to make text more readable.|  
-  
+
 ## See Also  
  [Walkthrough: Creating an Accessible Windows-based Application](../../../../docs/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application.md)

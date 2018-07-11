@@ -8,145 +8,145 @@ This topic is the second of four topics that discusses how to implement a discov
   
 ### To define the service contract  
   
-1.  Add a new console application project to the `DiscoveryProxyExample` solution called `Service`.  
+1. Add a new console application project to the `DiscoveryProxyExample` solution called `Service`.  
   
-2.  Add references to the following assemblies:  
+2. Add references to the following assemblies:  
   
-    1.  System.ServiceModel  
+   1. System.ServiceModel  
   
-    2.  System.ServiceModel.Discovery  
+   2. System.ServiceModel.Discovery  
   
-3.  Add a new class to the project called `CalculatorService`.  
+3. Add a new class to the project called `CalculatorService`.  
   
-4.  Add the following using statements.  
+4. Add the following using statements.  
   
-    ```csharp  
-    using System;  
-    using System.ServiceModel;  
-    ```  
+   ```csharp  
+   using System;  
+   using System.ServiceModel;  
+   ```  
   
-5.  Within CalculatorService.cs, define the service contract.  
+5. Within CalculatorService.cs, define the service contract.  
   
-    ```csharp  
-    // Define a service contract.  
-        [ServiceContract(Namespace = "http://Microsoft.Samples.Discovery")]  
-        public interface ICalculatorService  
-        {  
-            [OperationContract]  
-            double Add(double n1, double n2);  
-            [OperationContract]  
-            double Subtract(double n1, double n2);  
-            [OperationContract]  
-            double Multiply(double n1, double n2);  
-            [OperationContract]  
-            double Divide(double n1, double n2);  
-        }  
-    ```  
+   ```csharp  
+   // Define a service contract.  
+       [ServiceContract(Namespace = "http://Microsoft.Samples.Discovery")]  
+       public interface ICalculatorService  
+       {  
+           [OperationContract]  
+           double Add(double n1, double n2);  
+           [OperationContract]  
+           double Subtract(double n1, double n2);  
+           [OperationContract]  
+           double Multiply(double n1, double n2);  
+           [OperationContract]  
+           double Divide(double n1, double n2);  
+       }  
+   ```  
   
-6.  Also within CalculatorService.cs, implement the service contract.  
+6. Also within CalculatorService.cs, implement the service contract.  
   
-    ```csharp  
-    // Service class which implements the service contract.      
-        public class CalculatorService : ICalculatorService  
-        {  
-            public double Add(double n1, double n2)  
-            {  
-                double result = n1 + n2;  
-                Console.WriteLine("Received Add({0},{1})", n1, n2);  
-                Console.WriteLine("Return: {0}", result);  
-                return result;  
-            }  
+   ```csharp  
+   // Service class which implements the service contract.      
+       public class CalculatorService : ICalculatorService  
+       {  
+           public double Add(double n1, double n2)  
+           {  
+               double result = n1 + n2;  
+               Console.WriteLine("Received Add({0},{1})", n1, n2);  
+               Console.WriteLine("Return: {0}", result);  
+               return result;  
+           }  
   
-            public double Subtract(double n1, double n2)  
-            {  
-                double result = n1 - n2;  
-                Console.WriteLine("Received Subtract({0},{1})", n1, n2);  
-                Console.WriteLine("Return: {0}", result);  
-                return result;  
-            }  
+           public double Subtract(double n1, double n2)  
+           {  
+               double result = n1 - n2;  
+               Console.WriteLine("Received Subtract({0},{1})", n1, n2);  
+               Console.WriteLine("Return: {0}", result);  
+               return result;  
+           }  
   
-            public double Multiply(double n1, double n2)  
-            {  
-                double result = n1 * n2;  
-                Console.WriteLine("Received Multiply({0},{1})", n1, n2);  
-                Console.WriteLine("Return: {0}", result);  
-                return result;  
-            }  
+           public double Multiply(double n1, double n2)  
+           {  
+               double result = n1 * n2;  
+               Console.WriteLine("Received Multiply({0},{1})", n1, n2);  
+               Console.WriteLine("Return: {0}", result);  
+               return result;  
+           }  
   
-            public double Divide(double n1, double n2)  
-            {  
-                double result = n1 / n2;  
-                Console.WriteLine("Received Divide({0},{1})", n1, n2);  
-                Console.WriteLine("Return: {0}", result);  
-                return result;  
-            }  
-        }  
-    ```  
+           public double Divide(double n1, double n2)  
+           {  
+               double result = n1 / n2;  
+               Console.WriteLine("Received Divide({0},{1})", n1, n2);  
+               Console.WriteLine("Return: {0}", result);  
+               return result;  
+           }  
+       }  
+   ```  
   
 ### To host the service  
   
-1.  Open the Program.cs file that was generated when you created the project.  
+1. Open the Program.cs file that was generated when you created the project.  
   
-2.  Add the following using statements.  
+2. Add the following using statements.  
   
-    ```csharp 
-    using System;  
-    using System.ServiceModel;  
-    using System.ServiceModel.Description;  
-    using System.ServiceModel.Discovery;  
-    ```  
+   ```csharp 
+   using System;  
+   using System.ServiceModel;  
+   using System.ServiceModel.Description;  
+   using System.ServiceModel.Discovery;  
+   ```  
   
-3.  Within the `Main()` method, add the following code:  
+3. Within the `Main()` method, add the following code:  
   
-    ```csharp  
-    // Define the base address of the service  
-    Uri baseAddress = new Uri("net.tcp://localhost:9002/CalculatorService/" + Guid.NewGuid().ToString());  
-    // Define the endpoint address where announcement messages will be sent  
-    Uri announcementEndpointAddress = new Uri("net.tcp://localhost:9021/Announcement");  
+   ```csharp  
+   // Define the base address of the service  
+   Uri baseAddress = new Uri("net.tcp://localhost:9002/CalculatorService/" + Guid.NewGuid().ToString());  
+   // Define the endpoint address where announcement messages will be sent  
+   Uri announcementEndpointAddress = new Uri("net.tcp://localhost:9021/Announcement");  
   
-    // Create the service host  
-    ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress);  
-    try  
-    {  
-       // Add a service endpoint  
-       ServiceEndpoint netTcpEndpoint = serviceHost.AddServiceEndpoint(typeof(ICalculatorService), new NetTcpBinding(), string.Empty);                
+   // Create the service host  
+   ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress);  
+   try  
+   {  
+      // Add a service endpoint  
+      ServiceEndpoint netTcpEndpoint = serviceHost.AddServiceEndpoint(typeof(ICalculatorService), new NetTcpBinding(), string.Empty);                
   
-       // Create an announcement endpoint, which points to the Announcement Endpoint hosted by the proxy service.  
-       AnnouncementEndpoint announcementEndpoint = new AnnouncementEndpoint(new NetTcpBinding(), new EndpointAddress(announcementEndpointAddress));  
+      // Create an announcement endpoint, which points to the Announcement Endpoint hosted by the proxy service.  
+      AnnouncementEndpoint announcementEndpoint = new AnnouncementEndpoint(new NetTcpBinding(), new EndpointAddress(announcementEndpointAddress));  
   
-       // Create a ServiceDiscoveryBehavior and add the announcement endpoint  
-       ServiceDiscoveryBehavior serviceDiscoveryBehavior = new ServiceDiscoveryBehavior();  
-                    serviceDiscoveryBehavior.AnnouncementEndpoints.Add(announcementEndpoint);  
+      // Create a ServiceDiscoveryBehavior and add the announcement endpoint  
+      ServiceDiscoveryBehavior serviceDiscoveryBehavior = new ServiceDiscoveryBehavior();  
+                   serviceDiscoveryBehavior.AnnouncementEndpoints.Add(announcementEndpoint);  
   
-       // Add the ServiceDiscoveryBehavior to the service host to make the service discoverable  
-       serviceHost.Description.Behaviors.Add(serviceDiscoveryBehavior);  
+      // Add the ServiceDiscoveryBehavior to the service host to make the service discoverable  
+      serviceHost.Description.Behaviors.Add(serviceDiscoveryBehavior);  
   
-       // Start listening for messages  
-      serviceHost.Open();  
+      // Start listening for messages  
+     serviceHost.Open();  
   
-       Console.WriteLine("Calculator Service started at {0}", baseAddress);  
-       Console.WriteLine();  
-       Console.WriteLine("Press <ENTER> to terminate the service.");  
-       Console.WriteLine();  
-       Console.ReadLine();  
+      Console.WriteLine("Calculator Service started at {0}", baseAddress);  
+      Console.WriteLine();  
+      Console.WriteLine("Press <ENTER> to terminate the service.");  
+      Console.WriteLine();  
+      Console.ReadLine();  
   
-       serviceHost.Close();  
-    }  
-    catch (CommunicationException e)  
-    {  
-       Console.WriteLine(e.Message);  
-    }  
-    catch (TimeoutException e)  
-    {  
-       Console.WriteLine(e.Message);  
-    }     
+      serviceHost.Close();  
+   }  
+   catch (CommunicationException e)  
+   {  
+      Console.WriteLine(e.Message);  
+   }  
+   catch (TimeoutException e)  
+   {  
+      Console.WriteLine(e.Message);  
+   }     
   
-    if (serviceHost.State != CommunicationState.Closed)  
-    {  
-       Console.WriteLine("Aborting the service...");  
-       serviceHost.Abort();  
-    }  
-    ```  
+   if (serviceHost.State != CommunicationState.Closed)  
+   {  
+      Console.WriteLine("Aborting the service...");  
+      serviceHost.Abort();  
+   }  
+   ```  
   
  You have completed implementing a discoverable service. Continue on to [How to: Implement a Client Application that Uses the Discovery Proxy to Find a Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md).  
   

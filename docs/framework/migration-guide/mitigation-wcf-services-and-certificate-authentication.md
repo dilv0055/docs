@@ -14,38 +14,38 @@ The .NET Framework 4.6 adds TLS 1.1 and TLS 1.2 to the WCF SSL protocol default 
 ## Mitigation  
  You can work around this issue so that a WCF client can connect to a WCF server by doing any of the following:  
   
--   Update the certificate to not use the MD5 algorithm. This is the recommended solution.  
+- Update the certificate to not use the MD5 algorithm. This is the recommended solution.  
   
--   If the binding is not dynamically configured in source code, update the application's configuration file to use TLS 1.1 or an earlier version of the protocol. This allows you to continue to use a certificate with the MD5 hash algorithm.  
+- If the binding is not dynamically configured in source code, update the application's configuration file to use TLS 1.1 or an earlier version of the protocol. This allows you to continue to use a certificate with the MD5 hash algorithm.  
   
-    > [!CAUTION]
-    >  This workaround is not recommended, since a certificate with the MD5 hash algorithm is considered insecure.  
+  > [!CAUTION]
+  >  This workaround is not recommended, since a certificate with the MD5 hash algorithm is considered insecure.  
   
-     The following configuration file does this:  
+   The following configuration file does this:  
   
-    ```xml  
-    <configuration>  
-        <system.serviceModel>  
-            <bindings>  
-                <netTcpBinding>  
-                    <binding>  
-                        <security mode= "None|Transport|Message|TransportWithMessageCredential" >  
-                            <transport clientCredentialType="None|Windows|Certificate"  
-                                                protectionLevel="None|Sign|EncryptAndSign"  
-                                                sslProtocols="Ssl3|Tls1|Tls11">  
-                            </transport>  
-                        </security>  
-                    </binding>  
-                </netTcpBinding>  
-            </bindings>  
-        </system.ServiceModel>  
-    </configuration>  
-    ```  
+  ```xml  
+  <configuration>  
+      <system.serviceModel>  
+          <bindings>  
+              <netTcpBinding>  
+                  <binding>  
+                      <security mode= "None|Transport|Message|TransportWithMessageCredential" >  
+                          <transport clientCredentialType="None|Windows|Certificate"  
+                                              protectionLevel="None|Sign|EncryptAndSign"  
+                                              sslProtocols="Ssl3|Tls1|Tls11">  
+                          </transport>  
+                      </security>  
+                  </binding>  
+              </netTcpBinding>  
+          </bindings>  
+      </system.ServiceModel>  
+  </configuration>  
+  ```  
   
--   If the binding is dynamically configured in source code, update the <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType> property to use TLS 1.1 (<xref:System.Security.Authentication.SslProtocols.Tls11?displayProperty=nameWithType>) or an  earlier version of the protocol in the source code.  
+- If the binding is dynamically configured in source code, update the <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType> property to use TLS 1.1 (<xref:System.Security.Authentication.SslProtocols.Tls11?displayProperty=nameWithType>) or an  earlier version of the protocol in the source code.  
   
-    > [!CAUTION]
-    >  This workaround is not recommended, since a certificate with the MD5 hash algorithm is considered insecure.  
+  > [!CAUTION]
+  >  This workaround is not recommended, since a certificate with the MD5 hash algorithm is considered insecure.  
   
 ## See Also  
  [Runtime Changes](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)

@@ -42,6 +42,7 @@ Exceptions offer advantages over other methods of error notification, such as re
 
 The following table lists some common exceptions with examples of what can cause them.
 
+
 | Exception type | Description | Example |
 | -------------- | ----------- | ------- |
 | <xref:System.Exception> | Base class for all exceptions. | None (use a derived class of this exception). |

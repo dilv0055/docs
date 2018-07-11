@@ -20,9 +20,9 @@ ms.author: "mairaw"
 ---
 # IMetaDataImport::EnumParams Method
 Enumerates ParamDef tokens representing the parameters of the method referenced by the specified MethodDef token.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT EnumParams (  
    [in, out] HCORENUM    *phEnum,  
@@ -32,39 +32,40 @@ HRESULT EnumParams (
    [out] ULONG          *pcTokens  
 );  
 ```  
-  
+
 #### Parameters  
  `phEnum`  
  [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
-  
+
  `mb`  
  [in] A MethodDef token representing the method with the parameters to enumerate.  
-  
+
  `rParams`  
  [out] The array used to store the ParamDef tokens.  
-  
+
  `cMax`  
  [in] The maximum size of the `rParams` array.  
-  
+
  `pcTokens`  
  [out] The number of ParamDef tokens returned in `rParams`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumParams` returned successfully.|  
 |`S_FALSE`|There are no tokens to enumerate. In that case, `pcTokens` is zero.|  
-  
+
 ## Requirements  
  **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

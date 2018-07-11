@@ -43,19 +43,19 @@ virtual void DestroyWindowCore(HandleRef hwnd) override {
   
  Next, introduce the dialog into the larger [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application:  
   
--   Compile the [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] as managed (`/clr`)  
+- Compile the [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] as managed (`/clr`)  
   
--   Turn the dialog into a control  
+- Turn the dialog into a control  
   
--   Define the derived class of <xref:System.Windows.Interop.HwndHost> with `BuildWindowCore` and `DestroyWindowCore` methods  
+- Define the derived class of <xref:System.Windows.Interop.HwndHost> with `BuildWindowCore` and `DestroyWindowCore` methods  
   
--   Override `TranslateAccelerator` method to handle dialog keys  
+- Override `TranslateAccelerator` method to handle dialog keys  
   
--   Override `TabInto` method to support tabbing  
+- Override `TabInto` method to support tabbing  
   
--   Override `OnMnemonic` method to support mnemonics  
+- Override `OnMnemonic` method to support mnemonics  
   
--   Instantiate the <xref:System.Windows.Interop.HwndHost> subclass and put it under the right [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] element  
+- Instantiate the <xref:System.Windows.Interop.HwndHost> subclass and put it under the right [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] element  
   
 ### Turn the Dialog into a Control  
  You can turn a dialog box into a child HWND using the WS_CHILD and DS_CONTROL styles.  Go into the resource file (.rc) where the dialog is defined, and find the beginning of the definition of the dialog:  

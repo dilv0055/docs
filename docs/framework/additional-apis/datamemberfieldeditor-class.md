@@ -15,13 +15,12 @@ topic_type:
 author: "mairaw"
 ms.author: "mairaw"
 ---
-
 # DataMemberFieldEditor Class
 
 Provides user interface for editing properties of data-bound objects by listing all properties of the `DataSource` object to select the value source from.  
-  
+
 ## Syntax
-  
+
 ```csharp
 internal class DataMemberFieldEditor : UITypeEditor
 ```
@@ -34,11 +33,11 @@ internal class DataMemberFieldEditor : UITypeEditor
 ## Requirements
 
 **Namespace:** <xref:System.Windows.Forms.Design?displayProperty=nameWithType>  
-  
+
 **Assembly:** System.Design (in System.Design.dll)  
-  
+
 **.NET Framework versions:** Available since 2.0.  
-  
+
 ## See also
 
 <xref:System.Windows.Forms.Design?displayProperty=nameWithType>

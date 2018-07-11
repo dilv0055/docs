@@ -1,5 +1,6 @@
 ### IAsyncResult.CompletedSynchronously property must be correct for the resulting task to complete
 
+
 |   |   |
 |---|---|
 |Details|When calling TaskFactory.FromAsync, the implementation of the <xref:System.IAsyncResult.CompletedSynchronously> property must be correct for the resulting task to complete. That is, the property must return true if, and only if, the implementation completed synchronously. Previously, the property was not checked.|

@@ -4,12 +4,11 @@ description: This tutorial provides an overview of working with semantic analysi
 ms.date: 02/06/2018
 ms.custom: mvc
 ---
-
 # Get started with semantic analysis
 
 This tutorial assumes you're familiar with the Syntax API. The [get started with syntax analysis](syntax-analysis.md) article provides sufficient introduction.
 
-In this tutorial, you explore the **Symbol** and **Binding APIs**. These APIs provide information about the _semantic meaning_ of a program. They enable you to ask and answer questions about the types represented by any symbol in your program.
+In this tutorial, you explore the **Symbol** and **Binding APIs**. These APIs provide information about the *semantic meaning* of a program. They enable you to ask and answer questions about the types represented by any symbol in your program.
 
 You'll need to install the **.NET Compiler Platform SDK**:
 
@@ -17,7 +16,7 @@ You'll need to install the **.NET Compiler Platform SDK**:
 
 ## Understanding Compilations and Symbols
 
-As you work more with the .NET Compiler SDK, you become familiar with the distinctions between Syntax API and the Semantic API. The **Syntax API** allows you to look at the _structure_ of a program. However, often you want richer information about the semantics or _meaning_ of a program. While a loose code file or snippet of VB or C# code can be syntactically analyzed in isolation, it's not meaningful to ask questions such as "what's the type of this variable" in a vacuum. The meaning of a type name may be dependent on assembly references, namespace imports, or other code files. Those questions are answered using the **Semantic API**, specifically the <xref:Microsoft.CodeAnalysis.Compilation?displayProperty=nameWithType> class.
+As you work more with the .NET Compiler SDK, you become familiar with the distinctions between Syntax API and the Semantic API. The **Syntax API** allows you to look at the *structure* of a program. However, often you want richer information about the semantics or *meaning* of a program. While a loose code file or snippet of VB or C# code can be syntactically analyzed in isolation, it's not meaningful to ask questions such as "what's the type of this variable" in a vacuum. The meaning of a type name may be dependent on assembly references, namespace imports, or other code files. Those questions are answered using the **Semantic API**, specifically the <xref:Microsoft.CodeAnalysis.Compilation?displayProperty=nameWithType> class.
 
 An instance of <xref:Microsoft.CodeAnalysis.Compilation> is analogous to a single project as seen by the compiler and represents everything needed to compile a Visual Basic or C# program. The **compilation** includes the set of source files to be compiled, assembly references, and compiler options. You can reason about the meaning of the code using all the other information in this context. A <xref:Microsoft.CodeAnalysis.Compilation> allows you to find **Symbols** - entities such as types, namespaces, members, and variables which names and other expressions refer to. The process of associating names and expressions with **Symbols** is called **Binding**.
 

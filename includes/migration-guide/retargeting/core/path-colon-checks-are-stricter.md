@@ -1,5 +1,6 @@
 ### Path colon checks are stricter
 
+
 |   |   |
 |---|---|
 |Details|In .NET Framework 4.6.2, a number of changes were made to support previously unsupported paths (both in length and format). Checks for proper drive separator (colon) syntax were made more correct, which had the side effect of blocking some URI paths in a few select Path APIs where they used to be tolerated.|

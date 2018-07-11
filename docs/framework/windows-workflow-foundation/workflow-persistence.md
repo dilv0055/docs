@@ -21,30 +21,30 @@ Workflow persistence is the durable capture of a workflow instance's state, inde
 ## Implicit Persistence Points  
  The following list contains examples of the conditions upon which a workflow is persisted when an instance store is associated with a workflow.  
   
--   When a **TransactionScope** activity completes or a **TransactedReceiveScope** activity completes.  
+- When a **TransactionScope** activity completes or a **TransactedReceiveScope** activity completes.  
   
--   When a workflow instance becomes idle and the **WorkflowIdleBehavior** is set on workflow host. This occurs, for example, when you use messaging activities or a **Delay** activity.  
+- When a workflow instance becomes idle and the **WorkflowIdleBehavior** is set on workflow host. This occurs, for example, when you use messaging activities or a **Delay** activity.  
   
--   When a WorkflowApplication becomes idle and the **PersistableIdle** property of the application is set to **PersistableIdleAction.Persist**.  
+- When a WorkflowApplication becomes idle and the **PersistableIdle** property of the application is set to **PersistableIdleAction.Persist**.  
   
--   When a host application is instructed to persist or unload a workflow instance.  
+- When a host application is instructed to persist or unload a workflow instance.  
   
--   When a workflow instance is terminated or finishes.  
+- When a workflow instance is terminated or finishes.  
   
--   When a **Persist** activity executes.  
+- When a **Persist** activity executes.  
   
--   When an instance of a workflow developed using a previous version of Windows Workflow Foundation encounters a persistence point during interoperable execution.  
+- When an instance of a workflow developed using a previous version of Windows Workflow Foundation encounters a persistence point during interoperable execution.  
   
 ## In This Section  
   
--   [SQL Workflow Instance Store](../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md)  
+- [SQL Workflow Instance Store](../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md)  
   
--   [Instance Stores](../../../docs/framework/windows-workflow-foundation/instance-stores.md)  
+- [Instance Stores](../../../docs/framework/windows-workflow-foundation/instance-stores.md)  
   
--   [Persistence Participants](../../../docs/framework/windows-workflow-foundation/persistence-participants.md)  
+- [Persistence Participants](../../../docs/framework/windows-workflow-foundation/persistence-participants.md)  
   
--   [Persistence Best Practices](../../../docs/framework/windows-workflow-foundation/persistence-best-practices.md)  
+- [Persistence Best Practices](../../../docs/framework/windows-workflow-foundation/persistence-best-practices.md)  
   
--   [Non-Persisted Workflow Instances](../../../docs/framework/windows-workflow-foundation/non-persisted-workflow-instances.md)  
+- [Non-Persisted Workflow Instances](../../../docs/framework/windows-workflow-foundation/non-persisted-workflow-instances.md)  
   
--   [Pausing and Resuming a Workflow](../../../docs/framework/windows-workflow-foundation/pausing-and-resuming-a-workflow.md)
+- [Pausing and Resuming a Workflow](../../../docs/framework/windows-workflow-foundation/pausing-and-resuming-a-workflow.md)

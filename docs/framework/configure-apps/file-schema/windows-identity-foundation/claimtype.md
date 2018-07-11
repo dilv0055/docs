@@ -7,14 +7,14 @@ manager: "mbaldwin"
 ---
 # &lt;claimType&gt;
 Specifies a single optional or required claim for incoming security tokens.  
-  
+
  \<system.identityModel>  
 \<identityConfiguration>  
 \<claimTypeRequired>  
 \<claimType>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <system.identityModel>  
   <identityConfiguration>  
@@ -25,22 +25,25 @@ Specifies a single optional or required claim for incoming security tokens.
   </identityConfiguration>  
 </system.identityModel>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |type|The claim type. Typically a URI. Required.|  
 |optional|A boolean value that specifies whether the claim type is optional. Optional.|  
-  
+
 ### Child Elements  
  None  
-  
+
 ### Parent Elements  
-  
-|Element|Description|  
-|-------------|-----------------|  
-|[\<claimTypeRequired>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|Specifies the set of required claims for incoming security tokens.|
+
+
+|                                                              Element                                                              |                            Description                             |
+|-----------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
+| [\<claimTypeRequired>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md) | Specifies the set of required claims for incoming security tokens. |
+

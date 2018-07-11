@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostThreadPoolManager::GetAvailableThreads Method
 Gets the number of threads in the thread pool that are not currently processing work items.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetAvailableThreads (  
     [out] DWORD *pdwAvailableWorkerThreads  
 );  
 ```  
-  
+
 #### Parameters  
  `pdwAvailableWorkerThreads`  
  [out] Pointer to the number of threads in the thread pool that are not currently processing work items.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`GetAvailableThreads` returned successfully.|  
@@ -44,19 +45,19 @@ HRESULT GetAvailableThreads (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_NOTIMPL|The host does not provide an implementation of `GetAvailableThreads`.|  
-  
+
 ## Remarks  
  If the host does not provide an implementation of `GetAvailableThreads`, it should return an HRESULT value of E_NOTIMPL.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  <xref:System.Threading.ThreadPool.GetAvailableThreads%2A>  
  <xref:System.Threading.ThreadPool>  

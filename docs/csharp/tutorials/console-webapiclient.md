@@ -4,17 +4,16 @@ description: This tutorial teaches you a number of features in .NET Core and the
 ms.date: 03/06/2017
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
 ---
-
 # REST client
 
 ## Introduction
 This tutorial teaches you a number of features in .NET Core and the C# language. You’ll learn:
-*	The basics of the .NET Core Command Line Interface (CLI).
-*   An overview of C# Language features.
-*	Managing dependencies with NuGet
-*   HTTP Communications
-*   Processing JSON information
-*   Managing configuration with Attributes. 
+* The basics of the .NET Core Command Line Interface (CLI).
+* An overview of C# Language features.
+* Managing dependencies with NuGet
+* HTTP Communications
+* Processing JSON information
+* Managing configuration with Attributes. 
 
 You’ll build an application that issues HTTP Requests to a REST
 service on GitHub. You'll read information in JSON format, and convert
@@ -104,7 +103,7 @@ build the functionality of the application. Start by opening the `program.cs` fi
 ```csharp
 private static async Task ProcessRepositories()
 {
-    
+
 }
 ```
 
@@ -496,7 +495,7 @@ Console.WriteLine(repo.LastPush);
 ```
 
 Your version should now match the [finished sample](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient).
- 
+
 ## Conclusion
 
 This tutorial showed you how to make web requests, parse the result, and display properties of

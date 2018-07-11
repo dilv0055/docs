@@ -17,7 +17,6 @@ helpviewer_keywords: [OFFLINE BOOK INDEX ENTRIES]
 #keywords:
 #ms.devlang: [LANGUAGES]
 #manager: [MICROSOFT ALIAS]
-
 ---
 # Metadata and Markdown Template
 
@@ -151,7 +150,7 @@ For more information about using this notation, see [Using cross reference](http
 There are two ways to find the UID:
 
 - View the source for the API page you want to link to and find the ms.assetid value. Note that individual overload values are not shown in the source.
-- Use the following tool to search for UIDs: https://xref.docs.microsoft.com/autocomplete?text=tostring (replace tostring with parts of the API name you're trying to find). The tool searches for the provided `text` query parameter in any part of the UID. For example, you can search for member name (ToString), partial member name (ToStri), type and member name (Double.ToString), etc.
+- Use the following tool to search for UIDs: <https://xref.docs.microsoft.com/autocomplete?text=tostring> (replace tostring with parts of the API name you're trying to find). The tool searches for the provided `text` query parameter in any part of the UID. For example, you can search for member name (ToString), partial member name (ToStri), type and member name (Double.ToString), etc.
 
 When the UID contains the special characters \`, \# or \*, the UID value needs to be HTML encoded as `%60`, `%23` and `%2A` respectively. You'll sometimes see parentheses encoded but it's not a requirement.
 
@@ -167,21 +166,22 @@ Examples:
 ### Ordered lists
 
 1. This
-1. Is
-1. An
-1. Ordered
-1. List
+2. Is
+3. An
+4. Ordered
+5. List
 
 #### Ordered list with an embedded list
 
 1. Here
-1. comes
-1. an
-1. embedded
-    1. Miss Scarlett
-    1. Professor Plum
-1. ordered
-1. list
+2. comes
+3. an
+4. embedded
+   1. Miss Scarlett
+   2. Professor Plum
+
+5. ordered
+6. list
 
 ### Unordered Lists
 
@@ -198,10 +198,12 @@ Examples:
 - list
   - Mrs. Peacock
   - Mr. Green
+
 - contains
 - other
   1. Colonel Mustard
-  1. Mrs. White
+  2. Mrs. White
+
 - lists
 
 ## Horizontal rule
@@ -209,6 +211,7 @@ Examples:
 ---
 
 ## Tables
+
 
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
@@ -241,7 +244,7 @@ You can include the code using the following syntax:
 * `<queryoption>` and `<queryoptionvalue>` (*optional*)
   * Used together to specify how the code should be retrieved from the file:
     * `#`:  `#L{startlinenumber}-L{endlinenumber}` (line range) *or* `#{tagname}` (tag name).
-    We discourage the use of line numbers because they are very brittle. Tag name is the preferred way of referencing code snippets.
+      We discourage the use of line numbers because they are very brittle. Tag name is the preferred way of referencing code snippets.
     * `range`: `?range=1,3-5` A range of lines. This example includes lines 1, 3, 4, and 5.
     * `dedent`: `?dedent=8` Dedents the lines by a number of spaces--in this case, 8. This can be combined with the `range` and other query options that select a subset of the lines of a file.
     * `outdent`: `?outdent=8` Reverses the indent of the lines by a number of spaces--in this case, 8. This can be combined with `range` and other query options that select a subset of the lines of a file.
@@ -263,6 +266,7 @@ runtime errors, you can use inline code blocks.
 Use three backticks (\`\`\`) + a language ID to apply language-specific color coding to a code block. Here is the list of supported languages showing the markdown label for each language ID.
 
 #### Supported languages
+
 
 |Name|Markdown label|
 |-----|-------|
@@ -430,7 +434,7 @@ You can embed the Markdown of one file into another using an include.
 
 A custom style is available for lists. You can render lists with green check marks.
 
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * How to create a .NET Core app
 > * How to add a reference to the Microsoft.XmlSerializer.Generator package
 > * How to edit your MyApp.csproj to add dependencies
@@ -441,14 +445,14 @@ You can see an example of checked lists in action in the [.NET Core docs](https:
 
 ### Buttons
 
-> [!div class="button"]
-[button links](../docs/core/index.md)
+> [!div  class="button"]
+> [button links](../docs/core/index.md)
 
 You can see an example of buttons in action in the [Visual Studio docs](https://docs.microsoft.com/visualstudio/install/install-visual-studio#step-2---download-visual-studio).
 
 ### Selectors
 
-> [!div class="op_single_selector"]
+> [!div  class="op_single_selector"]
 - [macOS](../docs/core/tutorials/using-on-macos.md)
 - [Windows](../docs/core/tutorials/with-visual-studio.md)
 
@@ -456,8 +460,8 @@ You can see an example of selectors in action at the [Azure docs](https://docs.m
 
 ### Step-By-Steps
 
->[!div class="step-by-step"]
-[Pre](../docs/csharp/expression-trees-interpreting.md)
-[Next](../docs/csharp/expression-trees-translating.md)
+> [!div  class="step-by-step"]
+> [Pre](../docs/csharp/expression-trees-interpreting.md)
+> [Next](../docs/csharp/expression-trees-translating.md)
 
 You can see an example of step-by-steps in action at the [C# Guide](https://docs.microsoft.com/dotnet/csharp/tour-of-csharp/program-structure).

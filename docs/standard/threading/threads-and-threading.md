@@ -27,56 +27,56 @@ Operating systems use processes to separate the different applications that they
   
  Without modification, the same application would dramatically increase user satisfaction when run on a computer with more than one processor. Your single application domain could use multiple threads to accomplish the following tasks:  
   
--   Communicate over a network, to a Web server, and to a database.  
+- Communicate over a network, to a Web server, and to a database.  
   
--   Perform operations that take a large amount of time.  
+- Perform operations that take a large amount of time.  
   
--   Distinguish tasks of varying priority. For example, a high-priority thread manages time-critical tasks, and a low-priority thread performs other tasks.  
+- Distinguish tasks of varying priority. For example, a high-priority thread manages time-critical tasks, and a low-priority thread performs other tasks.  
   
--   Allow the user interface to remain responsive, while allocating time to background tasks.  
+- Allow the user interface to remain responsive, while allocating time to background tasks.  
   
 ### Disadvantages of Multiple Threads  
  It is recommended that you use as few threads as possible, thereby minimizing the use of operating-system resources and improving performance. Threading also has resource requirements and potential conflicts to be considered when designing your application. The resource requirements are as follows:  
   
--   The system consumes memory for the context information required by processes, **AppDomain** objects, and threads. Therefore, the number of processes, **AppDomain** objects, and threads that can be created is limited by available memory.  
+- The system consumes memory for the context information required by processes, **AppDomain** objects, and threads. Therefore, the number of processes, **AppDomain** objects, and threads that can be created is limited by available memory.  
   
--   Keeping track of a large number of threads consumes significant processor time. If there are too many threads, most of them will not make significant progress. If most of the current threads are in one process, threads in other processes are scheduled less frequently.  
+- Keeping track of a large number of threads consumes significant processor time. If there are too many threads, most of them will not make significant progress. If most of the current threads are in one process, threads in other processes are scheduled less frequently.  
   
--   Controlling code execution with many threads is complex, and can be a source of many bugs.  
+- Controlling code execution with many threads is complex, and can be a source of many bugs.  
   
--   Destroying threads requires knowing what could happen and handling those issues.  
+- Destroying threads requires knowing what could happen and handling those issues.  
   
  Providing shared access to resources can create conflicts. To avoid conflicts, you must synchronize, or control the access to, shared resources. Failure to synchronize access properly (in the same or different application domains) can lead to problems such as deadlocks (in which two threads stop responding while each waits for the other to complete) and race conditions (when an anomalous result occurs due to an unexpected critical dependence on the timing of two events). The system provides synchronization objects that can be used to coordinate resource sharing among multiple threads. Reducing the number of threads makes it easier to synchronize resources.  
   
  Resources that require synchronization include:  
   
--   System resources (such as communications ports).  
+- System resources (such as communications ports).  
   
--   Resources shared by multiple processes (such as file handles).  
+- Resources shared by multiple processes (such as file handles).  
   
--   The resources of a single application domain (such as global, static, and instance fields) accessed by multiple threads.  
+- The resources of a single application domain (such as global, static, and instance fields) accessed by multiple threads.  
   
 ### Threading and Application Design  
  In general, using the <xref:System.Threading.ThreadPool> class is the easiest way to handle multiple threads for relatively short tasks that will not block other threads and when you do not expect any particular scheduling of the tasks. However, there are a number of reasons to create your own threads:  
   
--   If you need a task to have a particular priority.  
+- If you need a task to have a particular priority.  
   
--   If you have a task that might run a long time (and therefore block other tasks).  
+- If you have a task that might run a long time (and therefore block other tasks).  
   
--   If you need to place threads into a single-threaded apartment (all **ThreadPool** threads are in the multithreaded apartment).  
+- If you need to place threads into a single-threaded apartment (all **ThreadPool** threads are in the multithreaded apartment).  
   
--   If you need a stable identity associated with the thread. For example, you should use a dedicated thread to abort that thread, suspend it, or discover it by name.  
+- If you need a stable identity associated with the thread. For example, you should use a dedicated thread to abort that thread, suspend it, or discover it by name.  
   
--   If you need to run background threads that interact with the user interface, the .NET Framework version 2.0 provides a <xref:System.ComponentModel.BackgroundWorker> component that communicates using events, with cross-thread marshaling to the user-interface thread.  
+- If you need to run background threads that interact with the user interface, the .NET Framework version 2.0 provides a <xref:System.ComponentModel.BackgroundWorker> component that communicates using events, with cross-thread marshaling to the user-interface thread.  
   
 ### Threading and Exceptions  
  Do handle exceptions in threads. Unhandled exceptions in threads, even background threads, generally terminate the process. There are three exceptions to this rule:  
   
--   A <xref:System.Threading.ThreadAbortException> is thrown in a thread because <xref:System.Threading.Thread.Abort%2A> was called.  
+- A <xref:System.Threading.ThreadAbortException> is thrown in a thread because <xref:System.Threading.Thread.Abort%2A> was called.  
   
--   An <xref:System.AppDomainUnloadedException> is thrown in a thread because the application domain is being unloaded.  
+- An <xref:System.AppDomainUnloadedException> is thrown in a thread because the application domain is being unloaded.  
   
--   The common language runtime or a host process terminates the thread.  
+- The common language runtime or a host process terminates the thread.  
   
  For more information, see [Exceptions in Managed Threads](../../../docs/standard/threading/exceptions-in-managed-threads.md).  
   

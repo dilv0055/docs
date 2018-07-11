@@ -1,5 +1,6 @@
 ### Multi-line ASP.Net TextBox spacing changed when using AntiXSSEncoder
 
+
 |   |   |
 |---|---|
 |Details|In .NET Framework 4.0, extra lines were inserted between lines of a multi-line text box on postback, if using the <xref:System.Web.Security.AntiXss.AntiXssEncoder?displayProperty=name>. In .NET Framework 4.5, those extra line breaks are not included, but only if the web app is targeting .NET Framework 4.5|

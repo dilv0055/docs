@@ -11,13 +11,13 @@ You can disassociate an object variable from any object instance by setting it t
   
 ### To disassociate an object variable from any object instance  
   
--   Set the variable to `Nothing` in an assignment statement.  
+- Set the variable to `Nothing` in an assignment statement.  
   
-    ```  
-    ' Assume account is a defined class  
-    Dim currentAccount As account  
-    currentAccount = Nothing  
-    ```  
+  ```  
+  ' Assume account is a defined class  
+  Dim currentAccount As account  
+  currentAccount = Nothing  
+  ```  
   
 ## Robust Programming  
  If your code tries to access a member of an object variable that has been set to `Nothing`, a <xref:System.NullReferenceException> occurs. If you set an object variable to `Nothing` frequently, or if it is possible the variable is not initialized, it is a good idea to enclose member accesses in a `Try...Catch...Finally` block.  

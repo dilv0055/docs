@@ -4,7 +4,6 @@ description: Learn about delegates in this overview topic that introduces basic 
 ms.date: 06/20/2016
 ms.assetid: 59b61d77-84e5-457b-8da5-fb5f24ca6ed6
 ---
-
 # Introduction to Delegates
 
 [Previous](delegates-events.md)

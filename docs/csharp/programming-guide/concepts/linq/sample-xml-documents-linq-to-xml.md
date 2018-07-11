@@ -5,12 +5,13 @@ ms.assetid: 9ec89809-41a1-484c-b1e3-6c4ecdca7b8d
 ---
 # Sample XML Documents (LINQ to XML)
 The following example files are used in the code samples and code snippets throughout the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.  
-  
+
 > [!NOTE]
 >  The example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious. No association with any real company, organization, product, domain name, e-mail address, logo, person, places, or events is intended or should be inferred.  
-  
+
 ## In This Section  
-  
+
+
 |Topic|Description|  
 |-----------|-----------------|  
 |[Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md)|An XML document that contains a typical purchase order.|  
@@ -26,6 +27,6 @@ The following example files are used in the code samples and code snippets throu
 |[Sample XML File: Numerical Data in a Namespace](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md)|An XML document in a namespace that contains data suitable for summing and grouping.|  
 |[Sample XML File: Books (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md)|An XML document that contains a catalog of books.|  
 |[Sample XML File: Consolidated Purchase Orders](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md)|Presents an XML document that contains purchase orders that are in different namespaces.|  
-  
+
 ## See Also  
  [Programming Guide (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

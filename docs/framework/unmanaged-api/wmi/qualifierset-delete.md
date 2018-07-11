@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Deletes a specified qualifier by name.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT QualifierSet_Delete (
    [in] int                  vFunc, 
@@ -47,6 +47,7 @@ HRESULT QualifierSet_Delete (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | The `wszName` parameter is not valid. |
@@ -63,10 +64,10 @@ Due to qualifier propagation rules, a particular qualifier may have been inherit
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

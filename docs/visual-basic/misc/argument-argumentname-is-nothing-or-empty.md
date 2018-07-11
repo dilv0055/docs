@@ -10,7 +10,7 @@ An argument name is not valid because it is initialized to `Nothing` or is empty
   
 ## To correct this error  
   
--   Add a valid argument name.  
+- Add a valid argument name.  
   
 ## See Also  
  [My.Application.Info.DirectoryPath](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo.DirectoryPath)  

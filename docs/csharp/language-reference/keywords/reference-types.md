@@ -14,19 +14,19 @@ There are two kinds of types in C#: reference types and value types. Variables o
   
  The following keywords are used to declare reference types:  
   
--   [class](../../../csharp/language-reference/keywords/class.md)  
+- [class](../../../csharp/language-reference/keywords/class.md)  
   
--   [interface](../../../csharp/language-reference/keywords/interface.md)  
+- [interface](../../../csharp/language-reference/keywords/interface.md)  
   
--   [delegate](../../../csharp/language-reference/keywords/delegate.md)  
+- [delegate](../../../csharp/language-reference/keywords/delegate.md)  
   
  C# also provides the following built-in reference types:  
   
--   [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
+- [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
   
--   [object](../../../csharp/language-reference/keywords/object.md)  
+- [object](../../../csharp/language-reference/keywords/object.md)  
   
--   [string](../../../csharp/language-reference/keywords/string.md)  
+- [string](../../../csharp/language-reference/keywords/string.md)  
   
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  

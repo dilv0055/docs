@@ -212,117 +212,117 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
   
 ### To set up, build, and run the sample  
   
-1.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-    > [!NOTE]
-    >  If you use Svcutil.exe to regenerate the configuration for this sample, be sure to modify the endpoint names in the client configuration to match the client code.  
+   > [!NOTE]
+   >  If you use Svcutil.exe to regenerate the configuration for this sample, be sure to modify the endpoint names in the client configuration to match the client code.  
   
  By default with the <xref:System.ServiceModel.NetMsmqBinding>, transport security is enabled. There are two relevant properties for MSMQ transport security, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> and <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` By default, the authentication mode is set to `Windows` and the protection level is set to `Sign`. For MSMQ to provide the authentication and signing feature, it must be part of a domain and the active directory integration option for MSMQ must be installed. If you run this sample on a computer that does not satisfy these criteria you receive an error.  
   
 ### To run the sample on a computer joined to a workgroup or without active directory integration  
   
-1.  If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration:  
+1. If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration:  
   
-    ```xml  
-    <configuration>  
+   ```xml  
+   <configuration>  
   
-      <appSettings>  
-        <!-- Use appSetting to configure MSMQ queue name. -->  
-        <add key="queueName" value=".\private$\ServiceModelSamplesTwo-way/OrderProcessor" />  
-      </appSettings>  
+     <appSettings>  
+       <!-- Use appSetting to configure MSMQ queue name. -->  
+       <add key="queueName" value=".\private$\ServiceModelSamplesTwo-way/OrderProcessor" />  
+     </appSettings>  
   
-      <system.serviceModel>  
-        <services>  
-          <service   
-              name="Microsoft.ServiceModel.Samples.OrderProcessorService">  
-            <!-- Define NetMsmqEndpoint -->  
-            <endpoint address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderProcessor"  
-                      binding="netMsmqBinding"  
-                      bindingConfiguration="TransactedBinding"   
-                      contract="Microsoft.ServiceModel.Samples.IOrderProcessor" />  
-          </service>  
-        </services>  
+     <system.serviceModel>  
+       <services>  
+         <service   
+             name="Microsoft.ServiceModel.Samples.OrderProcessorService">  
+           <!-- Define NetMsmqEndpoint -->  
+           <endpoint address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderProcessor"  
+                     binding="netMsmqBinding"  
+                     bindingConfiguration="TransactedBinding"   
+                     contract="Microsoft.ServiceModel.Samples.IOrderProcessor" />  
+         </service>  
+       </services>  
   
-        <bindings>  
-          <netMsmqBinding>  
-            <binding name="TransactedBinding" >  
-             <security mode="None" />  
-            </binding>  
-          </netMsmqBinding>  
-        </bindings>  
+       <bindings>  
+         <netMsmqBinding>  
+           <binding name="TransactedBinding" >  
+            <security mode="None" />  
+           </binding>  
+         </netMsmqBinding>  
+       </bindings>  
   
-      </system.serviceModel>  
+     </system.serviceModel>  
   
-    </configuration>  
-    ```  
+   </configuration>  
+   ```  
   
-2.  Turning off security for a client configuration generates the following:  
+2. Turning off security for a client configuration generates the following:  
   
-    ```xml  
-    <?xml version="1.0" encoding="utf-8" ?>  
-    <configuration>  
-      <appSettings>  
-        <!-- Use appSetting to configure MSMQ queue name. -->  
-        <add key="queueName" value=".\private$\ServiceModelSamplesTwo-way/OrderStatus" />  
-      </appSettings>  
+   ```xml  
+   <?xml version="1.0" encoding="utf-8" ?>  
+   <configuration>  
+     <appSettings>  
+       <!-- Use appSetting to configure MSMQ queue name. -->  
+       <add key="queueName" value=".\private$\ServiceModelSamplesTwo-way/OrderStatus" />  
+     </appSettings>  
   
-      <system.serviceModel>  
+     <system.serviceModel>  
   
-        <services>  
-          <service   
-             name="Microsoft.ServiceModel.Samples.OrderStatusService">  
-            <!-- Define NetMsmqEndpoint -->  
-            <endpoint address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderStatus"  
-                      binding="netMsmqBinding"  
-                      bindingConfiguration="TransactedBinding" contract="Microsoft.ServiceModel.Samples.IOrderStatus" />  
-          </service>  
-        </services>  
+       <services>  
+         <service   
+            name="Microsoft.ServiceModel.Samples.OrderStatusService">  
+           <!-- Define NetMsmqEndpoint -->  
+           <endpoint address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderStatus"  
+                     binding="netMsmqBinding"  
+                     bindingConfiguration="TransactedBinding" contract="Microsoft.ServiceModel.Samples.IOrderStatus" />  
+         </service>  
+       </services>  
   
-        <client>  
-          <!-- Define NetMsmqEndpoint -->  
-          <endpoint name="OrderProcessorEndpoint"  
-                    address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderProcessor"   
-                    binding="netMsmqBinding"   
-                    bindingConfiguration="TransactedBinding"  
-                    contract="Microsoft.ServiceModel.Samples.IOrderProcessor" />  
-        </client>  
+       <client>  
+         <!-- Define NetMsmqEndpoint -->  
+         <endpoint name="OrderProcessorEndpoint"  
+                   address="net.msmq://localhost/private/ServiceModelSamplesTwo-way/OrderProcessor"   
+                   binding="netMsmqBinding"   
+                   bindingConfiguration="TransactedBinding"  
+                   contract="Microsoft.ServiceModel.Samples.IOrderProcessor" />  
+       </client>  
   
-        <bindings>  
-          <netMsmqBinding>  
-            <binding name="TransactedBinding" >  
-             <security mode="None" />  
-            </binding>  
-          </netMsmqBinding>  
-        </bindings>  
+       <bindings>  
+         <netMsmqBinding>  
+           <binding name="TransactedBinding" >  
+            <security mode="None" />  
+           </binding>  
+         </netMsmqBinding>  
+       </bindings>  
   
-      </system.serviceModel>  
+     </system.serviceModel>  
   
-    </configuration>  
-    ```  
+   </configuration>  
+   ```  
   
-3.  The service for this sample creates a binding in the `OrderProcessorService`. Add a line of code after the binding is instantiated to set the security mode to `None`.  
+3. The service for this sample creates a binding in the `OrderProcessorService`. Add a line of code after the binding is instantiated to set the security mode to `None`.  
   
-    ```csharp
-    NetMsmqBinding msmqCallbackBinding = new NetMsmqBinding();  
-    msmqCallbackBinding.Security.Mode = NetMsmqSecurityMode.None;  
-    ```  
+   ```csharp
+   NetMsmqBinding msmqCallbackBinding = new NetMsmqBinding();  
+   msmqCallbackBinding.Security.Mode = NetMsmqSecurityMode.None;  
+   ```  
   
-4.  Ensure that you change the configuration on both the server and the client before you run the sample.  
+4. Ensure that you change the configuration on both the server and the client before you run the sample.  
   
-    > [!NOTE]
-    >  Setting `security mode` to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> or `Message` security to `None`.  
+   > [!NOTE]
+   >  Setting `security mode` to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> or `Message` security to `None`.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  
   
 ## See Also

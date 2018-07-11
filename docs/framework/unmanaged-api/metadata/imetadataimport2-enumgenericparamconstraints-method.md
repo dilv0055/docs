@@ -20,9 +20,9 @@ ms.author: "mairaw"
 ---
 # IMetaDataImport2::EnumGenericParamConstraints Method
 Gets an enumerator for an array of generic parameter constraints associated with the generic parameter represented by the specified token.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT EnumGenericParamConstraints (  
     [in, out] HCORENUM                *phEnum,  
@@ -32,39 +32,40 @@ HRESULT EnumGenericParamConstraints (
     [out] ULONG                       *pcGenericParamConstraints  
 );  
 ```  
-  
+
 #### Parameters  
  `phEnum`  
  [in, out] A pointer to the enumerator.  
-  
+
  `tk`  
  [in]   A token that represents the generic parameter whose constraints are to be enumerated.  
-  
+
  `rGenericParamConstraints`  
  [out] The array of generic parameter constraints to enumerate.  
-  
+
  `cMax`  
  [in]   The requested maximum number of tokens to place in `rGenericParamConstraints`.  
-  
+
  `pcGenericParamConstraints`  
  [out] A pointer to the number of tokens placed in `rGenericParamConstraints`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumGenericParameterConstraints` returned successfully.|  
 |`S_FALSE`|`phEnum` has no member elements. In this case, `pcGenericParameterConstraints` is set to 0 (zero).|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)  
  [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)

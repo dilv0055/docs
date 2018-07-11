@@ -15,18 +15,17 @@ ms.date: 05/25/2018
 
 ## Synopsis
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 ```
 dotnet clean [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
 dotnet clean [-h|--help]
 ```
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 ```
 dotnet clean [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-v|--verbosity]
 dotnet clean [-h|--help]
 ```
----
-
+* * *
 ## Description
 
 The `dotnet clean` command cleans the output of the previous build. It's implemented as an [MSBuild target](/visualstudio/msbuild/msbuild-targets), so the project is evaluated when the command is run. Only the outputs created during the build are cleaned. Both intermediate (*obj*) and final output (*bin*) folders are cleaned.
@@ -39,7 +38,7 @@ The MSBuild project to clean. If a project file is not specified, MSBuild search
 
 ## Options
 
-# [.NET Core 2.x](#tab/netcore2x)
+#### [.NET Core 2.x](#tab/netcore2x/)
 
 `-c|--configuration {Debug|Release}`
 
@@ -65,7 +64,7 @@ Cleans the output folder of the specified runtime. This is used when a [self-con
 
 Sets the verbosity level of the command. Allowed levels are q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic].
 
-# [.NET Core 1.x](#tab/netcore1x)
+#### [.NET Core 1.x](#tab/netcore1x/)
 
 `-c|--configuration {Debug|Release}`
 
@@ -87,8 +86,7 @@ Directory in which the build outputs are placed. Specify the `-f|--framework <FR
 
 Sets the verbosity level of the command. Allowed levels are q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic].
 
----
-
+* * *
 ## Examples
 
 Clean a default build of the project:

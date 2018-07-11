@@ -42,11 +42,11 @@ class Account
   
  In general, avoid locking on a `public` type, or instances beyond your code's control. The common constructs `lock (this)`, `lock (typeof (MyType))`, and `lock ("myLock")` violate this guideline:  
   
--   `lock (this)` is a problem if the instance can be accessed publicly.  
+- `lock (this)` is a problem if the instance can be accessed publicly.  
   
--   `lock (typeof (MyType))` is a problem if `MyType` is publicly accessible.  
+- `lock (typeof (MyType))` is a problem if `MyType` is publicly accessible.  
   
--   `lock("myLock")` is a problem because any other code in the process using the same string, will share the same lock.  
+- `lock("myLock")` is a problem because any other code in the process using the same string, will share the same lock.  
   
  Best practice is to define a `private` object to lock on, or a `private static` object variable to protect data common to all instances.  
   

@@ -16,9 +16,10 @@ ms.author: "ronpet"
 ---
 # Marshaling Strings
 Platform invoke copies string parameters, converting them from the .NET Framework format (Unicode) to the unmanaged format (ANSI), if needed. Because managed strings are immutable, platform invoke does not copy them back from unmanaged memory to managed memory when the function returns.  
-  
+
  The following table lists marshaling options for strings, describes their usage, and provides a link to the corresponding .NET Framework sample.  
-  
+
+
 |String|Description|Sample|  
 |------------|-----------------|------------|  
 |By value.|Passes strings as In parameters.|[MsgBox](msgbox-sample.md)|  
@@ -31,7 +32,7 @@ Platform invoke copies string parameters, converting them from the .NET Framewor
 |In a class by value **(char[])**.|Passes strings in a class (a class is an In/Out parameter). The unmanaged function expects an embedded character buffer.|[OSInfo](https://msdn.microsoft.com/library/69d89067-507b-41fe-859d-30bf3ff29455(v=vs.100))|  
 |As an array of strings by value.|Creates an array of strings that is passed by value.|[Arrays](marshaling-different-types-of-arrays.md)|  
 |As an array of structures that contain strings by value.|Creates an array of structures that contain strings and the array is passed by value.|[Arrays](marshaling-different-types-of-arrays.md)|  
-  
+
 ## See Also  
  [Marshaling Data with Platform Invoke](marshaling-data-with-platform-invoke.md)  
  [Platform Invoke Data Types](https://msdn.microsoft.com/library/16014d9f-d6bd-481e-83f0-df11377c550f(v=vs.100))  

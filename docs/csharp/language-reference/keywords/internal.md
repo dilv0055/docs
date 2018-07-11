@@ -11,7 +11,7 @@ ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
 # internal (C# Reference)
 The `internal` keyword is an [access modifier](../../../csharp/language-reference/keywords/access-modifiers.md) for types and type members. 
   
- > This page covers `internal` access. The `internal` keyword is also part of the [`protected internal`](./protected-internal.md) access modifier.
+> This page covers `internal` access. The `internal` keyword is also part of the [`protected internal`](./protected-internal.md) access modifier.
   
 Internal types or members are accessible only within files in the same assembly, as in this example:  
   

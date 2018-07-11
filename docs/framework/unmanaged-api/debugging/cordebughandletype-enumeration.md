@@ -19,31 +19,32 @@ ms.author: "ronpet"
 ---
 # CorDebugHandleType Enumeration
 Indicates the handle type.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugHandleType {  
     HANDLE_STRONG                  = 1,  
     HANDLE_WEAK_TRACK_RESURRECTION = 2  
 } CorDebugHandleType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`HANDLE_STRONG`|The handle is strong, which prevents an object from being reclaimed by garbage collection.|  
 |`HANDLE_WEAK_TRACK_RESURRECTION`|The handle is weak, which does not prevent an object from being reclaimed by garbage collection.<br /><br /> The handle becomes invalid when the object is collected.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

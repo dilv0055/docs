@@ -13,21 +13,21 @@ ms.assetid: d0791df8-04e3-46b4-a6be-fe0ed09267e8
   
 ### To override serialization of objects as SOAP messages  
   
-1.  Create an instance of the <xref:System.Xml.Serialization.SoapAttributeOverrides> class.  
+1. Create an instance of the <xref:System.Xml.Serialization.SoapAttributeOverrides> class.  
   
-2.  Create a `SoapAttributes` for each class member that is being serialized.  
+2. Create a `SoapAttributes` for each class member that is being serialized.  
   
-3.  Create an instance of one or more of the attributes that affect XML serialization, as appropriate, to the member being serialized. For more information, see "Attributes That Control Encoded SOAP Serialization".  
+3. Create an instance of one or more of the attributes that affect XML serialization, as appropriate, to the member being serialized. For more information, see "Attributes That Control Encoded SOAP Serialization".  
   
-4.  Set the appropriate property of `SoapAttributes` to the attribute created in step 3.  
+4. Set the appropriate property of `SoapAttributes` to the attribute created in step 3.  
   
-5.  Add `SoapAttributes` to `SoapAttributeOverrides`.  
+5. Add `SoapAttributes` to `SoapAttributeOverrides`.  
   
-6.  Create an `XmlTypeMapping` using the `SoapAttributeOverrides`. Use the `SoapReflectionImporter.ImportTypeMapping` method.  
+6. Create an `XmlTypeMapping` using the `SoapAttributeOverrides`. Use the `SoapReflectionImporter.ImportTypeMapping` method.  
   
-7.  Create an `XmlSerializer` using `XmlTypeMapping`.  
+7. Create an `XmlSerializer` using `XmlTypeMapping`.  
   
-8.  Serialize or deserialize the object.  
+8. Serialize or deserialize the object.  
   
 ## Example  
  The following code example serializes a file in two ways: first, without overriding the `XmlSerializer` class's behavior, and second, by overriding the behavior. The example contains a class named `Group` with several members. Various attributes, such as the `SoapElementAttribute`, have been applied to class members. When the class is serialized with the `SerializeOriginal` method, the attributes control the SOAP message content. When the `SerializeOverride` method is called, the behavior of the `XmlSerializer` is overridden by creating various attributes and setting the properties of a `SoapAttributes` to those attributes (as appropriate).  

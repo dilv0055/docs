@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICLRPolicyManager Interface
 Provides methods that allow the host to specify policy actions to be taken in the event of failures and timeouts.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[SetActionOnFailure Method](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setactiononfailure-method.md)|Specifies the policy action the common language runtime (CLR) should take when the specified failure occurs.|  
@@ -30,16 +31,16 @@ Provides methods that allow the host to specify policy actions to be taken in th
 |[SetTimeout Method](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-settimeout-method.md)|Sets a timeout value for the specified operation.|  
 |[SetTimeoutAndAction Method](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-settimeoutandaction-method.md)|Sets a timeout value for the specified operation, and specifies the policy action the CLR should take when the operation occurs.|  
 |[SetUnhandledExceptionPolicy Method](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md)|Specifies the behavior of the CLR when an unhandled exception occurs.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [EClrFailure Enumeration](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)  
  [EClrOperation Enumeration](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)  

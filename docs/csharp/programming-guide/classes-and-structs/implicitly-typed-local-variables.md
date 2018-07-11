@@ -17,25 +17,25 @@ Local variables can be declared without giving an explicit type. The `var` keywo
   
  The `var` keyword may be used in the following contexts:  
   
--   On local variables (variables declared at method scope) as shown in the previous example.  
+- On local variables (variables declared at method scope) as shown in the previous example.  
   
--   In a [for](../../../csharp/language-reference/keywords/for.md) initialization statement.  
+- In a [for](../../../csharp/language-reference/keywords/for.md) initialization statement.  
   
-    ```csharp  
-    for(var x = 1; x < 10; x++)  
-    ```  
+  ```csharp  
+  for(var x = 1; x < 10; x++)  
+  ```  
   
--   In a [foreach](../../../csharp/language-reference/keywords/foreach-in.md) initialization statement.  
+- In a [foreach](../../../csharp/language-reference/keywords/foreach-in.md) initialization statement.  
   
-    ```csharp  
-    foreach(var item in list){...}  
-    ```  
+  ```csharp  
+  foreach(var item in list){...}  
+  ```  
   
--   In a [using](../../../csharp/language-reference/keywords/using-statement.md) statement.  
+- In a [using](../../../csharp/language-reference/keywords/using-statement.md) statement.  
   
-    ```csharp  
-    using (var file = new StreamReader("C:\\myfile.txt")) {...}  
-    ```  
+  ```csharp  
+  using (var file = new StreamReader("C:\\myfile.txt")) {...}  
+  ```  
   
  For more information, see [How to: Use Implicitly Typed Local Variables and Arrays in a Query Expression](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).  
   
@@ -49,15 +49,15 @@ Local variables can be declared without giving an explicit type. The `var` keywo
 ## Remarks  
  The following restrictions apply to implicitly-typed variable declarations:  
   
--   `var` can only be used when a local variable is declared and initialized in the same statement; the variable cannot be initialized to null, or to a method group or an anonymous function.  
+- `var` can only be used when a local variable is declared and initialized in the same statement; the variable cannot be initialized to null, or to a method group or an anonymous function.  
   
--   `var` cannot be used on fields at class scope.  
+- `var` cannot be used on fields at class scope.  
   
--   Variables declared by using `var` cannot be used in the initialization expression. In other words, this expression is legal`: int i = (i = 20);` but this expression produces a compile-time error: `var i = (i = 20);`  
+- Variables declared by using `var` cannot be used in the initialization expression. In other words, this expression is legal`: int i = (i = 20);` but this expression produces a compile-time error: `var i = (i = 20);`  
   
--   Multiple implicitly-typed variables cannot be initialized in the same statement.  
+- Multiple implicitly-typed variables cannot be initialized in the same statement.  
   
--   If a type named `var` is in scope, then the `var` keyword will resolve to that type name and will not be treated as part of an implicitly typed local variable declaration.  
+- If a type named `var` is in scope, then the `var` keyword will resolve to that type name and will not be treated as part of an implicitly typed local variable declaration.  
   
  You may find that `var` can also be useful with query expressions in which the exact constructed type of the query variable is difficult to determine. This can occur with grouping and ordering operations.  
   

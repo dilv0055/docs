@@ -22,68 +22,68 @@ The Windows Forms <xref:System.Windows.Forms.ImageList> component is typically p
   
 ### To add images programmatically  
   
--   Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> method of the image list's <xref:System.Windows.Forms.ImageList.Images%2A> property.  
+- Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> method of the image list's <xref:System.Windows.Forms.ImageList.Images%2A> property.  
   
-     In the following code example, the path set for the location of the image is the **My Documents** folder. This location is used because you can assume that most computers that are running the Windows operating system will include this folder. Choosing this location also lets users who have minimal system access levels more safely run the application. The following code example requires that you have a form with an <xref:System.Windows.Forms.ImageList> control already added.  
+   In the following code example, the path set for the location of the image is the **My Documents** folder. This location is used because you can assume that most computers that are running the Windows operating system will include this folder. Choosing this location also lets users who have minimal system access levels more safely run the application. The following code example requires that you have a form with an <xref:System.Windows.Forms.ImageList> control already added.  
   
-    ```vb  
-    Public Sub LoadImage()  
-       Dim myImage As System.Drawing.Image = _  
-         Image.FromFile _  
-       (System.Environment.GetFolderPath _  
-       (System.Environment.SpecialFolder.Personal) _  
-       & "\Image.gif")  
-       ImageList1.Images.Add(myImage)  
-    End Sub  
-    ```  
+  ```vb  
+  Public Sub LoadImage()  
+     Dim myImage As System.Drawing.Image = _  
+       Image.FromFile _  
+     (System.Environment.GetFolderPath _  
+     (System.Environment.SpecialFolder.Personal) _  
+     & "\Image.gif")  
+     ImageList1.Images.Add(myImage)  
+  End Sub  
+  ```  
   
-    ```csharp  
-    public void addImage()  
-    {  
-    // Be sure that you use an appropriate escape sequence (such as the   
-    // @) when specifying the location of the file.  
-       System.Drawing.Image myImage =   
-         Image.FromFile  
-       (System.Environment.GetFolderPath  
-       (System.Environment.SpecialFolder.Personal)  
-       + @"\Image.gif");  
-       imageList1.Images.Add(myImage);  
-    }  
-    ```  
+  ```csharp  
+  public void addImage()  
+  {  
+  // Be sure that you use an appropriate escape sequence (such as the   
+  // @) when specifying the location of the file.  
+     System.Drawing.Image myImage =   
+       Image.FromFile  
+     (System.Environment.GetFolderPath  
+     (System.Environment.SpecialFolder.Personal)  
+     + @"\Image.gif");  
+     imageList1.Images.Add(myImage);  
+  }  
+  ```  
   
-    ```cpp  
-    public:  
-       void addImage()  
-       {  
-       // Replace the bold image in the following sample   
-       // with your own icon.  
-       // Be sure that you use an appropriate escape sequence (such as   
-       // \\) when specifying the location of the file.  
-          System::Drawing::Image ^ myImage =   
-             Image::FromFile(String::Concat(  
-             System::Environment::GetFolderPath(  
-             System::Environment::SpecialFolder::Personal),  
-             "\\Image.gif"));  
-          imageList1->Images->Add(myImage);  
-       }  
-    ```  
+  ```cpp  
+  public:  
+     void addImage()  
+     {  
+     // Replace the bold image in the following sample   
+     // with your own icon.  
+     // Be sure that you use an appropriate escape sequence (such as   
+     // \\) when specifying the location of the file.  
+        System::Drawing::Image ^ myImage =   
+           Image::FromFile(String::Concat(  
+           System::Environment::GetFolderPath(  
+           System::Environment::SpecialFolder::Personal),  
+           "\\Image.gif"));  
+        imageList1->Images->Add(myImage);  
+     }  
+  ```  
   
 ### To add images with a key value.  
   
--   Use one of the <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> methods of the image list's <xref:System.Windows.Forms.ImageList.Images%2A> property that takes a key value.  
+- Use one of the <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> methods of the image list's <xref:System.Windows.Forms.ImageList.Images%2A> property that takes a key value.  
   
-     In the following code example, the path set for the location of the image is the **My Documents** folder. This location is used because you can assume that most computers that are running the Windows operating system will include this folder. Choosing this location also lets users who have minimal system access levels more safely run the application. The following code example requires that you have a form with an <xref:System.Windows.Forms.ImageList> control already added.  
+   In the following code example, the path set for the location of the image is the **My Documents** folder. This location is used because you can assume that most computers that are running the Windows operating system will include this folder. Choosing this location also lets users who have minimal system access levels more safely run the application. The following code example requires that you have a form with an <xref:System.Windows.Forms.ImageList> control already added.  
   
-    ```vb  
-    Public Sub LoadImage()  
-       Dim myImage As System.Drawing.Image = _  
-         Image.FromFile _  
-       (System.Environment.GetFolderPath _  
-       (System.Environment.SpecialFolder.Personal) _  
-       & "\Image.gif")  
-       ImageList1.Images.Add("myPhoto", myImage)  
-    End Sub  
-    ```  
+  ```vb  
+  Public Sub LoadImage()  
+     Dim myImage As System.Drawing.Image = _  
+       Image.FromFile _  
+     (System.Environment.GetFolderPath _  
+     (System.Environment.SpecialFolder.Personal) _  
+     & "\Image.gif")  
+     ImageList1.Images.Add("myPhoto", myImage)  
+  End Sub  
+  ```  
   
 ```csharp  
 public void addImage()  
@@ -103,18 +103,18 @@ public void addImage()
   
 ### To remove all images programmatically  
   
--   Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> method to remove a single image  
+- Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> method to remove a single image  
   
-     ,-or-  
+   ,-or-  
   
-     Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Clear%2A> method to clear all images in the image list.  
+   Use the <xref:System.Windows.Forms.ImageList.ImageCollection.Clear%2A> method to clear all images in the image list.  
   
-    ```vb  
-    ' Removes the first image in the image list  
-    ImageList1.Images.Remove(myImage)  
-    ' Clears all images in the image list  
-    ImageList1.Images.Clear()  
-    ```  
+  ```vb  
+  ' Removes the first image in the image list  
+  ImageList1.Images.Remove(myImage)  
+  ' Clears all images in the image list  
+  ImageList1.Images.Clear()  
+  ```  
   
 ```csharp  
 // Removes the first image in the image list.  
@@ -125,12 +125,12 @@ imageList1.Images.Clear();
   
 ### To remove images by key  
   
--   Use the <xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> method to remove a single image by its key.  
+- Use the <xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> method to remove a single image by its key.  
   
-    ```vb  
-    ' Removes the image named "myPhoto" from the list.  
-    ImageList1.Images.RemoveByKey("myPhoto")  
-    ```  
+  ```vb  
+  ' Removes the image named "myPhoto" from the list.  
+  ImageList1.Images.RemoveByKey("myPhoto")  
+  ```  
   
 ```csharp  
 // Removes the image named "myPhoto" from the list.  

@@ -5,18 +5,19 @@ ms.assetid: c57e3fe3-b12d-415e-925e-b09590722d0c
 ---
 # 3372 - TextMessageEncodingStart
 ## Properties  
-  
+
+
 |||  
 |-|-|  
 |ID|3372|  
 |Keywords|Channel|  
 |Level|Verbose|  
 |Channel|Microsoft-Windows-Application Server-Applications/Debug|  
-  
+
 ## Description  
  This event is emitted when the TextMessageEncoder started encoding the message.  
-  
+
 ## Message  
  TextMessageEncoder started encoding the message.  
-  
+
 ## Details

@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # CorDebugChainReason Enumeration
 Indicates the reason or reasons for the initiation of a call chain.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugChainReason {  
     CHAIN_NONE              = 0x000,  
@@ -39,9 +39,10 @@ typedef enum CorDebugChainReason {
     CHAIN_FUNC_EVAL         = 0x800  
 } CorDebugChainReason;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`CHAIN_NONE`|No call chain has been initiated.|  
@@ -57,18 +58,18 @@ typedef enum CorDebugChainReason {
 |`CHAIN_DEBUGGER_EVAL`|Not used.|  
 |`CHAIN_CONTEXT_SWITCH`|Not used.|  
 |`CHAIN_FUNC_EVAL`|The chain was initiated by a function evaluation.|  
-  
+
 ## Remarks  
  Use the [ICorDebugChain::GetReason](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-getreason-method.md) method to ascertain the reasons for the initiation of a call chain.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

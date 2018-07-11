@@ -19,29 +19,30 @@ ms.author: "ronpet"
 ---
 # TypeNameFactory Coclass
 Provides an interface for managing the deconstruction of a type name.  
-  
+
 ## Syntax  
-  
+
 ```  
 coclass TypeNameFactory {  
     [default] interface ITypeNameFactory;  
 };  
 ```  
-  
+
 ## Interfaces  
-  
+
+
 |Interface|Description|  
 |---------------|-----------------|  
 |[ITypeNameFactory Interface](../../../../docs/framework/unmanaged-api/hosting/itypenamefactory-interface.md)|This interface supports the .NET Framework infrastructure and is not intended to be used directly from your code.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.idl  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Coclasses](../../../../docs/framework/unmanaged-api/hosting/hosting-coclasses.md)

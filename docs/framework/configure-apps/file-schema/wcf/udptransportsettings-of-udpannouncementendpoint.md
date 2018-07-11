@@ -5,13 +5,13 @@ ms.assetid: a7ddff1a-5eed-4bbc-8580-b95ef8890e1f
 ---
 # &lt;udpTransportSettings&gt; of &lt;udpAnnouncementEndpoint&gt;
 This configuration element exposes UDP transport settings for [\<udpAnnoucementEndpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md).  
-  
+
 \<system.ServiceModel>  
 \<standardEndpoints>  
 \<udpAnnouncementEndpoint>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <system.serviceModel>  
   <standardEndpoints>
@@ -31,12 +31,13 @@ This configuration element exposes UDP transport settings for [\<udpAnnoucementE
   </standardEndpoints>  
 </system.serviceModel>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |duplicateMessageHistoryLength|An integer that specifies the maximum number of message hashes used by the transport for identifying duplicate messages.  Duplicate detection will be done at the TransportManager level. Setting this property to 0 disables duplicate detection.<br /><br /> This attribute allows system administrators or developers to turn off duplicate message detection algorithms. This may be desirable if you want to implement your own duplicate detection algorithm.<br /><br /> The default is 4112.|  
@@ -48,15 +49,16 @@ This configuration element exposes UDP transport settings for [\<udpAnnoucementE
 |multicastInterfaceId|A string that uniquely identifies the network adapter that should be used when sending and receiving multicast traffic on multi-homed machines. At runtime, the transport will use this attribute value to lookup the interface index, which is then used to set the `IP_MULTICAST_IF` and `IPV6_MULTICAST_IF` socket options.  The same interface index will be used when joining a multicast group, if applicable.<br /><br /> The default value is `null`.|  
 |socketReceiveBufferSize|An integer that specifies the receive buffer size on the underlying WinSock socket.<br /><br /> A user of a receiving channel can use this attribute on the Binding to control how the system behaves when it receives data.  For example, given an application that is consuming inbound WCF messages at the maximum threshold, using a higher value for this attribute would allow messages to stack up in the WinSock buffer while waiting for the application to be able to process them.  Using a lower value in the same situation would result in messages getting dropped.This attribute exposes the underlying WinSock `SO_RCVBUF` socket option.This attribute value must be at least the size of `maxReceivedMessageSize`.   Setting it to a value smaller than the `maxReceivedMessageSize` will result in runtime exception.<br /><br /> The default value is 65536.|  
 |timeToLive|An integer that specifies the number of network segment hops that a multicast packet can traverse.  This attribute exposes the functionality associated with the `IP_MULTICAST_TTL` and `IP_TTL` socket options.<br /><br /> The default value is 1.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<udpAnnoucementEndpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/udpannoucementendpoint.md)|A standard endpoint that has fixed announcement contract and UDP transport binding.|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Discovery.UdpTransportSettings>

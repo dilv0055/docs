@@ -21,88 +21,88 @@ Windows Communication Foundation (WCF) security has three common security modes 
   
 ### To set the security mode in code  
   
-1.  Create an instance of the binding class that you are using. For a list of predefined bindings, see [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md). This example creates an instance of the <xref:System.ServiceModel.WSHttpBinding> class.  
+1. Create an instance of the binding class that you are using. For a list of predefined bindings, see [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md). This example creates an instance of the <xref:System.ServiceModel.WSHttpBinding> class.  
   
-2.  Set the `Mode` property of the object returned by the `Security` property.  
+2. Set the `Mode` property of the object returned by the `Security` property.  
   
-     [!code-csharp[c_SettingSecurityMode#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#1)]
-     [!code-vb[c_SettingSecurityMode#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#1)]  
+    [!code-csharp[c_SettingSecurityMode#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#1)]
+    [!code-vb[c_SettingSecurityMode#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#1)]  
   
-     Alternatively, set the mode to message, as shown in the following code.  
+    Alternatively, set the mode to message, as shown in the following code.  
   
-     [!code-csharp[c_SettingSecurityMode#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#2)]
-     [!code-vb[c_SettingSecurityMode#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#2)]  
+    [!code-csharp[c_SettingSecurityMode#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#2)]
+    [!code-vb[c_SettingSecurityMode#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#2)]  
   
-     Or set the mode to transport with message credentials, as shown in the following code.  
+    Or set the mode to transport with message credentials, as shown in the following code.  
   
-     [!code-csharp[c_SettingSecurityMode#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#3)]
-     [!code-vb[c_SettingSecurityMode#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#3)]  
+    [!code-csharp[c_SettingSecurityMode#3](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#3)]
+    [!code-vb[c_SettingSecurityMode#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#3)]  
   
-3.  You can also set the mode in the constructor of the binding, as shown in the following code.  
+3. You can also set the mode in the constructor of the binding, as shown in the following code.  
   
-     [!code-csharp[c_SettingSecurityMode#4](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#4)]
-     [!code-vb[c_SettingSecurityMode#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#4)]  
+    [!code-csharp[c_SettingSecurityMode#4](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#4)]
+    [!code-vb[c_SettingSecurityMode#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#4)]  
   
 ## Setting the ClientCredentialType Property  
  Setting the mode to one of the three values determines how you set the `ClientCredentialType` property. For example, using the <xref:System.ServiceModel.WSHttpBinding> class, setting the mode to `Transport` means you must set the <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> property of the <xref:System.ServiceModel.HttpTransportSecurity> class to an appropriate value.  
   
 #### To set the ClientCredentialType property for Transport mode  
   
-1.  Create an instance of the binding.  
+1. Create an instance of the binding.  
   
-2.  Set the `Mode` property to `Transport`.  
+2. Set the `Mode` property to `Transport`.  
   
-3.  Set the `ClientCredential` property to an appropriate value. The following code sets the property to `Windows`.  
+3. Set the `ClientCredential` property to an appropriate value. The following code sets the property to `Windows`.  
   
-     [!code-csharp[c_SettingSecurityMode#5](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#5)]
-     [!code-vb[c_SettingSecurityMode#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#5)]  
+    [!code-csharp[c_SettingSecurityMode#5](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#5)]
+    [!code-vb[c_SettingSecurityMode#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#5)]  
   
 #### To set the ClientCredentialType property for Message mode  
   
-1.  Create an instance of the binding.  
+1. Create an instance of the binding.  
   
-2.  Set the `Mode` property to `Message`.  
+2. Set the `Mode` property to `Message`.  
   
-3.  Set the `ClientCredential` property to an appropriate value. The following code sets the property to `Certificate`.  
+3. Set the `ClientCredential` property to an appropriate value. The following code sets the property to `Certificate`.  
   
-     [!code-csharp[c_SettingSecurityMode#6](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#6)]
-     [!code-vb[c_SettingSecurityMode#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#6)]  
+    [!code-csharp[c_SettingSecurityMode#6](../../../samples/snippets/csharp/VS_Snippets_CFX/c_settingsecuritymode/cs/source.cs#6)]
+    [!code-vb[c_SettingSecurityMode#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_settingsecuritymode/vb/source.vb#6)]  
   
 #### To set the Mode and ClientCredentialType property in configuration  
   
-1.  Add an appropriate binding element to the [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element of the configuration file. The following example adds a [\<wsHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) element.  
+1. Add an appropriate binding element to the [\<bindings>](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element of the configuration file. The following example adds a [\<wsHttpBinding>](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) element.  
   
-2.  Add a `<binding>` element and set its `name` attribute to an appropriate value.  
+2. Add a `<binding>` element and set its `name` attribute to an appropriate value.  
   
-3.  Add a `<security>` element and set the `mode` attribute to `Message`, `Transport`, or `TransportWithMessageCredential`.  
+3. Add a `<security>` element and set the `mode` attribute to `Message`, `Transport`, or `TransportWithMessageCredential`.  
   
-4.  If the mode is set to `Transport`, add a `<transport>` element and set the `clientCredential` attribute to an appropriate value.  
+4. If the mode is set to `Transport`, add a `<transport>` element and set the `clientCredential` attribute to an appropriate value.  
   
-     The following example sets the mode to "`Transport"`, and then sets the `clientCredentialType` attribute of the `<transport>` element to "`Windows"`.  
+    The following example sets the mode to "`Transport"`, and then sets the `clientCredentialType` attribute of the `<transport>` element to "`Windows"`.  
   
-    ```xml  
-    <wsHttpBinding>  
-    <binding name="TransportSecurity">  
-        <security mode="Transport" />  
-           <transport clientCredentialType = "Windows" />  
-        </security>  
-    </binding>  
-    </wsHttpBinding >  
-    ```  
+   ```xml  
+   <wsHttpBinding>  
+   <binding name="TransportSecurity">  
+       <security mode="Transport" />  
+          <transport clientCredentialType = "Windows" />  
+       </security>  
+   </binding>  
+   </wsHttpBinding >  
+   ```  
   
-     Alternatively, set the `security mode` to "`Message"`, followed by a `<"message">` element. This example sets the `clientCredentialType` to "`Certificate"`.  
+    Alternatively, set the `security mode` to "`Message"`, followed by a `<"message">` element. This example sets the `clientCredentialType` to "`Certificate"`.  
   
-    ```xml  
-    <wsHttpBinding>  
-    <binding name="MessageSecurity">  
-        <security mode="Message" />  
-           <message clientCredentialType = "Certificate" />  
-        </security>  
-    </binding>  
-    </wsHttpBinding >  
-    ```  
+   ```xml  
+   <wsHttpBinding>  
+   <binding name="MessageSecurity">  
+       <security mode="Message" />  
+          <message clientCredentialType = "Certificate" />  
+       </security>  
+   </binding>  
+   </wsHttpBinding >  
+   ```  
   
-     Using the <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> value is a special case, and is explained below.  
+    Using the <xref:System.ServiceModel.BasicHttpSecurityMode.TransportWithMessageCredential> value is a special case, and is explained below.  
   
 ### Using TransportWithMessageCredential  
  When setting the security mode to `TransportWithMessageCredential`, the transport determines the actual mechanism that provides the transport-level security. For example, the HTTP protocol uses Secure Sockets Layer (SSL) over HTTP (HTTPS). Therefore, setting the `ClientCredentialType` property of any transport security object (such as <xref:System.ServiceModel.HttpTransportSecurity>) is ignored.  In other words, you can only set the `ClientCredentialType` of the message security object (for the `WSHttpBinding` binding, the <xref:System.ServiceModel.NonDualMessageSecurityOverHttp> object).  

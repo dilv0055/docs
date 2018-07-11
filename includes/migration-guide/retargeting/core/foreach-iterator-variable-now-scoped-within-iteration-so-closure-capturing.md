@@ -1,5 +1,6 @@
 ### Foreach iterator variable is now scoped within the iteration, so closure capturing semantics are different (in C#5)
 
+
 |   |   |
 |---|---|
 |Details|Beginning with C# 5 (Visual Studio 2012), <code>foreach</code> iterator variables are scoped within the iteration. This can cause breaks if code was previously depending on the variables to not be included in the <code>foreach</code>'s closure. The symptom of this change is that an iterator variable passed to a delegate is treated as the value it has at the time the delegate is created, rather than the value it has at the time the delegate is invoked.|

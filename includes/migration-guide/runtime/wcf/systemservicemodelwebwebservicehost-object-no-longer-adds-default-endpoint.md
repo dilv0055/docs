@@ -1,5 +1,6 @@
 ### System.ServiceModel.Web.WebServiceHost object no longer adds a default endpoint
 
+
 |   |   |
 |---|---|
 |Details|The <xref:System.ServiceModel.Web.WebServiceHost> object no longer adds a default endpoint if an explicit endpoint has been added by application code.|

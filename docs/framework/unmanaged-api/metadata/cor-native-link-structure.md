@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # COR_NATIVE_LINK Structure
 Contains information that is used to link native code.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct   
 {  
@@ -30,24 +30,25 @@ typedef struct
     mdMemberRef m_entryPoint;  
 } COR_NATIVE_LINK;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`m_linkType`|The type to be linked in native code. This value is one of the [CorNativeLinkType](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) values.|  
 |`m_flags`|Flags used by the linker when linking native code. This value is one of the [CorNativeLinkFlags](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) values.|  
 |`m_entryPoint`|The MemberRef metadata token that represents the entry point. The format is `lib:entrypoint`.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Structures](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
  [CorNativeLinkType Enumeration](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md)  

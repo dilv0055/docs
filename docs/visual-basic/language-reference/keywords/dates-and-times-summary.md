@@ -13,7 +13,8 @@ ms.assetid: 914d0563-b53c-492c-ac62-d833ce805f2f
 ---
 # Dates and Times Summary (Visual Basic)
 Visual Basic language keywords and run-time library members are organized by purpose and use.  
-  
+
+
 |Action|Language element|  
 |------------|----------------------|  
 |Get the current date or time.|<xref:Microsoft.VisualBasic.DateAndTime.Now%2A>, <xref:Microsoft.VisualBasic.DateAndTime.Today%2A>, <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A>|  
@@ -22,7 +23,7 @@ Visual Basic language keywords and run-time library members are organized by pur
 |Return a time.|<xref:Microsoft.VisualBasic.DateAndTime.TimeSerial%2A>, <xref:Microsoft.VisualBasic.DateAndTime.TimeValue%2A>|  
 |Set the date or time.|<xref:Microsoft.VisualBasic.DateAndTime.DateString%2A>, <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A>, <xref:Microsoft.VisualBasic.DateAndTime.TimeString%2A>, <xref:Microsoft.VisualBasic.DateAndTime.Today%2A>|  
 |Time a process.|<xref:Microsoft.VisualBasic.DateAndTime.Timer%2A>|  
-  
+
 ## See Also  
  [Keywords](../../../visual-basic/language-reference/keywords/index.md)  
  [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)

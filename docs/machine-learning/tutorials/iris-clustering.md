@@ -16,7 +16,7 @@ ms.custom: mvc
 This tutorial illustrates how to use ML.NET to build a [clustering model](../resources/tasks.md#clustering) for the [iris flower data set](https://en.wikipedia.org/wiki/Iris_flower_data_set).
 
 In this tutorial, you learn how to:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > - Understand the problem
 > - Select the appropriate machine learning task
 > - Prepare the data
@@ -41,11 +41,11 @@ As you don't know to which group each flower belongs to, you choose the [unsuper
 
 1. Open Visual Studio 2017. Select **File** > **New** > **Project** from the menu bar. In the **New Project** dialog, select the **Visual C#** node followed by the **.NET Core** node. Then select the **Console App (.NET Core)** project template. In the **Name** text box, type "IrisClustering" and then select the **OK** button.
 
-1. Create a directory named *Data* in your project to store the data set and model files:
+2. Create a directory named *Data* in your project to store the data set and model files:
 
     In **Solution Explorer**, right-click the project and select **Add** > **New Folder**. Type "Data" and hit Enter.
 
-1. Install the **Microsoft.ML** NuGet package:
+3. Install the **Microsoft.ML** NuGet package:
 
     In **Solution Explorer**, right-click the project and select **Manage NuGet Packages**. Choose "nuget.org" as the Package source, select the **Browse** tab, search for **Microsoft.ML**, select that package in the list, and select the **Install** button. Select the **OK** button on the **Preview Changes** dialog and then select the **I Accept** button on the **License Acceptance** dialog if you agree with the license terms for the packages listed.
 
@@ -53,7 +53,7 @@ As you don't know to which group each flower belongs to, you choose the [unsuper
 
 1. Download the [iris.data](https://github.com/dotnet/machinelearning/blob/master/test/data/iris.data) data set and save it to the *Data* folder you've created at the previous step. For more information about the iris data set, see the [Iris flower data set](https://en.wikipedia.org/wiki/Iris_flower_data_set) Wikipedia page and the [Iris Data Set](http://archive.ics.uci.edu/ml/datasets/Iris) page, which is the source of the data set.
 
-1. In **Solution Explorer**, right-click the *iris.data* file and select **Properties**. Under **Advanced**, change the value of **Copy to Output Directory** to **Copy if newer**.
+2. In **Solution Explorer**, right-click the *iris.data* file and select **Properties**. Under **Advanced**, change the value of **Copy to Output Directory** to **Copy if newer**.
 
 The *iris.data* file contains five columns that represent:
 
@@ -70,8 +70,8 @@ For the sake of the clustering example, this tutorial ignores the last column.
 Create classes for the input data and the predictions:
 
 1. In **Solution Explorer**, right-click the project, and then select **Add** > **New Item**.
-1. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *IrisData.cs*. Then, select the **Add** button.
-1. Add the following `using` directive to the new file:
+2. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *IrisData.cs*. Then, select the **Add** button.
+3. Add the following `using` directive to the new file:
 
    [!code-csharp[Add necessary usings](../../../samples/machine-learning/tutorials/IrisClustering/IrisData.cs#1)]
 
@@ -174,8 +174,8 @@ Because the `async Main` method is the feature added in C# 7.1 and the default l
 Create the `TestIrisData` class to house test data instances:
 
 1. In **Solution Explorer**, right-click the project, and then select **Add** > **New Item**.
-1. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *TestIrisData.cs*. Then, select the **Add** button.
-1. Modify the class to be static like in the following example:
+2. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *TestIrisData.cs*. Then, select the **Add** button.
+3. Modify the class to be static like in the following example:
 
    [!code-csharp[Make class static](../../../samples/machine-learning/tutorials/IrisClustering/TestIrisData.cs#1)]
 
@@ -199,7 +199,7 @@ Congratulations! You've now successfully built a machine learning model for iris
 ## Next steps
 
 In this tutorial, you learned how to:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > - Understand the problem
 > - Select the appropriate machine learning task
 > - Prepare the data
@@ -209,5 +209,5 @@ In this tutorial, you learned how to:
 > - Use the model for predictions
 
 Check out our GitHub repository to continue learning and find more samples.
-> [!div class="nextstepaction"]
+> [!div  class="nextstepaction"]
 > [dotnet/machinelearning GitHub repository](https://github.com/dotnet/machinelearning/)

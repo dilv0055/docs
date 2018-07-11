@@ -5,7 +5,6 @@ author: jralexander
 ms.author: johalex
 ms.date: 01/10/2018
 ---
-
 # Docker and .NET Core 
 
 The following tutorials are available for learning about using Docker with .NET Core.

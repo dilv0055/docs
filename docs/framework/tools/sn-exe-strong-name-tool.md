@@ -15,27 +15,28 @@ ms.author: "ronpet"
 ---
 # Sn.exe (Strong Name Tool)
 The Strong Name tool (Sn.exe) helps sign assemblies with [strong names](../../../docs/framework/app-domains/strong-named-assemblies.md). Sn.exe provides options for key management, signature generation, and signature verification.  
-  
+
 > [!WARNING]
 > Do not rely on strong names for security. They provide a unique identity only.
 
  For more information on strong naming and strong-named assemblies, see [Strong-Named Assemblies](../../../docs/framework/app-domains/strong-named-assemblies.md) and [How to: Sign an Assembly with a Strong Name](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md).  
-  
+
  The Strong Name tool is automatically installed with Visual Studio. To start the tool, use the Developer Command Prompt (or the Visual Studio Command Prompt in Windows 7). For more information, see [Command Prompts](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
-  
+
 > [!NOTE]
 >  On 64-bit computers, run the 32-bit version of Sn.exe by using the Visual Studio Command Prompt and the 64-bit version by using the Visual Studio x64 Win64 Command Prompt.  
-  
+
  At the command prompt, type the following:  
-  
+
 ## Syntax  
-  
+
 ```  
 sn [-quiet][option [parameter(s)]]  
 ```  
-  
+
 #### Parameters  
-  
+
+
 |Option|Description|  
 |------------|-----------------|  
 |**-a** *identityKeyPairFile* *signaturePublicKeyFile*|Generates <xref:System.Reflection.AssemblySignatureKeyAttribute> data to migrate the identity key to the signature key from a file.|  
@@ -69,53 +70,53 @@ sn [-quiet][option [parameter(s)]]
 |**-Vu**  *assembly*|Unregisters *assembly* for verification skipping. The same rules for assembly naming that apply to **-Vr** apply to **-Vu**.|  
 |**-Vx**|Removes all verification-skipping entries.|  
 |**-?**|Displays command syntax and options for the tool.|  
-  
+
 > [!NOTE]
 >  All Sn.exe options are case-sensitive and must be typed exactly as shown to be recognized by the tool.  
-  
+
 ## Remarks  
  The **-R** and **–Rc** options are useful with assemblies that have been delay-signed. In this scenario, only the public key has been set at compile time and signing is performed later, when the private key is known.  
-  
+
 > [!NOTE]
 >  For parameters (for example, –**Vr)** that write to protected resources such as the registry, run SN.exe as an administrator.  
-  
+
 ## Examples  
  The following command creates a new, random key pair and stores it in `keyPair.snk`.  
-  
+
 ```  
 sn -k keyPair.snk  
 ```  
-  
+
  The following command stores the key in `keyPair.snk` in the container `MyContainer` in the strong name CSP.  
-  
+
 ```  
 sn -i keyPair.snk MyContainer  
 ```  
-  
+
  The following command extracts the public key from `keyPair.snk` and stores it in `publicKey.snk`.  
-  
+
 ```  
 sn -p keyPair.snk publicKey.snk  
 ```  
-  
+
  The following command displays the public key and the token for the public key contained in `publicKey.snk`.  
-  
+
 ```  
 sn -tp publicKey.snk  
 ```  
-  
+
  The following command verifies the assembly `MyAsm.dll`.  
-  
+
 ```  
 sn -v MyAsm.dll  
 ```  
-  
+
  The following command deletes `MyContainer` from the default CSP.  
-  
+
 ```  
 sn -d MyContainer  
 ```  
-  
+
 ## See Also  
  [Tools](../../../docs/framework/tools/index.md)  
  [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)  

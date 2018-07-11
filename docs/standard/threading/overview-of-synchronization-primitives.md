@@ -19,15 +19,15 @@ ms.author: "ronpet"
   
  This overview contains the following sections:  
   
--   [Locking](#locking)  
+- [Locking](#locking)  
   
--   [Signaling](#signaling)  
+- [Signaling](#signaling)  
   
--   [Lightweight Synchronization Types](#lightweight_synchronization_types)  
+- [Lightweight Synchronization Types](#lightweight_synchronization_types)  
   
--   [SpinWait](#spinwait)  
+- [SpinWait](#spinwait)  
   
--   [Interlocked Operations](#interlocked_operations)  
+- [Interlocked Operations](#interlocked_operations)  
   
 <a name="locking"></a>   
 ## Locking  
@@ -41,11 +41,11 @@ ms.author: "ronpet"
 #### Monitor Class  
  The <xref:System.Threading.Monitor> class provides additional functionality, which can be used in conjunction with the `lock` statement:  
   
--   The <xref:System.Threading.Monitor.TryEnter%2A> method allows a thread that is blocked waiting for the resource to give up after a specified interval. It returns a Boolean value indicating success or failure, which can be used to detect and avoid potential deadlocks.  
+- The <xref:System.Threading.Monitor.TryEnter%2A> method allows a thread that is blocked waiting for the resource to give up after a specified interval. It returns a Boolean value indicating success or failure, which can be used to detect and avoid potential deadlocks.  
   
--   The <xref:System.Threading.Monitor.Wait%2A> method is called by a thread in a critical section. It gives up control of the resource and blocks until the resource is available again.  
+- The <xref:System.Threading.Monitor.Wait%2A> method is called by a thread in a critical section. It gives up control of the resource and blocks until the resource is available again.  
   
--   The <xref:System.Threading.Monitor.Pulse%2A> and <xref:System.Threading.Monitor.PulseAll%2A> methods allow a thread that is about to release the lock or to call <xref:System.Threading.Monitor.Wait%2A> to put one or more threads into the ready queue, so that they can acquire the lock.  
+- The <xref:System.Threading.Monitor.Pulse%2A> and <xref:System.Threading.Monitor.PulseAll%2A> methods allow a thread that is about to release the lock or to call <xref:System.Threading.Monitor.Wait%2A> to put one or more threads into the ready queue, so that they can acquire the lock.  
   
  Timeouts on <xref:System.Threading.Monitor.Wait%2A> method overloads allow waiting threads to escape to the ready queue.  
   
@@ -130,13 +130,13 @@ ms.author: "ronpet"
 ## Lightweight Synchronization Types  
  Starting with the [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], you can use synchronization primitives that provide fast performance by avoiding expensive reliance on Win32 kernel objects such as wait handles whenever possible. In general, you should use these types when wait times are short and only when the original synchronization types have been tried and found to be unsatisfactory. The lightweight types cannot be used in scenarios that require cross-process communication.  
   
--   <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> is a lightweight version of <xref:System.Threading.Semaphore?displayProperty=nameWithType>.  
+- <xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType> is a lightweight version of <xref:System.Threading.Semaphore?displayProperty=nameWithType>.  
   
--   <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> is a lightweight version of <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>.  
+- <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType> is a lightweight version of <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType>.  
   
--   <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> represents an event that becomes signaled when its count is zero.  
+- <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> represents an event that becomes signaled when its count is zero.  
   
--   <xref:System.Threading.Barrier?displayProperty=nameWithType> enables multiple threads to synchronize with one another without requiring control by a master thread. A barrier prevents each thread from continuing until all threads have reached a specified point.  
+- <xref:System.Threading.Barrier?displayProperty=nameWithType> enables multiple threads to synchronize with one another without requiring control by a master thread. A barrier prevents each thread from continuing until all threads have reached a specified point.  
   
  [Back to top](#top)  
   

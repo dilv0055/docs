@@ -28,33 +28,33 @@ End Module
   
 ### To call an extension method  
   
-1.  Declare a variable that has the data type of the first parameter of the extension method. For `PrintAndPunctuate`, you need a <xref:System.String> variable:  
+1. Declare a variable that has the data type of the first parameter of the extension method. For `PrintAndPunctuate`, you need a <xref:System.String> variable:  
   
-    ```  
-    Dim example = "Ready"  
-    ```  
+   ```  
+   Dim example = "Ready"  
+   ```  
   
-2.  That variable will invoke the extension method, and its value is bound to the first parameter, `aString`. The following calling statement will display `Ready?`.  
+2. That variable will invoke the extension method, and its value is bound to the first parameter, `aString`. The following calling statement will display `Ready?`.  
   
-    ```  
-    example.PrintAndPunctuate("?")  
-    ```  
+   ```  
+   example.PrintAndPunctuate("?")  
+   ```  
   
-     Notice that the call to this extension method looks just like a call to any one of the <xref:System.String> instance methods that require one parameter:  
+    Notice that the call to this extension method looks just like a call to any one of the <xref:System.String> instance methods that require one parameter:  
   
-    ```  
-    example.EndsWith("dy")  
-    example.IndexOf("R")  
-    ```  
+   ```  
+   example.EndsWith("dy")  
+   example.IndexOf("R")  
+   ```  
   
-3.  Declare another string variable and call the method again to see that it works with any string.  
+3. Declare another string variable and call the method again to see that it works with any string.  
   
-    ```  
-    Dim example2 = " or not"  
-    example2.PrintAndPunctuate("!!!")  
-    ```  
+   ```  
+   Dim example2 = " or not"  
+   example2.PrintAndPunctuate("!!!")  
+   ```  
   
-     The result this time is: `or not!!!`.  
+    The result this time is: `or not!!!`.  
   
 ## Example  
  The following code is a complete example of the creation and use of a simple extension method.  

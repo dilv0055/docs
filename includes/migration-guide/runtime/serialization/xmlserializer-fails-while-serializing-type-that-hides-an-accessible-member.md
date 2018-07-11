@@ -1,5 +1,6 @@
 ### XmlSerializer fails while serializing a type that hides an accessible member with an inaccessible one
 
+
 |   |   |
 |---|---|
 |Details|When serializing a derived type, the <xref:System.Xml.Serialization.XmlSerializer?displayProperty=name> can fail if the type contains an inaccessible field or property that hides (via the 'new' keyword) a field or property of the same name that was previously accessible (public, for example) on the base type.|

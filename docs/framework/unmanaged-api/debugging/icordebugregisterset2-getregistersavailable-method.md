@@ -40,13 +40,13 @@ HRESULT GetRegistersAvailable (
 ## Remarks  
  The values of the CorDebugRegister enumeration specify the registers of different microprocessors. The upper five bits of each value are the index into the `availableRegChunks` array of bytes. The lower three bits of each value identify the bit position within the indexed byte. Given a `CorDebugRegister` value that specifies a particular register, the register's position in the mask is determined as follows:  
   
-1.  Extract the index needed to access the correct byte in the `availableRegChunks` array:  
+1. Extract the index needed to access the correct byte in the `availableRegChunks` array:  
   
-     `CorDebugRegister` value >> 3  
+    `CorDebugRegister` value >> 3  
   
-2.  Extract the bit position within the indexed byte, where bit zero is the least significant bit:  
+2. Extract the bit position within the indexed byte, where bit zero is the least significant bit:  
   
-     `CorDebugRegister` value & 7  
+    `CorDebugRegister` value & 7  
   
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  

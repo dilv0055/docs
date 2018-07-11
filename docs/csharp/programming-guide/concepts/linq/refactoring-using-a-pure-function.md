@@ -171,7 +171,7 @@ StyleName:Code >Hello World<
 ### Next Steps  
  The next example shows how to project XML into a different shape:  
   
--   [Projecting XML in a Different Shape (C#)](../../../../csharp/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
+- [Projecting XML in a Different Shape (C#)](../../../../csharp/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
   
 ## See Also  
  [Tutorial: Manipulating Content in a WordprocessingML Document (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  

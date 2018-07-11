@@ -1,5 +1,6 @@
 ### HttpRequest.ContentEncoding property prohibits UTF7
 
+
 |   |   |
 |---|---|
 |Details|Beginning in .NET Framework 4.5, UTF-7 encoding is prohibited in <xref:System.Web.HttpRequest?displayProperty=name>s' bodies. Data for applications that depend on incoming UTF-7 data will not decode properly in some cases.|

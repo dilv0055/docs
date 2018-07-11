@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # CorDebugMappingResult Enumeration
 Provides the details of how the value of the instruction pointer (IP) was obtained.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugMappingResult {  
     MAPPING_PROLOG              = 0x1,  
@@ -32,9 +32,10 @@ typedef enum CorDebugMappingResult {
     MAPPING_APPROXIMATE         = 0x20,  
 } CorDebugMappingResult;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`MAPPING_PROLOG`|The native code is in the prolog, so the value of the IP is 0.|  
@@ -43,18 +44,18 @@ typedef enum CorDebugMappingResult {
 |`MAPPING_UNMAPPED_ADDRESS`|Although there is mapping information for the method, the current address cannot be mapped to Microsoft intermediate language (MSIL) code. The value of the IP is 0.|  
 |`MAPPING_EXACT`|Either the method maps exactly to MSIL code or the frame has been interpreted, so the value of the IP is accurate.|  
 |`MAPPING_APPROXIMATE`|The method was successfully mapped, but the value of the IP may be approximate.|  
-  
+
 ## Remarks  
  You can use the [ICorDebugILFrame::GetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getip-method.md) method to obtain the value of the instruction pointer.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

@@ -14,49 +14,51 @@ manager: "markl"
 ---
 # &lt;module&gt; Element (Network Settings)
 Adds a new proxy module to the application.  
-  
+
  \<configuration>  
 \<system.net>  
 \<defaultProxy>  
 \<module>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <module   
   type="type_fullname, assembly_fullname"   
 />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |**Attribute**|**Description**|  
 |-------------------|---------------------|  
 |`type`|The fully qualified type name (indicated by the <xref:System.Type.FullName%2A> property) and the assembly name (indicated by the <xref:System.Reflection.Assembly.FullName%2A> property), separated by a comma, that implements the proxy.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |**Element**|**Description**|  
 |-----------------|---------------------|  
 |[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Configures the Hypertext Transfer Protocol (HTTP) proxy server.|  
-  
+
 ## Remarks  
  The `module` element registers proxy classes that implement the <xref:System.Net.IWebProxy> interface. After registering the proxy class, `module` can be used to request information through the supported proxy.  
-  
+
  The value for the `type` attribute should be the class name of the module and the name of its corresponding Dynamic Link Library (DLL).  
-  
+
 ## Configuration Files  
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
-  
+
 ## Example  
  The following example registers a custom proxy class.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -68,7 +70,7 @@ Adds a new proxy module to the application.
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.IWebProxy?displayProperty=nameWithType>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

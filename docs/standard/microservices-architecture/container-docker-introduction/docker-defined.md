@@ -21,9 +21,9 @@ On Windows or macOS, [Docker Community Edition (CE)](https://www.docker.com/comm
 
 [Windows Containers](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview) work with two types of runtimes:
 
--   Windows Server Containers provide application isolation through process and namespace isolation technology. A Windows Server Container shares a kernel with the container host and with all containers running on the host.
+- Windows Server Containers provide application isolation through process and namespace isolation technology. A Windows Server Container shares a kernel with the container host and with all containers running on the host.
 
--   Hyper-V Containers expand on the isolation provided by Windows Server Containers by running each container in a highly optimized virtual machine. In this configuration, the kernel of the container host is not shared with the Hyper-V Containers, providing better isolation. Hyper-V Containers allow untrusted and *hostile multi-tenant* applications to run on the same host. Hyper-V Containers have a bit less efficiency in startup times and density than Windows Server Containers.
+- Hyper-V Containers expand on the isolation provided by Windows Server Containers by running each container in a highly optimized virtual machine. In this configuration, the kernel of the container host is not shared with the Hyper-V Containers, providing better isolation. Hyper-V Containers allow untrusted and *hostile multi-tenant* applications to run on the same host. Hyper-V Containers have a bit less efficiency in startup times and density than Windows Server Containers.
 
 The images for these containers are created and function the same way. They differ in how the container is created. For details, see [Hyper-V Containers](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/about/about_overview).
 
@@ -51,6 +51,6 @@ A container image is a way to package an app or service and deploy it in a relia
 
 Docker developers don't say, "It works on my machine, why not in production?" They say, "It runs on Docker". Docker-packaged apps can be executed on any supported Docker environment. Docker packaged apps run consistently on all deployment targets (Dev, QA, staging, production).
 
->[!div class="step-by-step"]
-[Previous](index.md)
-[Next](docker-terminology.md)
+> [!div  class="step-by-step"]
+> [Previous](index.md)
+> [Next](docker-terminology.md)

@@ -15,87 +15,87 @@ This sample demonstrates how to batch transacted reads by using Message Queuing 
   
 ### To set up, build, and run the sample  
   
-1.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  If the service is run first, it will check to ensure that the queue is present. If the queue is not present, the service will create one. You can run the service first to create the queue, or you can create one via the MSMQ Queue Manager. Follow these steps to create a queue in Windows 2008.  
+2. If the service is run first, it will check to ensure that the queue is present. If the queue is not present, the service will create one. You can run the service first to create the queue, or you can create one via the MSMQ Queue Manager. Follow these steps to create a queue in Windows 2008.  
   
-    1.  Open Server Manager in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
+   1. Open Server Manager in [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
   
-    2.  Expand the **Features** tab.  
+   2. Expand the **Features** tab.  
   
-    3.  Right-click **Private Message Queues**, and select **New**, **Private Queue**.  
+   3. Right-click **Private Message Queues**, and select **New**, **Private Queue**.  
   
-    4.  Check the **Transactional** box.  
+   4. Check the **Transactional** box.  
   
-    5.  Enter `ServiceModelSamplesTransacted` as the name of the new queue.  
+   5. Enter `ServiceModelSamplesTransacted` as the name of the new queue.  
   
-    > [!NOTE]
-    >  In this sample the client sends hundreds of messages as part of the batch. It is normal for the service application to take some time to process these.  
+   > [!NOTE]
+   >  In this sample the client sends hundreds of messages as part of the batch. It is normal for the service application to take some time to process these.  
   
-3.  To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ### To run the sample on a computer joined to a workgroup or without active directory integration  
   
-1.  By default with the <xref:System.ServiceModel.NetMsmqBinding>, transport security is enabled. There are two relevant properties for MSMQ transport security, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> and <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` By default, the authentication mode is set to `Windows` and the protection level is set to `Sign`. For MSMQ to provide the authentication and signing feature, it must be part of a domain and the active directory integration option for MSMQ must be installed. If you run this sample on a computer that does not satisfy these criteria you receive an error.  
+1. By default with the <xref:System.ServiceModel.NetMsmqBinding>, transport security is enabled. There are two relevant properties for MSMQ transport security, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> and <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>`.` By default, the authentication mode is set to `Windows` and the protection level is set to `Sign`. For MSMQ to provide the authentication and signing feature, it must be part of a domain and the active directory integration option for MSMQ must be installed. If you run this sample on a computer that does not satisfy these criteria you receive an error.  
   
-2.  If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration:  
+2. If your computer is not part of a domain or does not have active directory integration installed, turn off transport security by setting the authentication mode and protection level to `None` as shown in the following sample configuration:  
   
-    ```xml  
-    <system.serviceModel>  
-      <behaviors>  
-        <serviceBehaviors>  
-          <behavior name="ThrottlingBehavior">  
-            <serviceMetadata httpGetEnabled="true"/>  
-            <serviceThrottling maxConcurrentCalls="5"/>  
-          </behavior>  
-        </serviceBehaviors>  
+   ```xml  
+   <system.serviceModel>  
+     <behaviors>  
+       <serviceBehaviors>  
+         <behavior name="ThrottlingBehavior">  
+           <serviceMetadata httpGetEnabled="true"/>  
+           <serviceThrottling maxConcurrentCalls="5"/>  
+         </behavior>  
+       </serviceBehaviors>  
   
-        <endpointBehaviors>  
-          <behavior name="BatchingBehavior">  
-            <transactedBatching maxBatchSize="100"/>  
-          </behavior>  
-        </endpointBehaviors>  
-      </behaviors>  
-      <services>  
-        <service   
-            behaviorConfiguration="ThrottlingBehavior"   
-            name="Microsoft.ServiceModel.Samples.OrderProcessorService">  
-          <host>  
-            <baseAddresses>  
-              <add baseAddress="http://localhost:8000/orderProcessor/transactedBatchingSample"/>  
-            </baseAddresses>  
-          </host>  
-          <!-- Define NetMsmqEndpoint -->  
-          <endpoint address="net.msmq://localhost/private/ServiceModelSamplesTransactedBatching"  
-                    binding="netMsmqBinding"  
-                    bindingConfiguration="Binding1"   
-                    behaviorConfiguration="BatchingBehavior"   
-                    contract="Microsoft.ServiceModel.Samples.IOrderProcessor" />  
-          <endpoint address="mex"  
-                    binding="mexHttpBinding"  
-                    contract="IMetadataExchange" />  
-        </service>  
-      </services>  
+       <endpointBehaviors>  
+         <behavior name="BatchingBehavior">  
+           <transactedBatching maxBatchSize="100"/>  
+         </behavior>  
+       </endpointBehaviors>  
+     </behaviors>  
+     <services>  
+       <service   
+           behaviorConfiguration="ThrottlingBehavior"   
+           name="Microsoft.ServiceModel.Samples.OrderProcessorService">  
+         <host>  
+           <baseAddresses>  
+             <add baseAddress="http://localhost:8000/orderProcessor/transactedBatchingSample"/>  
+           </baseAddresses>  
+         </host>  
+         <!-- Define NetMsmqEndpoint -->  
+         <endpoint address="net.msmq://localhost/private/ServiceModelSamplesTransactedBatching"  
+                   binding="netMsmqBinding"  
+                   bindingConfiguration="Binding1"   
+                   behaviorConfiguration="BatchingBehavior"   
+                   contract="Microsoft.ServiceModel.Samples.IOrderProcessor" />  
+         <endpoint address="mex"  
+                   binding="mexHttpBinding"  
+                   contract="IMetadataExchange" />  
+       </service>  
+     </services>  
   
-      <bindings>  
-        <netMsmqBinding>  
-          <binding name="Binding1">  
-            <security mode="None" />  
-          </binding>  
-        </netMsmqBinding>  
-      </bindings>  
+     <bindings>  
+       <netMsmqBinding>  
+         <binding name="Binding1">  
+           <security mode="None" />  
+         </binding>  
+       </netMsmqBinding>  
+     </bindings>  
   
-    </system.serviceModel>  
-    ```  
+   </system.serviceModel>  
+   ```  
   
-3.  Ensure that you change the configuration on both the server and the client before you run the sample.  
+3. Ensure that you change the configuration on both the server and the client before you run the sample.  
   
-    > [!NOTE]
-    >  Setting `security``mode` to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, and `Message` security to `None`.  
+   > [!NOTE]
+   >  Setting `security``mode` to `None` is equivalent to setting <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>, <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>, and `Message` security to `None`.  
   
-4.  To run the database on a remote computer, change the connection string to point to the computer on which the database resides.  
+4. To run the database on a remote computer, change the connection string to point to the computer on which the database resides.  
   
 ## Requirements  
  To run this sample, MSMQ must be installed and SQL or SQL Express is required.  
@@ -114,11 +114,11 @@ This sample demonstrates how to batch transacted reads by using Message Queuing 
   
  We use the batching feature by:  
   
--   Specifying transacted batching behavior in configuration.  
+- Specifying transacted batching behavior in configuration.  
   
--   Specifying a batch size in terms of number of messages to be read using a single transaction.  
+- Specifying a batch size in terms of number of messages to be read using a single transaction.  
   
--   Specifying the maximum number of concurrent batches to run.  
+- Specifying the maximum number of concurrent batches to run.  
   
  In this example, we show performance gains by reducing the number of transactions by ensuring that 100 service operations are invoked in a single transaction before committing the transaction.  
   
@@ -267,11 +267,11 @@ public class Orders
   
 > [!NOTE]
 >  The batch size is a hint to the system. For example, if you specify a batch size of 20, then 20 messages would be read and dispatched using a single transaction and then the transaction is committed. But there are cases where the transaction may commit the batch before the batch size is reached.  
->   
+> 
 >  Associated with every transaction is a timeout that starts ticking once the transaction is created. When this timeout expires the transaction is aborted. It is possible for this timeout to expire even before the batch size is reached. To avoid re-working the batch because of the abort, the `TransactedBatchingBehavior` checks to see how much time is left on the transaction. If 80% of the transaction timeout is used up, then the transaction is committed.  
->   
+> 
 >  If there are no more messages in the queue then instead of waiting for the fulfillment of the batch size the <xref:System.ServiceModel.Description.TransactedBatchingBehavior> commits the transaction.  
->   
+> 
 >  The choice of the batch size is dependent on your application. If the batch size is too small, you may not get the desired performance. On the other hand if the batch size is too big, it may deteriorate performance. For example, your transaction could live longer and hold locks on your database or your transaction could become dead locked, which could cause the batch to get rolled back and to redo the work.  
   
  The client creates a transaction scope. Communication with the queue takes place within the scope of the transaction, causing it to be treated as an atomic unit where all messages are sent to the queue or none of the messages are sent to the queue. The transaction is committed by calling <xref:System.Transactions.TransactionScope.Complete%2A> on the transaction scope.  
@@ -361,11 +361,11 @@ Processing Purchase Order: ea94486b-7c86-4309-a42d-2f06c00656cd
   
 > [!IMPORTANT]
 >  The samples may already be installed on your computer. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Batching`  
   
 ## See Also

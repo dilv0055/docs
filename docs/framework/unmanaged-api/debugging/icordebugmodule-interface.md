@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugModule Interface1
 Represents a common language runtime (CLR) module, which is either an executable file or a dynamic-link library (DLL).  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[CreateBreakpoint Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-createbreakpoint-method.md)|Not implemented.|  
@@ -41,21 +42,21 @@ Represents a common language runtime (CLR) module, which is either an executable
 |[GetToken Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-gettoken-method.md)|Gets the token for the table entry for this module.|  
 |[IsDynamic Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-isdynamic-method.md)|Indicates whether the module is dynamic.|  
 |[IsInMemory Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-isinmemory-method.md)|Indicates whether this module exists only in memory.|  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [ICorDebug Interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

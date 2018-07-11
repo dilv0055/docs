@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostSyncManager::CreateAutoEvent Method
 Creates an auto-reset event object.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT CreateAutoEvent (  
     [out] IHostAutoEvent **ppEvent  
 );  
 ```  
-  
+
 #### Parameters  
  `ppEvent`  
  [out] A pointer to the address of an [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) instance implemented by the host, or null if the event object could not be created.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`CreateAutoEvent` returned successfully.|  
@@ -44,19 +45,19 @@ HRESULT CreateAutoEvent (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Not enough memory was available to create the requested event object.|  
-  
+
 ## Remarks  
  `CreateAutoEvent` creates an auto-event object whose state is automatically changed to non-signaled after the waiting thread has been released. This method mirrors the Win32 `CreateEvent` function with a value of `false` specified for the `bManualReset` parameter  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
  [IHostAutoEvent Interface](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)  

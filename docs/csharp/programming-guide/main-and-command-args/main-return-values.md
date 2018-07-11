@@ -5,7 +5,6 @@ helpviewer_keywords:
   - "Main method [C#], return values"
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
 ---
-
 # Main() return values (C# Programming Guide)
 
 The `Main` method can return `void`:
@@ -85,7 +84,7 @@ When the application entry point returns a `Task` or `Task<int>`, the compiler g
 - `static Task<int> Main(string[])` results in the compiler emitting the equivalent of `private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`
 
 > [!NOTE]
->If the examples used `async` modifier on the `Main` method, the compiler would generate the same code.
+> If the examples used `async` modifier on the `Main` method, the compiler would generate the same code.
 
 ## See also
 [C# Programming Guide](../../programming-guide/index.md)

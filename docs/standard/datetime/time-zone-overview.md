@@ -36,6 +36,7 @@ For time zones that support adjustment rules, the transition to and from dayligh
 
 The following table defines terms commonly used when working with time zones and developing time zone-aware applications.
 
+
 | Term            | Definition |
 | --------------- | ---------- |
 | Adjustment rule | A rule that defines when the transition from standard time to daylight saving time and back from daylight saving time to standard time occurs. Each adjustment rule has a start and end date that defines when the rule is in place (for example, the adjustment rule is in place from January 1, 1986, to December 31, 2006), a delta (the amount of time by which the standard time changes as a result of the application of the adjustment rule), and information about the specific date and time that the transitions are to occur during the adjustment period. Transitions can follow either a fixed rule or a floating rule. |

@@ -10,7 +10,6 @@ ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # \<clear> element for \<configSections>
 
 Clears all previously defined sections and section groups.
@@ -27,11 +26,13 @@ Clears all previously defined sections and section groups.
 
 ## Attribute
 
+
 |           | Description |
 | --------- | ----------- |
 | **name**  | Required attribute.<br><br>Specifies the name of the section or section group to remove. |
 
 ## Parent element
+
 
 |     | Description |
 | --- | ----------- |

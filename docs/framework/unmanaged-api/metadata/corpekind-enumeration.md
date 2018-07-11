@@ -19,24 +19,25 @@ ms.author: "mairaw"
 ---
 # CorPEKind Enumeration
 Contains values that describe a portable executable (PE) file, as returned from a call to [IMetaDataImport2::GetPEKind](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorPEKind {  
-  
+
     peNot           = 0x00000000,  
     peILonly        = 0x00000001,  
     pe32BitRequired = 0x00000002,  
     pe32Plus        = 0x00000004,  
     pe32Unmanaged   = 0x00000008,  
     pe32BitPreferred= 0x00000010  
-  
+
 } CorPEKind;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`peNot`|Indicates that this is not a PE file.|  
@@ -45,16 +46,16 @@ typedef enum CorPEKind {
 |`pe32Plus`|Indicates that this PE file runs on a 64-bit platform.|  
 |`pe32Unmanaged`|Indicates that this PE file is native code.|  
 |pe32BitPreferred|Indicates that this PE file is platform-neutral and prefers to be loaded in a 32-bit environment.|  
-  
+
 ## Remarks  
  These values can be used in bitwise combinations.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

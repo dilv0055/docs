@@ -16,42 +16,43 @@ manager: "markl"
 ---
 # &lt;clear&gt; Element for connectionManagement (Network Settings)
 Clears the connection management list.  
-  
+
  \<configuration>  
 \<system.net>  
 \<connectionManagement>  
 \<clear>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <clear/>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |**Element**|**Description**|  
 |-----------------|---------------------|  
 |[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Specifies the maximum number of connections to a network host.|  
-  
+
 ## Remarks  
  The `clear` element clears all entries from the connection management list.  
-  
+
 ## Configuration Files  
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
-  
+
 ## Example  
  The following example clears the connection management list and then adds new connection management entries for the server www.contoso.com and all other network hosts.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -63,7 +64,7 @@ Clears the connection management list.
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.ServicePoint>  
  <xref:System.Net.ServicePointManager>  

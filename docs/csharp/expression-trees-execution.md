@@ -4,7 +4,6 @@ description: Learn about executing expression trees by converting them into exec
 ms.date: 06/20/2016
 ms.assetid: 109e0ac5-2a9c-48b4-ac68-9b6219cdbccf
 ---
-
 # Executing Expression Trees
 
 [Previous -- Framework Types Supporting Expression Trees](expression-classes.md)

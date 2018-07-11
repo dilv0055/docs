@@ -7,6 +7,7 @@ ms.date: 09/06/2016
 
 There are multiple ways to get started with F#.  We have multiple articles written to provide a guide for each major way.  You can use the following table to help in making a decision.
 
+
 | OS | Prefer Visual Studio | Prefer Visual Studio Code | Prefer a command line |
 | -- |------------------------|--------------------------|-----------------------------|-------------------------|
 | Windows | [Get started with Visual Studio](get-started-visual-studio.md) | [Get started with VSCode and Ionide](get-started-vscode.md) | [Get started with the .NET Core CLI](get-started-command-line.md) |

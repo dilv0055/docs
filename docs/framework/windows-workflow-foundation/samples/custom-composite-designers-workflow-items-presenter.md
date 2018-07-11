@@ -11,30 +11,30 @@ The <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=
   
  This sample demonstrates:  
   
--   Creating a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>.  
+- Creating a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>.  
   
--   Creating an activity designer with a "collapsed" and "expanded" view.  
+- Creating an activity designer with a "collapsed" and "expanded" view.  
   
--   Overriding a default designer in a rehosted application.  
+- Overriding a default designer in a rehosted application.  
   
 ### To set up, build, and run the sample  
   
-1.  Open the **UsingWorkflowItemsPresenter.sln** sample solution for C# or for VB in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1. Open the **UsingWorkflowItemsPresenter.sln** sample solution for C# or for VB in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Build and run the solution. A rehosted workflow designer application should open, and you can drag activities onto the canvas.  
+2. Build and run the solution. A rehosted workflow designer application should open, and you can drag activities onto the canvas.  
   
 ## Sample Highlights  
  The code for this sample shows the following:  
   
--   The activity a designer is built for:  `Parallel`  
+- The activity a designer is built for:  `Parallel`  
   
--   The creation of a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>. A few things to point out:  
+- The creation of a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>. A few things to point out:  
   
-    -   Note the use of WPF data binding to bind to `ModelItem.Branches`. `ModelItem` is the property on `WorkflowElementDesigner` that refers to the underlying object the designer is being used for, in this case, our `Parallel`.  
+  - Note the use of WPF data binding to bind to `ModelItem.Branches`. `ModelItem` is the property on `WorkflowElementDesigner` that refers to the underlying object the designer is being used for, in this case, our `Parallel`.  
   
-    -   The <xref:System.Activities.Presentation.WorkflowItemsPresenter.SpacerTemplate?displayProperty=nameWithType> can be used to put a visual to display between the individual items in the collection.  
+  - The <xref:System.Activities.Presentation.WorkflowItemsPresenter.SpacerTemplate?displayProperty=nameWithType> can be used to put a visual to display between the individual items in the collection.  
   
-    -   <xref:System.Activities.Presentation.WorkflowItemsPresenter.ItemsPanel?displayProperty=nameWithType> is a template that can be provided to determine the layout of the items in the collection. In this case, a horizontal stack panel is used.  
+  - <xref:System.Activities.Presentation.WorkflowItemsPresenter.ItemsPanel?displayProperty=nameWithType> is a template that can be provided to determine the layout of the items in the collection. In this case, a horizontal stack panel is used.  
   
  This following example code shows this.  
   
@@ -54,9 +54,9 @@ The <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=
   </sad:WorkflowItemsPresenter>  
 ```  
   
--   Perform an association of the `DesignerAttribute` to the `Parallel` type and then output the attributes reported.  
+- Perform an association of the `DesignerAttribute` to the `Parallel` type and then output the attributes reported.  
   
-    -   First, register all of the default designers.  
+  - First, register all of the default designers.  
   
  The following is the code example.  
   
@@ -95,7 +95,7 @@ Sub RegisterCustomMetadata()
 End Sub  
 ```  
   
--   Finally, note the use of differing data templates and triggers to select the appropriate template based on the `IsRootDesigner` property.  
+- Finally, note the use of differing data templates and triggers to select the appropriate template based on the `IsRootDesigner` property.  
   
  The following is the code example.  
   
@@ -144,11 +144,11 @@ End Sub
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemsPresenter`  
   
 ## See Also  

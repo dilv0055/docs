@@ -6,12 +6,13 @@ ms.date: 05/16/2016
 # Literals
 
 > [!NOTE]
-The API reference links in this article will take you to MSDN (for now).
+> The API reference links in this article will take you to MSDN (for now).
 
 This topic provides a table that shows how to specify the type of a literal in F#.
 
 ## Literal Types
 The following table shows the literal types in F#. Characters that represent digits in hexadecimal notation are not case-sensitive; characters that identify the type are case-sensitive.
+
 
 |Type|Description|Suffix or prefix|Examples|
 |----|-----------|----------------|--------|

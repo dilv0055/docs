@@ -130,6 +130,7 @@ Serverless is most often discussed in the context of compute, but can also apply
 
 There's a broad spectrum of available choices for architecture, including a hybrid approach. Serverless simplifies the approach, management, and cost of application features at the expense of control and portability. However, many serverless platforms do expose configuration to help fine-tune the solution. Good programming practices can also lead to more portable code and less serverless platform lock-in. The following table illustrates the architecture approaches side by side. Choose serverless based on your scale needs, whether or not you want to manage the runtime, and how well you can break your workloads into small components. You'll learn about potential challenges with serverless and other decision points in the next chapter.
 
+
 |         |IaaS     |PaaS     |Container|Serverless|
 |---------|---------|---------|---------|----------|
 |**Scale**|VM       |Instance |App      |Function  |
@@ -159,6 +160,6 @@ The next chapter will focus on serverless architecture, use cases, and design pa
 * [What is Docker?](../microservices-architecture/container-docker-introduction/docker-defined.md)
 * [Wingtip Tickets SaaS application](https://docs.microsoft.com/azure/sql-database/saas-tenancy-welcome-wingtip-tickets-app)
 
->[!div class="step-by-step"]
-[Previous](architecture-approaches.md)
-[Next](serverless-architecture.md)
+> [!div  class="step-by-step"]
+> [Previous](architecture-approaches.md)
+> [Next](serverless-architecture.md)

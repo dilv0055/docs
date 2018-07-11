@@ -11,11 +11,11 @@ This sample demonstrates how to host applications in Windows Process Activation 
   
 > [!NOTE]
 >  The samples may already be installed on your computer. Check for the following (default) directory before continuing.  
->   
+> 
 >  \<InstallDrive>:\WF_WCF_Samples  
->   
->  If this directory does not exist, go to Windows Communication Foundation (WCF) HYPERLINK "http://go.microsoft.com/fwlink/?LinkId=150780" \t "_blank"  and Windows Workflow Foundation (WF) Samples for [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] to download all WCF and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
+>  If this directory does not exist, go to Windows Communication Foundation (WCF) HYPERLINK "<http://go.microsoft.com/fwlink/?LinkId=150780>" \t "_blank"  and Windows Workflow Foundation (WF) Samples for [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] to download all WCF and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
+> 
 >  \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.  
   
  Windows Process Activation Service (WAS), the new process activation mechanism for [!INCLUDE[lserver](../../../../includes/lserver-md.md)], provides IIS-like features that were previously only available to HTTP-based applications to applications that use non-HTTP protocols. Windows Communication Foundation (WCF) uses the Listener Adapter interface to communicate activation requests that are received over the non-HTTP protocols supported by WCF, such as TCP, Named Pipes, and MSMQ. The functionality for receiving requests over non-HTTP protocols is hosted by managed Windows services running in SMSvcHost.exe.  
@@ -208,140 +208,140 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
   
 ### To set up, build, and run the sample  
   
-1.  Ensure that [!INCLUDE[iisver](../../../../includes/iisver-md.md)] is installed, as it is required for WAS activation.  
+1. Ensure that [!INCLUDE[iisver](../../../../includes/iisver-md.md)] is installed, as it is required for WAS activation.  
   
-2.  Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). In addition, you must install the WCF non-HTTP activation components:  
+2. Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). In addition, you must install the WCF non-HTTP activation components:  
   
-    1.  From the **Start** menu, choose **Control Panel**.  
+   1. From the **Start** menu, choose **Control Panel**.  
   
-    2.  Select **Programs and Features**.  
+   2. Select **Programs and Features**.  
   
-    3.  Click **Turn Windows Features on or off**.  
+   3. Click **Turn Windows Features on or off**.  
   
-    4.  Under **Features Summary**, click **Add Features**.  
+   4. Under **Features Summary**, click **Add Features**.  
   
-    5.  Expand the **Microsoft .NET Framework 3.0** node and check the **Windows Communication Foundation Non-HTTP Activation** feature.  
+   5. Expand the **Microsoft .NET Framework 3.0** node and check the **Windows Communication Foundation Non-HTTP Activation** feature.  
   
-3.  To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Run the client by executing client.exe from a command window. This creates the queue and sends a message to it. Leave the client running to see the result of the service reading the message  
+4. Run the client by executing client.exe from a command window. This creates the queue and sends a message to it. Leave the client running to see the result of the service reading the message  
   
-5.  The MSMQ activation service runs as Network Service by default. Therefore, the queue that is used to activate the application must have receive and peek permissions for Network Service. This can be added by using the Message Queuing MMC:  
+5. The MSMQ activation service runs as Network Service by default. Therefore, the queue that is used to activate the application must have receive and peek permissions for Network Service. This can be added by using the Message Queuing MMC:  
   
-    1.  From the **Start** menu, click **Run**, then type `Compmgmt.msc` and press ENTER.  
+   1. From the **Start** menu, click **Run**, then type `Compmgmt.msc` and press ENTER.  
   
-    2.  Under **Services and Applications**, expand **Message Queuing**.  
+   2. Under **Services and Applications**, expand **Message Queuing**.  
   
-    3.  Click **Private Queues**.  
+   3. Click **Private Queues**.  
   
-    4.  Right-click the queue (servicemodelsamples/Service.svc) and choose **Properties**.  
+   4. Right-click the queue (servicemodelsamples/Service.svc) and choose **Properties**.  
   
-    5.  On the **Security** tab, click **Add** and give peek and receive permissions to Network Service.  
+   5. On the **Security** tab, click **Add** and give peek and receive permissions to Network Service.  
   
-6.  Configure the Windows Process Activation Service (WAS) to support MSMQ activation.  
+6. Configure the Windows Process Activation Service (WAS) to support MSMQ activation.  
   
-     As a convenience, the following steps are implemented in a batch file called AddMsmqSiteBinding.cmd located in the sample directory.  
+    As a convenience, the following steps are implemented in a batch file called AddMsmqSiteBinding.cmd located in the sample directory.  
   
-    1.  To support net.msmq activation, the default Web site must first be bound to the net.msmq protocol. This can be done using appcmd.exe, which is installed with the [!INCLUDE[iisver](../../../../includes/iisver-md.md)] management toolset. From an elevated (administrator) command prompt, run the following command.  
+   1. To support net.msmq activation, the default Web site must first be bound to the net.msmq protocol. This can be done using appcmd.exe, which is installed with the [!INCLUDE[iisver](../../../../includes/iisver-md.md)] management toolset. From an elevated (administrator) command prompt, run the following command.  
   
-        ```  
-        %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   
-        -+bindings.[protocol='net.msmq',bindingInformation='localhost']  
-        ```  
+      ```  
+      %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   
+      -+bindings.[protocol='net.msmq',bindingInformation='localhost']  
+      ```  
   
-        > [!NOTE]
-        >  This command is a single line of text.  
+      > [!NOTE]
+      >  This command is a single line of text.  
   
-         This command adds a net.msmq site binding to the default Web site.  
+       This command adds a net.msmq site binding to the default Web site.  
   
-    2.  Although all applications within a site share a common net.msmq binding, each application can enable net.msmq support individually. To enable net.msmq for the /servicemodelsamples application, run the following command from an elevated command prompt.  
+   2. Although all applications within a site share a common net.msmq binding, each application can enable net.msmq support individually. To enable net.msmq for the /servicemodelsamples application, run the following command from an elevated command prompt.  
   
-        ```  
-        %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http,net.msmq  
-        ```  
+      ```  
+      %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http,net.msmq  
+      ```  
   
-        > [!NOTE]
-        >  This command is a single line of text.  
+      > [!NOTE]
+      >  This command is a single line of text.  
   
-         This command enables the /servicemodelsamples application to be accessed using http://localhost/servicemodelsamples and net.msmq://localhost/servicemodelsamples.  
+       This command enables the /servicemodelsamples application to be accessed using <http://localhost/servicemodelsamples> and net.msmq://localhost/servicemodelsamples.  
   
-7.  If you have not done so previously, ensure that the MSMQ activation service is enabled. From the **Start** menu, click **Run**, and type `Services.msc`. Search the list of services for the **Net.Msmq Listener Adapter**. Right-click and select **Properties**. Set the **Startup Type** to **Automatic**, click **Apply** and click the **Start** button. This step must only be done once prior to the first usage of the Net.Msmq Listener Adapter service.  
+7. If you have not done so previously, ensure that the MSMQ activation service is enabled. From the **Start** menu, click **Run**, and type `Services.msc`. Search the list of services for the **Net.Msmq Listener Adapter**. Right-click and select **Properties**. Set the **Startup Type** to **Automatic**, click **Apply** and click the **Start** button. This step must only be done once prior to the first usage of the Net.Msmq Listener Adapter service.  
   
-8.  To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md). Additionally, change the code on the client that submits the purchase order to reflect the computer name in the URI of the queue when submitting the purchase order. Use the following code:  
+8. To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md). Additionally, change the code on the client that submits the purchase order to reflect the computer name in the URI of the queue when submitting the purchase order. Use the following code:  
   
-    ```  
-    client.SubmitPurchaseOrder(po, "net.msmq://localhost/private/ServiceModelSamples/OrderStatus");  
-    ```  
+   ```  
+   client.SubmitPurchaseOrder(po, "net.msmq://localhost/private/ServiceModelSamples/OrderStatus");  
+   ```  
   
 9. Remove the net.msmq site binding you added for this sample.  
   
      As a convenience, the following steps are implemented in a batch file called RemoveMsmqSiteBinding.cmd located in the sample directory:  
   
-    1.  Remove net.msmq from the list of enabled protocols by running the following command from an elevated command prompt.  
+   1. Remove net.msmq from the list of enabled protocols by running the following command from an elevated command prompt.  
   
-        ```  
-        %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http  
-        ```  
+      ```  
+      %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http  
+      ```  
   
-        > [!NOTE]
-        >  This command is a single line of text.  
+      > [!NOTE]
+      >  This command is a single line of text.  
   
-    2.  Remove the net.msmq site binding by running the following command from an elevated command prompt.  
+   2. Remove the net.msmq site binding by running the following command from an elevated command prompt.  
   
-        ```  
-        %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" --bindings.[protocol='net.msmq',bindingInformation='localhost']  
-        ```  
+      ```  
+      %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" --bindings.[protocol='net.msmq',bindingInformation='localhost']  
+      ```  
   
-        > [!NOTE]
-        >  This command is a single line of text.  
+      > [!NOTE]
+      >  This command is a single line of text.  
   
-    > [!WARNING]
-    >  Running the batch file will reset the DefaultAppPool to run using .NET Framework version 2.0.  
+   > [!WARNING]
+   >  Running the batch file will reset the DefaultAppPool to run using .NET Framework version 2.0.  
   
  By default with the `netMsmqBinding` binding transport, security is enabled. Two properties, `MsmqAuthenticationMode` and `MsmqProtectionLevel`, together determine the type of transport security. By default the authentication mode is set to `Windows` and the protection level is set to `Sign`. For MSMQ to provide the authentication and signing feature, it must be part of a domain. If you run this sample on a computer that is not part of a domain, the following error is received: "User's internal message queuing certificate does not exist".  
   
 ### To run the sample on a computer joined to a workgroup  
   
-1.  If your computer is not part of a domain, turn off transport security by setting the authentication mode and protection level to none as shown in the following sample configuration.  
+1. If your computer is not part of a domain, turn off transport security by setting the authentication mode and protection level to none as shown in the following sample configuration.  
   
-    ```xml  
-    <bindings>  
-        <netMsmqBinding>  
-            <binding configurationName="TransactedBinding">  
-                <security mode="None"/>  
-            </binding>  
-        </netMsmqBinding>  
-    </bindings>  
-    ```  
+   ```xml  
+   <bindings>  
+       <netMsmqBinding>  
+           <binding configurationName="TransactedBinding">  
+               <security mode="None"/>  
+           </binding>  
+       </netMsmqBinding>  
+   </bindings>  
+   ```  
   
-2.  Change the configuration on both the server and the client before you run the sample.  
+2. Change the configuration on both the server and the client before you run the sample.  
   
-    > [!NOTE]
-    >  Setting `security mode` to `None` is equivalent to setting `MsmqAuthenticationMode`, `MsmqProtectionLevel` and `Message` security to `None`.  
+   > [!NOTE]
+   >  Setting `security mode` to `None` is equivalent to setting `MsmqAuthenticationMode`, `MsmqProtectionLevel` and `Message` security to `None`.  
   
-3.  To enable activation in a computer joined to a workgroup, both the activation service and the worker process must be run with a specific user account (must be same for both) and the queue must have ACLs for the specific user account.  
+3. To enable activation in a computer joined to a workgroup, both the activation service and the worker process must be run with a specific user account (must be same for both) and the queue must have ACLs for the specific user account.  
   
-     To change the identity that the worker process runs under:  
+    To change the identity that the worker process runs under:  
   
-    1.  Run Inetmgr.exe.  
+   1. Run Inetmgr.exe.  
   
-    2.  Under **Application Pools**, right-click the **AppPool** (typically **DefaultAppPool**) and choose **Set Application Pool Defaults…**.  
+   2. Under **Application Pools**, right-click the **AppPool** (typically **DefaultAppPool**) and choose **Set Application Pool Defaults…**.  
   
-    3.  Change the Identity properties to use the specific user account.  
+   3. Change the Identity properties to use the specific user account.  
   
-     To change the identity that the Activation Service runs under:  
+    To change the identity that the Activation Service runs under:  
   
-    1.  Run Services.msc.  
+   1. Run Services.msc.  
   
-    2.  Right-click the **Net.MsmqListener Adapter**, and choose **Properties**.  
+   2. Right-click the **Net.MsmqListener Adapter**, and choose **Properties**.  
   
-4.  Change the account in the **LogOn** tab.  
+4. Change the account in the **LogOn** tab.  
   
-5.  In workgroup, the service must also run using an unrestricted token. To do this, run the following in a command window:  
+5. In workgroup, the service must also run using an unrestricted token. To do this, run the following in a command window:  
   
-    ```  
-    sc sidtype netmsmqactivator unrestricted  
-    ```  
+   ```  
+   sc sidtype netmsmqactivator unrestricted  
+   ```  
   
 ## See Also  
  [AppFabric Hosting and Persistence Samples](http://go.microsoft.com/fwlink/?LinkId=193961)

@@ -20,9 +20,9 @@ ms.author: "mairaw"
 ---
 # IMetaDataImport::EnumFieldsWithName Method
 Enumerates FieldDef tokens of the specified type with the specified name.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT EnumFieldsWithName (  
    [in, out] HCORENUM    *phEnum,   
@@ -33,45 +33,46 @@ HRESULT EnumFieldsWithName (
    [out] ULONG           *pcTokens   
 );  
 ```  
-  
+
 #### Parameters  
  `phEnum`  
  [in, out] A pointer to the enumerator.  
-  
+
  `cl`  
  [in] The token of the type whose fields are to be enumerated.  
-  
+
  `szName`  
  [in] The field name that limits the scope of the enumeration.  
-  
+
  `rFields`  
  [out] Array used to store the FieldDef tokens.  
-  
+
  `cMax`  
  [in] The maximum size of the `rFields` array.  
-  
+
  `pcTokens`  
  [out] The actual number of FieldDef tokens returned in `rFields`.  
-  
+
 ## Remarks  
  Unlike [IMetaDataImport::EnumFields](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` discards all field tokens that do not have the specified name.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumFieldsWithName` returned successfully.|  
 |`S_FALSE`|There are no fields to enumerate. In that case, `pcTokens` is zero.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [IMetaDataImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)  
  [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -10,7 +10,6 @@ ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # \<clear> element for NameValueSectionHandler and DictionarySectionHandler
 
 Clears all previously defined settings in a section.
@@ -30,6 +29,7 @@ Clears all previously defined settings in a section.
 None
 
 ## Parent element
+
 
 |     | Description |
 | --- | ------------|

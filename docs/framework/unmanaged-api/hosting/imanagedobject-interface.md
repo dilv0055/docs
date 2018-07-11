@@ -19,22 +19,23 @@ ms.author: "ronpet"
 ---
 # IManagedObject Interface
 Provides methods for controlling a managed object.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetObjectIdentity Method](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-getobjectidentity-method.md)|Gets the identity of this managed object.|  
 |[GetSerializedBuffer Method](../../../../docs/framework/unmanaged-api/hosting/imanagedobject-getserializedbuffer-method.md)|Gets the string representation of this managed object.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

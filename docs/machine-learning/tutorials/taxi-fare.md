@@ -16,7 +16,7 @@ ms.custom: mvc
 This tutorial illustrates how to use ML.NET to build a [regression model](../resources/glossary.md#regression) for predicting New York City taxi fares.
 
 In this tutorial, you learn how to:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * Understand the problem
 > * Select the appropriate machine learning task
 > * Prepare and understand the data
@@ -43,11 +43,11 @@ You want to predict the price value, which is a real value, based on the other f
 
 1. Open Visual Studio 2017. Select **File** > **New** > **Project** from the menu bar. In the **New Project** dialog, select the **Visual C#** node followed by the **.NET Core** node. Then select the **Console App (.NET Core)** project template. In the **Name** text box, type "TaxiFarePrediction" and then select the **OK** button.
 
-1. Create a directory named *Data* in your project to store the data set and model files:
+2. Create a directory named *Data* in your project to store the data set and model files:
 
     In **Solution Explorer**, right-click the project and select **Add** > **New Folder**. Type "Data" and hit Enter.
 
-1. Install the **Microsoft.ML** NuGet Package:
+3. Install the **Microsoft.ML** NuGet Package:
 
     In **Solution Explorer**, right-click the project and select **Manage NuGet Packages**. Choose "nuget.org" as the Package source, select the **Browse** tab, search for **Microsoft.ML**, select that package in the list, and select the **Install** button. Select the **OK** button on the **Preview Changes** dialog and then select the **I Accept** button on the **License Acceptance** dialog if you agree with the license terms for the packages listed.
 
@@ -55,9 +55,9 @@ You want to predict the price value, which is a real value, based on the other f
 
 1. Download the [taxi-fare-train.csv](https://github.com/dotnet/machinelearning/blob/master/test/data/taxi-fare-train.csv) and the [taxi-fare-test.csv](https://github.com/dotnet/machinelearning/blob/master/test/data/taxi-fare-test.csv) data sets and save them to the *Data* folder you've created at the previous step. We use these data sets to train the machine learning model and then evaluate how accurate the model is. These data sets are originally from the [NYC TLC Taxi Trip data set](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml).
 
-1. In **Solution Explorer**, right-click each of the \*.csv files and select **Properties**. Under **Advanced**, change the value of **Copy to Output Directory** to **Copy if newer**.
+2. In **Solution Explorer**, right-click each of the \*.csv files and select **Properties**. Under **Advanced**, change the value of **Copy to Output Directory** to **Copy if newer**.
 
-1. Open the **taxi-fare-train.csv** data set and look at column headers in the first row. Take a look at each of the columns. Understand the data and decide which columns are **features** and which one is the **label**.
+3. Open the **taxi-fare-train.csv** data set and look at column headers in the first row. Take a look at each of the columns. Understand the data and decide which columns are **features** and which one is the **label**.
 
 The **label** is the identifier of the column you want to predict. The identified **features** are used to predict the label.
 
@@ -76,8 +76,8 @@ The provided data set contains the following columns:
 Create classes for the input data and the predictions:
 
 1. In **Solution Explorer**, right-click the project, and then select **Add** > **New Item**.
-1. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *TaxiTrip.cs*. Then, select the **Add** button.
-1. Add the following `using` directives to the new file:
+2. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *TaxiTrip.cs*. Then, select the **Add** button.
+3. Add the following `using` directives to the new file:
 
    [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/TaxiFarePrediction/TaxiTrip.cs#1 "Add necessary usings")]
 
@@ -261,8 +261,8 @@ Add the following code to evaluate the model and produce the evaluation metrics:
 Create a class to house test data instances:
 
 1. In **Solution Explorer**, right-click the project, and then select **Add** > **New Item**.
-1. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *TestTrips.cs*. Then, select the **Add** button.
-1. Modify the class to be static like in the following example:
+2. In the **Add New Item** dialog box, select **Class** and change the **Name** field to *TestTrips.cs*. Then, select the **Add** button.
+3. Modify the class to be static like in the following example:
 
    [!code-csharp[StaticClass](../../../samples/machine-learning/tutorials/TaxiFarePrediction/TestTrips.cs#1 "Change class to be a static class.")]
 
@@ -283,7 +283,7 @@ Congratulations! You've now successfully built a machine learning model for pred
 ## Next steps
 
 In this tutorial, you learned how to:
-> [!div class="checklist"]
+> [!div  class="checklist"]
 > * Understand the problem
 > * Select the appropriate machine learning task
 > * Prepare and understand the data
@@ -295,5 +295,5 @@ In this tutorial, you learned how to:
 > * Use the model for predictions
 
 Advance to the next tutorial to learn more.
-> [!div class="nextstepaction"]
+> [!div  class="nextstepaction"]
 > [Iris clustering](iris-clustering.md)

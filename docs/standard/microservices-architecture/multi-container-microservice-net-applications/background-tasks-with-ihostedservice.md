@@ -32,11 +32,11 @@ Let’s drill down further on the `IHostedService` interface since its usage is 
 
 SignalR is one example of an artifact using hosted services, but you can also use it for much simpler things like:
 
--   A background task polling a database looking for changes.
--   A scheduled task updating some cache periodically.
--   An implementation of QueueBackgroundWorkItem that allows a task to be executed on a background thread.
--   Processing messages from a message queue in the background of a web app while sharing common services such as `ILogger`.
--   A background task started with `Task.Run()`.
+- A background task polling a database looking for changes.
+- A scheduled task updating some cache periodically.
+- An implementation of QueueBackgroundWorkItem that allows a task to be executed on a background thread.
+- Processing messages from a message queue in the background of a web app while sharing common services such as `ILogger`.
+- A background task started with `Task.Run()`.
 
 You can basically offload any of those actions to a background task based on IHostedService.
 
@@ -240,20 +240,20 @@ The `IHostedService` interface provides a convenient way to start background tas
 
 #### Additional resources
 
--   **Building a scheduled task in ASP.NET Core/Standard 2.0** 
+- **Building a scheduled task in ASP.NET Core/Standard 2.0** 
 
-    [*https://blog.maartenballiauw.be/post/2017/08/01/building-a-scheduled-cache-updater-in-aspnet-core-2.html*](https://blog.maartenballiauw.be/post/2017/08/01/building-a-scheduled-cache-updater-in-aspnet-core-2.html)
+  [*https://blog.maartenballiauw.be/post/2017/08/01/building-a-scheduled-cache-updater-in-aspnet-core-2.html*](https://blog.maartenballiauw.be/post/2017/08/01/building-a-scheduled-cache-updater-in-aspnet-core-2.html)
 
--   **Implementing IHostedService in ASP.NET Core 2.0** 
+- **Implementing IHostedService in ASP.NET Core 2.0** 
 
-    [*https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice*](https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice)
+  [*https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice*](https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice)
 
--   **ASP.NET Core 2.1 Hosting samples** 
+- **ASP.NET Core 2.1 Hosting samples** 
 
-    [*https://github.com/aspnet/Hosting/tree/dev/samples/GenericHostSample*](https://github.com/aspnet/Hosting/tree/dev/samples/GenericHostSample)
+  [*https://github.com/aspnet/Hosting/tree/dev/samples/GenericHostSample*](https://github.com/aspnet/Hosting/tree/dev/samples/GenericHostSample)
 
 
 
->[!div class="step-by-step"]
-[Previous](test-aspnet-core-services-web-apps.md)
-[Next](../microservice-ddd-cqrs-patterns/index.md)
+> [!div  class="step-by-step"]
+> [Previous](test-aspnet-core-services-web-apps.md)
+> [Next](../microservice-ddd-cqrs-patterns/index.md)

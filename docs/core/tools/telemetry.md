@@ -77,6 +77,7 @@ Published data is available quarterly and are listed at [.NET Core SDK Usage Dat
 
 ### Example
 
+
 | Timestamp      | Occurrences | Command | Geography | OSFamily | RuntimeID     | OSVersion | SDKVersion |
 | -------------- | ----------- | ------- | --------- | -------- | ------------- | --------- | ---------- |
 | 4/16/2017 0:00 | 8           | run     | Uganda    | Darwin   | osx.10.12-x64 | 10.12     | 1.0.1      |

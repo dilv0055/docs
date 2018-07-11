@@ -13,53 +13,54 @@ ms.author: "ronpet"
 ---
 # Order Preservation in PLINQ
 In PLINQ, the goal is to maximize performance while maintaining correctness. A query should run as fast as possible but still produce the correct results. In some cases, correctness requires the order of the source sequence to be preserved; however, ordering can be computationally expensive. Therefore, by default, PLINQ does not preserve the order of the source sequence. In this regard, PLINQ resembles [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)], but is unlike LINQ to Objects, which does preserve ordering.  
-  
+
  To override the default behavior, you can turn on order-preservation by using the <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator on the source sequence. You can then turn off order preservation later in the query by using the <xref:System.Linq.ParallelEnumerable.AsUnordered%2A> method. With both methods, the query is processed based on the heuristics that determine whether to execute the query as parallel or as sequential. For more information, see [Understanding Speedup in PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
-  
+
  The following example shows an unordered parallel query that filters for all the elements that match a condition, without trying to order the results in any way.  
-  
+
  [!code-csharp[PLINQ#8](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#8)]
  [!code-vb[PLINQ#8](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#8)]  
-  
+
  This query does not necessarily produce the first 1000 cities in the source sequence that meet the condition, but rather some set of 1000 cities that meet the condition. PLINQ query operators partition the source sequence into multiple subsequences that are processed as concurrent tasks. If order preservation is not specified, the results from each partition are handed off to the next stage of the query in an arbitrary order. Also, a partition may yield a subset of its results before it continues to process the remaining elements. The resulting order may be different every time. Your application cannot control this because it depends on how the operating system schedules the threads.  
-  
+
  The following example overrides the default behavior by using the <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator on the source sequence. This ensures that the <xref:System.Linq.ParallelEnumerable.Take%2A> method returns the first 1000 cities in the source sequence that meet the condition.  
-  
+
  [!code-csharp[PLINQ#9](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#9)]
  [!code-vb[PLINQ#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#9)]  
-  
+
  However, this query probably does not run as fast as the unordered version because it must keep track of the original ordering throughout the partitions and at merge time ensure that the ordering is consistent. Therefore, we recommend that you use <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> only when it is required, and only for those parts of the query that require it. When order preservation is no longer required, use <xref:System.Linq.ParallelEnumerable.AsUnordered%2A> to turn it off. The following example achieves this by composing two queries.  
-  
+
  [!code-csharp[PLINQ#6](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#6)]
  [!code-vb[PLINQ#6](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#6)]  
-  
+
  Note that PLINQ preserves the ordering of a sequence produced by order-imposing operators for the rest of the query. In other words, operators such as <xref:System.Linq.ParallelEnumerable.OrderBy%2A> and <xref:System.Linq.ParallelEnumerable.ThenBy%2A> are treated as if they were followed by a call to <xref:System.Linq.ParallelEnumerable.AsOrdered%2A>.  
-  
+
 ## Query Operators and Ordering  
  The following query operators introduce order preservation into all subsequent operations in a query, or until <xref:System.Linq.ParallelEnumerable.AsUnordered%2A> is called:  
-  
--   <xref:System.Linq.ParallelEnumerable.OrderBy%2A>  
-  
--   <xref:System.Linq.ParallelEnumerable.OrderByDescending%2A>  
-  
--   <xref:System.Linq.ParallelEnumerable.ThenBy%2A>  
-  
--   <xref:System.Linq.ParallelEnumerable.ThenByDescending%2A>  
-  
+
+- <xref:System.Linq.ParallelEnumerable.OrderBy%2A>  
+
+- <xref:System.Linq.ParallelEnumerable.OrderByDescending%2A>  
+
+- <xref:System.Linq.ParallelEnumerable.ThenBy%2A>  
+
+- <xref:System.Linq.ParallelEnumerable.ThenByDescending%2A>  
+
  The following PLINQ query operators may in some cases require ordered source sequences to produce correct results:  
-  
--   <xref:System.Linq.ParallelEnumerable.Reverse%2A>  
-  
--   <xref:System.Linq.ParallelEnumerable.SequenceEqual%2A>  
-  
--   <xref:System.Linq.ParallelEnumerable.TakeWhile%2A>  
-  
--   <xref:System.Linq.ParallelEnumerable.SkipWhile%2A>  
-  
--   <xref:System.Linq.ParallelEnumerable.Zip%2A>  
-  
+
+- <xref:System.Linq.ParallelEnumerable.Reverse%2A>  
+
+- <xref:System.Linq.ParallelEnumerable.SequenceEqual%2A>  
+
+- <xref:System.Linq.ParallelEnumerable.TakeWhile%2A>  
+
+- <xref:System.Linq.ParallelEnumerable.SkipWhile%2A>  
+
+- <xref:System.Linq.ParallelEnumerable.Zip%2A>  
+
  Some PLINQ query operators behave differently, depending on whether their source sequence is ordered or unordered. The following table lists these operators.  
-  
+
+
 |Operator|Result when the source sequence is ordered|Result when the source sequence is unordered|  
 |--------------|------------------------------------------------|--------------------------------------------------|  
 |<xref:System.Linq.ParallelEnumerable.Aggregate%2A>|Nondeterministic output for nonassociative or noncommutative operations|Nondeterministic output for nonassociative or noncommutative operations|  
@@ -113,9 +114,9 @@ In PLINQ, the goal is to maximize performance while maintaining correctness. A q
 |<xref:System.Linq.ParallelEnumerable.Where%2A>|Ordered results|Unordered results|  
 |<xref:System.Linq.ParallelEnumerable.Where%2A> (indexed)|Ordered results|Unordered results|  
 |<xref:System.Linq.ParallelEnumerable.Zip%2A>|Ordered results|Unordered results|  
-  
+
  Unordered results are not actively shuffled; they simply do not have any special ordering logic applied to them. In some cases, an unordered query may retain the ordering of the source sequence. For queries that use the indexed Select operator, PLINQ guarantees that the output elements will come out in the order of increasing indices, but makes no guarantees about which indices will be assigned to which elements.  
-  
+
 ## See Also  
  [Parallel LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)  
  [Parallel Programming](../../../docs/standard/parallel-programming/index.md)

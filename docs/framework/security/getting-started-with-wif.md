@@ -6,9 +6,9 @@ author: "BrucePerlerMS"
 manager: "mbaldwin"
 ---
 # Getting Started With WIF
--   [Building My First Claims-Aware ASP.NET Web Application](../../../docs/framework/security/building-my-first-claims-aware-aspnet-web-app.md)  
+- [Building My First Claims-Aware ASP.NET Web Application](../../../docs/framework/security/building-my-first-claims-aware-aspnet-web-app.md)  
   
--   [Building My First Claims-Aware WCF Service](../../../docs/framework/security/building-my-first-claims-aware-wcf-service.md)  
+- [Building My First Claims-Aware WCF Service](../../../docs/framework/security/building-my-first-claims-aware-wcf-service.md)  
   
 ## See Also  
  [Windows Identity Foundation](../../../docs/framework/security/index.md)

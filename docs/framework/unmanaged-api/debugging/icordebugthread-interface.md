@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugThread Interface1
 Represents a thread in a process. The lifetime of an `ICorDebugThread` instance is the same as the lifetime of the thread it represents.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[ClearCurrentException Method](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-clearcurrentexception-method.md)|This method is not implemented. Do not use it.|  
@@ -40,20 +41,20 @@ Represents a thread in a process. The lifetime of an `ICorDebugThread` instance 
 |[GetRegisterSet Method](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getregisterset-method.md)|Gets an interface pointer to the register set associated with this `ICorDebugThread`.|  
 |[GetUserState Method](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md)|Gets a bitwise combination of CorDebugUserState values that describe the current state of this `ICorDebugThread`.|  
 |[SetDebugState Method](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-setdebugstate-method.md)|Sets a bitwise combination of `CorDebugThreadState` values that describe the debugging state of this `ICorDebugThread`.|  
-  
+
 ## Remarks  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

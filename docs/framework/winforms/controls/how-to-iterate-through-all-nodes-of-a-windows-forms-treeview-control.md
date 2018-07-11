@@ -18,104 +18,104 @@ It is sometimes useful to examine every node in a Windows Forms <xref:System.Win
   
 ### To iterate through all nodes of the TreeView control  
   
-1.  Create a recursive procedure (recursive method in C# and C++) that tests each node.  
+1. Create a recursive procedure (recursive method in C# and C++) that tests each node.  
   
-2.  Call the procedure.  
+2. Call the procedure.  
   
-     The following example shows how to print each <xref:System.Windows.Forms.TreeNode> object's <xref:System.Windows.Forms.TreeNode.Text%2A> property:  
+    The following example shows how to print each <xref:System.Windows.Forms.TreeNode> object's <xref:System.Windows.Forms.TreeNode.Text%2A> property:  
   
-    ```vb  
-    Private Sub PrintRecursive(ByVal n As TreeNode)  
-       System.Diagnostics.Debug.WriteLine(n.Text)  
-       MessageBox.Show(n.Text)  
-       Dim aNode As TreeNode  
-       For Each aNode In n.Nodes  
-          PrintRecursive(aNode)  
-       Next  
-    End Sub  
+   ```vb  
+   Private Sub PrintRecursive(ByVal n As TreeNode)  
+      System.Diagnostics.Debug.WriteLine(n.Text)  
+      MessageBox.Show(n.Text)  
+      Dim aNode As TreeNode  
+      For Each aNode In n.Nodes  
+         PrintRecursive(aNode)  
+      Next  
+   End Sub  
   
-    ' Call the procedure using the top nodes of the treeview.  
-    Private Sub CallRecursive(ByVal aTreeView As TreeView)  
-       Dim n As TreeNode  
-       For Each n In aTreeView.Nodes  
-          PrintRecursive(n)  
-       Next  
-    End Sub  
-    ```  
+   ' Call the procedure using the top nodes of the treeview.  
+   Private Sub CallRecursive(ByVal aTreeView As TreeView)  
+      Dim n As TreeNode  
+      For Each n In aTreeView.Nodes  
+         PrintRecursive(n)  
+      Next  
+   End Sub  
+   ```  
   
-    ```csharp  
-    private void PrintRecursive(TreeNode treeNode)  
-    {  
-       // Print the node.  
-       System.Diagnostics.Debug.WriteLine(treeNode.Text);  
-       MessageBox.Show(treeNode.Text);  
-       // Print each node recursively.  
-       foreach (TreeNode tn in treeNode.Nodes)  
-       {  
-          PrintRecursive(tn);  
-       }  
-    }  
+   ```csharp  
+   private void PrintRecursive(TreeNode treeNode)  
+   {  
+      // Print the node.  
+      System.Diagnostics.Debug.WriteLine(treeNode.Text);  
+      MessageBox.Show(treeNode.Text);  
+      // Print each node recursively.  
+      foreach (TreeNode tn in treeNode.Nodes)  
+      {  
+         PrintRecursive(tn);  
+      }  
+   }  
   
-    // Call the procedure using the TreeView.  
-    private void CallRecursive(TreeView treeView)  
-    {  
-       // Print each node recursively.  
-       TreeNodeCollection nodes = treeView.Nodes;  
-       foreach (TreeNode n in nodes)  
-       {  
-          PrintRecursive(n);  
-       }  
-    }  
-    ```  
+   // Call the procedure using the TreeView.  
+   private void CallRecursive(TreeView treeView)  
+   {  
+      // Print each node recursively.  
+      TreeNodeCollection nodes = treeView.Nodes;  
+      foreach (TreeNode n in nodes)  
+      {  
+         PrintRecursive(n);  
+      }  
+   }  
+   ```  
   
-    ```cpp  
-    private:  
-       void PrintRecursive( TreeNode^ treeNode )  
-       {  
-          // Print the node.  
-          System::Diagnostics::Debug::WriteLine( treeNode->Text );  
-          MessageBox::Show( treeNode->Text );  
+   ```cpp  
+   private:  
+      void PrintRecursive( TreeNode^ treeNode )  
+      {  
+         // Print the node.  
+         System::Diagnostics::Debug::WriteLine( treeNode->Text );  
+         MessageBox::Show( treeNode->Text );  
   
-          // Print each node recursively.  
-          System::Collections::IEnumerator^ myNodes = (safe_cast<System::Collections::IEnumerable^>(treeNode->Nodes))->GetEnumerator();  
-          try  
-          {  
-             while ( myNodes->MoveNext() )  
-             {  
-                TreeNode^ tn = safe_cast<TreeNode^>(myNodes->Current);  
-                PrintRecursive( tn );  
-             }  
-          }  
-          finally  
-          {  
-             IDisposable^ disposable = dynamic_cast<System::IDisposable^>(myNodes);  
-             if ( disposable != nullptr )  
-                      disposable->Dispose();  
-          }  
-       }  
+         // Print each node recursively.  
+         System::Collections::IEnumerator^ myNodes = (safe_cast<System::Collections::IEnumerable^>(treeNode->Nodes))->GetEnumerator();  
+         try  
+         {  
+            while ( myNodes->MoveNext() )  
+            {  
+               TreeNode^ tn = safe_cast<TreeNode^>(myNodes->Current);  
+               PrintRecursive( tn );  
+            }  
+         }  
+         finally  
+         {  
+            IDisposable^ disposable = dynamic_cast<System::IDisposable^>(myNodes);  
+            if ( disposable != nullptr )  
+                     disposable->Dispose();  
+         }  
+      }  
   
-       // Call the procedure using the TreeView.  
-       void CallRecursive( TreeView^ treeView )  
-       {  
-          // Print each node recursively.  
-          TreeNodeCollection^ nodes = treeView->Nodes;  
-          System::Collections::IEnumerator^ myNodes = (safe_cast<System::Collections::IEnumerable^>(nodes))->GetEnumerator();  
-          try  
-          {  
-             while ( myNodes->MoveNext() )  
-             {  
-                TreeNode^ n = safe_cast<TreeNode^>(myNodes->Current);  
-                PrintRecursive( n );  
-             }  
-          }  
-          finally  
-          {  
-             IDisposable^ disposable = dynamic_cast<System::IDisposable^>(myNodes);  
-             if ( disposable != nullptr )  
-                      disposable->Dispose();  
-          }  
-       }  
-    ```  
+      // Call the procedure using the TreeView.  
+      void CallRecursive( TreeView^ treeView )  
+      {  
+         // Print each node recursively.  
+         TreeNodeCollection^ nodes = treeView->Nodes;  
+         System::Collections::IEnumerator^ myNodes = (safe_cast<System::Collections::IEnumerable^>(nodes))->GetEnumerator();  
+         try  
+         {  
+            while ( myNodes->MoveNext() )  
+            {  
+               TreeNode^ n = safe_cast<TreeNode^>(myNodes->Current);  
+               PrintRecursive( n );  
+            }  
+         }  
+         finally  
+         {  
+            IDisposable^ disposable = dynamic_cast<System::IDisposable^>(myNodes);  
+            if ( disposable != nullptr )  
+                     disposable->Dispose();  
+         }  
+      }  
+   ```  
   
 ## See Also  
  [TreeView Control](../../../../docs/framework/winforms/controls/treeview-control-windows-forms.md)  

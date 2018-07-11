@@ -10,7 +10,6 @@ ms.assetid: 6c27f9e2-809c-4bc9-aca9-72f90360e7a3
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # \<sectionGroup> element for \<configSections>
 
 Defines a namespace for configuration sections.
@@ -29,17 +28,20 @@ Defines a namespace for configuration sections.
 
 ## Attribute
 
+
 |           | Description |
 | --------- | ----------- |
 | **name**  | Required attribute.<br><br>Specifies the name of the section group you are defining. |
 
 ## Parent element
 
+
 |     | Description |
 | --- | ----------- |
 | [**\<configSections>** Element](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Contains configuration section and namespace declarations. |
 
 ## Child elements
+
 
 |     | Description |
 | --- | ----------- |

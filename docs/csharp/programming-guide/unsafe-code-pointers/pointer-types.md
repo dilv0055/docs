@@ -38,6 +38,7 @@ A pointer cannot point to a reference or to a [struct](../../language-reference/
 
 The value of the pointer variable of type `myType*` is the address of a variable of type `myType`. The following are examples of pointer type declarations:
 
+
 |Example|Description|
 |-------------|-----------------|
 |`int* p`|`p` is a pointer to an integer.|
@@ -65,6 +66,7 @@ A pointer can be `null`. Applying the indirection operator to a null pointer cau
 Passing pointers between methods can cause undefined behavior. Consider a method that returns a pointer to a local variable through an `in`, `out`, or `ref` parameter or as the function result. If the pointer was set in a fixed block, the variable to which it points may no longer be fixed.
 
 The following table lists the operators and statements that can operate on pointers in an unsafe context:
+
 
 |Operator/Statement|Use|
 |-------------------------|---------|

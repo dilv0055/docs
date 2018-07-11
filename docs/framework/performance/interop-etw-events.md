@@ -10,29 +10,32 @@ ms.author: "mairaw"
 ---
 # Interop ETW Events
 <a name="top"></a> Interop events capture information about Microsoft intermediate language (MSIL) stub generation and caching.  
-  
+
  This category consists of the following events:  
-  
--   [ILStubGenerated Event](#ilstubgenerated_event)  
-  
--   [ILStubCacheHit Event](#ilstubcachehit_event)  
-  
+
+- [ILStubGenerated Event](#ilstubgenerated_event)  
+
+- [ILStubCacheHit Event](#ilstubcachehit_event)  
+
 <a name="ilstubgenerated_event"></a>   
 ## ILStubGenerated Event  
  The following table shows the keyword and level. (For more information, see [CLR ETW Keywords and Levels](../../../docs/framework/performance/clr-etw-keywords-and-levels.md).)  
-  
+
+
 |Keyword for raising the event|Level|  
 |-----------------------------------|-----------|  
 |`InteropKeyword` (0x2000)|Informational(4)|  
-  
+
  The following table shows the event information.  
-  
+
+
 |Event|Event ID|Raised when|  
 |-----------|--------------|-----------------|  
 |`ILStubGenerated`|88|The MSIL stub has been generated.|  
-  
+
  The following table shows the event data.  
-  
+
+
 |Field name|Data type|Description|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt16|The module identifier.|  
@@ -46,25 +49,28 @@ ms.author: "mairaw"
 |StubMethodSignature|win:UnicodeString|The stub method signature.|  
 |StubMethodILCode|win:UnicodeString|The MSIL code for the stub method.|  
 |ClrInstanceID|win:UInt16|Unique ID for the instance of CLR or CoreCLR.|  
-  
+
  [Back to top](#top)  
-  
+
 <a name="ilstubcachehit_event"></a>   
 ## ILStubCacheHit Event  
  The following table shows the keyword and level.  
-  
+
+
 |Keyword for raising the event|Level|  
 |-----------------------------------|-----------|  
 |`InteropKeyword` (0x2000)|Informational(4)|  
-  
+
  The following table shows the event information.  
-  
+
+
 |Event|Event ID|Raised when|  
 |-----------|--------------|-----------------|  
 |`ILStubCacheHit`|89|The MSIL cache has been accessed.|  
-  
+
  The following table shows the event data.  
-  
+
+
 |Field name|Data type|Description|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt16|The module identifier.|  
@@ -74,8 +80,8 @@ ms.author: "mairaw"
 |ManagedInteropMethodName|win:UnicodeString|The name of the managed interop method.|  
 |ManagedInteropMethodSignature|win:UnicodeString|The signature of the managed interop method.|  
 |ClrInstanceID|win:UInt16|Unique ID for the instance of CLR or CoreCLR.|  
-  
+
  [Back to top](#top)  
-  
+
 ## See Also  
  [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md)

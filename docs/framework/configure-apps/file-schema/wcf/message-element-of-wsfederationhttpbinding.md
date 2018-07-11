@@ -5,16 +5,16 @@ ms.assetid: 9d710389-d9d8-4454-9bf2-da4ccda31cec
 ---
 # &lt;message&gt; element of &lt;wsFederationHttpBinding&gt;
 Defines the settings for the message-level security for the [\<wsFederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  
-  
+
  \<system.ServiceModel>  
 \<bindings>  
 \<wsFederatedBinding>  
 \<binding>  
 \<security>  
 \<message>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <wsFederationBinding>  
      <binding >  
@@ -73,21 +73,23 @@ Defines the settings for the message-level security for the [\<wsFederationHttpB
    </binding>  
 </wsFederationBinding>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |algorithmSuite|Sets the message encryption and key-wrap algorithms. See the "algorithmSuite attribute" table for valid values of this attribute. The default value is `Basic256`.<br /><br /> This attribute is of type <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>. These algorithms map to those specified in the Security Policy Language (WS-SecurityPolicy) specification.|  
 |issuedKeyType|Specifies the type of key to be issued. Valid values include the following:<br /><br /> -   SymmetricKey<br />-   PublicKey<br /><br /> The default is `SymmetricKey`. This attribute is of type <xref:System.IdentityModel.Tokens.SecurityKeyType>.|  
 |issuedTokenType|A string that contains a URI that specifies the type of token to be issued. The default is `null`.|  
 |negotiateServiceCredential|A Boolean value that specifies whether the service credential should be exchanged as part of negotiation or is available out of band. The default is `true`, which means that the service credential is negotiated.|  
-  
+
 ## algorithmSuite Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |Basic128|Use Basic128 encryption, Sha1 for message digest, and Rsa-oaep-mgf1p for key wrap.|  
@@ -106,22 +108,24 @@ Defines the settings for the message-level security for the [\<wsFederationHttpB
 |Basic192Sha256Rsa15|Use Aes192 for message encryption, Sha256 for message digest and Rsa15 for key wrap.|  
 |Basic256Sha256Rsa15|Use Basic256 for message encryption, Sha256 for message digest and Rsa15 for key wrap.|  
 |TripleDesSha256Rsa15|Use TripleDes for message encryption, Sha256 for message digest and Rsa15 for key wrap.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<claimTypeRequirements>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|Specifies a collection of claim types for this binding. Each element is of type <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
 |issuer|Specifies an endpoint that issues a security token. This element is of type <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
 |issuerMetadata|Specifies the endpoint address of the issuer.|  
 |[\<tokenRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|A collection of token request parameters. Each parameter is an XML element.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md)|Defines the security settings for a binding.|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp>  
  <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement.Message%2A>  

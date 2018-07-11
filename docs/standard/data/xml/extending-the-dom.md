@@ -16,9 +16,9 @@ The Microsoft .NET Framework includes a base set of classes that provides an imp
   
  There are two general guidelines when deriving new classes:  
   
--   It is recommended that you never derive from the <xref:System.Xml.XmlNode> class. Instead, it is recommended that you derive classes from the class corresponding to the node type that you are interested in. For example, if you want to return additional information on attribute nodes, you can derive from the <xref:System.Xml.XmlAttribute> class.  
+- It is recommended that you never derive from the <xref:System.Xml.XmlNode> class. Instead, it is recommended that you derive classes from the class corresponding to the node type that you are interested in. For example, if you want to return additional information on attribute nodes, you can derive from the <xref:System.Xml.XmlAttribute> class.  
   
--   Except for the node creation methods, it is recommended that when overriding a function, you should always call the base version of the function and then add any additional processing.  
+- Except for the node creation methods, it is recommended that when overriding a function, you should always call the base version of the function and then add any additional processing.  
   
 ## Creating Your Own Node Instances  
  The <xref:System.Xml.XmlDocument> class contains node creation methods. When an XML file is loaded, these methods are called to create the nodes. You can override these methods so that your node instances are created when a document is loaded. For example, if you have extended the <xref:System.Xml.XmlElement> class, you would inherit the <xref:System.Xml.XmlDocument> class and override the <xref:System.Xml.XmlDocument.CreateElement%2A> method.  

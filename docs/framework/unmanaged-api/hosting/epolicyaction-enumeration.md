@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # EPolicyAction Enumeration
 Describes the policy actions the host can set for operations described by [EClrOperation](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) and failures described by [EClrFailure](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md).  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     eNoAction,  
@@ -36,9 +36,10 @@ typedef enum {
     eDisableRuntime  
 } EPolicyAction;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`eAbortThread`|Specifies that the common language runtime (CLR) should abort the thread gracefully. A graceful abort includes attempts to run all `finally` blocks, any `catch` blocks related to thread aborts, and finalizers.|  
@@ -51,19 +52,19 @@ typedef enum {
 |`eRudeUnloadAppDomain`|Specifies that the CLR should perform a rude unload of the <xref:System.AppDomain>. Only finalizers marked with <xref:System.EnterpriseServices.MustRunInClientContextAttribute> are executed. Similarly, all threads with this <xref:System.AppDomain> in their stack receive a `ThreadAbortException`, but only those `catch` and `finally` blocks marked with <xref:System.EnterpriseServices.MustRunInClientContextAttribute> are executed.|  
 |`eThrowException`|Specifies that an exception appropriate to the condition, such as out-of-memory, buffer overflow, and so forth, should be thrown.|  
 |`eUnloadAppDomain`|Specifies that the <xref:System.AppDomain> should be unloaded. The CLR attempts to run finalizers.|  
-  
+
 ## Remarks  
  The host sets policy actions by calling methods of the [ICLRPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) interface. For information about rude and graceful aborts, see the [EClrOperation](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md) enumeration.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [EClrFailure Enumeration](../../../../docs/framework/unmanaged-api/hosting/eclrfailure-enumeration.md)  
  [ICLRPolicyManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)  

@@ -10,7 +10,7 @@ A non-numeric argument occurs in a situation in which a numeric argument is expe
   
 ## To correct this error  
   
--   Ensure that the argument is numeric.  
+- Ensure that the argument is numeric.  
   
 ## See Also  
  [Passing Arguments by Value and by Reference](../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md)  

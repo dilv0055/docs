@@ -10,7 +10,6 @@ ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # \<remove> element for \<appSettings>
 
 Removes custom application settings.
@@ -29,11 +28,13 @@ Removes custom application settings.
 
 ### Attribute
 
+
 |         | Description |
 | ------- | ----------- |
 | **key** | Required attribute.<br><br>Specifies the name of the key to remove. |
 
 ### Parent element
+
 
 |     | Description |
 | --- | ----------- |

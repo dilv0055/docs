@@ -19,31 +19,32 @@ ms.author: "mairaw"
 ---
 # COR_PRF_TRANSITION_REASON Enumeration
 Indicates the reason for a transition from managed to unmanaged code, or vice versa.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     COR_PRF_TRANSITION_CALL,  
     COR_PRF_TRANSITION_RETURN  
 } COR_PRF_TRANSITION_REASON;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_TRANSITION_CALL`|The transition is due to a call into a function.|  
 |`COR_PRF_TRANSITION_RETURN`|The transition is due to a return from a function.|  
-  
+
 ## Remarks  
  When a transition occurs, the profiler receives an [ICorProfilerCallback::ManagedToUnmanagedTransition](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-managedtounmanagedtransition-method.md) or [ICorProfilerCallback::UnmanagedToManagedTransition](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-unmanagedtomanagedtransition-method.md) callback, either of which provides a value of the `COR_PRF_TRANSITION_REASON` enumeration to indicate the reason for the transition.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorProf.idl, CorProf.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]

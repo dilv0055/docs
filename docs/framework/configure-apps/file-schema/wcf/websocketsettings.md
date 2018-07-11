@@ -5,13 +5,13 @@ ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
 ---
 # &lt;webSocketSettings&gt;
 A configuration element used to specify Web Socket settings.  
-  
+
 \<system.ServiceModel>  
 \<bindings>  
 \<netHttpBinding>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <netHttpBinding>  
   <binding>   
@@ -26,12 +26,13 @@ A configuration element used to specify Web Socket settings.
   </binding>  
 </netHttpBinding>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |createNotificationOnConnection|Specifies whether a notification is sent upon connection.|  
@@ -42,27 +43,29 @@ A configuration element used to specify Web Socket settings.
 |sendBufferSize|Specifies the size of the send buffer.|  
 |subProtocol|Specifies the Web Socket subprotocol.|  
 |transportUsage|Specifies when to use Web Sockets.|  
-  
+
 ## transportUsage Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |WhenDuplex|Use the Web Socket protocol when the contract is duplex.|  
 |Always|Always use the Web Socket protocol regardless of the contract.|  
 |Never|Never use the Web Socket protocol.|  
-  
+
 ### Child Elements  
  None  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |\<netHttpBinding>|Specifies the NetHttpBinding|  
-  
+
 ## Example  
  The following example shows how to use the \<webSocketSettings> element.  
-  
+
 ```xml  
 <netHttpBinding>  
         <binding>  
@@ -74,11 +77,11 @@ A configuration element used to specify Web Socket settings.
                               sendBufferSize="1000"  
                               subProtocol="Soap"  
                               transportUsage="WhenDuplex/Always/Never"/>  
-  
+
         </binding>  
       </netHttpBinding>  
 ```  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Channels.Binding>  
  <xref:System.ServiceModel.Channels.BindingElement>  

@@ -7,15 +7,16 @@ manager: "mbaldwin"
 ---
 # Namespace Mapping between WIF 3.5 and WIF 4.5
 Beginning with .NET 4.5, Windows Identity Foundation (WIF) has been fully integrated into the .NET Framework. This integration engendered name changes and some consolidation of the WIF namespaces and API surface. This topic provides some guidance and a general mapping between the WIF 3.5 namespaces and the WIF 4.5 namespaces. It is not intended to be exhaustive, but rather provide some general information about where to find familiar WIF 3.5 classes in WIF 4.5. For more detailed information about the differences between WIF 3.5 and WIF 4.5, see [What's New in Windows Identity Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md). For guidance about how to migrate an applications built using WIF 3.5 to WIF 4.5, see [Guidelines for Migrating an Application Built Using WIF 3.5 to WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md).  
-  
+
 ## WIF 3.5 to WIF 4.5 Namespace Map  
  The WIF classes, which were collected under the `Microsoft.IdentityModel` namespaces in WIF 3.5, are now distributed among the following namespaces: `System.Security.Claims`, `System.ServiceModel.Security`, and the `System.IdentityModel` namespaces in WIF 4.5. In addition some WIF 3.5 namespaces were consolidated or dropped entirely in WIF 4.5.  
-  
+
 > [!IMPORTANT]
 >  The following `System.IdentityModel` namespaces contain classes that implement the WCF claims-based identity model: <xref:System.IdentityModel.Claims?displayProperty=nameWithType>, <xref:System.IdentityModel.Policy?displayProperty=nameWithType>, and <xref:System.IdentityModel.Selectors?displayProperty=nameWithType>. The WCF claims-based identity model is superseded by WIF. You should not use classes in these three namespaces when building solutions based on WIF.  
-  
+
  The following table provides information about where WIF 3.5 classes can be found in WIF 4.5.  
-  
+
+
 |**WIF 3.5 Namespace**|**WIF 4.5 Namespace**|**Comments**|  
 |-|-|-|  
 |`Microsoft.IdentityModel`|<xref:System.IdentityModel?displayProperty=nameWithType>|-   Most of the classes that represent constants are not implemented.<br />-   The classes that are used to build security token services have been moved from `Microsoft.IdentityModel.SecurityTokenService` to <xref:System.IdentityModel?displayProperty=nameWithType>.<br />-   The classes in `Microsoft.IdentityModel.Threading` have been moved to <xref:System.IdentityModel?displayProperty=nameWithType>.<br />-   The `ExceptionMapper` and `MruSecurityTokenCache` classes are not implemented.|  
@@ -38,7 +39,7 @@ Beginning with .NET 4.5, Windows Identity Foundation (WIF) has been fully integr
 |`Microsoft.IdentityModel.Web.Configuration`|<xref:System.IdentityModel.Services.Configuration?displayProperty=nameWithType>|Classes that provide configuration for passive (WS-Federation) scenarios have largely been moved to <xref:System.IdentityModel.Services.Configuration?displayProperty=nameWithType>; however, some of these classes are in <xref:System.IdentityModel.Services?displayProperty=nameWithType>.|  
 |`Microsoft.IdentityModel.Web.Controls`|Not Implemented in WIF 4.5|The classes in `Microsoft.IdentityModel.Web.Controls` implemented the Federated Passive Sign-In Control, which does not exist in WIF 4.5.|  
 |`Microsoft.IdentityModel.WindowsTokenService`|Not Implemented in WIF 4.5|-|  
-  
+
 ## See Also  
  [What's New in Windows Identity Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)  
  [Guidelines for Migrating an Application Built Using WIF 3.5 to WIF 4.5](../../../docs/framework/security/guidelines-for-migrating-an-application-built-using-wif-3-5-to-wif-4-5.md)

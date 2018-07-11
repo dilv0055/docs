@@ -19,15 +19,16 @@ ms.author: "ronpet"
 ---
 # ICatalogServices Interface
 Provides methods for cataloging services.  
-  
+
  This interface supports the .NET Framework infrastructure and is not intended to be used directly from your code.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[Autodone Method](../../../../docs/framework/unmanaged-api/hosting/icatalogservices-autodone-method.md)|Reserved for internal use only.|  
 |[NotAutodone Method](../../../../docs/framework/unmanaged-api/hosting/icatalogservices-notautodone-method.md)|Reserved for internal use only.|  
-  
+
 ## See Also  
  [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

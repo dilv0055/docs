@@ -19,9 +19,9 @@ The **GamePiece** class encapsulates all the functionality required to load a Mi
 ## Class Constructor  
  The constructor for the **GamePiece** class accepts the following parameters:  
   
--   A [SpriteBatch](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.aspx) type. The reference passed here is assigned to the private member `spriteBatch`, and is used to access the [SpriteBatch.Draw](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.draw.aspx) method when the game piece renders itself. In addition, the [GraphicsDevice](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.graphicsdevice.aspx) property is used to create the [Texture](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.texture.aspx) object associated with the game piece, and to obtain the size of the view port in order to detect when the game piece encounters a window boundary so that the piece can bounce.  
+- A [SpriteBatch](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.aspx) type. The reference passed here is assigned to the private member `spriteBatch`, and is used to access the [SpriteBatch.Draw](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.draw.aspx) method when the game piece renders itself. In addition, the [GraphicsDevice](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.graphicsdevice.aspx) property is used to create the [Texture](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.texture.aspx) object associated with the game piece, and to obtain the size of the view port in order to detect when the game piece encounters a window boundary so that the piece can bounce.  
   
--   A string that specifies the file name of the image to use for the game piece.  
+- A string that specifies the file name of the image to use for the game piece.  
   
  The constructor also creates a <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> object and an <xref:System.Windows.Input.Manipulations.InertiaProcessor2D> object, and establishes event handlers for their events.  
   
@@ -83,11 +83,11 @@ The **GamePiece** class encapsulates all the functionality required to load a Mi
 ## Additional Properties  
  Three private properties are used by the **GamePiece** class.  
   
-1.  **Timestamp** – Gets a timestamp value to be used by the manipulation and inertia processors.  
+1. **Timestamp** – Gets a timestamp value to be used by the manipulation and inertia processors.  
   
-2.  **X** – Gets or sets the X coordinate of the game piece. When setting, adjusts the bounds used for hit testing and the pivot location of the manipulation processor.  
+2. **X** – Gets or sets the X coordinate of the game piece. When setting, adjusts the bounds used for hit testing and the pivot location of the manipulation processor.  
   
-3.  **Y** – Gets or sets the Y coordinate of the game piece. When setting, adjusts the bounds used for hit testing and the pivot location of the manipulation processor.  
+3. **Y** – Gets or sets the Y coordinate of the game piece. When setting, adjusts the bounds used for hit testing and the pivot location of the manipulation processor.  
   
  [!code-csharp[ManipulationXNA#_GamePiece_PrivateProperties](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_privateproperties)]  
   

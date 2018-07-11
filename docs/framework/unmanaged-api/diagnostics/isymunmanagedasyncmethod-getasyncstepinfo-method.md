@@ -7,15 +7,16 @@ ms.author: "ronpet"
 ---
 # ISymUnmanagedAsyncMethod::GetAsyncStepInfo Method
 See [DefineAsyncStepInfo Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-defineasyncstepinfo-method.md).  
-  
+
 ## Syntax  
-  
+
 ```idl  
 HRESULT GetAsyncStepInfo(    [in] ULONG32 cStepInfo,    [out] ULONG32 *pcStepInfo,    [in, size_is(cStepInfo)] ULONG32 yieldOffsets[],    [in, size_is(cStepInfo)] ULONG32 breakpointOffset[],    [in, size_is(cStepInfo)] mdToken breakpointMethod[]);  
 ```  
-  
+
 #### Parameters  
-  
+
+
 |Parameter|Description|  
 |---------------|-----------------|  
 |`cStepInfo`||  
@@ -23,12 +24,12 @@ HRESULT GetAsyncStepInfo(    [in] ULONG32 cStepInfo,    [out] ULONG32 *pcStepInf
 |`yieldOffsets`||  
 |`breakpointOffset`||  
 |`breakpointMethod`||  
-  
+
 ## Return Value  
  Returns `HRESULT`.  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [ISymUnmanagedAsyncMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethod-interface.md)

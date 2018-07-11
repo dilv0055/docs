@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugCode Interface1
 Represents a segment of either Microsoft intermediate language (MSIL) code or native code.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[CreateBreakpoint Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-createbreakpoint-method.md)|Creates a breakpoint at the specified offset.|  
@@ -33,23 +34,23 @@ Represents a segment of either Microsoft intermediate language (MSIL) code or na
 |[GetSize Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getsize-method.md)|Gets the size, in bytes, of the binary code represented by this `ICorDebugCode`.|  
 |[GetVersionNumber Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getversionnumber-method.md)|Gets the one-based number that identifies the version of the code that this `ICorDebugCode` represents.|  
 |[IsIL Method](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-isil-method.md)|Gets a value that indicates whether this `ICorDebugCode` is compiled in MSIL.|  
-  
+
 ## Remarks  
  `ICorDebugCode` can represent either MSIL or native code. An "ICorDebugFunction" object that represents MSIL code can have either zero or one `ICorDebugCode` objects associated with it. An "ICorDebugFunction" object that represents native code can have any number of `ICorDebugCode` objects associated with it.  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
-    
+
  [ICorDebugCode3 Interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

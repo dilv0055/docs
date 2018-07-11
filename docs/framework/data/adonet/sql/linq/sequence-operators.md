@@ -5,13 +5,14 @@ ms.assetid: 4d332d32-3806-4451-b7af-25af269194ae
 ---
 # Sequence Operators
 Generally speaking, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] does not support sequence operators that have one or more of the following qualities:  
-  
--   Take a lambda with an index parameter.  
-  
--   Rely on the properties of sequential rows, such as <xref:System.Linq.Queryable.TakeWhile%2A>.  
-  
--   Rely on an arbitrary CLR implementation, such as <xref:System.Collections.Generic.IComparer%601>.  
-  
+
+- Take a lambda with an index parameter.  
+
+- Rely on the properties of sequential rows, such as <xref:System.Linq.Queryable.TakeWhile%2A>.  
+
+- Rely on an arbitrary CLR implementation, such as <xref:System.Collections.Generic.IComparer%601>.  
+
+
 |Examples of Unsupported|  
 |-----------------------------|  
 |<xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29?displayProperty=nameWithType>|  
@@ -35,9 +36,9 @@ Generally speaking, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-
 |<xref:System.Linq.Enumerable.Aggregate%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2C%60%601%2CSystem.Func%7B%60%601%2C%60%600%2C%60%601%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.Aggregate%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2C%60%601%2CSystem.Func%7B%60%601%2C%60%600%2C%60%601%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%29?displayProperty=nameWithType>|  
 |<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType>|  
-  
+
 ## Differences from .NET  
  All supported sequence operators work as expected in the common language runtime (CLR) except for `Average`. `Average` returns a value of the same type as the type being averaged, whereas in the CLR `Average` always returns either a <xref:System.Double> or a <xref:System.Decimal>. If the source argument is explicitly cast to double / decimal or the selector casts to double / decimal, the resulting SQL will also have such a conversion and the result will be as expected.  
-  
+
 ## See Also  
  [Data Types and Functions](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

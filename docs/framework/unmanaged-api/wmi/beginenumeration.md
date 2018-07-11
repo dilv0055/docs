@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Resets an enumerator back to the beginning of the enumeration.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT BeginEnumeration (
    [in] int               vFunc, 
@@ -47,13 +47,14 @@ HRESULT BeginEnumeration (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | The combination of flags in `lEnumFlags` is invalid, or an invalid argument was specified. |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | A second call to `BeginEnumeration` was made without an intervening call to [`EndEnumeration`](endenumeration.md). |
 |`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Not enough memory is available to begin a new enumeration. |
 |`WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::BeginEnumeration](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) method.
@@ -62,6 +63,7 @@ The flags that can be passed as the `lEnumFlags` argument are defined in the *Wb
 
 **Group 1**
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | Include properties that constitute the key only. |
@@ -69,12 +71,14 @@ The flags that can be passed as the `lEnumFlags` argument are defined in the *Wb
 
 **Group 2**
 
+
 Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Limit the enumeration to system properties only. |
 |`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Include local and propagated properties but exclude system properties from the enumeration. |
 
 For classes:
+
 
 Constant  |Value  |Description  |
 |---------|---------|---------|
@@ -86,6 +90,7 @@ Constant  |Value  |Description  |
 
 For instances:
 
+
 Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Limit the enumeration to properties that are defined or modified in the class itself. |
@@ -94,10 +99,10 @@ Constant  |Value  |Description  |
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

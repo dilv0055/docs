@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorNativeLinkFlags Enumeration
 Provides flag values used by the linker when linking native code.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum  
 {  
@@ -31,24 +31,25 @@ typedef enum
     nlfMaxValue     = 0x03  
 } CorNativeLinkFlags;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`nlfNone`|Indicates no flags.|  
 |`nlfLastError`|Indicates a `setLastError` keyword.|  
 |`nlfNoMangle`|Indicates a `nomangle` keyword.|  
 |`nlfMaxValue`|Not used.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

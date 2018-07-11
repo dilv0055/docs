@@ -19,35 +19,36 @@ ms.author: "ronpet"
 ---
 # CorDebugGCType Enumeration
 Indicates whether the garbage collector is running on a workstation or a server.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugGCType {  
     CorDebugWorkstationGC  = 0,  
     CorDebugServerGC       = ( CorDebugWorkstationGC + 1 )  
 } CorDebugGCType;  
 ```  
-  
+
 #### Parameters  
-  
+
 ## Members  
-  
+
+
 |Member name|Description|  
 |-----------------|-----------------|  
 |`CorDebugWorkstationGC`|The garbage collector is running on a workstation.|  
 |`CorDebugServerGC`|The garbage collector is running on a server.|  
-  
+
 ## Remarks  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

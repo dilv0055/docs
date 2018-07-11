@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # COINITIEE Enumeration
 Specifies constants used by [CoInitializeEE](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) when initializing the common language runtime.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum tagCOINITEE {  
    COINITEE_DEFAULT = 0x0,  
@@ -29,23 +29,24 @@ typedef enum tagCOINITEE {
    COINITEE_MAIN    = 0x2  
 } COINITIEE;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`COINITEE_DEFAULT`|Default initialization mode. This initializes the runtime and creates the default <xref:System.AppDomain>.|  
 |`COINITEE_DLL`|Initializes to run a managed DLL.|  
 |`COINITEE_MAIN`|Initializes to run a managed EXE. This initializes the runtime but does not create the default <xref:System.AppDomain>, which is created after entering the main routine of the EXE.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

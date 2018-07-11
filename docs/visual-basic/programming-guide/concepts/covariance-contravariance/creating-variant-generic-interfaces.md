@@ -17,34 +17,34 @@ You can declare generic type parameters in interfaces as covariant or contravari
   
  You can declare a generic type parameter covariant by using the `out` keyword. The covariant type must satisfy the following conditions:  
   
--   The type is used only as a return type of interface methods and not used as a type of method arguments. This is illustrated in the following example, in which the type `R` is declared covariant.  
+- The type is used only as a return type of interface methods and not used as a type of method arguments. This is illustrated in the following example, in which the type `R` is declared covariant.  
   
-    ```vb  
-    Interface ICovariant(Of Out R)  
-        Function GetSomething() As R  
-        ' The following statement generates a compiler error.  
-        ' Sub SetSomething(ByVal sampleArg As R)  
-    End Interface  
-    ```  
+  ```vb  
+  Interface ICovariant(Of Out R)  
+      Function GetSomething() As R  
+      ' The following statement generates a compiler error.  
+      ' Sub SetSomething(ByVal sampleArg As R)  
+  End Interface  
+  ```  
   
-     There is one exception to this rule. If you have a contravariant generic delegate as a method parameter, you can use the type as a generic type parameter for the delegate. This is illustrated by the type `R` in the following example. For more information, see [Variance in Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
+   There is one exception to this rule. If you have a contravariant generic delegate as a method parameter, you can use the type as a generic type parameter for the delegate. This is illustrated by the type `R` in the following example. For more information, see [Variance in Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   
-    ```vb  
-    Interface ICovariant(Of Out R)  
-        Sub DoSomething(ByVal callback As Action(Of R))  
-    End Interface  
-    ```  
+  ```vb  
+  Interface ICovariant(Of Out R)  
+      Sub DoSomething(ByVal callback As Action(Of R))  
+  End Interface  
+  ```  
   
--   The type is not used as a generic constraint for the interface methods. This is illustrated in the following code.  
+- The type is not used as a generic constraint for the interface methods. This is illustrated in the following code.  
   
-    ```vb  
-    Interface ICovariant(Of Out R)  
-        ' The following statement generates a compiler error  
-        ' because you can use only contravariant or invariant types  
-        ' in generic contstraints.  
-        ' Sub DoSomething(Of T As R)()  
-    End Interface  
-    ```  
+  ```vb  
+  Interface ICovariant(Of Out R)  
+      ' The following statement generates a compiler error  
+      ' because you can use only contravariant or invariant types  
+      ' in generic contstraints.  
+      ' Sub DoSomething(Of T As R)()  
+  End Interface  
+  ```  
   
  You can declare a generic type parameter contravariant by using the `in` keyword. The contravariant type can be used only as a type of method arguments and not as a return type of interface methods. The contravariant type can also be used for generic constraints. The following code shows how to declare a contravariant interface and use a generic constraint for one of its methods.  
   

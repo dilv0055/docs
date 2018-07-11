@@ -1,5 +1,6 @@
 ### SoapFormatter cannot deserialize Hashtable and similar ordered collection objects
 
+
 |   |   |
 |---|---|
 |Details|The <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter?displayProperty=name> does not guarantee that objects serialized under one .NET Framework version will successfully deserialize under a different version. Specifically, some ordered collections (like <xref:System.Collections.Hashtable?displayProperty=name>) added members between 4.0 and 4.5 such that objects of these types cannot deserialize with .NET Framework 4.0 if they were serialized with .NET Framework 4.5. Note that if the serialized data is both serialized and deserialized with the same .NET Framework version, no issue will occur.|

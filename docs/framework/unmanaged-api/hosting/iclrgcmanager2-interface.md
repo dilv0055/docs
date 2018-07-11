@@ -19,27 +19,28 @@ ms.author: "ronpet"
 ---
 # ICLRGCManager2 Interface
 Provides methods that allow a host to interact with the common language runtime's garbage collection system.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[SetGCStartupLimitsEx Method](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md)|Sets the size of a garbage collection segment and the maximum size of the garbage collection system's generation 0. Enables generation 0 and segment sizes larger than `DWORD`.|  
-  
+
 ## Remarks  
  This interface inherits from the [ICLRGCManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager-interface.md).  
-  
+
  The common language runtime (CLR) implements its garbage collection mechanism with the managed <xref:System.GC> type. For more information about the garbage collection system, see [Garbage Collection](../../../../docs/standard/garbage-collection/index.md).  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
+
 ## See Also  
  [Automatic Memory Management](../../../../docs/standard/automatic-memory-management.md)  
  [COR_GC_STATS Structure](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stats-structure.md)  

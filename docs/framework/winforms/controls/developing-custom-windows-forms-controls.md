@@ -54,4 +54,4 @@ Windows Forms controls are reusable components that encapsulate user interface f
  [How to: License Components and Controls](http://msdn.microsoft.com/library/8e66c1ed-a445-4b26-8185-990b6e2bbd57)  
  Describes how to implement licensing in your control or component.  
   
- Also see [Developing Windows Forms Controls at Design Time](http://msdn.microsoft.com/library/w29y3h59\(v=vs.110\)).
+ Also see [Developing Windows Forms Controls at Design Time](http://msdn.microsoft.com/library/w29y3h59(v=vs.110)).

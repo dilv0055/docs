@@ -8,7 +8,7 @@ ms.date: 6/28/2018
 # Architectural principles
 
 > "If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization."  
-> _\- Gerald Weinberg_
+> *\- Gerald Weinberg*
 
 You should architect and design software solutions with maintainability in mind. The principles outlined in this section can help guide you toward architectural decisions that will result in clean, maintainable applications. Generally, these principles will guide you toward building applications out of discrete components that are not tightly coupled to other parts of your application, but rather communicate through explicit interfaces or messaging systems.
 
@@ -95,20 +95,20 @@ At a minimum, individual web applications should strive to be their own bounded 
 
 > ### References – Modern Web Applications
 > - **Separation of Concerns**  
-> <https://deviq.com/separation-of-concerns/>
+>   <https://deviq.com/separation-of-concerns/>
 > - **Encapsulation**  
-> <https://deviq.com/encapsulation/>
+>   <https://deviq.com/encapsulation/>
 > - **Dependency Inversion Principle**  
-> <https://deviq.com/dependency-inversion-principle/>
+>   <https://deviq.com/dependency-inversion-principle/>
 > - **Explicit Dependencies Principle**  
-> <https://deviq.com/explicit-dependencies-principle/>
+>   <https://deviq.com/explicit-dependencies-principle/>
 > - **Don't Repeat Yourself**  
-> <https://deviq.com/don-t-repeat-yourself/>
+>   <https://deviq.com/don-t-repeat-yourself/>
 > - **Persistence Ignorance**  
-> <https://deviq.com/persistence-ignorance/>
+>   <https://deviq.com/persistence-ignorance/>
 > - **Bounded Context**  
-> <https://martinfowler.com/bliki/BoundedContext.html>
+>   <https://martinfowler.com/bliki/BoundedContext.html>
 
->[!div class="step-by-step"]
-[Previous](choose-between-traditional-web-and-single-page-apps.md)
-[Next](common-web-application-architectures.md)
+> [!div  class="step-by-step"]
+> [Previous](choose-between-traditional-web-and-single-page-apps.md)
+> [Next](common-web-application-architectures.md)

@@ -1,5 +1,6 @@
 ### WorkflowDesigner.Load doesn't remove symbol property
 
+
 |   |   |
 |---|---|
 |Details|When targeting the .NET Framework 4.5 in the workflow designer, and loading a re-hosted 3.5 workflow with the <xref:System.Activities.Presentation.WorkflowDesigner.Load> method, a <xref:System.Xaml.XamlDuplicateMemberException?displayProperty=name> is thrown while saving the workflow.|

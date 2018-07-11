@@ -1,5 +1,6 @@
 ### IPad should not be used in custom capabilities file because it is now a browser capability
 
+
 |   |   |
 |---|---|
 |Details|Beginning in .NET Framework 4.5, iPad is an identifier in the default ASP.NET browser capabilities file, so it should not be used in a custom capabilities file|

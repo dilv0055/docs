@@ -10,7 +10,7 @@ When uploading files with the `UploadFile` method, you must supply a file name i
   
 ## To correct this error  
   
--   Supply a file name.  
+- Supply a file name.  
   
 ## See Also  
  [Network Operations in the .NET Framework with Visual Basic](http://msdn.microsoft.com/library/c5379021-44ef-4d6a-acf5-e951fdcab6b2)  

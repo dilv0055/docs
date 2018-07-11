@@ -7,24 +7,25 @@ ms.author: "ronpet"
 ---
 # ISymUnmanagedAsyncMethodPropertiesWriter::DefineKickoffMethod Method
 Sets the starting method that initiates the async operation.  
-  
+
 ## Syntax  
-  
+
 ```idl  
 HRESULT DefineKickoffMethod(    [in] mdToken kickoffMethod);  
 ```  
-  
+
 #### Parameters  
-  
+
+
 |Parameter|Description|  
 |---------------|-----------------|  
 |`kickoffMethod`||  
-  
+
 ## Return Value  
  Returns `HRESULT`.  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [ISymUnmanagedAsyncMethodPropertiesWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-interface.md)

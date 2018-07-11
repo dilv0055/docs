@@ -13,6 +13,7 @@ The following table shows reference topics that provide tables of keywords, symb
 
 
 
+
 |Title|Description|
 |-----|-----------|
 |[Keyword Reference](keyword-reference.md)|Contains links to information about all F# language keywords.|
@@ -21,6 +22,7 @@ The following table shows reference topics that provide tables of keywords, symb
 
 ## F# Language Concepts
 The following table shows reference topics available that describe language concepts.
+
 
 
 
@@ -54,6 +56,7 @@ The following table shows reference topics available that describe types support
 
 
 
+
 |Title|Description|
 |-----|-----------|
 |[values](values/index.md)|Describes values, which are immutable quantities that have a specific type; values can be integral or floating point numbers, characters or text, lists, sequences, arrays, tuples, discriminated unions, records, class types, or function values.|
@@ -84,6 +87,7 @@ The following table shows reference topics available that describe types support
 ## F# Expressions
 The following table lists topics that describe F# expressions.
 
+
 |Title|Description|
 |-----|-----------|
 |[Conditional Expressions: `if...then...else`](conditional-expressions-if-then-else.md)|Describes the `if...then...else` expression, which runs different branches of code and also evaluates to a different value depending on the Boolean expression given.|
@@ -100,6 +104,7 @@ The following table lists topics that describe F# expressions.
 
 ## Compiler-supported Constructs
 The following table lists topics that describe special compiler-supported constructs.
+
 
 |Topic|Description|
 |-----|-----------|

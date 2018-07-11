@@ -10,15 +10,15 @@ ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 author: "mairaw"
 ms.author: "mairaw"
 ---
-
 # Additional class libraries and APIs
 
 The .NET Framework is constantly evolving and in order to improve cross-platform development or to introduce new functionality early to our customers, we release new features out of band (OOB). This topic lists the OOB projects that we provide documentation for.  
-  
+
 In addition, some libraries target specific platforms or implementations of the .NET Framework. For example, the <xref:System.Text.CodePagesEncodingProvider> class makes code page encodings available to UWP apps developed using the .NET Framework. This topic lists these libraries as well.  
-  
+
 ## OOB projects
-  
+
+
 | Project | Description |  
 | ------- | ----------- |  
 | <xref:System.Collections.Immutable> | Provides collections that are thread safe and guaranteed to never change their contents. |
@@ -27,15 +27,17 @@ In addition, some libraries target specific platforms or implementations of the 
 | <xref:System.Threading.Tasks.Dataflow> | The TPL Dataflow Library provides dataflow components to help increase the robustness of concurrency-enabled applications. |  
 
 ## Platform-specific libraries
-  
+
+
 | Project | Description |  
 | ------- | ----------- |  
 | <xref:System.Text.CodePagesEncodingProvider> | Extends the <xref:System.Text.EncodingProvider> class to make code page encodings available to apps that target the Universal Windows Platform. |  
-  
+
 ## Private APIs  
 
 These APIs support the product infrastructure and are not intended/supported to be used directly from your code.  
-  
+
+
 | API Name |
 | -------- |
 | [System.Net.Connection Class](../../../docs/framework/additional-apis/connection.md) |
@@ -53,7 +55,7 @@ These APIs support the product infrastructure and are not intended/supported to 
 | [System.Windows.Diagnostics.VisualDiagnostics.s\_isDebuggerCheckDisabledForTestPurposes Field](../../../docs/framework/additional-apis/s-isdebuggercheckdisabledfortestpurposes-field.md) |
 | [System.Windows.Forms.Design.DataMemberFieldEditor Class](../../../docs/framework/additional-apis/datamemberfieldeditor-class.md) |
 | [System.Windows.Forms.Design.DataMemberListEditor Class](../../../docs/framework/additional-apis/datamemberlisteditor-class.md) |
-  
+
 ## See also
 
 [The .NET Framework and Out-of-Band Releases](../../../docs/framework/get-started/the-net-framework-and-out-of-band-releases.md)

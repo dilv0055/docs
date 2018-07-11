@@ -10,7 +10,6 @@ ms.assetid: 0d4ddb53-eb2b-49c0-9c33-a8dec5c39b46
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # \<add> element for NameValueSectionHandler and DictionarySectionHandler
 
 Adds custom application settings. Each **\<add>** tag contains a key/value pair.
@@ -27,12 +26,14 @@ Adds custom application settings. Each **\<add>** tag contains a key/value pair.
 
 ## Attributes
 
+
 | Attribute | Description |
 | --------- | ----------- |
 | **key**   | Required attribute.<br><br>Specifies the name of the setting. |
 | **value** | Required attribute.<br><br>Specifies the value of the setting. |
 
 ## Parent element
+
 
 | Element | Description |
 | ------- | ------------|

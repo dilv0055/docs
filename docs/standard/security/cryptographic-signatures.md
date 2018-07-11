@@ -28,9 +28,9 @@ ms.author: "mairaw"
   
  This topic explains how to generate and verify digital signatures using classes in the <xref:System.Security.Cryptography?displayProperty=nameWithType> namespace.  
   
--   [Generating Signatures](#generate)  
+- [Generating Signatures](#generate)  
   
--   [Verifying Signatures](#verify)  
+- [Verifying Signatures](#verify)  
   
 <a name="generate"></a>   
 ## Generating Signatures  
@@ -107,13 +107,13 @@ class Class1
 ## Verifying Signatures  
  To verify that data was signed by a particular party, you must have the following information:  
   
--   The public key of the party that signed the data.  
+- The public key of the party that signed the data.  
   
--   The digital signature.  
+- The digital signature.  
   
--   The data that was signed.  
+- The data that was signed.  
   
--   The hash algorithm used by the signer.  
+- The hash algorithm used by the signer.  
   
  To verify a signature signed by the <xref:System.Security.Cryptography.RSAPKCS1SignatureFormatter> class, use the <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> class. The <xref:System.Security.Cryptography.RSAPKCS1SignatureDeformatter> class must be supplied the public key of the signer. You will need the values of the modulus and the exponent to specify the public key. (The party that generated the public/private key pair should provide these values.) First create an <xref:System.Security.Cryptography.RSACryptoServiceProvider> object to hold the public key that will verify the signature, and then initialize an <xref:System.Security.Cryptography.RSAParameters> structure to the modulus and exponent values that specify the public key.  
   

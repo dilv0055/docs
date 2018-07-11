@@ -19,37 +19,38 @@ ms.author: "ronpet"
 ---
 # CREATE_ASM_NAME_OBJ_FLAGS Enumeration
 Specifies the attributes of an [IAssemblyName Interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) object when it is constructed by the [CreateAssemblyNameObject](../../../../docs/framework/unmanaged-api/fusion/createassemblynameobject-function.md) function.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
-  
+
     CANOF_PARSE_DISPLAY_NAME            = 0x1,  
     CANOF_SET_DEFAULT_VALUES            = 0x2,  
     CANOF_VERIFY_FRIEND_ASSEMBLYNAME    = 0x4,  
     CANOF_PARSE_FRIEND_DISPLAY_NAME     =   
         CANOF_PARSE_DISPLAY_NAME | CANOF_VERIFY_FRIEND_ASSEMBLYNAME  
-  
+
 } CREATE_ASM_NAME_OBJ_FLAGS;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`CANOF_PARSE_DISPLAY_NAME`|Indicates that the parameter passed is a textual identity.|  
 |`CANOF_SET_DEFAULT_VALUES`|Sets a few default values.|  
 |`CANOF_VERIFY_FRIEND_ASSEMBLYNAME`|Verifies the friend assembly rule (only name and public key). This member is for internal use only.|  
 |`CANOF_PARSE_FRIEND_DISPLAY_NAME`|A combination of the `CANOF_PARSE_DISPLAY_NAME` and `CANOF_VERIFY_FRIEND_ASSEMBLYNAME` flags. This member is for internal use only.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Fusion.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [IAssemblyName Interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)  
  [CreateAssemblyNameObject Function](../../../../docs/framework/unmanaged-api/fusion/createassemblynameobject-function.md)  

@@ -22,9 +22,9 @@ Occasionally, existing XML contains the style sheet directive of `<?xml:styleshe
   
  From Section 6 of the Namespaces in XML specification, the effect of having the **Load** and **LoadXml** methods conform to the specification is that in a document:  
   
--   All element types and attribute names contain either zero or one colon.  
+- All element types and attribute names contain either zero or one colon.  
   
--   No entity names, ProcessingInstruction targets, or notation names contain any colons.  
+- No entity names, ProcessingInstruction targets, or notation names contain any colons.  
   
  With the `<?xml:stylesheet?>` containing a colon, you now violate the rule in the second bullet.  
   

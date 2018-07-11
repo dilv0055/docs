@@ -5,11 +5,10 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 06/27/2018
 ---
-
 # Azure hosting recommendations for ASP.NET Core web apps
 
 > "Line-of-business leaders everywhere are bypassing IT departments to get applications from the cloud (aka SaaS) and paying for them like they would a magazine subscription. And when the service is no longer required, they can cancel the subscription with no equipment left unused in the corner."  
-> _\- Daryl Plummer, Gartner analyst_
+> *\- Daryl Plummer, Gartner analyst*
 
 Whatever your application's needs and architecture, Windows Azure can support it. Your hosting needs can be as simple as a static website to a sophisticated application made up of dozens of services. For ASP.NET Core monolithic web applications and supporting services, there are several well-known configurations that are recommended. The recommendations on this article are grouped based on the kind of resource to be hosted, whether full applications, individual processes, or data.
 
@@ -65,6 +64,7 @@ Service Fabric is a good choice if you're creating a new app or rewriting an exi
 If you have an existing application that would require substantial modifications to run in App Service or Service Fabric, you could choose Virtual Machines in order to simplify migrating to the cloud. However, correctly configuring, securing, and maintaining VMs requires much more time and IT expertise compared to Azure App Service and Service Fabric. If you're considering Azure Virtual Machines, make sure you take into account the ongoing maintenance effort required to patch, update, and manage your VM environment. Azure Virtual Machines is infrastructure as a service (IaaS), while App Service and Service Fabric are PaaS.
 
 #### Feature Comparison
+
 
 | Feature                                                                                    | App Service | Containers (AKS) | Service Fabric | Virtual Machine |
 | ------------------------------------------------------------------------------------------ | ----------- | ---------------- | -------------- | --------------- |
@@ -122,5 +122,5 @@ Figure 11-2 shows an example reference architecture. This diagram describes a re
 - Introduction to Azure Kubernetes Service (AKS)\
   <https://docs.microsoft.com/azure/aks/intro-kubernetes>
 
->[!div class="step-by-step"]
-[Previous](development-process-for-azure.md)
+> [!div  class="step-by-step"]
+> [Previous](development-process-for-azure.md)

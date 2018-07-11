@@ -16,54 +16,56 @@ manager: "markl"
 ---
 # &lt;add&gt; Element for bypasslist (Network Settings)
 Adds an IP address or DNS name to the proxy bypass list.  
-  
+
  \<configuration>  
 \<system.net>  
 \<defaultProxy>  
 \<bypasslist>  
 \<add>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <add   
   address="regular expression"   
 />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |**Attribute**|**Description**|  
 |-------------------|---------------------|  
 |**address**|A regular expression describing an IP address or DNS name.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |**Element**|**Description**|  
 |-----------------|---------------------|  
 |[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Provides a set of regular expressions that describe addresses that do not use a proxy.|  
-  
+
 ## Remarks  
  The `add` element inserts regular expressions describing IP addresses or DNS server names to the list of addresses that bypass a proxy server.  
-  
+
  The value of the `address` attribute should be a regular expression that describes a set of IP addresses or host names.  
-  
+
  You should use caution when specifying a regular expression for this element. The regular expression "[a-z]+\\.contoso\\.com" matches any host in the contoso.com domain, but it also matches any host in the contoso.com.cpandl.com domain. To match only a host in the contoso.com domain, use an anchor ("$"): "[a-z]+\\.contoso\\.com$".  
-  
+
  For more information about regular expressions, see .[.NET Framework Regular Expressions](../../../../../docs/standard/base-types/regular-expressions.md).  
-  
+
 ## Configuration Files  
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
-  
+
 ## Example  
  The following example adds two addresses to the bypass list. The first bypasses the proxy for all servers in the contoso.com domain; the second bypasses the proxy for all servers whose IP address begins with 192.168.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -76,7 +78,7 @@ Adds an IP address or DNS name to the proxy bypass list.
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.WebProxy?displayProperty=nameWithType>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CALL_ID Structure
 Provides information to a debugger about a function that is being called. See the [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) interface for more information.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct tagCALL_ID  
 {  
@@ -33,9 +33,10 @@ typedef struct tagCALL_ID
     LPCOLESTR       szDestinationMachine;  
 } CALL_ID;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`szMachine`|Identifies the machine that is making the call.|  
@@ -44,10 +45,10 @@ typedef struct tagCALL_ID
 |`addrStackPointer`|Specifies the address of the call stack.|  
 |`szEntryPoint`|Specifies the address of the call.|  
 |`szDestinationMachine`|Identifies the machine that will execute the call.|  
-  
+
 ## Requirements  
  **Header:** ProtocolNotify2.idl  
-  
+
 ## See Also  
  [INotifySink2 Interface](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
  [Diagnostics Symbol Store Structures](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

@@ -16,49 +16,51 @@ manager: "markl"
 ---
 # &lt;remove&gt; Element for connectionManagement (Network Settings)
 Removes an IP address or DNS name from the connection management list.  
-  
+
  \<configuration>  
 \<system.net>  
 \<connectionManagement>  
 \<remove>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <remove   
   address="server name or IP address"   
 />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |**Attribute**|**Description**|  
 |-------------------|---------------------|  
 |`address`|An IP address or DNS name.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |**Element**|**Description**|  
 |-----------------|---------------------|  
 |[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Specifies the maximum number of connections to a network host.|  
-  
+
 ## Remarks  
  The `remove` element removes the connection management list entry for the specified server.  
-  
+
  The value of the `address` attribute should be a valid IP address or host name.  
-  
+
 ## Configuration Files  
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
-  
+
 ## Example  
  The following example removes any connection management list entries for the server www.adventure-works.com and then configures an application to use four connections to the server www.contoso.com and two connections to all other servers.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -70,7 +72,7 @@ Removes an IP address or DNS name from the connection management list.
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.ServicePoint>  
  <xref:System.Net.ServicePointManager>  

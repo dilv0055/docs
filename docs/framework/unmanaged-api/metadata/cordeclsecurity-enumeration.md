@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorDeclSecurity Enumeration
 Specifies the security actions that can be performed using declarative security.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDeclSecurity {  
-  
+
     dclActionMask               =   0x001f,  
     dclActionNil                =   0x0000,  
     dclRequest                  =   0x0001,  
@@ -46,12 +46,13 @@ typedef enum CorDeclSecurity {
     dclInheritanceDemandChoice  =   0x0011,  
     dclDemandChoice             =   0x0012,  
     dclMaximumValue             =   0x0012  
-  
+
 } CorDeclSecurity;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`dclActionMask`|Reserved.|  
@@ -75,13 +76,13 @@ typedef enum CorDeclSecurity {
 |`dclInheritanceDemandChoice`|Reserved.|  
 |`dclDemandChoice`|Reserved.|  
 |`dclMaximumValue`|Reserved.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -30,26 +30,26 @@ Opacity masking example
 ## Creating an Opacity Mask  
  To create an opacity mask, you create a <xref:System.Windows.Media.Brush> and apply it to the <xref:System.Windows.UIElement.OpacityMask%2A> property of an element or visual. You can use any type of <xref:System.Windows.Media.Brush> as an opacity mask.  
   
--   <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush>: Used to make an element or visual fade from view.  
+- <xref:System.Windows.Media.LinearGradientBrush>, <xref:System.Windows.Media.RadialGradientBrush>: Used to make an element or visual fade from view.  
   
-     The following image shows a <xref:System.Windows.Media.LinearGradientBrush> used as an opacity mask.  
+   The following image shows a <xref:System.Windows.Media.LinearGradientBrush> used as an opacity mask.  
   
-     ![An object with an LinearGradientBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-lineagradientopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_lineagradientopacitymasksingle")  
-LinearGradientBrush Opacity Masking Example  
+   ![An object with an LinearGradientBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-lineagradientopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_lineagradientopacitymasksingle")  
+  LinearGradientBrush Opacity Masking Example  
   
--   <xref:System.Windows.Media.ImageBrush>: Used to create texture and soft or torn edge effects.  
+- <xref:System.Windows.Media.ImageBrush>: Used to create texture and soft or torn edge effects.  
   
-     The following image shows an <xref:System.Windows.Media.ImageBrush> used as an opacity mask.  
+   The following image shows an <xref:System.Windows.Media.ImageBrush> used as an opacity mask.  
   
-     ![Object that has an ImageBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-imageasopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_imageasopacitymasksingle")  
-LinearGradientBrush opacity masking example  
+   ![Object that has an ImageBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-graphicsmm-brushes-imageasopacitymasksingle.jpg "wcpsdk_graphicsmm_brushes_imageasopacitymasksingle")  
+  LinearGradientBrush opacity masking example  
   
--   <xref:System.Windows.Media.DrawingBrush>: Used to create complex opacity masks from patterns of shapes, images, and gradients.  
+- <xref:System.Windows.Media.DrawingBrush>: Used to create complex opacity masks from patterns of shapes, images, and gradients.  
   
-     The following image shows a <xref:System.Windows.Media.DrawingBrush> used as an opacity mask.  
+   The following image shows a <xref:System.Windows.Media.DrawingBrush> used as an opacity mask.  
   
-     ![Object with a DrawingBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask-single.jpg "wcpsdk_drawingbrushasopacitymask_single")  
-DrawingBrush opacity masking example  
+   ![Object with a DrawingBrush opacity mask](../../../../docs/framework/wpf/graphics-multimedia/media/wcpsdk-drawingbrushasopacitymask-single.jpg "wcpsdk_drawingbrushasopacitymask_single")  
+  DrawingBrush opacity masking example  
   
  The gradient brushes (<xref:System.Windows.Media.LinearGradientBrush> and <xref:System.Windows.Media.RadialGradientBrush>) are particularly well-suited for use as an opacity mask. Because a <xref:System.Windows.Media.SolidColorBrush> fills an area with a uniform color, they make poor opacity masks; using a <xref:System.Windows.Media.SolidColorBrush> is equivalent to setting the element's or visual's <xref:System.Windows.UIElement.OpacityMask%2A> property.  
   

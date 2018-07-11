@@ -8,13 +8,13 @@ ms.author: "ronpet"
 # Getting Started with .NET Native
 Whether you are writing a new Windows app for Windows 10 or you are migrating an existing Windows Store app, you can follow the same set of procedures. To create a [!INCLUDE[net_native](../../../includes/net-native-md.md)] app, follow these steps:  
   
-1.  [Develop a Universal Windows Platform (UWP) app that targets Windows 10](#Step1), and test the debug builds of your app to ensure that it works properly.  
+1. [Develop a Universal Windows Platform (UWP) app that targets Windows 10](#Step1), and test the debug builds of your app to ensure that it works properly.  
   
-2.  [Handle additional reflection and serialization usage](#Step2).  
+2. [Handle additional reflection and serialization usage](#Step2).  
   
-3.  [Deploy and test the release builds of your app](#Step3).  
+3. [Deploy and test the release builds of your app](#Step3).  
   
-4.  [Manually resolve missing metadata](#Step4), and repeat [step 3](#Step3) until all issues are resolved.  
+4. [Manually resolve missing metadata](#Step4), and repeat [step 3](#Step3) until all issues are resolved.  
   
 > [!NOTE]
 >  If you are migrating an existing Windows Store app to [!INCLUDE[net_native](../../../includes/net-native-md.md)], be sure to review [Migrating Your Windows Store App to .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).  
@@ -23,9 +23,9 @@ Whether you are writing a new Windows app for Windows 10 or you are migrating an
 ## Step 1: Develop and test debug builds of your UWP app  
  Whether you are developing a new app or migrating an existing one, you follow the same process as for any Windows app.  
   
-1.  Create a new UWP project in Visual Studio by using the Universal Windows app template for Visual C# or Visual Basic. By default, all UWP applications target the CoreCLR and their release builds are compiled by using the .NET Native tool chain.  
+1. Create a new UWP project in Visual Studio by using the Universal Windows app template for Visual C# or Visual Basic. By default, all UWP applications target the CoreCLR and their release builds are compiled by using the .NET Native tool chain.  
   
-2.  Note that there are some known compatibility issues between compiling UWP app projects with the .NET Native tool chain and without it. Refer to the [migration guide](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md) for more information.  
+2. Note that there are some known compatibility issues between compiling UWP app projects with the .NET Native tool chain and without it. Refer to the [migration guide](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md) for more information.  
   
  You can now write C# or Visual Basic code against the [!INCLUDE[net_native](../../../includes/net-native-md.md)] surface area that runs on the local system (or in the simulator).  
   
@@ -46,18 +46,18 @@ Whether you are writing a new Windows app for Windows 10 or you are migrating an
  **Serialization**  
  There are two categories of serializers, and both may require additional entries in the runtime directives file:  
   
--   Non-reflection based serializers. The serializers found in the .NET Framework class library, such as the <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>, and <xref:System.Xml.Serialization.XmlSerializer> classes, do not rely on reflection. However, they do require that code be generated based on the object to be serialized or deserialized.  For more information, see the "Microsoft Serializers" section in [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md).  
+- Non-reflection based serializers. The serializers found in the .NET Framework class library, such as the <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>, and <xref:System.Xml.Serialization.XmlSerializer> classes, do not rely on reflection. However, they do require that code be generated based on the object to be serialized or deserialized.  For more information, see the "Microsoft Serializers" section in [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md).  
   
--   Third-party serializers. Third-party serialization libraries, the most common of which is the Newtonsoft JSON serializer, are generally reflection-based and require entries in the *.rd.xml file to support object serialization and deserialization. For more information, see the "Third-Party Serializers" section in [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md).  
+- Third-party serializers. Third-party serialization libraries, the most common of which is the Newtonsoft JSON serializer, are generally reflection-based and require entries in the *.rd.xml file to support object serialization and deserialization. For more information, see the "Third-Party Serializers" section in [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md).  
   
  **Methods that rely on reflection**  
  In some cases, the use of reflection in code is not obvious. Some common APIs or programming patterns aren't considered part of the reflection API but rely on reflection to execute successfully. This includes the following type instantiation and method construction methods:  
   
--   The <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> method  
+- The <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> method  
   
--   The <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> and <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> methods  
+- The <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> and <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> methods  
   
--   The <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> method.  
+- The <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> method.  
   
  For more information, see [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md).  
   
@@ -81,30 +81,30 @@ Whether you are writing a new Windows app for Windows 10 or you are migrating an
   
  When addressing a missing metadata exception, consider these issues:  
   
--   What was the app trying to do before the exception?  
+- What was the app trying to do before the exception?  
   
-    -   For example, was it data binding, serializing or deserializing data, or directly using the reflection API?  
+  - For example, was it data binding, serializing or deserializing data, or directly using the reflection API?  
   
--   Is this an isolated case, or do you believe you'll encounter the same issue for other types?  
+- Is this an isolated case, or do you believe you'll encounter the same issue for other types?  
   
-    -   For example, a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) exception is thrown when serializing a type in the app’s object model.  If you know other types that will be serialized, you can add runtime directives for those types (or for their containing namespaces, depending on how well the code is organized) at the same time.  
+  - For example, a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) exception is thrown when serializing a type in the app’s object model.  If you know other types that will be serialized, you can add runtime directives for those types (or for their containing namespaces, depending on how well the code is organized) at the same time.  
   
--   Can you rewrite the code so it doesn’t use reflection?  
+- Can you rewrite the code so it doesn’t use reflection?  
   
-    -   For example, does the code use the `dynamic` keyword when you know what type to expect?  
+  - For example, does the code use the `dynamic` keyword when you know what type to expect?  
   
-    -   Does the code call a method that depends on reflection when some better alternative is available?  
+  - Does the code call a method that depends on reflection when some better alternative is available?  
   
 > [!NOTE]
 >  For additional information about handling problems that stem from differences in reflection and the availability of metadata in desktop apps and [!INCLUDE[net_native](../../../includes/net-native-md.md)], see [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md).  
   
  For some specific examples of handling exceptions and other issues that occur when testing your app, see:  
   
--   [Example: Handling Exceptions When Binding Data](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)  
+- [Example: Handling Exceptions When Binding Data](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)  
   
--   [Example: Troubleshooting Dynamic Programming](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)  
+- [Example: Troubleshooting Dynamic Programming](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)  
   
--   [Runtime Exceptions in .NET Native Apps](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
+- [Runtime Exceptions in .NET Native Apps](../../../docs/framework/net-native/runtime-exceptions-in-net-native-apps.md)  
   
 ## See Also  
  [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  

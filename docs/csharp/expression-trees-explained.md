@@ -4,7 +4,6 @@ description: Learn about expression trees and how they're useful in translating 
 ms.date: 06/20/2016
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
 ---
-
 # Expression Trees Explained
 
 [Previous -- Overview](expression-trees.md)
@@ -18,7 +17,7 @@ potential fixes for a developer.)
 The concepts are similar, and the end result
 is a data structure that allows examination of the source code in a meaningful way. However, Expression
 Trees are based on a totally different set of classes and APIs than the Roslyn APIs.
-    
+
 Let's look at a simple example.
 Here's a line of code:
 ```csharp
@@ -40,14 +39,15 @@ Visually, the entire statement is a tree: You could start at the root node, and 
 each node in the tree to see the code that makes up the statement:
 
 - Variable declaration statement with assignment (`var sum = 1 + 2;`)
-    * Implicit variable type declaration (`var sum`)
-        - Implicit var keyword (`var`)
-        - Variable name declaration (`sum`)
-    * Assignment operator (`=`)
-    * Binary addition expression (`1 + 2`)
-        - Left operand (`1`)
-        - Addition operator (`+`)
-        - Right operand (`2`)
+  * Implicit variable type declaration (`var sum`)
+    - Implicit var keyword (`var`)
+    - Variable name declaration (`sum`)
+
+  * Assignment operator (`=`)
+  * Binary addition expression (`1 + 2`)
+    - Left operand (`1`)
+    - Addition operator (`+`)
+    - Right operand (`2`)
 
 This may look complicated, but it is very powerful. Following the same process, you can decompose
 much more complicated expressions. Consider this expression:

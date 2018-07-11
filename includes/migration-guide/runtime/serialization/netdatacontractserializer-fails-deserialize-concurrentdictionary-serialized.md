@@ -1,5 +1,6 @@
 ### NetDataContractSerializer fails to deserialize a ConcurrentDictionary serialized with a different .NET version
 
+
 |   |   |
 |---|---|
 |Details|By design, the <xref:System.Runtime.Serialization.NetDataContractSerializer?displayProperty=name> can be used only if both the serializing and deserializing ends share the same CLR types. Therefore, it is not guaranteed that an object serialized with one version of the .NET Framework can be deserialized by a different version.<xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=name> is a type that is known to not to deserialize correctly if serialized with the .NET Framework 4.5 or earlier and deserialized with the .NET Framework 4.5.1 or later.|

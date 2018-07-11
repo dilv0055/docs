@@ -16,21 +16,21 @@ The `TextFieldParser` object provides a way to easily and efficiently parse stru
   
 ### To parse a fixed-width text file  
   
-1.  Create a new `TextFieldParser`. The following code creates the `TextFieldParser` named `Reader` and opens the file `test.log`.  
+1. Create a new `TextFieldParser`. The following code creates the `TextFieldParser` named `Reader` and opens the file `test.log`.  
   
-     [!code-vb[VbFileIORead#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_1.vb)]  
+    [!code-vb[VbFileIORead#9](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_1.vb)]  
   
-2.  Define the `TextFieldType` property as `FixedWidth`, defining the width and format. The following code defines the columns of text; the first is 5 characters wide, the second 10, the third 11, and the fourth is of variable width.  
+2. Define the `TextFieldType` property as `FixedWidth`, defining the width and format. The following code defines the columns of text; the first is 5 characters wide, the second 10, the third 11, and the fourth is of variable width.  
   
-     [!code-vb[VbFileIORead#10](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_2.vb)]  
+    [!code-vb[VbFileIORead#10](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_2.vb)]  
   
-3.  Loop through the fields in the file. If any lines are corrupted, report an error and continue parsing.  
+3. Loop through the fields in the file. If any lines are corrupted, report an error and continue parsing.  
   
-     [!code-vb[VbFileIORead#11](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_3.vb)]  
+    [!code-vb[VbFileIORead#11](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_3.vb)]  
   
-4.  Close the `While` and `Using` blocks with `End While` and `End Using`.  
+4. Close the `While` and `Using` blocks with `End While` and `End Using`.  
   
-     [!code-vb[VbFileIORead#12](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_4.vb)]  
+    [!code-vb[VbFileIORead#12](../../../../visual-basic/developing-apps/programming/drives-directories-files/codesnippet/VisualBasic/how-to-read-from-fixed-width-text-files_4.vb)]  
   
 ## Example  
  This example reads from the file `test.log`.  
@@ -40,15 +40,15 @@ The `TextFieldParser` object provides a way to easily and efficiently parse stru
 ## Robust programming  
  The following conditions may cause an exception:  
   
--   A row cannot be parsed using the specified format (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). The exception message specifies the line causing the exception, while the <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> property is assigned to the text contained in the line.  
+- A row cannot be parsed using the specified format (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). The exception message specifies the line causing the exception, while the <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> property is assigned to the text contained in the line.  
   
--   The specified file does not exist (<xref:System.IO.FileNotFoundException>).  
+- The specified file does not exist (<xref:System.IO.FileNotFoundException>).  
   
--   A partial-trust situation in which the user does not have sufficient permissions to access the file. (<xref:System.Security.SecurityException>).  
+- A partial-trust situation in which the user does not have sufficient permissions to access the file. (<xref:System.Security.SecurityException>).  
   
--   The path is too long (<xref:System.IO.PathTooLongException>).  
+- The path is too long (<xref:System.IO.PathTooLongException>).  
   
--   The user does not have sufficient permissions to access the file (<xref:System.UnauthorizedAccessException>).  
+- The user does not have sufficient permissions to access the file (<xref:System.UnauthorizedAccessException>).  
   
 ## See also  
  <xref:Microsoft.VisualBasic.FileIO.TextFieldParser?displayProperty=nameWithType>  

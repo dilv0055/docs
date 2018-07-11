@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # AssemblyBindInfo Structure
 Provides detailed information about the referenced assembly.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct _AssemblyBindInfo {  
     DWORD       dwAppDomainId;  
@@ -30,28 +30,29 @@ typedef struct _AssemblyBindInfo {
     DWORD       ePolicyLevel;  
 } AssemblyBindInfo;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`dwAppDomainId`|A unique identifier for the `IStream` returned by a call to [IHostAssemblyStore::ProvideAssembly](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md), from which the referenced assembly is to be loaded.|  
 |`lpReferencedIdentity`|A unique identifier for the referenced assembly.|  
 |`lpPostPolicyIdentity`|The identifier for the referenced assembly after the application of any binding policy values.|  
 |`ePolicyLevel`|One of the [EPolicyAction](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md) values that indicate which versioning policies, if any, should be applied to the referenced assembly.|  
-  
+
 ## Remarks  
  The host supplies the unique identifier `dwAppDomainId` to the common language runtime (CLR). After a call to `IHostAssemblyStore::ProvideAssembly` returns, the runtime uses the identifier to determine whether the contents of the `IStream` have been mapped. If so, the runtime loads the existing copy rather than remapping the stream. The runtime also uses this identifier as a lookup key for streams returned from calls to [IHostAssemblyStore::ProvideModule](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-providemodule-method.md). Therefore, the identifier must be unique for module requests and for assembly requests.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.idl  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Structures](../../../../docs/framework/unmanaged-api/hosting/hosting-structures.md)  
  [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  

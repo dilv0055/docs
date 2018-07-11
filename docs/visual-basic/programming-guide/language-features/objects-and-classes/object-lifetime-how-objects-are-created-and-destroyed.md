@@ -78,43 +78,43 @@ An instance of a class, an object, is created by using the `New` keyword. Initia
 ### Implementing IDisposable  
  A class that implements the <xref:System.IDisposable> interface should include these sections of code:  
   
--   A field for keeping track of whether the object has been disposed:  
+- A field for keeping track of whether the object has been disposed:  
   
-    ```  
-    Protected disposed As Boolean = False  
-    ```  
+  ```  
+  Protected disposed As Boolean = False  
+  ```  
   
--   An overload of the <xref:System.IDisposable.Dispose%2A> that frees the class's resources. This method should be called by the <xref:System.IDisposable.Dispose%2A> and `Finalize` methods of the base class:  
+- An overload of the <xref:System.IDisposable.Dispose%2A> that frees the class's resources. This method should be called by the <xref:System.IDisposable.Dispose%2A> and `Finalize` methods of the base class:  
   
-    ```  
-    Protected Overridable Sub Dispose(ByVal disposing As Boolean)  
-        If Not Me.disposed Then  
-            If disposing Then  
-                ' Insert code to free managed resources.  
-            End If  
-            ' Insert code to free unmanaged resources.  
-        End If  
-        Me.disposed = True  
-    End Sub  
-    ```  
+  ```  
+  Protected Overridable Sub Dispose(ByVal disposing As Boolean)  
+      If Not Me.disposed Then  
+          If disposing Then  
+              ' Insert code to free managed resources.  
+          End If  
+          ' Insert code to free unmanaged resources.  
+      End If  
+      Me.disposed = True  
+  End Sub  
+  ```  
   
--   An implementation of <xref:System.IDisposable.Dispose%2A> that contains only the following code:  
+- An implementation of <xref:System.IDisposable.Dispose%2A> that contains only the following code:  
   
-    ```  
-    Public Sub Dispose() Implements IDisposable.Dispose  
-        Dispose(True)  
-        GC.SuppressFinalize(Me)  
-    End Sub  
-    ```  
+  ```  
+  Public Sub Dispose() Implements IDisposable.Dispose  
+      Dispose(True)  
+      GC.SuppressFinalize(Me)  
+  End Sub  
+  ```  
   
--   An override of the `Finalize` method that contains only the following code:  
+- An override of the `Finalize` method that contains only the following code:  
   
-    ```  
-    Protected Overrides Sub Finalize()  
-        Dispose(False)  
-        MyBase.Finalize()  
-    End Sub  
-    ```  
+  ```  
+  Protected Overrides Sub Finalize()  
+      Dispose(False)  
+      MyBase.Finalize()  
+  End Sub  
+  ```  
   
 ### Deriving from a Class that Implements IDisposable  
  A class that derives from a base class that implements the <xref:System.IDisposable> interface does not need to override any of the base methods unless it uses additional resources that need to be disposed. In that situation, the derived class should override the base class's `Dispose(disposing)` method to dispose of the derived class's resources. This override must call the base class's `Dispose(disposing)` method.  

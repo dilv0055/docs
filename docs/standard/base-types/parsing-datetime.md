@@ -22,8 +22,8 @@ ms.author: "ronpet"
 Parsing strings to convert them to <xref:System.DateTime> objects requires you to specify information about how the dates and times are represented as text. Different cultures use different orders for day, month, and year. Some time representations use a 24-hour clock, others specify "AM" and "PM." Some applications need only the date. Others need only the time. Still others need to specify both the date and the time. The methods that convert strings to <xref:System.DateTime> objects enable you to provide detailed information about the formats you expect and the elements of a date and time your application needs. There are three subtasks to correctly converting text into a <xref:System.DateTime>:
 
 1. You must specify the expected format of the text representing a date and time.
-1. You may specify the culture for the format of a date time.
-1. You may specify how missing components in the text representation are set in the date and time.
+2. You may specify the culture for the format of a date time.
+3. You may specify how missing components in the text representation are set in the date and time.
 
 The <xref:System.DateTime.Parse%2A> and <xref:System.DateTime.TryParse%2A> methods convert many common representations of a date and time. The <xref:System.DateTime.ParseExact%2A> and <xref:System.DateTime.TryParseExact%2A> methods convert a string representation that conforms to the pattern specified by a date and time format string. (See the articles on [standard date and time format strings](standard-date-and-time-format-strings.md) and [custom date and time format strings](custom-date-and-time-format-strings.md) for details.)
 

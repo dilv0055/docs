@@ -27,15 +27,15 @@ Tile view icons and text
   
 ### To set tile view programmatically  
   
-1.  Use the <xref:System.Windows.Forms.View> enumeration of the <xref:System.Windows.Forms.ListView> control.  
+1. Use the <xref:System.Windows.Forms.View> enumeration of the <xref:System.Windows.Forms.ListView> control.  
   
-    ```vb  
-    ListView1.View = View.Tile  
-    ```  
+   ```vb  
+   ListView1.View = View.Tile  
+   ```  
   
-    ```csharp  
-    listView1.View = View.Tile;  
-    ```  
+   ```csharp  
+   listView1.View = View.Tile;  
+   ```  
   
 ## Example  
  The following complete code example demonstrates Tile view with tiles modified to show three lines of text. The tile size has been adjusted to prevent line-wrapping.  
@@ -47,11 +47,11 @@ Tile view icons and text
 ## Compiling the Code  
  This example requires:  
   
--   References to the System and System.Windows.Forms assemblies.  
+- References to the System and System.Windows.Forms assemblies.  
   
--   An icon file named book.ico in the same directory as the executable file.  
+- An icon file named book.ico in the same directory as the executable file.  
   
- For information about building this example from the command line for Visual Basic or Visual C#, see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). You can also build this example in Visual Studio by pasting the code into a new project.  Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ For information about building this example from the command line for Visual Basic or Visual C#, see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). You can also build this example in Visual Studio by pasting the code into a new project.  Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](http://msdn.microsoft.com/library/Bb129228(v=vs.110)).  
   
 ## See Also  
  <xref:System.Windows.Forms.ListView>  

@@ -64,6 +64,7 @@ Tool 'dotnetsay' (version '2.0.0') was successfully installed.
 
 Global Tools can be installed in the default directory or in a specific location. The default directories are:
 
+
 | OS          | Path                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |

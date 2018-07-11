@@ -6,7 +6,6 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
 ---
-
 # Install the .NET Framework on Windows 7 SP1 and Windows Server 2008 R2
 
 The .NET Framework is required to run many applications on Windows. You can use the following instructions to install it. You may have arrived on this page after trying to run an application and seeing the following dialog on your machine.
@@ -17,8 +16,8 @@ These instructions will help you install the .NET Framework versions you need. T
 
 ## .NET Framework 4.7.2
 
-> [!div class="button"]
-[Download .NET Framework 4.7.2](https://www.microsoft.com/net/download/thank-you/net472?utm_source=ms-docs&utm_medium=referral)
+> [!div  class="button"]
+> [Download .NET Framework 4.7.2](https://www.microsoft.com/net/download/thank-you/net472?utm_source=ms-docs&utm_medium=referral)
 
 The [.NET Framework 4.7.2](http://go.microsoft.com/fwlink/?LinkID=863255) can be used to run applications built for .NET Framework 4.0 or later.
 

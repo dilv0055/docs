@@ -23,25 +23,25 @@ ms.author: "ronpet"
   
  There are two distinct ways evidence is used:  
   
--   The input evidence is merged with the evidence gathered by the loader to create a final set of evidence used for policy resolution. The methods that use this semantic include **Assembly.Load**, **Assembly.LoadFrom**, and **Activator.CreateInstance**.  
+- The input evidence is merged with the evidence gathered by the loader to create a final set of evidence used for policy resolution. The methods that use this semantic include **Assembly.Load**, **Assembly.LoadFrom**, and **Activator.CreateInstance**.  
   
--   The input evidence is used unaltered as the final set of evidence used for policy resolution. The methods that use this semantic include **Assembly.Load(byte[])** and **AppDomain.DefineDynamicAssembly()**.  
+- The input evidence is used unaltered as the final set of evidence used for policy resolution. The methods that use this semantic include **Assembly.Load(byte[])** and **AppDomain.DefineDynamicAssembly()**.  
   
  Optional permissions can be granted by the [security policy](../../../docs/framework/misc/code-access-security-basics.md) set on the computer where the assembly will run. If you want your code to handle all potential security exceptions, you can do one of the following:  
   
--   Insert a permission request for all the permissions your code must have, and handle up front the load-time failure that occurs if the permissions are not granted.  
+- Insert a permission request for all the permissions your code must have, and handle up front the load-time failure that occurs if the permissions are not granted.  
   
--   Do not use a permission request to obtain permissions your code might need, but be prepared to handle security exceptions if permissions are not granted.  
+- Do not use a permission request to obtain permissions your code might need, but be prepared to handle security exceptions if permissions are not granted.  
   
-    > [!NOTE]
-    >  Security is a complex area, and you have many options to choose from. For more information, see [Key Security Concepts](../../../docs/standard/security/key-security-concepts.md).  
+  > [!NOTE]
+  >  Security is a complex area, and you have many options to choose from. For more information, see [Key Security Concepts](../../../docs/standard/security/key-security-concepts.md).  
   
  At load time, the assembly's evidence is used as input to security policy. Security policy is established by the enterprise and the computer's administrator as well as by user policy settings, and determines the set of permissions that is granted to all managed code when executed. Security policy can be established for the publisher of the assembly (if it has a signing tool generated signature), for the Web site and zone (in Internet Explorer terms) the assembly was downloaded from, or for the assembly's strong name. For example, a computer's administrator can establish security policy that allows all code downloaded from a Web site and signed by a given software company to access a database on a computer, but does not grant access to write to the computer's disk.  
   
 ## Strong-Named Assemblies and Signing Tools  
 
- > [!WARNING]
- > Do not rely on strong names for security. They provide a unique identity only.
+> [!WARNING]
+> Do not rely on strong names for security. They provide a unique identity only.
 
  You can sign an assembly in two different but complementary ways: with a strong name or by using  [SignTool.exe (Sign Tool)](../../../docs/framework/tools/signtool-exe.md). Signing an assembly with a strong name adds public key encryption to the file containing the assembly manifest. Strong name signing helps to verify name uniqueness, prevent name spoofing, and provide callers with some identity when a reference is resolved.  
   

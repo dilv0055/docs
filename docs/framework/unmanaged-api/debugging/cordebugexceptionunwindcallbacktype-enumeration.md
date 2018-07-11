@@ -19,31 +19,32 @@ ms.author: "ronpet"
 ---
 # CorDebugExceptionUnwindCallbackType Enumeration
 Indicates the event that is being signaled by the callback during the unwind phase.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugExceptionUnwindCallbackType {  
     DEBUG_EXCEPTION_UNWIND_BEGIN = 1,  
     DEBUG_EXCEPTION_INTERCEPTED  = 2  
 } CorDebugExceptionUnwindCallbackType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`DEBUG_EXCEPTION_UNWIND_BEGIN`|The beginning of the unwind process.|  
 |`DEBUG_EXCEPTION_INTERCEPTED`|The exception was intercepted.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

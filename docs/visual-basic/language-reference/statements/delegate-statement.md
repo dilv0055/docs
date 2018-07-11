@@ -10,16 +10,17 @@ ms.assetid: f799c518-0817-40cc-ad0b-4da846fdba57
 ---
 # Delegate Statement
 Used to declare a delegate. A delegate is a reference type that refers to a `Shared` method of a type or to an instance method of an object. Any procedure with matching parameter and return types can be used to create an instance of this delegate class. The procedure can then later be invoked by means of the delegate instance.  
-  
+
 ## Syntax  
-  
+
 ```  
 [ <attrlist> ] [ accessmodifier ] _  
 [ Shadows ] Delegate [ Sub | Function ] name [( Of typeparamlist )] [([ parameterlist ])] [ As type ]  
 ```  
-  
+
 ## Parts  
-  
+
+
 |Term|Definition|  
 |---|---|  
 |`attrlist`|Optional. List of attributes that apply to this delegate. Multiple attributes are separated by commas. You must enclose the [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md) in angle brackets ("`<`" and "`>`").|  
@@ -31,33 +32,33 @@ Used to declare a delegate. A delegate is a reference type that refers to a `Sha
 |`typeparamlist`|Optional. List of type parameters for this delegate. Multiple type parameters are separated by commas. Optionally, each type parameter can be declared variant by using `In` and `Out` generic modifiers. You must enclose the [Type List](../../../visual-basic/language-reference/statements/type-list.md) in parentheses and introduce it with the `Of` keyword.|  
 |`parameterlist`|Optional. List of parameters that are passed to the procedure when it is called. You must enclose the [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md) in parentheses.|  
 |`type`|Required if you specify a `Function` procedure. Data type of the return value.|  
-  
+
 ## Remarks  
  The `Delegate` statement defines the parameter and return types of a delegate class. Any procedure with matching parameters and return types can be used to create an instance of this delegate class. The procedure can then later be invoked by means of the delegate instance, by calling the delegate's `Invoke` method.  
-  
+
  Delegates can be declared at the namespace, module, class, or structure level, but not within a procedure.  
-  
+
  Each delegate class defines a constructor that is passed the specification of an object method. An argument to a delegate constructor must be a reference to a method, or a lambda expression.  
-  
+
  To specify a reference to a method, use the following syntax:  
-  
+
  `AddressOf` [`expression`.]`methodname`  
-  
+
  The compile-time type of the `expression` must be the name of a class or an interface that contains a method of the specified name whose signature matches the signature of the delegate class. The `methodname` can be either a shared method or an instance method. The `methodname` is not optional, even if you create a delegate for the default method of the class.  
-  
+
  To specify a lambda expression, use the following syntax:  
-  
+
  `Function` ([`parm` As `type`, `parm2` As `type2`, ...]) `expression`  
-  
+
  The signature of the function must match that of the delegate type. For more information about lambda expressions, see [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
-  
+
  For more information about delegates, see [Delegates](../../../visual-basic/programming-guide/language-features/delegates/index.md).  
-  
+
 ## Example  
  The following example uses the `Delegate` statement to declare a delegate for operating on two numbers and returning a number. The `DelegateTest` method takes an instance of a delegate of this type and uses it to operate on pairs of numbers.  
-  
+
  [!code-vb[VbVbalrDelegates#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/delegate-statement_1.vb)]  
-  
+
 ## See Also  
  [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md)  
  [Of](../../../visual-basic/language-reference/statements/of-clause.md)  

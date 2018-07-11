@@ -40,7 +40,7 @@ For more information, see [Creating and Using Strong-Named Assemblies](../../../
 ### To set this compiler option in the Visual Studio development environment
 
 1. Open the **Properties** page for the project.
-1. Modify the **Delay sign only** property.
+2. Modify the **Delay sign only** property.
 
 For information on how to set this compiler option programmatically, see <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>.
 

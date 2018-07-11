@@ -9,12 +9,11 @@ ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: "rpetrusha"
 ms.author: "ronpet"
 ---
-
 # Get started with the .NET Framework
 
 The .NET Framework is a runtime execution environment that manages apps that target the .NET Framework. It consists of the common language runtime, which provides memory management and other system services, and an extensive class library, which enables programmers to take advantage of robust, reliable code for all major areas of app development.
 
-> [!NOTE] 
+> [!NOTE]
 > The .NET Framework is available on Windows systems only. You can use [.NET Core](../../core/index.md) to run apps on Windows, MacOS, and Linux. 
 
 <a name="Introducing"></a>
@@ -71,6 +70,7 @@ To develop .NET Framework apps or components, do the following:
 For more information on developing apps that target the .NET Framework, see the [Development Guide](../../../docs/framework/development-guide.md).
 
 ## Related topics
+
 
 | Title | Description |
 | ----- |------------ |

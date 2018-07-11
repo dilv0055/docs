@@ -10,6 +10,7 @@ helpviewer_keywords:
 
 A default value expression `default(T)` produces the default value of a type `T`. The following table shows which values are produced for various types:
 
+
 |Type|Default value|
 |---------|---------|
 |Any reference type|`null`|

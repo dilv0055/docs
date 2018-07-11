@@ -30,17 +30,17 @@ yield break;
 ## Iterator Methods and get Accessors  
  The declaration of an iterator must meet the following requirements:  
   
--   The return type must be <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, or <xref:System.Collections.Generic.IEnumerator%601>.  
+- The return type must be <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, or <xref:System.Collections.Generic.IEnumerator%601>.  
   
--   The declaration can't have any [in](../../../csharp/language-reference/keywords/in-parameter-modifier.md) [ref](../../../csharp/language-reference/keywords/ref.md) or [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parameters.  
+- The declaration can't have any [in](../../../csharp/language-reference/keywords/in-parameter-modifier.md) [ref](../../../csharp/language-reference/keywords/ref.md) or [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parameters.  
   
  The `yield` type of an iterator that returns <xref:System.Collections.IEnumerable> or <xref:System.Collections.IEnumerator> is `object`.  If the iterator returns <xref:System.Collections.Generic.IEnumerable%601> or <xref:System.Collections.Generic.IEnumerator%601>, there must be an implicit conversion from the type of the expression in the `yield return` statement to the generic type parameter .  
   
  You can't include a `yield return` or `yield break` statement in methods that have the following characteristics:  
   
--   Anonymous methods. For more information, see [Anonymous Methods](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md).  
+- Anonymous methods. For more information, see [Anonymous Methods](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md).  
   
--   Methods that contain unsafe blocks. For more information, see [unsafe](../../../csharp/language-reference/keywords/unsafe.md).  
+- Methods that contain unsafe blocks. For more information, see [unsafe](../../../csharp/language-reference/keywords/unsafe.md).  
   
 ## Exception Handling  
  A `yield return` statement can't be located in a try-catch block. A `yield return` statement can be located in the try block of a try-finally statement.  

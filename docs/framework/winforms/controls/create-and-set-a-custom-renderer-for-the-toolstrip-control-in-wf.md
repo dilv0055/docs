@@ -21,59 +21,59 @@ ms.assetid: 88a804ba-679f-4ba3-938a-0dc396199c5b
   
 ### To create a custom renderer  
   
-1.  Extend the <xref:System.Windows.Forms.ToolStripRenderer> class.  
+1. Extend the <xref:System.Windows.Forms.ToolStripRenderer> class.  
   
-2.  Implement desired custom rendering by overriding appropriate *On…* members  
+2. Implement desired custom rendering by overriding appropriate *On…* members  
   
-    ```vb  
-    Public Class RedTextRenderer  
-        Inherits System.Windows.Forms.ToolStripRenderer  
-        Protected Overrides Sub OnRenderItemText(ByVal e As _  
-            ToolStripItemTextRenderEventArgs)   
-            e.TextColor = Color.Red  
-            e.TextFont = New Font("Helvetica", 7, FontStyle.Bold)  
-            MyBase.OnRenderItemText(e)  
-        End Sub  
-    End Class  
-    ```  
+   ```vb  
+   Public Class RedTextRenderer  
+       Inherits System.Windows.Forms.ToolStripRenderer  
+       Protected Overrides Sub OnRenderItemText(ByVal e As _  
+           ToolStripItemTextRenderEventArgs)   
+           e.TextColor = Color.Red  
+           e.TextFont = New Font("Helvetica", 7, FontStyle.Bold)  
+           MyBase.OnRenderItemText(e)  
+       End Sub  
+   End Class  
+   ```  
   
-    ```csharp  
-    public class RedTextRenderer : _  
-        System.Windows.Forms.ToolStripRenderer  
-    {  
-        protected override void _  
-            OnRenderItemText(ToolStripItemTextRenderEventArgs e)  
-        {  
-            e.TextColor = Color.Red;  
-            e.TextFont = new Font("Helvetica", 7, FontStyle.Bold);  
-           base.OnRenderItemText(e);  
-        }  
-    }  
-    ```  
+   ```csharp  
+   public class RedTextRenderer : _  
+       System.Windows.Forms.ToolStripRenderer  
+   {  
+       protected override void _  
+           OnRenderItemText(ToolStripItemTextRenderEventArgs e)  
+       {  
+           e.TextColor = Color.Red;  
+           e.TextFont = new Font("Helvetica", 7, FontStyle.Bold);  
+          base.OnRenderItemText(e);  
+       }  
+   }  
+   ```  
   
 ### To set the custom renderer to be the current renderer  
   
-1.  To set the custom renderer for one <xref:System.Windows.Forms.ToolStrip>, set the <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> property to the custom renderer.  
+1. To set the custom renderer for one <xref:System.Windows.Forms.ToolStrip>, set the <xref:System.Windows.Forms.ToolStrip.Renderer%2A?displayProperty=nameWithType> property to the custom renderer.  
   
-    ```vb  
-    toolStrip1.Renderer = New RedTextRenderer()  
-    ```  
+   ```vb  
+   toolStrip1.Renderer = New RedTextRenderer()  
+   ```  
   
-    ```csharp  
-    toolStrip1.Renderer = new RedTextRenderer();  
-    ```  
+   ```csharp  
+   toolStrip1.Renderer = new RedTextRenderer();  
+   ```  
   
-2.  Or to set the custom renderer for all <xref:System.Windows.Forms.ToolStrip> classes contained in your application: Set the <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> property to the custom renderer and set the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> property to <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.  
+2. Or to set the custom renderer for all <xref:System.Windows.Forms.ToolStrip> classes contained in your application: Set the <xref:System.Windows.Forms.ToolStripManager.Renderer%2A?displayProperty=nameWithType> property to the custom renderer and set the <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> property to <xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>.  
   
-    ```vb  
-    toolStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode  
-    ToolStripManager.Renderer = New RedTextRenderer()  
-    ```  
+   ```vb  
+   toolStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode  
+   ToolStripManager.Renderer = New RedTextRenderer()  
+   ```  
   
-    ```csharp  
-    toolStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode;  
-    ToolStripManager.Renderer = new RedTextRenderer();  
-    ```  
+   ```csharp  
+   toolStrip1.RenderMode = ToolStripRenderMode.ManagerRenderMode;  
+   ToolStripManager.Renderer = new RedTextRenderer();  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.ToolStripManager.Renderer%2A>  

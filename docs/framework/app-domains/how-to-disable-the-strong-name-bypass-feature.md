@@ -22,25 +22,25 @@ Starting with the .NET Framework version 3.5 Service Pack 1 (SP1), strong-name s
   
 ### To disable the strong-name bypass feature for all applications  
   
--   On 32-bit computers, in the system registry, create a DWORD entry with a value of 0 named `AllowStrongNameBypass` under the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework key.  
+- On 32-bit computers, in the system registry, create a DWORD entry with a value of 0 named `AllowStrongNameBypass` under the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework key.  
   
--   On 64-bit computers, in the system registry, create a DWORD entry with a value of 0 named `AllowStrongNameBypass` under the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework and HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\.NETFramework keys.  
+- On 64-bit computers, in the system registry, create a DWORD entry with a value of 0 named `AllowStrongNameBypass` under the HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.NETFramework and HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\.NETFramework keys.  
   
 ### To disable the strong-name bypass feature for a single application  
   
-1.  Open or create the application configuration file.  
+1. Open or create the application configuration file.  
   
-     For more information about this file, see the Application Configuration Files section in [Configuring Apps](../../../docs/framework/configure-apps/index.md).  
+    For more information about this file, see the Application Configuration Files section in [Configuring Apps](../../../docs/framework/configure-apps/index.md).  
   
-2.  Add the following entry:  
+2. Add the following entry:  
   
-    ```xml  
-    <configuration>  
-      <runtime>  
-        <bypassTrustedAppStrongNames enabled="false" />  
-      </runtime>  
-    </configuration>  
-    ```  
+   ```xml  
+   <configuration>  
+     <runtime>  
+       <bypassTrustedAppStrongNames enabled="false" />  
+     </runtime>  
+   </configuration>  
+   ```  
   
  You can restore the bypass feature for the application by removing the configuration file setting or by setting the attribute to "true".  
   

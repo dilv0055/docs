@@ -5,17 +5,19 @@ ms.assetid: c6403cc3-d78b-4f85-bab1-ada7a3446ec5
 ---
 # SQL Server Schema Collections
 The Microsoft .NET Framework Data Provider for SQL Server supports additional schema collections in addition to the common schema collections. The schema collections vary slightly by the version of SQL Server you are using. To determine the list of supported schema collections, call the **GetSchema** method with no arguments, or with the schema collection name "MetaDataCollections". This will return a <xref:System.Data.DataTable> with a list of the supported schema collections, the number of restrictions that they each support, and the number of identifier parts that they use.  
-  
+
 ## Databases  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |database_name|String|Name of the database.|  
 |dbid|Int16|Database ID.|  
 |create_date|DateTime|Creation Date of the database.|  
-  
+
 ## Foreign Keys  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |CONSTRAINT_CATALOG|String|Catalog the constraint belongs to.|  
@@ -27,9 +29,10 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |CONSTRAINT_TYPE|String|Type of constraint. Only "FOREIGN KEY" is allowed.|  
 |IS_DEFERRABLE|String|Specifies whether the constraint is deferrable. Returns NO.|  
 |INITIALLY_DEFERRED|String|Specifies whether the constraint is initially deferrable. Returns NO.|  
-  
+
 ## Indexes  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |constraint_catalog|String|Catalog that index belongs to.|  
@@ -39,16 +42,18 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |table_schema|String|Schema that contains the table the index is associated with.|  
 |table_name|String|Table Name.|  
 |index_name|String|Index Name.|  
-  
+
 ### Indexes (SQL Server 2008)  
  Beginning with the .NET Framework version 3.5 SP1 and SQL Server 2008, the following columns have been added to the Indexes schema collection to support new spatial types, filestream and sparse columns. These columns are not supported in earlier versions of the .NET Framework and SQL Server.  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |type_desc|String|The type of the index will be one of the following:<br /><br /> -   HEAP<br />-   CLUSTERED<br />-   NONCLUSTERED<br />-   XML<br />-   SPATIAL|  
-  
+
 ## IndexColumns  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |constraint_catalog|String|Catalog that index belongs to.|  
@@ -61,9 +66,10 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |ordinal_position|Int32|Column ordinal position.|  
 |KeyType|Byte|The type of object.|  
 |index_name|String|Index Name.|  
-  
+
 ## Procedures  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |SPECIFIC_CATALOG|String|Specific name for the catalog.|  
@@ -75,9 +81,10 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |ROUTINE_TYPE|String|Returns PROCEDURE for stored procedures and FUNCTION for functions.|  
 |CREATED|DateTime|Time the procedure was created.|  
 |LAST_ALTERED|DateTime|The last time the procedure was modified.|  
-  
+
 ## Procedure Parameters  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |SPECIFIC_CATALOG|String|Catalog name of the procedure for which this is a parameter.|  
@@ -103,18 +110,20 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |DATETIME_PRECISION|Int16|Precision in fractional seconds if the parameter type is datetime or smalldatetime. Otherwise, returns NULL.|  
 |INTERVAL_TYPE|String|NULL. Reserved for future use by SQL Server.|  
 |INTERVAL_PRECISION|Int16|NULL. Reserved for future use by SQL Server.|  
-  
+
 ## Tables  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Catalog of the table.|  
 |TABLE_SCHEMA|String|Schema that contains the table.|  
 |TABLE_NAME|String|Table name.|  
 |TABLE_TYPE|String|Type of table. Can be VIEW or BASE TABLE.|  
-  
+
 ## Columns  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Catalog of the table.|  
@@ -135,21 +144,23 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |CHARACTER_SET_SCHEMA|String|Always returns NULL.|  
 |CHARACTER_SET_NAME|String|Returns the unique name for the character set if this column is character data or text data type. Otherwise, NULL is returned.|  
 |COLLATION_CATALOG|String|Returns master, indicating the database in which the collation is defined, if the column is character data or text data type. Otherwise, this column is NULL.|  
-  
+
 ### Columns (SQL Server 2008)  
  Beginning with the .NET Framework version 3.5 SP1 and SQL Server 2008, the following columns have been added to the Columns schema collection to support new spatial types, filestream and sparse columns. These columns are not supported in earlier versions of the .NET Framework and SQL Server.  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |IS_FILESTREAM|String|YES if the column has FILESTREAM attribute.<br /><br /> NO if the column does not have FILESTREAM attribute.|  
 |IS_SPARSE|String|YES if the column is a sparse column.<br /><br /> NO if the column is not a sparse column.|  
 |IS_COLUMN_SET|String|YES if the column is a column set column.<br /><br /> NO if the column is not a column set column.|  
-  
+
 ### AllColumns (SQL Server 2008)  
  Beginning with the .NET Framework version 3.5 SP1 and SQL Server 2008, the AllColumns schema collection has been added to support sparse columns. AllColumns is not supported in earlier versions of the .NET Framework and SQL Server.  
-  
+
  AllColumns has the same restrictions and resulting DataTable schema as the Columns schema collection. The only difference is that AllColumns includes column set columns that are not included in the Columns schema collection. The following table describes these columns.  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Catalog of the table.|  
@@ -173,10 +184,11 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |IS_FILESTREAM|String|YES if the column has FILESTREAM attribute.<br /><br /> NO if the column does not have FILESTREAM attribute.|  
 |IS_SPARSE|String|YES if the column is a sparse column.<br /><br /> NO if the column is not a sparse column.|  
 |IS_COLUMN_SET|String|YES if the column is a column set column.<br /><br /> NO if the column is not a column set column.|  
-  
+
 ### ColumnSetColumns (SQL Server 2008)  
  Beginning with the .NET Framework version 3.5 SP1 and SQL Server 2008, the ColumnSetColumns schema collection has been added to support sparse columns. ColumnSetColumns is not supported in earlier versions of the .NET Framework and SQL Server. The ColumnSetColumns schema collection returns the schema for all of the columns in a column set. The following table describes these columns.  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Catalog of the table.|  
@@ -200,18 +212,20 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |IS_FILESTREAM|String|YES if the column has FILESTREAM attribute.<br /><br /> NO if the column does not have FILESTREAM attribute.|  
 |IS_SPARSE|String|YES if the column is a sparse column.<br /><br /> NO if the column is not a sparse column.|  
 |IS_COLUMN_SET|String|YES if the column is a column set column.<br /><br /> NO if the column is not a column set column.|  
-  
+
 ## Users  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |uid|Int16|User ID, unique in this database. 1 is the database owner.|  
 |user_name|String|Username or group name, unique in this database.|  
 |createdate|DateTime|Date the account was added.|  
 |updatedate|DateTime|Date the account was last changed.|  
-  
+
 ## Views  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |TABLE_CATALOG|String|Catalog of the view.|  
@@ -219,9 +233,10 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |TABLE_NAME|String|View name.|  
 |CHECK_OPTION|String|Type of WITH CHECK OPTION. Is CASCADE if the original view was created using the WITH CHECK OPTION. Otherwise, NONE is returned.|  
 |IS_UPDATABLE|String|Specifies whether the view is updatable. Always returns NO.|  
-  
+
 ## ViewColumns  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |VIEW_CATALOG|String|Catalog of the view.|  
@@ -231,9 +246,10 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |TABLE_SCHEMA|String|Schema that contains the table that is associated with this view.|  
 |TABLE_NAME|String|Name of the table that is associated with the view. Base Table.|  
 |COLUMN_NAME|String|Column name.|  
-  
+
 ## UserDefinedTypes  
-  
+
+
 |ColumnName|DataType|Description|  
 |----------------|--------------|-----------------|  
 |assembly_name|String|The name of the file for the assembly.|  
@@ -248,7 +264,7 @@ The Microsoft .NET Framework Data Provider for SQL Server supports additional sc
 |max_length|Int16|Maximum length of type in bytes.|  
 |Create_Date|DateTime|The date the assembly was created/registered.|  
 |Permission_set_desc|String|The friendly name for the permission-set/security-level for the assembly.|  
-  
+
 ## See Also  
  [Retrieving Database Schema Information](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

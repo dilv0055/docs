@@ -16,42 +16,43 @@ manager: "markl"
 ---
 # &lt;clear&gt; Element for authenticationModules (Network Settings)
 Clears all authentication modules from the application.  
-  
+
  \<configuration>  
 \<system.net>  
 \<authenticationModules>  
 \<clear>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <clear/>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |**Element**|**Description**|  
 |-----------------|---------------------|  
 |[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Specifies modules used to authenticate network requests.|  
-  
+
 ## Remarks  
  The `clear` element removes all authentication modules that were defined earlier in the configuration file or at a higher level in the configuration hierarchy.  
-  
+
 ## Configuration Files  
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
-  
+
 ## Example  
  The following example removes all configured authentication modules.  
-  
+
 ```xml  
 <configuration>  
   <system.net>  
@@ -61,7 +62,7 @@ Clears all authentication modules from the application.
   </system.net>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Net.IAuthenticationModule>  
  <xref:System.Net.AuthenticationManager>  

@@ -19,22 +19,23 @@ ms.author: "ronpet"
 ---
 # ITypeLibResolver Interface
 Provides the [ResolveTypeLib method](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md), which resolves the file path of a type library.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[ResolveTypeLib Method](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md)|Resolves the simple name of a type library by returning its fully qualified path.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** TlbRef.idl, TlbRef.h  
-  
+
  **Library:** TlbRef.lib  
-  
+
  **.NET Framework Version:** 4, 3.5, 3.0, 2.0  
-  
+
 ## See Also  
  [Tlbexp Helper Functions](../../../../docs/framework/unmanaged-api/tlbexp/index.md)  
- [LoadTypeLibEx function](https://msdn.microsoft.com/library/windows/desktop/ms221249\(v=vs.85\).aspx)
+ [LoadTypeLibEx function](https://msdn.microsoft.com/library/windows/desktop/ms221249(v=vs.85).aspx)

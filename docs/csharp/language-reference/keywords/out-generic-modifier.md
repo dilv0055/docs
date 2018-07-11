@@ -24,12 +24,12 @@ For generic type parameters, the `out` keyword specifies that the type parameter
   
  In a generic interface, a type parameter can be declared covariant if it satisfies the following conditions:  
   
--   The type parameter is used only as a return type of interface methods and not used as a type of method arguments.  
+- The type parameter is used only as a return type of interface methods and not used as a type of method arguments.  
   
-    > [!NOTE]
-    >  There is one exception to this rule. If in a covariant interface you have a contravariant generic delegate as a method parameter, you can use the covariant type as a generic type parameter for this delegate. For more information about covariant and contravariant generic delegates, see [Variance in Delegates](../../programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates](../../programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
+  > [!NOTE]
+  >  There is one exception to this rule. If in a covariant interface you have a contravariant generic delegate as a method parameter, you can use the covariant type as a generic type parameter for this delegate. For more information about covariant and contravariant generic delegates, see [Variance in Delegates](../../programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates](../../programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   
--   The type parameter is not used as a generic constraint for the interface methods.  
+- The type parameter is not used as a generic constraint for the interface methods.  
   
 ## Example  
  The following example shows how to declare, instantiate, and invoke a covariant generic delegate. It also shows how to implicitly convert delegate types.  

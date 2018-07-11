@@ -63,11 +63,11 @@ select new {name = cust.Name, phone = cust.Phone};
   
  For more information, see:  
   
--   [Anonymous Functions](../../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)  
+- [Anonymous Functions](../../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)  
   
--   [Lambda Expressions](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+- [Lambda Expressions](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
   
--   [Expression Trees (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)  
+- [Expression Trees (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)  
   
 ## Auto-Implemented Properties  
  Auto-implemented properties make property-declaration more concise. When you declare a property as shown in the following example, the compiler will create a private, anonymous backing field that is not accessible except through the property getter and setter.  

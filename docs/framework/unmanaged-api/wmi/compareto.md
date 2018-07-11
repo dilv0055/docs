@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Compares an object to another Windows management object.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```
 HRESULT CompareTo (
    [in] int               vFunc, 
@@ -52,6 +52,7 @@ HRESULT CompareTo (
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | An unspecified error has occurred. |
@@ -60,12 +61,13 @@ The following values returned by this function are defined in the *WbemCli.h* he
 | `WBEM_S_NO_ERROR` | 0 | The function call was successful.  |
 | `WBEM_S_DIFFERENT` | 0x40003 | The objects are different. |
 | `WBEM_S_SAME` | 0 | The objects are the same based on the comparison flags. |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::CompareTo](https://msdn.microsoft.com/library/aa391437(v=vs.85).aspx) method.
 
 The flags that can be passed as the `lEnumFlags` argument are defined in the *WbemCli.h* header file, or you can define them as constants in your code. You can specify the individual characteristics involved in the comparison by specifying a bitwise combination of the following flags:
+
 
 |Constant  |Value  |Description  |
 |---------|---------|---------|
@@ -78,16 +80,17 @@ The flags that can be passed as the `lEnumFlags` argument are defined in the *Wb
 
 Or you can specify a single composite flag as follows:
 
+
 |Constant  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Consider all features in the comparison. |
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

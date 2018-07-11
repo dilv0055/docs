@@ -21,46 +21,46 @@ The Windows Forms <xref:System.Windows.Forms.TreeView> control can display icons
   
 ### To display images in a tree view  
   
-1.  Set the <xref:System.Windows.Forms.TreeView> control's <xref:System.Windows.Forms.TreeView.ImageList%2A> property to the existing <xref:System.Windows.Forms.ImageList> control you wish to use.  
+1. Set the <xref:System.Windows.Forms.TreeView> control's <xref:System.Windows.Forms.TreeView.ImageList%2A> property to the existing <xref:System.Windows.Forms.ImageList> control you wish to use.  
   
-     These properties can be set in the designer with the Properties window, or in code.  
+    These properties can be set in the designer with the Properties window, or in code.  
   
-    ```vb  
-    TreeView1.ImageList = ImageList1  
-    ```  
+   ```vb  
+   TreeView1.ImageList = ImageList1  
+   ```  
   
-    ```csharp  
-    treeView1.ImageList = imageList1;  
-    ```  
+   ```csharp  
+   treeView1.ImageList = imageList1;  
+   ```  
   
-    ```cpp  
-    treeView1->ImageList = imageList1;  
-    ```  
+   ```cpp  
+   treeView1->ImageList = imageList1;  
+   ```  
   
-2.  Set the node's <xref:System.Windows.Forms.TreeNode.ImageIndex%2A> and <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> properties. The <xref:System.Windows.Forms.TreeNode.ImageIndex%2A> property determines the image displayed for the node's normal and expanded states, and the <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> property determines the image displayed for the node's selected state.  
+2. Set the node's <xref:System.Windows.Forms.TreeNode.ImageIndex%2A> and <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> properties. The <xref:System.Windows.Forms.TreeNode.ImageIndex%2A> property determines the image displayed for the node's normal and expanded states, and the <xref:System.Windows.Forms.TreeNode.SelectedImageIndex%2A> property determines the image displayed for the node's selected state.  
   
-     These properties can be set in code, or within the TreeNode Editor. To open the TreeNode Editor, click the ellipsis button ( ![VisualStudioEllipsesButton screenshot](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) next to the <xref:System.Windows.Forms.TreeView.Nodes%2A> property on the Properties window.  
+    These properties can be set in code, or within the TreeNode Editor. To open the TreeNode Editor, click the ellipsis button ( ![VisualStudioEllipsesButton screenshot](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton")) next to the <xref:System.Windows.Forms.TreeView.Nodes%2A> property on the Properties window.  
   
-    ```vb  
-    ' (Assumes that ImageList1 contains at least two images and  
-    ' the TreeView control contains a selected image.)  
-    TreeView1.SelectedNode.ImageIndex = 0  
-    TreeView1.SelectedNode.SelectedImageIndex = 1  
-    ```  
+   ```vb  
+   ' (Assumes that ImageList1 contains at least two images and  
+   ' the TreeView control contains a selected image.)  
+   TreeView1.SelectedNode.ImageIndex = 0  
+   TreeView1.SelectedNode.SelectedImageIndex = 1  
+   ```  
   
-    ```csharp  
-    // (Assumes that imageList1 contains at least two images and  
-    // the TreeView control contains a selected image.)  
-    treeView1.SelectedNode.ImageIndex = 0;  
-    treeView1.SelectedNode.SelectedImageIndex = 1;  
-    ```  
+   ```csharp  
+   // (Assumes that imageList1 contains at least two images and  
+   // the TreeView control contains a selected image.)  
+   treeView1.SelectedNode.ImageIndex = 0;  
+   treeView1.SelectedNode.SelectedImageIndex = 1;  
+   ```  
   
-    ```cpp  
-    // (Assumes that imageList1 contains at least two images and  
-    // the TreeView control contains a selected image.)  
-    treeView1->SelectedNode->ImageIndex = 0;  
-    treeView1->SelectedNode->SelectedImageIndex = 1;  
-    ```  
+   ```cpp  
+   // (Assumes that imageList1 contains at least two images and  
+   // the TreeView control contains a selected image.)  
+   treeView1->SelectedNode->ImageIndex = 0;  
+   treeView1->SelectedNode->SelectedImageIndex = 1;  
+   ```  
   
 ## See Also  
  [TreeView Control Overview](../../../../docs/framework/winforms/controls/treeview-control-overview-windows-forms.md)  

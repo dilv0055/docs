@@ -15,19 +15,19 @@ The number of indices used to access an array element must be exactly the same a
   
 ## To correct this error  
   
--   Remove subscripts from the array reference until the total number of subscripts equals the rank of the array. For example:  
+- Remove subscripts from the array reference until the total number of subscripts equals the rank of the array. For example:  
   
-    ```vb  
-    Dim gameBoard(3, 3) As String  
+  ```vb  
+  Dim gameBoard(3, 3) As String  
   
-    ' Incorrect code. The array has two dimensions.  
-    gameBoard(1, 1, 1) = "X"  
-    gameBoard(2, 1, 1) = "O"  
+  ' Incorrect code. The array has two dimensions.  
+  gameBoard(1, 1, 1) = "X"  
+  gameBoard(2, 1, 1) = "O"  
   
-    ' Correct code.  
-    gameBoard(0, 0) = "X"  
-    gameBoard(1, 0) = "O"  
-    ```  
+  ' Correct code.  
+  gameBoard(0, 0) = "X"  
+  gameBoard(1, 0) = "O"  
+  ```  
   
 ## See Also  
  [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md)

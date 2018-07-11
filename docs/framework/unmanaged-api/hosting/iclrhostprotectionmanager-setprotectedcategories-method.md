@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # ICLRHostProtectionManager::SetProtectedCategories Method
 Specifies which categories of managed types and members should be blocked from running in partially trusted code.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SetProtectedCategories (  
     [in] EApiCategories  categories  
 );  
 ```  
-  
+
 #### Parameters  
  `categories`  
  [in] A combination of [EApiCategories](../../../../docs/framework/unmanaged-api/hosting/eapicategories-enumeration.md) values, indicating which categories of managed types and members should be blocked from running in partially trusted code.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetProtectedCategories` returned successfully.|  
@@ -43,19 +44,19 @@ HRESULT SetProtectedCategories (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  Each `EApiCategories` value refers to a list of managed types and members. The `EApiCategories` enumeration and the `SetProtectedCategories` method are directly related to the managed <xref:System.Security.Permissions.HostProtectionAttribute> class, which is used to mark managed types and members that expose capabilities corresponding to the categories described by `EApiCategories`. For more information, see <xref:System.Security.Permissions.HostProtectionAttribute> and the <xref:System.Security.Permissions.HostProtectionResource> enumeration, which directly corresponds to `EApiCategories`.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  <xref:System.Security.Permissions.HostProtectionAttribute>  
  <xref:System.Security.Permissions.HostProtectionResource>  

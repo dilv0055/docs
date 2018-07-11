@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # ICLRRuntimeHost::ExecuteApplication Method
 Used in manifest-based ClickOnce deployment scenarios to specify the application to be activated in a new domain. For more information about these scenarios, see [ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment).  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT ExecuteApplication(  
     [in] LPCWSTR   pwzAppFullName,  
@@ -33,28 +33,29 @@ HRESULT ExecuteApplication(
     [out] int      *pReturnValue  
 );  
 ```  
-  
+
 #### Parameters  
  `pwzAppFullName`  
  [in] The full name of the application, as defined for <xref:System.ApplicationIdentity>.  
-  
+
  `dwManifestPaths`  
  [in] The number of strings contained in the `ppwzManifestPaths` array.  
-  
+
  `ppwzManifestPaths`  
  [in] Optional. A string array that contains manifest paths for the application.  
-  
+
  `dwActivationData`  
  [in] The number of strings contained in the `ppwzActivationData` array.  
-  
+
  `ppwzActivationData`  
  [in] Optional. A string array that contains the application's activation data, such as the query string portion of the URL for applications deployed over the Web.  
-  
+
  `pReturnValue`  
  [out] The value returned from the entry point of the application.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`ExecuteApplication` returned successfully.|  
@@ -63,24 +64,24 @@ HRESULT ExecuteApplication(
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. If a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  `ExecuteApplication` is used to activate ClickOnce applications in a newly created application domain.  
-  
+
  The `pReturnValue` output parameter is set to the value returned by the application. If you supply a value of null for `pReturnValue`, `ExecuteApplication` does not fail, but it does not return a value.  
-  
+
 > [!IMPORTANT]
 >  Do not call the [Start Method](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) method before calling the `ExecuteApplication` method to activate a manifest-based application. If the `Start` method is called first, the `ExecuteApplication` method call will fail.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  <xref:System.ActivationContext>  
  <xref:System.AppDomainManager>  

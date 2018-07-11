@@ -20,9 +20,9 @@ ms.author: "mairaw"
 ---
 # IMetaDataAssemblyImport::EnumExportedTypes Method
 Enumerates the exported types referenced in the assembly manifest in the current metadata scope.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT EnumExportedTypes (  
     [in, out] HCORENUM     *phEnum,   
@@ -31,35 +31,36 @@ HRESULT EnumExportedTypes (
     [out] ULONG            *pcTokens  
 );  
 ```  
-  
+
 #### Parameters  
  `phEnum`  
  [in, out] A pointer to the enumerator. This must be a null value when the `EnumExportedTypes` method is called for the first time.  
-  
+
  `rExportedTypes`  
  [out] The enumeration of `mdExportedType` metadata tokens.  
-  
+
  `cMax`  
  [in] The maximum number of `mdExportedType` tokens that can be placed in the `rExportedTypes` array.  
-  
+
  `pcTokens`  
  [out] The number of `mdExportedType` tokens actually placed in `rExportedTypes`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |`S_OK`|`EnumExportedTypes` returned successfully.|  
 |`S_FALSE`|There are no tokens to enumerate. In this case, `pcTokens` is set to zero.|  
-  
+
 ## Requirements  
  **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [IMetaDataAssemblyImport Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md)

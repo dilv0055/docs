@@ -20,25 +20,26 @@ ms.author: "mairaw"
 ---
 # CreateALink Function
 Creates an instance of the Assembly Linker and sets a pointer to the specified interface.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT CreateALink (  
    REFIID riid,  
    IUnknown **ppInterface  
 );  
 ```  
-  
+
 #### Parameters  
-  
+
+
 |Parameter|Description|  
 |---------------|-----------------|  
 |`riid`|The physical name of one of the Assembly Linker interfaces.|  
 |`ppInterface`|The location that on successful completion contains a pointer to the `riid` interface.|  
-  
+
 ## Requirements  
  **Library**: alink.dll  
-  
+
 ## See Also  
  [Al.exe (Assembly Linker)](../../../../docs/framework/tools/al-exe-assembly-linker.md)

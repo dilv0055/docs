@@ -5,7 +5,6 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 05/24/2018
 ---
-
 # Select the Visual Basic language version
 
 The Visual Basic compiler defaults to the latest major version of the language that has been released. You may choose to compile any project using a new point release of the language. Choosing a newer version of the language enables your project to make use of the latest language features. In other scenarios, you may need to validate that a project compiles cleanly when using an older version of the language.
@@ -29,6 +28,7 @@ You can set the language version in your **.vbproj** file. Add the following ele
 ```
 
 The value `latest` uses the latest minor version of the Visual Basic language. Valid values are:
+
 
 |Value|Meaning|
 |------------|-------------|

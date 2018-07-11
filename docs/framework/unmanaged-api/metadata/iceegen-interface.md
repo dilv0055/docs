@@ -19,11 +19,12 @@ ms.author: "mairaw"
 ---
 # ICeeGen Interface
 Provides methods for dynamic code compilation.  
-  
+
  This interface is obsolete and should not be used.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[AddSectionReloc Method](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md)|Obsolete. Adds a .reloc instruction to the code base.|  
@@ -41,15 +42,15 @@ Provides methods for dynamic code compilation.
 |[GetString Method](../../../../docs/framework/unmanaged-api/metadata/iceegen-getstring-method.md)|Obsolete. Gets the string stored at the specified relative virtual address.|  
 |[GetStringSection Method](../../../../docs/framework/unmanaged-api/metadata/iceegen-getstringsection-method.md)|Obsolete. Gets a string representation of the code section referenced by the specified handle.|  
 |[TruncateSection Method](../../../../docs/framework/unmanaged-api/metadata/iceegen-truncatesection-method.md)|Obsolete. Truncates the specified code section by the specified length.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)

@@ -11,11 +11,11 @@ The file name that you supplied is not a valid XML file. To specify the allowed 
   
 ## To correct this error  
   
--   Check that you are supplying the correct file name.  
+- Check that you are supplying the correct file name.  
   
--   Check that the specified file contains valid XML by loading the XML file that you want to check into the **XML Designer**. From the **XML** menu, click **Validate XML**. Errors are displayed in the **Task List**.  
+- Check that the specified file contains valid XML by loading the XML file that you want to check into the **XML Designer**. From the **XML** menu, click **Validate XML**. Errors are displayed in the **Task List**.  
   
--   If the XML file has an associated XML Schema, check that the elements appear in the defined structure and that the content of the individual elements conforms to the declared data types specified in the schema.  
+- If the XML file has an associated XML Schema, check that the elements appear in the defined structure and that the content of the individual elements conforms to the declared data types specified in the schema.  
   
 ## See Also  
  <xref:System.Xml>  

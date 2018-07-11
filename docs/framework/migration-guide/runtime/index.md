@@ -5,7 +5,6 @@ ms.assetid: 2bc008db-ad60-4a01-8ccc-f4a3171b36f4
 author: "conniey"
 ms.author: "ronpet"
 ---
-
 # Runtime Changes in the .NET Framework
 
 [!INCLUDE[introduction](../../../../includes/migration-guide/runtime/introduction.md)]

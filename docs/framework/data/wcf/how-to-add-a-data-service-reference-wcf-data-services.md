@@ -10,19 +10,19 @@ You can use the **Add Service Reference** dialog in Visual Studio to add a refer
   
 ### To add a data service reference  
   
-1.  (Optional) If the data service is not part of the solution and is not already running, start the data service and note the URI of the data service.  
+1. (Optional) If the data service is not part of the solution and is not already running, start the data service and note the URI of the data service.  
   
-2.  Right-click the client project and then select **Add Service Reference**.  
+2. Right-click the client project and then select **Add Service Reference**.  
   
-3.  If the data service is part of the current solution, click **Discover**.  
+3. If the data service is part of the current solution, click **Discover**.  
   
-     -or-  
+    -or-  
   
-     In the **Address** text box, type the base URL of the data service, such as `http://localhost:1234/Northwind.svc`, and then click **Go**.  
+    In the **Address** text box, type the base URL of the data service, such as `http://localhost:1234/Northwind.svc`, and then click **Go**.  
   
-4.  Click **OK**.  
+4. Click **OK**.  
   
-     This adds a new code file that contains the data classes that are used to access and interact with data service resources as objects.  
+    This adds a new code file that contains the data classes that are used to access and interact with data service resources as objects.  
   
 ## See Also  
  [Quickstart](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md)

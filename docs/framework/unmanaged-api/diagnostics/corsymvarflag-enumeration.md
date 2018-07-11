@@ -19,24 +19,25 @@ ms.author: "mairaw"
 ---
 # CorSymVarFlag Enumeration
 Indicates whether a variable is compiler-generated.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorSymVarFlag   
 {  
     VAR_IS_COMP_GEN = 1  
 } CorSymVarFlag;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`VAR_IS_COMP_GEN`|Indicates that the given variable is compiler-generated.|  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [Diagnostics Symbol Store Enumerations](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)

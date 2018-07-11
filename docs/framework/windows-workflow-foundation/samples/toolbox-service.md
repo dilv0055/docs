@@ -27,25 +27,25 @@ public interface IActivityToolboxService
   
 #### To set up, build, and run the sample  
   
-1.  Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the WorkflowSimulator.sln solution file.  
+1. Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the WorkflowSimulator.sln solution file.  
   
-2.  Build the solution by pressing CTRL+SHIFT+B.  
+2. Build the solution by pressing CTRL+SHIFT+B.  
   
-3.  Open the Workflow.xaml file.  
+3. Open the Workflow.xaml file.  
   
-4.  Add a **CustomActivity** by dragging and dropping it from the toolbox. Notice that an additional Toolbox category called: **New WF Category** with an additional activity **Assign**.  
+4. Add a **CustomActivity** by dragging and dropping it from the toolbox. Notice that an additional Toolbox category called: **New WF Category** with an additional activity **Assign**.  
   
-5.  Now unselect the **CustomActivity** by dragging another activity into it.  
+5. Now unselect the **CustomActivity** by dragging another activity into it.  
   
-6.  The item **Assign** in the category **New WF Category** under Toolbox is now removed. Also, because there are no more items left in the category, the category is removed as well.  
+6. The item **Assign** in the category **New WF Category** under Toolbox is now removed. Also, because there are no more items left in the category, the category is removed as well.  
   
-7.  Select the **CustomActivity** again and the category and **Assign** activity is added back.  
+7. Select the **CustomActivity** again and the category and **Assign** activity is added back.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\IActivityToolboxService`

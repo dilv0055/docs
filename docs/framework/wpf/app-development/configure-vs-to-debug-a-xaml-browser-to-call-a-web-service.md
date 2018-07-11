@@ -15,34 +15,34 @@ ms.assetid: fd1db082-a7bb-4c4b-9331-6ad74a0682d0
 ## Configuring Visual Studio  
  To configure [!INCLUDE[TLA#tla_visualstu2005](../../../../includes/tlasharptla-visualstu2005-md.md)] to debug an [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] that calls a Web service:  
   
-1.  With a project selected in **Solution Explorer**, on the **Project** menu, click **Properties**.  
+1. With a project selected in **Solution Explorer**, on the **Project** menu, click **Properties**.  
   
-2.  In the **Project Designer**, click the **Debug** tab.  
+2. In the **Project Designer**, click the **Debug** tab.  
   
-3.  In the **Start Action** section, select **Start external program** and enter the following:  
+3. In the **Start Action** section, select **Start external program** and enter the following:  
   
-     `C:\WINDOWS\System32\PresentationHost.exe`  
+    `C:\WINDOWS\System32\PresentationHost.exe`  
   
-4.  In the **Start Options** section, enter the following into the **Command line arguments** text box:  
+4. In the **Start Options** section, enter the following into the **Command line arguments** text box:  
   
-     `-debug`  *filename*  
+    `-debug`  *filename*  
   
-     The *filename* value for the **-debug** parameter is the .xbap filename; for example:  
+    The *filename* value for the **-debug** parameter is the .xbap filename; for example:  
   
-     `-debug c:\example.xbap`  
+    `-debug c:\example.xbap`  
   
 > [!NOTE]
 >  This is the default configuration for solutions that are created with the [!INCLUDE[TLA2#tla_visualstu2005](../../../../includes/tla2sharptla-visualstu2005-md.md)] [!INCLUDE[TLA#tla_wpfbrowserappproj](../../../../includes/tlasharptla-wpfbrowserappproj-md.md)] project template.  
   
-1.  With a project selected in **Solution Explorer**, on the **Project** menu, click **Properties**.  
+1. With a project selected in **Solution Explorer**, on the **Project** menu, click **Properties**.  
   
-2.  In the **Project Designer**, click the **Debug** tab.  
+2. In the **Project Designer**, click the **Debug** tab.  
   
-3.  In the **Start Options** section, add the following command-line parameter to the **Command line arguments** text box:  
+3. In the **Start Options** section, add the following command-line parameter to the **Command line arguments** text box:  
   
-     `-debugSecurityZoneURL`  *URL*  
+    `-debugSecurityZoneURL`  *URL*  
   
-     The *URL* value for the **-debugSecurityZoneURL** parameter is the [!INCLUDE[TLA#tla_url](../../../../includes/tlasharptla-url-md.md)] for the location that you want to simulate as being the site of origin of your application.  
+    The *URL* value for the **-debugSecurityZoneURL** parameter is the [!INCLUDE[TLA#tla_url](../../../../includes/tlasharptla-url-md.md)] for the location that you want to simulate as being the site of origin of your application.  
   
  As an example, consider a [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] that uses a Web service with the following [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)]:  
   

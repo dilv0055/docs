@@ -5,15 +5,15 @@ ms.assetid: 129b4a59-37f0-4030-b664-03795d257d29
 ---
 # &lt;reliableSession&gt;
 Defines setting for WS-Reliable Messaging. When this element is added to a custom binding, the resulting channel can support exactly-once delivery assurances.  
-  
+
  \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
 \<binding>  
 \<reliableSession>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <reliableSession acknowledgementInterval="TimeSpan"  
         flowControlEnabled="Boolean"   
@@ -24,12 +24,13 @@ Defines setting for WS-Reliable Messaging. When this element is added to a custo
     reliableMessagingVersion="Default/WSReliableMessagingFebruary2005/WSReliableMessaging11"  
     ordered="Boolean" />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |acknowledgementInterval|A <xref:System.TimeSpan> that contains the maximum time interval the channel is going to wait to send an acknowledgment for messages received up to that point. The default is 00:00:0.2.|  
@@ -40,26 +41,27 @@ Defines setting for WS-Reliable Messaging. When this element is added to a custo
 |maxTransferWindowSize|An integer that specifies the maximum size of the buffer. Valid values are from 1 to 4096 inclusive.<br /><br /> On the client, this attribute defines the maximum size of the buffer used by a reliable channel to hold messages not yet acknowledged by the receiver. The unit of the quota is a message. If the buffer is full, further SEND operations are blocked.<br /><br /> On the receiver, this attribute defines the maximum size of the buffer used by the channel to store incoming messages not yet dispatched to the application. If the buffer is full, further messages are silently dropped by the receiver and require retransmission by the client.|  
 |ordered|A Boolean that specifies whether messages are guaranteed to arrive in the order they were sent. If this setting is `false`, messages can arrive out of order. The default is `true`.|  
 |reliableMessagingVersion|A valid value from <xref:System.ServiceModel.ReliableMessagingVersion> that specifies the WS-ReliableMessaging version to be used.|  
-  
+
 ### Child Elements  
  None  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the custom binding.|  
-  
+
 ## Remarks  
  Reliable sessions provide features for reliable messaging and sessions. Reliable messaging retries communication on failure and allows delivery assurances such as in-order arrival of messages to be specified. Sessions maintain state for clients between calls. This element also optionally provides ordered message delivery. This implemented session can cross SOAP and transport intermediaries.  
-  
+
  Each binding element represents a processing step when sending or receiving messages. At runtime, binding elements create the channel factories and listeners that are necessary to build outgoing and incoming channel stacks required to send and receive messages. The `reliableSession` provides an optional layer in the stack that can establish a reliable session between endpoints and configure the behavior of this session.  
-  
+
  For more information, see [Reliable Sessions](../../../../../docs/framework/wcf/feature-details/reliable-sessions.md).  
-  
+
 ## Example  
  The following example demonstrates how to configure a custom binding with various transport and message encoding elements, especially enabling reliable sessions, which maintains client state and specifies in-order delivery assurances. This feature is configured in the application configuration files for the client and service. The example show the service configuration.  
-  
+
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
 <configuration>  
@@ -80,7 +82,7 @@ Defines setting for WS-Reliable Messaging. When this element is added to a custo
                   contract="IMetadataExchange" />  
       </service>  
     </services>  
-  
+
     <!-- custom binding configuration - configures HTTP transport, reliable sessions -->  
     <bindings>  
       <customBinding>  
@@ -99,7 +101,7 @@ Defines setting for WS-Reliable Messaging. When this element is added to a custo
         </binding>  
       </customBinding>  
     </bindings>  
-  
+
     <!--For debugging purposes set the includeExceptionDetailInFaults attribute to true-->  
     <behaviors>  
       <serviceBehaviors>  
@@ -112,7 +114,7 @@ Defines setting for WS-Reliable Messaging. When this element is added to a custo
   </system.serviceModel>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.ReliableSessionElement>  
  <xref:System.ServiceModel.Channels.CustomBinding>  

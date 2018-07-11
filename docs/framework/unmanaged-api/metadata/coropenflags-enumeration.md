@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorOpenFlags Enumeration
 Contains flag values that control metadata behavior upon opening manifest files.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorOpenFlags  
 {  
@@ -41,9 +41,10 @@ typedef enum CorOpenFlags
     ofReserved          =   0xffffff40  
 } CorOpenFlags;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`ofRead`|Indicates that the file should be opened for reading only.|  
@@ -59,13 +60,13 @@ typedef enum CorOpenFlags
 |`ofReserved1`|Reserved for internal use.|  
 |`ofReserved2`|Reserved for internal use.|  
 |`ofReserved`|Reserved for internal use.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

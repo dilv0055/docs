@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # IHostIoCompletionManager Interface
 Provides methods that allow the common language runtime (CLR) to interact with I/O completion ports provided by the host.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[Bind Method](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md)|Binds a handle to an I/O completion port.|  
@@ -35,18 +36,18 @@ Provides methods that allow the common language runtime (CLR) to interact with I
 |[SetCLRIoCompletionManager Method](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setclriocompletionmanager-method.md)|Provides the host with an interface pointer to an [ICLRIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md) instance implemented by the CLR.|  
 |[SetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setmaxthreads-method.md)|Sets the maximum number of threads that the host allots to service I/O requests.|  
 |[SetMinThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setminthreads-method.md)|Sets the minimum number of threads that the host should allot to I/O completion.|  
-  
+
 ## Remarks  
  `IHostIoCompletionManager` corresponds to the `ICLRIoCompletionManager` interface implemented by the CLR. The CLR calls the methods of `IHostIoCompletionManager` to bind handles to the ports that the host provides, and the host calls the methods of `ICLRIoCompletionManager` to report the completion of I/O requests.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Hosting Interfaces](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

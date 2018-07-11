@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugChain Interface1
 Represents a segment of a physical or logical call stack.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[EnumerateFrames Method](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-enumerateframes-method.md)|Gets an enumerator that contains all the managed stack frames in the chain, starting with the most recent frame.|  
@@ -36,21 +37,21 @@ Represents a segment of a physical or logical call stack.
 |[GetStackRange Method](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-getstackrange-method.md)|Gets the address range of the stack segment for this chain.|  
 |[GetThread Method](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-getthread-method.md)|Gets the physical thread this call chain is part of.|  
 |[IsManaged Method](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-ismanaged-method.md)|Gets a value that indicates whether this chain is running managed code.|  
-  
+
 ## Remarks  
  The stack frames in a chain occupy contiguous stack space and share the same thread and context. A chain may represent either managed or unmanaged code chains. An empty `ICorDebugChain` instance represents an unmanaged code chain.  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

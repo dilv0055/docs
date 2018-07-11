@@ -17,26 +17,26 @@ The most common use of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> 
   
 ### To create a data-bound DataRepeater  
   
-1.  Drag a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
+1. Drag a <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
   
-2.  Drag the sizing and position handles to size and position the control.  
+2. Drag the sizing and position handles to size and position the control.  
   
-     Note that the control has two rectangular regions. The upper region is the *item template*; controls added to the template will be repeated in each item in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control at run time. The lower region is the *viewport*, where the items will be displayed.  
+    Note that the control has two rectangular regions. The upper region is the *item template*; controls added to the template will be repeated in each item in the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control at run time. The lower region is the *viewport*, where the items will be displayed.  
   
-     You can also size and position the control or the item template by changing the **Size** and **Position** properties in the Properties window.  
+    You can also size and position the control or the item template by changing the **Size** and **Position** properties in the Properties window.  
   
-3.  On the **Data** menu, click **Show Data Sources**.  
+3. On the **Data** menu, click **Show Data Sources**.  
   
-    > [!NOTE]
-    >  If the **Data Sources** window is empty, add a data source to it. For more information, see [Add new data sources](/visualstudio/data-tools/add-new-data-sources).  
+   > [!NOTE]
+   >  If the **Data Sources** window is empty, add a data source to it. For more information, see [Add new data sources](/visualstudio/data-tools/add-new-data-sources).  
   
-4.  In the **Data Sources** window, select the top-level node for the table that contains the data that you want to bind.  
+4. In the **Data Sources** window, select the top-level node for the table that contains the data that you want to bind.  
   
-5.  Change the drop type of the table to `Details` by clicking `Details` in the drop-down list on the table node.  
+5. Change the drop type of the table to `Details` by clicking `Details` in the drop-down list on the table node.  
   
-6.  Select the table node and drag it onto the item template region of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
+6. Select the table node and drag it onto the item template region of the <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
   
-     You can specify which types of controls are displayed for each field. For more information, see [Set the control to be created when dragging from the Data Sources window](/visualstudio/data-tools/set-the-control-to-be-created-when-dragging-from-the-data-sources-window).  
+    You can specify which types of controls are displayed for each field. For more information, see [Set the control to be created when dragging from the Data Sources window](/visualstudio/data-tools/set-the-control-to-be-created-when-dragging-from-the-data-sources-window).  
   
 ## See Also  
  <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater>  

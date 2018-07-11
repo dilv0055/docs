@@ -26,12 +26,14 @@ The following sections describe attributes, child elements, and parent elements.
 
 ### Attributes
 
+
 | Attribute | Description |
 | --------- | ----------- |
 | `key`     | Required attribute. A predefined key name that corresponds to a particular Windows Forms customizable feature. |
 | `value`   | Required attribute. The value to assign to `key`. |
 
 ### `key` attribute names and associated values
+
 
 | `key` name | Values | Description |
 | ---------- | ------ | ----------- |
@@ -50,6 +52,7 @@ The following sections describe attributes, child elements, and parent elements.
 None.
 
 ### Parent elements
+
 
 | Element | Description |
 | ------- | ----------- |
@@ -93,7 +96,7 @@ The single default opt-in setting provided by setting `DpiAwareness` to `PerMoni
 Typically, you opt out of a particular feature because you've chosen to handle it programmatically.
 
 For more information on taking advantage of High DPI support in Windows Forms applications, see [High DPI Support in Windows Forms](../../../../../docs/framework/winforms/high-dpi-support-in-windows-forms.md).
- 
+
 ### DisableDpiChangedMessageHandling
 
 Starting with the .NET Framework 4.7, Windows Forms controls raise a number of events related to changes in DPI scaling. These include the <xref:System.Windows.Forms.Control.DpiChangedAfterParent>, <xref:System.Windows.Forms.Control.DpiChangedBeforeParent>, and <xref:System.Windows.Forms.Form.DpiChanged> events. The value of the `DisableDpiChangedMessageHandling` key determines whether these events are raised in a Windows Forms application. 
@@ -103,6 +106,6 @@ Starting with the .NET Framework 4.7, Windows Forms controls raise a number of e
 Single or multi-pass scaling influences the perceived responsiveness of the user interface and the visual appearance of user interface elements as they are scaled. Starting with the .NET Framework 4.7, Windows Forms uses single pass scaling. In previous versions of the .NET Framework, scaling was performed through multiple passes, which caused some controls to be scaled more than was necessary. Single-pass scaling should only be disabled if your app depends on the old behavior.  
 
 ## See also
- 
+
 [Windows Forms Configuration Section](../../../../../docs/framework/configure-apps/file-schema/winforms/index.md)   
 [High DPI Support in Windows Forms](../../../../../docs/framework/winforms/high-dpi-support-in-windows-forms.md)

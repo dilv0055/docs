@@ -17,32 +17,32 @@ To serialize an object, first create the object that is to be serialized and set
   
 ### To serialize an object  
   
-1.  Create the object and set its public fields and properties.  
+1. Create the object and set its public fields and properties.  
   
-2.  Construct a <xref:System.Xml.Serialization.XmlSerializer> using the type of the object. For more information, see the <xref:System.Xml.Serialization.XmlSerializer> class constructors.  
+2. Construct a <xref:System.Xml.Serialization.XmlSerializer> using the type of the object. For more information, see the <xref:System.Xml.Serialization.XmlSerializer> class constructors.  
   
-3.  Call the <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> method to generate either an XML stream or a file representation of the object's public properties and fields. The following example creates a file.  
+3. Call the <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> method to generate either an XML stream or a file representation of the object's public properties and fields. The following example creates a file.  
   
-    ```vb  
-    Dim myObject As MySerializableClass = New MySerializableClass()  
-    ' Insert code to set properties and fields of the object.  
-    Dim mySerializer As XmlSerializer = New XmlSerializer(GetType(MySerializableClass))  
-    ' To write to a file, create a StreamWriter object.  
-    Dim myWriter As StreamWriter = New StreamWriter("myFileName.xml")  
-    mySerializer.Serialize(myWriter, myObject)  
-    myWriter.Close()  
-    ```  
+   ```vb  
+   Dim myObject As MySerializableClass = New MySerializableClass()  
+   ' Insert code to set properties and fields of the object.  
+   Dim mySerializer As XmlSerializer = New XmlSerializer(GetType(MySerializableClass))  
+   ' To write to a file, create a StreamWriter object.  
+   Dim myWriter As StreamWriter = New StreamWriter("myFileName.xml")  
+   mySerializer.Serialize(myWriter, myObject)  
+   myWriter.Close()  
+   ```  
   
-    ```csharp  
-    MySerializableClass myObject = new MySerializableClass();  
-    // Insert code to set properties and fields of the object.  
-    XmlSerializer mySerializer = new   
-    XmlSerializer(typeof(MySerializableClass));  
-    // To write to a file, create a StreamWriter object.  
-    StreamWriter myWriter = new StreamWriter("myFileName.xml");  
-    mySerializer.Serialize(myWriter, myObject);  
-    myWriter.Close();  
-    ```  
+   ```csharp  
+   MySerializableClass myObject = new MySerializableClass();  
+   // Insert code to set properties and fields of the object.  
+   XmlSerializer mySerializer = new   
+   XmlSerializer(typeof(MySerializableClass));  
+   // To write to a file, create a StreamWriter object.  
+   StreamWriter myWriter = new StreamWriter("myFileName.xml");  
+   mySerializer.Serialize(myWriter, myObject);  
+   myWriter.Close();  
+   ```  
   
 ## See Also  
  [Introducing XML Serialization](../../../docs/standard/serialization/introducing-xml-serialization.md)  

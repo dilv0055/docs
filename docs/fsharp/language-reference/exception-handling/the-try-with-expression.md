@@ -31,6 +31,7 @@ Exceptions can be .NET exceptions, or they can be F# exceptions. You can define 
 You can use a variety of patterns to filter on the exception type and other conditions; the options are summarized in the following table.
 
 
+
 |Pattern|Description|
 |-------|-----------|
 |:? *exception-type*|Matches the specified .NET exception type.|
@@ -43,12 +44,12 @@ You can use a variety of patterns to filter on the exception type and other cond
 The following code examples illustrate the use of the various exception handler patterns.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet5602.fs)]
-    
->[!NOTE] 
-The `try...with` construct is a separate expression from the `try...finally` expression. Therefore, if your code requires both a `with` block and a `finally` block, you will have to nest the two expressions.
 
->[!NOTE] 
-You can use `try...with` in asynchronous workflows and other computation expressions, in which case a customized version of the `try...with` expression is used. For more information, see [Asynchronous Workflows](../asynchronous-workflows.md), and [Computation Expressions](../computation-expressions.md).
+> [!NOTE]
+> The `try...with` construct is a separate expression from the `try...finally` expression. Therefore, if your code requires both a `with` block and a `finally` block, you will have to nest the two expressions.
+
+> [!NOTE]
+> You can use `try...with` in asynchronous workflows and other computation expressions, in which case a customized version of the `try...with` expression is used. For more information, see [Asynchronous Workflows](../asynchronous-workflows.md), and [Computation Expressions](../computation-expressions.md).
 
 
 ## See Also

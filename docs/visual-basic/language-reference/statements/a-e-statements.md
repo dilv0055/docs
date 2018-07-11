@@ -5,7 +5,8 @@ ms.assetid: af97c2bf-dddb-48a8-8eb6-798cd219430b
 ---
 # A-E Statements
 The following table contains a listing of Visual Basic language statements.  
-  
+
+
 |||||  
 |---|---|---|---|  
 |[AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)|[Call](../../../visual-basic/language-reference/statements/call-statement.md)|[Class](../../../visual-basic/language-reference/statements/class-statement.md)|[Const](../../../visual-basic/language-reference/statements/const-statement.md)|  
@@ -13,7 +14,7 @@ The following table contains a listing of Visual Basic language statements.
 |[Do...Loop](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[Else](../../../visual-basic/language-reference/statements/else-statement.md)|[End](../../../visual-basic/language-reference/statements/end-statement.md)|[End \<keyword>](../../../visual-basic/language-reference/statements/end-keyword-statement.md)|  
 |[Enum](../../../visual-basic/language-reference/statements/enum-statement.md)|[Erase](../../../visual-basic/language-reference/statements/erase-statement.md)|[Error](../../../visual-basic/language-reference/statements/error-statement.md)|[Event](../../../visual-basic/language-reference/statements/event-statement.md)|  
 |[Exit](../../../visual-basic/language-reference/statements/exit-statement.md)||||  
-  
+
 ## See Also  
  [F-P Statements](../../../visual-basic/language-reference/statements/f-p-statements.md)  
  [Q-Z Statements](../../../visual-basic/language-reference/statements/q-z-statements.md)  

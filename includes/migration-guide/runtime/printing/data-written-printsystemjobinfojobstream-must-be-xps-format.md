@@ -1,5 +1,6 @@
 ### Data written to PrintSystemJobInfo.JobStream must be in XPS format
 
+
 |   |   |
 |---|---|
 |Details|The <xref:System.Printing.PrintSystemJobInfo.JobStream> property exposes the stream of a print job. The user can send raw data to the underlying operating system printing components by writing to this stream.Starting with the .NET Framework 4.5 on Windows 8 and later versions of the Windows operating system, data written to this stream must be in XPS format as a package stream.|

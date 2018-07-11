@@ -4,7 +4,6 @@ description: Recaps how you can use expression trees to create dynamic programs 
 ms.date: 06/20/2016
 ms.assetid: eb687ebd-1149-4453-9fc1-12a084495a66
 ---
-
 # Expression Trees Summary
 
 [Previous -- Translating Expressions](expression-trees-translating.md)

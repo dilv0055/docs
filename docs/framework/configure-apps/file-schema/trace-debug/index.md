@@ -17,9 +17,10 @@ manager: "markl"
 ---
 # Trace and Debug Settings Schema
 Trace and debug settings specify trace listeners that collect, store, and route messages, and the level where a trace switch is set.  
-  
+
  The following table describes the function of each trace and debug settings element.  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<add>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-source.md)|Adds a listener to the `Listeners` collection for a trace source.|  
@@ -43,7 +44,7 @@ Trace and debug settings specify trace listeners that collect, store, and route 
 |[\<switches>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/switches-element.md)|Contains trace switches and the level where the trace switches are set.|  
 |[\<system.diagnostics>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element.md)|Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.|  
 |[\<trace>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/trace-element.md)|Contains listeners that collect, store, and route tracing messages.|  
-  
+
 ## See Also  
  <xref:System.Diagnostics.Trace>  
  <xref:System.Diagnostics.TraceSource>  

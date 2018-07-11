@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # IHostAssemblyStore::ProvideModule Method
 Resolves a module within an assembly or a linked (but not an embedded) resource file.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT ProvideModule (  
     [in]  ModuleBindInfo *pBindInfo,  
@@ -31,22 +31,23 @@ HRESULT ProvideModule (
     [out] IStream        **ppStmPDB  
 );  
 ```  
-  
+
 #### Parameters  
  `pBindInfo`  
  [in] A pointer to a [ModuleBindInfo](../../../../docs/framework/unmanaged-api/hosting/modulebindinfo-structure.md) instance that describes the requested module's <xref:System.AppDomain>, assembly, and module name.  
-  
+
  `pdwModuleId`  
  [out] A pointer to a unique identifier for the `IStream` containing the loaded module.  
-  
+
  `ppStmModuleImage`  
  [out] A pointer to the address of an `IStream` object, which contains the portable executable (PE) image to be loaded, or null if the module could not be found.  
-  
+
  `ppStmPDB`  
  [out] A pointer to the address of an `IStream` object, which contains the program debug (PDB) information for the requested module, or null if the .pdb file could not be found.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`ProvideModule` returned successfully.|  
@@ -57,19 +58,19 @@ HRESULT ProvideModule (
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |COR_E_FILENOTFOUND (0x80070002)|The requested assembly or linked resource could not be located.|  
 |E_NOT_SUFFICIENT_BUFFER|`pdwModuleId` is not large enough to contain the identifier that the host wants to return.|  
-  
+
 ## Remarks  
  The identity value returned for `pdwModuleId` is specified by the host. Identifiers must be unique within the lifetime of a process. The CLR uses this value as the unique identifier for the associated stream. It checks each value against the values for `pAssemblyId` returned by calls to [ProvideAssembly](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md) and against the values for `pdwModuleId` returned by other calls to `ProvideModule`. If the host returns the same identifier value for another `IStream`, the CLR checks whether the contents of that stream have already been mapped. If so, the CLR loads the existing copy of the image instead of mapping a new one. Therefore, the identifier must also not overlap with the assembly identifiers returned from `ProvideAssembly`.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)  
  [IHostAssemblyManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostassemblymanager-interface.md)  

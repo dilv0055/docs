@@ -8,7 +8,7 @@ ms.date: 06/28/2018
 # Common web application architectures
 
 > "If you think good architecture is expensive, try bad architecture."  
-> _- Brian Foote and Joseph Yoder_
+> *- Brian Foote and Joseph Yoder*
 
 Most traditional .NET applications are deployed as single units corresponding to an executable or a single web application running within a single IIS appdomain. This is the simplest deployment model and serves many internal and smaller public applications very well. However, even given this single unit of deployment, most non-trivial business applications benefit from some logical separation into several layers.
 
@@ -30,7 +30,7 @@ In a single project scenario, separation of concerns is achieved through the use
 
 Although simple, the single-project monolithic solution has some disadvantages. As the project's size and complexity grows, the number of files and folders will continue to grow as well. User interface (UI) concerns (models, views, controllers) reside in multiple folders, which aren't grouped together alphabetically. This issue only gets worse when additional UI-level constructs, such as Filters or ModelBinders, are added in their own folders. Business logic is scattered between the Models and Services folders, and there's no clear indication of which classes in which folders should depend on which others. This lack of organization at the project level frequently leads to [spaghetti code](https://deviq.com/spaghetti-code/).
 
-To address these issues, applications often evolve into multi-project solutions, where each project is considered to reside in a particular _layer_ of the application.
+To address these issues, applications often evolve into multi-project solutions, where each project is considered to reside in a particular *layer* of the application.
 
 ## What are layers?
 
@@ -47,7 +47,7 @@ In addition to the potential of swapping out implementations in response to futu
 Logical layering is a common technique for improving the organization of code in enterprise software applications, and there are several ways in which code can be organized into layers.
 
 > [!NOTE]
- > _Layers_ represent logical separation within the application. In the event that application logic is physically distributed to separate servers or processes, these separate physical deployment targets are referred to as _tiers_. It's possible, and quite common, to have an N-Layer application that is deployed to a single tier.
+> *Layers* represent logical separation within the application. In the event that application logic is physically distributed to separate servers or processes, these separate physical deployment targets are referred to as *tiers*. It's possible, and quite common, to have an N-Layer application that is deployed to a single tier.
 
 ## Traditional "N-Layer" architecture applications
 
@@ -182,7 +182,7 @@ To manage this model, you deploy a single container to represent the application
 
 ![](./media/image5-13.png)
 
-You can include multiple components/libraries or internal layers within each container, as illustrated in Figure 5-13. But, following the container principle of _"a container does one thing, and does it in one process_", the monolithic pattern might be a conflict.
+You can include multiple components/libraries or internal layers within each container, as illustrated in Figure 5-13. But, following the container principle of *"a container does one thing, and does it in one process*", the monolithic pattern might be a conflict.
 
 The downside of this approach comes if/when the application grows, requiring it to scale. If the entire application scales, it's not really a problem. However, in most cases, a few parts of the application are the choke points requiring scaling, while other components are used less.
 
@@ -206,7 +206,7 @@ Deploying updates as Docker images is far faster and network efficient. Docker I
 
 As containers are inherently immutable by design, you never need to worry about corrupted VMs, whereas update scripts might forget to account for some specific configuration or file left on disk.
 
-_You can use Docker containers for monolithic deployment of simpler web applications. This improves continuous integration and continuous deployment pipelines and helps achieve deployment-to-production success. No more “It works in my machine, why does it not work in production?”_
+*You can use Docker containers for monolithic deployment of simpler web applications. This improves continuous integration and continuous deployment pipelines and helps achieve deployment-to-production success. No more “It works in my machine, why does it not work in production?”*
 
 A microservices-based architecture has many benefits, but those benefits come at a cost of increased complexity. In some cases, the costs outweigh the benefits, a monolithic deployment application running in a single container or in just a few containers is a better option.
 
@@ -297,7 +297,7 @@ Note that running Docker containers may be bound to ports you might otherwise tr
 If you want to add Docker support to your application using Visual Studio, make sure Docker is running when you do so. The wizard won't run correctly if Docker isn't running when you start the wizard. In addition, the wizard examines your current container choice to add the correct Docker support. If you want to add support for Windows Containers, you need to run the wizard while you have Docker running with Windows Containers configured. If you want to add support for Linux containers, run the wizard while you have Docker running with Linux containers configured.
 
 > ### References – Common web architectures
->
+> 
 > - **The Clean Architecture**  
 >   <https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html>
 > - **The Onion Architecture**  
@@ -309,6 +309,6 @@ If you want to add Docker support to your application using Visual Studio, make 
 > - **Architecting Microservices e-book**  
 >   <https://aka.ms/MicroservicesEbook>
 
->[!div class="step-by-step"]
-[Previous](architectural-principles.md)
-[Next](common-client-side-web-technologies.md)
+> [!div  class="step-by-step"]
+> [Previous](architectural-principles.md)
+> [Next](common-client-side-web-technologies.md)

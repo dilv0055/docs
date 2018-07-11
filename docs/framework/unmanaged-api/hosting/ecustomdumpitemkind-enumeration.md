@@ -19,30 +19,31 @@ ms.author: "ronpet"
 ---
 # ECustomDumpItemKind Enumeration
 Reserved for future extension of the [CustomDumpItem](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) structure.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     DUMP_ITEM_None = 0  
 } ECustomDumpItemKind;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`DUMP_ITEM_None`|Reserved for future use.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRErrorReportingManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-interface.md)  
  [Hosting Enumerations](../../../../docs/framework/unmanaged-api/hosting/hosting-enumerations.md)

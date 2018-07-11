@@ -7,13 +7,13 @@ manager: "mbaldwin"
 ---
 # &lt;caches&gt;
 Registers the caches used for session tokens and token replay detection.  
-  
+
  \<system.identityModel>  
 \<identityConfiguration>  
 \<caches>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <system.identityModel>  
   <identityConfiguration>  
@@ -22,35 +22,37 @@ Registers the caches used for session tokens and token replay detection.
   </identityConfiguration>  
 </system.identityModel>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<sessionSecurityTokenCache>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md)|Registers a cache for session tokens with a service or a security token handler collection.|  
 |[\<tokenReplayCache>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md)|Registers a token replay cache with a service or a security token handler collection.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<identityConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Specifies service-level identity settings.|  
 |[\<securityTokenHandlerConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Provides configuration for a collection of security token handlers.|  
-  
+
 ## Remarks  
  A `<caches>` element can be specified at the service level under the `<identityConfiguration>` element or on the security token handler collection level under the `<securityTokenHandlerConfiguration>` element. Settings on a token handler collection override those specified on the service.  
-  
+
  The `<caches>` element is represented by the <xref:System.IdentityModel.Configuration.IdentityModelCachesElement> class. The configured caches are represented by the <xref:System.IdentityModel.Configuration.IdentityModelCaches> class.  
-  
+
 ## Example  
  The following XML shows the configuration of a custom cache for holding session security tokens (<xref:System.IdentityModel.Tokens.SessionSecurityToken>). The configuration is taken from the `ClaimsAwareWebFarm` sample.  
-  
+
 ```xml  
 <caches>  
   <sessionSecurityTokenCache type="CacheLibrary.SharedSessionSecurityTokenCache, CacheLibrary">  

@@ -5,9 +5,10 @@ ms.assetid: 57f7376b-4b11-4b35-98a9-780382053ceb
 ---
 # Boolean Data Types
 Boolean operators work as expected in the common language runtime (CLR), except that short-circuiting behavior is not translated. For example, the Visual Basic `AndAlso` operator behaves like the `And` operator. The C# `&&` operator behaves like the `&` operator.  
-  
+
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] supports the following operators.  
-  
+
+
 |Visual Basic|C#|  
 |------------------|---------|  
 |[And Operator](~/docs/visual-basic/language-reference/operators/and-operator.md)|[& Operator](~/docs/csharp/language-reference/operators/and-operator.md)|  
@@ -16,6 +17,6 @@ Boolean operators work as expected in the common language runtime (CLR), except 
 |[OrElse Operator](~/docs/visual-basic/language-reference/operators/orelse-operator.md)|[&#124;&#124; Operator](~/docs/csharp/language-reference/operators/conditional-or-operator.md)|  
 |[Xor Operator](~/docs/visual-basic/language-reference/operators/xor-operator.md)|[^ Operator](~/docs/csharp/language-reference/operators/xor-operator.md)|  
 |[Not Operator](~/docs/visual-basic/language-reference/operators/not-operator.md)|[\! Operator](~/docs/csharp/language-reference/operators/logical-negation-operator.md)|  
-  
+
 ## See Also  
  [Data Types and Functions](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)

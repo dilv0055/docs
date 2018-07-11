@@ -6,15 +6,15 @@ ms.assetid: 8a4e4214-fc51-4f4d-b968-0427c37a9520
 ---
 # &lt;sqlWorkflowInstanceStore&gt;
 A service behavior that allows you to configure the <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> feature, which supports persisting state information for workflow service instances into an SQL Server 2005 or SQL Server 2008 database. For more information on this feature, see [SQL Workflow Instance Store](../../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md).  
-  
+
 \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
 \<behavior>  
 \<sqlWorkflowInstanceStore>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <behaviors>
   <serviceBehaviors>
@@ -29,12 +29,13 @@ A service behavior that allows you to configure the <xref:System.Activities.Dura
   </serviceBehaviors>
 </behaviors>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |connectionString|A string that contains a connection string used to connect to an underlying persistence database.|  
@@ -44,16 +45,17 @@ A service behavior that allows you to configure the <xref:System.Activities.Dura
 |instanceEncodingOption|An optional value that specifies  whether the instance state information is compressed using the GZip algorithm before the information is saved in the persistence store.. This value is of type `System.Activities.DurableInstancing.InstanceEncodingAction`. Possible values for this property are "None", which specifies no compression, and "GZip", which specifies that instance data is compressed and uses the gzip algorithm.|  
 |instanceLockedExceptionAction|A value that specifies the action that occurs in response to an exception that is thrown when the host tries to lock an instance because the instance is currently locked by another host. This value is of type <xref:System.Activities.DurableInstancing.InstanceLockedExceptionAction>.<br /><br /> The options allowed for this field are: None, Basic Retry, and Aggressive Retry. The default value is None. The following list provides you with the descriptions for these three options:<br /><br /> -   None. The service host does not attempt to lock the instance and passes the <xref:System.Runtime.DurableInstancing.InstanceLockedException> to the caller.<br />-   Basic Retry. The service host reattempts to lock the instance with a linear retry interval and passes the exception to the caller at the end of the sequence.<br />-   Aggressive Retry. The service host reattempts to lock the instance with an exponentially increasing delay and passes the <xref:System.Runtime.DurableInstancing.InstanceLockedException> to the caller at the end of the sequence.|  
 |runnableInstancesDetectionPeriod||  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<behavior> of \<serviceBehaviors>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Specifies a behavior element.|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>  
  <xref:System.ServiceModel.Activities.Configuration.SqlWorkflowInstanceStoreElement>  

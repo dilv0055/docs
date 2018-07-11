@@ -21,19 +21,19 @@ To add or remove Access Control List (ACL) entries to or from a file, the <xref:
   
 ### To add or remove an ACL entry from a File  
   
-1.  Call the <xref:System.IO.File.GetAccessControl%2A> method to get a <xref:System.Security.AccessControl.FileSecurity> object that contains the current ACL entries of a file.  
+1. Call the <xref:System.IO.File.GetAccessControl%2A> method to get a <xref:System.Security.AccessControl.FileSecurity> object that contains the current ACL entries of a file.  
   
-2.  Add or remove ACL entries from the <xref:System.Security.AccessControl.FileSecurity> object returned from step 1.  
+2. Add or remove ACL entries from the <xref:System.Security.AccessControl.FileSecurity> object returned from step 1.  
   
-3.  Pass the <xref:System.Security.AccessControl.FileSecurity> object to the <xref:System.IO.File.SetAccessControl%2A> method to apply the changes.  
+3. Pass the <xref:System.Security.AccessControl.FileSecurity> object to the <xref:System.IO.File.SetAccessControl%2A> method to apply the changes.  
   
 ### To add or remove an ACL entry from a Directory  
   
-1.  Call the <xref:System.IO.Directory.GetAccessControl%2A> method to get a <xref:System.Security.AccessControl.DirectorySecurity> object that contains the current ACL entries of a directory.  
+1. Call the <xref:System.IO.Directory.GetAccessControl%2A> method to get a <xref:System.Security.AccessControl.DirectorySecurity> object that contains the current ACL entries of a directory.  
   
-2.  Add or remove ACL entries from the <xref:System.Security.AccessControl.DirectorySecurity> object returned from step 1.  
+2. Add or remove ACL entries from the <xref:System.Security.AccessControl.DirectorySecurity> object returned from step 1.  
   
-3.  Pass the <xref:System.Security.AccessControl.DirectorySecurity> object to the <xref:System.IO.Directory.SetAccessControl%2A> method to apply the changes.  
+3. Pass the <xref:System.Security.AccessControl.DirectorySecurity> object to the <xref:System.IO.Directory.SetAccessControl%2A> method to apply the changes.  
   
 ## Example  
  [!code-cpp[IO.File.GetAccessControl-SetAccessControl#1](../../../samples/snippets/cpp/VS_Snippets_CLR/IO.File.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]

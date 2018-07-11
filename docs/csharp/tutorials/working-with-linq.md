@@ -4,16 +4,15 @@ description: This tutorial teaches you how to generate sequences with LINQ, writ
 ms.date: 03/28/2017
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
 ---
-
 # Working with LINQ
 
 ## Introduction
 
 This tutorial teaches you a number of features in .NET Core and the C# language. You’ll learn:
 
-*	How to generate sequences with LINQ
-*   How to write methods that can be easily used in LINQ queries.
-*   How to distinguish between eager and lazy evaluation.
+* How to generate sequences with LINQ
+* How to write methods that can be easily used in LINQ queries.
+* How to distinguish between eager and lazy evaluation.
 
 You'll learn these techniques by building an application that demonstrates one of the basic skills of any magician: the [faro shuffle](https://en.wikipedia.org/wiki/Faro_shuffle). Briefly, a faro shuffle is a technique where you split a card deck exactly in half, then the shuffle interleaves each one card from each half to rebuild the original deck.
 
@@ -148,7 +147,7 @@ public static void Main(string[] args)
     {
         Console.WriteLine(c);
     }
-        
+
     var top = startingDeck.Take(26);
     var bottom = startingDeck.Skip(26);
     var shuffle = top.InterleaveSequenceWith(bottom);
@@ -227,7 +226,7 @@ public static void Main(string[] args)
     {
         Console.WriteLine(c);
     }
-        
+
     Console.WriteLine();
     var times = 0;
     var shuffle = startingDeck;

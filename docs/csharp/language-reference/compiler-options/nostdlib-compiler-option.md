@@ -25,13 +25,13 @@ ms.assetid: ec197989-fa49-4725-a455-e06b551eb65f
   
 ### To set this compiler option in the Visual Studio development environment  
   
-1.  Open the **Properties** page for the project.  
+1. Open the **Properties** page for the project.  
   
-2.  Click the **Build** properties page.  
+2. Click the **Build** properties page.  
   
-3.  Click the **Advanced** button.  
+3. Click the **Advanced** button.  
   
-4.  Modify the **Do not reference mscorlib.dll** property.  
+4. Modify the **Do not reference mscorlib.dll** property.  
   
  For information on how to set this compiler option programmatically, see <xref:VSLangProj80.CSharpProjectConfigurationProperties3.NoStdLib%2A>.  
   

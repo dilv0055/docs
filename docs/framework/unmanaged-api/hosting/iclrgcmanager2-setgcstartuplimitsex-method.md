@@ -20,29 +20,30 @@ ms.author: "ronpet"
 ---
 # ICLRGCManager2::SetGCStartupLimitsEx Method
 Sets the size of a garbage collection segment and the maximum size of the garbage collection system's generation 0.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SetGCStartupLimitsEx (  
     [in] SIZE_T SegmentSize,   
     [in] SIZE_T MaxGen0Size  
 );  
 ```  
-  
+
 #### Parameters  
  `SegmentSize`  
  [in] The specified size of a garbage collection segment.  
-  
+
  The minimum segment size is 4 MB. Segments can be increased in increments of 1 MB or larger.  
-  
+
  `MaxGen0Size`  
  [in] The specified maximum size for generation 0.  
-  
+
  The minimum generation 0 size is 64 KB.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`SetGCStartupLimitsEx` returned successfully.|  
@@ -51,21 +52,21 @@ HRESULT SetGCStartupLimitsEx (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  The values that `SetGCStartupLimitsEx` sets can be specified only before the host is started. Later calls to `SetGCStartupLimitsEx` are ignored.  
-  
+
  To set either parameter without affecting the other, specify 0 (zero) for the parameter you don't want to change.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
+
 ## See Also  
  [Automatic Memory Management](../../../../docs/standard/automatic-memory-management.md)  
  [Garbage Collection](../../../../docs/standard/garbage-collection/index.md)  

@@ -18,7 +18,7 @@ This article provides tips for improving the performance of large .NET Framework
  When your end users interact with your app, they expect it to be responsive.  Typing or command handling should never be blocked.  Help should pop up quickly or give up if the user continues typing.  Your app should avoid blocking the UI thread with long computations that make the app feel sluggish.  
   
  For more information about Roslyn compilers, visit the [dotnet/roslyn](https://github.com/dotnet/roslyn) repo on GitHub.
- <!-- TODO: replace with link to Roslyn conceptual docs once that's published -->
+ &lt;!-- TODO: replace with link to Roslyn conceptual docs once that&#39;s published --&gt;
   
 ## Just the Facts  
  Consider these facts when tuning performance and creating responsive .NET Framework apps.  
@@ -447,13 +447,13 @@ class Compilation { /*...*/
   
  In this article, we discussed how you should be aware of performance bottleneck symptoms that can affect your app's responsiveness, especially for large systems or systems that process a large amount of data. Common culprits include boxing, string manipulations, LINQ and lambda, caching in async methods, caching without a size limit or disposal policy, inappropriate use of dictionaries, and passing around structures.  Keep in mind the four facts for tuning your apps:  
   
--   Don’t prematurely optimize – be productive and tune your app when you spot problems.  
+- Don’t prematurely optimize – be productive and tune your app when you spot problems.  
   
--   Profiles don’t lie – you’re guessing if you’re not measuring.  
+- Profiles don’t lie – you’re guessing if you’re not measuring.  
   
--   Good tools make all the difference – download PerfView and try it out.  
+- Good tools make all the difference – download PerfView and try it out.  
   
--   It's all about allocations – that is where the compiler platform team spent most of their time improving the performance of the new compilers.  
+- It's all about allocations – that is where the compiler platform team spent most of their time improving the performance of the new compilers.  
   
 ## See Also  
  [Video of presentation of this topic](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)  

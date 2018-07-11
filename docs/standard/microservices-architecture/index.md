@@ -5,7 +5,6 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/06/2018
 ---
-
 ![](./media/cover.png)
 
 # .NET Microservices. Architecture for Containerized .NET Applications
@@ -30,7 +29,7 @@ This book is provided “as-is” and expresses the author’s views and opinion
 
 Some examples depicted herein are provided for illustration only and are fictitious. No real association or connection is intended or should be inferred.
 
-Microsoft and the trademarks listed at http://www.microsoft.com on the “Trademarks” webpage are trademarks of the Microsoft group of companies.
+Microsoft and the trademarks listed at <http://www.microsoft.com> on the “Trademarks” webpage are trademarks of the Microsoft group of companies.
 
 Mac and macOS are trademarks of Apple Inc.
 
@@ -41,61 +40,61 @@ All other marks and logos are property of their respective owners.
 Co-Authors:
 
 > **Cesar de la Torre**, Sr. PM, .NET product team, Microsoft Corp.
->
+> 
 > **Bill Wagner**, Sr. Content Developer, C+E, Microsoft Corp.
->
+> 
 > **Mike Rousos**, Principal Software Engineer, DevDiv CAT team, Microsoft
 
 Editors:
 
 > **Mike Pope**
->
+> 
 > **Steve Hoag**
 
 Participants and reviewers:
 
 > **Jeffrey Richter**, Partner Software Eng, Azure team, Microsoft
->
+> 
 > **Jimmy Bogard**, Chief Architect at Headspring
->
+> 
 > **Udi Dahan**, Founder & CEO, Particular Software
->
+> 
 > **Jimmy Nilsson**, Co-founder and CEO of Factor10
->
+> 
 > **Glenn Condron**, Sr. Program Manager, ASP.NET team
->
+> 
 > **Mark Fussell**, Principal PM Lead, Azure Service Fabric team, Microsoft
->
+> 
 > **Diego Vega**, PM Lead, Entity Framework team, Microsoft
->
+> 
 > **Barry Dorrans**, Sr. Security Program Manager
->
+> 
 > **Rowan Miller**, Sr. Program Manager, Microsoft
->
+> 
 > **Ankit Asthana**, Principal PM Manager, .NET team, Microsoft
->
+> 
 > **Scott Hunter**, Partner Director PM, .NET team, Microsoft
->
+> 
 > **Dylan Reisenberger**, Architect and Dev Lead at Polly
->
+> 
 > **Steve Smith**, Software Craftsman & Trainer at ASPSmith Ltd.
->
+> 
 > **Ian Cooper**, Coding Architect at Brighter
->
+> 
 > **Unai Zorrilla**, Architect and Dev Lead at Plain Concepts
->
+> 
 > **Eduard Tomas**, Dev Lead at Plain Concepts
->
+> 
 > **Ramon Tomas**, Developer at Plain Concepts
->
+> 
 > **David Sanz**, Developer at Plain Concepts
->
+> 
 > **Javier Valero**, Chief Operating Officer at Grupo Solutio
->
+> 
 > **Pierre Millet**, Sr. Consultant, Microsoft
->
+> 
 > **Michael Friis**, Product Manager, Docker Inc
->
+> 
 > **Charles Lowell**, Software Engineer, VS CAT team, Microsoft
 
 ## Introduction
@@ -120,8 +119,8 @@ This guide does not focus on the application lifecycle, DevOps, CI/CD pipelines,
 
 ### Additional resources
 
--   **Containerized Docker Application Lifecycle with Microsoft Platform and Tools** (downloadable e-book)
-    [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
+- **Containerized Docker Application Lifecycle with Microsoft Platform and Tools** (downloadable e-book)
+  [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
 
 ## Who should use this guide
 
@@ -147,5 +146,5 @@ We wrote this guide to help you understand the architecture of containerized app
 
 [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)
 
->[!div class="step-by-step"]
-[Next](container-docker-introduction/index.md)
+> [!div  class="step-by-step"]
+> [Next](container-docker-introduction/index.md)

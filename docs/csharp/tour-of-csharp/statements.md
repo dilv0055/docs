@@ -4,7 +4,6 @@ description: You create the actions of a C# program using statements
 ms.date: 11/06/2016
 ms.assetid: 5409c379-5622-4fae-88b5-1654276ea8d4
 ---
-
 # Statements
 
 The actions of a program are expressed using *statements*. C# supports several different kinds of statements, a number of which are defined in terms of embedded statements.
@@ -103,6 +102,6 @@ The following lists the kinds of statements that can be used, and provides an ex
 
  [!code-csharp[UsingStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L198-L206)]
 
->[!div class="step-by-step"]
-[Previous](expressions.md)
-[Next](classes-and-objects.md)
+> [!div  class="step-by-step"]
+> [Previous](expressions.md)
+> [Next](classes-and-objects.md)

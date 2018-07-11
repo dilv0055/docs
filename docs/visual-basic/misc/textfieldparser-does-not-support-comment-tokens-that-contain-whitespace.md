@@ -10,7 +10,7 @@ A comment token that contains white space has been supplied. The `TextFieldParse
   
 ## To correct this error  
   
--   Supply a correct comment token.  
+- Supply a correct comment token.  
   
 ## See Also  
  [TextFieldParser.CommentTokens Property](http://msdn.microsoft.com/library/2e6b6435-4bee-4c14-a353-e8f2c82e2d61)  

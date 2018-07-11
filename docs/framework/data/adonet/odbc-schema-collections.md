@@ -5,26 +5,27 @@ ms.assetid: 1bb126a5-ceec-4649-a4bc-8aa19e801046
 ---
 # ODBC Schema Collections
 This section discusses schema collection support for the ODBC drivers for Microsoft SQL Server, Oracle, and Microsoft Jet.  
-  
+
 ## Microsoft SQL Server ODBC Driver  
  The Microsoft SQL Server ODBC Driver supports the following specific schema collections in addition to the common schema collections:  
-  
--   Tables  
-  
--   Indexes  
-  
--   Columns  
-  
--   Procedures  
-  
--   ProcedureColumns  
-  
--   ProcedureParameters  
-  
--   Views  
-  
+
+- Tables  
+
+- Indexes  
+
+- Columns  
+
+- Procedures  
+
+- ProcedureColumns  
+
+- ProcedureParameters  
+
+- Views  
+
 ### Tables and Views  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CAT|String|  
@@ -32,9 +33,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |TABLE_NAME|String|  
 |TABLE_TYPE|String|  
 |REMARKS|String|  
-  
+
 ### Indexes  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CAT|String|  
@@ -52,9 +54,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |FILTER_CONDITION|String|  
 |SS_TYPE_SCHEMA|String|  
 |SS_DATA_TYPE|Byte|  
-  
+
 ### Columns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CAT|String|  
@@ -78,9 +81,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |SS_TYPE_CATALOG|String|  
 |SS_TYPE_SCHEMA|String|  
 |SS_DATA_TYPE|Byte|  
-  
+
 ### Procedures  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
@@ -91,9 +95,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |NUM_RESULT_SETS|Int32|  
 |REMARKS|String|  
 |PROCEDURE_TYPE|Int16|  
-  
+
 ### ProcedureColumns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
@@ -118,9 +123,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |SS_TYPE_CATALOG|String|  
 |SS_TYPE_SCHEMA|String|  
 |SS_DATA_TYPE|Byte|  
-  
+
 ### ProcedureParameters  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
@@ -145,26 +151,27 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |SS_TYPE_CATALOG|String|  
 |SS_TYPE_SCHEMA|String|  
 |SS_DATA_TYPE|Byte|  
-  
+
 ## Microsoft Oracle ODBC Driver  
  The Microsoft SQL Server Oracle ODBC Driver supports the following specific schema collections in addition to the common schema collections:  
-  
--   Tables  
-  
--   Columns  
-  
--   Procedures  
-  
--   ProcedureColumns  
-  
--   ProcedureParameters  
-  
--   Views  
-  
--   Indexes  
-  
+
+- Tables  
+
+- Columns  
+
+- Procedures  
+
+- ProcedureColumns  
+
+- ProcedureParameters  
+
+- Views  
+
+- Indexes  
+
 ### Tables and Views  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
@@ -172,9 +179,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |TABLE_NAME|String|  
 |TABLE_TYPE|String|  
 |REMARKS|String|  
-  
+
 ### Columns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
@@ -190,9 +198,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |NULLABLE|Int16|  
 |REMARKS|String|  
 |ORDINAL_POSITION|Int32|  
-  
+
 ### Procedures  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
@@ -203,9 +212,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |NUM_RESULT_SETS|Int16|  
 |REMARKS|String|  
 |PROCEDURE_TYPE|Int16|  
-  
+
 ### ProcedureColumns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
@@ -223,26 +233,27 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |REMARKS|String|  
 |OVERLOAD|Int32|  
 |ORDINAL_POSITION|Int32|  
-  
+
 ## Microsoft Jet ODBC Driver  
  The Microsoft Jet ODBC Driver supports the following specific schema collections in addition to the common schema collections:  
-  
--   Tables  
-  
--   Indexes  
-  
--   Columns  
-  
--   Procedures  
-  
--   ProcedureColumns  
-  
--   ProcedureParameters  
-  
--   Views  
-  
+
+- Tables  
+
+- Indexes  
+
+- Columns  
+
+- Procedures  
+
+- ProcedureColumns  
+
+- ProcedureParameters  
+
+- Views  
+
 ### Tables and Views  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
@@ -250,9 +261,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |TABLE_NAME|String|  
 |TABLE_TYPE|String|  
 |REMARKS|String|  
-  
+
 ### Columns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_QUALIFIER|String|  
@@ -268,9 +280,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |NULLABLE|Int16|  
 |REMARKS|String|  
 |ORDINAL_POSITION|Int32|  
-  
+
 ### Procedures  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
@@ -281,9 +294,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |NUM_RESULT_SETS|Int16|  
 |REMARKS|String|  
 |PROCEDURE_TYPE|Int16|  
-  
+
 ### ProcedureColumns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_QUALIFIER|String|  
@@ -301,9 +315,10 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |REMARKS|String|  
 |OVERLOAD|Int32|  
 |ORDINAL_POSITION|Int32|  
-  
+
 ### ProcedureParameters  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CAT|String|  
@@ -325,6 +340,6 @@ This section discusses schema collection support for the ODBC drivers for Micros
 |CHAR_OCTET_LENGTH|Int32|  
 |ORDINAL_POSITION|Int32|  
 |IS_NULLABLE|String|  
-  
+
 ## See Also  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

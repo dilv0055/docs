@@ -10,7 +10,7 @@ A trigger is a special type of stored procedure that automatically runs when a l
   
  **SQL Server Books Online**  
   
-1.  [CLR Triggers](http://go.microsoft.com/fwlink/?LinkId=115397)  
+1. [CLR Triggers](http://go.microsoft.com/fwlink/?LinkId=115397)  
   
 ## See Also  
  [Creating SQL Server 2005 Objects In Managed Code](http://msdn.microsoft.com/library/5358a825-e19b-49aa-8214-674ce5fed1da)  

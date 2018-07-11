@@ -44,36 +44,36 @@ As with other naming guidelines, the goal when naming namespaces is creating suf
   
  There are specific guidelines for avoiding type name conflicts for different categories of namespaces.  
   
--   **Application model namespaces**  
+- **Application model namespaces**  
   
-     Namespaces belonging to a single application model are very often used together, but they are almost never used with namespaces of other application models. For example, the <xref:System.Windows.Forms?displayProperty=nameWithType> namespace is very rarely used together with the <xref:System.Web.UI?displayProperty=nameWithType> namespace. The following is a list of well-known application model namespace groups:  
+   Namespaces belonging to a single application model are very often used together, but they are almost never used with namespaces of other application models. For example, the <xref:System.Windows.Forms?displayProperty=nameWithType> namespace is very rarely used together with the <xref:System.Web.UI?displayProperty=nameWithType> namespace. The following is a list of well-known application model namespace groups:  
   
-     `System.Windows*`   
-     `System.Web.UI*`  
+   `System.Windows*`   
+   `System.Web.UI*`  
   
-     **X DO NOT** give the same name to types in namespaces within a single application model.  
+   **X DO NOT** give the same name to types in namespaces within a single application model.  
   
-     For example, do not add a type named `Page` to the <xref:System.Web.UI.Adapters?displayProperty=nameWithType> namespace, because the <xref:System.Web.UI?displayProperty=nameWithType> namespace already contains a type named `Page`.  
+   For example, do not add a type named `Page` to the <xref:System.Web.UI.Adapters?displayProperty=nameWithType> namespace, because the <xref:System.Web.UI?displayProperty=nameWithType> namespace already contains a type named `Page`.  
   
--   **Infrastructure namespaces**  
+- **Infrastructure namespaces**  
   
-     This group contains namespaces that are rarely imported during development of common applications. For example, `.Design` namespaces are mainly used when developing programming tools. Avoiding conflicts with types in these namespaces is not critical.  
+   This group contains namespaces that are rarely imported during development of common applications. For example, `.Design` namespaces are mainly used when developing programming tools. Avoiding conflicts with types in these namespaces is not critical.  
   
--   **Core namespaces**  
+- **Core namespaces**  
   
-     Core namespaces include all `System` namespaces, excluding namespaces of the application models and the Infrastructure namespaces. Core namespaces include, among others, `System`, `System.IO`, `System.Xml`, and `System.Net`.  
+   Core namespaces include all `System` namespaces, excluding namespaces of the application models and the Infrastructure namespaces. Core namespaces include, among others, `System`, `System.IO`, `System.Xml`, and `System.Net`.  
   
-     **X DO NOT** give types names that would conflict with any type in the Core namespaces.  
+   **X DO NOT** give types names that would conflict with any type in the Core namespaces.  
   
-     For example, never use `Stream` as a type name. It would conflict with <xref:System.IO.Stream?displayProperty=nameWithType>, a very commonly used type.  
+   For example, never use `Stream` as a type name. It would conflict with <xref:System.IO.Stream?displayProperty=nameWithType>, a very commonly used type.  
   
--   **Technology namespace groups**  
+- **Technology namespace groups**  
   
-     This category includes all namespaces with the same first two namespace nodes `(<Company>.<Technology>*`), such as `Microsoft.Build.Utilities` and `Microsoft.Build.Tasks`. It is important that types belonging to a single technology do not conflict with each other.  
+   This category includes all namespaces with the same first two namespace nodes `(<Company>.<Technology>*`), such as `Microsoft.Build.Utilities` and `Microsoft.Build.Tasks`. It is important that types belonging to a single technology do not conflict with each other.  
   
-     **X DO NOT** assign type names that would conflict with other types within a single technology.  
+   **X DO NOT** assign type names that would conflict with other types within a single technology.  
   
-     **X DO NOT** introduce type name conflicts between types in technology namespaces and an application model namespace (unless the technology is not intended to be used with the application model).  
+   **X DO NOT** introduce type name conflicts between types in technology namespaces and an application model namespace (unless the technology is not intended to be used with the application model).  
   
  *Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*  
   

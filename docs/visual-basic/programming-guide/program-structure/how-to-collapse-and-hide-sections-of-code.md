@@ -14,14 +14,14 @@ The `#Region` directive enables you to collapse and hide sections of code in Vis
   
 ### To collapse and hide a section of code  
   
--   Place the section of code between the `#Region` and `#End Region` statements, as in the following example:  
+- Place the section of code between the `#Region` and `#End Region` statements, as in the following example:  
   
-     [!code-vb[VbVbalrConditionalComp#6](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/how-to-collapse-and-hide-sections-of-code_1.vb)]  
+   [!code-vb[VbVbalrConditionalComp#6](../../../visual-basic/language-reference/directives/codesnippet/VisualBasic/how-to-collapse-and-hide-sections-of-code_1.vb)]  
   
-     The `#Region` block can be used multiple times in a code file; thus, users can define their own blocks of procedures and classes that can, in turn, be collapsed. `#Region` blocks can also be nested within other `#Region` blocks.  
+   The `#Region` block can be used multiple times in a code file; thus, users can define their own blocks of procedures and classes that can, in turn, be collapsed. `#Region` blocks can also be nested within other `#Region` blocks.  
   
-    > [!NOTE]
-    >  Hiding code does not prevent it from being compiled and does not affect `#If...#End If` statements.  
+  > [!NOTE]
+  >  Hiding code does not prevent it from being compiled and does not affect `#If...#End If` statements.  
   
 ## See Also  
  [Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)  

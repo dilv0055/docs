@@ -7,7 +7,8 @@ ms.assetid: f1bf9ac2-cbcf-4298-ae51-53182076bdc8
 ---
 # String Functions (Visual Basic)
 The following table lists the functions that Visual Basic provides to search and manipulate strings.  
-  
+
+
 |.NET Framework method|Description|  
 |---------------------------|-----------------|  
 |<xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>|Returns an `Integer` value representing the character code corresponding to a character.|  
@@ -39,42 +40,42 @@ The following table lists the functions that Visual Basic provides to search and
 |<xref:Microsoft.VisualBasic.Strings.StrReverse%2A>|Returns a string in which the character order of a specified string is reversed.|  
 |<xref:Microsoft.VisualBasic.Strings.Trim%2A>|Returns a string containing a copy of a specified string with no leading or trailing spaces.|  
 |<xref:Microsoft.VisualBasic.Strings.UCase%2A>|Returns a string or character containing the specified string converted to uppercase.|  
-  
+
  You can use the [Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md) statement to set whether strings are compared using a case-insensitive text sort order determined by your system's locale (`Text`) or by the internal binary representations of the characters (`Binary`). The default text comparison method is `Binary`.  
-  
+
 ## Example  
  This example uses the `UCase` function to return an uppercase version of a string.  
-  
+
  [!code-vb[VbVbalrStrings#31](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_1.vb)]  
-  
+
 ## Example  
  This example uses the `LTrim` function to strip leading spaces and the `RTrim` function to strip trailing spaces from a string variable. It uses the `Trim` function to strip both types of spaces.  
-  
+
  [!code-vb[VbVbalrStrings#25](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_2.vb)]  
-  
+
 ## Example  
  This example uses the `Mid` function to return a specified number of characters from a string.  
-  
+
  [!code-vb[VbVbalrStrings#17](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_3.vb)]  
-  
+
 ## Example  
  This example uses `Len` to return the number of characters in a string.  
-  
+
  [!code-vb[VbVbalrStrings#33](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_4.vb)]  
-  
+
 ## Example  
  This example uses the `InStr` function to return the position of the first occurrence of one string within another.  
-  
+
  [!code-vb[VbVbalrStrings#8](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_5.vb)]  
-  
+
 ## Example  
  This example shows various uses of the `Format` function to format values using both `String` formats and user-defined formats. For the date separator (`/`), time separator (`:`), and the AM/PM indicators (`t` and `tt`), the actual formatted output displayed by your system depends on the locale settings the code is using. When times and dates are displayed in the development environment, the short time format and short date format of the code locale are used.  
-  
+
 > [!NOTE]
 >  For locales that use a 24-hour clock, the AM/PM indicators (`t` and `tt`) display nothing.  
-  
+
  [!code-vb[VbVbalrStrings#27](../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/string-functions_6.vb)]  
-  
+
 ## See Also  
  [Keywords](../../../visual-basic/language-reference/keywords/index.md)  
  [Visual Basic Runtime Library Members](../../../visual-basic/language-reference/runtime-library-members.md)  

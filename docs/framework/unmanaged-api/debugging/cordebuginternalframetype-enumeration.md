@@ -19,12 +19,12 @@ ms.author: "ronpet"
 ---
 # CorDebugInternalFrameType Enumeration
 Identifies the type of stack frame. This enumeration is used by the [ICorDebugInternalFrame::GetFrameType](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe-getframetype-method.md) method.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorDebugInternalFrameType {  
-  
+
     STUBFRAME_NONE                 = 0x00000000,  
     STUBFRAME_M2U                  = 0x00000001,  
     STUBFRAME_U2M                  = 0x00000002,  
@@ -38,9 +38,10 @@ typedef enum CorDebugInternalFrameType {
     STUBFRAME_JIT_COMPILATION     = 0x0000000a,  
 } CorDebugInternalFrameType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`STUBFRAME_NONE`|A null value. The `ICorDebugInternalFrame::GetFrameType` method never returns this value.|  
@@ -54,15 +55,15 @@ typedef enum CorDebugInternalFrameType {
 |`STUBFRAME_EXCEPTION`|An exception that is thrown.|  
 |`STUBFRAME_SECURITY`|A frame used for code access security.|  
 |`STUBFRAME_JIT_COMPILATION`|The runtime is JIT-compiling a method.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

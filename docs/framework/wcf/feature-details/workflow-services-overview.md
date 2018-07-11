@@ -14,20 +14,20 @@ Workflow services are WCF-based services that are implemented using workflows. W
   
  <xref:System.ServiceModel.Activities.Receive> Activity  
   
--   <xref:System.ServiceModel.Activities.Receive.ServiceContractName%2A>  
+- <xref:System.ServiceModel.Activities.Receive.ServiceContractName%2A>  
   
--   <!--zz <xref:System.ServiceModel.Activities.Receive.OperationContractName%2A>  --> `System.ServiceModel.Activities.Receive.OperationContractName`
+- <!--zz <xref:System.ServiceModel.Activities.Receive.OperationContractName%2A>  --> `System.ServiceModel.Activities.Receive.OperationContractName`
   
--   <xref:System.ServiceModel.Activities.Receive.Action%2A>  
+- <xref:System.ServiceModel.Activities.Receive.Action%2A>  
   
--   <!--zz <xref:System.ServiceModel.Activities.Receive.ValueType%2A>  --> `System.ServiceModel.Activities.Receive.ValueType`
+- <!--zz <xref:System.ServiceModel.Activities.Receive.ValueType%2A>  --> `System.ServiceModel.Activities.Receive.ValueType`
   
  <xref:System.ServiceModel.Activities.SendReply> Activity  
   
--   <xref:System.ServiceModel.Activities.SendReply.Action%2A>  
+- <xref:System.ServiceModel.Activities.SendReply.Action%2A>  
   
--   <!--zz <xref:System.ServiceModel.Activities.SendReply.ValueType%2A> -->
-`xref:System.ServiceModel.Activities.SendReply.ValueType`
+- <!--zz <xref:System.ServiceModel.Activities.SendReply.ValueType%2A> -->
+  `xref:System.ServiceModel.Activities.SendReply.ValueType`
   
  <xref:System.ServiceModel.Activities.TransactedReceiveScope> Activity  
   
@@ -42,13 +42,13 @@ Workflow services are WCF-based services that are implemented using workflows. W
 ## Hosting a Workflow Service  
  Like WCF services, workflow services must be hosted. WCF services use the <xref:System.ServiceModel.ServiceHost> class to host services and workflow services use <xref:System.ServiceModel.Activities.WorkflowServiceHost> to host services. Like WCF services, workflow services can be hosted in a variety of ways, for example:  
   
--   In a managed [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] application.  
+- In a managed [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] application.  
   
--   In Internet Information Services (IIS).  
+- In Internet Information Services (IIS).  
   
--   In Windows Process Activation Service (WAS).  
+- In Windows Process Activation Service (WAS).  
   
--   In a managed Windows Service.  
+- In a managed Windows Service.  
   
  Workflow services hosted in a managed [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] application or a managed Windows service create an instance of the <xref:System.ServiceModel.Activities.WorkflowServiceHost> class and pass it an instance of the <xref:System.ServiceModel.Activities.WorkflowService> that contains the workflow definition within the <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> property. A workflow definition that contains messaging activities is exposed as a workflow service.  
   

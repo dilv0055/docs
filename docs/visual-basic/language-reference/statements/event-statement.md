@@ -21,9 +21,9 @@ ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
 ---
 # Event Statement
 Declares a user-defined event.  
-  
+
 ## Syntax  
-  
+
 ```  
 [ <attrlist> ] [ accessmodifier ] _  
 [ Shared ] [ Shadows ] Event eventname[(parameterlist)] _  
@@ -47,9 +47,10 @@ Declares a user-defined event.
    End RaiseEvent  
 End Event  
 ```  
-  
+
 ## Parts  
-  
+
+
 |Part|Description|  
 |---|---|  
 |`attrlist`|Optional. List of attributes that apply to this event. Multiple attributes are separated by commas. You must enclose the [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md) in angle brackets ("`<`" and "`>`").|  
@@ -72,45 +73,45 @@ End Event
 |`delegatesignature`|Required. List of parameters that matches the parameters required by the `delegatename` delegate. You must enclose the [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md) in parentheses.|  
 |`statements`|Optional. Statements that contain the bodies of the `AddHandler`, `RemoveHandler`, and `RaiseEvent` methods.|  
 |`End Event`|Required. Terminates the `Event` block.|  
-  
+
 ## Remarks  
  Once the event has been declared, use the `RaiseEvent` statement to raise the event. A typical event might be declared and raised as shown in the following fragments:  
-  
+
  [!code-vb[VbVbalrEvents#13](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_1.vb)]  
-  
+
 > [!NOTE]
 >  You can declare event arguments just as you do arguments of procedures, with the following exceptions: events cannot have named arguments, `ParamArray` arguments, or `Optional` arguments. Events do not have return values.  
-  
+
  To handle an event, you must associate it with an event handler subroutine using either the `Handles` or `AddHandler` statement. The signatures of the subroutine and the event must match. To handle a shared event, you must use the `AddHandler` statement.  
-  
+
  You can use `Event` only at module level. This means the *declaration context* for an event must be a class, structure, module, or interface, and cannot be a source file, namespace, procedure, or block. For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
-  
+
  In most circumstances, you can use the first syntax in the Syntax section of this topic for declaring events. However, some scenarios require that you have more control over the detailed behavior of the event. The last syntax in the Syntax section of this topic, which uses the `Custom` keyword, provides that control by enabling you to define custom events. In a custom event, you specify exactly what occurs when code adds or removes an event handler to or from the event, or when code raises the event. For examples, see [How to: Declare Custom Events To Conserve Memory](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md) and [How to: Declare Custom Events To Avoid Blocking](../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md).  
-  
+
 ## Example  
  The following example uses events to count down seconds from 10 to 0. The code illustrates several of the event-related methods, properties, and statements. This includes the `RaiseEvent` statement.  
-  
+
  The class that raises an event is the event source, and the methods that process the event are the event handlers. An event source can have multiple handlers for the events it generates. When the class raises the event, that event is raised on every class that has elected to handle events for that instance of the object.  
-  
+
  The example also uses a form (`Form1`) with a button (`Button1`) and a text box (`TextBox1`). When you click the button, the first text box displays a countdown from 10 to 0 seconds. When the full time (10 seconds) has elapsed, the first text box displays "Done".  
-  
+
  The code for `Form1` specifies the initial and terminal states of the form. It also contains the code executed when events are raised.  
-  
+
  To use this example, open a new Windows Forms project. Then add a button named `Button1` and a text box named `TextBox1` to the main form, named `Form1`. Then right-click the form and click **View Code** to open the code editor.  
-  
+
  Add a `WithEvents` variable to the declarations section of the `Form1` class:  
-  
+
  [!code-vb[VbVbalrEvents#14](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_2.vb)]  
-  
+
  Add the following code to the code for `Form1`. Replace any duplicate procedures that may exist, such as `Form_Load` or `Button_Click`.  
-  
+
  [!code-vb[VbVbalrEvents#15](../../../visual-basic/language-reference/statements/codesnippet/VisualBasic/event-statement_3.vb)]  
-  
+
  Press F5 to run the previous example, and click the button labeled **Start**. The first text box starts to count down the seconds. When the full time (10 seconds) has elapsed, the first text box displays "Done".  
-  
+
 > [!NOTE]
 >  The `My.Application.DoEvents` method does not process events in the same way the form does. To enable the form to handle the events directly, you can use multithreading. For more information, see [Threading](../../programming-guide/concepts/threading/index.md).  
-  
+
 ## See Also  
  [RaiseEvent Statement](../../../visual-basic/language-reference/statements/raiseevent-statement.md)  
  [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md)  

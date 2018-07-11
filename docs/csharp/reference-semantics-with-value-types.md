@@ -4,7 +4,6 @@ description: Understand the language features that minimize copying structures s
 ms.date: 11/10/2017
 ms.custom: mvc
 ---
-
 # Reference semantics with value types
 
 An advantage to using value types is that they often avoid heap allocations.
@@ -49,7 +48,7 @@ or 8-byte reference to those arguments, depending on the
 architecture of the machine. The difference in size is small, but it can quickly add
 up when your application calls this method in a tight loop using many different
 values.
- 
+
 The `in` modifier complements `out` and `ref` in other ways as well. You
 cannot create overloads of a method that differ only in the presence of
 `in`, `out`, or `ref`. These new rules extend the same behavior that had always been
@@ -224,7 +223,7 @@ readonly ref struct ReadOnlyRefPoint2D
 {
     public int X { get; }
     public int Y { get; }
-    
+
     public ReadOnlyRefPoint2D(int x, int y) => (X, Y) = (x, y);
 }
 ```

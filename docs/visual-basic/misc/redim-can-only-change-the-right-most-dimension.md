@@ -10,7 +10,7 @@ A `ReDim` statement attempted to use the `Preserve` keyword to change a dimensio
   
 ## To correct this error  
   
--   Remove the `Preserve` keyword.  
+- Remove the `Preserve` keyword.  
   
 ## See Also  
  [Arrays in Visual Basic](~/docs/visual-basic/programming-guide/language-features/arrays/index.md)  

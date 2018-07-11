@@ -11,6 +11,7 @@ This section contains Entity SQL reference articles. This article summarizes and
 
 Arithmetic operators perform mathematical operations on two expressions of one or more numeric data types. The following table lists the Entity SQL arithmetic operators:
 
+
 |Operator|Use|
 |--------------|---------|
 |[+ (Add)](add.md)|Addition.|
@@ -23,6 +24,7 @@ Arithmetic operators perform mathematical operations on two expressions of one o
 ## Canonical functions
 
 Canonical functions are supported by all data providers and can be used by all querying technologies. The following table lists the canonical functions:
+
 
 |Function|Type|
 |--------------|----------|
@@ -38,6 +40,7 @@ Canonical functions are supported by all data providers and can be used by all q
 Comparison operators are defined for the following types: `Byte`, `Int16`, `Int32`, `Int64`, `Double`, `Single`, `Decimal`, `String`, `DateTime`, `Date`, `Time`, `DateTimeOffset`. Implicit type promotion occurs for the operands before the comparison operator is applied. Comparison operators always yield Boolean values. When at least one of the operands is `null`, the result is `null`.
 
 Equality and inequality are defined for any object type that has identity, such as the `Boolean` type. Non-primitive objects with identity are considered equal if they share the same identity. The following table lists the Entity SQL comparison operators:
+
 
 |Operator|Description|
 |--------------|-----------------|
@@ -55,6 +58,7 @@ Equality and inequality are defined for any object type that has identity, such 
 
 Logical operators test for the truth of a condition. The CASE expression evaluates a set of Boolean expressions to determine the result. The following table lists the logical and CASE expression operators:
 
+
 |Operator|Description|
 |--------------|-----------------|
 |[&& (Logical AND)](and-entity-sql.md)|Logical AND.|
@@ -66,6 +70,7 @@ Logical operators test for the truth of a condition. The CASE expression evaluat
 ## Query operators
 
 Query operators are used to define query expressions that return entity data. The following table lists query operators:
+
 
 |Operator|Use|
 |--------------|---------|
@@ -84,6 +89,7 @@ Query operators are used to define query expressions that return entity data. Th
 
 A reference is a logical pointer (foreign key) to a specific entity in a specific entity set. Entity SQL supports the following operators to construct, deconstruct, and navigate through references:
 
+
 |Operator|Use|
 |--------------|---------|
 |[CREATEREF](createref-entity-sql.md)|Creates references to an entity in an entity set.|
@@ -95,6 +101,7 @@ A reference is a logical pointer (foreign key) to a specific entity in a specifi
 ## Set operators
 
 Entity SQL provides various powerful set operations. This includes set operators similar to Transact-SQL operators such as UNION, INTERSECT, EXCEPT, and EXISTS. Entity SQL also supports operators for duplicate elimination (SET), membership testing (IN), and joins (JOIN). The following table lists the Entity SQL set operators:
+
 
 |Operator|Use|
 |--------------|---------|
@@ -112,6 +119,7 @@ Entity SQL provides various powerful set operations. This includes set operators
 
 Entity SQL provides operations that allow the type of an expression (value) to be constructed, queried, and manipulated. The following table lists operators that are used to work with types:
 
+
 |Operator|Use|
 |--------------|---------|
 |[CAST](cast-entity-sql.md)|Converts an expression of one data type to another.|
@@ -126,6 +134,7 @@ Entity SQL provides operations that allow the type of an expression (value) to b
 ## Other operators
 
 The following table lists other Entity SQL operators:
+
 
 |Operator|Use|
 |--------------|---------|

@@ -61,6 +61,7 @@ To explicitly identify an attribute target, use the following syntax:
 
 The list of possible `target` values is shown in the following table.
 
+
 |Target value|Applies to|
 |------------------|----------------|
 |`assembly`|Entire assembly|

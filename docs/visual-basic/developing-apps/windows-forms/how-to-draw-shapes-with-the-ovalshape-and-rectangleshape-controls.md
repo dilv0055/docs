@@ -20,23 +20,23 @@ You can use the <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> control to dra
   
 ### To draw a simple shape at design time  
   
-1.  Drag the <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> or <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> control from the **Visual Basic PowerPacks** tab (to install, see [Visual Basic Power Packs Controls](../../../visual-basic/developing-apps/windows-forms/power-packs-controls.md))in the **Toolbox** to a form or container control.  
+1. Drag the <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> or <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> control from the **Visual Basic PowerPacks** tab (to install, see [Visual Basic Power Packs Controls](../../../visual-basic/developing-apps/windows-forms/power-packs-controls.md))in the **Toolbox** to a form or container control.  
   
-2.  Drag the sizing and move handles to size and position the shape.  
+2. Drag the sizing and move handles to size and position the shape.  
   
-     You can also size and position the shape by changing the `Size` and `Position` properties in the **Properties** window.  
+    You can also size and position the shape by changing the `Size` and `Position` properties in the **Properties** window.  
   
-     To create a rectangle with rounded corners, select the `CornerRadius` property in the **Properties** window and set it to a value that is greater than 0.  
+    To create a rectangle with rounded corners, select the `CornerRadius` property in the **Properties** window and set it to a value that is greater than 0.  
   
-3.  In the **Properties** window, optionally set additional properties to change the appearance of the shape.  
+3. In the **Properties** window, optionally set additional properties to change the appearance of the shape.  
   
 ### To draw a simple shape at run time  
   
-1.  On the **Project** menu, click **Add Reference**.  
+1. On the **Project** menu, click **Add Reference**.  
   
-2.  In the **Add Reference** dialog box, select **Microsoft.VisualBasic.PowerPacks.VS**, and then click **OK**.  
+2. In the **Add Reference** dialog box, select **Microsoft.VisualBasic.PowerPacks.VS**, and then click **OK**.  
   
-3.  In the **Code Editor**, add an `Imports` or `using` statement at the top of the module:  
+3. In the **Code Editor**, add an `Imports` or `using` statement at the top of the module:  
   
 ```vb  
 Imports Microsoft.VisualBasic.PowerPacks  
@@ -46,85 +46,85 @@ Imports Microsoft.VisualBasic.PowerPacks
 using Microsoft.VisualBasic.PowerPacks;  
 ```  
   
-4.  Add the following code in an `Event` procedure:  
+4. Add the following code in an `Event` procedure:  
   
-     [!code-csharp[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls_1.cs)]
-     [!code-vb[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls_1.vb)]  
+    [!code-csharp[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/CSharp/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls_1.cs)]
+    [!code-vb[VbPowerpacksShape#1](../../../visual-basic/developing-apps/windows-forms/codesnippet/VisualBasic/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls_1.vb)]  
   
 ## Customizing Shapes  
  When you use the default settings, the <xref:Microsoft.VisualBasic.PowerPacks.OvalShape> and <xref:Microsoft.VisualBasic.PowerPacks.RectangleShape> controls are displayed with a solid black border that is one pixel wide and a transparent background. You can change the width, style, and color of the border by setting properties. Additional properties enable you to change the background of a shape to a solid color, a pattern, a gradient fill, or an image.  
   
  Before you change the background of a shape, you should know how several of the properties interact.  
   
--   The <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A> property setting has no effect unless the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackStyle%2A> property is set to <xref:Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque>.  
+- The <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A> property setting has no effect unless the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackStyle%2A> property is set to <xref:Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque>.  
   
--   If the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> property is set to <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Solid>, the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillColor%2A> overrides the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A>.  
+- If the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> property is set to <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Solid>, the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillColor%2A> overrides the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A>.  
   
--   If the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> property is set to a pattern value such as <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Horizontal> or <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Vertical>, the pattern will be displayed in the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillColor%2A>. The background will be displayed in the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A>, provided that the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackStyle%2A> property is set to <xref:Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque>.  
+- If the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> property is set to a pattern value such as <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Horizontal> or <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Vertical>, the pattern will be displayed in the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillColor%2A>. The background will be displayed in the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackColor%2A>, provided that the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackStyle%2A> property is set to <xref:Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque>.  
   
--   In order to display a gradient fill, the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> property must be set to <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Solid> and the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillGradientStyle%2A> property must be set to a value other than <xref:Microsoft.VisualBasic.PowerPacks.FillGradientStyle.None>.  
+- In order to display a gradient fill, the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillStyle%2A> property must be set to <xref:Microsoft.VisualBasic.PowerPacks.FillStyle.Solid> and the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.FillGradientStyle%2A> property must be set to a value other than <xref:Microsoft.VisualBasic.PowerPacks.FillGradientStyle.None>.  
   
--   Setting the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackgroundImage%2A> property to an image overrides all other background settings.  
+- Setting the <xref:Microsoft.VisualBasic.PowerPacks.SimpleShape.BackgroundImage%2A> property to an image overrides all other background settings.  
   
 #### To draw a circle that has a custom border  
   
-1.  Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
+1. Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
   
-2.  In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
+2. In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
   
-3.  Set the `BorderColor` property to the color that you want.  
+3. Set the `BorderColor` property to the color that you want.  
   
-4.  Set the `BorderStyle` property to any value other than `Solid`.  
+4. Set the `BorderStyle` property to any value other than `Solid`.  
   
-5.  Set the `BorderWidth` to the size that you want, in pixels.  
+5. Set the `BorderWidth` to the size that you want, in pixels.  
   
 #### To draw a circle that has a solid fill  
   
-1.  Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
+1. Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
   
-2.  In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
+2. In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
   
-3.  Set the `BackColor` property to the color that you want.  
+3. Set the `BackColor` property to the color that you want.  
   
-4.  Set the `BackStyle` property to `Opaque`.  
+4. Set the `BackStyle` property to `Opaque`.  
   
 #### To draw a circle that has a patterned fill  
   
-1.  Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
+1. Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
   
-2.  In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
+2. In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
   
-3.  Set the `BackColor` property to the color that you want for the background.  
+3. Set the `BackColor` property to the color that you want for the background.  
   
-4.  Set the `BackStyle` property to `Opaque`.  
+4. Set the `BackStyle` property to `Opaque`.  
   
-5.  Set the `FillColor` property to the color that you want for the pattern.  
+5. Set the `FillColor` property to the color that you want for the pattern.  
   
-6.  Set the `FillStyle` property to any value other than `Transparent` or `Solid`.  
+6. Set the `FillStyle` property to any value other than `Transparent` or `Solid`.  
   
 #### To draw a circle that has a gradient fill  
   
-1.  Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
+1. Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
   
-2.  In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
+2. In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
   
-3.  Set the `FillColor` property to the color that you want for the starting color.  
+3. Set the `FillColor` property to the color that you want for the starting color.  
   
-4.  Set the `FillGradientColor` property to the color that you want for the ending color.  
+4. Set the `FillGradientColor` property to the color that you want for the ending color.  
   
-5.  Set the `FillGradientStyle` property to a value other than `None`.  
+5. Set the `FillGradientStyle` property to a value other than `None`.  
   
 #### To draw a circle that is filled with an image  
   
-1.  Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
+1. Drag the `OvalShape` control from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
   
-2.  In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
+2. In the **Properties** window, in the `Size` property, set `Height` and `Width` to equal values.  
   
-3.  Select the `BackgroundImage` property and click the **ellipsis** button (...).  
+3. Select the `BackgroundImage` property and click the **ellipsis** button (...).  
   
-4.  In the **Select Resource** dialog box, select an image to display. If no image resources are listed, click **Import** to browse to the location of an image.  
+4. In the **Select Resource** dialog box, select an image to display. If no image resources are listed, click **Import** to browse to the location of an image.  
   
-5.  Click **OK** to insert the image.  
+5. Click **OK** to insert the image.  
   
 ## See Also  
  <xref:Microsoft.VisualBasic.PowerPacks.OvalShape>  

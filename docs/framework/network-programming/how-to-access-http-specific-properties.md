@@ -44,7 +44,7 @@ HttpWResp.Close();
 ## Compiling the Code  
  This example requires:  
   
--   References to the **System.Net** namespace.  
+- References to the **System.Net** namespace.  
   
 ## See Also  
  [Accessing the Internet Through a Proxy](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  

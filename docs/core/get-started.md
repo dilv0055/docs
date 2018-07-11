@@ -5,7 +5,6 @@ author: thraka
 ms.author: adegeo
 ms.date: 06/27/2018
 ---
-
 # Get started with .NET Core
 
 This article provides information on getting started with .NET Core. .NET Core can be installed on Windows, Linux, and macOS. You can code in your favorite text editor and produce cross-platform libraries and applications. 
@@ -35,7 +34,7 @@ Congratulations! You've created a simple .NET Core application. You can also use
 
 You can get started developing .NET Core applications by following these step-by-step tutorials.
 
-# [Windows](#tab/windows)
+#### [Windows](#tab/windows/)
 
 * [Build a C# "Hello World" Application with .NET Core in Visual Studio 2017.](./tutorials/with-visual-studio.md)
 
@@ -53,7 +52,7 @@ You can get started developing .NET Core applications by following these step-by
 
 See the [Prerequisites for Windows development](windows-prerequisites.md) article for a list of the supported Windows versions.
 
-# [Linux](#tab/linux)
+#### [Linux](#tab/linux/)
 
 You can get started developing .NET Core application by following these step-by-step tutorials.
 
@@ -63,7 +62,7 @@ You can get started developing .NET Core application by following these step-by-
 
 See the [Prerequisites for Linux development](linux-prerequisites.md) article for a list of the supported Linux distros and versions.
 
-# [macOS](#tab/macos)
+#### [macOS](#tab/macos/)
 
 You can get started developing .NET Core application by following these step-by-step tutorials.
 
@@ -79,4 +78,4 @@ You can get started developing .NET Core application by following these step-by-
 
 See the [Prerequisites for macOS development](macos-prerequisites.md) article for a list of the supported OS X / macOS versions.
 
-***
+* * *

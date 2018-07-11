@@ -39,11 +39,11 @@ An attached property is a concept defined by XAML. An attached property is inten
 ## How Attached Properties Are Used by the Owning Type  
  Although attached properties are settable on any object, that does not automatically mean that setting the property will produce a tangible result, or that the value will ever be used by another object. Generally, attached properties are intended so that objects coming from a wide variety of possible class hierarchies or logical relationships can each report common information to the type that defines the attached property. The type that defines the attached property typically follows one of these models:  
   
--   The type that defines the attached property is designed so that it can be the parent element of the elements that will set values for the attached property. The type then iterates its child objects through internal logic against some object tree structure, obtains the values, and acts on those values in some manner.  
+- The type that defines the attached property is designed so that it can be the parent element of the elements that will set values for the attached property. The type then iterates its child objects through internal logic against some object tree structure, obtains the values, and acts on those values in some manner.  
   
--   The type that defines the attached property will be used as the child element for a variety of possible parent elements and content models.  
+- The type that defines the attached property will be used as the child element for a variety of possible parent elements and content models.  
   
--   The type that defines the attached property represents a service. Other types set values for the attached property. Then, when the element that set the property is evaluated in the context of the service, the attached property values are obtained through internal logic of the service class.  
+- The type that defines the attached property represents a service. Other types set values for the attached property. Then, when the element that set the property is evaluated in the context of the service, the attached property values are obtained through internal logic of the service class.  
   
 ### An Example of a Parent-Defined Attached Property  
  The most typical scenario where [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] defines an attached property is when a parent element supports a child element collection, and also implements a behavior where the specifics of the behavior are reported individually for each child element.  
@@ -94,18 +94,18 @@ An attached property is a concept defined by XAML. An attached property is inten
   
  `public static object Get` *PropertyName* `(object`  `target` `)`  
   
--   The `target` object can be specified as a more specific type in your implementation. For example, the <xref:System.Windows.Controls.DockPanel.GetDock%2A?displayProperty=nameWithType> method types the parameter as <xref:System.Windows.UIElement>, because the attached property is only intended to be set on <xref:System.Windows.UIElement> instances.  
+- The `target` object can be specified as a more specific type in your implementation. For example, the <xref:System.Windows.Controls.DockPanel.GetDock%2A?displayProperty=nameWithType> method types the parameter as <xref:System.Windows.UIElement>, because the attached property is only intended to be set on <xref:System.Windows.UIElement> instances.  
   
--   The return value can be specified as a more specific type in your implementation. For example, the <xref:System.Windows.Controls.DockPanel.GetDock%2A> method types it as <xref:System.Windows.Controls.Dock>, because the value can only be set to that enumeration.  
+- The return value can be specified as a more specific type in your implementation. For example, the <xref:System.Windows.Controls.DockPanel.GetDock%2A> method types it as <xref:System.Windows.Controls.Dock>, because the value can only be set to that enumeration.  
   
 #### The Set Accessor  
  The signature for the `Set`*PropertyName* accessor must be:  
   
  `public static void Set` *PropertyName* `(object`  `target` `, object`  `value` `)`  
   
--   The `target` object can be specified as a more specific type in your implementation. For example, the <xref:System.Windows.Controls.DockPanel.SetDock%2A> method types it as <xref:System.Windows.UIElement>, because the attached property is only intended to be set on <xref:System.Windows.UIElement> instances.  
+- The `target` object can be specified as a more specific type in your implementation. For example, the <xref:System.Windows.Controls.DockPanel.SetDock%2A> method types it as <xref:System.Windows.UIElement>, because the attached property is only intended to be set on <xref:System.Windows.UIElement> instances.  
   
--   The `value` object can be specified as a more specific type in your implementation. For example, the <xref:System.Windows.Controls.DockPanel.SetDock%2A> method types it as <xref:System.Windows.Controls.Dock>, because the value can only be set to that enumeration. Remember that the value for this method is the input coming from the XAML loader when it encounters your attached property in an attached property usage in markup. That input is the value specified as a XAML attribute value in markup. Therefore there must be type conversion, value serializer, or markup extension support for the type you use, such that the appropriate type can be created from the attribute value (which is ultimately just a string).  
+- The `value` object can be specified as a more specific type in your implementation. For example, the <xref:System.Windows.Controls.DockPanel.SetDock%2A> method types it as <xref:System.Windows.Controls.Dock>, because the value can only be set to that enumeration. Remember that the value for this method is the input coming from the XAML loader when it encounters your attached property in an attached property usage in markup. That input is the value specified as a XAML attribute value in markup. Therefore there must be type conversion, value serializer, or markup extension support for the type you use, such that the appropriate type can be created from the attribute value (which is ultimately just a string).  
   
  The following example shows the dependency property registration (using the <xref:System.Windows.DependencyProperty.RegisterAttached%2A> method), as well as the `Get`*PropertyName* and `Set`*PropertyName* accessors. In the example, the attached property name is `IsBubbleSource`. Therefore, the accessors must be named `GetIsBubbleSource` and `SetIsBubbleSource`.  
   
@@ -115,22 +115,22 @@ An attached property is a concept defined by XAML. An attached property is inten
 #### Attached Property Attributes  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] defines several [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] that are intended to provide information about attached properties to reflection processes, and to typical users of reflection and property information such as designers. Because attached properties have a type of unlimited scope, designers need a way to avoid overwhelming users with a global list of all the attached properties that are defined in a particular technology implementation that uses XAML. The [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] that [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] defines for attached properties can be used to scope the situations where a given attached property should be shown in a properties window. You might consider applying these attributes for your own custom attached properties also. The purpose and syntax of the [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] is described on the appropriate reference pages:  
   
--   <xref:System.Windows.AttachedPropertyBrowsableAttribute>  
+- <xref:System.Windows.AttachedPropertyBrowsableAttribute>  
   
--   <xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute>  
+- <xref:System.Windows.AttachedPropertyBrowsableForChildrenAttribute>  
   
--   <xref:System.Windows.AttachedPropertyBrowsableForTypeAttribute>  
+- <xref:System.Windows.AttachedPropertyBrowsableForTypeAttribute>  
   
--   <xref:System.Windows.AttachedPropertyBrowsableWhenAttributePresentAttribute>  
+- <xref:System.Windows.AttachedPropertyBrowsableWhenAttributePresentAttribute>  
   
 <a name="more"></a>   
 ## Learning More About Attached Properties  
   
--   For more information on creating an attached property, see [Register an Attached Property](../../../../docs/framework/wpf/advanced/how-to-register-an-attached-property.md).  
+- For more information on creating an attached property, see [Register an Attached Property](../../../../docs/framework/wpf/advanced/how-to-register-an-attached-property.md).  
   
--   For more advanced usage scenarios for dependency properties and attached properties, see [Custom Dependency Properties](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md).  
+- For more advanced usage scenarios for dependency properties and attached properties, see [Custom Dependency Properties](../../../../docs/framework/wpf/advanced/custom-dependency-properties.md).  
   
--   You can also register a property as an attached property, and as a dependency property, but then still expose "wrapper" implementations. In this case, the property can be set either on that element, or on any element through the XAML attached property syntax. An example of a property with an appropriate scenario for both standard and attached usages is <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>.  
+- You can also register a property as an attached property, and as a dependency property, but then still expose "wrapper" implementations. In this case, the property can be set either on that element, or on any element through the XAML attached property syntax. An example of a property with an appropriate scenario for both standard and attached usages is <xref:System.Windows.FrameworkElement.FlowDirection%2A?displayProperty=nameWithType>.  
   
 ## See Also  
  <xref:System.Windows.DependencyProperty>  

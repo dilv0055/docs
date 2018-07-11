@@ -93,19 +93,19 @@ public sealed class ParallelForEachWithBodyFactory : IActivityTemplateFactory
   
 #### To run the sample  
   
-1.  Set the project of your choice as the startup project of the solution.  
+1. Set the project of your choice as the startup project of the solution.  
   
-    1.  **CodeTestClient** shows how to use the activity using code.  
+   1. **CodeTestClient** shows how to use the activity using code.  
   
-    2.  **DesignerTestClient** shows how to use the activity within the designer.  
+   2. **DesignerTestClient** shows how to use the activity within the designer.  
   
-2.  Build and run the project.  
+2. Build and run the project.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\NonGenericParallelForEach`

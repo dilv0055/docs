@@ -18,10 +18,13 @@ The new language features in this release are:
 
 * [Reference semantics with value types](#reference-semantics-with-value-types)
   - A combination of syntax improvements that enable working with value types using reference semantics.
+
 * [Non-trailing named arguments](#non-trailing-named-arguments)
   - Named arguments can be followed by positional arguments.
+
 * [Leading underscores in numeric literals](#leading-underscores-in-numeric-literals)
   - Numeric literals can now have leading underscores before any printed digits.
+
 * [`private protected` access modifier](#private-protected-access-modifier)
   - The `private protected` access modifier enables access for derived classes in the same assembly.
 
@@ -33,10 +36,10 @@ are designed to increase performance by minimizing copying value types without
 incurring the memory allocations associated with using reference types. The
 features include:
 
- - The `in` modifier on parameters, to specify that an argument is passed by reference but not modified by the called method.
- - The `ref readonly` modifier on method returns, to indicate that a method returns its value by reference but doesn't allow writes to that object.
- - The `readonly struct` declaration, to indicate that a struct is immutable and should be passed as an `in` parameter to its member methods.
- - The `ref struct` declaration, to indicate that a struct type accesses managed memory directly and must always be stack allocated.
+- The `in` modifier on parameters, to specify that an argument is passed by reference but not modified by the called method.
+- The `ref readonly` modifier on method returns, to indicate that a method returns its value by reference but doesn't allow writes to that object.
+- The `readonly struct` declaration, to indicate that a struct is immutable and should be passed as an `in` parameter to its member methods.
+- The `ref struct` declaration, to indicate that a struct type accesses managed memory directly and must always be stack allocated.
 
 You can read more about all these changes in [Using value types with reference semantics](../reference-semantics-with-value-types.md).
 
@@ -58,7 +61,7 @@ For example:
 int binaryValue = 0b_0101_0101;
 ```
 
-## _private protected_ access modifier
+## *private protected* access modifier
 
 Finally, a new compound access modifier: `private protected` indicates that a member may be
 accessed by containing class or derived classes that are declared in the same assembly. While `protected internal`

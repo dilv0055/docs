@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # ICorDebugILFrame Interface1
 Represents a stack frame of Microsoft intermediate language (MSIL) code. This interface is a subclass of the ICorDebugFrame interface.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[CanSetIP Method](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-cansetip-method.md)|Gets a value that indicates whether it is safe to set the instruction pointer to the specified offset location.|  
@@ -33,21 +34,21 @@ Represents a stack frame of Microsoft intermediate language (MSIL) code. This in
 |[GetStackDepth Method](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getstackdepth-method.md)|Not implemented.|  
 |[GetStackValue Method](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getstackvalue-method.md)|Not implemented.|  
 |[SetIP Method](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md)|Sets the instruction pointer to the specified offset location in the MSIL code.|  
-  
+
 ## Remarks  
  The `ICorDebugILFrame` interface is a specialized ICorDebugFrame interface. It is used either for MSIL code frames or for just-in-time (JIT) compiled frames. The JIT-compiled frames implement both the `ICorDebugILFrame` interface and the ICorDebugNativeFrame interface.  
-  
+
 > [!NOTE]
 >  This interface does not support being called remotely, either cross-machine or cross-process.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Interfaces](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)

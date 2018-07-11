@@ -28,15 +28,15 @@ Incorporating digital ink into your applications is easier than ever. Ink has ev
 #### Got Ink?  
  To start your first [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application that supports ink:  
   
-1.  Open Microsoft Visual Studio 2005  
+1. Open Microsoft Visual Studio 2005  
   
-2.  Create a new **Windows Application (WPF)**  
+2. Create a new **Windows Application (WPF)**  
   
-3.  Type `<InkCanvas/>` between the `<Grid>` tags  
+3. Type `<InkCanvas/>` between the `<Grid>` tags  
   
-4.  Press **F5** to launch your application in the debugger  
+4. Press **F5** to launch your application in the debugger  
   
-5.  Using a stylus or mouse, write **hello world** in the window  
+5. Using a stylus or mouse, write **hello world** in the window  
   
  You've written the ink equivalent of a "hello world" application with only 12 keystrokes!  
   

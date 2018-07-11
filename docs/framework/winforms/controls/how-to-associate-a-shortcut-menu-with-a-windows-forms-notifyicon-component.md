@@ -22,49 +22,49 @@ ms.assetid: d68f3926-08d3-4f7d-949f-1981b29cf188
   
 ### To associate a shortcut menu with the NotifyIcon component at design time  
   
-1.  Add a <xref:System.Windows.Forms.NotifyIcon> component to your form, and set the important properties, such as the <xref:System.Windows.Forms.NotifyIcon.Icon%2A> and <xref:System.Windows.Forms.NotifyIcon.Visible%2A> properties.  
+1. Add a <xref:System.Windows.Forms.NotifyIcon> component to your form, and set the important properties, such as the <xref:System.Windows.Forms.NotifyIcon.Icon%2A> and <xref:System.Windows.Forms.NotifyIcon.Visible%2A> properties.  
   
-     For more information, see [How to: Add Application Icons to the TaskBar with the Windows Forms NotifyIcon Component](../../../../docs/framework/winforms/controls/app-icons-to-the-taskbar-with-wf-notifyicon.md).  
+    For more information, see [How to: Add Application Icons to the TaskBar with the Windows Forms NotifyIcon Component](../../../../docs/framework/winforms/controls/app-icons-to-the-taskbar-with-wf-notifyicon.md).  
   
-2.  Add a <xref:System.Windows.Forms.ContextMenu> component to your Windows Form.  
+2. Add a <xref:System.Windows.Forms.ContextMenu> component to your Windows Form.  
   
-     Add menu items to the shortcut menu representing the commands you want to make available at run time. This is also a good time to add menu enhancements to these menu items, such as access keys.  
+    Add menu items to the shortcut menu representing the commands you want to make available at run time. This is also a good time to add menu enhancements to these menu items, such as access keys.  
   
-3.  Set the <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A> property of the <xref:System.Windows.Forms.NotifyIcon> component to the shortcut menu that you added.  
+3. Set the <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A> property of the <xref:System.Windows.Forms.NotifyIcon> component to the shortcut menu that you added.  
   
-     With this property set, the shortcut menu will be displayed when the icon on the taskbar is clicked.  
+    With this property set, the shortcut menu will be displayed when the icon on the taskbar is clicked.  
   
 ### To associate a shortcut menu with the NotifyIcon component programmatically  
   
-1.  Create an instance of the <xref:System.Windows.Forms.NotifyIcon> class and a <xref:System.Windows.Forms.ContextMenu> class, with whatever property settings are necessary for the application (<xref:System.Windows.Forms.NotifyIcon.Icon%2A> and <xref:System.Windows.Forms.NotifyIcon.Visible%2A> properties for the <xref:System.Windows.Forms.NotifyIcon> component, menu items for the <xref:System.Windows.Forms.ContextMenu> component).  
+1. Create an instance of the <xref:System.Windows.Forms.NotifyIcon> class and a <xref:System.Windows.Forms.ContextMenu> class, with whatever property settings are necessary for the application (<xref:System.Windows.Forms.NotifyIcon.Icon%2A> and <xref:System.Windows.Forms.NotifyIcon.Visible%2A> properties for the <xref:System.Windows.Forms.NotifyIcon> component, menu items for the <xref:System.Windows.Forms.ContextMenu> component).  
   
-2.  Set the <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A> property of the <xref:System.Windows.Forms.NotifyIcon> component to the shortcut menu that you added.  
+2. Set the <xref:System.Windows.Forms.NotifyIcon.ContextMenu%2A> property of the <xref:System.Windows.Forms.NotifyIcon> component to the shortcut menu that you added.  
   
-     With this property set, the shortcut menu will be displayed when the icon on the taskbar is clicked.  
+    With this property set, the shortcut menu will be displayed when the icon on the taskbar is clicked.  
   
-    > [!NOTE]
-    >  The following code example creates a basic menu structure. You will need to customize the menu choices to those that fit the application you are developing. Additionally, you will want to write code to handle the <xref:System.Windows.Forms.MenuItem.Click> events for these menu items.  
+   > [!NOTE]
+   >  The following code example creates a basic menu structure. You will need to customize the menu choices to those that fit the application you are developing. Additionally, you will want to write code to handle the <xref:System.Windows.Forms.MenuItem.Click> events for these menu items.  
   
-    ```vb  
-    Public ContextMenu1 As New ContextMenu  
-    Public NotifyIcon1 As New NotifyIcon  
+   ```vb  
+   Public ContextMenu1 As New ContextMenu  
+   Public NotifyIcon1 As New NotifyIcon  
   
-    Public Sub CreateIconMenuStructure()  
-       ' Add menu items to shortcut menu.  
-       ContextMenu1.MenuItems.Add("&Open Application")  
-       ContextMenu1.MenuItems.Add("S&uspend Application")  
-       ContextMenu1.MenuItems.Add("E&xit")  
+   Public Sub CreateIconMenuStructure()  
+      ' Add menu items to shortcut menu.  
+      ContextMenu1.MenuItems.Add("&Open Application")  
+      ContextMenu1.MenuItems.Add("S&uspend Application")  
+      ContextMenu1.MenuItems.Add("E&xit")  
   
-       ' Set properties of NotifyIcon component.  
-       NotifyIcon1.Icon = New System.Drawing.Icon _   
-          (System.Environment.GetFolderPath _   
-          (System.Environment.SpecialFolder.Personal)  _   
-          & "\Icon.ico")  
-       NotifyIcon1.Text = "Right-click me!"  
-       NotifyIcon1.Visible = True  
-       NotifyIcon1.ContextMenu = ContextMenu1  
-    End Sub  
-    ```  
+      ' Set properties of NotifyIcon component.  
+      NotifyIcon1.Icon = New System.Drawing.Icon _   
+         (System.Environment.GetFolderPath _   
+         (System.Environment.SpecialFolder.Personal)  _   
+         & "\Icon.ico")  
+      NotifyIcon1.Text = "Right-click me!"  
+      NotifyIcon1.Visible = True  
+      NotifyIcon1.ContextMenu = ContextMenu1  
+   End Sub  
+   ```  
   
 ```csharp  
 public NotifyIcon notifyIcon1 = new NotifyIcon();  

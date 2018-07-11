@@ -4,7 +4,6 @@ description: Learn C# by exploring numeric types, their properties and methods.
 ms.date: 10/31/2017
 ms.custom: mvc
 ---
-
 # Numbers in C# quickstart
 
 This quickstart teaches you about the number types in C# interactively. You'll write small amounts of code, then you'll compile and run that code. The quickstart contains a series of lessons that explore numbers and math operations in C#. These lessons teach you the fundamentals of the C# language.
@@ -44,7 +43,7 @@ Console.WriteLine(c);
 ```
 
 Run this code by typing `dotnet run` in your command window. 
-    
+
 You can also experiment by performing multiple mathematics operations in the same line, if you'd like. Try `c = a + b - 12 * 17;` for example. Mixing variables and constant numbers is allowed.
 
 > [!TIP]
@@ -219,7 +218,7 @@ Console.WriteLine($"remainder: {e}");
 The C# integer type differs from mathematical integers in one other
 way: the `int` type has minimum and maximum limits. Add this code to
 your `Main` method to see those limits:
-    
+
 ```csharp
 int max = int.MaxValue;
 int min = int.MinValue;
@@ -235,7 +234,7 @@ method to see an example:
 int what = max + 3;
 Console.WriteLine($"An example of overflow: {what}");
 ```
-    
+
 Notice that the answer is very close to the minimum (negative) integer. It's
 the same as `min + 2`. 
 The addition operation **overflowed** the allowed values for integers.

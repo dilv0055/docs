@@ -17,17 +17,17 @@ The `this` keyword refers to the current instance of the class and is also used 
   
  The following are common uses of `this`:  
   
--   To qualify members hidden by similar names, for example:  
+- To qualify members hidden by similar names, for example:  
   
  [!code-csharp[csrefKeywordsAccess#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_1.cs)]  
   
--   To pass an object as a parameter to other methods, for example:  
+- To pass an object as a parameter to other methods, for example:  
   
-    ```csharp  
-    CalcTax(this);  
-    ```  
+  ```csharp  
+  CalcTax(this);  
+  ```  
   
--   To declare indexers, for example:  
+- To declare indexers, for example:  
   
  [!code-csharp[csrefKeywordsAccess#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_2.cs)]  
   

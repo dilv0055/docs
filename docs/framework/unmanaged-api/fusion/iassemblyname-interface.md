@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # IAssemblyName Interface
 Provides methods for describing and working with an assembly's unique identity.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[Clone Method](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-clone-method.md)|Creates a shallow copy of this `IAssemblyName` object.|  
@@ -32,14 +33,14 @@ Provides methods for describing and working with an assembly's unique identity.
 |[GetVersion Method](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getversion-method.md)|Gets the version information for the assembly referenced by this `IAssemblyName` object.|  
 |[IsEqual Method](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md)|Determines whether a specified `IAssemblyName` object is equal to this `IAssemblyName`, based on the specified comparison flags.|  
 |[SetProperty Method](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-setproperty-method.md)|Sets the value of the property referenced by the specified `PropertyId`.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Fusion.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Fusion Interfaces](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
  [IAssemblyEnum Interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyenum-interface.md)

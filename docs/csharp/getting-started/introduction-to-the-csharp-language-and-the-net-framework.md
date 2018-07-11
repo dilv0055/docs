@@ -20,15 +20,15 @@ C# is an elegant and type-safe object-oriented language that enables developers 
   
  In addition to these basic object-oriented principles, C# makes it easy to develop software components through several innovative language constructs, including the following:  
   
--   Encapsulated method signatures called *delegates*, which enable type-safe event notifications.  
+- Encapsulated method signatures called *delegates*, which enable type-safe event notifications.  
   
--   Properties, which serve as accessors for private member variables.  
+- Properties, which serve as accessors for private member variables.  
   
--   Attributes, which provide declarative metadata about types at run time.  
+- Attributes, which provide declarative metadata about types at run time.  
   
--   Inline XML documentation comments.  
+- Inline XML documentation comments.  
   
--   [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] which provides built-in query capabilities across a variety of data sources.  
+- [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] which provides built-in query capabilities across a variety of data sources.  
   
  If you have to interact with other Windows software such as COM objects or native Win32 DLLs, you can do this in C# through a process called "Interop." Interop enables C# programs to do almost anything that a native C++ application can do. C# even supports pointers and the concept of "unsafe" code for those cases in which direct memory access is absolutely critical.  
   
@@ -36,11 +36,11 @@ C# is an elegant and type-safe object-oriented language that enables developers 
   
  The following are additional C# resources:  
   
--   For a good general introduction to the language, see Chapter 1 of the [C# Language Specification](../../csharp/language-reference/language-specification/index.md).  
+- For a good general introduction to the language, see Chapter 1 of the [C# Language Specification](../../csharp/language-reference/language-specification/index.md).  
   
--   For detailed information about specific aspects of the C# language, see the [C# Reference](../../csharp/language-reference/index.md).  
+- For detailed information about specific aspects of the C# language, see the [C# Reference](../../csharp/language-reference/index.md).  
   
--   For more information about [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], see [LINQ (Language-Integrated Query)](../programming-guide/concepts/linq/index.md).  
+- For more information about [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], see [LINQ (Language-Integrated Query)](../programming-guide/concepts/linq/index.md).  
 
 ## .NET Framework Platform Architecture  
  C# programs run on the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], an integral component of Windows that includes a virtual execution system called the common language runtime (CLR) and a unified set of class libraries. The CLR is the commercial implementation by Microsoft of the common language infrastructure (CLI), an international standard that is the basis for creating execution and development environments in which languages and libraries work together seamlessly.  

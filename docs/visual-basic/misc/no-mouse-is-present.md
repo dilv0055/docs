@@ -10,11 +10,11 @@ One of the properties of the `My.Computer.Mouse` object was called, but the comp
   
 ## To correct this error  
   
--   Add a `Try...Catch` block around the call to the property of the `My.Computer.Mouse` object.  
+- Add a `Try...Catch` block around the call to the property of the `My.Computer.Mouse` object.  
   
-     — or —  
+   — or —  
   
--   Install a mouse on the computer.  
+- Install a mouse on the computer.  
   
 ## See Also  
  [My.Computer.Mouse](xref:Microsoft.VisualBasic.Devices.Mouse)  

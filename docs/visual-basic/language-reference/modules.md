@@ -7,7 +7,8 @@ ms.assetid: 370bfc90-e8f2-4942-bdec-9897ce605d31
 ---
 # Modules (Visual Basic)
 Visual Basic provides several modules that enable you to simplify common tasks in your code, including manipulating strings, performing mathematical calculations, getting system information, performing file and directory operations, and so on. The following table lists the modules provided by Visual Basic.  
-  
+
+
 |||  
 |---|---|  
 |<xref:Microsoft.VisualBasic.Constants>|Contains miscellaneous constants. These constants can be used anywhere in your code.|  
@@ -22,7 +23,7 @@ Visual Basic provides several modules that enable you to simplify common tasks i
 |<xref:Microsoft.VisualBasic.Interaction>|Contains members interact with objects, applications, and systems.|  
 |<xref:Microsoft.VisualBasic.Strings>|Contains members that perform string operations such as reformatting strings, searching a string, getting the length of a string, and so on.|  
 |<xref:Microsoft.VisualBasic.VBMath>|Contains members perform mathematical operations.|  
-  
+
 ## See Also  
  [Visual Basic Language Reference](../../visual-basic/language-reference/index.md)  
  [Visual Basic](../../visual-basic/index.md)

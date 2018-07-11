@@ -19,32 +19,33 @@ ms.author: "ronpet"
 ---
 # COR_PUB_ENUMPROCESS Enumeration
 Identifies the type of process to be enumerated.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     COR_PUB_MANAGEDONLY    = 0x00000001  
 } COR_PUB_ENUMPROCESS;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member name|Description|  
 |-----------------|-----------------|  
 |`COR_PUB_MANAGEDONLY`|A managed process.|  
-  
+
 ## Remarks  
  The current version of the unmanaged debugging API enumerates only managed processes.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorPub.idl, CorPub.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

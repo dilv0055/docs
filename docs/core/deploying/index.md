@@ -5,7 +5,6 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/18/2017
 ---
-
 # .NET Core application deployment
 
 You can create two types of deployments for .NET Core applications:

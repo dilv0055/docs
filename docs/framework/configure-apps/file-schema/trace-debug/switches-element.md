@@ -15,43 +15,45 @@ manager: "markl"
 ---
 # &lt;switches&gt; Element
 Contains trace switches and the level where the trace switches are set.  
-  
+
  \<configuration>  
 \<system.diagnostics>  
 \<switches>  
-  
+
 ## Syntax  
-  
+
 ```xml  
       <switches>   
 </switches>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<add>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-switches.md)|Specifies the level where a trace switch is set.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |`configuration`|The root element in every configuration file used by the common language runtime and .NET Framework applications.|  
 |`System.diagnostics`|Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.|  
-  
+
 ## Remarks  
  You can change the level of a trace switch by putting it in a configuration file. If the switch is a <xref:System.Diagnostics.BooleanSwitch>, you can turn it on and off. If the switch is a <xref:System.Diagnostics.TraceSwitch>, you can assign different levels to it to specify the types of trace or debug messages the application outputs.  
-  
+
 ## Example  
  The following example shows how to use the **\<switch>** element to set the `General` trace switch to the <xref:System.Diagnostics.TraceLevel> level, and enable the `Data` Boolean trace switch.  
-  
+
 ```xml  
 <configuration>  
    <system.diagnostics>  
@@ -62,7 +64,7 @@ Contains trace switches and the level where the trace switches are set.
    </system.diagnostics>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.Diagnostics.Switch>  
  <xref:System.Diagnostics.TraceSwitch>  

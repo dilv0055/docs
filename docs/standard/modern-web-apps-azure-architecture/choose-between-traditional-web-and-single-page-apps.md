@@ -5,11 +5,10 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 6/28/2018
 ---
-
 # Choose Between Traditional Web Apps and Single Page Apps (SPAs)
 
 > "Atwood's Law: Any application that can be written in JavaScript, will eventually be written in JavaScript."  
-> _\- Jeff Atwood_
+> *\- Jeff Atwood*
 
 There are two general approaches to building web applications today: traditional web applications that perform most of the application logic on the server, and single page applications (SPAs) that perform most of the user interface logic in a web browser, communicating with the web server primarily using web APIs. A hybrid approach is also possible, the simplest being host one or more rich SPA-like sub-applications within a larger traditional web application.
 
@@ -64,7 +63,7 @@ Note that frequently SPAs need to implement features that are built-in to tradit
 Writing SPAs requires familiarity with JavaScript and/or TypeScript and client-side programming techniques and libraries. Your team should be competent in writing modern JavaScript using a SPA framework like Angular.
 
 > ### References – SPA Frameworks
->
+> 
 > - **Angular**  
 >   <https://angular.io>
 > - **Comparison of JavaScript Frameworks**  
@@ -78,6 +77,7 @@ If you're already supporting a web API for use by other clients, it may require 
 
 The following decision table summarizes some of the basic factors to consider when choosing between a traditional web application and a SPA.
 
+
 | **Factor**                                           | **Traditional Web App** | **Single Page Application** |
 | ---------------------------------------------------- | ----------------------- | --------------------------- |
 | Required Team Familiarity with JavaScript/TypeScript | **Minimal**             | **Required**                |
@@ -85,6 +85,6 @@ The following decision table summarizes some of the basic factors to consider wh
 | Minimal Client-Side Application Behavior             | **Well-Suited**         | **Overkill**                |
 | Rich, Complex User Interface Requirements            | **Limited**             | **Well-Suited**             |
 
->[!div class="step-by-step"]
-[Previous](modern-web-applications-characteristics.md)
-[Next](architectural-principles.md)
+> [!div  class="step-by-step"]
+> [Previous](modern-web-applications-characteristics.md)
+> [Next](architectural-principles.md)

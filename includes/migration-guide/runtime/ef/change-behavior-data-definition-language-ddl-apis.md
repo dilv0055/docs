@@ -1,5 +1,6 @@
 ### Change in behavior in Data Definition Language (DDL) APIs
 
+
 |   |   |
 |---|---|
 |Details|The behavior of DDL APIs when AttachDBFilename is specified has changed as follows:<ul><li>Connection strings need not specify an Initial Catalog value. Previously, both AttachDBFilename and Initial Catalog were required.</li><li>If both AttachDBFilename and Initial Catalog are specified and the given MDF file exists, the <xref:System.Data.Objects.ObjectContext.DatabaseExists%2A> method returns <code>true</code>. Previously, it returned <code>false</code>.</li><li>If both AttachDBFilename and Initial Catalog are specified and the given MDF file exists, calling the <xref:System.Data.Objects.ObjectContext.DeleteDatabase%2A> method deletes the files.</li><li>If <xref:System.Data.Objects.ObjectContext.DeleteDatabase%2A> is called when the connection string specifies an AttachDBFilename value with an MDF that doesn't exist and an Initial Catalog that doesn't exist, the method throws an <xref:System.InvalidOperationException> exception. Previously, it threw a <xref:System.Data.SqlClient.SqlException> exception.</li></ul>|

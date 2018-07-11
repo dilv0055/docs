@@ -19,30 +19,31 @@ ms.author: "mairaw"
 ---
 # COR_PRF_FUNCTION Structure
 Provides a unique representation of a function by combining its ID with the ID of its recompiled version.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJitId;} COR_PRF_FUNCTION;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`functionId`|The ID of the function.|  
 |`reJitId`|The ID of the recompiled function. A value of 0 (zero) represents the original version of the function.|  
-  
+
 ## Remarks  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorProf.idl  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
-  
+
 ## See Also  
  [Profiling Structures](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

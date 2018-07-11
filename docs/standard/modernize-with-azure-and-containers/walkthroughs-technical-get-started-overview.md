@@ -55,7 +55,6 @@ The main goal of this walkthrough is simply to get familiar with these apps, and
 The figure below shows the simple scenario of the original legacy ASP.NET web applications.
 
 > ![Simple architecture scenario of the original legacy ASP.NET web applications](./media/image5-1.png)
->
 
 From a business domain perspective, both apps offer the same catalog management features. Members of the eShop enterprise team would use the app to view and edit the product catalog. 
 
@@ -70,7 +69,6 @@ Dependencies in ASP.NET 4.x or earlier versions (either for MVC or for Web Forms
 The figure below shows the simple scenario of the original 3-Tier legacy application.
 
 > ![Simple architecture scenario of the original legacy 3-Tier app with a WCF service and a WinForms client app](./media/image5-1.5.png)
->
 
 ### Benefits
 
@@ -80,8 +78,8 @@ The benefits of this walkthrough are simple: Just get familiar with the code and
 
 Explore this content more in-depth on the GitHub wiki:
 
-  - [Tour on the baseline ASP.NET MVC and Web Forms “legacy” apps](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-the-ASP.NET-MVC-and-WebForms-apps-implementation-code)
-  -	[Tour on the baseline WCF service and WinForms (3-Tier) “legacy” app](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
+- [Tour on the baseline ASP.NET MVC and Web Forms “legacy” apps](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-the-ASP.NET-MVC-and-WebForms-apps-implementation-code)
+- [Tour on the baseline WCF service and WinForms (3-Tier) “legacy” app](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
 
 
 ## Walkthrough 2: Containerize your existing .NET applications with Windows Containers
@@ -107,7 +105,6 @@ This walkthrough focuses on the Visual Studio 2017 Tools for Docker approach, bu
 Figure below shows the scenario for containerized eShop legacy web apps applications.
 
 > ![Simplified architecture diagram of containerized ASP.NET applications in a development environment](./media/image5-3.png)
->
 
 
 ### Scenario 2: Containerized WCF service
@@ -115,7 +112,6 @@ Figure below shows the scenario for containerized eShop legacy web apps applicat
 Figure below shows the scenario for a 3-Tier app with a containerized WCF service. 
 
 > ![Simplified architecture diagram of containerized WCF service in a development environment](./media/image5-3.5.png)
->
 
 ### Benefits
 
@@ -131,8 +127,8 @@ Containerization, in ideal situations, does not require making any changes to th
 
 Explore this content more in-depth on the GitHub wiki:
 
-  - [How to containerize the .NET Framework web apps with Windows Containers and Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
-  - [Adding Docker Support to a WCF service](https://github.com/dotnet-architecture/eShopModernizing/wiki/22.-Adding-Docker-Support)
+- [How to containerize the .NET Framework web apps with Windows Containers and Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
+- [Adding Docker Support to a WCF service](https://github.com/dotnet-architecture/eShopModernizing/wiki/22.-Adding-Docker-Support)
 
 
 
@@ -244,9 +240,9 @@ An application that's based on Windows Containers will quickly need to use platf
 
 The goal of this walkthrough is to learn how to deploy a Windows Container–based application to Kubernetes (also called *K8s*) in Azure Container Service. Deploying to Kubernetes from scratch is a two-step process:
 
-1.  Deploy a Kubernetes cluster to Azure Container Service.
+1. Deploy a Kubernetes cluster to Azure Container Service.
 
-2.  Deploy the application and related resources to the Kubernetes cluster.
+2. Deploy the application and related resources to the Kubernetes cluster.
 
 ### Scenarios
 
@@ -304,9 +300,9 @@ An application based on Windows Containers quickly needs to use platforms, movin
 
 The goal of this walkthrough is to learn how to deploy a Windows Container–based application to a Service Fabric cluster in Azure. Deploying to Service Fabric from scratch is a two-step process:
 
-1.  Deploy a Service Fabric cluster to Azure (or to a different environment).
+1. Deploy a Service Fabric cluster to Azure (or to a different environment).
 
-2.  Deploy the application and related resources to the Service Fabric cluster.
+2. Deploy the application and related resources to the Service Fabric cluster.
 
 ### Scenarios
 
@@ -362,6 +358,6 @@ Explore this content more in-depth on the GitHub wiki:
 
 [https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-How-to-deploy-your-Windows-Containers-based-apps-into-Azure-Service-Fabric-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-How-to-deploy-your-Windows-Containers-based-apps-into-Azure-Service-Fabric-(Including-CI-CD))
 
->[!div class="step-by-step"]
-[Previous](lift-and-shift-existing-apps-devops/migrate-to-hybrid-cloud-scenarios.md)
-[Next](conclusions.md)
+> [!div  class="step-by-step"]
+> [Previous](lift-and-shift-existing-apps-devops/migrate-to-hybrid-cloud-scenarios.md)
+> [Next](conclusions.md)

@@ -5,18 +5,19 @@ ms.assetid: cdebf42c-d880-4509-82be-8fdc9f88d203
 ---
 # 4022 - WebhostUnregisterProtocolFailed
 ## Properties  
-  
+
+
 |||  
 |-|-|  
 |ID|4022|  
 |Keywords|ActivationServices|  
 |Level|Error|  
 |Channel|Microsoft-Windows-Application Server-Applications/Analytic|  
-  
+
 ## Description  
  This event is emitted when the web host unregister protocol has failed.  
-  
+
 ## Message  
  Error Code:%1  
-  
+
 ## Details

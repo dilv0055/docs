@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorElementType Enumeration1
 Specifies a common language runtime <xref:System.Type>, a type modifier, or information about a type in a metadata type signature.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorElementType {  
     ELEMENT_TYPE_END            = 0x0,  
@@ -39,39 +39,40 @@ typedef enum CorElementType {
     ELEMENT_TYPE_R4             = 0xc,  
     ELEMENT_TYPE_R8             = 0xd,  
     ELEMENT_TYPE_STRING         = 0xe,  
-  
+
     ELEMENT_TYPE_PTR            = 0xf,  
     ELEMENT_TYPE_BYREF          = 0x10,  
-  
+
     ELEMENT_TYPE_VALUETYPE      = 0x11,  
     ELEMENT_TYPE_CLASS          = 0x12,  
     ELEMENT_TYPE_VAR            = 0x13,  
     ELEMENT_TYPE_ARRAY          = 0x14,  
     ELEMENT_TYPE_GENERICINST    = 0x15,  
     ELEMENT_TYPE_TYPEDBYREF     = 0x16,  
-  
+
     ELEMENT_TYPE_I              = 0x18,  
     ELEMENT_TYPE_U              = 0x19,  
     ELEMENT_TYPE_FNPTR          = 0x1B,  
     ELEMENT_TYPE_OBJECT         = 0x1C,  
     ELEMENT_TYPE_SZARRAY        = 0x1D,  
     ELEMENT_TYPE_MVAR           = 0x1e,  
-  
+
     ELEMENT_TYPE_CMOD_REQD      = 0x1F,  
     ELEMENT_TYPE_CMOD_OPT       = 0x20,  
-  
+
     ELEMENT_TYPE_INTERNAL       = 0x21,  
     ELEMENT_TYPE_MAX            = 0x22,  
-  
+
     ELEMENT_TYPE_MODIFIER       = 0x40,  
     ELEMENT_TYPE_SENTINEL       = 0x01 | ELEMENT_TYPE_MODIFIER,  
     ELEMENT_TYPE_PINNED         = 0x05 | ELEMENT_TYPE_MODIFIER  
-  
+
 } CorElementType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`ELEMENT_TYPE_END`|Used internally.|  
@@ -110,13 +111,14 @@ typedef enum CorElementType {
 |`ELEMENT_TYPE_MODIFIER`|Used internally.|  
 |`ELEMENT_TYPE_SENTINEL`|A type modifier that is a sentinel for a list of a variable number of parameters.|  
 |`ELEMENT_TYPE_PINNED`|Used internally.|  
-  
+
 ## Remarks  
  The type modifiers form the basis for representing more complex types. A `CorElementType` type modifier value is applied to the value that immediately follows it in the type signature. The value that follows the `CorElementType` type modifier value can be a `CorElementType` simple type value, a metadata token, or other value, as specified in the following table.  
-  
+
 > [!NOTE]
 >  All numbers (*number*, *argument Count*, *metadata token*, *rank*, *count*, and *bound*) are stored as compressed integers. See [Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=116487) on the ECMA Web site for details.  
-  
+
+
 |Type modifier|Format|  
 |-------------------|------------|  
 |`ELEMENT_TYPE_PTR`|ELEMENT_TYPE_PTR <a `CorElementType` value>|  
@@ -131,13 +133,13 @@ typedef enum CorElementType {
 |`ELEMENT_TYPE_MVAR`|ELEMENT_TYPE_MVAR \<number>|  
 |`ELEMENT_TYPE_CMOD_REQD`|ELEMENT_TYPE_<a `mdTypeRef` or `mdTypeDef` metadata token>|  
 |`ELEMENT_TYPE_CMOD_OPT`|E_T_CMOD_OPT <a `mdTypeRef` or `mdTypeDef` metadata token>|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

@@ -13,20 +13,22 @@ ms.assetid: bf89ea63-79b6-422b-bc9f-0485ad803216
 ---
 # DataGrid
 The <xref:System.Windows.Controls.DataGrid> control enables you to display and edit data from many different sources, such as from a SQL database, LINQ query, or any other bindable data source. For more information, see [Binding Sources Overview](../../../../docs/framework/wpf/data/binding-sources-overview.md).  
-  
+
  Columns can display text, controls, such as a <xref:System.Windows.Controls.ComboBox>, or any other WPF content, such as images, buttons, or any content contained in a template. You can use a <xref:System.Windows.Controls.DataGridTemplateColumn> to display data defined in a template. The following table lists the column types that are provided by default.  
-  
+
+
 |Generated Column Type|Data Type|  
 |---------------------------|---------------|  
 |<xref:System.Windows.Controls.DataGridTextColumn>|<xref:System.String>|  
 |<xref:System.Windows.Controls.DataGridCheckBoxColumn>|<xref:System.Boolean>|  
 |<xref:System.Windows.Controls.DataGridComboBoxColumn>|<xref:System.Enum>|  
 |<xref:System.Windows.Controls.DataGridHyperlinkColumn>|<xref:System.Uri>|  
-  
+
  <xref:System.Windows.Controls.DataGrid> can be customized in appearance, such as cell font, color, and size. <xref:System.Windows.Controls.DataGrid> supports all styling and templating functionality of other WPF controls. <xref:System.Windows.Controls.DataGrid> also includes default and customizable behaviors for editing, sorting, and validation.  
-  
+
  The following table lists some of the common tasks for <xref:System.Windows.Controls.DataGrid> and how to accomplish them. By viewing the related API, you can find more information and sample code.  
-  
+
+
 |Scenario|Approach|  
 |--------------|--------------|  
 |Alternating background colors|Set the <xref:System.Windows.Controls.ItemsControl.AlternationIndex%2A> property to 2 or more, and then assign a <xref:System.Windows.Media.Brush> to the <xref:System.Windows.Controls.DataGrid.RowBackground%2A> and <xref:System.Windows.Controls.DataGrid.AlternatingRowBackground%2A> properties.|  
@@ -38,9 +40,10 @@ The <xref:System.Windows.Controls.DataGrid> control enables you to display and e
 |Cancel or change auto-generated columns|Handle the <xref:System.Windows.Controls.DataGrid.AutoGeneratingColumn> event.|  
 |Freeze a column|Set the <xref:System.Windows.Controls.DataGrid.FrozenColumnCount%2A> property to 1 and move the column to the left-most position by setting the <xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A> property to 0.|  
 |Use XML data as the data source|Bind the <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> on the <xref:System.Windows.Controls.DataGrid> to the XPath query that represents the collection of items. Create each column in the <xref:System.Windows.Controls.DataGrid>. Bind each column by setting the XPath on the binding to the query that gets the property on the item source. For an example, see <xref:System.Windows.Controls.DataGridTextColumn>.|  
-  
+
 ## Related Topics  
-  
+
+
 |Title|Description|  
 |-----------|-----------------|  
 |[Walkthrough: Display Data from a SQL Server Database in a DataGrid Control](../../../../docs/framework/wpf/controls/walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control.md)|Describes how to set up a new WPF project, add an Entity Framework Element, set the source, and display the data in a <xref:System.Windows.Controls.DataGrid>.|  
@@ -49,7 +52,7 @@ The <xref:System.Windows.Controls.DataGrid> control enables you to display and e
 |[Default Keyboard and Mouse Behavior in the DataGrid Control](../../../../docs/framework/wpf/controls/default-keyboard-and-mouse-behavior-in-the-datagrid-control.md)|Describes how to interact with the <xref:System.Windows.Controls.DataGrid> control by using the keyboard and mouse.|  
 |[How to: Group, Sort, and Filter Data in the DataGrid Control](../../../../docs/framework/wpf/controls/how-to-group-sort-and-filter-data-in-the-datagrid-control.md)|Describes how to view data in a <xref:System.Windows.Controls.DataGrid> in different ways by grouping, sorting, and filtering the data.|  
 |[Sizing Options in the DataGrid Control](../../../../docs/framework/wpf/controls/sizing-options-in-the-datagrid-control.md)|Describes how to control absolute and automatic sizing in the <xref:System.Windows.Controls.DataGrid>.|  
-  
+
 ## See Also  
  <xref:System.Windows.Controls.DataGrid>  
  [Styling and Templating](../../../../docs/framework/wpf/controls/styling-and-templating.md)  

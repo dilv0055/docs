@@ -1,5 +1,6 @@
 ### Exceptions during unobserved processing in System.Threading.Tasks.Task no longer propagate on finalizer thread
 
+
 |   |   |
 |---|---|
 |Details|Because the <xref:System.Threading.Tasks.Task?displayProperty=name> class represents an asynchronous operation, it catches all non-severe exceptions that occur during asynchronous processing. In the .NET Framework 4.5, if an exception is not observed and your code never waits on the task, the exception will no longer propagate on the finalizer thread and crash the process during garbage collection. This change enhances the reliability of applications that use the Task class to perform unobserved asynchronous processing.|

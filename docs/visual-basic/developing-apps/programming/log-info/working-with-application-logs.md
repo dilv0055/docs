@@ -43,11 +43,11 @@ The `My.Applicaton.Log` and `My.Log` objects make it easy to write logging and t
   
  The log configuration sections are located in the `<system.diagnostics>` node in the main `<configuration>` node of the app.config file. Log information is defined in several nodes:  
   
--   The listeners for the `Log` object are defined in the `<sources>` node named DefaultSource.  
+- The listeners for the `Log` object are defined in the `<sources>` node named DefaultSource.  
   
--   The severity filter for the `Log` object is defined in the `<switches>` node named DefaultSwitch.  
+- The severity filter for the `Log` object is defined in the `<switches>` node named DefaultSwitch.  
   
--   The log listeners are defined in the `<sharedListeners>` node.  
+- The log listeners are defined in the `<sharedListeners>` node.  
   
  Examples of `<sources>`, `<switches>`, and `<sharedListeners>` nodes are shown in the following code:  
   
@@ -86,13 +86,13 @@ The `My.Applicaton.Log` and `My.Log` objects make it easy to write logging and t
 ## Security Considerations  
  Consider the following when writing data to the log:  
   
--   **Avoid leaking user information.** Ensure that your application writes only approved information to the log. For example, it may be acceptable for the application log to contain user names, but not user passwords.  
+- **Avoid leaking user information.** Ensure that your application writes only approved information to the log. For example, it may be acceptable for the application log to contain user names, but not user passwords.  
   
--   **Make log locations secure.** Any log that contains potentially sensitive information should be stored in a secure location.  
+- **Make log locations secure.** Any log that contains potentially sensitive information should be stored in a secure location.  
   
--   **Avoid misleading information.** In general, your application should validate all data entered by a user before using that data. This includes writing data to the application log.  
+- **Avoid misleading information.** In general, your application should validate all data entered by a user before using that data. This includes writing data to the application log.  
   
--   **Avoid denial of service.** If your application writes too much information to the log, it could fill the log or make finding important information difficult.  
+- **Avoid denial of service.** If your application writes too much information to the log, it could fill the log or make finding important information difficult.  
   
 ## See Also  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  

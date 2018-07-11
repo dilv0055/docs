@@ -5,16 +5,16 @@ ms.assetid: b6eae4b7-a6cd-4e1a-b0f6-f407022550b0
 ---
 # &lt;issuedToken&gt;
 Specifies a custom token used to authenticate a client to a service.  
-  
+
  \<system.ServiceModel>  
 \<behaviors>  
 endpointBehaviors section  
 \<behavior>  
 \<clientCredentials>  
 \<issuedToken>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <issuedToken   
    cacheIssuedTokens="Boolean"  
@@ -25,12 +25,13 @@ endpointBehaviors section
    maxIssuedTokenCachingTime="TimeSpan"  
 </issuedToken>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |`cacheIssuedTokens`|Optional Boolean attribute that specifies whether tokens are cached. The default is `true`.|  
@@ -39,25 +40,27 @@ endpointBehaviors section
 |`issuerChannelBehaviors`|Optional attribute that specifies the channel behaviors to use when communicating with the issuer.|  
 |`localIssuerChannelBehaviors`|Optional attribute that specifies the channel behaviors to use when communicating with the local issuer.|  
 |`maxIssuedTokenCachingTime`|Optional Timespan attribute that specifies the duration that issued tokens are cached when the token issuer (an STS) does not specify a time. The default is "10675199.02:48:05.4775807."|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<localIssuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/localissuer.md)|Specifies the address of the local issuer of the token and the binding used to communicate with the endpoint.|  
 |[\<issuerChannelBehaviors>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuerchannelbehaviors-element.md)|Specifies the endpoint behaviors to use when contacting a local issuer.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Specifies the credentials used to authenticate a client to a service.|  
-  
+
 ## Remarks  
  An issued token is a custom credential type used, for example, when authenticating with a Secure Token Service (STS) in a federated scenario. By default, the token is a SAML token. For more information, see [Federation and Issued Tokens](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md). and [Federation and Issued Tokens](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).  
-  
+
  This section contains the elements used to configure a local issuer of tokens, or behaviors used with an security token service. For instructions on configuring a client to use a local issuer, see [How to: Configure a Local Issuer](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.IssuedTokenClientElement>  
  <xref:System.ServiceModel.Configuration.ClientCredentialsElement>  

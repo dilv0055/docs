@@ -10,7 +10,6 @@ ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # \<remove> element for \<configSections>
 
 Removes a predefined section or section group.
@@ -27,11 +26,13 @@ Removes a predefined section or section group.
 
 ## Attribute
 
+
 |           | Description |
 | --------- | ----------- |
 | **name**  | Required attribute.<br><br>Specifies the name of the section or section group to remove. |
 
 ## Parent element
+
 
 |     | Description |
 | --- | ----------- |

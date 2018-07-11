@@ -1,5 +1,6 @@
 ### WCF services that use NETTCP with SSL security and MD5 certificate authentication
 
+
 |   |   |
 |---|---|
 |Details|The .NET Framework 4.6 adds TLS 1.1 and TLS 1.2 to the WCF SSL default protocol list. When both client and server machines have the .NET Framework 4.6 or later installed, TLS 1.2 is used for negotiation.TLS 1.2 does not support MD5 certificate authentication. As a result, if a customer uses an MD5 certificate, the WCF client will fail to connect to the WCF service.|

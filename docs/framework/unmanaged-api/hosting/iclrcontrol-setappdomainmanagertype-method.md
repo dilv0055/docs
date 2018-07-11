@@ -20,25 +20,26 @@ ms.author: "ronpet"
 ---
 # ICLRControl::SetAppDomainManagerType Method
 Sets a type derived from <xref:System.AppDomainManager> as the type for application domain managers.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT SetAppDomainManagerType (  
     [in] LPCWSTR pwzAppDomainManagerAssembly,  
     [in] LPCWSTR pwzAppDomainManagerType  
 );  
 ```  
-  
+
 #### Parameters  
  `pwzAppDomainManagerAssembly`  
  [in] The name of the assembly in which the requested type derived from <xref:System.AppDomainManager> is implemented.  
-  
+
  `pwzAppDomainManagerType`  
  [in] The name of the type implemented in the `pwzAppDomainManagerAssembly` parameter that implements the capabilities of <xref:System.AppDomainManager>.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|The method returned successfully.|  
@@ -47,16 +48,16 @@ HRESULT SetAppDomainManagerType (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. After a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
  [IHostControl Interface](../../../../docs/framework/unmanaged-api/hosting/ihostcontrol-interface.md)

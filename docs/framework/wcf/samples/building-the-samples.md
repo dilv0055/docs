@@ -11,20 +11,20 @@ The Windows Communication Foundation (WCF) samples can be built using Visual Stu
   
 ### To build the sample using a command prompt  
   
-1.  Open the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] command prompt with administrator privileges and navigate to the language-specific subdirectory under the directory location where you installed the sample.  
+1. Open the [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] command prompt with administrator privileges and navigate to the language-specific subdirectory under the directory location where you installed the sample.  
   
-2.  Type `msbuild` at the command line. The client program files are built to client\bin and the service program files are built to service\bin. If the service is hosted by Internet Information Services (IIS), the service program files are also copied to the servicemodelsamples directory and its \bin subdirectory.  
+2. Type `msbuild` at the command line. The client program files are built to client\bin and the service program files are built to service\bin. If the service is hosted by Internet Information Services (IIS), the service program files are also copied to the servicemodelsamples directory and its \bin subdirectory.  
   
 > [!NOTE]
 >  You must set the ACLs on %systemdrive%\inetpub\wwwroot to grant modify permissions to the account under which you are running. Otherwise some post build events fail. Alternatively, you can leave the ACLs as they are and run the SDK command prompt as administrator.  
   
 ### To build the sample using Visual Studio  
   
-1.  If you are using [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7, or Windows Server 2008 R2, and running [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], you must run Visual Studio with elevated permission. To do so, right-click the icon on the Start menu and then click **Run as administrator**.  
+1. If you are using [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7, or Windows Server 2008 R2, and running [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], you must run Visual Studio with elevated permission. To do so, right-click the icon on the Start menu and then click **Run as administrator**.  
   
-2.  From the **File** menu in Visual Studio, click **Open**, then click **Project/Solution**. Navigate to the language-specific subdirectory under the directory in which you installed the sample, and double-click the .sln file icon to open the solution in Visual Studio.  
+2. From the **File** menu in Visual Studio, click **Open**, then click **Project/Solution**. Navigate to the language-specific subdirectory under the directory in which you installed the sample, and double-click the .sln file icon to open the solution in Visual Studio.  
   
-3.  In the **Build** menu, select **Rebuild Solution**. The client program files are built to client\bin and the service program files are built to service\bin. If the service is hosted in IIS, the service program files are also copied to the servicemodelsamples directory and its \bin subdirectory.  
+3. In the **Build** menu, select **Rebuild Solution**. The client program files are built to client\bin and the service program files are built to service\bin. If the service is hosted in IIS, the service program files are also copied to the servicemodelsamples directory and its \bin subdirectory.  
   
 > [!NOTE]
 >  You must set the ACLs on %systemdrive%\inetpub\wwwroot to grant modify permissions to the account under which you are running. Otherwise some post build events fail. Alternatively, you can leave the ACLs as they are and run the SDK command prompt or Visual Studio as administrator. Some Visual Studio actions (such as attaching a debugger to the ASP.Net worker process) also require administrative privileges.  
@@ -43,36 +43,36 @@ The Windows Communication Foundation (WCF) samples can be built using Visual Stu
   
 #### To regenerate the client and configuration files  
   
-1.  Open an SDK command prompt and navigate to the language-specific subdirectory under the directory location where you installed the sample.  
+1. Open an SDK command prompt and navigate to the language-specific subdirectory under the directory location where you installed the sample.  
   
-2.  If the service is a Web-hosted type, use the following command.  
+2. If the service is a Web-hosted type, use the following command.  
   
-    ```  
-    svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /out:generatedClient.cs  
-    ```  
+   ```  
+   svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /out:generatedClient.cs  
+   ```  
   
-     If the service is a self-hosted type the following command.  
+    If the service is a self-hosted type the following command.  
   
-    ```  
-    svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost:8000/servicemodelsamples/service.svc/mex /out:generatedClient.cs  
-    ```  
+   ```  
+   svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost:8000/servicemodelsamples/service.svc/mex /out:generatedClient.cs  
+   ```  
   
-     Replace http://localhost:8000/ServiceModelSamples/service.svc/mex with the address of the self-hosted service's mex endpoint.  
+    Replace <http://localhost:8000/ServiceModelSamples/service.svc/mex> with the address of the self-hosted service's mex endpoint.  
   
-     To generate the client in a Visual Basic type, use the following command.  
+    To generate the client in a Visual Basic type, use the following command.  
   
-    ```  
-    svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /l:vb /out:generatedClient.vb  
-    ```  
+   ```  
+   svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /l:vb /out:generatedClient.vb  
+   ```  
   
-     If the service is a self-hosted type, use the following command.  
+    If the service is a self-hosted type, use the following command.  
   
-    ```  
-    svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost:8000/servicemodelsamples/service.svc/mex /l:vb /out:generatedClient.vb  
-    ```  
+   ```  
+   svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost:8000/servicemodelsamples/service.svc/mex /l:vb /out:generatedClient.vb  
+   ```  
   
-    > [!NOTE]
-    >  To skip the generation of client configuration add the **/noConfig** option.  
+   > [!NOTE]
+   >  To skip the generation of client configuration add the **/noConfig** option.  
   
 ## See Also  
  [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md)  

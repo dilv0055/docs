@@ -8,11 +8,11 @@ This sample demonstrates how to use a durable delay, which is a delay that persi
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\DurableDelayXamlx`  
   
 ## Discussion  
@@ -26,37 +26,37 @@ This sample demonstrates how to use a durable delay, which is a delay that persi
   
 #### To use this sample  
   
-1.  Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.  
+1. Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.  
   
-2.  Navigate to the DurableDelayXamlx\CS folder.  
+2. Navigate to the DurableDelayXamlx\CS folder.  
   
-3.  Run Setup.cmd.  
+3. Run Setup.cmd.  
   
-4.  Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] as an administrator.  
+4. Run [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] as an administrator.  
   
-5.  Open the DurableDelayXamlx.sln solution file.  
+5. Open the DurableDelayXamlx.sln solution file.  
   
-6.  In **Solution Explorer**, right-click the solution and select **Properties**.  
+6. In **Solution Explorer**, right-click the solution and select **Properties**.  
   
-7.  Select **Multiple startup projects** and set both projects to **Start**.  
+7. Select **Multiple startup projects** and set both projects to **Start**.  
   
-8.  To build the solution, press CTRL+SHIFT+B.  
+8. To build the solution, press CTRL+SHIFT+B.  
   
 9. To run the solution, press CTRL+F5.  
   
 #### To uninstall this sample  
   
-1.  Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.  
+1. Open a [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] command prompt.  
   
-2.  Navigate to the DurableDelayXamlx\CS folder.  
+2. Navigate to the DurableDelayXamlx\CS folder.  
   
-3.  Run Cleanup.cmd.  
+3. Run Cleanup.cmd.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Services\DurableDelayXamlX`

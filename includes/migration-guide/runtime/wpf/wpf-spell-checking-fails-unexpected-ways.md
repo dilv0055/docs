@@ -1,5 +1,6 @@
 ### WPF Spell Checking fails in unexpected ways
 
+
 |   |   |
 |---|---|
 |Details|This includes a number of WPF Spell Checker issues:<ul><li>WPF Spell Checker sometimes throws <xref:System.Runtime.InteropServices.COMException?displayProperty=name></li><li>WPF Spell Checker fails with <xref:System.UnauthorizedAccessException> when applications are launched using 'run as different user'</li><li>WPF Spell Checker incorrectly identifies spelling errors in compound words like 'Hausnummer' in German.</li></ul>|

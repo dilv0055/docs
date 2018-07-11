@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # COR_PRF_STATIC_TYPE Enumeration
 Indicates whether a field is static and, if so, the static quality that applies to the field. These values can be combined using the bitwise OR operation to indicate that the field has multiple, different static qualities.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     COR_PRF_FIELD_NOT_A_STATIC = 0x0,  
@@ -31,9 +31,10 @@ typedef enum {
     COR_PRF_FIELD_RVA_STATIC = 0x8  
 } COR_PRF_STATIC_TYPE;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_FIELD_NOT_A_STATIC`|The field is not static.|  
@@ -41,15 +42,15 @@ typedef enum {
 |`COR_PRF_FIELD_THREAD_STATIC`|The field is thread-static.|  
 |`COR_PRF_FIELD_CONTEXT_STATIC`|The field is context-static.|  
 |`COR_PRF_FIELD_RVA_STATIC`|The field is relative virtual address (RVA)-static.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorProf.idl, CorProf.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

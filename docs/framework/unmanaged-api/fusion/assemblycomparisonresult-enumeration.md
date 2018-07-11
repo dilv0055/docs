@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # AssemblyComparisonResult Enumeration
 Indicates the equivalence of two assembly identities, as determined by the [CompareAssemblyIdentity](../../../../docs/framework/unmanaged-api/fusion/compareassemblyidentity-function.md) function.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum _tagAssemblyComparisonResult {  
     ACR_Unknown,   
@@ -38,9 +38,10 @@ typedef enum _tagAssemblyComparisonResult {
     ACR_NonEquivalentPartialVersion    
 } AssemblyComparisonResult;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member name|Description|  
 |-----------------|-----------------|  
 |`ACR_EquivalentFullMatch`|Indicates that all assembly fields in the comparison match.|  
@@ -55,16 +56,16 @@ typedef enum _tagAssemblyComparisonResult {
 |`ACR_NonEquivalentPartialVersion`|Indicates that the two assemblies match except for their version numbers, which match only partially.|  
 |`ACR_NonEquivalentVersion`|Indicates that the two assemblies match except for their version numbers, which do not match.|  
 |`ACR_Unknown`|Indicates that the reason for non-equivalency is not known.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Fusion.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [CompareAssemblyIdentity Function](../../../../docs/framework/unmanaged-api/fusion/compareassemblyidentity-function.md)  
  [Fusion Enumerations](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)

@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # AssemblyFlags Enumeration
 Contains values that describe run-time features of an assembly.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum {  
     afImplicitExportedTypes = 0x0001,  
@@ -31,9 +31,10 @@ typedef enum {
     afNonSideBySideMachine = 0x0030  
 } AssemblyFlags;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`afImplicitExportedTypes`|Specifies that exported type definitions are implicit within the files that comprise the assembly. In the .NET Framework versions 1.0 and 1.1, this value is always assumed to be set.|  
@@ -41,19 +42,19 @@ typedef enum {
 |`afNonSideBySideAppDomain`|Specifies that the assembly cannot execute with other versions if they are running in the same application domain.|  
 |`afNonSideBySideProcess`|Specifies that the assembly cannot execute with other versions if they are running in the same process.|  
 |`afNonSideBySideMachine`|Specifies that the assembly cannot execute with other versions if they are running on the same computer.|  
-  
+
 ## Remarks  
  The values between 0x0010 and 0x0070, inclusive, are used to describe side-by-side compatibility features of the referenced assembly. If none of these values are set, the assembly is assumed to be side-by-side compatible.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MsCorEE.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
  [IMetaDataAssemblyEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

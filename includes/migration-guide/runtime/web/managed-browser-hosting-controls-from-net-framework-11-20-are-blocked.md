@@ -1,5 +1,6 @@
 ### Managed browser hosting controls from the .NET Framework 1.1 and 2.0 are blocked
 
+
 |   |   |
 |---|---|
 |Details|Hosting these controls is blocked in Internet Explorer.|

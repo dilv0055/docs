@@ -5,14 +5,14 @@ ms.assetid: b90ca3bc-3c22-4174-b903-e3a39898bd27
 ---
 # &lt;behavior&gt; of &lt;endpointBehaviors&gt;
 The `behavior` element contains a collection of settings for the behavior of an endpoint. Each behavior is indexed by its `name`. Endpoints can link to each behavior through this name. Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name. For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
-  
+
  \<system.ServiceModel>  
 \<behaviors>  
 \<endpointBehaviors>  
 \<behavior>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <system.ServiceModel>  
   <behaviors>  
@@ -22,18 +22,20 @@ The `behavior` element contains a collection of settings for the behavior of an 
   </behaviors>  
 </system.ServiceModel>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
-|Attribute|Description|  
-|---------------|-----------------|  
-|name|A unique string that contains the configuration name of the behavior. This value is a user-defined string that must be unique, since it acts as the identification string for the element. Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name. For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|  
-  
+
+
+| Attribute |                                                                                                                                                                                                                                                                                                                              Description                                                                                                                                                                                                                                                                                                                              |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   name    | A unique string that contains the configuration name of the behavior. This value is a user-defined string that must be unique, since it acts as the identification string for the element. Starting with [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], bindings and behaviors are not required to have a name. For more information about default configuration and nameless bindings and behaviors, see [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) and [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md). |
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Specifies the credentials used to authenticate the client to a service.|  
@@ -48,9 +50,11 @@ The `behavior` element contains a collection of settings for the behavior of an 
 |[\<synchronousReceive>](../../../../../docs/framework/configure-apps/file-schema/wcf/synchronousreceive-element.md)|Specifies run-time behavior for receiving messages in either a service or client application. It does not have any attributes or child elements.|  
 |[\<transactedBatching>](../../../../../docs/framework/configure-apps/file-schema/wcf/transactedbatching.md)|Specifies whether transaction batching is supported for receive operations.|  
 |[\<webHttp>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)|Specifies the WebHttpBehavior on an endpoint through configuration. This behavior, when used in conjunction with the \<webHttpBinding> standard binding, enables the Web programming model for a WCF service.|  
-  
+
 ### Parent Elements  
-  
-|Element|Description|  
-|-------------|-----------------|  
-|[\<endpointBehaviors>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md)|A collection of endpoint behavior elements.|
+
+
+|                                                  Element                                                  |                 Description                 |
+|-----------------------------------------------------------------------------------------------------------|---------------------------------------------|
+| [\<endpointBehaviors>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) | A collection of endpoint behavior elements. |
+

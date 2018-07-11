@@ -18,44 +18,44 @@ The <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayPrope
   
  Some APIs export two versions of functions that take string arguments: narrow (ANSI) and wide (Unicode). The Win32 API, for instance, includes the following entry-point names for the **MessageBox** function:  
   
--   **MessageBoxA**  
+- **MessageBoxA**  
   
-     Provides 1-byte character ANSI formatting, distinguished by an "A" appended to the entry-point name. Calls to **MessageBoxA** always marshal strings in ANSI format, as is common on Windows 95 and Windows 98 platforms.  
+   Provides 1-byte character ANSI formatting, distinguished by an "A" appended to the entry-point name. Calls to **MessageBoxA** always marshal strings in ANSI format, as is common on Windows 95 and Windows 98 platforms.  
   
--   **MessageBoxW**  
+- **MessageBoxW**  
   
-     Provides 2-byte character Unicode formatting, distinguished by a "W" appended to the entry-point name. Calls to **MessageBoxW** always marshal strings in Unicode format, as is common on Windows NT, Windows 2000, and Windows XP platforms.  
+   Provides 2-byte character Unicode formatting, distinguished by a "W" appended to the entry-point name. Calls to **MessageBoxW** always marshal strings in Unicode format, as is common on Windows NT, Windows 2000, and Windows XP platforms.  
   
 ## String Marshaling and Name Matching  
  The **CharSet** field accepts the following values:  
   
  **CharSet.Ansi** (default value)  
   
--   String marshaling  
+- String marshaling  
   
-     Platform invoke marshals strings from their managed format (Unicode) to ANSI format.  
+   Platform invoke marshals strings from their managed format (Unicode) to ANSI format.  
   
--   Name matching  
+- Name matching  
   
-     When the <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> field is **true**, as it is by default in [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], platform invoke searches only for the name you specify. For example, if you specify **MessageBox**, platform invoke searches for **MessageBox** and fails when it cannot locate the exact spelling.  
+   When the <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling?displayProperty=nameWithType> field is **true**, as it is by default in [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], platform invoke searches only for the name you specify. For example, if you specify **MessageBox**, platform invoke searches for **MessageBox** and fails when it cannot locate the exact spelling.  
   
-     When the **ExactSpelling** field is **false**, as it is by default in C++ and C#, platform invoke searches for the unmangled alias first (**MessageBox**), then the mangled name (**MessageBoxA**) if the unmangled alias is not found. Notice that ANSI name-matching behavior differs from Unicode name-matching behavior.  
+   When the **ExactSpelling** field is **false**, as it is by default in C++ and C#, platform invoke searches for the unmangled alias first (**MessageBox**), then the mangled name (**MessageBoxA**) if the unmangled alias is not found. Notice that ANSI name-matching behavior differs from Unicode name-matching behavior.  
   
  **CharSet.Unicode**  
   
--   String marshaling  
+- String marshaling  
   
-     Platform invoke copies strings from their managed format (Unicode) to Unicode format.  
+   Platform invoke copies strings from their managed format (Unicode) to Unicode format.  
   
--   Name matching  
+- Name matching  
   
-     When the **ExactSpelling** field is **true**, as it is by default in [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], platform invoke searches only for the name you specify. For example, if you specify **MessageBox**, platform invoke searches for **MessageBox** and fails if it cannot locate the exact spelling.  
+   When the **ExactSpelling** field is **true**, as it is by default in [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)], platform invoke searches only for the name you specify. For example, if you specify **MessageBox**, platform invoke searches for **MessageBox** and fails if it cannot locate the exact spelling.  
   
-     When the **ExactSpelling** field is **false**, as it is by default in C++ and C#, platform invoke searches for the mangled name first (**MessageBoxW**), then the unmangled alias (**MessageBox**) if the mangled name is not found. Notice that Unicode name-matching behavior differs from ANSI name-matching behavior.  
+   When the **ExactSpelling** field is **false**, as it is by default in C++ and C#, platform invoke searches for the mangled name first (**MessageBoxW**), then the unmangled alias (**MessageBox**) if the mangled name is not found. Notice that Unicode name-matching behavior differs from ANSI name-matching behavior.  
   
  **CharSet.Auto**  
   
--   Platform invoke chooses between ANSI and Unicode formats at run time, based on the target platform.  
+- Platform invoke chooses between ANSI and Unicode formats at run time, based on the target platform.  
   
 ## Specifying a Character Set in Visual Basic  
  The following example declares the **MessageBox** function three times, each time with different character-set behavior. You can specify character-set behavior in Visual Basic by adding the **Ansi**, **Unicode**, or **Auto** keyword to the declaration statement.  

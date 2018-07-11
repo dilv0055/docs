@@ -20,34 +20,35 @@ ms.author: "ronpet"
 ---
 # ICLRDebugManager::GetDacl Method
 This method is not implemented.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetDacl (  
     [out] PACL* ppacl  
 );  
 ```  
-  
+
 #### Parameters  
  `ppacl`  
  [out] An interface pointer to the Access Control List (ACL).  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |E_NOTIMPL|The method is not implemented.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRControl Interface](../../../../docs/framework/unmanaged-api/hosting/iclrcontrol-interface.md)  
  [ICLRDebugManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)  

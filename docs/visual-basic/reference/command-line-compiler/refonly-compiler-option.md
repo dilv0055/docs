@@ -10,7 +10,6 @@ helpviewer_keywords:
 author: "rpetrusha"
 ms.author: "ronpet"
 ---
-
 # -refonly (Visual Basic)
 
 The **-refonly** option indicates that the primary output of the compilation should be a reference assembly instead of an implementation assembly. The `-refonly` parameter silently disables outputting PDBs, as reference assemblies cannot be executed.

@@ -18,102 +18,102 @@ You can change the text displayed by the <xref:System.Windows.Forms.LinkLabel> c
   
 ### To change the appearance of a LinkLabel control  
   
-1.  Set the <xref:System.Windows.Forms.LinkLabel.LinkColor%2A> and <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A> properties to the colors you want.  
+1. Set the <xref:System.Windows.Forms.LinkLabel.LinkColor%2A> and <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A> properties to the colors you want.  
   
-     This can be done either programmatically or at design time in the **Properties** window.  
+    This can be done either programmatically or at design time in the **Properties** window.  
   
-    ```vb  
-    ' You can set the color using decimal values for red, green, and blue  
-    LinkLabel1.LinkColor = Color.FromArgb(0, 0, 255)  
-    ' Or you can set the color using defined constants  
-    LinkLabel1.VisitedLinkColor = Color.Purple  
-    ```  
+   ```vb  
+   ' You can set the color using decimal values for red, green, and blue  
+   LinkLabel1.LinkColor = Color.FromArgb(0, 0, 255)  
+   ' Or you can set the color using defined constants  
+   LinkLabel1.VisitedLinkColor = Color.Purple  
+   ```  
   
-    ```csharp  
-    // You can set the color using decimal values for red, green, and blue  
-    linkLabel1.LinkColor = Color.FromArgb(0, 0, 255);  
-    // Or you can set the color using defined constants  
-    linkLabel1.VisitedLinkColor = Color.Purple;  
-    ```  
+   ```csharp  
+   // You can set the color using decimal values for red, green, and blue  
+   linkLabel1.LinkColor = Color.FromArgb(0, 0, 255);  
+   // Or you can set the color using defined constants  
+   linkLabel1.VisitedLinkColor = Color.Purple;  
+   ```  
   
-    ```cpp  
-    // You can set the color using decimal values for red, green, and blue  
-    linkLabel1->LinkColor = Color::FromArgb(0, 0, 255);  
-    // Or you can set the color using defined constants  
-    linkLabel1->VisitedLinkColor = Color::Purple;  
-    ```  
+   ```cpp  
+   // You can set the color using decimal values for red, green, and blue  
+   linkLabel1->LinkColor = Color::FromArgb(0, 0, 255);  
+   // Or you can set the color using defined constants  
+   linkLabel1->VisitedLinkColor = Color::Purple;  
+   ```  
   
-2.  Set the <xref:System.Windows.Forms.LinkLabel.Text%2A> property to an appropriate caption.  
+2. Set the <xref:System.Windows.Forms.LinkLabel.Text%2A> property to an appropriate caption.  
   
-     This can be done either programmatically or at design time in the **Properties** window.  
+    This can be done either programmatically or at design time in the **Properties** window.  
   
-    ```vb  
-    LinkLabel1.Text = "Click here to see more."  
-    ```  
+   ```vb  
+   LinkLabel1.Text = "Click here to see more."  
+   ```  
   
-    ```csharp  
-    linkLabel1.Text = "Click here to see more.";  
-    ```  
+   ```csharp  
+   linkLabel1.Text = "Click here to see more.";  
+   ```  
   
-    ```cpp  
-    linkLabel1->Text = "Click here to see more.";  
-    ```  
+   ```cpp  
+   linkLabel1->Text = "Click here to see more.";  
+   ```  
   
-3.  Set the <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> property to determine which part of the caption will be indicated as a link.  
+3. Set the <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> property to determine which part of the caption will be indicated as a link.  
   
-     The <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> value is represented with a <xref:System.Windows.Forms.LinkArea> containing two numbers, the starting character position and the number of characters. This can be done either programmatically or at design time in the **Properties** window.  
+    The <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> value is represented with a <xref:System.Windows.Forms.LinkArea> containing two numbers, the starting character position and the number of characters. This can be done either programmatically or at design time in the **Properties** window.  
   
-    ```vb  
-    LinkLabel1.LinkArea = new LinkArea(6,4)  
-    ```  
+   ```vb  
+   LinkLabel1.LinkArea = new LinkArea(6,4)  
+   ```  
   
-    ```csharp  
-    linkLabel1.LinkArea = new LinkArea(6,4);  
-    ```  
+   ```csharp  
+   linkLabel1.LinkArea = new LinkArea(6,4);  
+   ```  
   
-    ```cpp  
-    linkLabel1->LinkArea = LinkArea(6,4);  
-    ```  
+   ```cpp  
+   linkLabel1->LinkArea = LinkArea(6,4);  
+   ```  
   
-4.  Set the <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A> property to <xref:System.Windows.Forms.LinkBehavior.AlwaysUnderline>, <xref:System.Windows.Forms.LinkBehavior.HoverUnderline>, or <xref:System.Windows.Forms.LinkBehavior.NeverUnderline>.  
+4. Set the <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A> property to <xref:System.Windows.Forms.LinkBehavior.AlwaysUnderline>, <xref:System.Windows.Forms.LinkBehavior.HoverUnderline>, or <xref:System.Windows.Forms.LinkBehavior.NeverUnderline>.  
   
-     If it is set to <xref:System.Windows.Forms.LinkBehavior.HoverUnderline>, the part of the caption determined by <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> will only be underlined when the pointer rests on it.  
+    If it is set to <xref:System.Windows.Forms.LinkBehavior.HoverUnderline>, the part of the caption determined by <xref:System.Windows.Forms.LinkLabel.LinkArea%2A> will only be underlined when the pointer rests on it.  
   
-5.  In the <xref:System.Windows.Forms.LinkLabel.LinkClicked> event handler, set the <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A> property to `true`.  
+5. In the <xref:System.Windows.Forms.LinkLabel.LinkClicked> event handler, set the <xref:System.Windows.Forms.LinkLabel.LinkVisited%2A> property to `true`.  
   
-     When a link has been visited, it is common practice to change its appearance in some way, usually by color. The text will change to the color specified by the <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A> property.  
+    When a link has been visited, it is common practice to change its appearance in some way, usually by color. The text will change to the color specified by the <xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A> property.  
   
-    ```vb  
-    Protected Sub LinkLabel1_LinkClicked (ByVal sender As Object, _  
-       ByVal e As EventArgs) Handles LinkLabel1.LinkClicked  
-       ' Change the color of the link text  
-       ' by setting LinkVisited to True.  
-       LinkLabel1.LinkVisited = True  
-       ' Then do whatever other action is appropriate  
-    End Sub  
-    ```  
+   ```vb  
+   Protected Sub LinkLabel1_LinkClicked (ByVal sender As Object, _  
+      ByVal e As EventArgs) Handles LinkLabel1.LinkClicked  
+      ' Change the color of the link text  
+      ' by setting LinkVisited to True.  
+      LinkLabel1.LinkVisited = True  
+      ' Then do whatever other action is appropriate  
+   End Sub  
+   ```  
   
-    ```csharp  
-    protected void LinkLabel1_LinkClicked(object sender, System.EventArgs e)  
-    {  
-       // Change the color of the link text by setting LinkVisited   
-       // to True.  
-       linkLabel1.LinkVisited = true;  
-       // Then do whatever other action is appropriate  
-    }  
-    ```  
+   ```csharp  
+   protected void LinkLabel1_LinkClicked(object sender, System.EventArgs e)  
+   {  
+      // Change the color of the link text by setting LinkVisited   
+      // to True.  
+      linkLabel1.LinkVisited = true;  
+      // Then do whatever other action is appropriate  
+   }  
+   ```  
   
-    ```cpp  
-    private:  
-       System::Void linkLabel1_LinkClicked(System::Object ^  sender,  
-          System::Windows::Forms::LinkLabelLinkClickedEventArgs ^  e)  
-       {  
-          // Change the color of the link text by setting LinkVisited   
-          // to True.  
-          linkLabel1->LinkVisited = true;  
-          // Then do whatever other action is appropriate  
-       }  
-    ```  
+   ```cpp  
+   private:  
+      System::Void linkLabel1_LinkClicked(System::Object ^  sender,  
+         System::Windows::Forms::LinkLabelLinkClickedEventArgs ^  e)  
+      {  
+         // Change the color of the link text by setting LinkVisited   
+         // to True.  
+         linkLabel1->LinkVisited = true;  
+         // Then do whatever other action is appropriate  
+      }  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.LinkLabel.LinkArea%2A>  

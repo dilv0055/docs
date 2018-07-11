@@ -18,17 +18,17 @@ The default open and save dialog boxes on [!INCLUDE[wiprlhext](../../../../inclu
   
 ### To add a custom place to a file dialog box  
   
--   Add a path, a Known Folder GUID, or a <xref:System.Windows.Forms.FileDialogCustomPlace> object to the <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> collection of the dialog box.  
+- Add a path, a Known Folder GUID, or a <xref:System.Windows.Forms.FileDialogCustomPlace> object to the <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> collection of the dialog box.  
   
-     The following code example shows how to add a path:  
+   The following code example shows how to add a path:  
   
-    ```vb  
-    OpenFileDialog1.CustomPlaces.Add("C:\MyCustomPlace")  
-    ```  
+  ```vb  
+  OpenFileDialog1.CustomPlaces.Add("C:\MyCustomPlace")  
+  ```  
   
-    ```csharp  
-    openFileDialog1.CustomPlaces.Add("C:\\MyCustomPlace");  
-    ```  
+  ```csharp  
+  openFileDialog1.CustomPlaces.Add("C:\\MyCustomPlace");  
+  ```  
   
 ## See Also  
  <xref:System.Windows.Forms.FileDialog>  

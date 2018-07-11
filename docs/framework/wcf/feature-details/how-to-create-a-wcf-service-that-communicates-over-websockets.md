@@ -8,151 +8,151 @@ WCF services and clients can use the <xref:System.ServiceModel.NetHttpBinding> b
   
 ### Define the Service  
   
-1.  Define a callback contract  
+1. Define a callback contract  
   
-    ```csharp  
-    [ServiceContract]  
-        public interface IStockQuoteCallback  
-        {  
-            [OperationContract(IsOneWay = true)]  
-            Task SendQuote(string code, double value);  
-        }  
-    ```  
+   ```csharp  
+   [ServiceContract]  
+       public interface IStockQuoteCallback  
+       {  
+           [OperationContract(IsOneWay = true)]  
+           Task SendQuote(string code, double value);  
+       }  
+   ```  
   
-     This contract will be implemented by the client application to allow the service to send messages back to the client.  
+    This contract will be implemented by the client application to allow the service to send messages back to the client.  
   
-2.  Define the service contract and specify the `IStockQuoteCallback` interface as the callback contract.  
+2. Define the service contract and specify the `IStockQuoteCallback` interface as the callback contract.  
   
-    ```csharp  
-    [ServiceContract(CallbackContract = typeof(IStockQuoteCallback))]  
-        public interface IStockQuoteService  
-        {  
-            [OperationContract(IsOneWay = true)]  
-            Task StartSendingQuotes();  
-        }  
-    ```  
+   ```csharp  
+   [ServiceContract(CallbackContract = typeof(IStockQuoteCallback))]  
+       public interface IStockQuoteService  
+       {  
+           [OperationContract(IsOneWay = true)]  
+           Task StartSendingQuotes();  
+       }  
+   ```  
   
-3.  Implement the service contract.  
+3. Implement the service contract.  
   
-    ```  
-    public class StockQuoteService : IStockQuoteService  
-        {  
-            public async Task StartSendingQuotes()  
-            {  
-                var callback = OperationContext.Current.GetCallbackChannel<IStockQuoteCallback>();  
-                var random = new Random();  
-                double price = 29.00;  
+   ```  
+   public class StockQuoteService : IStockQuoteService  
+       {  
+           public async Task StartSendingQuotes()  
+           {  
+               var callback = OperationContext.Current.GetCallbackChannel<IStockQuoteCallback>();  
+               var random = new Random();  
+               double price = 29.00;  
   
-                while (((IChannel)callback).State == CommunicationState.Opened)  
-                {  
-                    await callback.SendQuote("MSFT", price);  
-                    price += random.NextDouble();  
-                    await Task.Delay(1000);  
-                }  
-            }  
-        }  
-    ```  
+               while (((IChannel)callback).State == CommunicationState.Opened)  
+               {  
+                   await callback.SendQuote("MSFT", price);  
+                   price += random.NextDouble();  
+                   await Task.Delay(1000);  
+               }  
+           }  
+       }  
+   ```  
   
-     The service operation `StartSendingQuotes` is implemented as an asynchronous call. We retrieve the callback channel using the `OperationContext` and if the channel is open, we make an async call on the callback channel.  
+    The service operation `StartSendingQuotes` is implemented as an asynchronous call. We retrieve the callback channel using the `OperationContext` and if the channel is open, we make an async call on the callback channel.  
   
-4.  Configure the service  
+4. Configure the service  
   
-    ```xml  
-    <configuration>  
-        <appSettings>  
-          <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />        
-        </appSettings>  
-        <system.web>  
-          <compilation debug="true" targetFramework="4.5" />        
-        </system.web>  
-        <system.serviceModel>  
-            <protocolMapping>  
-              <add scheme="http" binding="netHttpBinding"/>  
-              <add scheme="https" binding="netHttpsBinding"/>  
-            </protocolMapping>  
-            <behaviors>  
-                <serviceBehaviors>  
-                    <behavior name="">  
-                        <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" />  
-                        <serviceDebug includeExceptionDetailInFaults="false" />  
-                    </behavior>  
-                </serviceBehaviors>  
-            </behaviors>  
-            <serviceHostingEnvironment aspNetCompatibilityEnabled="true"  
-                multipleSiteBindingsEnabled="true" />  
-        </system.serviceModel>  
-    </configuration>  
-    ```  
+   ```xml  
+   <configuration>  
+       <appSettings>  
+         <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />        
+       </appSettings>  
+       <system.web>  
+         <compilation debug="true" targetFramework="4.5" />        
+       </system.web>  
+       <system.serviceModel>  
+           <protocolMapping>  
+             <add scheme="http" binding="netHttpBinding"/>  
+             <add scheme="https" binding="netHttpsBinding"/>  
+           </protocolMapping>  
+           <behaviors>  
+               <serviceBehaviors>  
+                   <behavior name="">  
+                       <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" />  
+                       <serviceDebug includeExceptionDetailInFaults="false" />  
+                   </behavior>  
+               </serviceBehaviors>  
+           </behaviors>  
+           <serviceHostingEnvironment aspNetCompatibilityEnabled="true"  
+               multipleSiteBindingsEnabled="true" />  
+       </system.serviceModel>  
+   </configuration>  
+   ```  
   
-     The service’s configuration file relies on WCF’s default endpoints. The `<protocolMapping>` section is used to specify that the `NetHttpBinding` should be used for the default endpoints created.  
+    The service’s configuration file relies on WCF’s default endpoints. The `<protocolMapping>` section is used to specify that the `NetHttpBinding` should be used for the default endpoints created.  
   
 ### Define the Client  
   
-1.  Implement the callback contract.  
+1. Implement the callback contract.  
   
-    ```csharp  
-    private class CallbackHandler : StockQuoteServiceReference.IStockQuoteServiceCallback  
-            {  
-                public async Task SendQuoteAsync(string code, double value)  
-                {  
-                    Console.WriteLine("{0}: {1:f2}", code, value);  
-                }  
-            }  
-    ```  
+   ```csharp  
+   private class CallbackHandler : StockQuoteServiceReference.IStockQuoteServiceCallback  
+           {  
+               public async Task SendQuoteAsync(string code, double value)  
+               {  
+                   Console.WriteLine("{0}: {1:f2}", code, value);  
+               }  
+           }  
+   ```  
   
-     The callback contract operation is implemented as an asynchronous method.  
+    The callback contract operation is implemented as an asynchronous method.  
   
-    1.  Implement the client code.  
+   1. Implement the client code.  
   
-        ```csharp  
-        class Program  
-        {  
-            static void Main(string[] args)  
-            {  
-                var context = new InstanceContext(new CallbackHandler());  
-                var client = new StockQuoteServiceReference.StockQuoteServiceClient(context);  
-                client.StartSendingQuotes();              
-                Console.ReadLine();  
-            }  
+      ```csharp  
+      class Program  
+      {  
+          static void Main(string[] args)  
+          {  
+              var context = new InstanceContext(new CallbackHandler());  
+              var client = new StockQuoteServiceReference.StockQuoteServiceClient(context);  
+              client.StartSendingQuotes();              
+              Console.ReadLine();  
+          }  
   
-            private class CallbackHandler : StockQuoteServiceReference.IStockQuoteServiceCallback  
-            {  
-                public async Task SendQuoteAsync(string code, double value)  
-                {  
-                    Console.WriteLine("{0}: {1:f2}", code, value);  
-                }  
-            }  
-        }  
-        ```  
+          private class CallbackHandler : StockQuoteServiceReference.IStockQuoteServiceCallback  
+          {  
+              public async Task SendQuoteAsync(string code, double value)  
+              {  
+                  Console.WriteLine("{0}: {1:f2}", code, value);  
+              }  
+          }  
+      }  
+      ```  
   
-         The CallbackHandler is repeated here for clarity. The client application creates a new InstanceContext and specifies the implementation of the callback interface. Next it creates an instance of the proxy class sending a reference to the newly created InstanceContext. When the client calls the service, the service will call the client using the callback contract specified.  
+       The CallbackHandler is repeated here for clarity. The client application creates a new InstanceContext and specifies the implementation of the callback interface. Next it creates an instance of the proxy class sending a reference to the newly created InstanceContext. When the client calls the service, the service will call the client using the callback contract specified.  
   
-    2.  Configure the client  
+   2. Configure the client  
   
-        ```xml  
-        <?xml version="1.0" encoding="utf-8" ?>  
-        <configuration>  
-            <startup>   
-                <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
-            </startup>  
-            <system.serviceModel>  
-                <bindings>  
-                    <netHttpBinding>  
-                        <binding name="NetHttpBinding_IStockQuoteService">  
-                            <webSocketSettings transportUsage="Always" />  
-                        </binding>  
-                    </netHttpBinding>  
-                </bindings>  
-                <client>  
-                    <endpoint address="ws://localhost/NetHttpSampleServer/StockQuoteService.svc"  
-                        binding="netHttpBinding" bindingConfiguration="NetHttpBinding_IStockQuoteService"  
-                        contract="StockQuoteServiceReference.IStockQuoteService" name="NetHttpBinding_IStockQuoteService" />  
-                </client>  
-            </system.serviceModel>  
-        </configuration>  
-        ```  
+      ```xml  
+      <?xml version="1.0" encoding="utf-8" ?>  
+      <configuration>  
+          <startup>   
+              <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
+          </startup>  
+          <system.serviceModel>  
+              <bindings>  
+                  <netHttpBinding>  
+                      <binding name="NetHttpBinding_IStockQuoteService">  
+                          <webSocketSettings transportUsage="Always" />  
+                      </binding>  
+                  </netHttpBinding>  
+              </bindings>  
+              <client>  
+                  <endpoint address="ws://localhost/NetHttpSampleServer/StockQuoteService.svc"  
+                      binding="netHttpBinding" bindingConfiguration="NetHttpBinding_IStockQuoteService"  
+                      contract="StockQuoteServiceReference.IStockQuoteService" name="NetHttpBinding_IStockQuoteService" />  
+              </client>  
+          </system.serviceModel>  
+      </configuration>  
+      ```  
   
-         There is nothing special you need to do in the client configuration, just specify the client side endpoint using the `NetHttpBinding`.  
+       There is nothing special you need to do in the client configuration, just specify the client side endpoint using the `NetHttpBinding`.  
   
 ## Example  
  The following is the complete code used in this topic.  

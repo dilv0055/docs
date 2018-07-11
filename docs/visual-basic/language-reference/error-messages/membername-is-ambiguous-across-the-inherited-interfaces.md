@@ -15,30 +15,30 @@ The interface inherits two or more members with the same name from multiple inte
   
 ## To correct this error  
   
--   Cast the value to the base interface that you want to use; for example:  
+- Cast the value to the base interface that you want to use; for example:  
   
-    ```  
-    Interface Left  
-        Sub MySub()  
-    End Interface  
+  ```  
+  Interface Left  
+      Sub MySub()  
+  End Interface  
   
-    Interface Right  
-        Sub MySub()  
-    End Interface  
+  Interface Right  
+      Sub MySub()  
+  End Interface  
   
-    Interface LeftRight  
-        Inherits Left, Right  
-    End Interface  
+  Interface LeftRight  
+      Inherits Left, Right  
+  End Interface  
   
-    Module test  
-        Sub Main()  
-            Dim x As LeftRight  
-            ' x.MySub()  'x is ambiguous.  
-            CType(x, Left).MySub() ' Cast to base type.  
-            CType(x, Right).MySub() ' Call the other base type.  
-        End Sub  
-    End Module  
-    ```  
+  Module test  
+      Sub Main()  
+          Dim x As LeftRight  
+          ' x.MySub()  'x is ambiguous.  
+          CType(x, Left).MySub() ' Cast to base type.  
+          CType(x, Right).MySub() ' Call the other base type.  
+      End Sub  
+  End Module  
+  ```  
   
 ## See Also  
  [Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md)

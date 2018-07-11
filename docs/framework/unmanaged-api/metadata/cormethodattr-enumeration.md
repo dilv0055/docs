@@ -19,12 +19,12 @@ ms.author: "mairaw"
 ---
 # CorMethodAttr Enumeration
 Contains values that describe the features of a method.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorMethodAttr {  
-  
+
     mdMemberAccessMask          =   0x0007,  
     mdPrivateScope              =   0x0000,  
     mdPrivate                   =   0x0001,  
@@ -33,33 +33,34 @@ typedef enum CorMethodAttr {
     mdFamily                    =   0x0004,  
     mdFamORAssem                =   0x0005,  
     mdPublic                    =   0x0006,  
-  
+
     mdStatic                    =   0x0010,  
     mdFinal                     =   0x0020,  
     mdVirtual                   =   0x0040,  
     mdHideBySig                 =   0x0080,  
-  
+
     mdVtableLayoutMask          =   0x0100,  
     mdReuseSlot                 =   0x0000,  
     mdNewSlot                   =   0x0100,  
-  
+
     mdCheckAccessOnOverride     =   0x0200,  
     mdAbstract                  =   0x0400,  
     mdSpecialName               =   0x0800,  
-  
+
     mdPinvokeImpl               =   0x2000,  
     mdUnmanagedExport           =   0x0008,  
-  
+
     mdReservedMask              =   0xd000,  
     mdRTSpecialName             =   0x1000,  
     mdHasSecurity               =   0x4000,  
     mdRequireSecObject          =   0x8000,  
-  
+
 } CorMethodAttr;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`mdMemberAccessMask`|Specifies member access.|  
@@ -86,13 +87,13 @@ typedef enum CorMethodAttr {
 |`mdRTSpecialName`|Specifies that the common language runtime should check the encoding of the method name.|  
 |`mdHasSecurity`|Specifies that the method has security associated with it.|  
 |`mdRequireSecObject`|Specifies that the method calls another method containing security code.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

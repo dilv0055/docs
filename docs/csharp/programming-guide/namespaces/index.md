@@ -26,22 +26,22 @@ Namespaces are heavily used in C# programming in two ways. First, the .NET Frame
 ## Namespaces Overview  
  Namespaces have the following properties:  
   
--   They organize large code projects.  
+- They organize large code projects.  
   
--   They are delimited by using the `.` operator.  
+- They are delimited by using the `.` operator.  
   
--   The `using directive` obviates the requirement to specify the name of the namespace for every class.  
+- The `using directive` obviates the requirement to specify the name of the namespace for every class.  
   
--   The `global` namespace is the "root" namespace: `global::System` will always refer to the .NET Framework namespace `System`.  
+- The `global` namespace is the "root" namespace: `global::System` will always refer to the .NET Framework namespace `System`.  
   
 ## Related Sections  
  See the following topics for more information about namespaces:  
   
--   [Using Namespaces](../../../csharp/programming-guide/namespaces/using-namespaces.md)  
+- [Using Namespaces](../../../csharp/programming-guide/namespaces/using-namespaces.md)  
   
--   [How to: Use the Global Namespace Alias](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)  
+- [How to: Use the Global Namespace Alias](../../../csharp/programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)  
   
--   [How to: Use the My Namespace](../../../csharp/programming-guide/namespaces/how-to-use-the-my-namespace.md)  
+- [How to: Use the My Namespace](../../../csharp/programming-guide/namespaces/how-to-use-the-my-namespace.md)  
   
 ## C# Language Specification  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

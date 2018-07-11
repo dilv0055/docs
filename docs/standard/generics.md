@@ -62,5 +62,5 @@ The last useful thing about the runtime knowing the type of your generic is a be
 
 ## Further reading and resources
 
-*   [An Introduction to C# Generics](https://msdn.microsoft.com/library/ms379564.aspx)
-*   [C# Programming Guide - Generics](../../docs/csharp/programming-guide/generics/index.md)
+* [An Introduction to C# Generics](https://msdn.microsoft.com/library/ms379564.aspx)
+* [C# Programming Guide - Generics](../../docs/csharp/programming-guide/generics/index.md)

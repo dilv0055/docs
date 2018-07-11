@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # IHostThreadPoolManager Interface
 Provides methods that enable the common language runtime (CLR) to configure the thread pool and to queue work items to the thread pool.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[GetAvailableThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-getavailablethreads-method.md)|Gets the number of threads in the thread pool that are not currently processing work items.|  
@@ -30,19 +31,19 @@ Provides methods that enable the common language runtime (CLR) to configure the 
 |[QueueUserWorkItem Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-queueuserworkitem-method.md)|Queues a function for execution, and provides an object containing data to be used by the function.|  
 |[SetMaxThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setmaxthreads-method.md)|Sets the maximum number of threads that the host can maintain in the thread pool.|  
 |[SetMinThreads Method](../../../../docs/framework/unmanaged-api/hosting/ihostthreadpoolmanager-setminthreads-method.md)|Sets the minimum number of idle threads that the host must maintain in anticipation of requests.|  
-  
+
 ## Remarks  
  The host is not required to configure the thread pool by using the values specified in calls to the `SetMaxThreads` and `SetMinThreads` methods. In this case, the host should return an HRESULT value of E_NOTIMPL from these methods.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  <xref:System.Threading>  
  <xref:System.Threading.ThreadPool>  

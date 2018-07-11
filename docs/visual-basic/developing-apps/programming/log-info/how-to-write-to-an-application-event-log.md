@@ -20,48 +20,48 @@ You can use the `My.Application.Log` and `My.Log` objects to write information a
   
 ### To add and configure the event log listener  
   
-1.  Right-click app.config in **Solution Explorer** and choose **Open**.  
+1. Right-click app.config in **Solution Explorer** and choose **Open**.  
   
-     \- or -  
+    \- or -  
   
-     If there is no app.config file,  
+    If there is no app.config file,  
   
-    1.  On the **Project** menu, choose **Add New Item**.  
+   1. On the **Project** menu, choose **Add New Item**.  
   
-    2.  From the **Add New Item** dialog box, choose **Application Configuration File**.  
+   2. From the **Add New Item** dialog box, choose **Application Configuration File**.  
   
-    3.  Click **Add**.  
+   3. Click **Add**.  
   
-2.  Locate the `<listeners>` section in the application configuration file.  
+2. Locate the `<listeners>` section in the application configuration file.  
   
-     You will find the `<listeners>` section in the `<source>` section with the name attribute "DefaultSource", which is nested under the `<system.diagnostics>` section, which is nested under the top-level `<configuration>` section.  
+    You will find the `<listeners>` section in the `<source>` section with the name attribute "DefaultSource", which is nested under the `<system.diagnostics>` section, which is nested under the top-level `<configuration>` section.  
   
-3.  Add this element to that `<listeners>` section:  
+3. Add this element to that `<listeners>` section:  
   
-    ```xml  
-    <add name="EventLog"/>  
-    ```  
+   ```xml  
+   <add name="EventLog"/>  
+   ```  
   
-4.  Locate the `<sharedListeners>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.  
+4. Locate the `<sharedListeners>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.  
   
-5.  Add this element to that `<sharedListeners>` section:  
+5. Add this element to that `<sharedListeners>` section:  
   
-    ```xml  
-    <add name="EventLog"  
-        type="System.Diagnostics.EventLogTraceListener, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"  
-         initializeData="APPLICATION_NAME"/>  
-    ```  
+   ```xml  
+   <add name="EventLog"  
+       type="System.Diagnostics.EventLogTraceListener, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"  
+        initializeData="APPLICATION_NAME"/>  
+   ```  
   
-     Replace `APPLICATION_NAME` with the name of your application.  
+    Replace `APPLICATION_NAME` with the name of your application.  
   
-    > [!NOTE]
-    >  Typically, an application writes only errors to the event log. For information on filtering log output, see [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).  
+   > [!NOTE]
+   >  Typically, an application writes only errors to the event log. For information on filtering log output, see [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).  
   
 ### To write event information to the event log  
   
--   Use the `My.Application.Log.WriteEntry` or `My.Application.Log.WriteException` method to write information to the event log. For more information, see [How to: Write Log Messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [How to: Log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).  
+- Use the `My.Application.Log.WriteEntry` or `My.Application.Log.WriteException` method to write information to the event log. For more information, see [How to: Write Log Messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [How to: Log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).  
   
-     After you configure the event log listener for an assembly, it receives all messages that `My.Applcation.Log` writes from that assembly.  
+   After you configure the event log listener for an assembly, it receives all messages that `My.Applcation.Log` writes from that assembly.  
   
 ## See Also  
  <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>  

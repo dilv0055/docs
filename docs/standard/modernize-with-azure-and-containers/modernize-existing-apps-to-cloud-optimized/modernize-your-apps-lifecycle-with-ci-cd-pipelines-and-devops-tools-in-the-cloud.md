@@ -13,11 +13,11 @@ Although continuous integration and deployment practices are well established, t
 
 Visual Studio Team Services supports continuous integration and deployment of multi-container applications to a variety of environments through the official Team Services deployment tasks:
 
--   [Deploy to standalone Docker Host VM](https://docs.microsoft.com/vsts/build-release/apps/cd/deploy-docker-windowsvm) (Linux or Windows Server 2016 or later)
+- [Deploy to standalone Docker Host VM](https://docs.microsoft.com/vsts/build-release/apps/cd/deploy-docker-windowsvm) (Linux or Windows Server 2016 or later)
 
--   [Deploy to Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-deploy-app-with-cicd-vsts)
+- [Deploy to Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-deploy-app-with-cicd-vsts)
 
--   [Deploy to Azure Container Service – Kubernetes](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/deploy-container-kubernetes)
+- [Deploy to Azure Container Service – Kubernetes](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/deploy-container-kubernetes)
 
 But you also can deploy to [Docker Swarm](https://blogs.msdn.microsoft.com/jcorioland/2016/11/29/full-ci-cd-pipeline-to-deploy-multi-containers-application-on-azure-container-service-docker-swarm-using-visual-studio-team-services/) or DC/OS by using Team Services script-based tasks.
 
@@ -29,6 +29,6 @@ Figure 4-12 shows a continuous deployment pipeline that deploys to a Kubernetes 
 
 > **Figure 4-12.** Visual Studio Team Services continuous deployment pipeline, deploying to a Kubernetes cluster
 
->[!div class="step-by-step"]
-[Previous](modernize-your-apps-with-monitoring-and-telemetry.md)
-[Next](migrate-to-hybrid-cloud-scenarios.md)
+> [!div  class="step-by-step"]
+> [Previous](modernize-your-apps-with-monitoring-and-telemetry.md)
+> [Next](migrate-to-hybrid-cloud-scenarios.md)

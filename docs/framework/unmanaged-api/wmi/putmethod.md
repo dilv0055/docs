@@ -21,9 +21,9 @@ ms.author: "ronpet"
 Creates a method.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
-    
+
 ## Syntax  
-  
+
 ```  
 HRESULT PutMethod (
    [in] int                vFunc, 
@@ -54,11 +54,12 @@ HRESULT PutMethod (
 
 `pSignatureOut`  
 [in]  A pointer to a copy of the [__Parameters system class](https://msdn.microsoft.com/library/aa394667(v=vs.85).aspx) that contains the `out` parameters for the method. This parameter is ignored if set to `null`.
- 
+
 
 ## Return value
 
 The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:
+
 
 |Constant  |Value  |Description  |
 |---------|---------|---------|
@@ -69,7 +70,7 @@ The following values returned by this function are defined in the *WbemCli.h* he
 | `WBEM_E_PARAMETER_ID_ON_RETVAL` | 0x80041039 | The return value for a method has an **ID** qualifier. |
 | `WBEM_E_PROPAGATED_METHOD` | 0x80041034 | An attempt was made to reuse an existing method name from a parent class, and the signatures did not match. |
 | `WBEM_S_NO_ERROR` | 0 | The function call was successful. |
-  
+
 ## Remarks
 
 This function wraps a call to the [IWbemClassObject::PutMethod](https://msdn.microsoft.com/library/aa391456(v=vs.85).aspx) method.
@@ -90,10 +91,10 @@ For an example, see the [IWbemClassObject::PutMethod](https://msdn.microsoft.com
 
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** WMINet_Utils.idl  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
-  
+
 ## See also  
 [WMI and Performance Counters (Unmanaged API Reference)](index.md)

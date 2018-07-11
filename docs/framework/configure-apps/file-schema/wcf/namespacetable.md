@@ -3,7 +3,6 @@ title: "&lt;namespaceTable&gt;"
 ms.date: "03/30/2017"
 ms.assetid: 64801766-01b7-4c65-9ce6-70ad5af67689
 ---
-
 # &lt;namespaceTable&gt;
 
 Represents a configuration section for defining a set of elements that contain namespace to prefix mappings that can then be used in XPath filters for routing.
@@ -34,11 +33,13 @@ None
 
 ### Child elements
 
+
 |     | Description |
 | --- | ----------- |
 | [**\<filter>**](../../../../../docs/framework/configure-apps/file-schema/wcf/filter.md) | Defines a namespace prefix mapping used for XPath expressions. |
 
 ### Parent elements
+
 
 |     | Description |
 | --- | ----------- |

@@ -25,15 +25,15 @@ For path naming conventions and the ways to express a file path for Windows syst
   
  Here are some commonly used file and directory classes:  
   
--   <xref:System.IO.File> - provides static methods for creating, copying, deleting, moving, and opening files, and helps create a <xref:System.IO.FileStream> object.  
+- <xref:System.IO.File> - provides static methods for creating, copying, deleting, moving, and opening files, and helps create a <xref:System.IO.FileStream> object.  
   
--   <xref:System.IO.FileInfo> - provides instance methods for creating, copying, deleting, moving, and opening files, and helps create a <xref:System.IO.FileStream> object.  
+- <xref:System.IO.FileInfo> - provides instance methods for creating, copying, deleting, moving, and opening files, and helps create a <xref:System.IO.FileStream> object.  
   
--   <xref:System.IO.Directory> - provides static methods for creating, moving, and enumerating through directories and subdirectories.  
+- <xref:System.IO.Directory> - provides static methods for creating, moving, and enumerating through directories and subdirectories.  
   
--   <xref:System.IO.DirectoryInfo> - provides instance methods for creating, moving, and enumerating through directories and subdirectories.  
+- <xref:System.IO.DirectoryInfo> - provides instance methods for creating, moving, and enumerating through directories and subdirectories.  
   
--   <xref:System.IO.Path> - provides methods and properties for processing directory strings in a cross-platform manner.  
+- <xref:System.IO.Path> - provides methods and properties for processing directory strings in a cross-platform manner.  
   
  In addition to using these classes, Visual Basic users can use the methods and properties provided by the <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> class for file I/O.  
   
@@ -44,29 +44,29 @@ For path naming conventions and the ways to express a file path for Windows syst
   
  Streams involve three fundamental operations:  
   
--   Reading - transferring data from a stream into a data structure, such as an array of bytes.  
+- Reading - transferring data from a stream into a data structure, such as an array of bytes.  
   
--   Writing - transferring data to a stream from a data source.  
+- Writing - transferring data to a stream from a data source.  
   
--   Seeking - querying and modifying the current position within a stream.  
+- Seeking - querying and modifying the current position within a stream.  
   
  Depending on the underlying data source or repository, a stream might support only some of these capabilities. For example, the <xref:System.IO.Pipes.PipeStream> class does not support seeking. The <xref:System.IO.Stream.CanRead%2A>, <xref:System.IO.Stream.CanWrite%2A>, and <xref:System.IO.Stream.CanSeek%2A> properties of a stream specify the operations that the stream supports.  
   
  Here are some commonly used stream classes:  
   
--   <xref:System.IO.FileStream> – for reading and writing to a file.  
+- <xref:System.IO.FileStream> – for reading and writing to a file.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> – for reading and writing to a file in isolated storage.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> – for reading and writing to a file in isolated storage.  
   
--   <xref:System.IO.MemoryStream> – for reading and writing to memory as the backing store.  
+- <xref:System.IO.MemoryStream> – for reading and writing to memory as the backing store.  
   
--   <xref:System.IO.BufferedStream> – for improving performance of read and write operations.  
+- <xref:System.IO.BufferedStream> – for improving performance of read and write operations.  
   
--   <xref:System.Net.Sockets.NetworkStream> – for reading and writing over network sockets.  
+- <xref:System.Net.Sockets.NetworkStream> – for reading and writing over network sockets.  
   
--   <xref:System.IO.Pipes.PipeStream> – for reading and writing over anonymous and named pipes.  
+- <xref:System.IO.Pipes.PipeStream> – for reading and writing over anonymous and named pipes.  
   
--   <xref:System.Security.Cryptography.CryptoStream> – for linking data streams to cryptographic transformations.  
+- <xref:System.Security.Cryptography.CryptoStream> – for linking data streams to cryptographic transformations.  
   
  For an example of working with streams asynchronously, see [Asynchronous File I/O](../../../docs/standard/io/asynchronous-file-i-o.md).  
   
@@ -75,13 +75,13 @@ For path naming conventions and the ways to express a file path for Windows syst
   
  Here are some commonly used reader and writer classes:  
   
--   <xref:System.IO.BinaryReader> and <xref:System.IO.BinaryWriter> – for reading and writing primitive data types as binary values.  
+- <xref:System.IO.BinaryReader> and <xref:System.IO.BinaryWriter> – for reading and writing primitive data types as binary values.  
   
--   <xref:System.IO.StreamReader> and <xref:System.IO.StreamWriter> – for reading and writing characters by using an encoding value to convert the characters to and from bytes.  
+- <xref:System.IO.StreamReader> and <xref:System.IO.StreamWriter> – for reading and writing characters by using an encoding value to convert the characters to and from bytes.  
   
--   <xref:System.IO.StringReader> and <xref:System.IO.StringWriter> – for reading and writing characters to and from strings.  
+- <xref:System.IO.StringReader> and <xref:System.IO.StringWriter> – for reading and writing characters to and from strings.  
   
--   <xref:System.IO.TextReader> and <xref:System.IO.TextWriter> – serve as the abstract base classes for other readers and writers that read and write characters and strings, but not binary data.  
+- <xref:System.IO.TextReader> and <xref:System.IO.TextWriter> – serve as the abstract base classes for other readers and writers that read and write characters and strings, but not binary data.  
   
  See [How to: Read Text from a File](../../../docs/standard/io/how-to-read-text-from-a-file.md), [How to: Write Text to a File](../../../docs/standard/io/how-to-write-text-to-a-file.md), [How to: Read Characters from a String](../../../docs/standard/io/how-to-read-characters-from-a-string.md), and [How to: Write Characters to a String](../../../docs/standard/io/how-to-write-characters-to-a-string.md).  
   
@@ -97,17 +97,17 @@ For path naming conventions and the ways to express a file path for Windows syst
   
  The following classes are frequently used when compressing and decompressing files and streams:  
   
--   <xref:System.IO.Compression.ZipArchive> – for creating and retrieving entries in the zip archive.  
+- <xref:System.IO.Compression.ZipArchive> – for creating and retrieving entries in the zip archive.  
   
--   <xref:System.IO.Compression.ZipArchiveEntry> – for representing a compressed file.  
+- <xref:System.IO.Compression.ZipArchiveEntry> – for representing a compressed file.  
   
--   <xref:System.IO.Compression.ZipFile> – for creating,  extracting, and opening a compressed package.  
+- <xref:System.IO.Compression.ZipFile> – for creating,  extracting, and opening a compressed package.  
   
--   <xref:System.IO.Compression.ZipFileExtensions> – for creating and extracting entries in a compressed package.  
+- <xref:System.IO.Compression.ZipFileExtensions> – for creating and extracting entries in a compressed package.  
   
--   <xref:System.IO.Compression.DeflateStream> – for compressing and decompressing streams using the Deflate algorithm.  
+- <xref:System.IO.Compression.DeflateStream> – for compressing and decompressing streams using the Deflate algorithm.  
   
--   <xref:System.IO.Compression.GZipStream> – for compressing and decompressing streams in gzip data format.  
+- <xref:System.IO.Compression.GZipStream> – for compressing and decompressing streams in gzip data format.  
   
  See [How to: Compress and Extract Files](../../../docs/standard/io/how-to-compress-and-extract-files.md).  
   
@@ -118,11 +118,11 @@ For path naming conventions and the ways to express a file path for Windows syst
   
  The following classes are frequently used when implementing isolated storage:  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorage> – provides the base class for isolated storage implementations.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorage> – provides the base class for isolated storage implementations.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFile> – provides an isolated storage area that contains files and directories.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile> – provides an isolated storage area that contains files and directories.  
   
--   <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> - exposes a file within isolated storage.  
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> - exposes a file within isolated storage.  
   
  See [Isolated Storage](../../../docs/standard/io/isolated-storage.md).  
   
@@ -131,13 +131,13 @@ For path naming conventions and the ways to express a file path for Windows syst
   
  Some important differences to note when using I/O operations in [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] apps:  
   
--   Types specifically related to file operations, such as <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> and <xref:System.IO.DirectoryInfo>, are not included in the [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Instead, use the types in the [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) namespace of the [!INCLUDE[wrt](../../../includes/wrt-md.md)], such as [StorageFile](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx) and [StorageFolder](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx).  
+- Types specifically related to file operations, such as <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> and <xref:System.IO.DirectoryInfo>, are not included in the [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Instead, use the types in the [Windows.Storage](http://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) namespace of the [!INCLUDE[wrt](../../../includes/wrt-md.md)], such as [StorageFile](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx) and [StorageFolder](http://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx).  
   
--   Isolated storage is not available; instead, use [application data](/previous-versions/windows/apps/hh464917(v=win.10)).  
+- Isolated storage is not available; instead, use [application data](/previous-versions/windows/apps/hh464917(v=win.10)).  
   
--   Use asynchronous methods, such as <xref:System.IO.Stream.ReadAsync%2A> and <xref:System.IO.Stream.WriteAsync%2A>, to prevent blocking the UI thread.  
+- Use asynchronous methods, such as <xref:System.IO.Stream.ReadAsync%2A> and <xref:System.IO.Stream.WriteAsync%2A>, to prevent blocking the UI thread.  
   
--   The path-based compression types <xref:System.IO.Compression.ZipFile> and <xref:System.IO.Compression.ZipFileExtensions> are not available. Instead, use the types in the [Windows.Storage.Compression](http://msdn.microsoft.com/library/windows/apps/windows.storage.compression.aspx) namespace.  
+- The path-based compression types <xref:System.IO.Compression.ZipFile> and <xref:System.IO.Compression.ZipFileExtensions> are not available. Instead, use the types in the [Windows.Storage.Compression](http://msdn.microsoft.com/library/windows/apps/windows.storage.compression.aspx) namespace.  
   
  You can convert between .NET Framework streams and Windows Runtime streams, if necessary. For more information, see [How to: Convert Between .NET Framework Streams and Windows Runtime Streams](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md) or [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx). <!--zz TODO: <xref:System.IO.WindowsRuntimeStreamExtensions>--> 
   
@@ -152,22 +152,22 @@ For path naming conventions and the ways to express a file path for Windows syst
   
 ## Related Topics  
   
--   [Common I/O Tasks](../../../docs/standard/io/common-i-o-tasks.md)  
+- [Common I/O Tasks](../../../docs/standard/io/common-i-o-tasks.md)  
   
  Provides a list of I/O tasks associated with files, directories, and streams, and links to relevant content and examples for each task.  
   
--   [Asynchronous File I/O](../../../docs/standard/io/asynchronous-file-i-o.md)  
+- [Asynchronous File I/O](../../../docs/standard/io/asynchronous-file-i-o.md)  
   
  Describes the performance advantages and basic operation of asynchronous I/O.  
   
--   [Isolated Storage](../../../docs/standard/io/isolated-storage.md)  
+- [Isolated Storage](../../../docs/standard/io/isolated-storage.md)  
   
  Describes a data storage mechanism that provides isolation and safety by defining standardized ways of associating code with saved data.  
   
--   [Pipes](../../../docs/standard/io/pipe-operations.md)  
+- [Pipes](../../../docs/standard/io/pipe-operations.md)  
   
  Describes anonymous and named pipe operations in the .NET Framework.  
   
--   [Memory-Mapped Files](../../../docs/standard/io/memory-mapped-files.md)  
+- [Memory-Mapped Files](../../../docs/standard/io/memory-mapped-files.md)  
   
  Describes memory-mapped files, which contain the contents of files on disk in virtual memory. You can use memory-mapped files to edit very large files and to create shared memory for interprocess communication.

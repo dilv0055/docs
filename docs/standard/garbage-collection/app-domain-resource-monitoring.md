@@ -23,48 +23,48 @@ Application domain resource monitoring (ARM) enables hosts to monitor CPU and me
   
  As soon as ARM is enabled, it begins collecting data on all application domains in the process.If an application domain was created before ARM is enabled, cumulative data starts when ARM is enabled, not when the application domain was created.Once it is enabled, ARM cannot be disabled.  
   
--   You can enable ARM at CLR startup by adding the [\<appDomainResourceMonitoring>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) element to the configuration file, and setting the `enabled` attribute to `true`. A value of `false` (the default) means only that ARM is not enabled at startup; you can activate it later by using one of the other activation mechanisms.  
+- You can enable ARM at CLR startup by adding the [\<appDomainResourceMonitoring>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) element to the configuration file, and setting the `enabled` attribute to `true`. A value of `false` (the default) means only that ARM is not enabled at startup; you can activate it later by using one of the other activation mechanisms.  
   
--   The host can enable ARM by requesting the [ICLRAppDomainResourceMonitor](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) hosting interface. Once this interface is successfully obtained, ARM is enabled.  
+- The host can enable ARM by requesting the [ICLRAppDomainResourceMonitor](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) hosting interface. Once this interface is successfully obtained, ARM is enabled.  
   
--   Managed code can enable ARM by setting the static (`Shared` in Visual Basic) <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> property to `true`. As soon as the property is set, ARM is enabled.  
+- Managed code can enable ARM by setting the static (`Shared` in Visual Basic) <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> property to `true`. As soon as the property is set, ARM is enabled.  
   
--   You can enable ARM after startup by listening to ETW events. ARM is enabled and begins raising events for all application domains when you enable the public provider `Microsoft-Windows-DotNETRuntime` by using the `AppDomainResourceManagementKeyword` keyword. To correlate data with application domains and threads, you must also enable the `Microsoft-Windows-DotNETRuntimeRundown` provider with the `ThreadingKeyword` keyword.  
+- You can enable ARM after startup by listening to ETW events. ARM is enabled and begins raising events for all application domains when you enable the public provider `Microsoft-Windows-DotNETRuntime` by using the `AppDomainResourceManagementKeyword` keyword. To correlate data with application domains and threads, you must also enable the `Microsoft-Windows-DotNETRuntimeRundown` provider with the `ThreadingKeyword` keyword.  
   
 ## Using ARM  
  ARM provides the total processor time that is used by an application domain and three kinds of information about memory use.  
   
--   **Total processor time for an application domain, in seconds**: This is calculated by adding up the thread times reported by the operating system for all threads that spent time executing in the application domain during its lifetime. Blocked or sleeping threads do not use processor time. When a thread calls into native code, the time that the thread spends in native code is included in the count for the application domain where the call was made.  
+- **Total processor time for an application domain, in seconds**: This is calculated by adding up the thread times reported by the operating system for all threads that spent time executing in the application domain during its lifetime. Blocked or sleeping threads do not use processor time. When a thread calls into native code, the time that the thread spends in native code is included in the count for the application domain where the call was made.  
   
-    -   Managed API: <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> property.  
+  - Managed API: <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> property.  
   
-    -   Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentCpuTime](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md) method.  
+  - Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentCpuTime](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md) method.  
   
-    -   ETW events: `ThreadCreated`, `ThreadAppDomainEnter`, and `ThreadTerminated` events. For information about providers and keywords, see "AppDomain Resource Monitoring Events" in [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md).  
+  - ETW events: `ThreadCreated`, `ThreadAppDomainEnter`, and `ThreadTerminated` events. For information about providers and keywords, see "AppDomain Resource Monitoring Events" in [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md).  
   
--   **Total managed allocations made by an application domain during its lifetime, in bytes**: Total allocations do not always reflect memory use by an application domain, because the allocated objects might be short-lived. However, if an application allocates and frees huge numbers of objects, the cost of the allocations could be significant.  
+- **Total managed allocations made by an application domain during its lifetime, in bytes**: Total allocations do not always reflect memory use by an application domain, because the allocated objects might be short-lived. However, if an application allocates and frees huge numbers of objects, the cost of the allocations could be significant.  
   
-    -   Managed API: <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType> property.  
+  - Managed API: <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType> property.  
   
-    -   Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentAllocated](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md) method.  
+  - Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentAllocated](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md) method.  
   
-    -   ETW events: `AppDomainMemAllocated` event, `Allocated` field.  
+  - ETW events: `AppDomainMemAllocated` event, `Allocated` field.  
   
--   **Managed memory, in bytes, that is referenced by an application domain and that survived the most recent full, blocking collection**: This number is accurate only after a full, blocking collection. (This is in contrast to concurrent collections, which occur in the background and do not block the application.) For example, the <xref:System.GC.Collect?displayProperty=nameWithType> method overload causes a full, blocking collection.  
+- **Managed memory, in bytes, that is referenced by an application domain and that survived the most recent full, blocking collection**: This number is accurate only after a full, blocking collection. (This is in contrast to concurrent collections, which occur in the background and do not block the application.) For example, the <xref:System.GC.Collect?displayProperty=nameWithType> method overload causes a full, blocking collection.  
   
-    -   Managed API: <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> property.  
+  - Managed API: <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> property.  
   
-    -   Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) method, `pAppDomainBytesSurvived` parameter.  
+  - Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) method, `pAppDomainBytesSurvived` parameter.  
   
-    -   ETW events: `AppDomainMemSurvived` event, `Survived` field.  
+  - ETW events: `AppDomainMemSurvived` event, `Survived` field.  
   
--   **Total managed memory, in bytes, that is referenced by the process and that survived the most recent full, blocking collection**: The survived memory for individual application domains can be compared to this number.  
+- **Total managed memory, in bytes, that is referenced by the process and that survived the most recent full, blocking collection**: The survived memory for individual application domains can be compared to this number.  
   
-    -   Managed API: <xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType> property.  
+  - Managed API: <xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType> property.  
   
-    -   Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) method, `pTotalBytesSurvived` parameter.  
+  - Hosting API: [ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) method, `pTotalBytesSurvived` parameter.  
   
-    -   ETW events: `AppDomainMemSurvived` event, `ProcessSurvived` field.  
+  - ETW events: `AppDomainMemSurvived` event, `ProcessSurvived` field.  
   
 ### Determining When a Full, Blocking Collection Occurs  
  To determine when counts of survived memory are accurate, you need to know when a full, blocking collection has just occurred. The method for doing this depends on the API you use to examine ARM statistics.  

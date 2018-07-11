@@ -11,18 +11,18 @@ ActiveX controls are COM components or objects you can insert into a Web page or
   
 ### To add ActiveX controls to the toolbox  
   
-1.  On the **Tools** menu, click **Choose Toolbox Items**.  
+1. On the **Tools** menu, click **Choose Toolbox Items**.  
   
-     The **Choose Toolbox** dialog box appears.  
+    The **Choose Toolbox** dialog box appears.  
   
-2.  Click the **COM Components** tab.  
+2. Click the **COM Components** tab.  
   
-3.  Select the check box next to the ActiveX control you want to use, and then click **OK**.  
+3. Select the check box next to the ActiveX control you want to use, and then click **OK**.  
   
-     The new control appears with the other tools in the **Toolbox**.  
+    The new control appears with the other tools in the **Toolbox**.  
   
-    > [!NOTE]
-    >  You can use the Aximp utility to manually create an interop assembly for ActiveX controls. For more information, see [Aximp.exe (Windows Forms ActiveX Control Importer)](http://msdn.microsoft.com/library/482c0d83-7144-4497-b626-87d2351b78d0).  
+   > [!NOTE]
+   >  You can use the Aximp utility to manually create an interop assembly for ActiveX controls. For more information, see [Aximp.exe (Windows Forms ActiveX Control Importer)](http://msdn.microsoft.com/library/482c0d83-7144-4497-b626-87d2351b78d0).  
   
 ## See Also  
  [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)  

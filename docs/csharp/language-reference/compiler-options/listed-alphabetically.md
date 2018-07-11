@@ -12,6 +12,7 @@ ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
 
 The following compiler options are sorted alphabetically. For a categorical list, see [C# Compiler Options Listed by Category](listed-by-category.md).
 
+
 |Option|Purpose|
 |------------|-------------|
 |[@](response-file-compiler-option.md)|Reads a response file for more options.|

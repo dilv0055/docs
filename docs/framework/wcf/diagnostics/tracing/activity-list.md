@@ -5,13 +5,14 @@ ms.assetid: 5540e185-ce8e-4db3-83b0-2b9f5bf71829
 ---
 # Activity List
 This topic lists all the activities defined by Windows Communication Foundation (WCF).  
-  
+
 > [!NOTE]
 >  You can also define activities programmatically to group user traces. For more information, see [Emitting User-Code Traces](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md).  
-  
+
 ## ServiceModel Activities  
  The following table lists all activities for major usage scenarios.  
-  
+
+
 |Label|Activity Name|Activity Type|Description|  
 |-----------|-------------------|-------------------|-----------------|  
 |A, M|Ambient activity|N/A (this is not controlled by ServiceModel)|The activity whose ID is set in TLS before any calls to ServiceModel code (client side or server side).<br /><br /> Example: An activity where  open is called on the WCF client or serviceHost.open is called.|  
@@ -26,26 +27,30 @@ This topic lists all the activities defined by Windows Communication Foundation 
 |Q|Process message [number]. (Note, [number] is a monotonically increasing value which starts at 1.)|ProcessMessage|Process an incoming message. This activity starts when all the data (bytes, MSMQ message) are received to form a WCF message object. Traces within this activity deal with header processing.<br /><br /> Once a message that can be dispatched is formed, the ServiceHost ProcessAction activity is switched to after looking up the corresponding Activity ID.|  
 |D, S|Process action ‘[action]’.|ProcessAction|Process the message through the Transport/Security/RM stack for dispatching the message to user code on receive, and in the reverse order on send.<br /><br /> On the server, this activity uses the propagated Activity ID if it is sent in the message header via "Activity Propagation"; otherwise, a new GUID is created.<br /><br /> The response message for request/reply contracts is also processed in that activity.|  
 |T|Execute ‘[IContract.Operation]’.|ExecuteUserCode|Execute user code after dispatch on the service side. This activity provides a boundary to delineate ServiceHost code from user-provided code.|  
-  
+
 ## Security Activities  
  The following table lists all activities related to Security.  
-  
+
+
 |Activity Name|Activity Type|Description|  
 |-------------------|-------------------|-----------------|  
 |Setup secure session|SetupSecurity|Exists on the client side only. Contains all RST*/SCT exchanges for authentication and setting the security context. If `propagateActivity`=`true`, this activity is merged with the service’s corresponding Process Action RST\*/SCT activities.|  
 |Close secure session|SetupSecurity|Exists on the client side. Contains the Cancel message exchange for closing the secure session. If `propagateActivity`=`true`, this activity is merged with the Process Action "Cancel" from the service.|  
-  
+
  The following table lists all activities related to COM+.  
-  
+
+
 |Activity Name|Activity Type|Description|  
 |-------------------|-------------------|-----------------|  
 |Create COM+ instance|TransferToCOMPlus|1 activity instance for each COM+ call from WCF code|  
 |Execute COM+ \<operation>|TransferToCOMPlus|1 activity instance for each COM+ call from WCF code|  
-  
+
 ## WMI Activities  
  The following table lists all activities related to WMI.  
-  
-|Activity Name|Activity Type|Description|  
-|-------------------|-------------------|-----------------|  
-|WMI get|WMIGetObject|User is retrieving data from WMI.|  
-|WMI put|WmiPutInstance|User is updating data with WMI.|
+
+
+| Activity Name | Activity Type  |            Description            |
+|---------------|----------------|-----------------------------------|
+|    WMI get    |  WMIGetObject  | User is retrieving data from WMI. |
+|    WMI put    | WmiPutInstance |  User is updating data with WMI.  |
+

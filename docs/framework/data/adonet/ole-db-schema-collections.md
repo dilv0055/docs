@@ -5,24 +5,25 @@ ms.assetid: 6380c36b-658e-4d67-91e8-7131ef4a7c2c
 ---
 # OLE DB Schema Collections
 This section discusses schema collection support for the OLE DB providers for Microsoft SQL Server, Oracle, and Microsoft Jet.  
-  
+
 ## Microsoft SQL Server OLE DB Provider  
  The Microsoft SQL Server OLE DB Driver supports the following specific schema collections in addition to the common schema collections:  
-  
--   Tables  
-  
--   Columns  
-  
--   Procedures  
-  
--   ProcedureParameters  
-  
--   Catalog  
-  
--   Indexes  
-  
+
+- Tables  
+
+- Columns  
+
+- Procedures  
+
+- ProcedureParameters  
+
+- Catalog  
+
+- Indexes  
+
 ### Tables  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -34,9 +35,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |TABLE_PROPID|Int64|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
-  
+
 ### Columns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -72,9 +74,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |COLUMN_SORTID|Int32|  
 |COLUMN_TDSCOLLATION|Byte[]|  
 |IS_COMPUTED|Boolean|  
-  
+
 ### Procedures  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
@@ -85,9 +88,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |DESCRIPTION|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
-  
+
 ### ProcedureParameters  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
@@ -107,16 +111,18 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |DESCRIPTION|String|  
 |TYPE_NAME|String|  
 |LOCAL_TYPE_NAME|String|  
-  
+
 ### Catalog  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |CATALOG_NAME|String|  
 |DESCRIPTION|String|  
-  
+
 ### Indexes  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -144,26 +150,27 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |PAGES|Int32|  
 |FILTER_CONDITION|String|  
 |INTEGRATED|Boolean|  
-  
+
 ## Microsoft Oracle OLE DB Provider  
  The Microsoft Oracle OLE DB Driver supports the following specific schema collections in addition to the common schema collections:  
-  
--   Tables  
-  
--   Columns  
-  
--   Procedures  
-  
--   ProcedureColumns  
-  
--   ProcedureParameters  
-  
--   Views  
-  
--   Indexes  
-  
+
+- Tables  
+
+- Columns  
+
+- Procedures  
+
+- ProcedureColumns  
+
+- ProcedureParameters  
+
+- Views  
+
+- Indexes  
+
 ### Tables  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -175,9 +182,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |TABLE_PROPID|Int64|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
-  
+
 ### Columns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -208,9 +216,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |DOMAIN_SCHEMA|String|  
 |DOMAIN_NAME|String|  
 |DESCRIPTION|String|  
-  
+
 ### Procedures  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
@@ -221,9 +230,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |DESCRIPTION|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
-  
+
 ### ProcedureColumns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
@@ -243,9 +253,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |NUMERIC_SCALE|Int16|  
 |DESCRIPTION|String|  
 |OVERLOAD|Int16|  
-  
+
 ### Views  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -257,9 +268,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |DESCRIPTION|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
-  
+
 ### Indexes  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -287,22 +299,23 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |PAGES|Int32|  
 |FILTER_CONDITION|String|  
 |INTEGRATED|Boolean|  
-  
+
 ## Microsoft Jet OLE DB Provider  
  The Microsoft Jet OLE DB Driver supports the following specific schema collections in addition to the common schema collections:  
-  
--   Tables  
-  
--   Columns  
-  
--   Procedures  
-  
--   Views  
-  
--   Indexes  
-  
+
+- Tables  
+
+- Columns  
+
+- Procedures  
+
+- Views  
+
+- Indexes  
+
 ### Tables  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -314,9 +327,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |TABLE_PROPID|Int64|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
-  
+
 ### Columns  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -347,9 +361,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |DOMAIN_SCHEMA|String|  
 |DOMAIN_NAME|String|  
 |DESCRIPTION|String|  
-  
+
 ### Procedures  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |PROCEDURE_CATALOG|String|  
@@ -360,9 +375,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |DESCRIPTION|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
-  
+
 ### Views  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -374,9 +390,10 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |DESCRIPTION|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
-  
+
 ### Indexes  
-  
+
+
 |ColumnName|DataType|  
 |----------------|--------------|  
 |TABLE_CATALOG|String|  
@@ -404,6 +421,6 @@ This section discusses schema collection support for the OLE DB providers for Mi
 |PAGES|Int32|  
 |FILTER_CONDITION|String|  
 |INTEGRATED|Boolean|  
-  
+
 ## See Also  
  [ADO.NET Managed Providers and DataSet Developer Center](http://go.microsoft.com/fwlink/?LinkId=217917)

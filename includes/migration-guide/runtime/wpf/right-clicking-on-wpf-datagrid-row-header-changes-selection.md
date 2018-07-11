@@ -1,5 +1,6 @@
 ### Right clicking on a WPF DataGrid row header changes the DataGrid selection
 
+
 |   |   |
 |---|---|
 |Details|Right-clicking a selected <xref:System.Windows.Controls.DataGrid?displayProperty=name> row header while multiple rows are selected results in the <xref:System.Windows.Controls.DataGrid?displayProperty=name>'s selection changing to only that row.|

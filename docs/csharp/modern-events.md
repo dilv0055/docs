@@ -4,7 +4,6 @@ description: Learn how the .NET Core event pattern enables flexibility with back
 ms.date: 06/20/2016
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
 ---
-
 # The Updated .NET Core Event Pattern
 
 [Previous](event-pattern.md)

@@ -17,66 +17,66 @@ JSON (JavaScript Object Notation) is an efficient data encoding format that enab
   
 ### To define the data contract for a Person  
   
-1.  Define the data contract for `Person` by attaching the <xref:System.Runtime.Serialization.DataContractAttribute> to the class and <xref:System.Runtime.Serialization.DataMemberAttribute> attribute to the members you want to serialize. For more information about data contracts, see [Designing Service Contracts](../../../../docs/framework/wcf/designing-service-contracts.md).  
+1. Define the data contract for `Person` by attaching the <xref:System.Runtime.Serialization.DataContractAttribute> to the class and <xref:System.Runtime.Serialization.DataMemberAttribute> attribute to the members you want to serialize. For more information about data contracts, see [Designing Service Contracts](../../../../docs/framework/wcf/designing-service-contracts.md).  
   
-    ```csharp  
-    [DataContract]  
-    internal class Person  
-    {  
-        [DataMember]  
-        internal string name;  
+   ```csharp  
+   [DataContract]  
+   internal class Person  
+   {  
+       [DataMember]  
+       internal string name;  
   
-        [DataMember]  
-        internal int age;  
-    }  
-    ```  
+       [DataMember]  
+       internal int age;  
+   }  
+   ```  
   
 ### To serialize an instance of type Person to JSON  
   
-1.  Create an instance of the `Person` type.  
+1. Create an instance of the `Person` type.  
   
-    ```csharp  
-    Person p = new Person();  
-    p.name = "John";  
-    p.age = 42;  
-    ```  
+   ```csharp  
+   Person p = new Person();  
+   p.name = "John";  
+   p.age = 42;  
+   ```  
   
-2.  Serialize the `Person` object to a memory stream using the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
+2. Serialize the `Person` object to a memory stream using the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
   
-    ```csharp  
-    MemoryStream stream1 = new MemoryStream();  
-    DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Person));  
-    ```  
+   ```csharp  
+   MemoryStream stream1 = new MemoryStream();  
+   DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Person));  
+   ```  
   
-3.  Use the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> method to write JSON data to the stream.  
+3. Use the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> method to write JSON data to the stream.  
   
-    ```csharp  
-    ser.WriteObject(stream1, p);  
-    ```  
+   ```csharp  
+   ser.WriteObject(stream1, p);  
+   ```  
   
-4.  Show the JSON output.  
+4. Show the JSON output.  
   
-    ```csharp  
-    stream1.Position = 0;  
-    StreamReader sr = new StreamReader(stream1);  
-    Console.Write("JSON form of Person object: ");  
-    Console.WriteLine(sr.ReadToEnd());  
-    ```  
+   ```csharp  
+   stream1.Position = 0;  
+   StreamReader sr = new StreamReader(stream1);  
+   Console.Write("JSON form of Person object: ");  
+   Console.WriteLine(sr.ReadToEnd());  
+   ```  
   
 ### To deserialize an instance of type Person from JSON  
   
-1.  Deserialize the JSON-encoded data into a new instance of `Person` by using the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject%2A> method of the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
+1. Deserialize the JSON-encoded data into a new instance of `Person` by using the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject%2A> method of the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
   
-    ```csharp  
-    stream1.Position = 0;  
-    Person p2 = (Person)ser.ReadObject(stream1);  
-    ```  
+   ```csharp  
+   stream1.Position = 0;  
+   Person p2 = (Person)ser.ReadObject(stream1);  
+   ```  
   
-2.  Show the results.  
+2. Show the results.  
   
-    ```csharp  
-    Console.WriteLine($"Deserialized back, got name={p2.name}, age={p2.age}");  
-    ```  
+   ```csharp  
+   Console.WriteLine($"Deserialized back, got name={p2.name}, age={p2.age}");  
+   ```  
   
 ## Example  
   

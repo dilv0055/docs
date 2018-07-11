@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # VariableLocationType Enumeration
 Indicates the native location type of a variable.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum VariableLocationType  
 {  
@@ -30,26 +30,27 @@ typedef enum VariableLocationType
     VLT_INVALID  
 } VariableLocationType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`VLT_REGISTER`|The variable is in a register.|  
 |`VLT_REGISTER_RELATIVE`|The variable is in a register-relative memory location.|  
 |`VLT_INVALID`|The variable is not stored in a register or a register-relative memory location.|  
-  
+
 ## Remarks  
  A member of the `VariableLocationType` enumeration is returned by the [ICorDebugVariableHome::GetLocationType](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-getlocationtype-method.md) method.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorDebug.idl, CorDebug.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

@@ -13,15 +13,15 @@ Docker provides a feature named the *overlay file system*. This implements a cop
 
 The following solutions are used to manage persistent data in Docker applications:
 
--   [Data volumes](https://docs.docker.com/engine/tutorials/dockervolumes/) that mount to the host.
+- [Data volumes](https://docs.docker.com/engine/tutorials/dockervolumes/) that mount to the host.
 
--   [Data volume containers](https://docs.docker.com/engine/tutorials/dockervolumes/#creating-and-mounting-a-data-volume-container) that provide shared storage across containers using an external container.
+- [Data volume containers](https://docs.docker.com/engine/tutorials/dockervolumes/#creating-and-mounting-a-data-volume-container) that provide shared storage across containers using an external container.
 
--   [Volume plugins](https://docs.docker.com/engine/tutorials/dockervolumes/) that mount volumes to remote services, providing long-term persistence.
+- [Volume plugins](https://docs.docker.com/engine/tutorials/dockervolumes/) that mount volumes to remote services, providing long-term persistence.
 
--   [Azure Storage](https://docs.microsoft.com/azure/storage/), which provides geo-distributable storage, providing a good long-term persistence solution for containers.
+- [Azure Storage](https://docs.microsoft.com/azure/storage/), which provides geo-distributable storage, providing a good long-term persistence solution for containers.
 
--   Remote relational databases like [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) or NoSQL databases like [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction), or cache services like [Redis](https://redis.io/).
+- Remote relational databases like [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) or NoSQL databases like [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction), or cache services like [Redis](https://redis.io/).
 
 The following provides more detail about these options.
 
@@ -43,15 +43,15 @@ In addition, when Docker containers are managed by an orchestrator, containers m
 
 **Azure Storage.** Business data usually will need to be placed in external resources or databases, like Azure Storage. Azure Storage, in concrete, provides the following services in the cloud:
 
--   Blob storage stores unstructured object data. A blob can be any type of text or binary data, such as document or media files (images, audio, and video files). Blob storage is also referred to as Object storage.
+- Blob storage stores unstructured object data. A blob can be any type of text or binary data, such as document or media files (images, audio, and video files). Blob storage is also referred to as Object storage.
 
--   File storage offers shared storage for legacy applications using standard SMB protocol. Azure virtual machines and cloud services can share file data across application components via mounted shares. On-premises applications can access file data in a share via the File service REST API.
+- File storage offers shared storage for legacy applications using standard SMB protocol. Azure virtual machines and cloud services can share file data across application components via mounted shares. On-premises applications can access file data in a share via the File service REST API.
 
--   Table storage stores structured datasets. Table storage is a NoSQL key-attribute data store, which allows rapid development and fast access to large quantities of data.
+- Table storage stores structured datasets. Table storage is a NoSQL key-attribute data store, which allows rapid development and fast access to large quantities of data.
 
 **Relational databases and NoSQL databases.** There are many choices for external databases, from relational databases like SQL Server, PostgreSQL, Oracle, or NoSQL databases like Azure Cosmos DB, MongoDB, etc. These databases are not going to be explained as part of this guide since they are in a completely different subject.
 
 
->[!div class="step-by-step"]
-[Previous](containerize-monolithic-applications.md)
-[Next](service-oriented-architecture.md)
+> [!div  class="step-by-step"]
+> [Previous](containerize-monolithic-applications.md)
+> [Next](service-oriented-architecture.md)

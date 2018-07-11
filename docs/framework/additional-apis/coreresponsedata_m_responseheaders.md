@@ -11,13 +11,12 @@ api_type:
   - "Assembly"
 author: "stevewhims"
 ---
-
 # CoreResponseData.m\_ResponseHeaders Field
 
 `CoreResponseData.m_ResponseHeaders` is a <xref:System.Net.WebHeaderCollection> of headers associated with the server response.
 
 ## Syntax
-  
+
 ```csharp
 public WebHeaderCollection m_ResponseHeaders
 ```

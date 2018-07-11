@@ -7,15 +7,15 @@ manager: "mbaldwin"
 ---
 # &lt;security&gt; of &lt;customBinding&gt;
 Specifies the security options for a custom binding.  
-  
+
  \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
 \<binding>  
 \<security>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <security   
    allowSerializedSigningTokenOnReply="Boolean"  
@@ -37,12 +37,13 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
    <secureConversationBootstrap />  
 </security>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |allowSerializedSigningTokenOnReply|Optional. A Boolean value that specifies if a serialized token can be used on reply. The default value is `false`. When using a dual binding, the setting defaults to `true` and any setting made will be ignored.|  
@@ -56,15 +57,17 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
 |requireSecurityContextCancellation|Optional. A Boolean value that specifies if security context should be cancelled and terminated when it is no longer needed. The default is `true`.|  
 |requireSignatureConfirmation|Optional. A Boolean value that specifies whether WS-Security signature confirmation is enabled. When set to `true`, message signatures are confirmed by the responder.  When the custom binding is configured for mutual certificates or it is configured to use issued tokens (WSS 1.1 bindings) this attribute defaults to `true`. Otherwise, the default is `false`.<br /><br /> Signature confirmation is used to confirm that the service is responding in full awareness of a request.|  
 |securityHeaderLayout|Optional. Specifies the ordering of the elements in security header. Valid values are<br /><br /> -   `Strict`: Items are added to the security header according to the general principle of "declare before use".<br />-   `Lax`: Items are added to the security header in any order that confirms to WSS: SOAP Message security.<br />-   `LaxWithTimestampFirst`: Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the first element in the security header must be a wsse:Timestamp element.<br />-   `LaxWithTimestampLast`: Items are added to the security header in any order that confirms to WSS: SOAP Message security except that the last element in the security header must be a wsse:Timestamp element.<br /><br /> The default is `Strict`.<br /><br /> This element is of type <xref:System.ServiceModel.Channels.SecurityHeaderLayout>.|  
-  
+
 ## authenticationMode Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |String|`AnonymousForCertificate`<br /><br /> `AnonymousForSslNegotiated`<br /><br /> `CertificateOverTransport`<br /><br /> `IssuedToken`<br /><br /> `IssuedTokenForCertificate`<br /><br /> `IssuedTokenForSslNegotiated`<br /><br /> `IssuedTokenOverTransport`<br /><br /> `Kerberos`<br /><br /> `KerberosOverTransport`<br /><br /> `MutualCertificate`<br /><br /> `MutualCertificateDuplex`<br /><br /> `MutualSslNegotiated`<br /><br /> `SecureConversation`<br /><br /> `SspiNegotiated`<br /><br /> `UserNameForCertificate`<br /><br /> `UserNameForSslNegotiated`<br /><br /> `UserNameOverTransport`<br /><br /> `SspiNegotiatedOverTransport`|  
-  
+
 ## defaultAlgorithm Attribute  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |Basic128|Use Aes128 encryption, Sha1 for message digest, and Rsa-oaep-mgf1p for key wrap.|  
@@ -83,32 +86,34 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
 |Basic192Sha256Rsa15|Use Aes192 for message encryption, Sha256 for message digest and Rsa15 for key wrap.|  
 |Basic256Sha256Rsa15|Use Aes256 for message encryption, Sha256 for message digest and Rsa15 for key wrap.|  
 |TripleDesSha256Rsa15|Use TripleDes for message encryption, Sha256 for message digest and Rsa15 for key wrap.|  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<issuedTokenParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Specifies a current issued token. This element is of type <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>.|  
 |[\<localClientSettings>](../../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)|Specifies the security settings of a local client for this binding. This element is of type <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>.|  
 |[\<localServiceSettings>](../../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)|Specifies the security settings of a local service for this binding. This element is of type <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>.|  
 |[\<secureConversationBootstrap>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Specifies the default values used for initiating a secure conversation service.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<binding>](../../../../../docs/framework/misc/binding.md)|Defines all binding capabilities of the custom binding.|  
-  
+
 ## Remarks  
  For more information about using this element, see [SecurityBindingElement Authentication Modes](../../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md) and [How to: Create a Custom Binding Using the SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).  
-  
+
 ## Example  
  The following example demonstrates how to configure security using a custom binding. It shows how to use a custom binding to enable message-level security together with a secure transport. This is useful when a secure transport is required to transmit the messages between client and service and simultaneously the messages must be secure on the message level. This configuration is not supported by system-provided bindings.  
-  
+
  The service configuration defines a custom binding that supports TCP communication protected using TLS/SSL protocol, and Windows message security. The custom binding uses a service certificate to authenticate the service on the transport level and to protect the messages during the transmission between client and service. This is accomplished by the [\<sslStreamSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md) binding element. The service's certificate is configured using a service behavior.  
-  
+
  Additionally, the custom binding uses message security with Windows credential type - this is the default credential type. This is accomplished by the [security](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) binding element. Both client and service are authenticated using message-level security if Kerberos authentication mechanism is available. If the Kerberos authentication mechanism is not available, NTLM authentication is used. NTLM authenticates the client to the service but does not authenticate service to the client. The [security](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) binding element is configured to use `SecureConversation` authenticationType, which results in the creation of a security session on both the client and the service. This is required to enable the service's duplex contract to work. For more information on running this example, see [Custom Binding Security](../../../../../docs/framework/wcf/samples/custom-binding-security.md).  
-  
+
 ```xml  
 <configuration>  
   <system.serviceModel>  
@@ -132,7 +137,7 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
                   contract="IMetadataExchange" />  
       </service>  
     </services>  
-  
+
     <bindings>  
       <!-- configure a custom binding -->  
       <customBinding>  
@@ -146,7 +151,7 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
         </binding>  
       </customBinding>  
     </bindings>  
-  
+
     <!--For debugging purposes set the includeExceptionDetailInFaults attribute to true-->  
     <behaviors>  
       <serviceBehaviors>  
@@ -162,7 +167,7 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
   </system.serviceModel>  
 </configuration>  
 ```  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Configuration.SecurityElement>  
  <xref:System.ServiceModel.Channels.SecurityBindingElement>  

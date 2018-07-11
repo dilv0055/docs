@@ -7,9 +7,10 @@ ms.assetid: 651c73e4-dca8-402b-9c6b-e3902b3a3f4b
 ---
 # Objects (Visual Basic)
 This topic provides links to other topics that document the Visual Basic run-time objects and contain tables of their member procedures, properties, and events.  
-  
+
 ## Visual Basic Run-time Objects  
-  
+
+
 |||  
 |---|---|  
 |<xref:Microsoft.VisualBasic.Collection>|Provides a convenient way to see a related group of items as a single object.|  
@@ -38,7 +39,7 @@ This topic provides links to other topics that document the Visual Basic run-tim
 |`My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>)|Provides access to information about the current user.|  
 |[My.WebServices Object](../../../visual-basic/language-reference/objects/my-webservices-object.md)|Provides properties for creating and accessing a single instance of each Web service that is referenced by the current project.|  
 |<xref:Microsoft.VisualBasic.FileIO.TextFieldParser>|Provides methods and properties for parsing structured text files.|  
-  
+
 ## See Also  
  [Visual Basic Language Reference](../../../visual-basic/language-reference/index.md)  
  [Visual Basic](../../../visual-basic/index.md)

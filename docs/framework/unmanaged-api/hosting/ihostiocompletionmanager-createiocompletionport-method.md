@@ -20,21 +20,22 @@ ms.author: "ronpet"
 ---
 # IHostIoCompletionManager::CreateIoCompletionPort Method
 Requests that the host create a new I/O completion port.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT CreateIoCompletionPort (  
     [out] HANDLE *phPort  
 );  
 ```  
-  
+
 #### Parameters  
  `phPort`  
  [out] A pointer to a handle to the newly created I/O completion port, or 0 (zero), if the port could not be created.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`CreateIoCompletionPort` returned successfully.|  
@@ -44,19 +45,19 @@ HRESULT CreateIoCompletionPort (
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
 |E_OUTOFMEMORY|Not enough memory was available to allocate the requested resource.|  
-  
+
 ## Remarks  
  The CLR calls the `CreateIoCompletionPort` method to request that the host create a new I/O completion port. It binds I/O operations to this port through a call to the [IHostIoCompletionManager::Bind](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md) method. The host reports status back to the CLR by calling [ICLRIoCompletionManager::OnComplete](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-oncomplete-method.md).  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclriocompletionmanager-interface.md)  
  [IHostIoCompletionManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)

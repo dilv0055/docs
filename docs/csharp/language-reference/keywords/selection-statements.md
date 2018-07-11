@@ -10,15 +10,15 @@ A selection statement causes the program control to be transferred to a specific
   
  The following keywords are used in selection statements:  
   
--   [if](../../../csharp/language-reference/keywords/if-else.md)  
+- [if](../../../csharp/language-reference/keywords/if-else.md)  
   
--   [else](../../../csharp/language-reference/keywords/if-else.md)  
+- [else](../../../csharp/language-reference/keywords/if-else.md)  
   
--   [switch](../../../csharp/language-reference/keywords/switch.md)  
+- [switch](../../../csharp/language-reference/keywords/switch.md)  
   
--   [case](../../../csharp/language-reference/keywords/switch.md)  
+- [case](../../../csharp/language-reference/keywords/switch.md)  
   
--   [default](../../../csharp/language-reference/keywords/switch.md)  
+- [default](../../../csharp/language-reference/keywords/switch.md)  
 
 ## See Also  
  [C# Reference](../../../csharp/language-reference/index.md)  

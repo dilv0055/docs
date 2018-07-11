@@ -14,19 +14,19 @@ This topic describes the format of trace data, how to view it, and approaches th
 ## Viewing Trace Content  
  A trace event contains the following most significant information:  
   
--   Activity name when set.  
+- Activity name when set.  
   
--   Emission time.  
+- Emission time.  
   
--   Trace level.  
+- Trace level.  
   
--   Trace source name.  
+- Trace source name.  
   
--   Process name.  
+- Process name.  
   
--   Thread id.  
+- Thread id.  
   
--   A unique trace identifier, which is a URL that points to a destination in Microsoft Docs, from which you can obtain more information related to the trace.  
+- A unique trace identifier, which is a URL that points to a destination in Microsoft Docs, from which you can obtain more information related to the trace.  
   
  All of these can be seen in the upper right panel in the Service Trace Viewer, or in the **Basic Information** section in the formatted view of the lower-right panel when selecting a trace.  
   
@@ -37,19 +37,19 @@ This topic describes the format of trace data, how to view it, and approaches th
   
  In the XML view, useful xml tags include the following:  
   
--   \<SubType> (trace level).  
+- \<SubType> (trace level).  
   
--   \<TimeCreated>.  
+- \<TimeCreated>.  
   
--   \<Source> (trace source name).  
+- \<Source> (trace source name).  
   
--   \<Correlation> (activity id set when emitting the trace).  
+- \<Correlation> (activity id set when emitting the trace).  
   
--   \<Execution> (process and thread id).  
+- \<Execution> (process and thread id).  
   
--   \<Computer>.  
+- \<Computer>.  
   
--   \<ExtendedData>, including \<Action>, \<MessageID> and the \<ActivityId> set in the message header when sending a message.  
+- \<ExtendedData>, including \<Action>, \<MessageID> and the \<ActivityId> set in the message header when sending a message.  
   
  If you examine the "Sent a message over a channel" trace, you may see the following content.  
   
@@ -107,17 +107,17 @@ This topic describes the format of trace data, how to view it, and approaches th
   
  In the following screenshot, extracted from the [Tracing and Message Logging](../../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) sample the left panel displays the list of activities created in the client process, sorted by creation time. The following is a chronological list of activities:  
   
--   Constructed the channel factory (ClientBase).  
+- Constructed the channel factory (ClientBase).  
   
--   Opened the channel factory.  
+- Opened the channel factory.  
   
--   Processed the Add action.  
+- Processed the Add action.  
   
--   Set up the Secure Session (this OCCURRED on the first request) and processed three security infrastructure response messages: RST, RSTR, SCT (Process message 1, 2, 3).  
+- Set up the Secure Session (this OCCURRED on the first request) and processed three security infrastructure response messages: RST, RSTR, SCT (Process message 1, 2, 3).  
   
--   Processed the Subtract, Multiply, and Divide requests.  
+- Processed the Subtract, Multiply, and Divide requests.  
   
--   Closed the channel factory, and doing so closed the Secure session and processed the security message response Cancel.  
+- Closed the channel factory, and doing so closed the Secure session and processed the security message response Cancel.  
   
  We see the security infrastructure messages because of the wsHttpBinding.  
   
@@ -143,17 +143,17 @@ List of traces for the Process Action activity: we send the request and receive 
   
  On the service, the activity model maps to the WCF concepts as follows:  
   
-1.  We construct and open a ServiceHost (this may create several host-related activities, for instance, in the case of security).  
+1. We construct and open a ServiceHost (this may create several host-related activities, for instance, in the case of security).  
   
-2.  We create a Listen At activity for each listener in the ServiceHost (with transfers in and out of Open ServiceHost).  
+2. We create a Listen At activity for each listener in the ServiceHost (with transfers in and out of Open ServiceHost).  
   
-3.  When the listener detects a communication request initiated by the client, it transfers to a "Receive Bytes" activity, in which all bytes sent from the client are processed. In this activity, we can see any connection errors that have happened during the client-service interaction.  
+3. When the listener detects a communication request initiated by the client, it transfers to a "Receive Bytes" activity, in which all bytes sent from the client are processed. In this activity, we can see any connection errors that have happened during the client-service interaction.  
   
-4.  For each set of bytes that is received that corresponds to a message, we process these bytes in a "Process Message" activity, where we create the WCF Message object. In this activity, we see errors related to a bad envelope or a malformed message.  
+4. For each set of bytes that is received that corresponds to a message, we process these bytes in a "Process Message" activity, where we create the WCF Message object. In this activity, we see errors related to a bad envelope or a malformed message.  
   
-5.  Once the message is formed, we transfer to a Process Action activity. If `propagateActivity` is set to `true` on both the client and service, this activity has the same id as the one defined in the client, and described previously. From this stage we start to benefit from direct correlation across endpoints, because all traces emitted in WCF that are related to the request are in that same activity, including the response message processing.  
+5. Once the message is formed, we transfer to a Process Action activity. If `propagateActivity` is set to `true` on both the client and service, this activity has the same id as the one defined in the client, and described previously. From this stage we start to benefit from direct correlation across endpoints, because all traces emitted in WCF that are related to the request are in that same activity, including the response message processing.  
   
-6.  For out-of-process action, we create an "Execute user code" activity to isolate traces emitted in user code from the ones emitted in WCF. In the preceding example, the "Service sends Add response" trace is emitted in the "Execute User code" activity not in the activity propagated by the client, if applicable.  
+6. For out-of-process action, we create an "Execute user code" activity to isolate traces emitted in user code from the ones emitted in WCF. In the preceding example, the "Service sends Add response" trace is emitted in the "Execute User code" activity not in the activity propagated by the client, if applicable.  
   
  In the illustration that follows, the first activity on the left is the root activity (0000), which is the default activity. The next three activities are to open the ServiceHost. The activity in column 5 is the listener, and the remaining activities (6 to 8) describe the WCF processing of a message, from bytes processing to user code activation.  
   

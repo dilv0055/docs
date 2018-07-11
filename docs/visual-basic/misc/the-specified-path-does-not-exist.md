@@ -8,7 +8,7 @@ A specified path does not exist, perhaps due to an error combining strings.
   
 ## To correct this error  
   
--   Make sure that the path is correct.  
+- Make sure that the path is correct.  
   
 ## See Also  
  [How to: Parse File Paths](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  

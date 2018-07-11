@@ -15,19 +15,19 @@ This sample shows how to create a custom <xref:System.Activities.NativeActivity>
   
 #### To use this sample  
   
-1.  Load the TransactionRollback.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1. Load the TransactionRollback.sln solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Press CTRL+SHIFT+B to build the solution.  
+2. Press CTRL+SHIFT+B to build the solution.  
   
-3.  Press CTRL+F5 to run the application.  
+3. Press CTRL+F5 to run the application.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactionRollback`  
   
 ## See Also  

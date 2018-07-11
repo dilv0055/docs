@@ -16,11 +16,11 @@ The [Type Library Importer (Tlbimp.exe)](../../../docs/framework/tools/tlbimp-ex
   
 ### To generate an interop assembly from a type library  
   
-1.  Use the following command:  
+1. Use the following command:  
   
-     **tlbimp** \<*type-library-file*>  
+    **tlbimp** \<*type-library-file*>  
   
-     Adding the **/out:** switch produces an interop assembly with an altered name, such as LOANLib.dll. Altering the interop assembly name can help distinguish it from the original COM DLL and prevent problems that can occur from having duplicate names.  
+    Adding the **/out:** switch produces an interop assembly with an altered name, such as LOANLib.dll. Altering the interop assembly name can help distinguish it from the original COM DLL and prevent problems that can occur from having duplicate names.  
   
 ## Example  
  The following command produces the Loanlib.dll assembly in the `Loanlib` namespace.  

@@ -5,7 +5,7 @@ ms.assetid: 395205c2-d8c0-4a5e-90f3-7ce3c085fccd
 ---
 # &lt;xmlElement&gt;
 Specifies an XML element that is sent in the message body to the Security Token Service when requesting a token.  
-  
+
  \<system.ServiceModel>  
 \<bindings>  
 \<wsFederatedBinding>  
@@ -13,33 +13,35 @@ Specifies an XML element that is sent in the message body to the Security Token 
 \<security>  
 \<message>  
 \<tokenRequestParameters>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <tokenRequestParameters>  
       <xmlElement xmlElement="String" />  
 </tokenRequestParameters>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |xmlElement|A string specifying an XML element that is sent in the message body to the Security Token Service when requesting a token.|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<tokenRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|A collection of token request parameters. Each parameter is an XML element.|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters%2A>  
  <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.TokenRequestParameters%2A>  

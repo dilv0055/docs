@@ -31,8 +31,8 @@ To group, sort, and filter data in a <xref:System.Windows.Controls.DataGrid> con
 
     If you use <xref:System.Collections.Generic.List%601> to create your collection, you should create a new class that inherits from <xref:System.Collections.Generic.List%601> instead of instantiating an instance of <xref:System.Collections.Generic.List%601>. This enables you to data bind to the collection in XAML.
 
-    > [!NOTE]
-    > The objects in the collection must implement the <xref:System.ComponentModel.INotifyPropertyChanged> changed interface and the <xref:System.ComponentModel.IEditableObject> interface in order for the <xref:System.Windows.Controls.DataGrid> to respond correctly to property changes and edits. For more information, see [Implement Property Change Notification](../data/how-to-implement-property-change-notification.md).
+   > [!NOTE]
+   > The objects in the collection must implement the <xref:System.ComponentModel.INotifyPropertyChanged> changed interface and the <xref:System.ComponentModel.IEditableObject> interface in order for the <xref:System.Windows.Controls.DataGrid> to respond correctly to property changes and edits. For more information, see [Implement Property Change Notification](../data/how-to-implement-property-change-notification.md).
 
     [!code-csharp[DataGrid_GroupSortFilter#101](~/samples/snippets/csharp/VS_Snippets_Wpf/DataGrid_GroupSortFilter/CS/MainWindow.xaml.cs#101)]
     [!code-vb[DataGrid_GroupSortFilter#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DataGrid_GroupSortFilter/VB/MainWindow.xaml.vb#101)]
@@ -97,9 +97,9 @@ To specify how items are sorted in a <xref:System.Windows.Controls.DataGrid>, yo
 
 1. Create a <xref:System.ComponentModel.SortDescription> that specifies the property to sort by. You can specify the property in XAML or in code.
 
-    1. In XAML, set the <xref:System.ComponentModel.SortDescription.PropertyName%2A> to the name of the property to sort by.
+   1. In XAML, set the <xref:System.ComponentModel.SortDescription.PropertyName%2A> to the name of the property to sort by.
 
-    2. In code, pass the name of the property to sort by and the <xref:System.ComponentModel.ListSortDirection> to the constructor.
+   2. In code, pass the name of the property to sort by and the <xref:System.ComponentModel.ListSortDirection> to the constructor.
 
 2. Add the <xref:System.ComponentModel.SortDescription> to the <xref:System.Windows.Data.CollectionViewSource.SortDescriptions%2A?displayProperty=nameWithType> collection.
 

@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # ICLRAssemblyIdentityManager::GetBindingIdentityFromFile Method
 Gets the assembly identity binding data for the assembly at the specified file path.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT GetBindingIdentityFromFile(  
     [in] LPCWSTR     pwzFilePath,  
@@ -31,22 +31,23 @@ HRESULT GetBindingIdentityFromFile(
     [in, out] DWORD *pcchBufferSize  
 );  
 ```  
-  
+
 #### Parameters  
  `pwzFilePath`  
  [in] The path to the file to be evaluated.  
-  
+
  `dwFlags`  
  [in] A value of the [ECLRAssemblyIdentityFlags](../../../../docs/framework/unmanaged-api/hosting/eclrassemblyidentityflags-enumeration.md) enumeration that indicates an assembly's identity type. Provided for future extensibility. CLR_ASSEMBLY_IDENTITY_FLAGS_DEFAULT is the only value that the common language runtime (CLR) version 2.0 supports.  
-  
+
  `pwzBuffer`  
  [out] A buffer containing the opaque assembly identity data.  
-  
+
  `pcchBufferSize`  
  [in, out] A pointer to the size of `pwzBuffer`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|The method returned successfully.|  
@@ -57,19 +58,19 @@ HRESULT GetBindingIdentityFromFile(
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. If a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  `GetBindingIdentityFromFile` is typically called twice. The first call supplies a null value for `pwzBuffer`, and the method returns the appropriate size in `pcchBufferSize`. The second call supplies an appropriately allocated buffer, and the method returns with the actual buffer data upon completion.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRAssemblyIdentityManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)  
  [ICLRAssemblyReferenceList Interface](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)  

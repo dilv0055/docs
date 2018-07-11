@@ -7,26 +7,27 @@ ms.author: "ronpet"
 ---
 # ISymUnmanagedAsyncMethodPropertiesWriter::DefineCatchHandlerILOffset Method
 Sets the IL offset for the compiler-generated catch handler that wraps an async method.  
-  
+
  The IL offset of the generated catch is used by the debugger to handle the catch as if it were non-user code even though it might occur in a user code method. In particular, it is used in response to a **CatchHandlerFound** exception event.  
-  
+
 ## Syntax  
-  
+
 ```idl  
 HRESULT DefineCatchHandlerILOffset(    [in] ULONG32 catchHandlerOffset);  
 ```  
-  
+
 #### Parameters  
-  
+
+
 |Parameter|Description|  
 |---------------|-----------------|  
 |`catchHandlerOffset`||  
-  
+
 ## Return Value  
  Returns `HRESULT`.  
-  
+
 ## Requirements  
  **Header:** CorSym.idl, CorSym.h  
-  
+
 ## See Also  
  [ISymUnmanagedAsyncMethodPropertiesWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-interface.md)

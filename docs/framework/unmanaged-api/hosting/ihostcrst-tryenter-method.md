@@ -20,25 +20,26 @@ ms.author: "ronpet"
 ---
 # IHostCrst::TryEnter Method
 Attempts to enter the critical section represented by the current [IHostCrst](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md) instance.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT TryEnter (  
     [in]  DWORD  option,  
     [out] BOOL   *pbSucceeded  
 );  
 ```  
-  
+
 #### Parameters  
  `option`  
  [in] One of the [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md) values, indicating what action the host should take if the operation blocks.  
-  
+
  `pbSucceeded`  
  [out] `true` if the critical section can be entered; otherwise, `false`.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`TryEnter` returned successfully.|  
@@ -47,19 +48,19 @@ HRESULT TryEnter (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  `TryEnter` returns immediately and indicates whether the calling thread entered the critical section. This method mirrors the Wind32 `TryEnterCriticalSection` function.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRSyncManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
  [IHostCrst Interface](../../../../docs/framework/unmanaged-api/hosting/ihostcrst-interface.md)  

@@ -11,13 +11,12 @@ api_type:
   - "Assembly"
 author: "stevewhims"
 ---
-
 # CoreResponseData Class
 
-The `CoreResponseData` class represents the parsing of the HTTP headers and the response body.
+The `CoreResponseData` class represents the parsing of the HTTP headers and the response body.
 
 ## Syntax
-  
+
 ```csharp
 internal class CoreResponseData
 ```

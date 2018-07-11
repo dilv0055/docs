@@ -10,7 +10,6 @@ ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
 author: "guardrex"
 ms.author: "mairaw"
 ---
-
 # \<configSections> element for \<configuration>
 
 Contains configuration section and namespace declarations.
@@ -24,11 +23,13 @@ None
 
 ## Parent element
 
+
 |     | Description |
 | --- | ----------- |
 | [**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) | The root element in every configuration file used by the common language runtime and .NET Framework applications. |
 
 ## Child elements
+
 
 |     | Description |
 | --- | ----------- |

@@ -135,6 +135,7 @@ Calendars typically divide dates into eras. However, the <xref:System.Globalizat
 
 In .NET, integers that represent the eras supported by a particular calendar implementation are stored in reverse order in the <xref:System.Globalization.Calendar.Eras%2A?displayProperty=nameWithType> array. The current era is at index zero, and for <xref:System.Globalization.Calendar> classes that support multiple eras, each successive index reflects the previous era. The static <xref:System.Globalization.Calendar.CurrentEra?displayProperty=nameWithType> property defines the index of the current era in the <xref:System.Globalization.Calendar.Eras%2A?displayProperty=nameWithType> array; it is a constant whose value is always zero. Individual <xref:System.Globalization.Calendar> classes also include static fields that return the value of the current era. They are listed in the following table.
 
+
 | Calendar class                                        | Current era field                                                 |
 | ----------------------------------------------------- | ----------------------------------------------------------------- |
 | <xref:System.Globalization.ChineseLunisolarCalendar>  | <xref:System.Globalization.ChineseLunisolarCalendar.ChineseEra>   |

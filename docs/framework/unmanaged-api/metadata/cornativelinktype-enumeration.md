@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorNativeLinkType Enumeration
 Provides values that indicate the type linked in native code.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum   
 {  
@@ -33,9 +33,10 @@ typedef enum
     nltMaxValue   = 7  
 } CorNativeLinkType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`nltNone`|Indicates that none of the keywords are specified.|  
@@ -44,15 +45,15 @@ typedef enum
 |`nltAuto`|Indicates that an auto keyword is specified.|  
 |`nltOle`|Indicates that an OLE keyword is specified.|  
 |`nltMaxValue`|Not used.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

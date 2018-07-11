@@ -4,7 +4,6 @@ description: Learn about events in .NET Core and our language design goals for e
 ms.date: 06/20/2016
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
 ---
-
 # Introduction to Events
 
 [Previous](delegates-patterns.md)
@@ -87,7 +86,7 @@ Progress?.Invoke(this, new FileListArgs(file));
 As discussed in the section on [delegates](delegates-patterns.md), the ?.
 operator makes it easy to ensure that you do not attempt to raise the event
 when there are no subscribers to that event.
- 
+
 You subscribe to an event by using the `+=` operator:
 
 ```csharp

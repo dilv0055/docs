@@ -44,8 +44,8 @@ The following example shows the *global.json* syntax:
 The process for selecting an SDK version is:
 
 1. `dotnet` searches for a *global.json* file iteratively reverse-navigating the path upward from the current working directory.
-1. `dotnet` uses the SDK specified in the first *global.json* found.
-1. `dotnet` uses the latest installed SDK if no *global.json* is found.
+2. `dotnet` uses the SDK specified in the first *global.json* found.
+3. `dotnet` uses the latest installed SDK if no *global.json* is found.
 
 You can learn more about selecting an SDK version in the [Matching rules](../tools/global-json.md#matching-rules) section of the topic on *global.json*.
 

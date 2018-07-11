@@ -7,9 +7,9 @@ ms.author: "ronpet"
 ---
 # &lt;AttributeImplies&gt; Element (.NET Native)
 Defines policy for code elements the containing attribute is applied to.  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <AttributeImplies Activate="policy_type"  
                   Browse="policy_type"  
@@ -22,12 +22,13 @@ Defines policy for code elements the containing attribute is applied to.
                   MarshalDelegate="policy_setting"  
                   MarshalStructure="policy_setting" />  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
-  
+
+
 |Attribute|Attribute type|Description|  
 |---------------|--------------------|-----------------|  
 |`Activate`|Reflection|Optional attribute. Controls runtime access to constructors to enable activation of instances.|  
@@ -40,27 +41,29 @@ Defines policy for code elements the containing attribute is applied to.
 |`MarshalObject`|Interop|Optional attribute. Controls policy for marshaling reference types to Windows Runtime and COM.|  
 |`MarshalDelegate`|Interop|Optional attribute. Controls policy for marshaling delegate types as function pointers to native code.|  
 |`MarshalStructure`|Interop|Optional attribute. Controls policy for marshaling value types to native code.|  
-  
+
 ## All attributes  
-  
+
+
 |Value|Description|  
 |-----------|-----------------|  
 |*policy_setting*|The setting to apply to this policy type. Possible values are `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, and `Required All`. For more information, see [Runtime Directive Policy Settings](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
-  
+
 ### Child Elements  
  None.  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[\<Type>](../../../docs/framework/net-native/type-element-net-native.md)|Applies reflection policy to a type and all its members.|  
-  
+
 ## Remarks  
  The `<AttributeImplies>` element is used if its containing type is an attribute (that is, a class derived from <xref:System.Attribute?displayProperty=nameWithType>). If the attribute is applied to a particular program element, the policy defined by the `<AttributeImplies>` element applies to that program element.  
-  
+
  The reflection, serialization, and interop attributes are all optional, although at least one should be present.  
-  
+
 ## See Also  
  [\<Type> Element](../../../docs/framework/net-native/type-element-net-native.md)  
  [Runtime Directives (rd.xml) Configuration File Reference](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)  

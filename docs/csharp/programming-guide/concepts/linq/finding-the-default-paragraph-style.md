@@ -80,7 +80,7 @@ The default style is: Normal
 ## Next Steps  
  In the next example, you'll create a similar query that finds all the paragraphs in a document and their styles:  
   
--   [Retrieving the Paragraphs and Their Styles (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
+- [Retrieving the Paragraphs and Their Styles (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md)  
   
 ## See Also  
  [Tutorial: Manipulating Content in a WordprocessingML Document](http://msdn.microsoft.com/library/2696355e-4f83-4eaf-91b2-baa721f42fb4)

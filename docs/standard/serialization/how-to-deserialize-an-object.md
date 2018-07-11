@@ -14,36 +14,36 @@ When you deserialize an object, the transport format determines whether you will
   
 ### To deserialize an object  
   
-1.  Construct a <xref:System.Xml.Serialization.XmlSerializer> using the type of the object to deserialize.  
+1. Construct a <xref:System.Xml.Serialization.XmlSerializer> using the type of the object to deserialize.  
   
-2.  Call the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method to produce a replica of the object. When deserializing, you must cast the returned object to the type of the original, as shown in the following example, which deserializes the object into a file (although it could also be deserialized into a stream).  
+2. Call the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method to produce a replica of the object. When deserializing, you must cast the returned object to the type of the original, as shown in the following example, which deserializes the object into a file (although it could also be deserialized into a stream).  
   
-    ```vb  
-    Dim myObject As MySerializableClass  
-    ' Construct an instance of the XmlSerializer with the type  
-    ' of object that is being deserialized.  
-    Dim mySerializer As XmlSerializer = New XmlSerializer(GetType(MySerializableClass))  
-    ' To read the file, create a FileStream.  
-    Dim myFileStream As FileStream = _  
-    New FileStream("myFileName.xml", FileMode.Open)  
-    ' Call the Deserialize method and cast to the object type.  
-    myObject = CType( _  
-    mySerializer.Deserialize(myFileStream), MySerializableClass)  
-    ```  
+   ```vb  
+   Dim myObject As MySerializableClass  
+   ' Construct an instance of the XmlSerializer with the type  
+   ' of object that is being deserialized.  
+   Dim mySerializer As XmlSerializer = New XmlSerializer(GetType(MySerializableClass))  
+   ' To read the file, create a FileStream.  
+   Dim myFileStream As FileStream = _  
+   New FileStream("myFileName.xml", FileMode.Open)  
+   ' Call the Deserialize method and cast to the object type.  
+   myObject = CType( _  
+   mySerializer.Deserialize(myFileStream), MySerializableClass)  
+   ```  
   
-    ```csharp  
-    MySerializableClass myObject;  
-    // Construct an instance of the XmlSerializer with the type  
-    // of object that is being deserialized.  
-    XmlSerializer mySerializer =   
-    new XmlSerializer(typeof(MySerializableClass));  
-    // To read the file, create a FileStream.  
-    FileStream myFileStream =   
-    new FileStream("myFileName.xml", FileMode.Open);  
-    // Call the Deserialize method and cast to the object type.  
-    myObject = (MySerializableClass)   
-    mySerializer.Deserialize(myFileStream)  
-    ```  
+   ```csharp  
+   MySerializableClass myObject;  
+   // Construct an instance of the XmlSerializer with the type  
+   // of object that is being deserialized.  
+   XmlSerializer mySerializer =   
+   new XmlSerializer(typeof(MySerializableClass));  
+   // To read the file, create a FileStream.  
+   FileStream myFileStream =   
+   new FileStream("myFileName.xml", FileMode.Open);  
+   // Call the Deserialize method and cast to the object type.  
+   myObject = (MySerializableClass)   
+   mySerializer.Deserialize(myFileStream)  
+   ```  
   
 ## See Also  
  [Introducing XML Serialization](../../../docs/standard/serialization/introducing-xml-serialization.md)  

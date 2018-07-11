@@ -19,9 +19,10 @@ ms.author: "ronpet"
 ---
 # IHostTask Interface
 Provides methods that allow the common language runtime (CLR) to communicate with the host to manage tasks.  
-  
+
 ## Methods  
-  
+
+
 |Method|Description|  
 |------------|-----------------|  
 |[Alert Method](../../../../docs/framework/unmanaged-api/hosting/ihosttask-alert-method.md)|Requests that the host wake the task represented by the current `IHostTask` instance, so the task can be aborted.|  
@@ -30,19 +31,19 @@ Provides methods that allow the common language runtime (CLR) to communicate wit
 |[SetCLRTask Method](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md)|Associates an [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) instance with the current `IHostTask` instance.|  
 |[SetPriority Method](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setpriority-method.md)|Requests that the host adjust the thread priority level for the task represented by the current `IHostTask` instance.|  
 |[Start Method](../../../../docs/framework/unmanaged-api/hosting/ihosttask-start-method.md)|Requests that the host move the task represented by the current `IHostTask` instance from a suspended state to a live state, in which code can be executed.|  
-  
+
 ## Remarks  
  The CLR calls methods defined by `IHostTask` to start a task, set its thread priority level, and so on.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [ICLRTask Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)  
  [ICLRTaskManager Interface](../../../../docs/framework/unmanaged-api/hosting/iclrtaskmanager-interface.md)  

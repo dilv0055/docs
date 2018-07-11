@@ -27,8 +27,8 @@ The lifetime of a collectible assembly is controlled by the existence of referen
 
 - An instance of <xref:System.Type> or <xref:System.Reflection.Emit.TypeBuilder> that represents `T`. 
 
-   > [!IMPORTANT]
-   > You must release all objects that represent parts of the assembly. The <xref:System.Reflection.Emit.ModuleBuilder> that defines `T` keeps a reference to the <xref:System.Reflection.Emit.TypeBuilder>, and the <xref:System.Reflection.Emit.AssemblyBuilder> object keeps a reference to the <xref:System.Reflection.Emit.ModuleBuilder>, so references to these objects must be released. Even the existence of a <xref:System.Reflection.Emit.LocalBuilder> or an <xref:System.Reflection.Emit.ILGenerator> used in the construction of `T` prevents unloading.
+  > [!IMPORTANT]
+  > You must release all objects that represent parts of the assembly. The <xref:System.Reflection.Emit.ModuleBuilder> that defines `T` keeps a reference to the <xref:System.Reflection.Emit.TypeBuilder>, and the <xref:System.Reflection.Emit.AssemblyBuilder> object keeps a reference to the <xref:System.Reflection.Emit.ModuleBuilder>, so references to these objects must be released. Even the existence of a <xref:System.Reflection.Emit.LocalBuilder> or an <xref:System.Reflection.Emit.ILGenerator> used in the construction of `T` prevents unloading.
 
 - A static reference to `T` by another dynamically defined type `T1` that is still reachable by executing code. For example, `T1` might derive from `T`, or `T` might be the type of a parameter in a method of `T1`.
  

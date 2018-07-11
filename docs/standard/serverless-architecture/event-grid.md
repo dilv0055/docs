@@ -84,6 +84,7 @@ Everything about the message is standard except the `data` property. You can ins
 
 A major benefit of using Event Grid is the automatic messages produced by Azure. In Azure, resources automatically publish to a *topic* that allows you to subscribe for various events. The following table lists the resource types, message types, and events that are available automatically.
 
+
 | Azure resource | Event type | Description |
 | -------------- | ---------- | ----------- |
 | Azure subscription | Microsoft.Resources.ResourceWriteSuccess | Raised when a resource create or update operation succeeds. |
@@ -135,6 +136,6 @@ In this chapter you learned about the Azure serverless platform that is composed
 * [Monitor Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)
 * [Work with Azure Functions Proxies](https://docs.microsoft.com/azure/azure-functions/functions-proxies)
 
->[!div class="step-by-step"]
-[Previous](logic-apps.md)
-[Next](durable-azure-functions.md)
+> [!div  class="step-by-step"]
+> [Previous](logic-apps.md)
+> [Next](durable-azure-functions.md)

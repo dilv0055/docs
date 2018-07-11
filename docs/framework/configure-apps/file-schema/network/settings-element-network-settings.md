@@ -14,13 +14,13 @@ manager: "markl"
 ---
 # &lt;settings&gt; Element (Network Settings)
 Configures basic network options for the <xref:System.Net?displayProperty=nameWithType> namespace.  
-  
+
  \<configuration>  
 \<system.net>  
 \<settings>  
-  
+
 ## Syntax  
-  
+
 ```xml  
 <settings>  
   <httpListener> … </httpListener>  
@@ -32,15 +32,16 @@ Configures basic network options for the <xref:System.Net?displayProperty=nameWi
   <webProxyScript> … </webProxyScript>  
 </settings>  
 ```  
-  
+
 ## Attributes and Elements  
  The following sections describe attributes, child elements, and parent elements.  
-  
+
 ### Attributes  
  None.  
-  
+
 ### Child Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[httpListener](../../../../../docs/framework/configure-apps/file-schema/network/httplistener-element-network-settings.md)|Customizes parameters used by the <xref:System.Net.HttpListener> class.|  
@@ -50,18 +51,19 @@ Configures basic network options for the <xref:System.Net?displayProperty=nameWi
 |[servicePointManager](../../../../../docs/framework/configure-apps/file-schema/network/servicepointmanager-element-network-settings.md)|Configures connections to network resources.|  
 |[socket](../../../../../docs/framework/configure-apps/file-schema/network/socket-element-network-settings.md)|Specifies whether socket operations use completion ports.|  
 |[\<webProxyScript> Element (Network Settings)](../../../../../docs/framework/configure-apps/file-schema/network/webproxyscript-element-network-settings.md)|Configures the characteristics of the script used to discover Web proxies.|  
-  
+
 ### Parent Elements  
-  
+
+
 |Element|Description|  
 |-------------|-----------------|  
 |[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contains settings that specify how the .NET Framework connects to the network.|  
-  
+
 ## Remarks  
-  
+
 ## Configuration Files  
  This element can be used in the application configuration file or the machine configuration file (Machine.config).  
-  
+
 ## See Also  
  <xref:System.Net?displayProperty=nameWithType>  
  [Network Settings Schema](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

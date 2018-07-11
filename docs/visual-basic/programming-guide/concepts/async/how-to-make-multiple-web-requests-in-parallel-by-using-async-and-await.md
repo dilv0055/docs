@@ -38,101 +38,101 @@ Dim result = Await myTask
   
 ### To set up the project  
   
-1.  To set up a WPF application, complete the following steps. You can find detailed instructions for these steps in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
+1. To set up a WPF application, complete the following steps. You can find detailed instructions for these steps in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
-    -   Create a WPF application that contains a text box and a button. Name the button `startButton`, and name the text box `resultsTextBox`.  
+   - Create a WPF application that contains a text box and a button. Name the button `startButton`, and name the text box `resultsTextBox`.  
   
-    -   Add a reference for <xref:System.Net.Http>.  
+   - Add a reference for <xref:System.Net.Http>.  
   
-    -   In the MainWindow.xaml.vb file, add an `Imports` statement for `System.Net.Http`.  
+   - In the MainWindow.xaml.vb file, add an `Imports` statement for `System.Net.Http`.  
   
 ### To add the code  
   
-1.  In the design window, MainWindow.xaml, double-click the button to create the `startButton_Click` event handler in MainWindow.xaml.vb.  
+1. In the design window, MainWindow.xaml, double-click the button to create the `startButton_Click` event handler in MainWindow.xaml.vb.  
   
-2.  Copy the following code, and paste it into the body of `startButton_Click` in MainWindow.xaml.vb.  
+2. Copy the following code, and paste it into the body of `startButton_Click` in MainWindow.xaml.vb.  
   
-    ```vb  
-    resultsTextBox.Clear()  
-    Await CreateMultipleTasksAsync()  
-    resultsTextBox.Text &= vbCrLf & "Control returned to button1_Click."  
-    ```  
+   ```vb  
+   resultsTextBox.Clear()  
+   Await CreateMultipleTasksAsync()  
+   resultsTextBox.Text &= vbCrLf & "Control returned to button1_Click."  
+   ```  
   
-     The code calls an asynchronous method, `CreateMultipleTasksAsync`, which drives the application.  
+    The code calls an asynchronous method, `CreateMultipleTasksAsync`, which drives the application.  
   
-3.  Add the following support methods to the project:  
+3. Add the following support methods to the project:  
   
-    -   `ProcessURLAsync` uses an <xref:System.Net.Http.HttpClient> method to download the contents of a website as a byte array. The support method, `ProcessURLAsync` then displays and returns the length of the array.  
+   - `ProcessURLAsync` uses an <xref:System.Net.Http.HttpClient> method to download the contents of a website as a byte array. The support method, `ProcessURLAsync` then displays and returns the length of the array.  
   
-    -   `DisplayResults` displays the number of bytes in the byte array for each URL. This display shows when each task has finished downloading.  
+   - `DisplayResults` displays the number of bytes in the byte array for each URL. This display shows when each task has finished downloading.  
   
-     Copy the following methods, and paste them after the `startButton_Click` event handler in MainWindow.xaml.vb.  
+    Copy the following methods, and paste them after the `startButton_Click` event handler in MainWindow.xaml.vb.  
   
-    ```vb  
-    Private Async Function ProcessURLAsync(url As String, client As HttpClient) As Task(Of Integer)  
+   ```vb  
+   Private Async Function ProcessURLAsync(url As String, client As HttpClient) As Task(Of Integer)  
   
-        Dim byteArray = Await client.GetByteArrayAsync(url)  
-        DisplayResults(url, byteArray)  
-        Return byteArray.Length  
-    End Function  
+       Dim byteArray = Await client.GetByteArrayAsync(url)  
+       DisplayResults(url, byteArray)  
+       Return byteArray.Length  
+   End Function  
   
-    Private Sub DisplayResults(url As String, content As Byte())  
+   Private Sub DisplayResults(url As String, content As Byte())  
   
-        ' Display the length of each website. The string format   
-        ' is designed to be used with a monospaced font, such as  
-        ' Lucida Console or Global Monospace.  
-        Dim bytes = content.Length  
-        ' Strip off the "http://".  
-        Dim displayURL = url.Replace("http://", "")  
-        resultsTextBox.Text &= String.Format(vbCrLf & "{0,-58} {1,8}", displayURL, bytes)  
-    End Sub  
-    ```  
+       ' Display the length of each website. The string format   
+       ' is designed to be used with a monospaced font, such as  
+       ' Lucida Console or Global Monospace.  
+       Dim bytes = content.Length  
+       ' Strip off the "http://".  
+       Dim displayURL = url.Replace("http://", "")  
+       resultsTextBox.Text &= String.Format(vbCrLf & "{0,-58} {1,8}", displayURL, bytes)  
+   End Sub  
+   ```  
   
-4.  Finally, define method `CreateMultipleTasksAsync`, which performs the following steps.  
+4. Finally, define method `CreateMultipleTasksAsync`, which performs the following steps.  
   
-    -   The method declares an `HttpClient` object,which you need  to access method <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> in `ProcessURLAsync`.  
+   - The method declares an `HttpClient` object,which you need  to access method <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> in `ProcessURLAsync`.  
   
-    -   The method creates and starts three tasks of type <xref:System.Threading.Tasks.Task%601>, where `TResult` is an integer. As each task finishes, `DisplayResults` displays the task's URL and the length of the downloaded contents. Because the tasks are running asynchronously, the order in which the results appear might differ from the order in which they were declared.  
+   - The method creates and starts three tasks of type <xref:System.Threading.Tasks.Task%601>, where `TResult` is an integer. As each task finishes, `DisplayResults` displays the task's URL and the length of the downloaded contents. Because the tasks are running asynchronously, the order in which the results appear might differ from the order in which they were declared.  
   
-    -   The method awaits the completion of each task. Each `Await` operator suspends execution of `CreateMultipleTasksAsync` until the awaited task is finished. The operator also retrieves the return value from the call to `ProcessURLAsync` from each completed task.  
+   - The method awaits the completion of each task. Each `Await` operator suspends execution of `CreateMultipleTasksAsync` until the awaited task is finished. The operator also retrieves the return value from the call to `ProcessURLAsync` from each completed task.  
   
-    -   When the tasks have been completed and the integer values have been retrieved, the method sums the lengths of the websites and displays the result.  
+   - When the tasks have been completed and the integer values have been retrieved, the method sums the lengths of the websites and displays the result.  
   
-     Copy the following method, and paste it into your solution.  
+    Copy the following method, and paste it into your solution.  
   
-    ```vb  
-    Private Async Function CreateMultipleTasksAsync() As Task  
+   ```vb  
+   Private Async Function CreateMultipleTasksAsync() As Task  
   
-        ' Declare an HttpClient object, and increase the buffer size. The  
-        ' default buffer size is 65,536.  
-        Dim client As HttpClient =  
-            New HttpClient() With {.MaxResponseContentBufferSize = 1000000}  
+       ' Declare an HttpClient object, and increase the buffer size. The  
+       ' default buffer size is 65,536.  
+       Dim client As HttpClient =  
+           New HttpClient() With {.MaxResponseContentBufferSize = 1000000}  
   
-        ' Create and start the tasks. As each task finishes, DisplayResults   
-        ' displays its length.  
-        Dim download1 As Task(Of Integer) =  
-            ProcessURLAsync("http://msdn.microsoft.com", client)  
-        Dim download2 As Task(Of Integer) =  
-            ProcessURLAsync("http://msdn.microsoft.com/library/hh156528(VS.110).aspx", client)  
-        Dim download3 As Task(Of Integer) =  
-            ProcessURLAsync("http://msdn.microsoft.com/library/67w7t67f.aspx", client)  
+       ' Create and start the tasks. As each task finishes, DisplayResults   
+       ' displays its length.  
+       Dim download1 As Task(Of Integer) =  
+           ProcessURLAsync("http://msdn.microsoft.com", client)  
+       Dim download2 As Task(Of Integer) =  
+           ProcessURLAsync("http://msdn.microsoft.com/library/hh156528(VS.110).aspx", client)  
+       Dim download3 As Task(Of Integer) =  
+           ProcessURLAsync("http://msdn.microsoft.com/library/67w7t67f.aspx", client)  
   
-        ' Await each task.  
-        Dim length1 As Integer = Await download1  
-        Dim length2 As Integer = Await download2  
-        Dim length3 As Integer = Await download3  
+       ' Await each task.  
+       Dim length1 As Integer = Await download1  
+       Dim length2 As Integer = Await download2  
+       Dim length3 As Integer = Await download3  
   
-        Dim total As Integer = length1 + length2 + length3  
+       Dim total As Integer = length1 + length2 + length3  
   
-        ' Display the total count for all of the websites.  
-        resultsTextBox.Text &= String.Format(vbCrLf & vbCrLf &  
-                                             "Total bytes returned:  {0}" & vbCrLf, total)  
-    End Function  
-    ```  
+       ' Display the total count for all of the websites.  
+       resultsTextBox.Text &= String.Format(vbCrLf & vbCrLf &  
+                                            "Total bytes returned:  {0}" & vbCrLf, total)  
+   End Function  
+   ```  
   
-5.  Choose the F5 key to run the program, and then choose the **Start** button.  
+5. Choose the F5 key to run the program, and then choose the **Start** button.  
   
-     Run the program several times to verify that the three tasks don’t always finish in the same order and that the order in which they finish isn't necessarily the order in which they’re created and awaited.  
+    Run the program several times to verify that the three tasks don’t always finish in the same order and that the order in which they finish isn't necessarily the order in which they’re created and awaited.  
   
 ## Example  
  The following code contains the full example.  

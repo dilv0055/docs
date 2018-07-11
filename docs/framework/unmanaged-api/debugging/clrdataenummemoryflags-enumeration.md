@@ -19,9 +19,9 @@ ms.author: "ronpet"
 ---
 # CLRDataEnumMemoryFlags Enumeration
 Indicates which memory regions a call to the [ICLRDataEnumMemoryRegions::EnumMemoryRegions](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) method should include.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CLRDataEnumMemoryFlags {  
     CLRDATA_ENUM_MEM_DEFAULT  = 0x0,  
@@ -29,22 +29,23 @@ typedef enum CLRDataEnumMemoryFlags {
     CLRDATA_ENUM_MEM_HEAP     = 0x1  
 } CLRDataEnumMemoryFlags;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`CLRDATA_ENUM_MEM_DEFAULT`|A minidump, that is, a sparse memory dump.|  
 |`CLRDATA_ENUM_MEM_HEAP`|A full heap dump.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** ClrData.idl, ClrData.h  
-  
+
  **Library:** CorGuids.lib  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [Debugging Enumerations](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)

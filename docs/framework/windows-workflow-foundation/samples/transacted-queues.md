@@ -18,17 +18,17 @@ This sample shows how to integrate queues and transactions in Windows Workflow F
   
 #### To set up, build, and run the sample  
   
-1.  Install and configure MSMQ. See [Installing Message Queuing](http://go.microsoft.com/fwlink/?LinkId=178526) for details.  
+1. Install and configure MSMQ. See [Installing Message Queuing](http://go.microsoft.com/fwlink/?LinkId=178526) for details.  
   
-2.  Ensure that MSDTC is running by executing the following command on a command line. `net start msdtc`  
+2. Ensure that MSDTC is running by executing the following command on a command line. `net start msdtc`  
   
-3.  Compile the project and open the executable, or open the project in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] and select a start option from the debug menu. First, the queue is created, then the client runs and posts messages to the queue, and finally the service starts and the messages are processed. To exit the program, press ENTER.  
+3. Compile the project and open the executable, or open the project in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] and select a start option from the debug menu. First, the queue is created, then the client runs and posts messages to the queue, and finally the service starts and the messages are processed. To exit the program, press ENTER.  
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Transactions\TransactedQueues`

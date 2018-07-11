@@ -18,12 +18,13 @@ ms.author: "ronpet"
 ---
 # Applying Interop Attributes
 The <xref:System.Runtime.InteropServices> namespace provides three categories of interop-specific attributes: those applied by you at design time, those applied by COM interop tools and APIs during the conversion process, and those applied either by you or COM interop.  
-  
+
  If you are unfamiliar with the task of applying attributes to managed code, see [Extending Metadata Using Attributes](../../../docs/standard/attributes/index.md). Like other custom attributes, you can apply interop-specific attributes to types, methods, properties, parameters, fields, and other members.  
-  
+
 ## Design-Time Attributes  
  You can adjust the outcome of the conversion process performed by COM interop tools and APIs by using design-time attributes. The following table describes the attributes that you can apply to your managed source code. COM interop tools, on occasion, might also apply the attributes described in this table.  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |<xref:System.Runtime.InteropServices.AutomationProxyAttribute>|Specifies whether the type should be marshaled using the Automation marshaler or a custom proxy and stub.|  
@@ -47,10 +48,11 @@ The <xref:System.Runtime.InteropServices> namespace provides three categories of
 |<xref:System.Runtime.InteropServices.PreserveSigAttribute>|Suppresses the HRESULT or retval signature transformation that normally takes place during interoperation calls. The attribute affects marshaling as well as type library exporting.<br /><br /> COM interop tools can apply this attribute.|  
 |<xref:System.Runtime.InteropServices.ProgIdAttribute>|Specifies the ProgID of a .NET Framework class. Can be used to attribute classes.|  
 |<xref:System.Runtime.InteropServices.StructLayoutAttribute>|Controls the physical layout of the fields of a class.<br /><br /> COM interop tools can apply this attribute.|  
-  
+
 ## Conversion-Tool Attributes  
  The following table describes attributes that COM interop tools apply during the conversion process. You do not apply these attributes at design time.  
-  
+
+
 |Attribute|Description|  
 |---------------|-----------------|  
 |<xref:System.Runtime.InteropServices.ComAliasNameAttribute>|Indicates the COM alias for a parameter or field type. Can be used to attribute parameters, fields, or return values.|  
@@ -60,7 +62,7 @@ The <xref:System.Runtime.InteropServices> namespace provides three categories of
 |<xref:System.Runtime.InteropServices.TypeLibFuncAttribute>|Contains the **FUNCFLAGS** that were originally imported for this function from the COM type library.|  
 |<xref:System.Runtime.InteropServices.TypeLibTypeAttribute>|Contains the **TYPEFLAGS** that were originally imported for this type from the COM type library.|  
 |<xref:System.Runtime.InteropServices.TypeLibVarAttribute>|Contains the **VARFLAGS** that were originally imported for this variable from the COM type library.|  
-  
+
 ## See Also  
  <xref:System.Runtime.InteropServices>  
  [Exposing .NET Framework Components to COM](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  

@@ -13,12 +13,13 @@ ms.author: "mairaw"
 ---
 # Dangerous Permissions and Policy Administration
 Several of the protected operations for which the .NET Framework provides permissions can potentially allow the security system to be circumvented. These dangerous permissions should be given only to trustworthy code, and then only as necessary. There is usually no defense against malicious code if it is granted these permissions.  
-  
+
 > [!NOTE]
 >  In the [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], there have been important changes to the .NET Framework security model and terminology. For more information about these changes, see [Security Changes](../../../docs/framework/security/security-changes.md).  
-  
+
  The dangerous permissions are explained in the following table.  
-  
+
+
 |Permission|Potential risk|  
 |----------------|--------------------|  
 |<xref:System.Security.Permissions.SecurityPermission>||  
@@ -31,6 +32,6 @@ Several of the protected operations for which the .NET Framework provides permis
 |<xref:System.Security.Permissions.SecurityPermissionFlag.ControlThread>|Manipulation of threads is dangerous because of the security state associated with threads.|  
 |<xref:System.Security.Permissions.ReflectionPermission>||  
 |<xref:System.MemberAccessException>|Can use private members to defeat accessibility mechanisms.|  
-  
+
 ## See Also  
  [Secure Coding Guidelines](../../../docs/standard/security/secure-coding-guidelines.md)

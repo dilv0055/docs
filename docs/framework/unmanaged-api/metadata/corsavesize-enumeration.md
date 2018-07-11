@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CorSaveSize Enumeration
 Contains values indicating the level of precision required when querying for the size of a save operation.  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum CorSaveSize {  
     cssAccurate                = 0x0000,   
@@ -29,23 +29,24 @@ typedef enum CorSaveSize {
     cssDiscardTransientCAs     = 0x0002  
 } CorSaveSize;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`cssAccurate`|Specifies that the return value should be exact.|  
 |`cssQuick`|Specifies that the return value should be estimated.|  
 |`cssDiscardTransientCAs`|Specifies that discardable types should be removed.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** CorHdr.h  
-  
+
  **Library:** Used as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

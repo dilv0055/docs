@@ -18,11 +18,11 @@ TraceSource ts = new TraceSource("myUserTraceSource");
 ## Creating Activities  
  Activities are logical unit of processing. You can create one activity for each major processing unit in which you want traces to be grouped together. For example, you can create one activity for each request to the service. To do so, perform the following steps.  
   
-1.  Save the activity ID in scope.  
+1. Save the activity ID in scope.  
   
-2.  Create a new activity ID.  
+2. Create a new activity ID.  
   
-3.  Transfer from the activity in scope to the new one, set the new activity in scope and emit a start trace for that activity.  
+3. Transfer from the activity in scope to the new one, set the new activity in scope and emit a start trace for that activity.  
   
  The following code demonstrates how to do this.  
   
@@ -105,13 +105,13 @@ ts.TraceEvent(TraceEventType.Warning, 0, "Throwing exception " + "exceptionMessa
   
  This activity shows the following order of processing:  
   
-1.  Client sends message to Add.  
+1. Client sends message to Add.  
   
-2.  Service receives Add request message.  
+2. Service receives Add request message.  
   
-3.  Service sends Add response.  
+3. Service sends Add response.  
   
-4.  Client receives Add response.  
+4. Client receives Add response.  
   
  All these traces were emitted at Information level. Clicking a trace in the upper-right panel shows the details of that trace in the lower-right panel.  
   

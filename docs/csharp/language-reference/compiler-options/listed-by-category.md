@@ -13,12 +13,14 @@ The following compiler options are sorted by category. For an alphabetical list,
 
 ## Optimization
 
+
 |Option|Purpose|
 |------------|-------------|
 |[-filealign](filealign-compiler-option.md)|Specifies the size of sections in the output file.|
 |[-optimize](optimize-compiler-option.md)|Enables/disables optimizations.|
 
 ## Output Files
+
 
 |Option|Purpose|
 |------------|-------------|
@@ -36,6 +38,7 @@ The following compiler options are sorted by category. For an alphabetical list,
 
 ## .NET Framework Assemblies
 
+
 |Option|Purpose|
 |------------|-------------|
 |[-addmodule](addmodule-compiler-option.md)|Specifies one or more modules to be part of this assembly.|
@@ -51,6 +54,7 @@ The following compiler options are sorted by category. For an alphabetical list,
 
 ## Debugging/Error Checking
 
+
 |Option|Purpose|
 |------------|-------------|
 |[-bugreport](bugreport-compiler-option.md)|Creates a file that contains information that makes it easy to report a bug.|
@@ -65,11 +69,13 @@ The following compiler options are sorted by category. For an alphabetical list,
 
 ## Preprocessor
 
+
 |Option|Purpose|
 |------------|-------------|
 |[-define](define-compiler-option.md)|Defines preprocessor symbols.|
 
 ## Resources
+
 
 |Option|Purpose|
 |------------|-------------|
@@ -80,6 +86,7 @@ The following compiler options are sorted by category. For an alphabetical list,
 |[-win32res](win32res-compiler-option.md)|Specifies a Win32 resource to insert into the output file.|
 
 ## Miscellaneous
+
 
 |Option|Purpose|
 |------------|-------------|
@@ -101,6 +108,7 @@ The following compiler options are sorted by category. For an alphabetical list,
 |-checksumalgorithm:\<alg>|Specify the algorithm for calculating the source file checksum stored in PDB.  Supported values are: SHA1 (default) or SHA256.|
 
 ## Obsolete Options
+
 
 |Option|Purpose|
 |---|---|

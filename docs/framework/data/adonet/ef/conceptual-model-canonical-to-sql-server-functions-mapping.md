@@ -5,10 +5,11 @@ ms.assetid: 1a2631bc-a426-4c0a-ba8d-26d9c80d39e2
 ---
 # Conceptual Model Canonical to SQL Server Functions Mapping
 This topic describes how conceptual model canonical functions map to the corresponding SQL Server functions.  
-  
+
 ## Date and Time Functions  
  The following table describes the date and time functions mapping:  
-  
+
+
 |Canonical functions|SQL Server functions|  
 |-------------------------|--------------------------|  
 |[AddDays(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DATEADD(day, number, date)`|  
@@ -44,10 +45,11 @@ This topic describes how conceptual model canonical functions map to the corresp
 |[Second(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DatePart(second, expression)`|  
 |[Truncate(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|For SQL Server 2000 and SQL Server 2005, a truncated `datetime` formatted value is created on the server. For SQL Server 2008 and later versions, a truncated `datetime2` or `datetimeoffset` value is created on the server.|  
 |[Year(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/date-and-time-canonical-functions.md)|`DatePart(YEAR, expression)`|  
-  
+
 ## Aggregate Functions  
  The following table describes the aggregate functions mapping:  
-  
+
+
 |Canonical functions|SQL Server functions|  
 |-------------------------|--------------------------|  
 |[Avg(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)|`AVG(expression)`|  
@@ -60,10 +62,11 @@ This topic describes how conceptual model canonical functions map to the corresp
 |[Sum(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)|`SUM(expression)`|  
 |[Var(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)|`VAR(expression)`|  
 |[VarP(expression)](../../../../../docs/framework/data/adonet/ef/language-reference/aggregate-canonical-functions.md)|`VARP(expression)`|  
-  
+
 ## Math functions  
  The following table describes the math functions mapping:  
-  
+
+
 |Canonical functions|SQL Server functions|  
 |-------------------------|--------------------------|  
 |[Abs(value)](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`ABS(value)`|  
@@ -72,10 +75,11 @@ This topic describes how conceptual model canonical functions map to the corresp
 |[Power(value)](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`POWER(value, exponent)`|  
 |[Round(value)](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`ROUND(value, digits, 0)`|  
 |[Truncate](../../../../../docs/framework/data/adonet/ef/language-reference/math-canonical-functions.md)|`ROUND(value , digits, 1)`|  
-  
+
 ## String Functions  
  The following table describes the string functions mapping:  
-  
+
+
 |Canonical functions|SQL Server functions|  
 |-------------------------|--------------------------|  
 |[Contains(string, target)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`CHARINDEX(target, string)`|  
@@ -94,13 +98,15 @@ This topic describes how conceptual model canonical functions map to the corresp
 |[Substring(string, start, length)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`SUBSTRING(string, start, length)`|  
 |[ToLower(string)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`LOWER(string)`|  
 |[ToUpper(string)](../../../../../docs/framework/data/adonet/ef/language-reference/string-canonical-functions.md)|`UPPER(string)`|  
-  
+
 ## Bitwise Functions  
  The following table describes the bitwise functions mapping:  
-  
-|Canonical functions|SQL Server functions|  
-|-------------------------|--------------------------|  
-|[BitWiseAnd (value1, value2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|value1 & value2|  
-|[BitWiseNot (value)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|~value|  
-|[BitWiseOr (value1, value2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|value1 &#124; value2|  
-|[BitWiseXor (value1, value2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)|value1 ^ value2|
+
+
+|                                                      Canonical functions                                                      | SQL Server functions |
+|-------------------------------------------------------------------------------------------------------------------------------|----------------------|
+| [BitWiseAnd (value1, value2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md) |   value1 & value2    |
+|     [BitWiseNot (value)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)      |        ~value        |
+| [BitWiseOr (value1, value2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md)  | value1 &#124; value2 |
+| [BitWiseXor (value1, value2)](../../../../../docs/framework/data/adonet/ef/language-reference/bitwise-canonical-functions.md) |   value1 ^ value2    |
+

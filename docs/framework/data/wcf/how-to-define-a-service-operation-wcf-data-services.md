@@ -16,27 +16,27 @@ ms.assetid: dfcd3cb1-2f07-4d0b-b16a-6b056c4f45fa
   
 ### To define a service operation in the Northwind data service  
   
-1.  In the Northwind data service project, open the Northwind.svc file.  
+1. In the Northwind data service project, open the Northwind.svc file.  
   
-2.  In the `Northwind` class, define a service operation method named `GetOrdersByCity` as follows:  
+2. In the `Northwind` class, define a service operation method named `GetOrdersByCity` as follows:  
   
-     [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationdef)]
-     [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationdef)]  
+    [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationdef)]
+    [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationdef)]  
   
-3.  In the `InitializeService` method of the `Northwind` class, add the following code to enable access to the service operation:  
+3. In the `InitializeService` method of the `Northwind` class, add the following code to enable access to the service operation:  
   
-     [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationconfig)]
-     [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationconfig)]  
+    [!code-csharp[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria northwind service/cs/northwind2.svc.cs#serviceoperationconfig)]
+    [!code-vb[Astoria Northwind Service#ServiceOperationConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria northwind service/vb/northwind2.svc.vb#serviceoperationconfig)]  
   
 ### To query the GetOrdersByCity service operation  
   
--   In a Web browser, enter one of the following URIs to invoke the service operation that is defined in the following example:  
+- In a Web browser, enter one of the following URIs to invoke the service operation that is defined in the following example:  
   
-    -   `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'`  
+  - `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'`  
   
-    -   `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$top=2`  
+  - `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$top=2`  
   
-    -   `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order_Details&$orderby=RequiredDate desc`  
+  - `http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order_Details&$orderby=RequiredDate desc`  
   
 ## Example  
  The following example implements a service operation named `GetOrderByCity` on the Northwind data service. This operation uses the ADO.NET Entity Framework to return a set of `Orders` and related `Order_Details` objects as an <xref:System.Linq.IQueryable%601> instance based on the provided city name.  

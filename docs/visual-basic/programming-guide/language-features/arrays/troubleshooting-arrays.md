@@ -16,31 +16,31 @@ This page lists some common problems that can occur when working with arrays.
 ## Compilation Errors Declaring and Initializing an Array  
  Compilation errors can arise from misunderstanding of the rules for declaring, creating, and initializing arrays. The most common causes of errors are the following:  
   
--   Supplying a [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) clause after specifying dimension lengths in the array variable declaration. The following code lines show invalid declarations of this type.  
+- Supplying a [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) clause after specifying dimension lengths in the array variable declaration. The following code lines show invalid declarations of this type.  
   
-     `Dim INVALIDsingleDimByteArray(2) As Byte = New Byte()`  
+   `Dim INVALIDsingleDimByteArray(2) As Byte = New Byte()`  
   
-     `Dim INVALIDtwoDimShortArray(1, 1) As Short = New Short(,)`  
+   `Dim INVALIDtwoDimShortArray(1, 1) As Short = New Short(,)`  
   
-     `Dim INVALIDjaggedByteArray(1)() As Byte = New Byte()()`  
+   `Dim INVALIDjaggedByteArray(1)() As Byte = New Byte()()`  
   
--   Specifying dimension lengths for more than the top-level array of a jagged array. The following code line shows an invalid declaration of this type.  
+- Specifying dimension lengths for more than the top-level array of a jagged array. The following code line shows an invalid declaration of this type.  
   
-     `Dim INVALIDjaggedByteArray(1)(1) As Byte`  
+   `Dim INVALIDjaggedByteArray(1)(1) As Byte`  
   
--   Omitting the `New` keyword when specifying the element values. The following code line shows an invalid declaration of this type.  
+- Omitting the `New` keyword when specifying the element values. The following code line shows an invalid declaration of this type.  
   
-     `Dim INVALIDoneDimShortArray() As Short = Short() {0, 1, 2, 3}`  
+   `Dim INVALIDoneDimShortArray() As Short = Short() {0, 1, 2, 3}`  
   
--   Supplying a `New` clause without braces (`{}`). The following code lines show invalid declarations of this type.  
+- Supplying a `New` clause without braces (`{}`). The following code lines show invalid declarations of this type.  
   
-     `Dim INVALIDsingleDimByteArray() As Byte = New Byte()`  
+   `Dim INVALIDsingleDimByteArray() As Byte = New Byte()`  
   
-     `Dim INVALIDsingleDimByteArray() As Byte = New Byte(2)`  
+   `Dim INVALIDsingleDimByteArray() As Byte = New Byte(2)`  
   
-     `Dim INVALIDtwoDimShortArray(,) As Short = New Short(,)`  
+   `Dim INVALIDtwoDimShortArray(,) As Short = New Short(,)`  
   
-     `Dim INVALIDtwoDimShortArray(,) As Short = New Short(1, 1)`  
+   `Dim INVALIDtwoDimShortArray(,) As Short = New Short(1, 1)`  
   
 ## Accessing an Array Out of Bounds  
  The process of initializing an array assigns an upper bound and a lower bound to each dimension. Every access to an element of the array must specify a valid index, or subscript, for every dimension. If any index is below its lower bound or above its upper bound, an <xref:System.IndexOutOfRangeException> exception results. The compiler cannot detect such an error, so an error occurs at run time.  

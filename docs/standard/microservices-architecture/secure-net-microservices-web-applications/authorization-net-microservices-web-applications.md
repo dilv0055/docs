@@ -63,11 +63,11 @@ public ActionResult API1 ()
 
 In this example, to call API1, a user must:
 
--   Be in the Adminstrator *or* PowerUser role, *and*
+- Be in the Adminstrator *or* PowerUser role, *and*
 
--   Be in the RemoteEmployee role, *and*
+- Be in the RemoteEmployee role, *and*
 
--   Satisfy a custom handler for CustomPolicy authorization.
+- Satisfy a custom handler for CustomPolicy authorization.
 
 ## Implementing policy-based authorization
 
@@ -95,9 +95,9 @@ The second AddPolicy call demonstrates an easy way to require that a particular 
 
 The most interesting policy shown here is in the third AddPolicy method, because it uses a custom authorization requirement. By using custom authorization requirements, you can have a great deal of control over how authorization is performed. For this to work, you must implement these types:
 
--   A Requirements type that derives from IAuthorizationRequirement and that contains fields specifying the details of the requirement. In the example, this is an age field for the sample MinimumAgeRequirement type.
+- A Requirements type that derives from IAuthorizationRequirement and that contains fields specifying the details of the requirement. In the example, this is an age field for the sample MinimumAgeRequirement type.
 
--   A handler that implements AuthorizationHandler&lt;T&gt;, where T is the type of IAuthorizationRequirement that the handler can satisfy. The handler must implement the HandleRequirementAsync method, which checks whether a specified context that contains information about the user satisfies the requirement.
+- A handler that implements AuthorizationHandler&lt;T&gt;, where T is the type of IAuthorizationRequirement that the handler can satisfy. The handler must implement the HandleRequirementAsync method, which checks whether a specified context that contains information about the user satisfies the requirement.
 
 If the user meets the requirement, a call to context.Succeed will indicate that the user is authorized. If there are multiple ways that a user might satisfy an authorization requirement, multiple handlers can be created.
 
@@ -107,21 +107,21 @@ An example of a custom authorization requirement and handler for checking a user
 
 ## Additional resources
 
--   **ASP.NET Core Authentication**
-    [*https://docs.microsoft.com/aspnet/core/security/authentication/identity*](https://docs.microsoft.com/aspnet/core/security/authentication/identity)
+- **ASP.NET Core Authentication**
+  [*https://docs.microsoft.com/aspnet/core/security/authentication/identity*](https://docs.microsoft.com/aspnet/core/security/authentication/identity)
 
--   **ASP.NET Core Authorization**
-    [*https://docs.microsoft.com/aspnet/core/security/authorization/introduction*](https://docs.microsoft.com/aspnet/core/security/authorization/introduction)
+- **ASP.NET Core Authorization**
+  [*https://docs.microsoft.com/aspnet/core/security/authorization/introduction*](https://docs.microsoft.com/aspnet/core/security/authorization/introduction)
 
--   **Role based Authorization**
-    [*https://docs.microsoft.com/aspnet/core/security/authorization/roles*](https://docs.microsoft.com/aspnet/core/security/authorization/roles)
+- **Role based Authorization**
+  [*https://docs.microsoft.com/aspnet/core/security/authorization/roles*](https://docs.microsoft.com/aspnet/core/security/authorization/roles)
 
--   **Custom Policy-Based Authorization**
-    [*https://docs.microsoft.com/aspnet/core/security/authorization/policies*](https://docs.microsoft.com/aspnet/core/security/authorization/policies)
-
-
+- **Custom Policy-Based Authorization**
+  [*https://docs.microsoft.com/aspnet/core/security/authorization/policies*](https://docs.microsoft.com/aspnet/core/security/authorization/policies)
 
 
->[!div class="step-by-step"]
-[Previous](index.md)
-[Next](developer-app-secrets-storage.md)
+
+
+> [!div  class="step-by-step"]
+> [Previous](index.md)
+> [Next](developer-app-secrets-storage.md)

@@ -22,60 +22,60 @@ ms.assetid: f1e9c3a0-d0a1-4893-a615-b4b0db046c63
   
 ### To validate user input  
   
-1.  Write code to handle the <xref:System.Data.DataTable.ColumnChanging> event for the appropriate table. When inappropriate input is detected, call the <xref:System.Data.DataRow.SetColumnError%2A> method of the <xref:System.Data.DataRow> object.  
+1. Write code to handle the <xref:System.Data.DataTable.ColumnChanging> event for the appropriate table. When inappropriate input is detected, call the <xref:System.Data.DataRow.SetColumnError%2A> method of the <xref:System.Data.DataRow> object.  
   
-    ```vb  
-    Private Sub Customers_ColumnChanging(ByVal sender As Object, _  
-    ByVal e As System.Data.DataColumnChangeEventArgs)  
-       ' Only check for errors in the Product column  
-       If (e.Column.ColumnName.Equals("Product")) Then  
-          ' Do not allow "Automobile" as a product.  
-          If CType(e.ProposedValue, String) = "Automobile" Then  
-             Dim badValue As Object = e.ProposedValue  
-             e.ProposedValue = "Bad Data"  
-             e.Row.RowError = "The Product column contians an error"  
-             e.Row.SetColumnError(e.Column, "Product cannot be " & _  
-             CType(badValue, String))  
-          End If  
-       End If  
-    End Sub  
-    ```  
+   ```vb  
+   Private Sub Customers_ColumnChanging(ByVal sender As Object, _  
+   ByVal e As System.Data.DataColumnChangeEventArgs)  
+      ' Only check for errors in the Product column  
+      If (e.Column.ColumnName.Equals("Product")) Then  
+         ' Do not allow "Automobile" as a product.  
+         If CType(e.ProposedValue, String) = "Automobile" Then  
+            Dim badValue As Object = e.ProposedValue  
+            e.ProposedValue = "Bad Data"  
+            e.Row.RowError = "The Product column contians an error"  
+            e.Row.SetColumnError(e.Column, "Product cannot be " & _  
+            CType(badValue, String))  
+         End If  
+      End If  
+   End Sub  
+   ```  
   
-    ```csharp  
-    //Handle column changing events on the Customers table  
-    private void Customers_ColumnChanging(object sender, System.Data.DataColumnChangeEventArgs e) {  
+   ```csharp  
+   //Handle column changing events on the Customers table  
+   private void Customers_ColumnChanging(object sender, System.Data.DataColumnChangeEventArgs e) {  
   
-       //Only check for errors in the Product column  
-       if (e.Column.ColumnName.Equals("Product")) {  
+      //Only check for errors in the Product column  
+      if (e.Column.ColumnName.Equals("Product")) {  
   
-          //Do not allow "Automobile" as a product  
-          if (e.ProposedValue.Equals("Automobile")) {  
-             object badValue = e.ProposedValue;  
-             e.ProposedValue = "Bad Data";  
-             e.Row.RowError = "The Product column contains an error";  
-             e.Row.SetColumnError(e.Column, "Product cannot be " + badValue);  
-          }  
-       }  
-    }  
-    ```  
+         //Do not allow "Automobile" as a product  
+         if (e.ProposedValue.Equals("Automobile")) {  
+            object badValue = e.ProposedValue;  
+            e.ProposedValue = "Bad Data";  
+            e.Row.RowError = "The Product column contains an error";  
+            e.Row.SetColumnError(e.Column, "Product cannot be " + badValue);  
+         }  
+      }  
+   }  
+   ```  
   
-2.  Connect the event handler to the event.  
+2. Connect the event handler to the event.  
   
-     Place the following code within either the form's <xref:System.Windows.Forms.Form.Load> event or its constructor.  
+    Place the following code within either the form's <xref:System.Windows.Forms.Form.Load> event or its constructor.  
   
-    ```vb  
-    ' Assumes the grid is bound to a dataset called customersDataSet1  
-    ' with a table called Customers.  
-    ' Put this code in the form's Load event or its constructor.  
-    AddHandler customersDataSet1.Tables("Customers").ColumnChanging, AddressOf Customers_ColumnChanging  
-    ```  
+   ```vb  
+   ' Assumes the grid is bound to a dataset called customersDataSet1  
+   ' with a table called Customers.  
+   ' Put this code in the form's Load event or its constructor.  
+   AddHandler customersDataSet1.Tables("Customers").ColumnChanging, AddressOf Customers_ColumnChanging  
+   ```  
   
-    ```csharp  
-    // Assumes the grid is bound to a dataset called customersDataSet1  
-    // with a table called Customers.  
-    // Put this code in the form's Load event or its constructor.  
-    customersDataSet1.Tables["Customers"].ColumnChanging += new DataColumnChangeEventHandler(this.Customers_ColumnChanging);  
-    ```  
+   ```csharp  
+   // Assumes the grid is bound to a dataset called customersDataSet1  
+   // with a table called Customers.  
+   // Put this code in the form's Load event or its constructor.  
+   customersDataSet1.Tables["Customers"].ColumnChanging += new DataColumnChangeEventHandler(this.Customers_ColumnChanging);  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.DataGrid>  

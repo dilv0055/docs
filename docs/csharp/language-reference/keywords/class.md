@@ -24,6 +24,7 @@ class TestClass
 
 Only single inheritance is allowed in C#. In other words, a class can inherit implementation from one base class only. However, a class can implement more than one interface. The following table shows examples of class inheritance and interface implementation:
 
+
 |Inheritance|Example|
 |-----------------|-------------|
 |None|`class ClassA { }`|

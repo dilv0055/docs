@@ -52,7 +52,7 @@ public static void Main()
   
  It is not immediately obvious how to use this custom <xref:System.ServiceModel.ServiceHost> from inside of Internet Information Services (IIS) or Windows Process Activation Service (WAS). Those environments are different than the self-host environment, because the hosting environment is the one instantiating the <xref:System.ServiceModel.ServiceHost> on behalf of the application. The IIS and WAS hosting infrastructure does not know anything about your custom <xref:System.ServiceModel.ServiceHost> derivative.  
   
- The <xref:System.ServiceModel.Activation.ServiceHostFactory> was designed to solve this problem of accessing your custom <xref:System.ServiceModel.ServiceHost> from within IIS or WAS. Because a custom host that is derived from <xref:System.ServiceModel.ServiceHost> is dynamically configured and potentially of various types, the hosting environment never instantiates it directly. Instead, WCF uses a factory pattern to provide a layer of indirection between the hosting environment and the concrete type of the service. Unless you tell it otherwise, it uses a default implementation of <xref:System.ServiceModel.Activation.ServiceHostFactory> that returns an instance of <xref:System.ServiceModel.ServiceHost>. But you can also provide your own factory that returns your derived host by specifying the CLR type name of your factory implementation in the @ServiceHost directive.  
+ The <xref:System.ServiceModel.Activation.ServiceHostFactory> was designed to solve this problem of accessing your custom <xref:System.ServiceModel.ServiceHost> from within IIS or WAS. Because a custom host that is derived from <xref:System.ServiceModel.ServiceHost> is dynamically configured and potentially of various types, the hosting environment never instantiates it directly. Instead, WCF uses a factory pattern to provide a layer of indirection between the hosting environment and the concrete type of the service. Unless you tell it otherwise, it uses a default implementation of <xref:System.ServiceModel.Activation.ServiceHostFactory> that returns an instance of <xref:System.ServiceModel.ServiceHost>. But you can also provide your own factory that returns your derived host by specifying the CLR type name of your factory implementation in the @"ServiceHost" directive.  
   
  The intent is that for basic cases, implementing your own factory should be a straight forward exercise. For example, here is a custom <xref:System.ServiceModel.Activation.ServiceHostFactory> that returns a derived <xref:System.ServiceModel.ServiceHost>:  
   
@@ -66,7 +66,7 @@ public class DerivedFactory : ServiceHostFactory
 }  
 ```  
   
- To use this factory instead of the default factory, provide the type name in the @ServiceHost directive as follows:  
+ To use this factory instead of the default factory, provide the type name in the @"ServiceHost" directive as follows:  
   
 ```  
 <% @ServiceHost Factory="DerivedFactory" Service="MyService" %>  

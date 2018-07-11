@@ -11,7 +11,6 @@ author: "mcleblanc"
 ms.author: "markl"
 manager: "markl"
 ---
-
 # Application Settings schema
 
 Application settings allow a Windows Forms or ASP.NET application to store and retrieve application-scoped and user-scoped settings. In this context, a *setting* is any piece of information that may be specific to the application or specific to the current user — anything from a database connection string to the user's preferred default window size.
@@ -19,6 +18,7 @@ Application settings allow a Windows Forms or ASP.NET application to store and r
 By default, application settings in a Windows Forms application uses the <xref:System.Configuration.LocalFileSettingsProvider> class, which uses the .NET configuration system to store settings in an XML configuration file. For more information about the files used by application settings, see [Application Settings Architecture](~/docs/framework/winforms/advanced/application-settings-architecture.md).
 
 Application settings defines the following elements as part of the configuration files it uses.
+
 
 | Element                    | Description                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------- |
@@ -38,6 +38,7 @@ This element contains all **\<setting>** tags that are specific to the user who 
 ## \<setting> element
 
 This element defines a setting. It has the following attributes.
+
 
 | Attribute        | Description |
 | ---------------- | ----------- |

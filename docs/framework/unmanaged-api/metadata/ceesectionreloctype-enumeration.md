@@ -19,9 +19,9 @@ ms.author: "mairaw"
 ---
 # CeeSectionRelocType Enumeration
 Provides values to influence the type of `reloc` instruction emitted in a call to [ICeeGen::AddSectionReloc](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).  
-  
+
 ## Syntax  
-  
+
 ```  
 typedef enum  {  
     srRelocAbsolute,  
@@ -43,9 +43,10 @@ typedef enum  {
     srRelocDir64Ptr         = srRelocPtr + srRelocDir64  
     } CeeSectionRelocType;  
 ```  
-  
+
 ## Members  
-  
+
+
 |Member|Description|  
 |------------|-----------------|  
 |`srRelocAbsolute`|Generates only a section-relative `reloc`, sending nothing into a .reloc section.|  
@@ -63,16 +64,16 @@ typedef enum  {
 |`srRelocSentinel`|A sentinel value to help ensure any additions to this enum are reflected to the internal `reloc` name array.|  
 |`srNoBaseReloc`|Specifies not to emit a base `reloc`.|  
 |`srRelocPtr`|A value indicating that the pre-fixup contents of memory are a pointer rather than a section offset.|  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** Cor.h  
-  
+
  **Library:** Included as a resource in MsCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
-  
+
 ## See Also  
  [Metadata Enumerations](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
  [ICeeGen Interface](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)  

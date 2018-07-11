@@ -4,7 +4,6 @@ description: Learn about defining types and declaring variables in C#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
 ---
-
 # Types and variables
 
 There are two kinds of types in C#: *value types* and *reference types*. Variables of value types directly contain their data whereas variables of reference types store references to their data, the latter being known as objects. With reference types, it is possible for two variables to reference the same object and thus possible for operations on one variable to affect the object referenced by the other variable. With value types, the variables each have their own copy of the data, and it is not possible for operations on one to affect the other (except in the case of `ref` and `out` parameter variables).
@@ -14,30 +13,37 @@ C#’s value types are further divided into *simple types*, *enum types*, *struc
 The following provides an overview of C#’s type system.
 
 * Value types
-    - Simple Types
-        * Signed integral: `sbyte`, `short`, `int`, `long`
-        * Unsigned integral: `byte`, `ushort`, `uint`, `ulong`
-		* Unicode characters: `char`
-        * IEEE floating point: `float`, `double`
-        * High-precision decimal: `decimal`
-		* Boolean: `bool`
-    - Enum types
-        * User-defined types of the form `enum E {...}`
-    - Struct types
-        * User-defined types of the form `struct S {...}`
-    - Nullable value types
-        * Extensions of all other value types with a `null` value
+  - Simple Types
+    * Signed integral: `sbyte`, `short`, `int`, `long`
+    * Unsigned integral: `byte`, `ushort`, `uint`, `ulong`
+    * Unicode characters: `char`
+    * IEEE floating point: `float`, `double`
+    * High-precision decimal: `decimal`
+    * Boolean: `bool`
+
+  - Enum types
+    * User-defined types of the form `enum E {...}`
+
+  - Struct types
+    * User-defined types of the form `struct S {...}`
+
+  - Nullable value types
+    * Extensions of all other value types with a `null` value
+
 * Reference types
-    - Class types
-        * Ultimate base class of all other types: `object`
-		* Unicode strings: `string`
-        * User-defined types of the form `class C {...}`
-    - Interface types
-        * User-defined types of the form `interface I {...}`
-	- Array types
-    	* Single- and multi-dimensional, for example, `int[]` and `int[,]`
-	- Delegate types
-        * User-defined types of the form `delegate int D(...)`
+  - Class types
+    * Ultimate base class of all other types: `object`
+    * Unicode strings: `string`
+    * User-defined types of the form `class C {...}`
+
+  - Interface types
+    * User-defined types of the form `interface I {...}`
+
+  - Array types
+    * Single- and multi-dimensional, for example, `int[]` and `int[,]`
+
+  - Delegate types
+    * User-defined types of the form `delegate int D(...)`
 
 The eight integral types provide support for 8-bit, 16-bit, 32-bit, and 64-bit values in signed or unsigned form.
 
@@ -52,21 +58,24 @@ Character and string processing in C# uses Unicode encoding. The `char` type rep
 This summarizes C#’s numeric types.
 
 * Signed Integral
-    - `sbyte`:  8 bits, range from -128 - 127
-    - `short`: 16 bits, range from -32,768 - 32,767
-    - `int`  : 32 bits, range from -2,147,483,648 - 2,147,483,647
-    - `long` : 64 bits, range from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+  - `sbyte`:  8 bits, range from -128 - 127
+  - `short`: 16 bits, range from -32,768 - 32,767
+  - `int`  : 32 bits, range from -2,147,483,648 - 2,147,483,647
+  - `long` : 64 bits, range from –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+
 * Unsigned integral
-    - `byte`   :  8 bits, range from 0 - 255
-    - `ushort` : 16 bits, range from 0 - 65,535
-    - `uint`   : 32 bits, range from 0 - 4,294,967,295
-    - `ulong`  : 64 bits, range from 0 - 18,446,744,073,709,551,615
+  - `byte`   :  8 bits, range from 0 - 255
+  - `ushort` : 16 bits, range from 0 - 65,535
+  - `uint`   : 32 bits, range from 0 - 4,294,967,295
+  - `ulong`  : 64 bits, range from 0 - 18,446,744,073,709,551,615
+
 * Floating point
-    - `float`  : 32 bits, range from 1.5 × 10<sup>−45</sup> - 3.4 × 10<sup>38</sup>,    7-digit precision
-	- `double` : 64 bits, range from 5.0 × 10<sup>−324</sup> - 1.7 × 10<sup>308</sup>, 15-digit precision
+  - `float`  : 32 bits, range from 1.5 × 10<sup>−45</sup> - 3.4 × 10<sup>38</sup>,    7-digit precision
+  - `double` : 64 bits, range from 5.0 × 10<sup>−324</sup> - 1.7 × 10<sup>308</sup>, 15-digit precision
+
 * Decimal
-    - `decimal` : 128 bits, range is at least –7.9 × 10<sup>−28</sup> -  7.9 × 10<sup>28</sup>, with at least 28-digit precision
-    
+  - `decimal` : 128 bits, range is at least –7.9 × 10<sup>−28</sup> -  7.9 × 10<sup>28</sup>, with at least 28-digit precision
+
 C# programs use *type declarations* to create new types. A type declaration specifies the name and the members of the new type. Five of C#’s categories of types are user-definable: class types, struct types, interface types, enum types, and delegate types.
 
 A `class` type defines a data structure that contains data members (fields) and function members (methods, properties, and others). Class types support single inheritance and polymorphism, mechanisms whereby derived classes can extend and specialize base classes.
@@ -96,20 +105,26 @@ C#’s unified type system effectively means that value types can become objects
 There are several kinds of *variables* in C#, including fields, array elements, local variables, and parameters. Variables represent storage locations, and every variable has a type that determines what values can be stored in the variable, as shown below.
 
 * Non-nullable value type
-    - A value of that exact type
-* Nullable value type
-    - A `null` value or a value of that exact type
-* object
-    - A `null` reference, a reference to an object of any reference type, or a reference to a boxed value of any value type
-* Class type
-    - A `null` reference, a reference to an instance of that class type, or a reference to an instance of a class derived from that class type
-* Interface type
-    - A `null` reference, a reference to an instance of a class type that implements that interface type, or a reference to a boxed value of a value type that implements that interface type
-* Array type
-    - A `null` reference, a reference to an instance of that array type, or a reference to an instance of a compatible array type
-* Delegate type
-    - A `null` reference or a reference to an instance of a compatible delegate type
+  - A value of that exact type
 
->[!div class="step-by-step"]
-[Previous](program-structure.md)
-[Next](expressions.md)
+* Nullable value type
+  - A `null` value or a value of that exact type
+
+* object
+  - A `null` reference, a reference to an object of any reference type, or a reference to a boxed value of any value type
+
+* Class type
+  - A `null` reference, a reference to an instance of that class type, or a reference to an instance of a class derived from that class type
+
+* Interface type
+  - A `null` reference, a reference to an instance of a class type that implements that interface type, or a reference to a boxed value of a value type that implements that interface type
+
+* Array type
+  - A `null` reference, a reference to an instance of that array type, or a reference to an instance of a compatible array type
+
+* Delegate type
+  - A `null` reference or a reference to an instance of a compatible delegate type
+
+> [!div  class="step-by-step"]
+> [Previous](program-structure.md)
+> [Next](expressions.md)

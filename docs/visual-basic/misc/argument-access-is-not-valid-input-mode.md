@@ -7,7 +7,7 @@ ms.assetid: 60929c62-b9dc-4a9c-9363-2325238f744d
 ---
 # Argument &#39;Access&#39; is not valid. Valid values for Input mode are &#39;OpenAccess.Read&#39; and &#39;OpenAccess.Default&#39;
 An access value is not valid in `Input` mode.  
-  
+
 ## To correct this error  
-  
--   Change the value to either `OpenAccess.Read` or `OpenAccess.Default`.
+
+- Change the value to either `OpenAccess.Read` or `OpenAccess.Default`.

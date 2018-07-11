@@ -32,23 +32,23 @@ A *data contract* is a formal agreement between a service and a client that abst
 ### Notes  
  The following notes provide items to consider when creating data contracts:  
   
--   The <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> attribute is only honored when used with unmarked types. This includes types that are not marked with one of the <xref:System.Runtime.Serialization.DataContractAttribute>, <xref:System.SerializableAttribute>, <xref:System.Runtime.Serialization.CollectionDataContractAttribute>, or <xref:System.Runtime.Serialization.EnumMemberAttribute> attributes, or marked as serializable by any other means (such as <xref:System.Xml.Serialization.IXmlSerializable>).  
+- The <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> attribute is only honored when used with unmarked types. This includes types that are not marked with one of the <xref:System.Runtime.Serialization.DataContractAttribute>, <xref:System.SerializableAttribute>, <xref:System.Runtime.Serialization.CollectionDataContractAttribute>, or <xref:System.Runtime.Serialization.EnumMemberAttribute> attributes, or marked as serializable by any other means (such as <xref:System.Xml.Serialization.IXmlSerializable>).  
   
--   You can apply the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute to fields, and properties.  
+- You can apply the <xref:System.Runtime.Serialization.DataMemberAttribute> attribute to fields, and properties.  
   
--   Member accessibility levels (internal, private, protected, or public) do not affect the data contract in any way.  
+- Member accessibility levels (internal, private, protected, or public) do not affect the data contract in any way.  
   
--   The <xref:System.Runtime.Serialization.DataMemberAttribute> attribute is ignored if it is applied to static members.  
+- The <xref:System.Runtime.Serialization.DataMemberAttribute> attribute is ignored if it is applied to static members.  
   
--   During serialization, property-get code is called for property data members to get the value of the properties to be serialized.  
+- During serialization, property-get code is called for property data members to get the value of the properties to be serialized.  
   
--   During deserialization, an uninitialized object is first created, without calling any constructors on the type. Then all data members are deserialized.  
+- During deserialization, an uninitialized object is first created, without calling any constructors on the type. Then all data members are deserialized.  
   
--   During deserialization, property-set code is called for property data members to set the properties to the value being deserialized.  
+- During deserialization, property-set code is called for property data members to set the properties to the value being deserialized.  
   
--   For a data contract to be valid, it must be possible to serialize all of its data members. For a full list of serializable types, see [Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
+- For a data contract to be valid, it must be possible to serialize all of its data members. For a full list of serializable types, see [Types Supported by the Data Contract Serializer](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).  
   
-     Generic types are handled in exactly the same way as non-generic types. There are no special requirements for generic parameters. For example, consider the following type.  
+   Generic types are handled in exactly the same way as non-generic types. There are no special requirements for generic parameters. For example, consider the following type.  
   
  [!code-csharp[C_DataContract#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#3)]
  [!code-vb[C_DataContract#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#3)]  

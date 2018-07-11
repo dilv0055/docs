@@ -5,11 +5,10 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
 ---
-
 # Characteristics of Modern Web Applications
 
 > "… with proper design, the features come cheaply. This approach is arduous, but continues to succeed."  
-> _\- Dennis Ritchie_
+> *\- Dennis Ritchie*
 
 Modern web applications have higher user expectations and greater demands than ever before. Today's web apps are expected to be available 24/7 from anywhere in the world, and usable from virtually any device or screen size. Web applications must be secure, flexible, and scalable to meet spikes in demand. Increasingly, complex scenarios should be handled by rich user experiences built on the client using JavaScript, and communicating efficiently through web APIs.
 
@@ -17,14 +16,14 @@ ASP.NET Core is optimized for modern web applications and cloud-based hosting sc
 
 ## Reference application: eShopOnWeb
 
-This guidance includes a reference application, _eShopOnWeb_, that demonstrates some of the principles and recommendations. The application is a simple online store which supports browsing through a catalog of shirts, coffee mugs, and other marketing items. The reference application is deliberately simple in order to make it easy to understand.
+This guidance includes a reference application, *eShopOnWeb*, that demonstrates some of the principles and recommendations. The application is a simple online store which supports browsing through a catalog of shirts, coffee mugs, and other marketing items. The reference application is deliberately simple in order to make it easy to understand.
 
 **Figure 2-1.** eShopOnWeb
 
 ![](./media/image2-1.png)
 
 > ### Reference Application
->
+> 
 > - **eShopOnWeb**  
 >   <https://github.com/dotnet/eShopOnWeb>
 
@@ -63,7 +62,7 @@ ASP.NET Core applications can be written using simple text editors and command l
 In addition to ASP.NET Core, traditional ASP.NET 4.x continues to be a robust and reliable platform for building web applications. ASP.NET supports MVC and Web API development models, as well as Web Forms, which is well-suited to rich page-based application development and features a rich third-party component ecosystem. Windows Azure has great longstanding support for ASP.NET 4.x applications, and many developers are familiar with this platform.
 
 > ### References – Modern Web Applications
->
+> 
 > - **Introduction to ASP.NET Core**  
 >   <https://docs.microsoft.com/aspnet/core/>
 > - **Six Key Benefits of ASP.NET Core which make it Different and Better**  
@@ -71,6 +70,6 @@ In addition to ASP.NET Core, traditional ASP.NET 4.x continues to be a robust an
 > - **Testing in ASP.NET Core**  
 >   <https://docs.microsoft.com/aspnet/core/testing/>
 
->[!div class="step-by-step"]
-[Previous](index.md)
-[Next](choose-between-traditional-web-and-single-page-apps.md)
+> [!div  class="step-by-step"]
+> [Previous](index.md)
+> [Next](choose-between-traditional-web-and-single-page-apps.md)

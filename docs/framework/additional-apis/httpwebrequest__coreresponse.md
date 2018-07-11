@@ -11,13 +11,12 @@ api_type:
   - "Assembly"
 author: "stevewhims"
 ---
-
 # HttpWebRequest.\_CoreResponse Field
 
 `HttpWebRequest._CoreResponse` is an object (either a [CoreResponseData](coreresponsedata.md) or an <xref:System.Exception>) containing the result of HTTP response parsing.
 
 ## Syntax
-  
+
 ```csharp
 private object _CoreResponse
 ```

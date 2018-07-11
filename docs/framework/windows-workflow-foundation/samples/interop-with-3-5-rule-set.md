@@ -8,11 +8,11 @@ This sample demonstrates the use of the <xref:System.Activities.Statements.Inter
   
 ## Requirements  
   
-1.  [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]  
+1. [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]  
   
-2.  [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]  
+2. [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]  
   
-3.  [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]  
+3. [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)]  
   
 ## Demonstrates  
  <xref:System.Activities.Statements.Interop> activity, <!--zz <xref:System.Workflow.Activities.Policy> --> `System.Workflow.Activities.Policy` activity in [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] with dependency properties  
@@ -68,9 +68,9 @@ base.SetValue(TravelRuleSet.DiscountLevelProperty, value);
   
 > [!IMPORTANT]
 >  The samples may already be installed on your machine. Check for the following (default) directory before continuing.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples`  
->   
+> 
 >  If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples. This sample is located in the following directory.  
->   
+> 
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\InteropWith35RuleSet`

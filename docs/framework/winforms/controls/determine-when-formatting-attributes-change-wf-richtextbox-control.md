@@ -17,62 +17,62 @@ A common use of the Windows Forms <xref:System.Windows.Forms.RichTextBox> contro
   
 ### To respond to changes in formatting attributes  
   
-1.  Write code in the <xref:System.Windows.Forms.RichTextBox.SelectionChanged> event handler to perform an appropriate action depending on the value of the attribute. The following example changes the appearance of a toolbar button depending on the value of the <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> property. The toolbar button will only be updated when the insertion point is moved in the control.  
+1. Write code in the <xref:System.Windows.Forms.RichTextBox.SelectionChanged> event handler to perform an appropriate action depending on the value of the attribute. The following example changes the appearance of a toolbar button depending on the value of the <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> property. The toolbar button will only be updated when the insertion point is moved in the control.  
   
-     The example below assumes a form with a <xref:System.Windows.Forms.RichTextBox> control and a <xref:System.Windows.Forms.ToolBar> control that contains a toolbar button. For more information about toolbars and toolbar buttons, see [How to: Add Buttons to a ToolBar Control](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md).  
+    The example below assumes a form with a <xref:System.Windows.Forms.RichTextBox> control and a <xref:System.Windows.Forms.ToolBar> control that contains a toolbar button. For more information about toolbars and toolbar buttons, see [How to: Add Buttons to a ToolBar Control](../../../../docs/framework/winforms/controls/how-to-add-buttons-to-a-toolbar-control.md).  
   
-    ```vb  
-    ' The following code assumes the existence of a toolbar control  
-    ' with at least one toolbar button.  
-    Private Sub RichTextBox1_SelectionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RichTextBox1.SelectionChanged  
-       If RichTextBox1.SelectionBullet = True Then  
-          ' Bullet button on toolbar should appear pressed  
-          ToolBarButton1.Pushed = True  
-       Else  
-           ' Bullet button on toolbar should appear unpressed  
-           ToolBarButton1.Pushed = False  
-       End If  
-    End Sub  
-    ```  
+   ```vb  
+   ' The following code assumes the existence of a toolbar control  
+   ' with at least one toolbar button.  
+   Private Sub RichTextBox1_SelectionChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles RichTextBox1.SelectionChanged  
+      If RichTextBox1.SelectionBullet = True Then  
+         ' Bullet button on toolbar should appear pressed  
+         ToolBarButton1.Pushed = True  
+      Else  
+          ' Bullet button on toolbar should appear unpressed  
+          ToolBarButton1.Pushed = False  
+      End If  
+   End Sub  
+   ```  
   
-    ```csharp  
-    // The following code assumes the existence of a toolbar control  
-    // with at least one toolbar button.  
-    private void richTextBox1_SelectionChanged(object sender,  
-    System.EventArgs e)  
-    {  
-       if (richTextBox1.SelectionBullet == true)   
-       {  
-          // Bullet button on toolbar should appear pressed  
-          toolBarButton1.Pushed = true;  
-       }  
-       else   
-       {  
-          // Bullet button on toolbar should appear unpressed  
-          toolBarButton1.Pushed = false;  
-       }  
-    }  
-    ```  
+   ```csharp  
+   // The following code assumes the existence of a toolbar control  
+   // with at least one toolbar button.  
+   private void richTextBox1_SelectionChanged(object sender,  
+   System.EventArgs e)  
+   {  
+      if (richTextBox1.SelectionBullet == true)   
+      {  
+         // Bullet button on toolbar should appear pressed  
+         toolBarButton1.Pushed = true;  
+      }  
+      else   
+      {  
+         // Bullet button on toolbar should appear unpressed  
+         toolBarButton1.Pushed = false;  
+      }  
+   }  
+   ```  
   
-    ```cpp  
-    // The following code assumes the existence of a toolbar control  
-    // with at least one toolbar button.  
-    private:  
-       System::Void richTextBox1_SelectionChanged(  
-          System::Object ^  sender, System::EventArgs ^  e)  
-       {  
-          if (richTextBox1->SelectionBullet == true)  
-          {  
-             // Bullet button on toolbar should appear pressed  
-             toolBarButton1->Pushed = true;  
-          }  
-          else  
-          {  
-             // Bullet button on toolbar should appear unpressed  
-             toolBarButton1->Pushed = false;  
-          }  
-       }  
-    ```  
+   ```cpp  
+   // The following code assumes the existence of a toolbar control  
+   // with at least one toolbar button.  
+   private:  
+      System::Void richTextBox1_SelectionChanged(  
+         System::Object ^  sender, System::EventArgs ^  e)  
+      {  
+         if (richTextBox1->SelectionBullet == true)  
+         {  
+            // Bullet button on toolbar should appear pressed  
+            toolBarButton1->Pushed = true;  
+         }  
+         else  
+         {  
+            // Bullet button on toolbar should appear unpressed  
+            toolBarButton1->Pushed = false;  
+         }  
+      }  
+   ```  
   
 ## See Also  
  <xref:System.Windows.Forms.RichTextBox.SelectionChanged>  

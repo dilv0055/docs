@@ -7,9 +7,9 @@ manager: "mbaldwin"
 ---
 # AsymmetricSecurityBindingElement
 AsymmetricSecurityBindingElement  
-  
+
 ## Syntax  
-  
+
 ```  
 class AsymmetricSecurityBindingElement : SecurityBindingElement  
 {  
@@ -17,32 +17,33 @@ class AsymmetricSecurityBindingElement : SecurityBindingElement
   boolean RequireSignatureConfirmation;  
 };  
 ```  
-  
+
 ## Methods  
  The AsymmetricSecurityBindingElement class does not define any methods.  
-  
+
 ## Properties  
  The AsymmetricSecurityBindingElement class has the following properties:  
-  
+
 ### MessageProtectionOrder  
  Data type: string  
-  
+
  Access type: Read-only  
-  
+
  The order of message encryption and signing for this binding.  
-  
+
 ### RequireSignatureConfirmation  
  Data type: boolean  
-  
+
  Access type: Read-only  
-  
+
  Whether the binding requires signature confirmation.  
-  
+
 ## Requirements  
-  
+
+
 |MOF|Declared in Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Namespace|Defined in root\ServiceModel|  
-  
+
 ## See Also  
  <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>

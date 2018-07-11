@@ -1,5 +1,6 @@
 ### Ensure System.Uri uses a consistent reserved character set
 
+
 |   |   |
 |---|---|
 |Details|In <xref:System.Uri?displayProperty=fullName>, certain percent-encoded characters that were sometimes decoded are now consistently left encoded. This occurs across the properties and methods that access the path, query, fragment, or userinfo components of the URI. The behavior will change only when both of the following are true:<ul><li>The URI contains the encoded form of any of the following reserved characters: <code>:</code>, <code>'</code>, <code>(</code>, <code>)</code>, <code>!</code> or <code>*</code>.</li><li>The URI contains a Unicode or encoded non-reserved character. If both of the above are true, the encoded reserved characters are left encoded. In previous versions of the .NET Framework, they are decoded.</li></ul>|

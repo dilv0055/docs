@@ -14,24 +14,24 @@ You can display related data by using two or more <xref:Microsoft.VisualBasic.Po
   
 ### To display related data in two DataRepeater controls  
   
-1.  Drag two <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> controls from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
+1. Drag two <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> controls from the **Visual Basic PowerPacks** tab in the **Toolbox** to a form or container control.  
   
-2.  Drag the sizing and position handles to size the controls and position them side-by-side.  
+2. Drag the sizing and position handles to size the controls and position them side-by-side.  
   
-3.  On the **Data** menu, click **Show Data Sources**.  
+3. On the **Data** menu, click **Show Data Sources**.  
   
-    > [!NOTE]
-    >  If the **Data Sources** window is empty, add a data source to it. For more information, see [Add new data sources](/visualstudio/data-tools/add-new-data-sources).  
+   > [!NOTE]
+   >  If the **Data Sources** window is empty, add a data source to it. For more information, see [Add new data sources](/visualstudio/data-tools/add-new-data-sources).  
   
-4.  In the **Data Sources** window, select the top-level node for the master table.  
+4. In the **Data Sources** window, select the top-level node for the master table.  
   
-5.  Change the drop type of the master table to Details by clicking **Details** in the drop-down list on the table node.  
+5. Change the drop type of the master table to Details by clicking **Details** in the drop-down list on the table node.  
   
-6.  Drag the master table node onto the item template region of the first <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
+6. Drag the master table node onto the item template region of the first <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
   
-7.  Expand the master table node and select the detail node for the related table.  
+7. Expand the master table node and select the detail node for the related table.  
   
-8.  Change the drop type of the detail table to Details by clicking **Details** in the drop-down list on the table node.  
+8. Change the drop type of the detail table to Details by clicking **Details** in the drop-down list on the table node.  
   
 9. Select this table node and drag it onto the item template region of the second <xref:Microsoft.VisualBasic.PowerPacks.DataRepeater> control.  
   

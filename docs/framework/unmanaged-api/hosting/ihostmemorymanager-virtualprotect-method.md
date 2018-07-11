@@ -20,9 +20,9 @@ ms.author: "ronpet"
 ---
 # IHostMemoryManager::VirtualProtect Method
 Serves as a logical wrapper for the corresponding Win32 function. The Win32 implementation of `VirtualProtect` changes the protection on a region of committed pages in the virtual address space of the calling process.  
-  
+
 ## Syntax  
-  
+
 ```  
 HRESULT VirtualProtect (  
     [in]  void*   lpAddress,  
@@ -31,22 +31,23 @@ HRESULT VirtualProtect (
     [out] DWORD*  pflOldProtect  
 );  
 ```  
-  
+
 #### Parameters  
  `lpAddress`  
  [in] A pointer to the base address of the virtual memory whose protection attributes are to be changed.  
-  
+
  `dwSize`  
  [in] The size, in bytes, of the region of memory pages to be changed.  
-  
+
  `flNewProtect`  
  [in] The type of memory protection to apply.  
-  
+
  `pflOldProtect`  
  [out] A pointer to the previous memory protection value.  
-  
+
 ## Return Value  
-  
+
+
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|`VirtualProtect` returned successfully.|  
@@ -55,18 +56,18 @@ HRESULT VirtualProtect (
 |HOST_E_NOT_OWNER|The caller does not own the lock.|  
 |HOST_E_ABANDONED|An event was canceled while a blocked thread or fiber was waiting on it.|  
 |E_FAIL|An unknown catastrophic failure occurred. When a method returns E_FAIL, the CLR is no longer usable within the process. Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.|  
-  
+
 ## Remarks  
  This implementation of `VirtualProtect` returns an HRESULT value, while the Win32 implementation returns a non-zero value to indicate success, and a zero value to indicate failure. For more information, see the Windows Platform documentation.  
-  
+
 ## Requirements  
  **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
-  
+
  **Header:** MSCorEE.h  
-  
+
  **Library:** Included as a resource in MSCorEE.dll  
-  
+
  **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
-  
+
 ## See Also  
  [IHostMemoryManager Interface](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)
